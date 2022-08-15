@@ -48,8 +48,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/favicon.png
-  icon:
-    logo: assets/logo.svg
+  logo: assets/logo.svg
 
 nav:
   - 首页: index.md
