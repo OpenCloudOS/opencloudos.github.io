@@ -1,4 +1,4 @@
-site_name: Documentation
+site_name: OpenCloudOS Documentation
 
 theme:
   name: material
@@ -49,7 +49,7 @@ theme:
     code: Roboto Mono
   favicon: assets/favicon.png
   icon:
-    logo: logo
+    logo: assets/logo.svg
 
 nav:
   - 首页: index.md
