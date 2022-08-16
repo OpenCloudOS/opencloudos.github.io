@@ -52,3 +52,23 @@ theme:
 
 nav:
   - 首页: index.md
+  - 快速入门:
+    - 下载: quickstart/download.md
+    - 安装: quickstart/install.md
+    - 使用说明: quickstart/use.md
+  - 用户指南:
+    - 系统管理: guide/sysadmin.md
+    - 基础配置: guide/config.md
+    - 更新: guide/update.md
+    - 系统状态监控: guide/monitor.md
+    - 安全加固: guide/security.md
+    - 网络管理: guide/network.md
+    - 存储管理: guide/storage.md
+    - 如意QoS用户指南: guide/rui.md
+  - 版本说明:
+    - v8.5: release/v8.5.md
+    - v8.6: release/v8.6.md
+    - OpenCloudOS Stream: release/ocs.md
+    - OpenCloudOS Stream Kernel: release/ocsk.md
+  - 常见问题: faq.md
+  - 如何贡献: contribute.md
