@@ -30,7 +30,7 @@ OpenCloudOS 是企业级社区研发的定制化服务器操作系统。该系�
 - 插入USB安装介质，启动时从BIOS选择USB启动
 - 进入系统安装引导选择，选择Install进行安装
 
-![OpenCloudOS V8 Installation example picture](../assets/OC_V8_Installation_example.png)
+![OpenCloudOS V8 Installation example picture](../assets/OC_V8_installation_example.png)
 
 ### 5、语言选择
 OpenCloudOS 支持多语言的选择， 选择之后Continue 继续下一步操作。

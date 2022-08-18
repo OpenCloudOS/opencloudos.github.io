@@ -28,7 +28,7 @@ Image URL：
 - Insert USB, start server from BIOS USB drive.
 - At installation list page, choose the second category with use.
 
-![OpenCloudOS V8 Installation example picture](../assets/OC_V8_Installation_example.png)
+![OpenCloudOS V8 Installation example picture](../assets/OC_V8_installation_example.png)
 
 ### 5. Language Selection
 OpenCloudOS Support international language， Select your language and Continue.
