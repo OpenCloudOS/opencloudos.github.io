@@ -1,4 +1,4 @@
-site_name: OpenCloudOS Documentation
+site_name: Documentation
 
 theme:
   name: material
@@ -10,7 +10,7 @@ theme:
   search_index_only: true
 
   # Default values, taken from mkdocs_theme.yml
-  language: en
+  language: zh
   features:
     # - announce.dismiss
     - content.code.annotate
@@ -72,3 +72,19 @@ nav:
     - OpenCloudOS Stream Kernel: release/ocsk.md
   - 常见问题: faq.md
   - 如何贡献: contribute.md
+
+plugins:
+  - search
+  - i18n:
+      default_language: zh
+      material_alternate: true
+      languages:
+        zh:
+          name: 中文
+        en:
+          name: English
+      nav_translations:
+        en:
+          首页: Home
+          快速入门: Quick Start
+          安装: Install
