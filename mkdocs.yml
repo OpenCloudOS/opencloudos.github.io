@@ -64,7 +64,7 @@ nav:
     - 安全加固: guide/security.md
     - 网络管理: guide/network.md
     - 存储管理: guide/storage.md
-    - 如意QoS用户指南: guide/rui.md
+    - 如意QoS用户指南: guide/rue.md
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
@@ -87,4 +87,18 @@ plugins:
         en:
           首页: Home
           快速入门: Quick Start
+          下载: Download
           安装: Install
+          使用说明: How to Use
+          用户指南: Guide
+          系统管理: System Admin
+          基础配置: Configuation
+          更新: Update
+          系统状态监控: System Monitor
+          安全加固: Security
+          网络管理: Network
+          存储管理: Storage
+          如意QoS用户指南: RUE Guide
+          版本说明: Releases
+          常见问题: FAQ
+          如何贡献: Contributing
