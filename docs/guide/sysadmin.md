@@ -2,13 +2,13 @@
 
 ## Module 包 Gitee 仓库
 - rpms component 常规 rpm包gitrepo
-  - https://gitee.com/organizations/src-opencloudos-modules/projects
+    - https://gitee.com/organizations/src-opencloudos-modules/projects
 - Modulemd 编排gitrepo
-  - https://gitee.com/organizations/src-opencloudos-rpms/projects
+    - https://gitee.com/organizations/src-opencloudos-rpms/projects
 
 ## MBS （Module Build Service）
 - **MBS 服务**: 
-  - https://mbs.opencloudos.tech/module-build-service/1/module-builds/
+    - https://mbs.opencloudos.tech/module-build-service/1/module-builds/
 
 ## 模块包构建流程
 ### 获取rpm 组件仓库上游更新
@@ -16,7 +16,7 @@
 
   module stream的rpm组件有了上游更新，更新上游的rpm组件到OpenCloudOS的rpm 仓库。
 - 提交rpm组件上游更新
-  - `alt-src --push oc8-stream-xxx xxx.src.rpm`
+    - `alt-src --push oc8-stream-xxx xxx.src.rpm`
 - 更新指定 rpm 组件到modulemd仓库
 - fork 仓库： https://gitee.com/src-opencloudos-modules/squid.git
     ```

@@ -11,13 +11,14 @@ OpenCloudOS is a customized server operating system developed by the enterprise-
 
 ### 2. Prepare to Install
 Before installing OpenCloudOS, your server hardware must be checked.
+
 - The server connect with a stable power.
 - Leave at least 50GB hardware size, 4GB memory.
 - Get images CD/DVD, or an images USB drive.
 - **Please backup hard disks data at first.**
 Image URL：
-  - http://mirrors.opencloudos.org/opencloudos/8/isos/
-  - https://mirrors.tencent.com/opencloudos/8/isos/ 
+    - http://mirrors.opencloudos.org/opencloudos/8/isos/
+    - https://mirrors.tencent.com/opencloudos/8/isos/ 
 
 ### 3. CD Installation
 - Insert the installation CD, enter the BIOS and choose to boot from the CDROM drive during startup
