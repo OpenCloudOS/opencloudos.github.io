@@ -241,7 +241,7 @@ blkio.bfq.weight
 如下图所示，blk cgroup A 与 blk cgroup B之间按照1：2 的比例派发IO 进入 blk cgroup C，blk cgroup C与 blk cgroup D之间按照1：4 的比例派发进入驱动队列。
 ```
 
-![](./assets/按权重分配IO带宽.png)
+![](../assets/按权重分配IO带宽.png)
 
 #### IO 绝对抢占
 - 描述：通过配置，实现高优先级blk cgroup抢占低优先级blk cgroup 下发的IO
@@ -258,7 +258,7 @@ blkio.bfq.ioprio_class
 每个cgroup根据子cgroup 的class 等级进行派发，如cgroup A中产生IO 相对于B优先被调度进入cgroup C，之后C 和 D 之间继续按照class 等级将IO派发给root cgroup。
 ```
 
-![](./assets/IO%20%E7%BB%9D%E5%AF%B9%E6%8A%A2%E5%8D%A0.png)
+![](../assets/IO%20%E7%BB%9D%E5%AF%B9%E6%8A%A2%E5%8D%A0.png)
 
 
 ## MEMORY
