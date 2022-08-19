@@ -1,4 +1,7 @@
-site_name: Documentation
+site_name: OpenCloudOS Documentation
+repo_url: https://github.com/OpenCloudOS/opencloudos.github.io
+repo_name: OpenCloudOS/opencloudos.github.io
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -49,6 +52,8 @@ theme:
     code: Roboto Mono
   favicon: assets/favicon.png
   logo: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
 
 nav:
   - 首页: index.md
