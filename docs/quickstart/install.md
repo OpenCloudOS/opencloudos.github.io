@@ -13,13 +13,14 @@ OpenCloudOS 是企业级社区研发的定制化服务器操作系统。该系�
 
 ### 2、安装前准备
 安装OpenCloudOS 服务器操作系统前，您的服务器需要满足以下要求：
+
 - 服务器接入稳定电源
 - 确保服务器至少拥有50GB硬盘空间，4GB内存空间
 - 获取安装DVD光盘（需要服务器拥有DVD光驱）或USB安装（需要服务器拥有USB接口）
 - **安装前请备份您的硬盘数据，以防数据丢失**
 - 镜像获取地址：
-  - http://mirrors.opencloudos.org/opencloudos/8/
-  - https://mirrors.tencent.com/opencloudos/8/
+    - https://mirrors.opencloudos.tech/opencloudos/8/isos/  
+    - https://mirrors.tencent.com/opencloudos/8/isos/
 
 ### 3、光盘安装说明
 - 插入安装光盘，启动时进入BIOS选择从CDROM驱动器启动
