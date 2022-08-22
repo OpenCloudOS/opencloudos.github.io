@@ -58,18 +58,16 @@ theme:
 nav:
   - 首页: index.md
   - 快速入门:
-    - 下载: quickstart/download.md
-    - 安装: quickstart/install.md
+    - 下载及安装: quickstart/install.md
     - 使用说明: quickstart/use.md
   - 用户指南:
-    - 系统管理: guide/sysadmin.md
     - 基础配置: guide/config.md
+    - 系统管理: guide/sysadmin.md
     - 更新: guide/update.md
     - 系统状态监控: guide/monitor.md
     - 安全加固: guide/security.md
     - 网络管理: guide/network.md
     - 存储管理: guide/storage.md
-    - 如意QoS用户指南: guide/rue.md
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
@@ -92,18 +90,16 @@ plugins:
         en:
           首页: Home
           快速入门: Quick Start
-          下载: Download
-          安装: Install
+          下载及安装: Download & Install
           使用说明: How to Use
           用户指南: Guide
-          系统管理: System Admin
           基础配置: Configuation
+          系统管理: System Admin
           更新: Update
           系统状态监控: System Monitor
           安全加固: Security
           网络管理: Network
           存储管理: Storage
-          如意QoS用户指南: RUE Guide
           版本说明: Releases
           常见问题: FAQ
           如何贡献: Contributing
