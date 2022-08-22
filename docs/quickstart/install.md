@@ -19,8 +19,8 @@ OpenCloudOS 是企业级社区研发的定制化服务器操作系统。该系�
 - 获取安装DVD光盘（需要服务器拥有DVD光驱）或USB安装（需要服务器拥有USB接口）
 - **安装前请备份您的硬盘数据，以防数据丢失**
 - 镜像获取地址：
-    - https://mirrors.opencloudos.tech/opencloudos/8/isos/  
-    - https://mirrors.tencent.com/opencloudos/8/isos/
+    - [https://mirrors.opencloudos.tech/opencloudos/8/isos/](https://mirrors.opencloudos.tech/opencloudos/8/isos/)
+    - [https://mirrors.tencent.com/opencloudos/8/isos/](https://mirrors.tencent.com/opencloudos/8/isos/)
 
 ### 3、光盘安装说明
 - 插入安装光盘，启动时进入BIOS选择从CDROM驱动器启动
