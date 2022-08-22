@@ -17,8 +17,8 @@ Before installing OpenCloudOS, your server hardware must be checked.
 - Get images CD/DVD, or an images USB drive.
 - **Please backup hard disks data at first.**
 Image URL：
-    - http://mirrors.opencloudos.org/opencloudos/8/isos/
-    - https://mirrors.tencent.com/opencloudos/8/isos/ 
+    - [https://mirrors.opencloudos.tech/opencloudos/8/isos/](https://mirrors.opencloudos.tech/opencloudos/8/isos/)
+    - [https://mirrors.tencent.com/opencloudos/8/isos/](https://mirrors.tencent.com/opencloudos/8/isos/)
 
 ### 3. CD Installation
 - Insert the installation CD, enter the BIOS and choose to boot from the CDROM drive during startup
