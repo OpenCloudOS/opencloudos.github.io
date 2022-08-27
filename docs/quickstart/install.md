@@ -36,7 +36,7 @@ OpenCloudOS 是企业级社区研发的定制化服务器操作系统。该系�
 ### 5、语言选择
 OpenCloudOS 支持多语言的选择， 选择之后Continue 继续下一步操作。
 
-![OpenCloudOS V8 software selection example picture](../assets/OC_V8_software_selection_example.png)
+![OpenCloudOS V8 language selection example picture](../assets/OC_V8_language_selection_example.png)
 
 ### 6、选择软件源
 OpenCloudOS 支持用户根据需求选择软件源,点**Done**完成选择。
