@@ -1,6 +1,6 @@
 
 
-# <center> OpencloudOS-系统管理</center>
+# <center> OpenCloudOS-系统管理</center>
 
 ## 1. 相关技术基础介绍
 
@@ -57,12 +57,11 @@ crypto_simd 		16384 		1 		aesni_intel
 cryptd 			24576 		2 		crypto_simd,ghash_clmulni_intel
 glue_helper 		16384 		1 		aesni_intel
 virtio_balloon 		20480 		0
-......
+...
 ```
 第一列表示当前已加载的模块名；第二列表示对应模块占用的内存大小（单位：KB）；最后一列表示该模块依赖其他模块的数量和模块名。
 
 ### 2.2 查看模块信息
-
 
 可以通过kmod程序中的modinfo命令查看内核模块的信息,这里以加密模块cryptd为例。
 ```
@@ -87,20 +86,20 @@ parm:           cryptd_max_cpu_qlen:Set cryptd Max queue depth (uint)
 
 扩展Linux内核功能的最佳方法是加载内核模块。以下过程描述了如何使用modprobe命令查找内核模块并将其加载到当前运行的内核中。值得注意的是，不能加载已经在内核中加载的模块；下面以加载md4模块为例演示动态加载模块的过程
 
-1. 在/lib/modules/当前内核版本号/kernel/子系统/路径找到想要加载的模块，以加密子模块md4为例
+1.在/lib/modules/当前内核版本号/kernel/子系统/路径找到想要加载的模块，以加密子模块md4为例
 ```
 [root@OpencloudOS~]# cd /lib/modules/5.4.119-19.0010.ocrelease.6/kernel/crypto
 [root@OpencloudOS~]# ls -l
 ......
 - rwxr--r-- 1 root root 10392 Apr 20 22:44 dh_generic.ko
 - rwxr--r-- 1 root root 8304 Apr 20 22:44 md4.ko
-......
+...
 ```
-2. 检查对应模块是否被加载，执行以下命令后，若该模块被加载则输出对应的模块信息，反之则无任何输出信息
+2.检查对应模块是否被加载，执行以下命令后，若该模块被加载则输出对应的模块信息，反之则无任何输出信息
 ```
 [root@OpencloudOS~]# lsmod | grep md
 ```
-3. 动态加载模块，使用modprobe命令加载md4模块
+3.动态加载模块，使用modprobe命令加载md4模块
 ```
 [root@OpencloudOS~]# modprobe md4
 ```
@@ -112,18 +111,18 @@ parm:           cryptd_max_cpu_qlen:Set cryptd Max queue depth (uint)
 
 下面过程描述了如何将内核模块添加到启动列表中，以便它在系统开机引导过程中自动加载。操作过程中需要root权限以及kmod工具，其中在OpencloudOS系统中已集成kmod工具。其操作流程如下
 
-1. 在/lib/modules/当前内核版本号/kernel/子系统/路径找到想要加载的模块，以本机内核
+1.在/lib/modules/当前内核版本号/kernel/子系统/路径找到想要加载的模块，以本机内核
 5.4.119- 19 - 0009.3中的加密子模块md4为例
 ```
 [root@OpencloudOS~]# cd /lib/modules/5.4.119-19.0010.ocrelease.6/kernel/crypto/
 [root@OpencloudOS~]# ls -l
 ```
-2. 为需要加载的模块创建一个配置文件，使用命令“echo <模块名> > /etc/modules-load.d/<模块名>.conf”
+2.为需要加载的模块创建一个配置文件，使用命令“echo <模块名> > /etc/modules-load.d/<模块名>.conf”
 ```
 [root@OpencloudOS~]# echo md4 > /etc/modules-load.d/md4.conf
 [root@OpencloudOS~]# reboot
 ```
-3. 查看当前已加载内核模块
+3.查看当前已加载内核模块
 ```
 [root@OpencloudOS~]#lsmod
 ```
@@ -131,10 +130,9 @@ parm:           cryptd_max_cpu_qlen:Set cryptd Max queue depth (uint)
 
 以下过程描述了如何将内核模块添加到拒绝列表中，以便它不会在引导过程中自动加载。(以cdrom模块为例)
 
-1. 为需要禁用的模块创建黑名单,配置文件路径为：/etc/modprobe.d/blacklist.conf
+1.为需要禁用的模块创建黑名单,配置文件路径为：/etc/modprobe.d/blacklist.conf
 ```
 [root@OpencloudOS~]#vim /etc/modprobe.d/blacklist.conf
-
 
 #blacklist <MODULE_NAME>
 blacklist cdrom
@@ -142,19 +140,19 @@ install cdrom /bin/false
 ```
 黑名单确保在启动过程中不会自动加载相关的内核模块。然而，黑名单命令并不阻止该模块作为另一个不在拒绝列表中的内核模块的依赖项加载。因此，install行会导致/bin/false运行，而不是安装模块。
 
-2. 创建一个当前内核版本的initramfs备份映像，以防配置出现意外
+2.创建一个当前内核版本的initramfs备份映像，以防配置出现意外
 ```
 [root@OpencloudOS~]#cp /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r).bak.$(date+%m-%d-%H%M%S).img
 ```
-3. 生成一个新的initramfs镜像
+3.生成一个新的initramfs镜像
 ```
 [root@OpencloudOS~]#dracut -f -v
 ```
-4. 重启机器
+4.重启机器
 ```
 [root@OpencloudOS~]#reboot
 ```
-5. 可以查看到cdrom模块已不再默认加载
+5.可以查看到cdrom模块已不再默认加载
 ```
 [root@OpencloudOS~]#lsmod
 ```
@@ -191,10 +189,7 @@ install cdrom /bin/false
 第四个值：默认的控制台日志级别：控制台日志级别的缺省值<br />
 
 内核及系统日志由系统服务rsyslog统一管理，根据其主配置文件/etc/rsyslog.conf中的设置决定将内核消息及各种系统程序消息记录到什么位置。
-
-
 常用的系统日志文件如下表所示：<br />
-
 ```
 /var/log/messages 记录内核及各种应用程序的公共日志信息
 /var/log/cron     记录crond计划任务产生的事件信息
@@ -205,13 +200,12 @@ install cdrom /bin/false
 /var/log/audit/   包含audit daemon的审计日志
 /var/log/sa/      包含每日由sysstat软件包收集的sar文件
 ```
-查看日志方法：
-#cat /var/log/xxx
-其中xxx表示日志类型，如
+查看日志方法,如：
 
 ```
 [root@OpencloudOS~]#cat /var/log/boot.log
 ```
+
 ## 4. kdump-分析内核崩溃
 
 kdump是一项提供内核崩溃时，将内核信息转储的服务。该服务能够保存系统内存的内容以供分析。kdump使用kexec系统调用启动到第二个内核（捕获内核），而无需重新启动；然后捕获崩溃内核内存的内容（崩溃转储或vmcore）并将其保存到文件中。第二个内核位于系统内存的保留部分。
@@ -246,7 +240,7 @@ Total size on system:   4003078144       Byte
 
 dump的内存在系统启动期间保留。内存大小在系统Grand Unified Bootloader（GRUB） 2配置文件中配置。内存大小取决于配置文件中指定的crashkernel=选项的值和系统物理内存的大小。crashkernel=选项可以通过多种方式定义。用户可以指定crashkernel=值或配置自动选项。crashkernel=auto参数根据系统中的物理内存总量自动保留内存。配置后，内核将自动为捕获内核保留适当数量的所需内存。这有助于防止内存溢出（OOM）错误。其中kdump的自动内存分配因系统硬件架构和可用内存大小而异。例如，在AMD64和Intel 64上，crashkernel=auto参数仅在可用内存超过1GB时生效。 64 位ARM架构和IBM Power Systems需要物理内存超过2GB时生效。如果系统低于自动分配的最低内存阈值，需要用户手动配置保留内存量。配置kdump的内存占用需要root权限。配置过程如下
 
-1. 打开配置文件“/etc/default/grub/”, 找到字段“crashkernel=”,并根据以下参数配置
+1.打开配置文件“/etc/default/grub/”, 找到字段“crashkernel=”,并根据以下参数配置
 ```
 [root@VM-6-140-opencloudos /]# vim /etc/default/grub 
 ......
@@ -256,20 +250,19 @@ noop console=ttyS0,115200 console=tty0 vconsole.keymap=us crashkernel=1800M-64G:
 ......
 ```
 用户可以根据已安装的内存总量将保留内存量设置为变量。将内存保留到变量的语法是crashkernel=<range1>:<size1>，<range2>:<size2>。如上图所示。如果系统内存总量在1800MB至64GB之间，如上述示例会保留256MB的内存。
-*需要注意的是首次配置，需要重启预留内存，才能正常使用kdump
+**需要注意的是首次配置，需要重启预留内存，才能正常使用kdump**
 
-2. 更新grub2配置文件
+2.更新grub2配置文件
 ```
 [root@VM-6-140-opencloudos crypto]# grub2-mkconfig -o /boot/grub2/grub.cfg
 Generating grub configuration file ...
 done
 ```
-
 #### 4.1.3 捕获内核存放方式
 
 崩溃转储通常作为文件存储在本地文件系统中，直接写入设备。或者，用户可以设置使用NFS或SSH协议通过网络发送崩溃转储,一次只能设置其中一个选项来保存崩溃转储文件。默认行为是将其存储在本地文件系统的/var/crash/目录中。配置流程如下：
 
-1. 如要将崩溃转储文件存储在本地文件系统的/var/crash/目录中，请编辑/etc/kdump.conf文件并指定路径
+1.如要将崩溃转储文件存储在本地文件系统的/var/crash/目录中，请编辑/etc/kdump.conf文件并指定路径
 ```
 path /var/crash
 core_collector makedumpfile -l --message-level 7 -d 31
@@ -277,14 +270,14 @@ core_collector makedumpfile -l --message-level 7 -d 31
 #kdump_post /var/crash/scripts/kdump-post.sh
 #kdump_pre /var/crash/scripts/kdump-pre.sh
 ```
-2. 使用NFS协议将崩溃转储存储到远程计算机，需要编辑/etc/kdump.conf配置文件，打开配置文件/etc/kdump.conf将nfs my.server.com:/export/tmp前的#号删除，将值替换为正确的主机名和目的地址
+2.使用NFS协议将崩溃转储存储到远程计算机，需要编辑/etc/kdump.conf配置文件，打开配置文件/etc/kdump.conf将nfs my.server.com:/export/tmp前的#号删除，将值替换为正确的主机名和目的地址
 ```
 #ext4 LABEL=/boot
 #ext4 UUID=03 138356 - 5e61-4ab3-b58e-27507ac
 nfs my.server.com:/export/tmp
 #ssh user@my.server.com
 ```
-3. 若使用SSH协议将崩溃转储存储到远程计算机，同样需要编辑/etc/kdump.conf配置文件，打开配置文件/etc/kdump.conf将ssh my.server.com:/export/tmp前的#号删除，将值替换为正确的主机名和目的地址，同样将ssh-key替换为正确的key
+3.若使用SSH协议将崩溃转储存储到远程计算机，同样需要编辑/etc/kdump.conf配置文件，打开配置文件/etc/kdump.conf将ssh my.server.com:/export/tmp前的#号删除，将值替换为正确的主机名和目的地址，同样将ssh-key替换为正确的key
 ```
 #nfs my.server.com:/export/tmp
 #nfs [2001:db8::1:2:3:4]:/export/tmp
@@ -322,12 +315,12 @@ swiotlb=noforce loop.max_loop=4 audit=0"
 
 本节将测试kdump崩溃转储过程是否有效。*以下命令会导致内核崩溃。遵循这些步骤时要小心，切勿在生产环境进行测试。
 
-1. 确保kdump在测试机器上已经启动
+1.确保kdump在测试机器上已经启动
 ```
 [root@VM-6-140-opencloudos crypto]# systemctl is-active kdump
 active
 ```
-2. 强制崩溃内核，核心转储
+2.强制崩溃内核，核心转储
 ```
 #root@VM-6-140-opencloudos]#echo c > /proc/sysrq-trigger
 ```
@@ -337,8 +330,7 @@ active
 [root@VM-6-140-opencloudos /]# ls /var/crash/127.0.0.1-2022-08-19-02\:34\:00/
 kexec-dmesg.log  vmcore  vmcore-dmesg.txt
 ```
-
-
+   
 ### 4.2 启动kdump
 
 本节介绍如何为所有已安装的内核或特定内核启用和启动kdump服务。
@@ -347,7 +339,7 @@ kexec-dmesg.log  vmcore  vmcore-dmesg.txt
 
 用户可以为机器上安装的所有内核启用并启动kdump服务。该操作步骤需具有root权限，其操作流程如下
 
-1. 对系统中所有安装的内核添加crashkernel=auto命令行参数
+1.对系统中所有安装的内核添加crashkernel=auto命令行参数
 ```
 [root@OpencloudOS~]#grubby --update-kernel=ALL --args="crashkernel=auto"
 ```
@@ -368,15 +360,15 @@ kexec-dmesg.log  vmcore  vmcore-dmesg.txt
 
 用户可以为机器上特定的内核启用并启动kdump服务。该操作步骤需具有root权限，其操作流程如下
 
-1. 添加kdump内核到特定内核的Grand Unified Bootloader（GRUB） 2 配置文件中。
+1.添加kdump内核到特定内核的Grand Unified Bootloader（GRUB） 2 配置文件中
 ```
 [root@OpencloudOS~]#grubby --update-kernel=vmlinuz-xxx-330.el8.x86_64 --args="crashkernel=auto"
 ```
-2. 启动kdump服务
+2.启动kdump服务
 ```
 [root@OpencloudOS~]#systemctl enable --now kdump.service
 ```
-3. 验证kdump服务是否已经激活
+3.验证kdump服务是否已经激活
 ```
 [root@OpencloudOS~]#systemctl status kdump.service
 ```
@@ -401,19 +393,17 @@ kernel="/boot/vmlinuz-0-rescue-990d0c1266464c1a9aeb3740e9b64217"
 手动加载kexec系统调用的内核和initramfs映像。
 ```
 [root@OpencloudOS~]#kexec -l /boot/vmlinuz-5.4.119-xx-xx --initrd=/boot/initramfs-5.4.119-xx-xx.img --reuse-cmdline
-
 ```
 重启机器
 ```
 [root@VM-6-140-opencloudos boot]# reboot
-
 ```
 查看当前内核版本
 ```
 [root@OpencloudOS~]# uname -r
 ```
 成功切换内核<br />
-*当使用kexec -e命令将机器重新启动到另一个内核时，系统在启动下一个内核之前不会经过标准关机顺序。这可能会导致数据丢失或系统无响应。
+**当使用kexec -e命令将机器重新启动到另一个内核时，系统在启动下一个内核之前不会经过标准关机顺序。这可能会导致数据丢失或系统无响应。**
 
 ### 4.3 分析crash内核
 
@@ -422,7 +412,6 @@ kernel="/boot/vmlinuz-0-rescue-990d0c1266464c1a9aeb3740e9b64217"
 ```
 http://mirrors.tencent.com/opencloudos/8.5/BaseOS/x86_64/debug/tree/Packages/
 ```
-
 安装下载的kernel-debuginfo包
 ```
 [root@OpencloudOS~]#rpm -ivh kernel-debuginfo-5.4.119-19.0010.ocrelease.6.oc8.x86_64.rpm
@@ -436,7 +425,6 @@ http://mirrors.tencent.com/opencloudos/8.5/BaseOS/x86_64/debug/tree/Packages/
 启动crash
 ```
 [root@OpencloudOS~]#crash /boot/vmlinux-xxx-tlinux-xxx /var/crash/xxx/vmcore
-
 [root@VM-6-140-opencloudos /]# crash /boot/vmlinux-5.4.119-19.0010.ocrelease.6 /var/crash/127.xxx.xx.xx/vmcore
 crash> q //退出crash
 crash> log //显示消息缓存区
@@ -445,7 +433,8 @@ crash> ps //显示内核崩溃前的进程状态
 crash> vm //显示内核崩溃前的虚拟内存信息
 crash> files //显示内核崩溃前的文件句柄信息
 ```
-## 5. cgroup-系统资源配置
+   
+## 5.cgroup-系统资源配置
 
 用户可以使用控制组（cgroups）内核功能来设置限制、优先排序或隔离进程的硬件资源。这允许用户更精细地控制应用程序的资源使用，以更有效地利用。
 
