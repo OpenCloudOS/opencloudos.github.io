@@ -1,4 +1,4 @@
-# <center> opencloudos 系统安全配置
+# <center> OpenCloudOS 系统安全配置
 
 ## 第一章 系统安全加固概览
 
