@@ -2,7 +2,6 @@
 
 ## 第一章 系统安全加固概览
 
-
 ### 1.1 什么是计算机系统安全
 
 计算机安全是一个通用术语，涵盖了广泛的计算和信息处理领域。依赖计算机系统和网络进行日常业务交易和访问关键信息的行业将其数据视为其整体资产的重要组成部分。一些术语和指标已经进入了我们的日常业务词汇，例如总拥有成本（TCO）、投资回报率（ROI）和服务质量（QoS）。使用这些指标，行业可以计算数据完整性和高可用性（HA）等方面，作为其规划和流程管理成本的一部分。在电子商务等一些行业，数据的可用性和可信度可能意味着成功与失败的区别。
@@ -115,13 +114,13 @@ to fully take place.
 /etc/crypto-policies/state/CURRENT.pol文件列出了当前应用的全系统加密策略中的所有设置。为了使加密策略更加严格，请考虑使用/usr/share/crypto-policies/policies/FUTURE.pol文件中列出的值。
 配置过程如下
 
-1. 检查/etc/crypto-policies/policies/modules/目录
+1.检查/etc/crypto-policies/policies/modules/目录
 
 ```
 [root@opencloudos ~]#cd /etc/crypto-policies/policies/modules/
 ```
 
-2. 创建子策略文件
+2.创建子策略文件
 
 ```
 [root@opencloudos ~]# touch MYCRYPTO-1.pmod
@@ -129,7 +128,7 @@ to fully take place.
 ```
 **文件名尽量使用大写字母**
 
-3. 在上述文件中添加如下内容
+3.在上述文件中添加如下内容
 
 ```
 [root@opencloudos ~]#vim MYCRYPTO-1.pmod
@@ -152,19 +151,19 @@ cipher@libssh = AES-256-CBC+
 
 ```
 
-4. 启用配置好的加密策略为DEFAULT等级
+4.启用配置好的加密策略为DEFAULT等级
 
 ```
 [root@opencloudos ~]#update-crypto-policies --set DEFAULT:MYCRYPTO-1:SCOPES-AND-WILDCARDS
 ```
 
-5. 重启使配置生效
+5.重启使配置生效
 
 ```
 [root@opencloudos ~]##reboot 
 ```
 
-6. 验证是否生效
+6.验证是否生效
 
 ```
 [root@opencloudos ~]# cat /etc/crypto-policies/state/CURRENT.pol | grep rsa_size
@@ -182,32 +181,32 @@ min_rsa_size = 3072
 
 用户除了可以自定义子加密策略，还可以按照以下步骤自定义整个系统的加密策略。操作步骤如下:
 
-1. 在对应目录中创建策略文件
+1.在对应目录中创建策略文件
 
 ```
 [root@opencloudos ~]##cd /etc/crypto-policies/policies/
 [root@opencloudos ~]##touch MYPOLICY.pol
 ```
 
-2. 在策略文件中加入以下参数，或者复制一份系统预定义的一份参数为例
+2.在策略文件中加入以下参数，或者复制一份系统预定义的一份参数为例
 
 ```
 [root@opencloudos ~]##cp /usr/share/crypto-policies/policies/DEFAULT.pol /etc/crypto-policies/policies/MYPOLICY.pol
 ```
 
-3. 切换到自定义系统加密策略
+3.切换到自定义系统加密策略
 
 ```
 [root@opencloudos ~]## update-crypto-policies --set MYPOLICY
 ```
 
-4. 重启生效
+4.重启生效
 
 ```
 [root@opencloudos ~]##reboot
 ```
 
-5. 验证是否成功切换
+5.验证是否成功切换
 
 ```
 [root@opencloudos ~]# update-crypto-policies --show
@@ -243,19 +242,19 @@ MYPOLICY
 
 要使用新的信任源来确认系统上的应用程序，请将相应的证书添加到系统证书存储位置，并使用update-ca-trust命令更新。流程如下:
 
-1.  安装ca-certificates 
+1.安装ca-certificates 
 
 ```
 [root@opencloudos ~]##yum install ca-certificates
 ```
 
-2.  将证书文件复制到/usr/share/pki/ca-trust-source/anchors/或/etc/pki/ca- trust/source/anchors/目录
+2.将证书文件复制到/usr/share/pki/ca-trust-source/anchors/或/etc/pki/ca- trust/source/anchors/目录
 
 ```
 [root@opencloudos ~]##cp ~/certificate-trust-examples/Cert-trust-test-ca.pem /usr/share/pki/ca-trust- source/anchors/
 ```
 
-3.  更新系统认证信息
+3.更新系统认证信息
 
 ```
 [root@opencloudos ~]## update-ca-trust
@@ -343,7 +342,7 @@ usage: trust list --filter=<what>
 - update-ca-trust(8) , trust(1) man pages
 
 
-## 第四章  漏洞及配置合规性扫描
+## 第四章 漏洞及配置合规性扫描
 合规性审计是确定给定对象是否遵循合规性策略中规定的所有规则的过程。合规性策略由安全专业人员定义，他们通常以清单的形式指定计算环境应使用的必要设置。合规政策可能因组织而异，甚至因同一组织内的不同系统而异。这些政策之间的差异基于每个系统的宗旨及其对组织的重要性。自定义软件设置和部署特性也增加了对自定义策略清单的需求。
 
 ### 4.1 配置合规工具
@@ -407,19 +406,17 @@ Complete!
 ![avatar](./images/show_result.png)
 
 
-## 第五章  完整性检查
+## 第五章 完整性检查
 高级入侵检测环境（AIDE）是一个实用程序，用于在系统上创建文件数据库，然后使用该数据库来确保文件完整性并检测系统入侵。
 
 ### 5.1 安装AIDE
 
-1. 安装aide
+1.安装aide
 
 ```
 [root@opencloudos mapper]#yum install aide
 ```
-
-2. 初始化aide
-
+2.初始化aide
 ```
 [root@opencloudos ~]# aide --init
 Start timestamp: 2022-08-15 15:57:08 +0800 (AIDE 0.16)
@@ -441,9 +438,9 @@ The attributes of the (uncompressed) database(s):
 End timestamp: 2022-08-15 16:32:44 +0800 (run time: 35m 36s)
 ```
 
-*在默认配置中，aide --init命令仅检查/etc/aide.conf文件中定义的一组目录和文件。要在AIDE数据库中包含其他目录或文件，并更改其观看参数，请相应编辑/etc/aide.conf。
+**在默认配置中，aide --init命令仅检查/etc/aide.conf文件中定义的一组目录和文件。要在AIDE数据库中包含其他目录或文件，并更改其观看参数，请相应编辑/etc/aide.conf**
 
-3. 开始使用数据库，从初始数据库文件中删除.new包
+3.开始使用数据库，从初始数据库文件中删除.new包
 
 ```
 [root@opencloudos ~]# mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
@@ -452,7 +449,6 @@ End timestamp: 2022-08-15 16:32:44 +0800 (run time: 35m 36s)
 要修改 AIDE 数据库的位置，请编辑 /etc/aide.conf 文件并修改 DBDIR 值。要获得额外的安全性，请将数据库、配置和 /usr/sbin/aide 二进制文件存储在安全的位置，如只读介质。
 
 ### 5.2 使用 AIDE 执行完整性检查
-
 ```
 [root@opencloudos ~]# aide --check
 Start timestamp: 2022-08-22 01:15:48 +0000 (AIDE 0.16)
@@ -475,7 +471,6 @@ f   ...    .C..  : /usr/local/qcloud/stargate/logs/stargate.log
 ```
 
 ### 5.3 更新AIDE数据库
-
 ```
 [root@opencloudos mapper]#aide --update
 ```
@@ -513,25 +508,22 @@ LUKS默认使用的加密算法为aes-xts-plain64，LUKS的默认密钥大小为
 ### 6.2 使用LUKS加密块设备现有数据
 本节使用LUKS2加密尚未被加密设备上的数据。LUKS标头存储在设备头部。执行加密步骤之前请确保数据已备份且磁盘已存在文件系统。
 
-1. 以vdb1分区为例，卸载该分区
+1.以vdb1分区为例，卸载该分区
 
 ```
 [root@opencloudos mapper]#umount /dev/vdb1
 ```
-2. 安装cryptsetup工具
+2.安装cryptsetup工具
 
 ```
 [root@opencloudos mapper]#yum install cryptsetup
 ```
-
-3. 输入密码并启动加密过程
+3.输入密码并启动加密过程
 
 ```
 [root@opencloudos mapper]#cryptsetup reencrypt --encrypt --init-only --reduce-device-size 32M /dev/vdb1 			 vdb1_encrypted
 ```
-
 上述命令中vdb1_encrypted为映射文件的名称，可用户自定义。使用cryptsetup对分区进行了加密后，这个分区就不再允许直接挂载。LUKS也是一种基于device mapper 机制的加密方案。如果要使用这个分区，必须对这个分区做一个映射，映射到/dev/mapper这个目录里去，只能挂载这个映射才能使用。然而做映射的时候需要输入解密密码。
-
 ```
 Last metadata expiration check: 15:28:22 ago on Wed 10 Aug 2022 07:47:14 PM CST.
 Package Nessus-10.3.0-es8.x86_64 is already installed.
@@ -539,19 +531,19 @@ Dependencies resolved.
 Nothing to do.
 Complete!
 ```
-### 6.3  使用分离标头的 LUKS2 加密现有数据
+### 6.3 使用分离标头的 LUKS2 加密现有数据
 本节使用LUKS2加密尚未被加密设备上的数据。LUKS标头存储在指定位置。执行加密步骤之前请确保数据已备份且磁盘已存在文件系统。
-1. 以vdb1分区为例，卸载该分区
+1.以vdb1分区为例，卸载该分区
 
 ```
 [root@opencloudos mapper]#umount /dev/vdb1
 ```
-2. 安装cryptsetup工具
+2.安装cryptsetup工具
 
 ```
 [root@opencloudos mapper]#yum install cryptsetup
 ```
-3. 输入密码并启动加密过程
+3.输入密码并启动加密过程
 
 ```
 [root@opencloudos mapper] #cryptsetup reencrypt --encrypt --init-only --header /path/to/header /dev/vdb1 			 vdb1_encrypted
@@ -580,34 +572,31 @@ Verify passphrase:
 
 ### 6.4 LUKS2 加密空白块设备
 
-1. 将分区设置为加密的 LUKS 分区：
+1.将分区设置为加密的 LUKS 分区：
 
 ```
 [root@opencloudos mapper]#cryptsetup luksFormat /dev/vdb1
 ```
-2. 打开加密的 LUKS 分区：
-
+2.打开加密的 LUKS 分区：
 ```
 [root@opencloudos mapper]#cryptsetup open /dev/vdb1 vdb1_encrypted
 ```
-
-3. 要将加密的数据写入分区，必须通过设备映射名称访问该分区。为此，必须创建一个文件系统。例如：
-
+3.要将加密的数据写入分区，必须通过设备映射名称访问该分区。为此，必须创建一个文件系统。例如：
 ```
 [root@opencloudos mapper]#mkfs -t ext4 /dev/mapper/vdb1_encrypted
 ```
-4. 格式化映射文件
+4.格式化映射文件
 
 ```
 [root@opencloudos mapper]#mkfs.ext4 /dev/mapper/vdb1_encrypted
 ```
-5. 挂载该设备：
+5.挂载该设备：
 
 ```
 [root@opencloudos mapper]#mount /dev/mapper/vdb1_encrypted mount-point
 ```
 
-## 第七章  审计系统
+## 第七章 审计系统
 Linux审计系统用于统计系统中出现的安全策略违规记录，继而通过SELINUX进一步处理这些违规。审计系统对于生产环境而言至关重要，可以确定安全策略的违规者以及其所执行的操作。
 审计系统可以统计以下信息：
 - 违规事件的时间、类型和结果
@@ -693,7 +682,6 @@ iptables和ebtables工具可以配置为触发审计事件，使系统管理员�
 
 ### 7.3 启动和配置auditd
 
-
 auditd相关操作如表所示：
 
 |功能 | 指令操作  |
@@ -707,8 +695,6 @@ auditd相关操作如表所示：
 | 重新加载 /etc/audit/auditd.conf 文件中 auditd 的配置   | #service auditd reload    |
 | 轮转 /var/log/audit/ 目录中的日志文件  | #service auditd rotate    |
 | 显示 auditd 的运行状态   | #service auditd status    |
-
-
 
 ### 7.4 查看审计日志文件
 审计系统通常将日志条目存储于/var/log/audit/audit.log文件中，如果启用了日志轮转，则轮转的 audit.log 文件也在存储同一个目录中。添加以下审计规则，来记录读取或修改 /etc/ssh/sshd_config 文件的每次尝试
@@ -736,12 +722,12 @@ HostKey /etc/ssh/ssh_host_ed25519_key
 ### 7.5 定义和执行审计规则
 审计系统根据一组规则进行操作，这些规则定义日志文件中所捕获的内容。使用 auditctl 工具，可以在命令行或 /etc/audit/rules.d/ 目录中设置审计规则。
 
-1. 要定义一条规则，记录对 /etc/passwd 文件的所有写访问和每个属性的修改：
+1.要定义一条规则，记录对 /etc/passwd 文件的所有写访问和每个属性的修改：
 
 ```
 [root@opencloudos ~]#auditctl -w /etc/passwd -p wa -k passwd_changes
 ```
-2. 要定义一条规则，记录对 /etc/selinux/ 目录中所有文件的写访问和每个属性的修改：
+2.要定义一条规则，记录对 /etc/selinux/ 目录中所有文件的写访问和每个属性的修改：
 
 ```
 [root@opencloudos ~]#auditctl -w /etc/selinux/ -p wa -k selinux_changes
@@ -749,13 +735,13 @@ HostKey /etc/ssh/ssh_host_ed25519_key
 
 **系统调用规则示例**
 
-1. 要定义一条规则，当程序每次使用 adjtimex 或 settimeofday 系统调用时就创建一条日志，系统使用 64 位构架
+1.要定义一条规则，当程序每次使用 adjtimex 或 settimeofday 系统调用时就创建一条日志，系统使用 64 位构架
 
 ```
 [root@opencloudos ~]# auditctl -a always,exit -F arch=b64 -S adjtimex -S settimeofday -k time_change
 ```
 
-2. 定义一条规则，在 ID 为 1000 或以上的系统用户每次删除或重命名文件时创建一条日志
+2.定义一条规则，在 ID 为 1000 或以上的系统用户每次删除或重命名文件时创建一条日志
 
 ```
 [root@opencloudos ~]# auditctl -a always,exit -S unlink -S unlinkat -S rename -S renameat -F auid>=1000 -F auid!=4294967295 -k delete
@@ -825,32 +811,27 @@ rate_limit 0
 ### 7.9 禁用 augenrules
 使用以下步骤来禁用 augenrules 工具。这会将审计切换为使用 /etc/audit/audit.rules 文件中定义的规则。操作步骤如下:
 
-
-1. 将 /usr/lib/systemd/system/auditd.service 文件复制到 /etc/systemd/system/ 目录中
-
+1.将 /usr/lib/systemd/system/auditd.service 文件复制到 /etc/systemd/system/ 目录中
 ```
 [root@opencloudos ~]# cp -f /usr/lib/systemd/system/auditd.service /etc/systemd/system/
 ```
-2. 在您选择的文本编辑器中编辑 /etc/systemd/system/auditd.service 文件，例如
+2.在您选择的文本编辑器中编辑 /etc/systemd/system/auditd.service 文件，例如
 
 ```
 [root@opencloudos ~]# vi /etc/systemd/system/auditd.service
 ```
-
-
-3. 注释掉包含 augenrules 的行，将包含 auditctl -R 命令的行取消注释
+  
+3.注释掉包含 augenrules 的行，将包含 auditctl -R 命令的行取消注释
 
 ```
 #ExecStartPost=-/sbin/augenrules --load	ExecStartPost=-/sbin/auditctl -R /etc/audit/audit.rules
 ```
-
-4. 重新载入 systemd 守护进程以获取 auditd.service 文件中的修改：
+4.重新载入 systemd 守护进程以获取 auditd.service 文件中的修改：
 
 ```
 [root@opencloudos ~]# systemctl daemon-reload
 ```
-
-5. 重启 auditd 服务
+5.重启 auditd 服务
 
 ```
 [root@opencloudos ~]#service auditd restart
@@ -862,31 +843,29 @@ dnf,yum,pip,npm,cpan,gem,luarocks
 ```
 默认情况下，rpm 在安装或更新软件包时就已提供审计 SOFTWARE_UPDATE 事件。用户可以通过在命令行上输入 ausearch -m SOFTWARE_UPDATE 来列出它们。
 监控配置步骤如下：
-1. 将 /usr/share/audit/sample-rules/ 目录中的预配置的规则文件 44-installers.rules 复制到 /etc/audit/rules.d/ 目录中：
+1.将 /usr/share/audit/sample-rules/ 目录中的预配置的规则文件 44-installers.rules 复制到 /etc/audit/rules.d/ 目录中：
 
 ```
 [root@opencloudos ~]#cp /usr/share/audit/sample-rules/44-installers.rules /etc/audit/rules.d/
 ```
-2. 在 /etc/audit/rules.d/ 目录中创建一个名为 44-installers.rules 的新文件，并插入以下规则：
+2.在/etc/audit/rules.d/ 目录中创建一个名为 44-installers.rules 的新文件，并插入以下规则：
 
 ```
 -a always,exit -F perm=x -F path=/usr/bin/dnf-3 -F key=software-installer
 -a always,exit -F perm=x -F path=/usr/bin/yum -F
 ```
-
-3. 加载审计规则
+3.加载审计规则
 
 ```
 [root@opencloudos ~]#augenrules --load
 ```
-
-4. 列出载入规则
+4.列出载入规则
 
 ```
 [root@opencloudos ~]# auditctl -l
 ```
 
-5. 在审计日志中搜索最近的安装事件，例如：
+5.在审计日志中搜索最近的安装事件，例如：
 
 ```
 [root@opencloudos ~]# ausearch -ts recent -k software-installer
@@ -895,7 +874,7 @@ dnf,yum,pip,npm,cpan,gem,luarocks
 ### 7.11 使用审计系统监控用户登录时间
 要监控特定时间哪个用户登录了，管理员不需要以任何特殊的方式配置审计。可以使用 ausearch 或 aureport 工具，它们提供不同的方法来展示相同的信息。配置步骤如下
 
-1. 在审计日志中搜索 USER_LOGIN 消息类型
+1.在审计日志中搜索 USER_LOGIN 消息类型
 
 ```
 [root@opencloudos ~]#ausearch -m USER_LOGIN -ts '7/02/2022' '18:00:00' -sv no
@@ -908,10 +887,9 @@ type=USER_LOGIN msg=audit(1659115910.191:272434): pid=1416645 uid=0 auid=4294967
 -sv yes 选项用于过滤登录成功的记录。
 -sv no  选项用于过滤登录失败的记录。
 
-2. 将 ausearch 命令的原始输出传送给 aulast 工具，它以类似于 last 命令的输出格式显示输出。例如：
+2.将 ausearch 命令的原始输出传送给 aulast 工具，它以类似于 last 命令的输出格式显示输出。例如：
 
 ```
-
 [root@opencloudos audit]# ausearch --raw | aulast --stdin
 root     pts/0        118.112.73.86    Sat Jul 30 18:00 - 20:30  (02:29)
 root     pts/0        118.112.75.157   Sun Jul 31 16:21 - 16:21  (00:00)
@@ -925,11 +903,11 @@ root     pts/0        118.112.73.104   Mon Aug  1 20:06 - 23:19  (03:12)
 root     pts/0        118.112.72.152   Tue Aug  2 10:15   still logged in
 ```
 
-3. 使用 aureport 命令及 --login -i 选项来显示登录事件列表。
+3.使用 aureport 命令及 --login -i 选项来显示登录事件列表。
 
 ```
 [root@opencloudos audit]# aureport --login -i 
-......
+...
 7219. 07/31/2022 23:30:39 root 183.131.3.30 ssh /usr/sbin/sshd no 294225
 7220. 07/31/2022 23:30:41 root 183.131.3.30 ssh /usr/sbin/sshd no 294237
 7221. 07/31/2022 23:30:45 root 183.131.3.30 ssh /usr/sbin/sshd no 294249
@@ -952,7 +930,6 @@ root     pts/0        118.112.72.152   Tue Aug  2 10:15   still logged in
 
 - aureport(8) manual pages.
 
-#
 ## 第八章 USBGuard抵御来自USB设备的攻击
 系统挂载USB设备可能会收到攻击，系统管理员可以使用USBGuard抵御此类攻击。
 ### 8.1 什么是USBGuard
@@ -969,22 +946,22 @@ usbguard系统服务配置文件（/etc/usbguard/usbguard-daemon.conf）包括�
 
 ### 8.2 安装USBGuard
 通过以下流程安装并启动USBGuard框架。
-1. 安装usbgurd
+1.安装usbgurd
 
 ```
 [root@opencloudos ~]#yum install usbguard
 ```
-2. 创建初始规则集
+2.创建初始规则集
 
 ```
 [root@opencloudos ~]#usbguard generate-policy > /etc/usbguard/rules.conf
 ```
-3. 启动 usbguard 守护进程，并确保它会在引导时自动启动
+3.启动usbguard守护进程，并确保它会在引导时自动启动
 
 ```
 [root@opencloudos ~]# systemctl enable --now usbguard
 ```
-4. 查看服务是否正常
+4.查看服务是否正常
 
 ```
 [root@opencloudos ~]# systemctl status usbguard
@@ -999,8 +976,7 @@ usbguard系统服务配置文件（/etc/usbguard/usbguard-daemon.conf）包括�
    CGroup: /system.slice/usbguard.service
            └─540389 /usr/sbin/usbguard-daemon -f -s -c /etc/usbguard/usbguard-daemon.conf
 ```
-
-5. 列出 USBGuard 识别的 USB 设备 
+5.列出 USBGuard 识别的 USB 设备 
 
 ```
 [root@opencloudos ~]# usbguard list-devices
@@ -1014,25 +990,25 @@ usbguard系统服务配置文件（/etc/usbguard/usbguard-daemon.conf）包括�
 
 - 临时阻止和授权USB设备
 此流程概述了如何使用 usbguard 命令授权和阻止 USB 设备。
-1. 列出识别的USB设备
+1.列出识别的USB设备
 
 ```
 [root@opencloudos ~]# usbguard list-devices
 ```
-2. 授权设备 6 与系统进行交互
+2.授权设备 6 与系统进行交互
 
 ```
 [root@opencloudos ~]# usbguard allow-device 6
 ```
 
-3. 取消授权并删除设备6
+3.取消授权并删除设备6
 
 ```
 [root@opencloudos ~]# usbguard reject-device 6
 ```
 
 - 永久阻止和授权USB设备
-1. 配置SELINUX，允许usbguard守护进程编写规则
+1.配置SELINUX，允许usbguard守护进程编写规则
 
 显示与usbguard相关的semanage布尔值
 
@@ -1047,24 +1023,24 @@ usbguard_daemon_write_rules    (on   ,   on)  Allow usbguard to daemon write rul
 ```
 [root@opencloudos ~]#semanage boolean -m --on usbguard_daemon_write_rules
 ```
-2. 列出识别的USB设备
+2.列出识别的USB设备
 
 ```
 [root@opencloudos ~]# usbguard list-devices
 ```
-3. 授权设备 6 与系统进行交互
+3.授权设备 6 与系统进行交互
 
 ```
 [root@opencloudos ~]# usbguard allow-device 6 -p
 ```
 
-4. 取消授权并删除设备6
+4.取消授权并删除设备6
 
 ```
 [root@opencloudos ~]# usbguard reject-device 6 -p
 ```
 
-5. 永久取消授权并保留设备 6 
+5.永久取消授权并保留设备 6 
 
 ```
 [root@opencloudos ~]# usbguard block-device 6 -p
@@ -1078,47 +1054,45 @@ usbguard_daemon_write_rules    (on   ,   on)  Allow usbguard to daemon write rul
 更多资料请参考：
 - usbguard(1) manual page
 
-### 8.4  创建自定义策略
+### 8.4 创建自定义策略
 
-1. 创建一个策略，其授权当前连接的 USB 设备，并将生成的规则保存到 rules.conf 文件中：
+1.创建一个策略，其授权当前连接的 USB 设备，并将生成的规则保存到 rules.conf 文件中：
 
 ```
 [root@opencloudos ~]# usbguard generate-policy --no-hashes > ./rules.conf
 ```
-
-2. 使用您选择的文本编辑器编辑 rules.conf 文件，例如：
+2.使用您选择的文本编辑器编辑 rules.conf 文件，例如：
 
 ```
 [root@opencloudos ~]# vim ./rules.conf
 ```
 
-3. 根据需要添加、删除或编辑规则。例如，以下规则只允许带有一个大容量存储接口的设备与系统进行交互：
+3.根据需要添加、删除或编辑规则。例如，以下规则只允许带有一个大容量存储接口的设备与系统进行交互：
 
 ```
 [root@opencloudos ~]# allow with-interface equals { 08:*:* }
 ```
-4. 安装更新的策略：
+4.安装更新的策略：
 
 ```
 [root@opencloudos ~]# install -m 0600 -o root -g root rules.conf /etc/usbguard/rules.conf
 ```
-5. 重启 usbguard 守护进程以应用更改：
+5.重启 usbguard 守护进程以应用更改：
 
 ```
 [root@opencloudos ~]# systemctl restart usbguard
 ```
-6. 验证规则是否生效
+6.验证规则是否生效
 
 ```
 [root@opencloudos ~]# usbguard list-rules
 ```
-
-### 8.5  授权用户和组使用 USBGuard IPC 接口
+### 8.5 授权用户和组使用 USBGuard IPC 接口
 使用该流程授权特定用户或组使用 USBGuard 公共 IPC 接口。默认情况下，只有 root 用户可以使用此接口。流程如下：
 
-1. 确认/etc/usbguard/rules.conf 文件包含了由usbguard generate-policy 命令生成的初始规则集。
+1.确认/etc/usbguard/rules.conf 文件包含了由usbguard generate-policy 命令生成的初始规则集。
 
-2. 编辑/etc/usbguard/usbguard-daemon.conf文件添加一行规则，允许 xxx 组中的所有用户使用 IPC 接口，并保存文件
+2.编辑/etc/usbguard/usbguard-daemon.conf文件添加一行规则，允许 xxx 组中的所有用户使用 IPC 接口，并保存文件
 
 ```
 [root@opencloudos ~]# vim /etc/usbguard/usbguard-daemon.conf
@@ -1130,15 +1104,13 @@ usbguard_daemon_write_rules    (on   ,   on)  Allow usbguard to daemon write rul
 IPCAllowGroups=xxx
 ```
 
-3. 重启usbguard守护进程使配置生效
-
+3.重启usbguard守护进程使配置生效
 ```
 [root@opencloudos ~]# systemctl restart usbguard
 ```
-
-### 8.6 将 USBguard 授权事件记录到 Linux 审计日志中
+### 8.6 将USBguard授权事件记录到Linux审计日志中
 使用以下步骤将 USBguard 授权事件记录集成到标准的 Linux 审计日志中。默认情况下，usbguard 守护进程将事件记录到 /var/log/usbguard/usbguard-audit.log 文件中。
-1. 编辑 /etc/usbguard/usbguard-daemon.conf，将AuditBackend 选项从 FileAudit 改为 LinuxAudit
+1.编辑 /etc/usbguard/usbguard-daemon.conf，将AuditBackend 选项从 FileAudit 改为 LinuxAudit
 
 ```
 [root@opencloudos ~]#vim /etc/usbguard/usbguard-daemon.conf
@@ -1155,13 +1127,13 @@ IPCAllowGroups=xxx
 AuditBackend=LinuxAudit
 ```
 
-2. 重启usbguard 守护进程
+2.重启usbguard 守护进程
 
 ```
 [root@opencloudos ~]# systemctl restart usbguard
 ```
 
-3. 验证
+3.验证
 
 ```
 [root@opencloudos ~]# ausearch -ts recent -m USER_DEVICE
@@ -1171,7 +1143,7 @@ AuditBackend=LinuxAudit
 
 
 
-## 第九章  SELINUX配置
+## 第九章 SELINUX配置
 SELinux（Security Enhanced Linux）提供了一个额外的系统安全层。SELinux 从根本上回答了问题：<subject> do <action> to <object>?，例如：Web 服务器是否可以访问用户主目录中的文件？
 ### 9.1 什么是SELINUX
 SELinux 是一个内置在 Linux 内核中的 Linux 安全模块（LSM）。内核中的 SELinux 子系统由安全策略驱动，该策略由管理员控制并在引导时载入。系统中所有与安全性相关的、内核级别的访问操作都会被 SELinux 截取，并在加载的安全策略上下文中检查。如果载入的策略允许操作，它将继续进行。否则,操作会被阻断，进程会收到一个错误。
@@ -1234,7 +1206,7 @@ SELinux status:                 disabled
 
 使用以下步骤将 SELinux 模式永久改为 permissive。当 SELinux 是以 permissive 模式运行时，不会强制 SELinux 策略。系统可保持正常操作，SELinux 不会拒绝任何操作，而只是记录 AVC 信息，它们可用于故障排除、调试和 SELinux 策略改进。每个 AVC 在这个示例中仅记录一次。
 
-1. 打开配置文件并修改参数
+1.打开配置文件并修改参数
 
 ```
 [root@opencloudos ~]#vim /etc/selinux/config
@@ -1250,14 +1222,13 @@ SELINUX=permissive
 #     mls - Multi Level Security protection.
 SELINUXTYPE=targeted
 ```
-
-2. 重启使配置生效
+2.重启使配置生效
 
 ```
 [root@opencloudos ~]#reboot
 ```
 
-3. 验证是否生效
+3.验证是否生效
 
 ```
 [root@opencloudos ~]#getenforce
@@ -1265,7 +1236,7 @@ SELINUXTYPE=targeted
 - 切换至enforcing模式
 
 使用以下步骤将 SELinux 切换到 enforcing 模式。当 SELinux 处于 enforcing 模式时，它会强制 SELinux 策略并根据 SELinux 策略规则拒绝访问。
-1. 打开配置文件并修改参数
+1.打开配置文件并修改参数
 
 ```
 [root@opencloudos ~]#vim /etc/selinux/config
@@ -1281,13 +1252,12 @@ SELINUX=enforcing
 #     mls - Multi Level Security protection.
 SELINUXTYPE=targeted
 ```
-
-2. 重启使配置生效
+2.重启使配置生效
 
 ```
 [root@opencloudos ~]#reboot
 ```
-3. 验证是否生效
+3.验证是否生效
 
 ```
 [root@opencloudos ~]#getenforce
@@ -1296,7 +1266,7 @@ SELINUXTYPE=targeted
 - 禁用SELINUX
 
 使用以下步骤将 SELinux 禁用SElinux。
-1. 打开配置文件并修改参数
+1.打开配置文件并修改参数
 
 ```
 [root@opencloudos ~]#vim /etc/selinux/config
@@ -1311,13 +1281,13 @@ SELINUXTYPE=targeted
 ...
 ```
 
-2. 重启使配置生效
+2.重启使配置生效
 
 ```
 [root@opencloudos ~]#reboot
 ```
 
-3. 验证是否生效
+3.验证是否生效
 
 ```
 [root@opencloudos ~]#getenforce
@@ -1402,18 +1372,18 @@ Roles: 14
 
 #### 9.3.2 添加新用户会自动映射到 SELinux unconfined_u 用户
 
-1. 输入以下命令创建一个名为 example.user 的新的 Linux 用户：
+1.输入以下命令创建一个名为 example.user 的新的 Linux 用户：
 
 ```
 [root@opencloudos ~]#useradd example.user
 ```
-2. 为 Linux example.user 用户分配密码：
+2.为 Linux example.user 用户分配密码：
 
 ```
 [root@opencloudos ~]#passwd example.user
 ```
 以 Linux example.user 用户身份登录。登录时，pam_selinux PAM 模块会自动将 Linux 用户映射到 SELinux 用户（本例中为 unconfined_u），并设置生成的 SELinux 上下文。然后会使用这个上下文启动 Linux 用户的 shell。
-3. 当以 example.user 用户身份登录时，检查 Linux 用户的上下文
+3.当以 example.user 用户身份登录时，检查 Linux 用户的上下文
 
 ```
 [root@opencloudos ~]#id -Z
@@ -1421,18 +1391,18 @@ Roles: 14
 
 #### 9.3.3 以 SELinux 限制的用户身份添加新用户
 
-1. 输入以下命令创建一个名为 example.user 的新 Linux 用户，并将其映射到 SELinux staff_u 用户：
+1.输入以下命令创建一个名为 example.user 的新 Linux 用户，并将其映射到 SELinux staff_u 用户：
 
 ```
 [root@opencloudos ~]# useradd -Z staff_u example.user
 ```
-2. 为 Linux example.user 用户分配密码：
+2.为 Linux example.user 用户分配密码：
 
 ```
 [root@opencloudos ~]#passwd example.user
 ```
 以 Linux example.user 用户身份登录。用户的 shell 使用 staff_u 上下文启动。
-3. 当以 example.user 用户身份登录时，检查 Linux 用户的上下文
+3.当以 example.user 用户身份登录时，检查 Linux 用户的上下文
 
 ```
 [root@opencloudos ~]#id -Z
@@ -1442,26 +1412,25 @@ Roles: 14
 
 #### 9.3.4 限制常规用户
 管理员可以将系统中的所有常规用户映射到user_u SELinux用户, 流程如下：
-1. 显示 SELinux 登录记录列表。这个列表显示了 Linux 用户与 SELinux 用户的映射
+1.显示 SELinux 登录记录列表。这个列表显示了 Linux 用户与 SELinux 用户的映射
 
 ```
 [root@opencloudos ~]# semanage login -l
 ```
-2. 将 __default__ 用户（代表所有没有显式映射的用户）映射到 user_u SELinux 用户：
+2.将__default__ 用户（代表所有没有显式映射的用户）映射到 user_u SELinux 用户：
 
 ```
 [root@opencloudos ~]# semanage login -m -s user_u -r s0 __default__
 ```
 
-#### 9.3.5 通过映射到 sysadm_u 来限制管理员
+#### 9.3.5 通过映射到sysadm_u来限制管理员
 可以通过将用户直接映射到 sysadm_u SELinux 用户来限制具有管理特权的用户。用户登录时，会话将在 sysadm_u:sysadm_r:sysadm_t SELinux 上下文中运行。默认情况下，opencloudos中的所有 Linux 用户（包括管理特权的用户）都映射到未限制的 SELinux 用户 unconfined_u。系统管理员可以通过将用户分配给受 SELinux 限制的用户来提高系统安全性。流程如下所示：
-1. 允许 sysadm_u 用户使用 SSH 连接到系统：
+1.允许 sysadm_u 用户使用 SSH 连接到系统：
 
 ```
 [root@opencloudos ~]# setsebool -P ssh_sysadm_login on
 ```
-
-2. 创建新用户，将用户添加到 xxx 用户组中，并将该用户 映射到 sysadm_u SELinux 用户：
+2.创建新用户，将用户添加到 xxx 用户组中，并将该用户 映射到 sysadm_u SELinux 用户：
 
 ```
 [root@opencloudos ~]# adduser -G wheel -Z sysadm_u example.user
@@ -1470,28 +1439,28 @@ Roles: 14
 ### 9.4 故障排除与SELinux相关问题
 如果计划在之前禁用 SELinux 的系统中启用 SELinux，或以非标准配置运行服务，管理员可能需要排除 SELinux 可能阻断的问题。
 #### 9.4.1 识别 SELinux 拒绝
-1. 当使用场景被 SELinux 阻止时，/var/log/audit/audit.log 文件是第一个检查拒绝的。更多信息要查询 Audit 日志，请使用 ausearch 工具。因为 SELinux 决策（如允许或禁止访问）已被缓存，且此缓存被称为 Access Vector Cache(AVC)，所以在消息类型参数中使用 AVC 和 USER_AVC 值，例如：
+1.当使用场景被 SELinux 阻止时，/var/log/audit/audit.log 文件是第一个检查拒绝的。更多信息要查询 Audit 日志，请使用 ausearch 工具。因为 SELinux 决策（如允许或禁止访问）已被缓存，且此缓存被称为 Access Vector Cache(AVC)，所以在消息类型参数中使用 AVC 和 USER_AVC 值，例如：
 
 ```
 [root@opencloudos ~]# ausearch -m AVC,USER_AVC,SELINUX_ERR,USER_SELINUX_ERR -ts recent
 ```
 如果没有匹配项，请检查 audit 守护进程是否正在运行。如果没有，在启动 auditd 后重复拒绝的场景，然后再次检查审计日志。
-2. 如果 auditd 正在运行，但 ausearch 输出中没有匹配项，请检查 systemd Journal 提供的信息：
+2.如果 auditd 正在运行，但 ausearch 输出中没有匹配项，请检查 systemd Journal 提供的信息：
 
 ```
 [root@opencloudos ~]# journalctl -t setroubleshoot
 ```
-3. 如果 SELinux 已启动且 Audit 守护进程没有在系统中运行，则在 dmesg 命令输出中搜索某些 SELinux 信息：
+3.如果 SELinux 已启动且 Audit 守护进程没有在系统中运行，则在 dmesg 命令输出中搜索某些 SELinux 信息：
 
 ```
 [root@opencloudos ~]# dmesg | grep -i -e type=1300 -e type=1400
 ```
-4. 即使进行了前面的三个检查后，仍可能找不到任何结果。在这种情况下，因为 dontaudit 规则，AVC 拒绝可以被静默。临时禁用 dontaudit 规则，允许记录所有拒绝信息：
+4.即使进行了前面的三个检查后，仍可能找不到任何结果。在这种情况下，因为 dontaudit 规则，AVC 拒绝可以被静默。临时禁用 dontaudit 规则，允许记录所有拒绝信息：
 
 ```
 [root@opencloudos ~]# semodule -DB
 ```
-5. 如果已经应用了前面所有四个步骤，这个问题仍然无法识别，请考虑 SELinux 是否真正阻止了当前场景：
+5.如果已经应用了前面所有四个步骤，这个问题仍然无法识别，请考虑 SELinux 是否真正阻止了当前场景：
 
 - 切换到 permissive 模式：
 
@@ -1500,18 +1469,18 @@ Roles: 14
 ```
 #### 9.4.2 分析 SELinux 拒绝信息
 在确认 SELinux 会阻止当前场景后，可能需要在进行修复前分析根本原因。
-1. 安装相关工具
+1.安装相关工具
 
 ```
 [root@opencloudos ~]#yum install policycoreutils-python-utils
 [root@opencloudos ~]#yum install setroubleshoot-server
 ```
-2. 使用 sealert 命令列出有关日志拒绝的详情
+2.使用 sealert 命令列出有关日志拒绝的详情
 
 ```
 [root@opencloudos ~]#sealert -l "*"
 ```
-3. 如果上一步中的输出没有包含清晰的建议
+3.如果上一步中的输出没有包含清晰的建议
 
 启用全路径审核查看访问对象的完整路径，并让其他 Linux Audit 事件字段可见
 ```
@@ -1521,7 +1490,7 @@ Roles: 14
 ```
 # rm -f /var/lib/setroubleshoot/setroubleshoot.xml
 ```
-4. 禁用全路径审核
+4.禁用全路径审核
 
 ```
 [root@opencloudos ~]# auditctl -W /etc/shadow -p w -k shadow-write
@@ -1539,13 +1508,13 @@ SELinux 标签存储为文件系统的扩展属性，如 ext2。可以使用 get
 ```
 
 以下示例步骤提供了通过 SELinux 保护简单守护进程的步骤。将守护进程替换为自定义应用程序，并根据应用程序和安全策略的要求修改示例中的规则。步骤如下：
-1. 安装工具包
+1.安装工具包
 
 ```
 #[root@opencloudos ~]yum install policycoreutils-devel
 ```
 
-2. 在本例中，准备一个简单的守护进程，它会打开 /var/log/messages 文件进行写入：
+2.在本例中，准备一个简单的守护进程，它会打开 /var/log/messages 文件进行写入：
 
 ```
 [root@opencloudos ~]#vim mydaemon.c
@@ -1563,13 +1532,13 @@ f = fopen("/var/log/messages","w");
 }
 ```
 
-3. 编译文件
+3.编译文件
 
 ```
 [root@opencloudos ~]#gcc -o mydaemon mydaemon.c
 ```
 
-4. 创建systemd单元文件：
+4.创建systemd单元文件：
 
 ```
 [root@opencloudos ~]#vim mydaemon.service
@@ -1583,8 +1552,7 @@ ExecStart=/usr/local/bin/mydaemon
 WantedBy=multi-user.target
 ```
 
-5. 安装并启动守护进程
-
+5.安装并启动守护进程
 ```
 [root@opencloudos ~]# cp mydaemon /usr/local/bin/
 [root@opencloudos ~]# cp mydaemon.service /usr/lib/systemd/system
@@ -1607,28 +1575,28 @@ May 23 16:56:01 localhost.localdomain systemd[1]: Started Simple testing daemon.
 ```
 [root@opencloudos ~]#ps -efZ | grep mydaemon
 ```
-6. 为守护进程生成自定义策略：
+6.为守护进程生成自定义策略：
 
 ```
 [root@opencloudos ~]#sepolicy generate --init /usr/local/bin/mydaemon
 ```
 
-7. 使用上一命令创建的设置脚本使用新策略模块重建系统策略：
+7.使用上一命令创建的设置脚本使用新策略模块重建系统策略：
 
 ```
 [root@opencloudos ~]# ./mydaemon.sh
 ```
-8. 重启守护进程，检查它现在被 SELinux 限制
+8.重启守护进程，检查它现在被 SELinux 限制
 
 ```
 [root@opencloudos ~]# systemctl restart mydaemon
 ```
-9. 由于守护进程现在被 SELinux 限制，SELinux 也会阻止它访问 /var/log/messages。显示对应的拒绝信息：
+9.由于守护进程现在被 SELinux 限制，SELinux 也会阻止它访问 /var/log/messages。显示对应的拒绝信息：
 
 ```
 [root@opencloudos ~]# ausearch -m AVC -ts recent
 ```
-10. 重新安装策略
+10.重新安装策略
 
 ```
 [root@opencloudos ~]#./mydaemon.sh
