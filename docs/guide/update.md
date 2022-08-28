@@ -1,5 +1,5 @@
 
-# <center> OpencloudOS-内核更新</center>
+# <center> OpenCloudOS-内核更新</center>
 
 
 ## 1. 内核升级与配置
@@ -62,24 +62,24 @@ kernel="/boot/vmlinuz-0-rescue-990d0c1266464c1a9aeb3740e9b64217"
 ```
 ### 1.4 指定默认启动内核
 
-1. 查看当前系统中已安装的内核
+1.查看当前系统中已安装的内核
 ```
 [root@VM-6-140-opencloudos ~]# grubby --info=ALL | grep ^kernel
 kernel="/boot/vmlinuz-5.4.119-19.0010.ocrelease.6"
 kernel="/boot/vmlinuz-0-rescue-990d0c1266464c1a9aeb3740e9b64217"
 ```
-2. 选定需要默认启动的内核并将其设置为默认启动
+2.选定需要默认启动的内核并将其设置为默认启动
 ```
 #grubby --set-default = $kernel_path
 如：
 [root@VM-6-140-opencloudos ~]# grubby --set-default=/boot/vmlinuz-5.4.119-19.0010.ocrelease.6
 The default is /boot/loader/entries/990d0c1266464c1a9aeb3740e9b64217-5.4.119-19.0010.ocrelease.6.conf with index 0 and kernel /boot/vmlinuz-5.4.119-19.0010.ocrelease.6
 ```
-3. 重启机器切换内核
+3.重启机器切换内核
 ```
 [root@VM-6-140-opencloudos /]#reboot
 ```
-4. 重启后查看内核是否已变更
+4.重启后查看内核是否已变更
 ```
 [root@VM-6-140-opencloudos /]#uname -r
 ```
