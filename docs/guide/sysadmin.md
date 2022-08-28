@@ -506,7 +506,7 @@ cgroup v2 主要支持以下控制器：
 
 - namespace(7)以及cgroups_namespaces(7) manual pages
 
-### 5ß.4 系统资源限制实例
+### 5.4 系统资源限制实例
 
 某些情况下，应用程序会消耗大量的CPU时间，这可能会对环境的整体稳定性产生负面影响。使用/sys/fs/虚拟文件系统使用cgroups-v1为应用程序配置CPU限制。本节通过一个实例演示cgroup v1进行资源限制的流程。
 
