@@ -1,4 +1,4 @@
-# <center> OpencloudOS基础配置
+# <center> OpenCloudOS-基础配置
 
 ## 第一章 初始环境设置
 
@@ -10,8 +10,6 @@
 ### 1.1 配置时间与日期
 
 精确的时间在生产系统中至关重要。opencloudos下，通过NTP协议保证时间的准确性。NTP协议是通过用户态一个守护进程实现的，其会更新内核中的系统时钟，而系统时钟可以采用不同的时钟源去维护时间。
-
-
 ```
 [root@VM-6-130-opencloudos /]# date
 
@@ -81,11 +79,11 @@ X11 Layout: us
 
 ### 2.1 静态网络配置
 
-1. 确定配置网卡名字
+1.确定配置网卡名字
 
 /proc/net/dev 文件可查看网络设备
 
-2. 为eth1配置ip
+2.为eth1配置ip
 
 这里直接采用传统ifcfg配置方式，我们默认仅仅配置ip，不配置dns和gateway
 
@@ -109,22 +107,21 @@ IPADDR=172.27.16.39 # 网卡ip地址
 NETMASK=255.255.255.0 # 子网掩码
 ```
 
-3) 重启网络
+3.重启网络
 ```
 [root@OpencloudOS~]#systemctl restart NetworkManager.service
 ```
 
 ### 2.2 DHCP网络配置
 
-1. 确定配置网卡名字
+1.确定配置网卡名字
 
 /proc/net/dev 文件可查看网络设备
 
-2. 为eth1配置ip
+2.为eth1配置ip
 
 这里直接采用传统ifcfg配置方式，方式为dhcp
 ```
-
 BOOTPROTO=dhcp
 
 DEVICE=eth1
@@ -138,7 +135,7 @@ TYPE=Ethernet
 USERCTL=no
 ```
 
-3. 重启网络
+3.重启网络
 
 ```
 [root@OpencloudOS~]#systemctl restart NetworkManager.service
@@ -165,11 +162,11 @@ nameserver 183.60.82.98
 
 ### 3.1 服务启动设置
 
-1. 服务自动启动
+1.服务自动启动
 ```
 [root@OpencloudOS~]#systemctl enable service\name
 ```
-2. 服务禁用自动启动
+2.服务禁用自动启动
 ```
 [root@OpencloudOS~]#systemctl disable service\name
 ```
@@ -182,15 +179,15 @@ nameserver 183.60.82.98
 ```
 ### 3.3 服务日常操作
 
-1. 启动服务
+1.启动服务
 ```
 [root@OpencloudOS~]#systemctl start service_name
 ```
-2. 重启服务
+2.重启服务
 ```
 [root@OpencloudOS~]#systemctl restart service_name
 ```
-3. 查看服务状态
+3.查看服务状态
 ```
 [root@OpencloudOS~]#systemctl status service_name
 ```
@@ -240,17 +237,17 @@ uid=0(root) gid=0(root) groups=0(root)
 
 kdump是在系统崩溃、死锁或死机时用来转储内存运行参数的一个工具和服务，是一种新的crash dump捕获机制，用来捕获kernel crash（内核崩溃）的时候产生的crash dump。
 
-1. 安装kexec-tools
+1.安装kexec-tools
 ```
 [root@OpencloudOS~]#yum install kexec-tools
 ```
-2. 更新kexec-tools
+2.更新kexec-tools
 ```
 [root@OpencloudOS~]#yum update kexec-tools
 ```
 ### 5.2 配置捕获内核大小
 
-1. 编辑配置文件"/etc/default/grub",找到字段"crashkernel=",并根据以下参数配置
+1.编辑配置文件"/etc/default/grub",找到字段"crashkernel=",并根据以下参数配置
 ```
 crashkernel=1800M-64G:256M，64G-128G:512M,128G-:768M
 ```
@@ -258,7 +255,7 @@ crashkernel=1800M-64G:256M，64G-128G:512M,128G-:768M
 
 *需要注意的是，首次配置，需要重启预留内存，才能正常使用kdump
 
-2. 更新grub2配置文件
+2.更新grub2配置文件
 ```
 [root@OpencloudOS~]#grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
@@ -398,10 +395,10 @@ systemd的语法如下所示：
 
 每一个 Unit 都需要有一个配置文件用于告知 systemd 对于服务的管理方式
 
-1. 配置文件存放于 /usr/lib/systemd/system/，设置开机启动后会在 /etc/systemd/system 目录建立软链接文件
-2. 每个Unit的配置文件配置默认后缀名为.service
-3. 在 /usr/lib/systemd/system/ 目录中分为 system 和 user 两个目录，一般将开机不登陆就能运行的程序存在系统服务里，也就是 /usr/lib/systemd/system
-4. 配置文件使用方括号分成了多个部分，并且区分大小写
+1.配置文件存放于 /usr/lib/systemd/system/，设置开机启动后会在 /etc/systemd/system 目录建立软链接文件
+2.每个Unit的配置文件配置默认后缀名为.service
+3.在 /usr/lib/systemd/system/ 目录中分为 system 和 user 两个目录，一般将开机不登陆就能运行的程序存在系统服务里，也就是 /usr/lib/systemd/system
+4.配置文件使用方括号分成了多个部分，并且区分大小写
 <br />
 
 ## 第八章 chrony机制
@@ -410,18 +407,18 @@ chrony 是网络时间协议 (NTP) 的通用实现。它可以将系统时钟与
 
 ### 8.1 安装配置
 
-1. 安装chrony
+1.安装chrony
 ```
 [root@VM-6-140-opencloudos /]#yum install chrony
 ```
-2. 启动chrony
+2.启动chrony
 ```
 [root@VM-6-140-opencloudos /]#systemctl start chronyd
 
 [root@VM-6-140-opencloudos /]#systemctl enable chronyd
 ```
 
-3. 查看chrony状态
+3.查看chrony状态
 
 ```
 [root@VM-6-140-opencloudos /]#systemctl status chronyd
@@ -429,17 +426,17 @@ chrony 是网络时间协议 (NTP) 的通用实现。它可以将系统时钟与
 
 ### 8.2 添加时间源
 
-1. 打开配置文件
+1.打开配置文件
 ```
 [root@VM-6-140-opencloudos /]#vim /etc/chrony.conf
 ```
-2. 添加时间源参数
+2.添加时间源参数
 
 在/etc/chrony.conf配置文件中添加以下参数：
 ```
 [root@VM-6-140-opencloudos /]#server time.tencentyun.com iburst
 ```
-3. 查看时间同步源状态
+3.查看时间同步源状态
 ```
 [root@VM-6-130-opencloudos ~]# chronyc sources -v
 
@@ -499,7 +496,7 @@ bond具有7种模式，如下表所示
 
 ### 9.2 配置bond
 
-1. 选择2块需要绑定的网卡进行配置。例：eth0/eth1，则eth0在/etc/sysconfig/network-scripts/目录下的配置文件ifcfg-eth0的参数表示如下：
+1.选择2块需要绑定的网卡进行配置。例：eth0/eth1，则eth0在/etc/sysconfig/network-scripts/目录下的配置文件ifcfg-eth0的参数表示如下：
 ```
 [root@VM-6-130-opencloudos ~]# /etc/sysconfig/network-scripts/ifcfg-eth0
 DEVICE=eth0 #网口名：eth0
@@ -517,7 +514,7 @@ MASTER=bond\_test #指定虚拟网口的名字
 SLAVE=yes #备用（从设备）
 ```
 
-2. eth1在/etc/sysconfig/network-scripts/目录下的配置文件ifcfg-eth1的参数表示如下：
+2.eth1在/etc/sysconfig/network-scripts/目录下的配置文件ifcfg-eth1的参数表示如下：
 ```
 [root@VM-6-130-opencloudos ~]# /etc/sysconfig/network-scripts/ifcfg-eth1
 DEVICE=eth1 #网口名：eth1
@@ -535,7 +532,7 @@ MASTER=bond\_test #指定虚拟网口的名字
 SLAVE=yes #备用（从设备）
 ```
 
-3. 在/etc/sysconfig/network-scripts/ifcfg-bond\_test目录下配置bond\_test网卡
+3.在/etc/sysconfig/network-scripts/ifcfg-bond\_test目录下配置bond\_test网卡
 ```
 [root@VM-6-130-opencloudos ~]# /etc/sysconfig/network-scripts/ifcfg-bond_test
 
@@ -564,12 +561,12 @@ BONDING\_OPTS='mode=4 miimon=100 lacp\_rate=fast xmit\_hash\_policy=1'
 
 其中miimon表示链路监测：miimon=100表示系统每100ms监测一次链路状态，如果有一条线路不通就转入另一条线路
 
-4. 配置bonding
+4.配置bonding
 ```
 [root@VM-6-140-opencloudos /]#vim /etc/modprobe.d/dist.conf
 alias bond\_test bonding
 ```
-5. 查看当前使用网口
+5.查看当前使用网口
 ```
 [root@VM-6-140-opencloudos /]#cat /proc/net/bonding/bond_test
 ```
@@ -590,7 +587,7 @@ alias bond\_test bonding
 
 ### 10.2 部署lvm
 
-1. 添加物理磁盘，创建物理卷
+1.添加物理磁盘，创建物理卷
 ```
 
 [root@VM-16-5-opencloudos ~]# lsblk | grep "vd[bcd]"
@@ -601,10 +598,9 @@ vdc 253:16 0 50G 0 disk
 
 vdd 253:32 0 50G 0 disk
 ```
-2. 将磁盘加入pv
+2.将磁盘加入pv
 
 ```
-
 [root@VM-16-5-opencloudos ~]# pvcreate /dev/vdb
 
 Physical volume "/dev/sdb" successfully created.//检查pv创建情况
@@ -616,7 +612,7 @@ PV VG Fmt Attr PSize PFree
 /dev/vdb lvm2 --- 50.00g 50.00g
 ```
 
-3. 创建名为datavg的卷组
+3.创建名为datavg的卷组
 
 ```
 
@@ -631,7 +627,7 @@ VG #PV #LV #SN Attr VSize VFree
 datavg 1 0 0 wz--n- \<50.00g \<50.00g
 ```
 
-4. 创建逻辑卷，分配名称，以及大小，指定卷组
+4.创建逻辑卷，分配名称，以及大小，指定卷组
 
 ```
 [root@VM-16-5-opencloudos ~]# lvcreate -L 100M -n lv1 datavg
@@ -645,7 +641,7 @@ Logical volume "lv1" created.
 ACTIVE '/dev/datavg/lv1' [100.00 MiB] inherit
 ```
 
-5. 格式化文件系统
+5.格式化文件系统
 
 ```
 [root@VM-16-5-opencloudos ~]# mkfs.ext4 /dev/datavg/lv1
@@ -659,7 +655,7 @@ Creating journal (4096 blocks): done
 Writing superblocks and filesystem accounting information: done
 ```
 
-6. 挂载并使用
+6.挂载并使用
 
 ```
 [root@VM-16-5-opencloudos ~]#mkdir /lv1
@@ -677,11 +673,11 @@ Filesystem Size Used Avail Use% Mounted on
 
 - 扩展卷组，将新磁盘加入卷组
 
-1. 新磁盘加入pv
+1.新磁盘加入pv
 ```
 [root@VM-6-140-opencloudos /]#pvcreate /dev/vdc
 ```
-2. 使用vgextend扩展
+2.使用vgextend扩展
 ```
 [root@VM-6-140-opencloudos /]#vgextend datavg /dev/vdc
 ```
@@ -694,7 +690,7 @@ Filesystem Size Used Avail Use% Mounted on
 
 只有同一卷组的磁盘才能够进行在线迁移
 
-1. 检查当前逻辑卷VG中PV使用情况
+1.检查当前逻辑卷VG中PV使用情况
 ```
 [root@VM-16-5-opencloudos ~]#pvs
 
@@ -705,13 +701,13 @@ PV VG Fmt Attr PSize PFree
 /dev/vdc vg1 lvm2 a -- 2.00g 2.00g
 ```
 
-2. pvmove在线将/dev/vdb数据迁移至/dev/vdc
+2.pvmove在线将/dev/vdb数据迁移至/dev/vdc
 
 ```
 [root@VM-16-5-opencloudos ~]#pvmove /dev/vdb /dev/vdc
 ```
 
-3) 查看是否迁移成功
+3.查看是否迁移成功
 ```
 [root@VM-16-5-opencloudos ~]#pvs
 
@@ -731,11 +727,11 @@ PV VG Fmt Attr PSize PFree
 
 逻辑卷的扩展取决于卷组中的容量，逻辑卷扩展的容量不能超过卷组的容量
 
-1. 为逻辑卷增加1G容量
+1.为逻辑卷增加1G容量
 ````
 [root@VM-16-5-opencloudos ~]#lvextend -L +1G /dev/datavg/lv1 (注意：1G与+1G意义不同)
 ````
-2. 扩展文件系统
+2.扩展文件系统
 
 xfs\_growfs /dev/datavg/lv1 //xfs文件系统扩容
 
@@ -745,7 +741,7 @@ resize2fs /dev/datavg/lv1//ext文件系统扩容
 
 以裁剪逻辑卷512M容量为例，操作步骤如下：
 
-1. 首先创建一个1G的逻辑卷作为被裁剪的对象
+1.首先创建一个1G的逻辑卷作为被裁剪的对象
 ```
 [root@VM-16-5-opencloudos ~]#lvcreate -n rm_test -L 1G datavg //datavg为卷组
 
@@ -755,38 +751,37 @@ resize2fs /dev/datavg/lv1//ext文件系统扩容
 
 [root@VM-16-5-opencloudos ~]#mount /dev/datavg/rm_test /rm_test/
 ```
-2. 如果已经挂载，必须先卸载
+2.如果已经挂载，必须先卸载
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/datavg/rm_test
 ```
-3. 裁剪容量，必须先检测文件系统
+3.裁剪容量，必须先检测文件系统
 ```
 [root@VM-16-5-opencloudos ~]#e2fsck -f /dev/datavg/rm_test
 
 [root@VM-16-5-opencloudos ~]#resize2fs /dev/datavg/rm_test 512M
 ```
-4. 调整完毕后，裁剪逻辑卷容量
+4.调整完毕后，裁剪逻辑卷容量
 ```
 [root@VM-16-5-opencloudos ~]#lvreduce -L 512M /dev/datavg/rm_test
 ```
-5. 挂载测试，若能成功挂载，则文件系统未被损坏
+5.挂载测试，若能成功挂载，则文件系统未被损坏
 ```
 [root@VM-16-5-opencloudos ~]#mount /dev/datavg/rm_test
 ```
 - 删除逻辑卷
 
-1. 确保被删除的逻辑卷未使用
-#umount /dev/卷组名/逻辑卷名
+1.确保被删除的逻辑卷未使用
+
 ```
-[root@VM-16-5-opencloudos ~]#umount /dev/datavg/rm_test
+[root@VM-16-5-opencloudos ~]#umount /dev/datavg/rm_test # umount /dev/卷组名/逻辑卷名
 ```
-2. 删除逻辑卷
+2.删除逻辑卷
 
 - lvremove <volume_group>/<logical_volume>
 ```
 [root@VM-16-5-opencloudos ~]#lvremove /dev/datavg/rm_test
 ```
-#
 
 ## 第十一章 软RAID管理
 
@@ -874,7 +869,7 @@ Linux内核中有一个md(multiple devices)模块在底层管理RAID设备，它
 
 本文档将磁盘/dev/vdb/分四个分区作为四个磁盘搭建软RAID10；
 
-1. 创建raid10
+1.创建raid10
 ```
 [root@VM-16-5-opencloudos ~]#mdadm -C -v /dev/md10 -l 10 -n 4 /dev/vdb[1-4]
 
@@ -902,17 +897,17 @@ mdadm: array /dev/md10 started.
 -n 指定设备数量
 
 
-2. 查看保存配置
+2.查看保存配置
 ```
 [root@VM-16-5-opencloudos ~]#mdadm -D /dev/md10
 
 [root@VM-16-5-opencloudos ~]#mdadm -Dsv \> /etc/mdadm.conf
 ```
-3. 查看阵列信息
+3.查看阵列信息
 ```
 [root@VM-16-5-opencloudos ~]#cat /proc/mdstat
 ```
-4. 将md10作为一个整体磁盘，格式化并挂载
+4.将md10作为一个整体磁盘，格式化并挂载
 ```
 [root@VM-16-5-opencloudos ~]#mkfs.ext4 /dev/md10
 
@@ -1018,17 +1013,16 @@ Command (m for help): wq //保存修改并退出
 
 fdisk 命令用于创建和维护磁盘分区，而且fdisk只能对小于2TB的硬盘进行分区，对于大于2TB的硬盘，需要使用parted工具分区，使用fdisk创建分区，只能创建MBR分区方案。
 
-1. 进入parted交互模式
+1.进入parted交互模式
 
 ```
-
 [root@VM-6-130-opencloudos /]# parted
 
 (parted) select /dev/vdb //选择磁盘/dev/vdb
 
 (parted) print free //查看磁盘信息
 ```
-2. 创建一个新分区
+2.创建一个新分区
 ```
 (parted) mkpart
 
@@ -1043,7 +1037,7 @@ End? 5G
 (parted)quit
 ```
 
-3. 将磁盘格式化为GPT磁盘
+3.将磁盘格式化为GPT磁盘
 ```
 (parted) mklabel gpt
 ```
@@ -1053,11 +1047,11 @@ parted可以调整分区的大小，注意，parted 调整已经挂载使用的�
 
 以调整/dev/vdb1分区的大小为例
 
-1. 卸载该分区
+1.卸载该分区
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/vdb1
 ```
-2. 进入parted交互模式
+2.进入parted交互模式
 
 执行以下命令
 ```
@@ -1073,11 +1067,11 @@ End? 10G
 ```
 ### 12.7 删除GPT分区
 
-1. 卸载该分区
+1.卸载该分区
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/vdb1
 ```
-2. 进入parted交互模式
+2.进入parted交互模式
 
 执行以下命令
 ```
