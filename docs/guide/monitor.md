@@ -1,4 +1,4 @@
-# <center />opencloudostOS-监控和管理系统状态和性能
+# <center />OpenCloudosOS-监控和管理系统状态和性能
 
 ## 第一章 TUNED入门
 
@@ -17,13 +17,13 @@ TuneD可以一次选择更多配置文件,TuneD 将在加载期间尝试合并�
 
 例：虚拟访客中的低功耗：
 
-1. 启动tuned
+1.启动tuned
 ```
 [root@opencloudos ~]# service tuned start
 Redirecting to /bin/systemctl start tuned.service
 ```
 
-2. 优化系统以在虚拟机中运行以获得最佳性能，并调优以实现低功耗
+2.优化系统以在虚拟机中运行以获得最佳性能，并调优以实现低功耗
 ```
 [root@opencloudos ~]# tuned-adm profile virtual-guest powersave
 ```
@@ -56,7 +56,7 @@ Redirecting to /bin/systemctl start tuned.service
 
 前提：用root身份使用 yum install tuned-profiles-cpu-partitioning 命令安装cpu-partitioning TuneD配置文件。
 
-1. 编辑/etc/tuned/cpu-partitioning-variables.conf 文件并添加以下信息
+1.编辑/etc/tuned/cpu-partitioning-variables.conf 文件并添加以下信息
 
 ```
 Isolated CPUs with the kernel’s scheduler load balancing:
@@ -65,38 +65,38 @@ Isolated CPUs without the kernel’s scheduler load balancing:
 no_balance_cores=2,3
 ```
 
-2. 设置cpu-partitioning TuneD 配置文件
+2.设置cpu-partitioning TuneD 配置文件
 
 ```
 [root@opencloudos ~]# tuned-adm profile cpu-partitioning
 ```
 
-3. 重启
+3.重启
 ```
 [root@opencloudos ~]# reboot
 ```
 
 ### 1.5安装和启动Tuned
 
-1. 安装tuned包
+1.安装tuned包
 
 ```
 [root@opencloudos ~]# yum install tuned
 ```
 
-2. 启动并启用tuned服务
+2.启动并启用tuned服务
 
 ```
 [root@opencloudos ~]# systemctl enable --now tuned
 ```
 
-3. （可选）为实时系统安装 TuneD 配置文件：
+3.（可选）为实时系统安装 TuneD 配置文件：
 
 ```
 [root@opencloudos ~]# yum install tuned-profiles-realtime tuned-profiles-nfv
 ```
 
-4. 验证 TuneD 配置文件是否处于活动状态并已应用：
+4.验证 TuneD 配置文件是否处于活动状态并已应用：
 
 ```
 [root@opencloudos ~]# tuned-adm active
@@ -114,7 +114,7 @@ See TuneD log file ('/var/log/tuned/tuned.log') for details.
 
 ### 1.6列出可用的调整配置文件
 
-1. 列出系统上所有可用的 TuneD 配置文件
+1.列出系统上所有可用的 TuneD 配置文件
 
 ```
 [root@opencloudos ~]# tuned-adm list
@@ -142,7 +142,7 @@ Available profiles:
 Current active profile: virtual-guest
 ```
 
-2. 仅显示当前活动的配置文件
+2.仅显示当前活动的配置文件
 
 ```
 [root@opencloudos ~]# tuned-adm active
@@ -154,7 +154,7 @@ Current active profile: virtual-guest
 
 此过程会在你的系统上激活选定的 TuneD 配置文件
 
-1. 你可以让TuneD为你的系统推荐最合适的配置文件：
+1.你可以让TuneD为你的系统推荐最合适的配置文件：
 
 ```
 [root@opencloudos ~]# tuned-adm recommend
@@ -162,7 +162,7 @@ Current active profile: virtual-guest
 virtual-guest
 ```
 
-2. 激活配置文件：
+2.激活配置文件：
 
 ```
 [root@opencloudos ~]# tuned-adm profile selected-profile
@@ -173,13 +173,13 @@ virtual-guest
 ```
 [root@opencloudos ~]# tuned-adm profile profile1 profile2
 ```
-3. 重启系统：
+3.重启系统：
 
 ```
 [root@opencloudos ~]# reboot
 ```
 
-4. 验证TuneD 配置文件是否处于活动状态并已应用：
+4.验证TuneD 配置文件是否处于活动状态并已应用：
 ```
 [root@opencloudos ~]# tuned-adm verify
 Verfication succeeded, current system settings match the preset profile.
@@ -188,13 +188,13 @@ See TuneD log file ('/var/log/tuned/tuned.log') for details.
 ```
 ### 1.8禁用TUNED
 
-1.  暂时禁用所有tuned：
+1.暂时禁用所有tuned：
 
 ```
 [root@opencloudos ~]# tuned-adm off
 ```
 
-2. 永久停止和禁用tuned服务：
+2.永久停止和禁用tuned服务：
 ```
 [root@opencloudos ~]# systemctl disable --now tuned
 ```
@@ -202,7 +202,7 @@ See TuneD log file ('/var/log/tuned/tuned.log') for details.
 
 ### 2.1查看磁盘
 
-1. 查看磁盘信息，但不会显示未挂载的磁盘
+1.查看磁盘信息，但不会显示未挂载的磁盘
 ```
 [root@opencloudos ~]# df -h
 
@@ -222,7 +222,7 @@ tmpfs 169M 0 169M 0% /run/user/0
 ...
 ```
 
-2. 查看主机所有的磁盘列表
+2.查看主机所有的磁盘列表
 ```
 [root@opencloudos ~]# fdisk -lu
 
@@ -244,7 +244,7 @@ Device Boot Start End Sectors Size Id Type
 ...
 ```
 
-3. 查看指定目录磁盘使用情况
+3.查看指定目录磁盘使用情况
 
     在命令后直接放目录名：
 ```
@@ -254,18 +254,18 @@ Filesystem Size Used Avail Use% Mounted on
 
 devtmpfs 830M 0 830M 0% /dev
 ```
-4. df命令介绍
+4.df命令介绍
 
--   \-a：列出所有的文件系统，包括系统特有的/proc等文件系统
--   \-k：以KB的容量显示各文件系统
--   \-m：以MB的容量显示各文件系统
--   \-h：以人们较易阅读的GB,MB,KB等格式自行显示
--   \-H：以M=1000K替代M=1024K的进位方式
--   \-T：显示文件系统类型
--   \-i：不用硬盘容量，而以inode的数量来显示
--   \-l：只显示本机的文件系统
+- \-a：列出所有的文件系统，包括系统特有的/proc等文件系统
+- \-k：以KB的容量显示各文件系统
+- \-m：以MB的容量显示各文件系统
+- \-h：以人们较易阅读的GB,MB,KB等格式自行显示
+- \-H：以M=1000K替代M=1024K的进位方式
+- \-T：显示文件系统类型
+- \-i：不用硬盘容量，而以inode的数量来显示
+- \-l：只显示本机的文件系统
 
-5. du命令介绍
+5.du命令介绍
 
     作用：使用du命令查看指定目录的使用情况。
 
@@ -278,10 +278,10 @@ devtmpfs 830M 0 830M 0% /dev
 新添加硬盘后，我们如果想使用这块硬盘，必须通过分区-\>格式化-\>挂载后才可以使用。
 
 分区：一共有两种分区方式
--   采用MBR的方式进行分区，即fdisk命令
--   采用GPT的方式进行分区，即gdisk命令
+- 采用MBR的方式进行分区，即fdisk命令
+- 采用GPT的方式进行分区，即gdisk命令
   
-1. 格式化磁盘：
+1.格式化磁盘：
 
 ```
 [root@opencloudos ~]# mkfs
@@ -299,7 +299,7 @@ devtmpfs 830M 0 830M 0% /dev
 [root@opencloudos ~]# mkfs /dev/sdb2 2G
 ```
 
-2.  挂载：
+2.挂载：
     建立设备分区和系统目录的映射关系。
 
 ```
@@ -308,40 +308,36 @@ devtmpfs 830M 0 830M 0% /dev
 
 ### 2.3删除磁盘分区
 
-1.  查看硬盘信息，找到自己想要删除哪块硬盘上的分区。
+1.查看硬盘信息，找到自己想要删除哪块硬盘上的分区。
 ```
 [root@opencloudos ~]# fdisk -l
 ```
 
-2.  进入该磁盘分区
+2.进入该磁盘分区
 ```
 [root@opencloudos ~]# fdisk 设备名称
 ```
 
-3. 输入d表示删除分区，若有多个分区，则会需要选择分区号
+3.输入d表示删除分区，若有多个分区，则会需要选择分区号
 ```
     command(m for help): d
 ```
 
-4. 输入w保存退出
+4.输入w保存退出
 
 ### 2.4可用的磁盘调度程序
 
--   none
+- none
+  先入先出(FIFO)调度算法。它通过简单的最后一个缓存合并通用块层的请求。
 
-    先入先出(FIFO)调度算法。它通过简单的最后一个缓存合并通用块层的请求。
+- mq-deadline
+尝试从请求到达调度程序时起为请求提供保证的延迟。此调度程序适用于大多数用例，特别是写操作大部分异步的情况。
 
--   mq-deadline
+- bfq
+以桌面系统和互动任务为目标。此调度程序适合用于复制大型文件，在这种情况下，系统也不会变得无响应。
 
-    尝试从请求到达调度程序时起为请求提供保证的延迟。此调度程序适用于大多数用例，特别是写操作大部分异步的情况。
-
--   bfq
-
-    以桌面系统和互动任务为目标。此调度程序适合用于复制大型文件，在这种情况下，系统也不会变得无响应。
-
--   kyber
-
-    调度程序通过计算提交至块 I/O 层的每个 I/O 请求的延迟来调整自身以达到延迟目标。这个调度程序适合快速设备，如 NVMe、SSD 或其他低延迟设备。
+- kyber
+调度程序通过计算提交至块 I/O 层的每个 I/O 请求的延迟来调整自身以达到延迟目标。这个调度程序适合快速设备，如 NVMe、SSD 或其他低延迟设备。
 
 默认磁盘调度程序：
 
@@ -359,16 +355,16 @@ devtmpfs 830M 0 830M 0% /dev
 
 ### 2.6使用TuneD设置磁盘调度程序
 
-1.  查看哪个配置集当前处于活跃状态
+1.查看哪个配置集当前处于活跃状态
 ```
 [root@opencloudos ~]# tuned-adm active
 ```
 
-2.  创建保存 TuneD 配置集的新目录
+2.创建保存 TuneD 配置集的新目录
 ```
 [root@opencloudos ~]# mkdir /etc/tuned/my-profile
 ```
-3.  查找所选块设备系统唯一标识符：
+3.查找所选块设备系统唯一标识符：
 
 ```
 [root@opencloudos ~]# udevadm info --query=property --name=/dev/device \| grep -E '(WWN\|SERIAL)'
@@ -380,7 +376,7 @@ ID_SERIAL=QEMU_DVD-ROM_QM00002
 ID_SERIAL_SHORT=QM00002
 ```
 
-5.  创建 /etc/tuned/my-profile/tuned.conf 配置文件。在该文件中设置：
+4.创建 /etc/tuned/my-profile/tuned.conf 配置文件。在该文件中设置：
 
     为与 WWN 标识符匹配的设备设置所选磁盘调度程序：
 ```
@@ -391,12 +387,12 @@ devices_udev_regex=IDNAME=device system unique id
 elevator=selected-scheduler
 ```
 
-6.  启用您的配置集：
+5.启用您的配置集：
 ```
 [root@opencloudos ~]# tuned-adm profile my-profile
 ```
 
-7.  验证 TuneD 配置集是否活跃并应用：
+6.验证 TuneD 配置集是否活跃并应用：
 ```
 [root@opencloudos ~]# tuned-adm active
 
@@ -410,7 +406,7 @@ Verfication succeeded, current system settings match the preset profile.
 See TuneD log file ('/var/log/tuned/tuned.log') for details.
 ```
 
-8.  读取 /sys/block/设备/queue/scheduler文件的内容：
+7.读取 /sys/block/设备/queue/scheduler文件的内容：
 ```
 [root@opencloudos ~]# cat /sys/block/device/queue/scheduler
 mq-deadline kyber [bfq] none
@@ -418,7 +414,7 @@ mq-deadline kyber [bfq] none
 
 ### 2.7使用 udev 规则设置磁盘调度程序
 
-1.  查找块设备系统唯一标识符
+1.查找块设备系统唯一标识符
 ```
 [root@opencloudos ~]# udevadm info --name=/dev/sr0 \| grep -E '(WWN\|SERIAL)'
 
@@ -429,7 +425,7 @@ E: ID_SERIAL=QEMU_DVD-ROM_QM00002
 E: ID_SERIAL_SHORT=QM00002
 ```
 
-2. 配置udev 规则。使用以下内容创建 /etc/udev/rules.d/99-scheduler.rules文件：
+2.配置udev 规则。使用以下内容创建 /etc/udev/rules.d/99-scheduler.rules文件：
 
     注意：将 IDNAME 替换为要使用的标识符的名称（如 ID_WWN）
 
@@ -438,16 +434,16 @@ E: ID_SERIAL_SHORT=QM00002
 ACTION=="add\|change", SUBSYSTEM=="block", ENV{ID_SERIAL_SHORT}=="QM00002", ATTR{queue/scheduler}="bfq"
 ```
 
-3.  重新载入udev规则：
+3.重新载入udev规则：
 ```
 [root@opencloudos ~]# udevadm control --reload-rules
 ```
-4.  应用调度程序配置：
+4.应用调度程序配置：
 ```
 [root@opencloudos ~]# udevadm trigger --type=devices --action=change
 ```
 
-5.  验证活跃的调度程序：
+5.验证活跃的调度程序：
 ```
 [root@opencloudos ~]# cat /sys/block/device/queue/scheduler
 
@@ -459,13 +455,13 @@ mq-deadline kyber [bfq] none
 
 此流程为特定块设备设置给定磁盘调度程序。系统重启后该设置不会保留。
 
-1.  将所选调度程序的名称写入 /sys/block/设备/queue/scheduler文件：
+1.将所选调度程序的名称写入 /sys/block/设备/queue/scheduler文件：
 ```
 [root@opencloudos ~]# echo selected-scheduler \> /sys/block/device/queue/scheduler
 ```
 在文件名中，将 device 替换为块设备名称，如vda
 
-2.  验证调度程序是否在该设备中活跃：
+2.验证调度程序是否在该设备中活跃：
 ```
 [root@opencloudos ~]# cat /sys/block/device/queue/scheduler
 
@@ -477,7 +473,7 @@ mq-deadline kyber [bfq] none
 
 ### 3.1显示CPU的架构信息
 
-1.  收集CPU的架构信息，如 CPU、线程、内核、插槽和 NUMA 节点的数量：
+1.收集CPU的架构信息，如 CPU、线程、内核、插槽和 NUMA 节点的数量：
 ```
 [root@opencloudos ~]# lscpu
 
@@ -511,29 +507,29 @@ Model: 106
 
 ### 3.2查看CPU的使用率：
 
-1.  展示CPU的性能：
+1.展示CPU的性能：
 ```
 [root@opencloudos ~]# top
 
 %Cpu(s): 0.2 us, 0.2 sy, 0.0 ni, 99.7 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st
 ```
 
--   user（通常缩写为 us），代表用户态 CPU 时间。注意，它不包括下面的 nice 时间，但包括了 guest 时间。
--   nice（通常缩写为 ni），代表低优先级用户态 CPU 时间，也就是进程的 nice 值被调整为 1-19 之间时的 CPU 时间。这里注意，nice 可取值范围是 -20 到 19，数值越大，优先级反而越低。
--   system（通常缩写为 sy），代表内核态 CPU 时间。
--   idle（通常缩写为 id），代表空闲时间。注意，它不包括等待 I/O 的时间（iowait）。
--   iowait（通常缩写为 wa），代表等待 I/O 的 CPU 时间。
--   irq（通常缩写为 hi），代表处理硬中断的 CPU 时间。
--   softirq（通常缩写为 si），代表处理软中断的 CPU 时间。
--   steal（通常缩写为 st），代表当系统运行在虚拟机中的时候，被其他虚拟机占用的 CPU 时间。
--   guest（通常缩写为 guest），代表通过虚拟化运行其他操作系统的时间，也就是运行虚拟机的 CPU 时间。
--   guest_nice（通常缩写为 gnice），代表以低优先级运行虚拟机的时间。
+- user（通常缩写为 us），代表用户态 CPU 时间。注意，它不包括下面的 nice 时间，但包括了 guest 时间。
+- nice（通常缩写为 ni），代表低优先级用户态 CPU 时间，也就是进程的 nice 值被调整为 1-19 之间时的 CPU 时间。这里注意，nice 可取值范围是 -20 到 19，数值越大，优先级反而越低。
+- system（通常缩写为 sy），代表内核态 CPU 时间。
+- idle（通常缩写为 id），代表空闲时间。注意，它不包括等待 I/O 的时间（iowait）。
+- iowait（通常缩写为 wa），代表等待 I/O 的 CPU 时间。
+- irq（通常缩写为 hi），代表处理硬中断的 CPU 时间。
+- softirq（通常缩写为 si），代表处理软中断的 CPU 时间。
+- steal（通常缩写为 st），代表当系统运行在虚拟机中的时候，被其他虚拟机占用的 CPU 时间。
+- guest（通常缩写为 guest），代表通过虚拟化运行其他操作系统的时间，也就是运行虚拟机的 CPU 时间。
+- guest_nice（通常缩写为 gnice），代表以低优先级运行虚拟机的时间。
 
 CPU 使用率，就是除了空闲时间外的其他时间占总 CPU 时间的百分比
 
 公式：CPU 使用率 = 1 - 空闲时间 / 总 CPU 时间
 
-2.  查看CPU使用率：
+2.查看CPU使用率：
 
     安装sysstat工具：
 ```
@@ -587,7 +583,7 @@ perf top命令用于实时系统分析，其功能与 top 实用程序类似。�
 
 ### 3.4perf调查忙碌CPU
 
-1.  计数禁用 CPU 数量聚合的事件：
+1.计数禁用 CPU 数量聚合的事件：
 ```
 [root@opencloudos ~]# perf stat -a -A sleep seconds
 ```
@@ -597,7 +593,7 @@ perf top命令用于实时系统分析，其功能与 top 实用程序类似。�
 [root@opencloudos ~]# perf stat -a -A -e cycles sleep seconds
 ```
 
-2.  显示使用 perf 报告进行的 CPU 样本
+2.显示使用 perf 报告进行的 CPU 样本
 
     前提：当前目录中创建了 perf.data文件，该文件含有perf 记录。
 
@@ -616,7 +612,7 @@ perf top命令用于实时系统分析，其功能与 top 实用程序类似。�
 
 ### 3.6记录报告和监控特定CPU
 
-1.  在特定 CPU 中记录性能数据，生成 perf.data文件：
+1.在特定 CPU 中记录性能数据，生成 perf.data文件：
 
     使用以逗号分隔的 CPU 列表
 ```
@@ -627,7 +623,7 @@ perf top命令用于实时系统分析，其功能与 top 实用程序类似。�
 [root@opencloudos ~]# perf record -C 0-2 sleep seconds
 ```
 
-2.  显示 perf.data文件的内容，以进一步分析：
+2.显示 perf.data文件的内容，以进一步分析：
 ```
 [root@opencloudos ~]# perf report
 ```
@@ -636,7 +632,7 @@ perf top命令用于实时系统分析，其功能与 top 实用程序类似。�
 
 ### 4.1查看内存使用情况
 
-1.  使用free命令：
+1.使用free命令：
 ```
 [root@opencloudos ~]# free
 total used free shared buff/cache available
@@ -655,7 +651,7 @@ Swap: 0 0 0
 
 Swap表示交换内存
 
-2.  使用vmstat
+2.使用vmstat
 ```
 [root@opencloudos ~]# vmstat -m
 
@@ -685,7 +681,7 @@ ip6_dst_cache 32 32 256 16
 
 对内存使用情况进行统计
 
-3.  查看/proc/meminfo
+3.查看/proc/meminfo
 
     ```
 [root@opencloudos ~]# cat /proc/meminfo
@@ -708,7 +704,7 @@ SwapCached: 0 kB
 
 ### 4.2查看物理内存信息
 
-1.  dmidecode命令
+1.dmidecode命令
 ```
 [root@opencloudos ~]# dmidecode -t 17
 ```
@@ -716,9 +712,9 @@ SwapCached: 0 kB
 
 ### 4.3虚拟内存
 
-2.  介绍：物理内存是有限的（即使支持了热插拔）、非连续的，不同的CPU架构对物理内存的组织都不同。这使得直接使用物理内存非常复杂，为了降低使用内存的复杂度，引入了虚拟内存机制。
-3.  使用方法：通过虚拟内存机制，每个进程都以为自己占用了全部内存，进程访问内存时，操作系统都会把进程提供的虚拟内存地址转换为物理地址，再去对应的物理地址上获取数据。
-4.  虚拟内存不仅通过内存地址转换解决了多个进程访问内存冲突的问题，还带来更多的益处：
+2.介绍：物理内存是有限的（即使支持了热插拔）、非连续的，不同的CPU架构对物理内存的组织都不同。这使得直接使用物理内存非常复杂，为了降低使用内存的复杂度，引入了虚拟内存机制。
+3.使用方法：通过虚拟内存机制，每个进程都以为自己占用了全部内存，进程访问内存时，操作系统都会把进程提供的虚拟内存地址转换为物理地址，再去对应的物理地址上获取数据。
+4.虚拟内存不仅通过内存地址转换解决了多个进程访问内存冲突的问题，还带来更多的益处：
 -   进程内存管理：内存完整性：由于虚拟内存对进程的”欺骗”，每个进程都认为自己获取的内存是一块连续的地址。我们在编写应用程序时，就不用考虑大块地址的分配，总是认为系统有足够的大块内存即可。
 -   数据共享：通过虚拟内存更容易实现内存和数据的共享。
 
@@ -726,20 +722,20 @@ SwapCached: 0 kB
 
 现代操作系统的内存管理机制有两种：段式管理和页式管理。
 
--   段式内存管理，就是将内存分成段，每个段的起始地址就是段基地址。地址映射的时候，由逻辑地址加上段基地址而得到物理地址。
--   页式内存管理，内存分成固定长度的一个个页片。地址映射的时候，需要先建立页表，页表中的每一项都记录了这个页的基地址。通过页表，由逻辑地址的高位部分先找到逻辑地址对应的页基地址，再由页基地址偏移一定长度就得到最后的物理地址，偏移的长度由逻辑地址的低位部分决定。
--   段页式内存管理需要通过段表和页表的一同使用，段表中包含：段号、段内页表的起始地址，页表包含：页号、页内偏移量。通过虚拟地址中的段号在段表中找到对应的段号项，通过段表中的段号项可以得到段内页表的起始地址（也就是这个分段对应的页表），在得到该段内存对应的页表后可以通过虚拟地址中的段内页号找到对应的页表项得到物理起始地址，加上虚拟地址中的页内偏移量就对应的物理地址。
+- 段式内存管理，就是将内存分成段，每个段的起始地址就是段基地址。地址映射的时候，由逻辑地址加上段基地址而得到物理地址。
+- 页式内存管理，内存分成固定长度的一个个页片。地址映射的时候，需要先建立页表，页表中的每一项都记录了这个页的基地址。通过页表，由逻辑地址的高位部分先找到逻辑地址对应的页基地址，再由页基地址偏移一定长度就得到最后的物理地址，偏移的长度由逻辑地址的低位部分决定。
+-  段页式内存管理需要通过段表和页表的一同使用，段表中包含：段号、段内页表的起始地址，页表包含：页号、页内偏移量。通过虚拟地址中的段号在段表中找到对应的段号项，通过段表中的段号项可以得到段内页表的起始地址（也就是这个分段对应的页表），在得到该段内存对应的页表后可以通过虚拟地址中的段内页号找到对应的页表项得到物理起始地址，加上虚拟地址中的页内偏移量就对应的物理地址。
 
 ### 4.5内存回收
 
-1.  内存回收的目标：对于内核并不是所有的物理内存都可以参与回收，比如内核的代码段，如果被内核回收了，系统就无法正常运行了，所以一般内核代码段、数据段、内核申请的内存、内核线程占用的内存等都是不可以回收的，除此之外的内存都可以是我们要回收的目标。
+1.内存回收的目标：对于内核并不是所有的物理内存都可以参与回收，比如内核的代码段，如果被内核回收了，系统就无法正常运行了，所以一般内核代码段、数据段、内核申请的内存、内核线程占用的内存等都是不可以回收的，除此之外的内存都可以是我们要回收的目标。
 
-2.  内存回收时机：
+2. 内存回收时机：
 
--   内核需要为任何时刻突发到来的内存申请提供足够的内存，以便cache的使用和其他相关内存的使用不至于让系统的剩余内存长期处于很少的状态。
+- 内核需要为任何时刻突发到来的内存申请提供足够的内存，以便cache的使用和其他相关内存的使用不至于让系统的剩余内存长期处于很少的状态。
 
--   当真的有大于空闲内存的申请到来的时候，会触发强制内存回收。
-3.  回收机制：
+- 当真的有大于空闲内存的申请到来的时候，会触发强制内存回收。
+3.回收机制：
 
 - 针对第1种，Linux系统设计了kswapd后台程序，当内核分配物理页面时，由于系统内存短缺，没法在低水位情况下分配内存，因此会唤醒kswapd内核线程来异步回收内存。也就是周期性内存回收机制。
 
