@@ -55,6 +55,13 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+# Extensions
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - tables
+
 nav:
   - 首页: index.md
   - 快速入门:
@@ -63,11 +70,12 @@ nav:
   - 用户指南:
     - 基础配置: guide/config.md
     - 系统管理: guide/sysadmin.md
-    - 更新: guide/update.md
+    - 内核更新: guide/update.md
     - 系统状态监控: guide/monitor.md
     - 安全加固: guide/security.md
     - 网络管理: guide/network.md
     - 存储管理: guide/storage.md
+    - 兼容硬件: guide/adaptation.md
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
@@ -95,11 +103,12 @@ plugins:
           用户指南: Guide
           基础配置: Configuation
           系统管理: System Admin
-          更新: Update
+          内核更新: Update
           系统状态监控: System Monitor
           安全加固: Security
           网络管理: Network
           存储管理: Storage
+          兼容硬件: Hardware Adaptation
           版本说明: Releases
           常见问题: FAQ
           如何贡献: Contributing
