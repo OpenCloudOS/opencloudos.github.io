@@ -75,9 +75,16 @@ nav:
     - 内核更新: guide/update.md
     - 系统状态监控: guide/monitor.md
     - 安全加固: guide/security.md
-    - 网络管理: guide/network.md
     - 存储管理: guide/storage.md
+    - 文件系统: storage/file_system.md
     - 兼容硬件: guide/adaptation.md
+    - 网络管理: 
+      - 1-6章: network/Network1-6.md
+      - 7-12章: network/Network7-12.md
+      - 13-18章: network/Network13-18.md
+      - 19-24章: network/Network19-24.md
+      - 25-30章: network/Network25-30.md
+      - 31-36章: network/Network31-36.md
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
