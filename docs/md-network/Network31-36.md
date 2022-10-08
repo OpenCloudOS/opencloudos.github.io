@@ -223,4 +223,305 @@ NetworkManager 对连接使用以下默认值：
     2. 带有活跃的默认路由的连接。活跃的默认路由是具有最低指标的默认路由。
 
 
-# 
+## 32.2.设置 NetworkManager DNS 默认服务器优先级值
+
+NetworkManager 为连接使用以下 DNS 优先级默认值：
+
+- 50 用于 VPN 连接
+- 100 用于其他连接
+
+这部分论述了如何使用 IPv4 和 IPv6 连接的自定义默认值覆盖这些系统范围的默认值。
+
+**流程**
+
+1. 编辑 /etc/NetworkManager/NetworkManager.conf 文件：
+   1. 添加 [connection] 部分（如果不存在）：
+    ```
+    [connection]
+    ```
+   2. 将自定义默认值添加到 [connection] 部分。例如，要将 IPv4 和 IPv6 的新默认值设为 200，请添加：
+    ```
+    ipv4.dns-priority=200
+    ipv6.dns-priority=200
+    ```
+    您可以将参数设为 -2147483647 和 2147483647 之间的值。请注意，将参数设置为 0 将启用内置的默认值（对于 VPN 连接为 50 ，对于其他连接为 100 ）。
+
+2. 重新载入 NetworkManager 服务：
+    ```
+    # systemctl reload NetworkManager
+    ```
+
+## 32.3.设置 NetworkManager 连接的 DNS 优先级
+
+本节介绍了如何在 NetworkManager 创建或更新 /etc/resolv.conf 文件时定义 DNS 服务器的顺序。
+
+请注意，只有在您配置了多个不同 DNS 服务器的多个连接时，设置 DNS 优先级才有意义。如果您只有一个配置了多个 DNS 服务器的连接，请在连接配置集中按顺序手动设置 DNS 服务器。
+
+**前提条件**
+
+- 系统配置了多个 NetworkManager 连接。
+- 系统在 /etc/NetworkManager/NetworkManager.conf 文件中未设置 dns 参数，或者该参数被设为了 default。
+
+**流程**
+
+1. 可选，显示可用的连接：
+    ```
+    # nmcli connection show
+    NAME           UUID                                  TYPE      DEVICE
+    Example_con_1  d17ee488-4665-4de2-b28a-48befab0cd43  ethernet  enp1s0
+    Example_con_2  916e4f67-7145-3ffa-9f7b-e7cada8f6bf7  ethernet  enp7s0
+    ...
+    ```
+2. 设置 ipv4.dns-priority 和 ipv6.dns-priority 参数。例如，对于 
+Example_con_1 连接，将两个参数都设为 10 ：
+    ```
+    # nmcli connection modify Example_con_1 ipv4.dns-priority 10 ipv6.dns-priority 10
+    ```
+3. 重新激活您更新的连接：
+    ```
+    # nmcli connection up Example_con_1
+    ```
+
+**验证**
+
+- 显示 /etc/resolv.conf 文件的内容以验证 DNS 服务器的顺序是否正确：
+    ```
+    # cat /etc/resolv.conf
+    ```
+
+# 第33章 使用 ifcfg 文件配置 ip 网络
+
+本章介绍了如何通过编辑 ifcfg 文件来手动配置网络接口。
+
+NetworkManager 支持以 keyfile 格式存储的配置集。但是，在使用 NetworkManager API 创建或更新配置文件时，NetworkManager 默认使用 ifcfg 格式。
+
+接口配置(ifcfg)文件可控制各个网络设备的软件接口。当系统引导时，它使用这些文件来决定启动哪些界面以及如何进行配置。这些文件通常被命名为 ifcfg-name，其中后缀 name 指的是配置文件控制的设备的名称。按照惯例，ifcfg 文件的后缀与配置文件中 DEVICE 指令提供的字符串相同。
+
+## 33.1.使用 ifcfg 文件配置带有静态网络设置的接口
+
+本节介绍了如何使用 ifcfg 文件配置网络接口。
+
+**流程**
+
+- 如果需要为名为 enp1s0 的接口配置具有静态网络设置的接口，请在 /etc/sysconfig/network-scripts/ 目录中创建一个名为 ifcfg-enp1s0 的文件，其包含以下内容：
+  - 对于 IPv4 配置：
+    ```
+    DEVICE=enp1s0
+    BOOTPROTO=none
+    ONBOOT=yes
+    PREFIX=24
+    IPADDR=10.0.1.27
+    GATEWAY=10.0.1.1
+    ```
+  - 对于 IPv6 配置：
+    ```
+    DEVICE=enp1s0
+    BOOTPROTO=none
+    ONBOOT=yes
+    IPV6INIT=yes
+    IPV6ADDR=2001:db8:1::2/64
+    ```
+
+## 33.2.使用 ifcfg 文件配置带有动态网络设置的接口
+
+本节介绍了如何使用 ifcfg 文件配置具有动态网络设置的网络接口。
+
+**流程**
+
+1. 如果需要为名为 em1 的接口配置具有动态网络设置的接口，请在 /etc/sysconfig/network-scripts/ 目录中创建一个名为 ifcfg-em1 的文件，其包含以下内容：
+    ```
+    DEVICE=em1
+    BOOTPROTO=dhcp
+    ONBOOT=yes
+    ```
+
+2. 要配置发送的接口：
+ - 如果 DHCP 服务器使用不同的主机名，请在 ifcfg 文件中添加以下行：
+    ```
+    DHCP_HOSTNAME=hostname
+    ```
+ - DHCP 服务器使用不同的完全限定域名(FQDN)，请在 ifcfg 文件中添加以下行：
+    ```
+    DHCP_FQDN=fully.qualified.domain.name
+    ```
+
+注意，您只能使用这些设置中的一个。如果您同时指定了 DHCP_HOSTNAME 和 DHCP_FQDN，则只使用 DHCP_FQDN。
+
+3. 要将接口配置为使用特定的 DNS 服务器，请在 ifcfg 文件中添加以下行：
+    ```
+    PEERDNS=no
+    DNS1=ip-address
+    DNS2=ip-address
+    ```
+    其中 ip-address 是 DNS 服务器的地址。这会导致网络服务使用指定的 DNS 服务器更新 /etc/resolv.conf。只需要一个 DNS 服务器地址，另一个是可选的。
+
+## 33.3.使用 ifcfg 文件管理系统范围和专用的连接配置集
+
+本节描述了如何配置 ifcfg 文件来管理系统范围和私有的连接配置文件。
+
+**流程**
+访问权限对应 ifcfg 文件中的 USERS 指令。如果没有 USERS 指令，则网络配置文件对所有用户可用。
+
+- 例如，使用以下行修改 ifcfg 文件，这将使连接仅对列出的用户可用：
+    ```
+    USERS="joe bob alice"
+    ```
+
+# 第34章 使用 NetworkManager 为特定连接禁用 IPv6
+
+这部分描述了如何在使用 NetworkManager 管理网络接口的系统上禁用 IPv6 协议。如果您禁用了 IPv6，则 NetworkManager 会在内核中自动设置相应的 sysctl 值。如果使用内核可调参数或内核引导参数禁用 IPv6，则必须额外考虑系统配置。
+
+**前提条件**
+- 系统使用 NetworkManager 来管理网络接口
+
+## 34.1.使用 nmcli 在连接中禁用 IPv6
+
+**流程**
+
+1. 可选，显示网络连接列表：
+    ```
+    # nmcli connection show
+    NAME    UUID                                  TYPE      DEVICE
+    Example 7a7e0151-9c18-4e6f-89ee-65bb2d64d365  ethernet  enp1s0
+    ...
+    ```
+2. 显示网络连接列表：
+    ```
+    # nmcli connection modify Example ipv6.method "disabled"
+    ```
+3. 重启网络连接：
+    ```
+    # nmcli connection up Example
+    ```
+
+**验证**
+
+1. 输入 ip address show 命令来显示设备的 IP 设置：
+    ```
+    # ip address show enp1s0
+    2: enp1s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 52:54:00:6b:74:be brd ff:ff:ff:ff:ff:ff
+        inet 192.0.2.1/24 brd 192.10.2.255 scope global noprefixroute enp1s0
+        valid_lft forever preferred_lft forever
+    ```
+    如果没有显示 inet6 条目，则 IPv6 在该设备上被禁用。
+
+2. 验证 /proc/sys/net/ipv6/conf/enp1s0/disable_ipv6 文件现在是否包含值 1 :
+    ```
+    # cat /proc/sys/net/ipv6/conf/enp1s0/disable_ipv6
+    1
+    ```
+    值 1 表示针对该设备禁用 IPv6。
+
+# 第35章 手动配置 /etc/resolv.conf 文件
+
+默认情况下，OpenCloudOS 上的 NetworkManager 使用连接配置文件中的 DNS 设置动态更新 /etc/resolv.conf 文件。本章介绍了如何禁用此特性，来在 /etc/resolv.conf 中手动配置 DNS 设置。
+
+## 35.1.在 NetworkManager 配置中禁用 DNS 处理
+
+本节介绍了如何在 NetworkManager 配置中禁用 DNS 处理来手动配置 /etc/resolv.conf 文件。
+
+**流程**
+
+1. 以 root 用户身份，使用文本编辑器创建包含以下内容的 /etc/NetworkManager/conf.d/90-dns-none.conf 文件：
+    ```
+    [main]
+    dns=none
+    ```
+
+2. 重新载入 NetworkManager 服务：
+    ```
+    # systemctl reload NetworkManager
+    ```
+    注意，重新加载服务后，NetworkManager 不再更新 /etc/resolv.conf 文件。但是该文件的最后内容将被保留。
+
+3. （可选）从 /etc/resolv.conf 中删除 NetworkManager 生成的 注释，方便阅读。
+
+**验证**
+
+1. 编辑 /etc/resolv.conf 文件并手动更新配置。
+2. 重新载入 NetworkManager 服务：
+    ```
+    # systemctl reload NetworkManager
+    ```
+3. 显示 /etc/resolv.conf 文件：
+    ```
+    # cat /etc/resolv.conf
+    ```
+    如果您成功禁用了 DNS 处理，NetworkManager 不会覆盖手动配置的设置。
+
+## 35.2.使用符号链接替换 /etc/resolv.conf 来手动配置 DNS 设置
+
+如果 /etc/resolv.conf 是符号链接，则 NetworkManager 不会自动更新 DNS 配置。本节描述了如何将带有符号链接的 /etc/resolv.conf 替换成带有 DNS 配置的文件。
+
+**前提条件**
+
+- rc-manager 选项没有设为 file。要验证，请使用 NetworkManager --print-config 命令。
+
+**流程**
+
+1. 创建一个文件，如 /etc/resolv.conf.manually-configured，并将您环境的 DNS 配置添加到其中。使用与原始 /etc/resolv.conf 中一样的参数和语法。
+2. 删除 /etc/resolv.conf 文件：
+    ```
+    # rm /etc/resolv.conf
+    ```
+3. 创建名为 /etc/resolv.conf 的符号链接，该链接指向 /etc/resolv.conf.manually-configured ：
+    ```
+    # ln -s /etc/resolv.conf.manually-configured /etc/resolv.conf
+    ```
+
+# 第36章 监控并调整网卡环缓冲
+
+接收环形缓冲区是设备驱动程序和网络接口控制器 (NIC) 之间共享的共享缓冲区。该卡会分配一个发送 (TX) 和接收 (RX) 环形缓冲区。顾名思义，环形缓冲区是一个循环缓冲区，溢出数据会覆盖现有数据。将数据从 NIC 移动到内核有两种方法，硬件中断和软件中断，也称为 SoftIRQ。
+
+内核使用 RX 环形缓冲区来存储传入的数据包，直到它们可以被设备驱动程序处理。设备驱动程序通常使用 SoftIRQ排空 RX 环，它将传入的数据包放入称为sk_buff或skb的内核数据结构中，数据包开始其通过内核的过程，直到到达拥有相关套接字的应用程序。
+
+内核使用 TX 环形缓冲区来保存发往线路的传出数据包。
+
+这些环形缓冲区位于堆栈的底部，是可能发生丢包的关键点，同时，这也会对网络性能产生不利影响。
+
+## 36.1.显示丢弃的数据包数量
+
+ethtool 工具可让管理员查询、配置或控制网络驱动程序设置。
+
+RX 环缓冲的耗尽会导致计数器的递增，例如 ethtool -S interface_name 的输出中的 "discard" 或 "drop"。丢弃的数据包表示可用缓冲区的填满速度要快于内核可以处理数据包的速度。
+
+本节描述了如何使用 ethtool 显示丢弃计数器。
+
+**流程**
+
+- 要查看 enp1s0 接口的丢弃计数器，请输入：
+    ```
+    $ ethtool -S enp1s0
+    ```
+
+## 36.2.增加 RX 环缓冲以降低数据包丢弃的比率
+
+ethtool 工具可以帮助提高 RX 缓冲大小，以减少数据包的高丢弃率。
+
+**流程**
+
+1. 查看 RX 环缓冲的最大值：
+    ```
+    # ethtool -g enp1s0
+    Ring parameters for enp1s0:
+    Pre-set maximums:
+    RX:             4080
+    RX Mini:        0
+    RX Jumbo:       16320
+    TX:             255
+    Current hardware settings:
+    RX:             255
+    RX Mini:        0
+    RX Jumbo:       0
+    TX:             255
+    ```
+
+2. 如果 Pre-set maximums 部分中的值大于 Current hardware settings 部分，请增加 RX 环缓冲：
+    - 要临时将 enp1s0 设备的 RX 环缓冲改为 4080，请输入：
+        ```
+        # ethtool -G enp1s0 rx 4080
+        ```
+    - 要永久更改 RX 环缓冲，请创建一个 NetworkManager 分配程序脚本。
+
+注意，根据您的网卡使用的驱动，环缓冲的改变会很快中断网络连接。
