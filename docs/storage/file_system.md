@@ -5141,3 +5141,1533 @@ mount-point  options  location
    ```
    # ls /mount/point
    ```
+
+# 第 33 章 使用 IdM 的 SSSD 组件缓存 autofs 映射
+
+系统安全服务守护程序 (SSSD) 是一种用于访问远程服务目录和身份验证机制的系统服务。数据缓存在网络连接缓慢的情况下很有用。要将 SSSD 服务配置为缓存 autofs 映射，请按照本节中的以下步骤来进行操作。
+
+## 33.1 手动配置 autofs 将 IdM 服务器用作 LDAP 服务器
+
+此过程显示如何配置 `autofs` 以将 IdM 服务器用作 LDAP 服务器。
+
+**流程**
+
+1. 编辑 `/etc/autofs.conf` 文件以指定 `autofs` 搜索的模式属性：
+   
+   ```
+   #
+   # Other common LDAP naming
+   #
+   map_object_class = automountMap
+   entry_object_class = automount
+   map_attribute = automountMapName
+   entry_attribute = automountKey
+   value_attribute= automountInformation
+   ```
+   
+   > **注意**
+   > 
+   > 用户可以在 `/etc/autofs.conf` 文件中以小写和大写的形式写入属性。
+
+![修改示例](./images/33-1.png)
+
+2. （可选）指定 LDAP 配置。有两种方法可以做到这一点。最简单的方法是让自动挂载服务自行发现 LDAP 服务器和位置：
+   
+   ```
+   ldap_uri = "ldap:///dc=example,dc=com"
+   ```
+   
+   *此选项要求 DNS 包含可发现服务器的 SRV 记录。*
+   
+   或者，明确设置要使用的 LDAP 服务器和 LDAP 搜索的基本 DN：
+   
+   ```
+   ldap_uri = "ldap://ipa.example.com"
+   search_base = "cn=location,cn=automount,dc=example,dc=com"
+   ```
+
+3. 编辑 `/etc/autofs_ldap_auth.conf` 文件，以便 autofs 允许客户端使用 IdM LDAP 服务器进行身份验证。
+   
+   - 将 `authrequired` 更改为 yes。
+   - 将主体设置为 IdM LDAP 服务器（ *host/fqdn@REALM* ）的 Kerberos 主机主体。主体名称用于连接到 IdM 目录，作为 GSS 客户端身份验证的一部分。
+   
+   ```
+   <autofs_ldap_sasl_conf
+        usetls="no"
+        tlsrequired="no"
+        authrequired="yes"
+        authtype="GSSAPI"
+        clientprinc="host/server.example.com@EXAMPLE.COM"
+   />
+   ```
+   
+   如有必要，运行 `klist -k` 以获取准确的主机主体信息。
+
+![修改示例](./images/33-2.png)
+
+## 33.2 配置 SSSD 缓存 autofs 映射
+
+SSSD 服务可用于缓存存储在 IdM 服务器上的 `autofs` 映射，而无需配置 autofs 来使用 IdM 服务器。
+
+**前提条件**
+
+- 已安装 `sssd` 软件包。
+
+**流程**
+
+1. 打开 SSSD 配置文件：
+   
+   ```
+   # vim /usr/lib64/sssd/conf/sssd.conf
+   ```
+
+2. 将 `autofs` 服务添加到 SSSD 处理的服务列表中。
+   
+   ```
+   [sssd]
+   services = nss, pam, autofs
+   domains = shadowutils
+   ```
+
+3. 创建一个新的 `[autofs]` 部分。您可以将此留空，因为 `autofs` 服务的默认设置适用于大多数基础架构。
+   
+   ```
+   [nss]
+   
+   [pam]
+   
+   [sudo]
+   
+   [autofs]
+   ```
+   
+   有关详细信息，请参阅 `sssd.conf` 手册页。
+
+4. （可选）设置 `autofs` 条目的搜索库。默认情况下，这是 LDAP 搜索库。
+   
+   ```
+   [domain/shadowutils]
+   id_provider = files
+   
+   auth_provider = proxy
+   proxy_pam_target = sssd-shadowutils
+   
+   proxy_fast_alias = True
+   ```
+
+5. 重启 SSSD 服务：
+   
+   ```
+   # systemctl restart sssd.service
+   ```
+
+6. 检查 `/etc/nsswitch.conf` 文件，以便将 SSSD 列为自动挂载配置的源：
+   
+   ```
+   automount: sss files
+   ```
+
+7. 重启 `autofs` 服务：
+   
+   ```
+   # systemctl restart autofs.service
+   ```
+
+8. 通过列出用户的 /home 目录来测试配置，假设 /home 有一个主映射条目：
+   
+   ```
+   # ls /home/username
+   ```
+
+![示例](./images/33-3.png)
+
+如果这没有挂载远程文件系统，请检查 `/var/log/messages` 文件是否有错误。如有必要，通过将 `logging` 参数设置为 `debug` 来提高 `/etc/sysconfig/autofs` 文件中的 debug 级别。
+
+# 第 34 章 为根文件系统设置只读权限
+
+有时，您需要使用只读权限挂载根文件系统 (`/`)。示例用例包括在系统意外断电后增强安全性或确保数据完整性。
+
+## 34.1 始终保留写入权限的文件和目录
+
+为使系统正常运行，某些文件和目录需要保留写入权限。当根文件系统以只读模式挂载时，这些文件使用 `tmpfs` 临时文件系统挂载在 RAM 中。
+
+此类文件和目录的默认集合是从 `/etc/rwtab` 文件中读取的。请注意，需要 `readonly-root` 软件包才能在您的系统中存在此文件。
+
+```
+dirs    /var/cache/man
+dirs    /var/gdm
+<content truncated>
+
+empty    /tmp
+empty    /var/cache/foomatic
+<content truncated>
+
+files    /etc/adjtime
+files    /etc/ntp.conf
+<content truncated>
+```
+
+`/etc/rwtab` 文件中的条目遵循以下格式：
+
+```
+copy-method    path
+```
+
+在这种语法中：
+
+- 将 copy-method 替换为指定如何将文件或目录复制到 tmpfs 的关键字之一。
+- 将路径替换为文件或目录的路径。
+
+`/etc/rwtab` 文件识别以下可以将文件或目录复制到 `tmpfs` 的方式：
+
+**`empty`**
+
+  将空路径复制到 tmpfs。例如：
+
+```
+empty /tmp
+```
+
+**`dirs`**
+
+  空目录树被复制到 tmpfs 。例如：
+
+```
+dirs /var/run
+```
+
+**`files`**
+
+  文件或目录树原封不动地复制到 `tmpfs`。例如：
+
+```
+files /etc/resolv.conf
+```
+
+在 `/etc/rwtab.d/` 添加自定义路径时，也适用相同的格式。
+
+## 34.2 将根文件系统配置为在引导时以只读权限挂载
+
+使用此过程，根文件系统在所有后续引导时都以只读方式挂载。
+
+**流程**
+
+1. 在 `/etc/sysconfig/readonly-root` 文件中，将 `READONLY` 选项设置为 `yes`：
+   
+   ```
+   # Set to 'yes' to mount the file systems as read-only.
+   READONLY=yes
+   ```
+
+2. 在 /`etc/fstab` 文件的根条目 (`/`) 中添加 `ro` 选项：
+   
+   ```
+   /dev/mapper/luks-c376919e... / xfs x-systemd.device-timeout=0,ro 1 1
+   ```
+
+3. 将 ro 选项添加到 `/etc/default/grub` 文件中的 `GRUB_CMDLINE_LINUX` 指令中，并确保该指令不包含 `rw`：
+   
+   ```
+   GRUB_CMDLINE_LINUX="rhgb quiet... ro"
+   ```
+
+4. 重新创建 GRUB2 配置文件。
+   
+   - 对于旧版 BIOS 系统：
+   
+   ```
+   # grub2-mkconfig -o /boot/grub2/grub.cfg
+   ```
+   
+   - 对于 UEFI 系统：
+   
+   ```
+   # grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+   ```
+
+5. 如果您需要在 `tmpfs` 文件系统中添加以写入权限挂载的文件和目录，请在 `/etc/rwtab.d/` 目录中创建一个文本文件并将配置放在那里。
+   
+   例如，要挂载具有写入权限的 `/etc/example/file` 文件，请将此行添加到 `/etc/rwtab.d/example` 文件中：
+   
+   ```
+   files /etc/example/file
+   ```
+
+> **重要**
+> 
+> 对 `tmpfs` 中的文件和目录所做的更改不会在启动后持保留。
+
+6. 重新启动系统，应用更改。
+
+**故障排除**
+
+- 如果您错误地使用只读权限挂载了根文件系统，您可以使用以下命令再次以读写权限重新挂载它：
+  
+  ```
+  # mount -o remount,rw /
+  ```
+
+# 第 35 章 使用配额限制 XFS 上的存储空间使用
+
+您可以通过磁盘配额来限制用户或组可用的磁盘空间量。您还可以定义警告级别，用于在用户消耗过多磁盘空间或分区已满之前通知系统管理员。
+
+XFS 配额子系统管理磁盘空间（块）和文件（inode）使用的限制。 XFS 配额控制或报告这些项目在用户、组、目录或项目级别的使用情况。组和项目只适用于旧的非默认 XFS 磁盘格式。
+
+在按目录或按项目进行管理时，XFS 管理与特定项目相关的目录层次结构的磁盘使用情况。
+
+## 35.1 磁盘配额
+
+在大多数计算环境中，磁盘空间不是无限的。配额子系统提供了一种控制磁盘空间使用的机制。
+
+您可以为单个用户以及本地文件系统上的用户组配置磁盘配额。这使得可以将分配给用户特定文件（例如电子邮件）的空间与分配给用户工作的项目的空间分开管理。配额子系统会在用户超过分配的限制时发出警告，但会为当前的工作留出一些额外空间（硬限制/软限制）。
+
+如果执行了配额，您需要检查是否超出配额并确保配额准确。如果用户反复超出配额或持续达到软限制，系统管理员可以帮助用户确定如何使用更少的磁盘空间或增加用户的磁盘配额。
+
+您可以设置配额来控制：
+
+- 消耗的磁盘块数。
+- inode 的数量，它们是包含有关 UNIX 文件系统中的文件信息的数据结构。因为 inode 存储与文件相关的信息，所以可以控制可创建的文件数量。
+
+## 35.2 xfs_quota 工具
+
+您可以使用 `xfs_quota` 工具来管理 XFS 文件系统上的配额。此外，您可以将限制强制关闭的 XFS 文件系统用作有效的磁盘使用统计系统。
+
+XFS 配额系统在许多方面与其他文件系统不同。最重要的是，XFS 将配额信息视为文件系统元数据，并使用日志来提供更高级别的一致性保证。
+
+## 35.3 XFS 中的文件系统配额管理
+
+XFS 配额子系统管理磁盘空间（块）和文件（inode）使用的限制。 XFS 配额控制或报告这些项目在用户、组、目录或项目级别的使用情况。组和项目配额仅在较旧的非默认 XFS 磁盘格式上是互斥的。
+
+在按目录或按项目进行管理时，XFS 管理与特定项目相关的目录层次结构的磁盘使用情况。
+
+## 35.4 为 XFS 启用磁盘配额
+
+此过程为 XFS 文件系统上的用户、组和项目启用磁盘配额。启用配额后，`xfs_quota` 工具可用于设置限制并报告磁盘使用情况。
+
+**流程**
+
+1. 为用户启用配额：
+   
+   ```
+   # mount -o uquota /dev/vdb1 /boot
+   ```
+   
+   将 `uquota` 替换为 `uqnoenforce` ，允许使用报告而不强制执行任何限制。
+
+2. 为组启用配额：
+   
+   ```
+   # mount -o gquota /dev/vdb1 /boot
+   ```
+   
+   将 `gquota` 替换为 `gqnoenforce` ，允许使用报告而不强制执行任何限制。
+
+3. 为项目启用配额：
+   
+   ```
+   # mount -o pquota /dev/vdb1 /boot
+   ```
+   
+   将 `pquota` 替换为 `pqnoenforce` ，允许使用报告而不强制执行任何限制。
+
+4. 或者，在 `/etc/fstab` 文件中包含配额挂载选项。以下示例显示 `/etc/fstab` 文件中的条目用来分别在 XFS 文件系统上为用户、组和项目启用配额。这些示例还使用读/写权限挂载文件系统：
+   
+   ```
+   # vim /etc/fstab
+   /dev/vdb1 /boot xfs rw,quota 0 0
+   /dev/vdb1 /boot xfs rw,gquota 0 0
+   /dev/vdb1 /boot xfs rw,prjquota 0 0
+   ```
+
+## 35.5 报告 XFS 使用情况
+
+您可以使用 `xfs_quota` 工具设置限制并报告磁盘使用情况。默认情况下，`xfs_quota` 以交互方式运行，并且以基本模式运行。基本模式子命令仅报告使用情况，并且可供所有用户使用。
+
+**前提条件**
+
+- 已为 XFS 文件系统启用配额。请参阅为[为 XFS 启用磁盘配额](#354-为-xfs-启用磁盘配额)。
+
+**流程**
+
+1. 启动 `xfs_quota` shell：
+   
+   ```
+   # xfs_quota
+   ```
+
+2. 显示给定用户的使用情况和限制：
+   
+   ```
+   # xfs_quota> username
+   ```
+
+3. 显示块和 inode 的可用和已用数量：
+   
+   ```
+   # xfs_quota> df
+   ```
+
+4. 运行 help 命令以显示 `xfs_quota` 可用的基本命令。
+   
+   ```
+   # xfs_quota> help
+   ```
+
+5. 指定 `q` 以退出 `xfs_quota`。
+   
+   ```
+   #xfs_quota> q
+   ```
+   
+   ![示例](./images/35-1.png)
+
+## 35.6 修改 XFS 配额限制
+
+使用 `-x` 选项启动 `xfs_quota` 工具，启用专家模式并运行允许修改配额系统的管理员命令。此模式的子命令允许实际配置限制，并且仅对具有提升权限的用户可用。
+
+**前提条件**
+
+- 已为 XFS 文件系统启用配额。请参阅[为 XFS 启用磁盘配额](#354-为-xfs-启用磁盘配额)。
+
+**流程**
+
+1. 使用 `-x` 选项启动 `xfs_quota shell` 以启用专家模式：
+   
+   ```
+   # xfs_quota -x
+   ```
+
+2. 报告具体文件系统的配额信息：
+   
+   ```
+   # xfs_quota> report /path
+   ```
+   
+   例如，要显示 `/home`（在 `/dev/blockdevice` 上）的示例配额报告，请使用命令 `report -h /home`。这将显示类似于以下内容的输出：
+   
+   ```
+   User quota on /home (/dev/blockdevice)
+   Blocks
+   User ID      Used   Soft   Hard Warn/Grace
+   ---------- ---------------------------------
+   root            0      0      0  00 [------]
+   testuser   103.4G      0      0  00 [------]
+   ```
+
+3. 修改配额限制：
+   
+   ```
+   # xfs_quota> limit isoft=500m ihard=700m user /path
+   ```
+   
+   例如，要将主目录为 `/home/john` 的用户 `john` 将软硬 inode 数限制为 500 和 700 ，请使用以下命令：
+   
+   ```
+   # xfs_quota -x -c 'limit isoft=500 ihard=700 john' /home/
+   ```
+   
+   在这种情况下，传递 `mount_point` ，它是已挂载的 xfs 文件系统。
+
+4. 运行 help 命令以显示 `xfs_quota -x` 可用的专家命令：
+   
+   ```
+   # xfs_quota> help
+   ```
+
+## 35.7 为 XFS 设置项目限制
+
+此过程配置控制项目的目录的限制。
+
+**流程**
+
+1. 将项目控制的目录添加到 `/etc/projects`。例如，下面将唯一 ID 为 11 的 `/var/log` 路径添加到 `/etc/projects`。您的项目 ID 可以是映射到您的项目的任何数值。
+   
+   ```
+   # echo 11:/var/log >> /etc/projects
+   ```
+
+2. 将项目名称添加到 `/etc/projid` ，将项目 ID 映射到项目名称。例如，以下命令将名为 `Logs` 的项目与上一步中定义的项目 ID 11 相关联。
+   
+   ```
+   # echo Logs：11 >> /etc/projid
+   ```
+
+3. 初始化项目目录。例如，以下初始化项目目录 `/var`：
+   
+   ```
+   # xfs_quota -x -c 'project -s logfiles' /var
+   ```
+
+4. 为具有初始化目录的项目配置配额：
+   
+   ```
+   # xfs_quota -x -c 'limit -p bhard=lg logfiles' /var
+   ```
+
+# 第 36 章 使用配额限制 ext4 上的存储空间使用
+
+您必须先在系统上启用磁盘配额，然后才能分配它们。您可以为每个用户、每个组或每个项目分配磁盘配额。但是，如果设置了软限制，您可以在可配置的时间段内超过这些配额（称为宽限期）。
+
+## 36.1 安装配额工具
+
+您必须安装 `quota` RPM 包才能实现磁盘配额。
+
+**流程**
+
+- 安装 `quota` 包：
+  
+  ```
+  # yum install quota
+  ```
+
+## 36.2 在创建文件系统时启用配额功能
+
+此过程描述如何在创建文件系统时启用配额。
+
+**流程**
+
+1. 在文件系统创建时启用配额：
+   
+   ```
+   # mkfs.ext4 -O quota /dev/vdb
+   ```
+   
+   > **注意**
+   > 
+   > 默认情况下，仅启用和初始化用户和组配额。
+
+2. 更改文件系统创建的默认值：
+   
+   ```
+   # mkfs.ext4 -O quota -E quotatype=usrquota:grpquota:prjquota /dev/vdb
+   ```
+
+3. 挂载文件系统：
+   
+   ```
+   # mount /dev/vdb
+   ```
+   
+   ![示例](./images/36-1.png)
+
+## 36.3 在现有文件系统上启用配额功能
+
+此过程描述如何使用 `tune2fs` 命令在现有文件系统上启用配额功能。
+
+**流程**
+
+1. 卸载文件系统：
+   
+   ```
+   # umount /dev/vdb
+   ```
+
+2. 在现有文件系统上启用配额：
+   
+   ```
+   # tune2fs -O quota /dev/vdb
+   ```
+   
+   > **注意**
+   > 
+   > 默认情况下仅初始化用户和组配额。
+
+3. 更改默认值：
+   
+   ```
+   # tune2fs -Q usrquota,grpquota,prjquota /dev/vdb
+   ```
+
+4. 挂载文件系统：
+   
+   ```
+   # mount /dev/vdb
+   ```
+   
+   ![示例](./images/36-2.png)
+
+## 36.4 启用配额强制执行
+
+挂载文件系统后默认启用配额记帐，无需任何其他选项，但不会强制执行配额。
+
+**前提条件**
+
+- 启用配额功能并初始化默认配额。
+
+**流程**
+
+- 通过 `quotaon` 为用户配额启用配额强制执行：
+  
+  ```
+  # mount /dev/vdb /mnt
+  # quota /mnt
+  ```
+  
+  > **注意**
+  > 
+  > 可以使用 `usrquota`、`grpquota` 或 `prjquota` 挂载选项在挂载时启用配额强制。
+  > 
+  > ```
+  > # mount -o usrquota,grpquota,prjquota /dev/vdb /mnt
+  > ```
+
+- 为所有文件系统启用用户、组和项目配额：
+  
+  ```
+  # quotaon -vaugP
+  ```
+  
+  - 如果未指定 `-u`、`-g` 或 `-P` 选项，则仅启用用户配额。
+  - 如果仅指定 -g 选项，则仅启用组配额。
+  - 如果仅指定 -P 选项，则仅启用项目配额。
+
+- 为特定文件系统启用配额，例如 /home：
+  
+  ```
+  # quotaon -vugP /home
+  ```
+  
+  ![示例](./images/36-3.png)
+
+## 36.5 为每个用户分配配额
+
+使用 `edquota` 命令将磁盘配额分配给用户。
+
+> **注意**
+> 
+> 由 `EDITOR` 环境变量定义的文本编辑器由 `edquota` 使用。要更改编辑器，请将 `~/.bash_profile` 文件中的 `EDITOR` 环境变量设置为您选择的编辑器的完整路径。
+
+**前提条件**
+
+- 在设置用户配额之前，用户必须存在。
+
+**流程**
+
+1. 为用户分配配额：
+   
+   ```
+   # edquota username
+   ```
+   
+   将用户名替换为您要为其分配配额的用户。
+   
+   例如，如果为 `/dev/vdb` 分区启用配额并执行命令 `edquota root`，系统配置的默认编辑器中会显示以下内容：
+   
+   ```
+   Disk quotas for user root (uid 0):
+   Filesystem                   blocks       soft       hard     inodes     soft     hard
+   /dev/vdb                         20          0          0          2        0        0
+   ```
+   
+   ![示例](./images/36-4.png)
+
+2. 更改所需的限制。
+   
+   如果任何值设置为 0，则不设置限制。在文本编辑器中更改它们。
+   
+   例如，下面显示了 root 的软限制和硬限制已分别设置为 5000 和 5500。
+   
+   ```
+   Disk quotas for user root (uid 0):
+   Filesystem                   blocks       soft       hard     inodes     soft     hard
+   /dev/vdb                         20          5000          5500          2        0        0
+   ```
+   
+   - 第一列是启用了配额的文件系统的名称。
+   
+   - 第二列显示用户当前使用了多少块。
+   
+   - 接下来的两列用于为文件系统上的用户设置软限制和硬限制。
+   
+   - `inodes` 列显示用户当前使用的 inode 数量。
+   
+   - 最后两列用于为文件系统上的用户设置软和硬 inode 限制。
+     
+     - 硬限制是用户或组可以使用的绝对最大磁盘空间量。一旦达到此限制，就不能再使用更多磁盘空间。
+     - 软限制定义了可以使用的最大磁盘空间量。但是，与硬限制不同，软限制可以在一定时间内超出。该时间称为宽限期。宽限期可以用秒、分钟、小时、天、周或月表示。
+
+**验证步骤**
+
+- 验证用户的配额是否已设置：
+  
+  ```
+  # quota -v root
+  Disk quotas for user root (uid 0): 
+     Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+        /dev/vdb      20    5000    5500               2       0       0
+  ```
+
+## 36.6 为每个组分配配额
+
+您可以按组分配配额。
+
+**前提条件**
+
+- 在设置组配额之前，组必须存在。
+
+**流程**
+
+1. 设置组配额：
+   
+   ```
+   # edquota -g groupname
+   ```
+   
+   例如，为 root 组设置组配额：
+   
+   ```
+   # edquota -g root
+   ```
+   
+   此命令在文本编辑器中显示组的现有配额：
+   
+   ```
+   Disk quotas for group root (gid 0):
+   Filesystem                   blocks       soft       hard     inodes     soft     hard
+   /dev/vdb                         20          0          0          2        0        0
+   ```
+
+2. 修改限制并保存文件。
+
+**验证步骤**
+
+- 验证是否设置了组配额：
+  
+  ```
+  # quota -vg groupname
+  ```
+
+![示例](./images/36-5.png)
+
+## 36.7 为每个项目分配配额
+
+此过程为每个项目分配配额。
+
+**先决条件**
+
+- 您的文件系统上启用了项目配额。
+
+**流程**
+
+1. 将项目控制的目录添加到 `/etc/projects`。例如，下面将唯一 ID 为 11 的 `/var/log` 路径添加到 `/etc/projects`。您的项目 ID 可以是映射到您的项目的任何数值。
+   
+   ```
+   # echo 0:/var/log >> /etc/projects
+   ```
+
+2. 将项目名称添加到 `/etc/projid` 以将项目 ID 映射到项目名称。例如，以下将名为 `Logs` 的项目与上一步中定义的项目 ID 11 相关联。
+   
+   ```
+   # echo Logs：0 >> /etc/projid
+   ```
+
+3. 设置所需的限制：
+   
+   ```
+   # edquota -P 0
+   ```
+   
+   > **注意**
+   > 
+   > 您可以通过项目 ID（本例中为 `0` ）或名称（本例中为 `Logs` ）选择项目。
+
+![示例](./images/36-6.png)
+
+4. 使用 `quotaon`，启用配额强制：
+   
+   请参阅[启用配额强制](#364-启用配额强制执行)。
+
+**验证步骤**
+
+- 验证是否设置了项目配额：
+  
+  ```
+  # quota -vP 0
+  ```
+  
+  > **注意**
+  > 
+  > 您可以通过项目 ID 或项目名称进行验证。
+  
+   ![示例](./images/36-7.png)
+
+## 36.8 设置软限制的宽限期
+
+如果给定配额有软限制，您可以编辑宽限期，即可以超过软限制的时间量。您可以为用户、组或项目设置宽限期。
+
+**流程**
+
+- 编辑宽限期：
+  
+  ```
+  # edquota -t
+  ```
+
+> **重要**
+> 
+> 虽然其他 `edquota` 命令对特定用户、组或项目的配额进行操作，但 `-t` 选项对每个启用了配额的文件系统进行操作。
+
+![示例](./images/36-8.png)
+
+## 36.9 关闭文件系统配额
+
+使用 `quotaoff` 关闭指定文件系统上的磁盘配额强制。执行此命令后，配额记帐保持启用状态。
+
+**流程**
+
+- 关闭所有用户和组配额：
+  
+  ```
+  # quotaoff -vaugP
+  ```
+  
+  - 如果未指定 `-u`、`-g` 或 `-P` 选项，则仅禁用用户配额。
+  - 如果仅指定 `-g` 选项，则仅禁用组配额。
+  - 如果仅指定 `-P` 选项，则仅禁用项目配额。
+  - `-v` 开关导致在命令执行时显示详细的状态信息。
+
+![示例](./images/36-9.png)
+
+## 36.10 报告磁盘配额
+
+您可以使用 `repquota` 工具创建磁盘配额报告。
+
+**流程**
+
+1. 运行 `repquota` 命令：
+   
+   ```
+   #repquota
+   ```
+   
+   例如，命令 `repquota /dev/vdb` 产生以下输出：
+   
+   ```
+   *** Report for user quotas on device /dev/vdb
+   Block grace time: 7days; Inode grace time: 7days
+                           Block limits                File limits
+   User            used    soft    hard  grace    used  soft  hard  grace
+   ----------------------------------------------------------------------
+   root      --      20    5000    5500              2     0     0       
+   ```
+
+   ![示例](./images/36-10.png)
+
+2. 查看所有启用配额的文件系统的磁盘使用情况报告：
+   
+   ```
+   #repquota -augP
+   ```
+
+每个用户后显示的 `--` 符号确定是否超过了块或 inode 限制。如果超过任一软限制，则会出现一个 `+` 字符来代替相应的 - 字符。第一个 `-` 字符表示块限制，第二个表示 inode 限制。
+
+`grace` 列通常是空白的。如果超过了软限制，则该列包含一个时间规范，该时间规范等于宽限期内剩余的时间量。如果宽限期已过，则 `none` 会出现。
+
+![示例](./images/36-10.png)
+
+# 第 37 章 丢弃未使用的块
+
+您可以在支持它们的块设备上执行或安排丢弃操作。
+
+## 37.1 块丢弃操作
+
+块丢弃操作丢弃已安装文件系统不再使用的块。它们在以下方面很有用：
+
+- 固态驱动器 (SSD)
+- 精简置备存储
+
+**要求**
+
+文件系统底层的块设备必须支持物理丢弃（discard）操作。
+
+如果 `/sys/block/device/queue/discard_max_bytes` 文件中的值不为零，则支持物理丢弃操作。
+
+## 37.2 块丢弃操作的类型
+
+您可以使用不同的方法运行 discard 操作：
+
+**批量丢弃**
+
+  由用户明确运行。它们丢弃选定文件系统中所有未使用的块。
+
+**在线丢弃**
+
+  在挂载时指定。它们在没有用户干预的情况下实时运行。在线丢弃操作仅丢弃从 used 转换为 free 的块。
+
+**定期丢弃**
+
+  是由 `systemd` 服务定期运行的批处理操作。
+
+XFS 和 ext4 文件系统以及 VDO 支持所有类型。
+
+> **建议**
+> 
+> 建议您使用批量或定期丢弃。
+
+仅在以下情况下使用在线丢弃：
+
+- 系统的工作负载使得批量丢弃不可行
+- 在线丢弃操作对于保持性能是必要的。
+
+## 37.3 执行批量块丢弃
+
+此过程执行批量块丢弃操作以丢弃已安装文件系统上未使用的块。
+
+**前提条件**
+
+- 文件系统已挂载。
+- 文件系统底层的块设备支持物理丢弃操作。
+
+**流程**
+
+- 使用 `fstrim` 工具：
+  
+  - 要仅对选定的文件系统执行丢弃，请使用：
+    
+    ```
+    # fstrim mount-point
+    ```
+  
+  - 要对所有挂载的文件系统执行丢弃，请使用：
+    
+    ```
+    # fstrim --all
+    ```
+
+如果您在以下位置执行 `fstrim` 命令：
+
+- 不支持丢弃操作的设备
+- 由多个设备组成的逻辑设备（LVM 或 MD），其中任何一个设备不支持丢弃操作，
+
+显示以下消息：
+
+```
+# fstrim /mnt/non_discard
+
+fstrim: /mnt/non_discard: the discard operation is not supported
+```
+
+## 37.4 启用在线块丢弃
+
+此过程启用在线块丢弃操作，自动丢弃所有支持的文件系统上未使用的块。
+
+**流程**
+
+- 在挂载时启用在线丢弃：
+  
+  - 手动挂载文件系统时，添加 `-o discard` 挂载选项：
+    
+    ```
+    # mount -o discard device mount-point
+    ```
+  
+  - 永久挂载文件系统时，将 `discard` 选项添加到 /etc/fstab 文件中的挂载条目。
+
+## 37.5 启用定期块丢弃
+
+此过程启用 `systemd` 计时器，该计时器定期丢弃所有支持的文件系统上未使用的块。
+
+流程
+
+- 启用并启动 `systemd` 计时器：
+  
+  ```
+  # systemctl enable --now fstrim.timer
+  ```
+
+# 第 38 章 使用系统角色启用在线块丢弃
+
+本节描述了如何使用 `storage` 角色启用在线块丢弃。
+
+**前提条件**
+
+- 包含 `storage` 角色的 Ansible playbook 已存在。
+
+## 38.1 启用在线块丢弃的 Ansible playbook 示例
+
+本节提供了一个 Ansible playbook 示例。此 playbook 应用存储角色，以挂载启用了在线块丢弃的 XFS 文件系统。
+
+> **例 38.1 一个 playbook，它在 /mnt/data/ 上启用在线块丢弃功能**
+> 
+> ```
+> ---
+> - hosts: all
+>   vars:
+>     storage_volumes:
+>       - name: barefs
+>         type: disk
+>         disks:
+>           - vdb
+>         fs_type: xfs
+>         mount_point: /mnt/data
+>         mount_options: discard
+>   roles:
+>     - rhel-system-roles.storage
+> ```
+
+# 第 39 章 设置 Stratis 文件系统
+
+Stratis 作为一项用来管理物理存储设备池的服务运行，简化本地存储管理且易于使用，同时帮助您设置和管理复杂的存储配置。
+
+> **重要**
+> 
+> Stratis 只是一项技术预览功能。一些服务水平协议 (SLA) 不支持技术预览功能，并且可能在功能上不完整。所以不建议在生产中使用它们。这些功能提供了对即将推出的产品功能的早期访问，使客户能够在开发过程中测试功能并提供反馈。
+
+## 39.1 什么是Stratis
+
+Stratis 是适用于 Linux 的本地存储管理解决方案。它专注于简单性和易用性，并让您可以访问高级存储功能。
+
+Stratis 使以下操作更容易：
+
+- 存储的初始配置
+- 稍后进行更改
+- 使用高级存储功能
+
+Stratis 是一个混合用户和内核的本地存储管理系统，并且其支持高级存储功能。 Stratis 的核心概念是存储池。这个池是从一个或多个本地磁盘或分区创建的，而卷是从池中创建的。
+
+该池支持许多有用的功能，例如：
+
+- 文件系统快照
+- 精简配置
+- 分层
+
+## 39.2  Stratis 卷的组成部分
+
+了解构成 Stratis 卷的组件。
+
+另外，Stratis 在命令行界面和 API 中提供了以下卷组件：
+
+**`blockdev`**
+
+  块设备，例如磁盘或磁盘分区。
+
+**`pool`**
+
+  由一个或多个块设备组成。
+
+  池具有固定的大小，等于块设备的大小。
+
+  该池包含大多数 Stratis 层，例如使用 `dm-cache` 目标的非易失性数据缓存。
+
+  Stratis 为每个池创建一个 `/dev/stratis/my-pool/` 目录。此目录包含指向池中代表 Stratis 文件系统的设备的链接。
+
+**`filesystem`**
+
+  每个池可以包含一个或多个文件系统，用于存储文件。
+
+  文件系统是精简配置的，没有固定的总大小。文件系统的实际大小随着存储在其上的数据而增长。如果数据大小接近文件系统的虚拟大小，Stratis 会自动增加精简卷和文件系统。
+
+  文件系统使用 XFS 格式化。
+
+> **重要**
+> 
+> Stratis 跟踪有关使用 Stratis 创建的文件系统的信息（该信息 XFS 并不知道），并且使用 XFS 所做的更改不会自动在 Stratis 中创建更新。用户不得重新格式化或重新配置由 Stratis 管理的 XFS 文件系统。
+
+Stratis 在 `/dev/stratis/my-pool/my-fs` 路径中创建指向文件系统的链接。
+
+> **注意**
+> 
+> Stratis 使用许多 Device Mapper 设备，这些设备显示在 `dmsetup` 列表和 `/proc/partitions` 文件中。同样，`lsblk` 命令输出反映了 Stratis 的内部工作和层。
+
+## 39.3 可用于 Stratis 的块设备
+
+可与 Stratis 一起使用的存储设备。
+
+**支持的设备**
+
+Stratis 池已被测试，可以在这些类型的块设备上工作：
+
+- LUKS
+- LVM 逻辑卷
+- MD RAID
+- DM Multipath
+- iSCSI
+- HDD 和 SSD
+- NVMe 设备
+
+**不支持的设备**
+
+因为 Stratis 包含一个精简配置层，不建议在已经精简配置的块设备上放置一个 Stratis 池。
+
+## 39.4 安装 Stratis
+
+安装 Stratis 所需的软件包。
+
+**流程**
+
+1. 安装提供 Stratis 服务和命令行实用程序的软件包：
+   
+   ```
+   # yum install stratisd stratis-cli
+   ```
+   
+   ![示例](./images/39-1.png)
+
+2. 确保启用了 `stratisd` 服务：
+   
+   ```
+   # systemctl enable --now stratisd
+   ```
+   
+   ![示例](./images/39-2.png)
+
+## 39.5 创建未加密的 Stratis 池
+
+您可以从一个或多个块设备创建未加密的 Stratis 池。
+
+**前提条件**
+
+- 安装了 Stratis。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 创建 Stratis 池的块设备未使用且未被挂载
+- 创建 Stratis 池的每个块设备至少为 1 GB。
+- 在 IBM Z 架构上，必须对 `/dev/dasd*` 块设备进行分区。使用 Stratis 池中的分区。
+
+> **注意**
+> 
+> 您无法加密未加密的 Stratis 池。
+
+**流程**
+
+1. 删除您要在 Stratis 池中使用的每个块设备上存在的任何文件系统、分区表或 RAID 签名：
+   
+   ```
+   # wifefs --all block-device
+   ```
+   
+   其中 *`block-device`* 是块设备的路径；例如，`/dev/vdb`。
+
+2. 在选定的块设备上创建新的未加密 Stratis 池：
+   
+   ```
+   # stratis pool create my-pool block-device
+   ```
+   
+   其中 *`block-device`* 是空的或删除的块设备的路径。
+   
+   > **注意**
+   > 
+   > 在一行中指定多个块设备：
+   > 
+   > ```
+   > # stratis pool create my-pool block-device-1 block-device-2
+   > ```
+
+3. 确认创建了新的 Stratis 池：
+   
+   ```
+   # stratis pool list
+   ```
+   
+   ![示例](./images/39-3.png)
+
+## 39.6 创建加密的 Stratis 池
+
+为了保护您的数据，您可以从一个或多个块设备创建一个加密的 Stratis 池。
+
+当您创建加密的 Stratis 池时，内核密钥环用作主要加密机制。在后续系统重新启动后，此内核密钥环用于解锁加密的 Stratis 池。
+
+从一个或多个块设备创建加密的 Stratis 池时，请注意以下几点：
+
+- 每个块设备都使用 `cryptsetup` 库进行加密，并实现 `LUKS2` 格式。
+- 每个 Stratis 池可以有一个唯一的密钥或与其他池共享相同的密钥。这些密钥存储在内核密钥环中。
+- 组成 Stratis 池的块设备必须全部加密或全部未加密。在同一个 Stratis 池中不可能同时拥有加密和未加密的块设备。
+- 添加到加密 Stratis 池的数据层的块设备会自动加密。
+
+**前提条件**
+
+- 安装 Stratis v2.1.0 或更高版本。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 创建 Stratis 池的块设备未使用且未安装。
+- 创建 Stratis 池的块设备每个大小至少为 1GB。
+- 在 IBM Z 架构上，必须对 `/dev/dasd*` 块设备进行分区。使用 Stratis 池中的分区。
+
+**流程**
+
+1. 删除您要在 Stratis 池中使用的每个块设备上存在的任何文件系统、分区表或 RAID 签名：
+   
+   ```
+   # wifefs --all block-device
+   ```
+   
+   其中 *`block-device`* 是块设备的路径；例如，`/dev/vdb`。
+
+2. 如果您尚未创建密钥集，请运行以下命令并按照提示创建用于加密的密钥集。
+   
+   ```
+   # stratis key set --capture-key key-description
+   ```
+   
+   其中 *`key-description`* 是对在内核密钥环中创建的密钥的引用。
+
+3. 创建加密的 Stratis 池并指定用于加密的密钥描述。您还可以使用 `--keyfile-path` 选项来指定密钥路径，而不是使用 *`key-description`* 选项。
+   
+   ```
+   # stratis pool create --key-desc key-description my-pool block-device
+   ```
+   
+   其中
+   
+   **`key-description`**
+   
+     引用您在上一步中创建的内核密钥环中存在的密钥。
+   
+   **`my-pool`**
+   
+     指定新 Stratis 池的名称。
+   
+   **`block-device`**
+   
+     指定空的或擦除的块设备的路径。
+   
+   > **注意**
+   > 
+   > 在一行中指定多个块设备：
+   > 
+   > ```
+   > # stratis pool create --key-desc key-description my-pool block-device-1 block-device-2
+   > ```
+
+4. 验证是否创建了新的 Stratis 池：
+   
+   ```
+   # stratis pool list 
+   ```
+
+## 39.7 将 Stratis 池绑定到 NBDE
+
+将加密的 Stratis 池绑定到网络绑定磁盘加密 (NBDE) 需要 Tang 服务器。当包含 Stratis 池的系统重新启动时，它会与 Tang 服务器连接并自动解锁加密池，不需要您提供内核密钥环的描述。
+
+> **注意**
+> 
+> 将 Stratis 池绑定到补充的 Clevis 加密机制不会删除主内核密钥环加密。
+
+**前提条件**
+
+- 安装 Stratis v2.3.0 或更高版本。有关更多信息，请参阅[安装 Stratis ](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个加密的 Stratis 池，并且您拥有用于加密的密钥的密钥描述。有关更多信息，请参阅[创建加密的 Stratis 池](#396-创建加密的-stratis-池)。
+- 您可以连接到 Tang 服务器。
+
+**流程**
+
+- 将加密的 Stratis 池绑定到 NBDE：
+  
+  ```
+  # stratis pool bind  nbde --trust-url my-pool tang-server
+  ```
+  
+   其中
+  
+   **`my-pool`**
+  
+     指定加密 Stratis 池的名称。
+  
+   **`tang-server`**
+  
+     指定 Tang 服务器的 IP 地址或 URL。
+
+## 39.8 将 Stratis 池绑定到 TPM
+
+当您将加密的 Stratis 池绑定到可信平台模块 (TPM) 2.0 时，当包含该池的系统重新启动时，该池会自动解锁，而无需您提供内核密钥环描述。
+
+**前提条件**
+
+- 安装 Stratis v2.3.0 或更高版本。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratis` 服务正在运行。
+- 您已经创建了一个加密的 Stratis 池。有关更多信息，请参阅[创建加密的 Stratis 池](#396-创建加密的-stratis-池)。
+
+**流程**
+
+- 将加密的 Stratis 池绑定到 TPM：
+  
+  ```
+  # stratis pool bind tpm my-pool key-description
+  ```
+  
+   其中
+  
+   **`my-pool`**
+  
+     指定加密 Stratis 池的名称。
+  
+   **`tang-server`**
+  
+     引用内核密钥环中存在的密钥，该密钥是在您创建加密的 Stratis 池时生成的。
+
+## 39.9 使用内核密钥环解锁加密的 Stratis 池
+
+系统重新启动后，您的加密 Stratis 池或组成它的块设备可能不可见。您可以使用用于加密池的内核密钥环解锁池。
+
+**前提条件**
+
+- 安装了 Stratis v2.1.0。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个加密的 Stratis 池。有关更多信息，请参阅[创建加密的 Stratis 池](#396-创建加密的-stratis-池)。
+
+**流程**
+
+1. 使用之前使用的相同密钥描述重新创建密钥集：
+   
+   ```
+   # stratis key set --capture-key key-description
+   ```
+   
+   其中 *key-description* 引用存在于内核密钥环中的密钥，该密钥是在您创建加密的 Stratis 池时生成的。
+
+2. 解锁 Stratis 池和组成它的块设备：
+   
+   ```
+   # stratis pool unlock keyring
+   ```
+
+3. 验证 Stratis 池是否可见：
+   
+   ```
+   #stratis pool list
+   ```
+
+## 39.10 使用 Clevis 解锁加密的 Stratis 池
+
+系统重新启动后，您的加密 Stratis 池或组成它的块设备可能不可见。您可以使用池绑定的补充加密机制解锁加密的 Stratis 池。
+
+**前提条件**
+
+- 安装 Stratis v2.3.0 或更高版本。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个加密的 Stratis 池。有关更多信息，请参阅[创建加密的 Stratis 池](#396-创建加密的-stratis-池)。
+- 加密的 Stratis 池绑定到受支持的补充加密机制。有关更多信息，请参阅将[加密的 Stratis 池绑定到 NBDE](#397-将-stratis-池绑定到-nbde) 或将[加密的 Stratis 池绑定到 TPM](#398-将-stratis-池绑定到-tpm)。
+
+**流程**
+
+1. 解锁 Stratis 池和组成它的块设备：
+   
+   ```
+   # stratis pool unlock clevis
+   ```
+
+2. 验证 Stratis 池是否可见：
+   
+   ```
+   # stratis pool list
+   ```
+
+## 39.11 将 Stratis 池与补充加密解除绑定
+
+当您从受支持的补充加密机制中解绑加密的 Stratis 池时，主内核密钥环加密仍然存在。
+
+**前提条件**
+
+- Stratis v2.3.0 或更高版本已安装在您的系统上。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- 您已经创建了一个加密的 Stratis 池。有关更多信息，请参阅[创建加密的 Stratis 池](#396-创建加密的-stratis-池)。
+- 加密的 Stratis 池绑定到支持的补充加密机制。
+
+**流程**
+
+- 将加密的 Stratis 池与补充加密机制解除绑定：
+  
+  ```
+  # stratis pool unbind clevis my-pool
+  ```
+  
+   其中
+  
+   *`my-pool`* 指定要解除绑定的 Stratis 池的名称。
+
+## 39.12 创建 Stratis 文件系统
+
+在现有的 Stratis 池上创建一个 Stratis 文件系统。
+
+**前提条件**
+
+- 安装了 Stratis。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 池。请参阅[创建未加密的 Stratis 池](#395-创建未加密的-stratis-池)或[创建加密的 Stratis 池](#396-创建加密的-stratis-池)。
+
+**流程**
+
+1. 要在池上创建 Stratis 文件系统，请使用：
+   
+   ```
+   # stratis fs create my-pool my-fs
+   ```
+   
+   其中
+   
+   *`my-pool`*
+   
+     指定 Stratis 池的名称。
+   
+   *`my-fs`*
+   
+     指定文件系统的任意名称。
+
+2. 要进行验证，请列出池中的文件系统：
+   
+   ```
+   # stratis fs list my-pool
+   ```
+   
+   ![示例](./images/39-3.png)
+
+## 39.13 挂载 Stratis 文件系统
+
+挂载现有的 Stratis 文件系统以访问内容。
+
+**前提条件**
+
+- 安装了 Stratis。有关更多信息，请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 文件系统。有关更多信息，请参阅[创建 Stratis 文件系统](#3912-创建-stratis-文件系统)。
+
+**流程**
+
+- 要挂载文件系统，请使用 Stratis 在 `/dev/stratis/` 目录中维护的条目：
+  
+  ```
+  # mount /dev/stratis/my-pool/my-fs mount-point
+  ```
+
+文件系统现在已挂载到挂载点目录并可以使用了。
+
+![示例](./images/39-5.png)
+
+## 39.14 永久挂载 Stratis 文件系统
+
+此过程永久挂载 Stratis 文件系统，以便在引导系统后自动可用。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 文件系统。请参阅[创建 Stratis 文件系统](#3912-创建-stratis-文件系统)。
+
+**流程**
+
+1. 确定文件系统的 UUID 属性：
+   
+   ```
+   $ lsblk --output=UUID /dev/stratis/my-pool/my-fs
+   ```
+   
+   例如：
+   
+   > **例 39.1 查看 Stratis 文件系统的 UUID**
+   > 
+   > $ lsblk --output=UUID /dev/stratis/my-pool/my-fs
+   > 
+   > UUID
+   > 219267ca-8959-4cd0-a1dd-840d6f3f3989
+
+2. 如果挂载点目录不存在，则创建它：
+   
+   ```
+   # mkdir --parents mount-point
+   ```
+
+3. 以 root 身份编辑 `/etc/fstab` 文件并为文件系统添加一行，由 UUID 标识。使用 xfs 作为文件系统类型并添加 `x-systemd.requires=stratisd.service` 选项。
+   
+   例如：
+   
+   > **例 39.2 /etc/fstab 中的 /mnt 挂载点**
+   > 
+   > UUID=219267ca-8959-4cd0-a1dd-840d6f3f3989 /mnt xfs defaults,x-systemd.requires=stratisd.service 0 0
+   
+   ![示例](./images/39-6.png)
+
+4. 重新生成安装单元，以便您的系统注册新配置：
+   
+   ```
+   # systemctl daemon-reload
+   ```
+
+5. 尝试挂载文件系统以验证配置是否有效：
+   
+   ```
+   # mount mount-point
+   ```
+   
+   ![示例](./images/39-7.png)
+
+## 39.15 使用 systemd 服务在 /etc/fstab 中设置非根 Stratis 文件系统
+
+您可以使用 systemd 服务管理在 `/etc/fstab` 中设置非根文件系统。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- Stratisd 服务正在运行。
+- 您已经创建了一个 Stratis 文件系统。请参阅[创建 Stratis 文件系统](#3912-创建-stratis-文件系统)。
+
+**流程**
+
+- 对于所有非根 Stratis 文件系统，使用：
+  
+  ```
+  # /dev/stratis/[STRATIS_SYMLINK] [MOUNT_POINT] xfs defaults，x-systemd.requires=stratis-fstab-setup@[POOL_UUID],x-systemd.after=stratis-stab-setup@[POOL_UUID] <dump_value> < fsck_value>
+  ```
+
+# 第 40 章 使用附加块设备扩展 Stratis 卷
+
+您可以将附加块设备添加到 Stratis 池，为 Stratis 文件系统提供更多存储容量。
+
+> **重要**
+> 
+> Stratis 只是一个技术预览功能。一些服务水平协议 (SLA) 不支持技术预览功能，并且可能在功能上不完整。所以不建议在生产中使用它们。这些功能提供了对即将推出的产品功能的早期访问，使客户能够在开发过程中测试功能并提供反馈。
+
+## 40.1 Stratis 卷的组件
+
+了解构成 Stratis 卷的组件。
+
+另外，Stratis 在命令行界面和 API 中提供了以下卷组件：
+
+**`blockdev`**
+
+  块设备，例如磁盘或磁盘分区。
+
+**`pool`**
+
+  由一个或多个块设备组成。
+
+  池具有固定的大小，等于块设备的大小。
+
+  该池包含大多数 Stratis 层，例如使用 `dm-cache` 目标的非易失性数据缓存。
+
+  Stratis 为每个池创建一个 `/dev/stratis/my-pool/` 目录。此目录包含指向池中代表 Stratis 文件系统的设备的链接。
+
+**`filesystem`**
+
+  每个池可以包含一个或多个文件系统，用于存储文件。
+
+  文件系统是精简配置的，没有固定的总大小。文件系统的实际大小随着存储在其上的数据而增长。如果数据大小接近文件系统的虚拟大小，Stratis 会自动增加精简卷和文件系统。
+
+  文件系统使用 XFS 格式化。
+
+> **重要**
+> 
+> Stratis 跟踪有关使用 Stratis 创建的文件系统的信息（该信息 XFS 并不知道），并且使用 XFS 所做的更改不会自动在 Stratis 中创建更新。用户不得重新格式化或重新配置由 Stratis 管理的 XFS 文件系统。
+
+Stratis 在 `/dev/stratis/my-pool/my-fs` 路径中创建指向文件系统的链接。
+
+> **注意**
+> 
+> Stratis 使用许多 Device Mapper 设备，这些设备显示在 `dmsetup` 列表和 `/proc/partitions` 文件中。同样，`lsblk` 命令输出反映了 Stratis 的内部工作和层.
+
+## 40.2 将块设备添加到 Stratis 池
+
+此过程将一个或多个块设备添加到 Stratis 池，提供 Stratis 文件系统使用。
+
+**前提条件**
+
+- Stratis 已安装。请参阅[安装 Stratis](#394-安装-stratis)。 
+- `stratisd` 服务正在运行。
+- 您添加到 Stratis 池的块设备未使用且未挂载。
+- 您添加到 Stratis 池的块设备每个大小至少为 1 GiB。
+
+**流程**
+
+- 要将一个或多个块设备添加到池中，请使用： 
+  
+  ```
+  # stratis pool add-data my-pool device-1 device-2 device-n
+  ```
