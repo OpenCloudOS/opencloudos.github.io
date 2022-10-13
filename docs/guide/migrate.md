@@ -47,12 +47,12 @@
  # cat <<EOF | sudo tee /tmp/centos8_vault.repo
  [c8_vault_baseos]
  name=c8_vault - BaseOS
- baseurl=http://mirrors.cloud.tencent.com/centos-vault/8.5.2111/BaseOS/\$basearch/os/
+ baseurl=https://mirrors.cloud.tencent.com/centos-vault/8.5.2111/BaseOS/\$basearch/os/
  gpgcheck=0
  enabled=1
  [c8_vault_appstream]
  name=c8_vault - AppStream
- baseurl=http://mirrors.cloud.tencent.com/centos-vault/8.5.2111/AppStream/\$basearch/os/
+ baseurl=https://mirrors.cloud.tencent.com/centos-vault/8.5.2111/AppStream/\$basearch/os/
  gpgcheck=0
  enabled=1
  EOF
