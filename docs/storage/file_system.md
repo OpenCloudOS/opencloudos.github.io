@@ -298,7 +298,7 @@ Storage 角色可以管理：
 > 
 > 存储角色只能在未分区、整个磁盘或逻辑卷（LV）上创建文件系统。它不能在分区中创建文件系统。
 
-> **例 2.1 在/dev/sdb上创建 XFS 的playbook**
+> **例 2.1 在/dev/vdb上创建 XFS 的playbook**
 > 
 > ```
 > ---
@@ -308,7 +308,7 @@ Storage 角色可以管理：
 >      - name: barefs
 >        type: disk
 >        disks:
->          - sdb
+>          - vdb
 >        fs_type: xfs
 >  roles:
 >    - rhel-system-roles.storage
@@ -324,7 +324,7 @@ Storage 角色可以管理：
 
 本节提供了一个 Ansible playbook 示例。此 playbook 应用存储角色用来立即和永久挂载 XFS 文件系统。
 
-> **例 2.2 将 /dev/sdb 上的文件系统挂载到 /mnt/data 的 playbook**
+> **例 2.2 将 /dev/vdb 上的文件系统挂载到 /mnt/data 的 playbook**
 > 
 > ```
 > ---
@@ -334,7 +334,7 @@ Storage 角色可以管理：
 >      - name: barefs
 >        type: disk
 >        disks:
->          - sdb
+>          - vdb
 >        fs_type: xfs
 >        mount_point: /mnt/data
 >  roles:
@@ -342,7 +342,7 @@ Storage 角色可以管理：
 > ```
 > 
 > - 此 playbook 将文件系统添加到 `/etc/fstab` 文件中，并立即挂载文件系统。
-> - 如果 `/dev/sdb` 设备上的文件系统或挂载点目录不存在，则 playbook 会创建它们。
+> - 如果 `/dev/vdb` 设备上的文件系统或挂载点目录不存在，则 playbook 会创建它们。
 
 ## 2.5 管理逻辑卷的 Ansible playbook 示例
 
@@ -356,9 +356,9 @@ Storage 角色可以管理：
 >    storage_pools:
 >      - name: myvg
 >        disks:
->          - sda
->          - sdb
->          - sdc
+>          - vda
+>          - vdb
+>          - vdc
 >        volumes:
 >          - name: mylv
 >            size: 2G
@@ -370,9 +370,9 @@ Storage 角色可以管理：
 > 
 > - `myvg` 卷组由以下磁盘组成：
 >   
->   - `/dev/sda`
->   - `/dev/sdb`
->   - `/dev/sdc`
+>   - `/dev/vda`
+>   - `/dev/vdb`
+>   - `/dev/vdc`
 > 
 > - 如果 `myvg` 卷组已存在，则 playbook 会将逻辑卷添加到卷组。
 > 
@@ -394,7 +394,7 @@ Storage 角色可以管理：
 >      - name: barefs
 >        type: disk
 >        disks:
->          - sdb
+>          - vdb
 >        fs_type: xfs
 >        mount_point: /mnt/data
 >        mount_options: discard
@@ -406,7 +406,7 @@ Storage 角色可以管理：
 
 本节提供了一个 Ansible playbook 示例。此 playbook 应用存储角色来创建和挂载 Ext4 文件系统。
 
-> **例 2.5 在 `/dev/sdb` 上创建 Ext4 并挂载到 `/mnt/data` 的 playbook**
+> **例 2.5 在 `/dev/vdb` 上创建 Ext4 并挂载到 `/mnt/data` 的 playbook**
 > 
 > ```
 > ---
@@ -416,7 +416,7 @@ Storage 角色可以管理：
 >      - name: barefs
 >        type: disk
 >        disks:
->          - sdb
+>          - vdb
 >        fs_type: ext4
 >        fs_label: label-name
 >        mount_point: /mnt/data
@@ -424,7 +424,7 @@ Storage 角色可以管理：
 >    - rhel-system-roles.storage
 > ```
 > 
-> - playbook 在 `/dev/sdb` 磁盘上创建文件系统。
+> - playbook 在 `/dev/vdb` 磁盘上创建文件系统。
 > - playbook 将文件系统永久挂载在 `/mnt/data` 目录。
 > - 文件系统的标签是 `label-name`。
 
@@ -432,7 +432,7 @@ Storage 角色可以管理：
 
 本节提供了一个 Ansible playbook 示例。此 playbook 应用存储角色来创建和挂载 Ext3 文件系统。
 
-> **例 2.6 在 `/dev/sdb` 上创建 Ext3 ，并将其挂载在 `/mnt/data` 的 playbook**
+> **例 2.6 在 `/dev/vdb` 上创建 Ext3 ，并将其挂载在 `/mnt/data` 的 playbook**
 > 
 > ```
 > ---
@@ -442,7 +442,7 @@ Storage 角色可以管理：
 >      - name: barefs
 >        type: disk
 >        disks:
->          - sdb
+>          - vdb
 >        fs_type: ext3
 >        fs_label: label-name
 >        mount_point: /mnt/data
@@ -450,7 +450,7 @@ Storage 角色可以管理：
 >    - rhel-system-roles.storage
 > ```
 > 
-> - playbook 在 `/dev/sdb` 磁盘上创建文件系统。
+> - playbook 在 `/dev/vdb` 磁盘上创建文件系统。
 > - playbook 将文件系统永久挂载在 `/mnt/data` 目录。
 > - 文件系统的标签是 `label-name`。
 
@@ -469,7 +469,7 @@ Storage 角色可以管理：
 >      - name: barefs
 >        type: disk
 >        disks:
->          - /dev/sdb
+>          - /dev/vdb
 >    size: 12 GiB
 >        fs_type: ext4
 >        mount_point: /opt/barefs
@@ -479,7 +479,7 @@ Storage 角色可以管理：
 
 - 如果上例中的卷已存在，要调整卷的大小，您需要运行相同的 playbook，使用不同的 `size` 参数值。例如：
 
-> **例 2.8 在 `/dev/sdb`上调整 `ext4` 大小的 playbook**
+> **例 2.8 在 `/dev/vdb`上调整 `ext4` 大小的 playbook**
 > 
 > ```
 > ---
@@ -490,7 +490,7 @@ Storage 角色可以管理：
 >      - name: barefs
 >        type: disk
 >        disks:
->          - /dev/sdb
+>          - /dev/vdb
 >    size: 10 GiB
 >        fs_type: ext4
 >        mount_point: /opt/barefs
@@ -522,9 +522,9 @@ Storage 角色可以管理：
 >    storage_pools:
 >      - name: myvg
 >        disks:
->          - /dev/sda
->          - /dev/sdb
->          - /dev/sdc
+>          - /dev/vda
+>          - /dev/vdb
+>          - /dev/vdc
 >        volumes:
 >            - name: mylv1
 >              size: 10 GiB
@@ -549,7 +549,7 @@ Storage 角色可以管理：
 
 本节提供了一个 Ansible playbook 示例。此 playbook 应用存储角色来创建交换分区（如果不存在的话），或者使用默认参数在块设备上修改交换分区（如果已存在的话）。
 
-> **例 2.10 创建或修改 `/dev/sdb` 上现有 XFS 的 playbook**
+> **例 2.10 创建或修改 `/dev/vdb` 上现有 XFS 的 playbook**
 > 
 > ```
 > name: Create a disk device with swap
@@ -559,7 +559,7 @@ Storage 角色可以管理：
 > - name: swap_fs
 >  type: disk
 >  disks:
->    - /dev/sdb
+>    - /dev/vdb
 > size: 15 GiB
 > fs_type: swap
 > roles:
@@ -589,7 +589,7 @@ Storage 角色可以管理：
         storage_volumes:
          - name: data
            type: raid
-           disks: [sdd, sde, sdf, sdg]
+           disks: [vdd, vde, vdf, vdg]
            raid_level: raid0
            raid_chunk_size: 32 KiB
            mount_point: /mnt/data
@@ -635,7 +635,7 @@ Storage 角色可以管理：
        storage_pools:
        - name: my_pool
            type: lvm
-           disks: [sdh, sdi]
+           disks: [vdh, vdi]
            raid_level: raid1
            volumes:
            - name: my_pool
@@ -679,7 +679,7 @@ Storage 角色可以管理：
 >    storage_pools:
 >     - name: myvg
 >       disks:
->         - /dev/sdb
+>         - /dev/vdb
 >       volumes:
 >         - name: mylv1
 >           compression: true
@@ -711,7 +711,7 @@ Storage 角色可以管理：
 
 > **重要**
 > 
-> OpenCloud OS 提供对基于 Ansible 的自动化需要 Ansible Engine 的独立 Ansible 存储库的访问权限。Ansible Engine 包含命令行实用程序，如 ansible、ansible-playbook、连接器（如 docker 和 podman ）以及许多插件和模块。
+> OpenCloud OS 提供对基于 Ansible 的自动化需要 Ansible Engine 的独立 Ansible 存储库的访问权限。Ansible Engine 包含命令行工具，如 ansible、ansible-playbook、连接器（如 docker 和 podman ）以及许多插件和模块。
 > 
 > OpenCloud OS 引入了 Ansible Core（以 ansible-core 软件包的形式提供），其中包含 Ansible 命令行工具、命令以及小型内置 Ansible 插件。
 
@@ -728,7 +728,7 @@ Storage 角色可以管理：
        - name: barefs
            type: disk
            disks:
-           - sdb
+           - vdb
            fs_type: xfs
            fs_label: label-name
            mount_point: /mnt/data
@@ -766,7 +766,7 @@ Storage 角色可以管理：
 >    storage_pools:
 >    - name: myvg
 >      disks:
->        - /dev/sdb
+>        - /dev/vdb
 >      volumes:
 >        - name: data
 >          size: 60%
@@ -1757,7 +1757,7 @@ Requested NFS version or transport protocol is not supported.
 
 **流程**
 
-- 使用 `netstat` 实用程序列出侦听 TCP 和 UDP 协议的服务：
+- 使用 `netstat` 工具列出侦听 TCP 和 UDP 协议的服务：
   
   ```
   # netstat --listening --tcp --udp
@@ -2051,10 +2051,10 @@ pNFS SCSI 通过预留分配来处理防护。在服务器向客户端发布布�
    # sg_persist --read-reservation path-to-scsi-device
    ```
    
-   > **例 7.3 在 /dev/sda 上查询预留**
+   > **例 7.3 在 /dev/vda 上查询预留**
    > 
    > ```
-   > # *sg_persist --read-reservation /dev/sda*
+   > # *sg_persist --read-reservation /dev/vda*
    > 
    >  LIO-ORG   block_1           4.0
    >  Peripheral device type: disk
@@ -2073,14 +2073,14 @@ pNFS SCSI 通过预留分配来处理防护。在服务器向客户端发布布�
               path-to-scsi-device
    ```
    
-   > **例 7.4 删除 /dev/sda 上的保留**
+   > **例 7.4 删除 /dev/vda 上的保留**
    > 
    > ```
    > # sg_persist --out \
    >            --release \
    >            --param-rk=0x100000000000000 \
    >            --prout-type=6 \
-   >            /dev/sda
+   >            /dev/vda
    > 
    >  LIO-ORG   block_1           4.0
    >  Peripheral device type: disk
@@ -2096,7 +2096,7 @@ pNFS SCSI 通过预留分配来处理防护。在服务器向客户端发布布�
 
 ## 8.1 使用 nfsstat 从服务器检查 pNFS SCSI 操作
 
-此过程使用 `nfsstat` 实用程序从服务器监视 pNFS SCSI 操作。
+此过程使用 `nfsstat` 工具从服务器监视 pNFS SCSI 操作。
 
 **流程**
 
@@ -2431,7 +2431,7 @@ NFS 有一些缓存限制：
 
 > **注意**
 > 
-> 在 SMB 的上下文中，您可以发现提到了通用 Internet 文件系统(CIFS)协议，它是 SMB 的一种方言。 SMB 和 CIFS 协议都受支持，并且挂载 SMB 和 CIFS 共享所涉及的内核模块和实用程序都使用名称 `cifs`。
+> 在 SMB 的上下文中，您可以发现提到了通用 Internet 文件系统(CIFS)协议，它是 SMB 的一种方言。 SMB 和 CIFS 协议都受支持，并且挂载 SMB 和 CIFS 共享所涉及的内核模块和工具都使用名称 `cifs`。
 
 本节介绍如何从 SMB 服务器挂载共享。
 
@@ -2443,7 +2443,7 @@ NFS 有一些缓存限制：
 # yum install cifs-utils
 ```
 
-`cifs-utils` 软件包提供了以下实用程序：
+`cifs-utils` 软件包提供了以下工具：
 
 - 挂载 SMB 和 CIFS 共享
 - 管理内核密钥环中的 NT Lan Manager (NTLM) 凭证
@@ -2615,7 +2615,7 @@ Password for user_name@//server_name/share_name:  password
 > 
 > 要使用 `multiuser` 挂载选项，您必须另外将 `sec` 挂载选项设置为支持以非交互方式提供凭证的安全类型，例如 `krb5` 或带有凭证文件的 `ntlmssp` 选项。有关详细信息，请参阅[以用户身份访问共享](#123-以用户身份访问共享)。
 
-`root` 用户使用多用户选项和对共享内容具有最小访问权限的帐户来安装共享。然后，普通用户可以使用 cifscreds 实用程序将他们的用户名和密码提供给当前会话的内核密钥环。如果用户访问已挂载共享的内容，内核将使用来自内核密钥环的凭证，而不是最初用于挂载共享的凭证。
+`root` 用户使用多用户选项和对共享内容具有最小访问权限的帐户来安装共享。然后，普通用户可以使用 cifscreds 工具将他们的用户名和密码提供给当前会话的内核密钥环。如果用户访问已挂载共享的内容，内核将使用来自内核密钥环的凭证，而不是最初用于挂载共享的凭证。
 
 使用此功能包括以下步骤：
 
@@ -2691,7 +2691,7 @@ OpenCloud OS 提供了多种识别存储设备的方法。在使用时务必要�
 在以下情况下可能会发生这种排序更改：
 
 - 系统引导过程的并行化会在每次系统引导时以不同的顺序检测存储设备。
-- 磁盘无法启动或响应 SCSI 控制器。这导致正常设备探测器无法检测到它。系统无法访问该磁盘，并且后续设备将具有其主要和次要编号范围，并且其相关的 `sd` 名称会向下移动。例如，如果未检测到通常称为 `sdb` 的磁盘，则通常称为 `sdc` 的磁盘将改为显示为 `sdb`。
+- 磁盘无法启动或响应 SCSI 控制器。这导致正常设备探测器无法检测到它。系统无法访问该磁盘，并且后续设备将具有其主要和次要编号范围，并且其相关的 `sd` 名称会向下移动。例如，如果未检测到通常称为 `vdb` 的磁盘，则通常称为 `vdc` 的磁盘将改为显示为 `vdb`。
 - SCSI 控制器（主机总线适配器或 HBA）无法初始化，导致无法检测到连接到该 HBA 的所有磁盘。任何连接到随后探测的 HBA 的磁盘都被分配了不同的主要和次要编号范围，以及不同的关联 `sd` 名称。
 - 如果系统中存在不同类型的 HBA，则驱动程序初始化的顺序会发生变化。导致这些 HBA 的磁盘会以不同的顺序被检测到。如果将 HBA 连接到系统上的不同 PCI 插槽时也可能会发生这种情况。
 - 使用光纤通道、iSCSI 或 FCoE 适配器连接到系统的磁盘可能在探测存储设备时无法访问，例如，由于存储阵列或中间交换机断电。如果存储阵列在线所需的时间比系统启动所需的时间长，则系统在电源故障后重新启动时可能会发生这种情况。尽管某些光纤通道驱动程序支持指定持久性 SCSI 目标 ID 到 WWPN 映射的机制，但这不会保留主要和次要编号范围以及相关的 `sd` 名称，它只提供一致的 SCSI 目标 ID 号。
@@ -2793,9 +2793,9 @@ OpenCloud OS 自动维护从基于 WWID 的设备名称到该系统上当前 `/d
 > 
 > | **WWID 符号链接**                                                         | **非持久设备**   | **备注**             |
 > | --------------------------------------------------------------------- | ----------- | ------------------ |
-> | `/dev/disk/by-id/scsi-3600508b400105e210000900000490000`              | `/dev/sda`  | 具有页面 `0x83` 标识符的设备 |
-> | `/dev/disk/by-id/scsi-SSEAGATE_ST373453LW_3HW1RHM6`                   | `/dev/sdb`  | 具有页面 `0x80` 标识符的设备 |
-> | `/dev/disk/by-id/ata-SAMSUNG_MZNLN256HMHQ-000L7_S2WDNX0J336519-part3` | `/dev/sdc3` | 磁盘分区               |
+> | `/dev/disk/by-id/scsi-3600508b400105e210000900000490000`              | `/dev/vda`  | 具有页面 `0x83` 标识符的设备 |
+> | `/dev/disk/by-id/scsi-SSEAGATE_ST373453LW_3HW1RHM6`                   | `/dev/vdb`  | 具有页面 `0x80` 标识符的设备 |
+> | `/dev/disk/by-id/ata-SAMSUNG_MZNLN256HMHQ-000L7_S2WDNX0J336519-part3` | `/dev/vdc3` | 磁盘分区               |
 
 除了系统提供的这些持久化名称之外，您还可以使用 `udev` 规则来实现持久化名称映射到存储的 WWID 中。
 
@@ -2807,8 +2807,8 @@ OpenCloud OS 自动维护从基于 WWID 的设备名称到该系统上当前 `/d
 > 
 > | **PARTUUID 符号链接**                   | **非持久性设备**  |
 > | ----------------------------------- | ----------- |
-> | `/dev/disk/by-partuuid/35e6a7c2-01` | `/dev/sda1` |
-> | `/dev/disk/by-partuuid/35e6a7c2-02` | `/dev/sda2` |
+> | `/dev/disk/by-partuuid/35e6a7c2-01` | `/dev/vda1` |
+> | `/dev/disk/by-partuuid/35e6a7c2-02` | `/dev/vda2` |
 
 ![PARTUUID](./images/13.3.2-1.png)
 
@@ -2841,11 +2841,11 @@ OpenCloud OS 自动维护从基于 WWID 的设备名称到该系统上当前 `/d
 > 3600508b400105df70000e00000ac0000 dm-2 vendor,product
 > [size=20G][features=1 queue_if_no_path][hwhandler=0][rw]
 > \_ round-robin 0 [prio=0][active]
-> \_ 5:0:1:1 sdc 8:32  [active][undef]
-> \_ 6:0:1:1 sdg 8:96  [active][undef]
+> \_ 5:0:1:1 vdc 8:32  [active][undef]
+> \_ 6:0:1:1 vdg 8:96  [active][undef]
 > \_ round-robin 0 [prio=0][enabled]
-> \_ 5:0:0:1 sdb 8:16  [active][undef]
-> \_ 6:0:0:1 sdf 8:80  [active][undef]
+> \_ 5:0:0:1 vdb 8:16  [active][undef]
+> \_ 6:0:0:1 vdf 8:80  [active][undef]
 > ```
 
 DM Multipath 自动维护每个基于 WWID 的设备名称到系统上相应 `/dev/sd` 名称的正确映射。这些名称在路径更改时保持不变，并且在从不同系统访问设备时保持一致。
@@ -2902,7 +2902,7 @@ DM Multipath 自动维护每个基于 WWID 的设备名称到系统上相应 `/d
   > **例 13.5 查看分区的 PARTUUID 属性**
   > 
   > ```
-  > $ $ lsblk --output +PARTUUID /dev/sda1
+  > $ $ lsblk --output +PARTUUID /dev/vda1
   > 
   > NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT PARTUUID
   > vda1 253:1    0   1G  0 part /boot      35e6a7c2-01
@@ -2951,21 +2951,21 @@ DM Multipath 自动维护每个基于 WWID 的设备名称到系统上相应 `/d
 
 **流程**
 
-- 要更改 **XFS** 文件系统的 UUID 或 Label 属性，请使用 `xfs_admin` 实用程序：
+- 要更改 **XFS** 文件系统的 UUID 或 Label 属性，请使用 `xfs_admin` 工具：
   
   ```
   # xfs_admin -U new-uuid -L new-label storage-device
   # udevadm settle 
   ```
 
-- 要更改 **ext4**、**ext3** 或 **ext2** 文件系统的 UUID 或标签属性，请使用 `tune2fs` 实用程序：
+- 要更改 **ext4**、**ext3** 或 **ext2** 文件系统的 UUID 或标签属性，请使用 `tune2fs` 工具：
   
   ```
   # tune2fs -U new-uuid -L new-label storage-device
   # udevadm settle
   ```
 
-- 要更改交换卷的 UUID 或标签属性，请使用 `swaplabel` 实用程序：
+- 要更改交换卷的 UUID 或标签属性，请使用 `swaplabel` 工具：
   
   ```
   # swaplabel --uuid new-uuid --label new-label swap-device
@@ -2978,10 +2978,10 @@ DM Multipath 自动维护每个基于 WWID 的设备名称到系统上相应 `/d
 
 **流程**
 
-1. 启动 `parted` 实用程序。例如，以下输出列出了设备 `/dev/sda`：
+1. 启动 `parted` 工具。例如，以下输出列出了设备 `/dev/vda`：
    
    ```
-   # parted /dev/sda
+   # parted /dev/vda
    ```
 
 2. 查看分区表：
@@ -3053,7 +3053,7 @@ DM Multipath 自动维护每个基于 WWID 的设备名称到系统上相应 `/d
      - 用于 MBR 的 `msdos`
      - 用于 GPT 的 `gpt`
    
-   > 例 15.1 创建 GUID 分区表 (GPT) 表
+   > **例 15.1 创建 GUID 分区表 (GPT) 表**
    > 
    > 要在磁盘上创建 GPT 表，请使用：
    > 
@@ -3489,7 +3489,7 @@ XFS 对于单线程、元数据密集型工作负载的性能相对较低。例�
   # mkfs.xfs block-device
   ```
   
-  - 用块设备的路径替换块设备。例如：`/dev/sdb1`、`/dev/disk/by-uuid/15cd6646-bff7-4bbd-90a3-b6f232047a84` 或 `/dev/my-volgroup/my-lv`。
+  - 用块设备的路径替换块设备。例如：`/dev/vdb1`、`/dev/disk/by-uuid/15cd6646-bff7-4bbd-90a3-b6f232047a84` 或 `/dev/my-volgroup/my-lv`。
   - 通常，默认选项是常见用途的最佳选择。
   - 在包含现有文件系统的块设备上使用 `mkfs.xfs` 时，添加 `-f` 选项以覆盖该文件系统。
 
@@ -3506,7 +3506,7 @@ XFS 对于单线程、元数据密集型工作负载的性能相对较低。例�
     例如：
     
     ```
-    # mkfs.xfs -d su=64k,sw=4 /dev/sda3
+    # mkfs.xfs -d su=64k,sw=4 /dev/vda3
     ```
 2. 使用以下命令等待系统注册新的设备节点：
    
@@ -3532,7 +3532,7 @@ XFS 对于单线程、元数据密集型工作负载的性能相对较低。例�
 > 
 > Storage 角色只能在未分区的整个磁盘或逻辑卷 (LV) 上创建文件系统。它不能在分区上创建文件系统。
 
-> 例 22.1 在 /dev/sdb 上创建 XFS 的 playbook
+> 例 22.1 在 /dev/vdb 上创建 XFS 的 playbook
 > 
 > ```
 > ---
@@ -3542,7 +3542,7 @@ XFS 对于单线程、元数据密集型工作负载的性能相对较低。例�
 >       - name: barefs
 >         type: disk
 >         disks:
->           - sdb
+>           - vdb
 >         fs_type: xfs
 >   roles:
 >     - rhel-system-roles.storage
@@ -3720,7 +3720,7 @@ xfsrestore: inventory session uuid (8590224e-3c93-469c-a311-fc8f23029b2a) does n
 
 ## 25.1 使用 xfs_growfs 增加 XFS 文件系统的大小
 
-此过程描述如何使用 `xfs_growfs` 实用程序扩展 XFS 文件系统。
+此过程描述如何使用 `xfs_growfs` 工具扩展 XFS 文件系统。
 
 **前提条件**
 
@@ -3853,7 +3853,7 @@ xfsrestore: inventory session uuid (8590224e-3c93-469c-a311-fc8f23029b2a) does n
 
 在这两个限制中，值 `-1` 用于连续重试，`0` 用于立即停止。
 
-*device* 是设备的名称，可以在 `/dev/` 目录中找到；例如，`sda`。
+*device* 是设备的名称，可以在 `/dev/` 目录中找到；例如，`vda`。
 
 ## 26.4 为未定义的条件设置 XFS 行为
 
@@ -3879,7 +3879,7 @@ xfsrestore: inventory session uuid (8590224e-3c93-469c-a311-fc8f23029b2a) does n
 
 在这两个限制中，值 `-1` 用于连续重试，`0` 用于立即停止。
 
-*device* 是设备的名称，可以在 `/dev/` 目录中找到；例如，`sda`。。
+*device* 是设备的名称，可以在 `/dev/` 目录中找到；例如，`vda`。。
 
 ## 26.5 设置 XFS 卸载行为
 
@@ -3907,7 +3907,7 @@ xfsrestore: inventory session uuid (8590224e-3c93-469c-a311-fc8f23029b2a) does n
     # echo 0 > /sys/fs/xfs/device/error/fail_at_unmount
     ```
 
-*device* 是设备的名称，可以在 `/dev/` 目录中找到；例如，`sda`。
+*device* 是设备的名称，可以在 `/dev/` 目录中找到；例如，`vda`。
 
 # 第 27 章 检查和修复文件系统
 
@@ -3991,7 +3991,7 @@ OpenCloud OS 提供了能够检查和修复文件系统的文件系统管理工�
 > XFS (loop0): Failed to read root inode 0x80, error 11
 > ```
 
-尝试访问损坏的 XFS 文件系统时，用户空间实用程序通常会报告输入/输出错误消息。使用损坏的日志挂载 XFS 文件系统会导致挂载失败，并且会出现以下错误信息：
+尝试访问损坏的 XFS 文件系统时，用户空间工具通常会报告输入/输出错误消息。使用损坏的日志挂载 XFS 文件系统会导致挂载失败，并且会出现以下错误信息：
 
 ```
 mount: /mount-point: mount(2) system call failed: Structure needs cleaning.
@@ -4020,7 +4020,7 @@ mount: /mount-point: mount(2) system call failed: Structure needs cleaning.
    > 
    > 如果挂载失败并出现结构需要清理错误，则日志已损坏且无法重播。试运行应该会发现并报告更多的磁盘损坏结果。
 
-2. 使用 xfs_repair 实用程序执行试运行以检查文件系统。在不修改文件系统的情况下，将打印任何错误并指示将要采取的措施。
+2. 使用 xfs_repair 工具执行试运行以检查文件系统。在不修改文件系统的情况下，将打印任何错误并指示将要采取的措施。
    
    ```
    # xfs_repair -n block-device
@@ -4163,7 +4163,7 @@ ext2、ext3 和 ext4 文件系统使用 `e2fsck` 工具来执行文件系统检�
 
 - 通用唯一标识符 (UUID)：例如,`UUID=34795a28-ca6d-4fd8-a347-73671d0c19cb`
 - 卷标签：例如，`LABEL=home`
-- 非持久块设备的完整路径：例如 `/dev/sda1`
+- 非持久块设备的完整路径：例如 `/dev/vda1`
 
 当您使用 mount 命令挂载文件系统时，如果没有提供所有必需的信息（即设备名称、目标目录或文件系统类型），`mount` 工具会读取 `/etc/fstab` 文件的内容以检查是否列出给定的文件系统。 `/etc/fstab` 文件包含设备名称列表、所选文件系统挂载的目录以及文件系统类型和挂载选项。因此，在挂载 `/etc/fstab` 中指定的文件系统时，以下命令语法就足够了：
 
@@ -4185,7 +4185,7 @@ ext2、ext3 和 ext4 文件系统使用 `e2fsck` 工具来执行文件系统检�
 
 **流程**
 
-- 要列出所有已挂载的文件系统，请使用 `findmnt` 实用程序：
+- 要列出所有已挂载的文件系统，请使用 `findmnt` 工具：
   
   ```
   $ findmnt
@@ -4213,7 +4213,7 @@ ext2、ext3 和 ext4 文件系统使用 `e2fsck` 工具来执行文件系统检�
 
 ## 28.3 使用 mount 挂载文件系统
 
-此过程描述如何使用 `mount` 实用程序挂载文件系统。
+此过程描述如何使用 `mount` 工具挂载文件系统。
 
 **前提条件**
 
@@ -4225,7 +4225,7 @@ ext2、ext3 和 ext4 文件系统使用 `e2fsck` 工具来执行文件系统检�
 
 **流程**
 
-1. 要附加某个文件系统，请使用 `mount` 实用程序：
+1. 要附加某个文件系统，请使用 `mount` 工具：
    
    ```
    # mount device mount-point
@@ -4283,7 +4283,7 @@ ext2、ext3 和 ext4 文件系统使用 `e2fsck` 工具来执行文件系统检�
 
 ## 28.5 使用 umount 卸载文件系统
 
-此过程描述如何使用 `umount` 实用程序卸载文件系统。
+此过程描述如何使用 `umount` 工具卸载文件系统。
 
 **流程**
 
@@ -4321,7 +4321,7 @@ umount: /run/media/user/FlashDrive: target is busy.
 
 ## 28.6 常见的安装选项
 
-本节列出了 `mount` 实用程序的一些常用选项。
+本节列出了 `mount` 工具的一些常用选项。
 
 您可以按以下语法使用这些选项：
 
@@ -4436,10 +4436,10 @@ umount: /run/media/user/FlashDrive: target is busy.
 >    #
 >    ```
 > 
-> 5. 也可以验证挂载在 `/mnt` 目录中的文件系统没有反映在 `/media` 中。例如，如果插入了使用 `/dev/sdc` 设备的非空 USB 闪存驱动器并且存在 `/mnt/flashdisk/` 目录，请使用：
+> 5. 也可以验证挂载在 `/mnt` 目录中的文件系统没有反映在 `/media` 中。例如，如果插入了使用 `/dev/vdc` 设备的非空 USB 闪存驱动器并且存在 `/mnt/flashdisk/` 目录，请使用：
 >    
 >    ```
->    # mount /dev/sdc /mnt/flashdisk
+>    # mount /dev/vdc /mnt/flashdisk
 >    # ls /media/flashdisk
 >    # ls /mnt/flashdisk
 >    en-US publican.cfg
@@ -4505,10 +4505,10 @@ umount: /run/media/user/FlashDrive: target is busy.
 >    AppStream  BaseOS  EFI  images  isolinux  media.repo  TRANS.TBL
 >    ```
 > 
-> 5. 同样，可以验证挂载在 `/mnt` 目录中的任何文件系统是否反映在 `/media` 中。例如，如果插入了使用 `/dev/sdc1` 设备的非空 USB 闪存并且存在 `/mnt/flashdisk/` 目录，请使用：
+> 5. 同样，可以验证挂载在 `/mnt` 目录中的任何文件系统是否反映在 `/media` 中。例如，如果插入了使用 `/dev/vdc1` 设备的非空 USB 闪存并且存在 `/mnt/flashdisk/` 目录，请使用：
 >    
 >    ```
->    # mount /dev/sdc1 /mnt/flashdisk
+>    # mount /dev/vdc1 /mnt/flashdisk
 >    # ls /media/flashdisk
 >    en-US  publican.cfg
 >    # ls /mnt/flashdisk
@@ -4577,10 +4577,10 @@ umount: /run/media/user/FlashDrive: target is busy.
 >    AppStream  BaseOS  EFI  images  isolinux  media.repo  TRANS.TBL
 >    ```
 > 
-> 5. 同样，可以验证挂载在 `/mnt` 目录中的任何文件系统是否反映在 `/media` 中。例如，如果插入了使用 `/dev/sdc` 设备的非空 USB 闪存并且存在 `/mnt/flashdisk/` 目录，请使用：
+> 5. 同样，可以验证挂载在 `/mnt` 目录中的任何文件系统是否反映在 `/media` 中。例如，如果插入了使用 `/dev/vdc` 设备的非空 USB 闪存并且存在 `/mnt/flashdisk/` 目录，请使用：
 >    
 >    ```
->    # mount /dev/sdc1 /mnt/flashdisk
+>    # mount /dev/vdc1 /mnt/flashdisk
 >    # ls /media/flashdisk
 >    en-US  publican.cfg
 >    # ls /mnt/flashdisk
@@ -4702,7 +4702,7 @@ umount: /run/media/user/FlashDrive: target is busy.
    # mount mount-point
    ```
 
-# 31 使用 RHEL 系统角色持久挂载文件系统
+# 31 使用系统角色持久挂载文件系统
 
 本节介绍如何使用 `storage` 角色持久挂载文件系统。
 
@@ -4714,7 +4714,7 @@ umount: /run/media/user/FlashDrive: target is busy.
 
 本节提供了一个示例 Ansible 剧本。本手册应用 Storage 角色来立即且持久地挂载 XFS 文件系统。
 
-> **例 31.1 将 /dev/sdb 上的文件系统挂载到 /mnt/data 的剧本**
+> **例 31.1 将 /dev/vdb 上的文件系统挂载到 /mnt/data 的剧本**
 > 
 > ```
 > ---
@@ -4732,7 +4732,7 @@ umount: /run/media/user/FlashDrive: target is busy.
 > ```
 
 - 此 playbook 将文件系统添加到 `/etc/fstab` 文件中，并立即挂载文件系统。
-- 如果 `/dev/sdb` 设备上的文件系统或挂载点目录不存在，则 playbook 会创建它们。
+- 如果 `/dev/vdb` 设备上的文件系统或挂载点目录不存在，则 playbook 会创建它们。
 
 # 第 32 章 按需挂载文件系统
 
@@ -5950,7 +5950,7 @@ XFS 配额子系统管理磁盘空间（块）和文件（inode）使用的限�
    ----------------------------------------------------------------------
    root      --      20    5000    5500              2     0     0       
    ```
-
+   
    ![示例](./images/36-10.png)
 
 2. 查看所有启用配额的文件系统的磁盘使用情况报告：
@@ -6195,7 +6195,7 @@ Stratis 池已被测试，可以在这些类型的块设备上工作：
 
 **流程**
 
-1. 安装提供 Stratis 服务和命令行实用程序的软件包：
+1. 安装提供 Stratis 服务和命令行工具的软件包：
    
    ```
    # yum install stratisd stratis-cli
@@ -6596,7 +6596,7 @@ Stratis 池已被测试，可以在这些类型的块设备上工作：
 **前提条件**
 
 - 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
-- Stratisd 服务正在运行。
+- `stratisd` 服务正在运行。
 - 您已经创建了一个 Stratis 文件系统。请参阅[创建 Stratis 文件系统](#3912-创建-stratis-文件系统)。
 
 **流程**
@@ -6609,7 +6609,7 @@ Stratis 池已被测试，可以在这些类型的块设备上工作：
 
 # 第 40 章 使用附加块设备扩展 Stratis 卷
 
-您可以将附加块设备添加到 Stratis 池，为 Stratis 文件系统提供更多存储容量。
+您可以在 Stratis 池中添加附加块设备以便为 Stratis 文件系统提供更多存储容量。
 
 > **重要**
 > 
@@ -6651,7 +6651,7 @@ Stratis 在 `/dev/stratis/my-pool/my-fs` 路径中创建指向文件系统的链
 
 > **注意**
 > 
-> Stratis 使用许多 Device Mapper 设备，这些设备显示在 `dmsetup` 列表和 `/proc/partitions` 文件中。同样，`lsblk` 命令输出反映了 Stratis 的内部工作和层.
+> Stratis 使用许多 Device Mapper 设备，这些设备显示在 `dmsetup` 列表和 `/proc/partitions` 文件中。同样，`lsblk` 命令输出反映了 Stratis 的内部工作和层。
 
 ## 40.2 将块设备添加到 Stratis 池
 
@@ -6671,3 +6671,716 @@ Stratis 在 `/dev/stratis/my-pool/my-fs` 路径中创建指向文件系统的链
   ```
   # stratis pool add-data my-pool device-1 device-2 device-n
   ```
+
+# 第 41 章 监视 Stratis 文件系统
+
+Stratis 作为一项用来管理物理存储设备池的服务运行，简化本地存储管理且易于使用，同时帮助您设置和管理复杂的存储配置。
+
+> **重要**
+> 
+> Stratis 只是一项技术预览功能。一些服务水平协议 (SLA) 不支持技术预览功能，并且可能在功能上不完整。所以不建议在生产中使用它们。这些功能提供了对即将推出的产品功能的早期访问，使客户能够在开发过程中测试功能并提供反馈。
+
+## 41.1 不同公用事业报道的 Stratis 大小
+
+本节解释了标准工具（例如 `df` ）和 `stratis` 工具报告的 Stratis 大小之间的差异。
+
+标准 Linux 工具，（例如 `df`） 报告 Stratis 上 XFS 文件系统层的大小，即 1 TiB。这不是有用的信息，因为精简资源调配，导致 Stratis 的实际存储使用量较少。在 XFS 层即将满了的时候，Stratis 会自动增加文件系统。
+
+> **重要**
+> 
+> 定期监视写入Stratis文件系统的数据量，该数据报告为总体使用的总值。请确保它不会超过总计物理大小的值。
+
+## 41.2 显示有关 Stratis 卷的信息
+
+此过程列出了有关您的 Stratis 卷的统计信息，例如总数、使用量、可用大小、文件系统以及属于池的块设备。
+
+**前提条件**
+
+- 已安装 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+
+**流程**
+
+- 显示有关系统上用于 Stratis 的所有**块设备**的信息：
+  
+  ```
+  # stratis blockdev
+  
+  Pool Name  Device Node    Physical Size   State  Tier
+  my-pool    /dev/sdb            9.10 TiB  In-use  Data
+  ```
+
+- 显示系统上所有 Stratis **池**的信息：
+  
+  ```
+  # stratis pool
+  
+  Name    Total Physical Size  Total Physical Used
+  my-pool            9.10 TiB              598 MiB
+  ```
+
+- 显示系统上所有 Stratis **文件系统**的信息：
+  
+  ```
+  # stratis filesystem
+  
+  Pool Name  Name  Used     Created            Device
+  my-pool    my-fs 546 MiB  Nov 08 2018 08:03  /dev/stratis/my-pool/my-fs
+  ```
+
+# 第 42 章 在 Stratis 文件系统上使用快照
+
+您可以使用 Stratis 文件系统的快照在任意时间捕获文件系统的状态，并在以后恢复它。
+
+> **重要**
+> 
+> Stratis 只是一个技术预览功能。一些服务水平协议 (SLA) 不支持技术预览功能，并且可能在功能上不完整。所以不建议在生产中使用它们。这些功能提供了对即将推出的产品功能的早期访问，使客户能够在开发过程中测试功能并提供反馈。
+
+## 42.1 Stratis 快照的特征
+
+本节介绍 Stratis 上文件系统快照的属性和限制。
+
+在 Stratis 中，快照是作为另一个 Stratis 文件系统的副本创建的常规 Stratis 文件系统。快照最初包含与原始文件系统相同的文件内容，但可以随着快照的修改而改变。您对快照所做的任何更改都不会反映在原始文件系统中。
+
+Stratis 中当前的快照实现具有以下特点：
+
+- 文件系统的快照是另一个文件系统。
+- 快照及其原始卷在生命周期中没有关联。快照文件系统可以比从它创建的文件系统寿命更长。
+- 不必挂载文件系统即可从中创建快照。
+- 每个快照使用大约一半的实际后备存储，这是 XFS 日志所需的。
+
+## 42.2 创建 Stratis 快照
+
+此过程创建一个 Stratis 文件系统作为现有 Stratis 文件系统的快照。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 文件系统。请参阅[创建 Stratis 文件系统](#3912-创建-stratis-文件系统)。
+
+**流程**
+
+- 要创建 Stratis 快照，请使用：
+  
+  ```
+  # stratis fs snapshot my-pool my-fs my-fs-snapshot
+  ```
+
+## 42.3 访问 Stratis 快照的内容
+
+此过程安装 Stratis 文件系统的快照，以使其可用于读写操作。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 快照。请参阅[创建 Stratis 文件系统](#3912-创建-stratis-文件系统)。
+
+**流程**
+
+- 要访问快照，请将其挂载为 `/dev/stratis/my-pool/` 目录中的常规文件系统：
+  
+  ```
+  # mount /dev/stratis/my-pool/my-fs-snapshot mount-point
+  ```
+
+## 42.4 将 Stratis 文件系统恢复到以前的快照
+
+此过程将 Stratis 文件系统的内容恢复为在 Stratis 快照中捕获的状态。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 快照。请参阅[创建 Stratis 快照](#422-创建-stratis-快照)。
+
+**流程**
+
+1. 另外，备份文件系统的当前状态以便以后能够访问它：
+   
+   ```
+   # stratis filesystem snapshot my-pool my-fs my-fs-backup
+   ```
+
+2. 卸载并删除原始文件系统：
+   
+   ```
+   # umount /dev/stratis/my-pool/my-fs
+   # stratis filesystem destroy my-pool my-fs
+   ```
+
+3. 在原始文件系统的名称下创建快照的副本：
+   
+   ```
+   # stratis filesystem snapshot my-pool my-fs-snapshot my-fs
+   ```
+
+4. 挂载快照，现在可以使用与原始文件系统相同的名称访问它：
+   
+   ```
+   # mount /dev/stratis/my-pool/my-fs mount-point
+   ```
+
+名为 *my-fs* 的文件系统的内容现在与快照 *my-fs-snapshot* 相同。
+
+## 42.5 删除 Stratis 快照
+
+此过程从池中删除 Stratis 快照。快照上的数据丢失。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 快照。请参阅[创建 Stratis 快照](#422-创建-stratis-快照)。
+
+流程
+
+1. 卸载快照：
+   
+   ```
+   # umount /dev/stratis/my-pool/my-fs-snapshot
+   ```
+
+2. 销毁快照：
+   
+   ```
+   # stratis filesystem destroy my-pool my-fs-snapshot
+   ```
+
+# 第 43 章 删除 Stratis 文件系统
+
+您可以删除现有的 Stratis 文件系统或 Stratis 池，从而销毁其中的数据。
+
+> **重要**
+> 
+> Stratis 只是一个技术预览功能。一些服务水平协议 (SLA) 不支持技术预览功能，并且可能在功能上不完整。所以不建议在生产中使用它们。这些功能提供了对即将推出的产品功能的早期访问，使客户能够在开发过程中测试功能并提供反馈。
+
+## 43.1 Stratis 卷的组成部分
+
+了解构成 Stratis 卷的组件。
+
+另外，Stratis 在命令行界面和 API 中提供了以下卷组件：
+
+**`blockdev`**
+
+  块设备，例如磁盘或磁盘分区。
+
+**`pool`**
+
+  由一个或多个块设备组成。
+
+  池具有固定的大小，等于块设备的大小。
+
+  该池包含大多数 Stratis 层，例如使用 `dm-cache` 目标的非易失性数据缓存。
+
+  Stratis 为每个池创建一个 `/dev/stratis/my-pool/` 目录。此目录包含指向池中代表 Stratis 文件系统的设备的链接。
+
+**`filesystem`**
+
+  每个池可以包含一个或多个文件系统，用于存储文件。
+
+  文件系统是精简配置的，没有固定的总大小。文件系统的实际大小随着存储在其上的数据而增长。如果数据大小接近文件系统的虚拟大小，Stratis 会自动增加精简卷和文件系统。
+
+  文件系统使用 XFS 格式化。
+
+> **重要**
+> 
+> Stratis 跟踪有关使用 Stratis 创建的文件系统的信息（该信息 XFS 并不知道），并且使用 XFS 所做的更改不会自动在 Stratis 中创建更新。用户不得重新格式化或重新配置由 Stratis 管理的 XFS 文件系统。
+
+Stratis 在 `/dev/stratis/my-pool/my-fs` 路径中创建指向文件系统的链接。
+
+> **注意**
+> 
+> Stratis 使用许多 Device Mapper 设备，这些设备显示在 `dmsetup` 列表和 `/proc/partitions` 文件中。同样，`lsblk` 命令输出反映了 Stratis 的内部工作和层。
+
+## 43.2.删除 Stratis 文件系统
+
+此过程将删除现有的 Stratis 文件系统。存储的数据会丢失。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+- `stratisd` 服务正在运行。
+- 您已经创建了一个 Stratis 文件系统。请参阅[创建 Stratis 文件系统](#3912-创建-stratis-文件系统)。
+
+**流程**
+
+1. 卸载文件系统：
+   
+   ```
+   # umount /dev/stratis/my-pool/my-fs
+   ```
+
+2. 销毁文件系统：
+   
+   ```
+   # stratis filesystem destroy my-pool my-fs
+   ```
+
+3. 验证文件系统是否不再存在：
+   
+   ```
+   # stratis filesystem list my-pool
+   ```
+
+## 43.3 删除 Stratis 池
+
+此过程会删除现有的 Stratis 池。存储的数据会丢失。
+
+**前提条件**
+
+- 安装了 Stratis。请参阅[安装 Stratis](#394-安装-stratis)。
+
+- `stratisd` 服务正在运行。
+
+- 您已经创建了一个 Stratis 池：
+  
+  - 要创建未加密的池，请参阅[创建未加密的 Stratis 池](#395-创建未加密的-stratis-池)
+  - 要创建加密池，请参阅[创建加密的 Stratis 池](#396-创建加密的-stratis-池)。
+
+**流程**
+
+1. 列出池中的文件系统：
+   
+   ```
+   # stratis filesystem list my-pool
+   ```
+
+2. 卸载池中的所有文件系统：
+   
+   ```
+   # umount /dev/stratis/my-pool/my-fs-1 \
+            /dev/stratis/my-pool/my-fs-2 \
+            /dev/stratis/my-pool/my-fs-n
+   ```
+
+3. 销毁文件系统：
+   
+   ```
+   # stratis filesystem destroy my-pool my-fs-1 my-fs-2
+   ```
+
+4. 销毁池：
+   
+   ```
+   # stratis pool destroy my-pool
+   ```
+
+5. 验证池不再存在：
+   
+   ```
+   # stratis pool list
+   ```
+
+# 第 44 章 ext3 文件系统入门
+
+作为系统管理员，您可以创建、挂载、调整大小、备份和恢复 ext3 文件系统。 ext3 文件系统本质上是 ext2 文件系统的改进版本。
+
+## 44.1 ext3 文件系统的特点
+
+以下是 ext3 文件系统的功能：
+
+- 可用性：在意外断电或系统崩溃后，由于提供了日志，因此不需要文件系统检查。默认日志大小大约需要一秒钟才能恢复，具体取决于硬件的速度
+
+> 注意
+> 
+> ext3 中唯一支持的日志模式是 `data=ordered`（默认）。
+
+- 数据完整性：ext3 文件系统可防止在意外电源故障或系统崩溃期间丢失数据完整性。
+
+- 速度：尽管多次写入一些数据，但在大多数情况下，ext3 的吞吐量高于 ext2，因为 ext3 的日志优化了硬盘磁头的运行。
+
+- 轻松转换：从 ext2 迁移到 ext3 很容易，并且无需重新格式化即可获得强大的日志文件系统的好处。
+
+## 44.2 创建 ext3 文件系统
+
+作为系统管理员，您可以使用 `mkfs.ext3` 命令在块设备上创建 ext3 文件系统。
+
+**前提条件**
+
+- 磁盘上的一个分区。有关创建 MBR 或 GPT 分区的信息，请参阅[使用 parted 在磁盘上创建分区表](#第-15-章-使用parted在磁盘上创建分区表)。 
+  
+   或者，使用 LVM 或 MD 卷。
+
+**流程**
+
+1. 创建 ext3 文件系统：
+   
+   - 对于常规分区设备、LVM 卷、MD 卷或类似设备，请使用以下命令：
+   
+   ```
+   # mkfs.ext3 /dev/block_device
+   ```
+   
+   将 /dev/block_device 替换为块设备的路径。
+   
+   例如，`/dev/vdb1`、`/dev/disk/by-uuid/15cd6646-bff7-4bbd-90a3-b6f232047a84` 或 `/dev/my-volgroup/my-lv`。通常，默认选项适用于大多数应用场景。
+   
+   - 对于条带化块设备（例如，RAID5 阵列），可以在创建文件系统时指定条带几何结构。使用适当的条带几何可以提高 ext3 文件系统的性能。例如，要在 4k 块文件系统上创建一个 64k（即 16 x 4096）的文件系统，请使用以下命令：
+   
+   ```
+   # mkfs.ext3 -E stride=16,stripe-width=64 /dev/block_device
+   ```
+   
+   在给定的示例中：
+   
+   - stride=value：指定 RAID 块大小
+   - stripe-width=value：指定RAID设备中数据盘的数量，或者条带中的条带单元的数量。
+
+> **注意**
+> 
+> - 在创建文件系统时指定 UUID：
+>   
+>   ```
+>   # mkfs.ext3 -U UUID /dev/block_device
+>   ```
+>   
+>   将 UUID 替换为您要设置的 UUID：例如 `7cd65de3-e0be-41d9-b66d-96d749c02da7`。
+>   
+>   将 */dev/block_device* 替换为 ext3 文件系统的路径以添加 UUID：例如 `/dev/vda8`。
+> 
+> - 在创建文件系统时指定标签：
+>   
+>   ```
+>   # mkfs.ext3 -L label-name /dev/block_device
+>   ```
+
+2. 查看创建的 ext3 文件系统：
+   
+   ```
+   # blkid
+   ```
+
+## 44.3 挂载 ext3 文件系统
+
+作为系统管理员，您可以使用 `mount` 工具挂载 ext3 文件系统。
+
+**前提条件**
+
+- 一个 ext3 文件系统。有关创建 ext3 文件系统的信息，请参阅[创建 ext3 文件系统](#442-创建-ext3-文件系统)。
+
+**流程**
+
+1. 创建一个挂载点来挂载文件系统：
+   
+   ```
+   # mkdir /mount/point
+   ```
+   
+   将 */mount/point* 替换为必须创建分区挂载点的目录名称。
+
+2. 挂载 ext3 文件系统：
+   
+   - 要挂载不带额外选项的 ext3 文件系统：
+   
+   ```
+   # mount /dev/block_device /mount/point
+   ```
+   
+   - 要永久挂载文件系统，请参阅[永久挂载文件系统](#第-30-章-永久挂载文件系统)。
+
+3. 查看挂载的文件系统：
+   
+   ```
+   # df -h
+   ```
+
+## 44.4 调整 ext3 文件系统的大小
+
+作为系统管理员，您可以使用 `resize2fs` 工具调整 ext3 文件系统的大小。 `resize2fs` 工具以文件系统块大小为单位读取大小，除非使用了指示特定单位的后缀。以下后缀表示具体单位：
+
+- s（扇区）- `512` 字节扇区
+- K（千字节） - `1,024` 字节
+- M（兆字节）- `1,048,576` 字节
+- G（千兆字节） - `1,073,741,824` 字节
+- T（太字节） - `1,099,511,627,776` 字节
+
+**前提条件**
+
+- 一个 ext3 文件系统。有关创建 ext3 文件系统的信息，请参阅[创建 ext3 文件系统](#442-创建-ext3-文件系统)。
+- 调整大小后可保留文件系统的基本块设备。
+
+**流程**
+
+1. 要调整 ext3 文件系统的大小，请执行以下步骤：
+   
+   - 要缩小和扩大已卸载的 ext3 文件系统的大小：
+   
+   ```
+   # umount /dev/block_device
+   # e2fsck -f /dev/block_device
+   # resize2fs /dev/block_device size
+   ```
+   
+   将 /dev/block_device 替换为块设备的路径，例如 `/dev/vdb1`。
+   
+   使用 `s`、`K`、`M`、`G` 和 `T` 后缀将 *size* 替换为所需的调整大小值。
+
+2. 使用 `resize2fs` 命令挂载时，可以扩展 ext3 文件系统：
+   
+   ```
+   # resize2fs /mount/device size
+   ```
+   
+   > **注意**
+   > 
+   > 扩展时，size 参数是可选的（通常是多余的）。 `resize2fs` 会自动扩展以填充容器的可用空间，通常是逻辑卷或分区。
+
+3. 查看调整大小的文件系统：
+   
+   ```
+   # df -h
+   ```
+
+## 第 45 章 使用系统角色创建和挂载 ext3 文件系统
+
+本节介绍如何在磁盘上创建具有给定标签的 ext3 文件系统，并使用 `storage` 角色永久挂载文件系统。
+
+**前提条件**
+
+- 存在包含存储角色的 Ansible 剧本。
+
+## 45.1 用于创建和挂载 ext3 文件系统的示例 Ansible playbook
+
+本节提供了一个示例 Ansible 剧本。本 playbook 应用 Storage 角色来创建和挂载 Ext3 文件系统。
+
+> **例 45.1 在 `/dev/vdb` 上创建 Ext3 并将其挂载到 `/mnt/data` 的剧本**
+> 
+> ```
+> ---
+> - hosts: all
+>   vars:
+>     storage_volumes:
+>       - name: barefs
+>         type: disk
+>         disks:
+>           - vdb
+>         fs_type: ext3
+>         fs_label: label-name
+>         mount_point: /mnt/data
+>   roles:
+>     - rhel-system-roles.storage
+> ```
+> 
+> - playbook 在 `/dev/vdb` 磁盘上创建文件系统。
+> - playbook 将文件系统永久挂载在 `/mnt/data` 目录中。
+> - 文件系统的标签是 `label-name`。
+
+# 第 46 章 ext4 文件系统入门
+
+作为系统管理员，您可以创建、挂载、调整大小、备份和恢复 ext4 文件系统。 ext4 文件系统是 ext4 文件系统的可扩展扩展。使用 OpenCloud OS 8，它可以支持最大 `16 TB` 的单个文件大小，且支持大小最大为 `50 TB` 的文件系统。
+
+## 46.1  ext4 文件系统的特点
+
+以下是 ext4 文件系统的功能：
+
+- 使用数据块：ext4 文件系统使用数据块，在使用大文件时提高性能，减少大文件的元数据开销。
+
+- Ext4 相应地标记未分配的块组和 inode 表部分，这允许在文件系统检查期间跳过块组和表部分。它导致快速的文件系统检查，随着文件系统大小的增长，这变得更加有益。
+
+- 元数据校验和：默认情况下，该功能在 OpenCloud OS 8 中启用。
+
+- ext4 文件系统的分配特性：
+  
+  - 持续预分配
+  - 延迟分配
+  - 多块分配
+  - 条状化分配
+
+- 扩展属性 (`xattr`)：这允许系统为每个文件关联几个附加的名称和值对。
+
+- 配额日志：这避免了在崩溃后进行冗长的配额一致性检查。
+
+> **注意**
+> 
+> ext4 中唯一支持的日志模式是 data=ordered（默认）。
+
+- 次秒时间戳 - 为次秒提供时间戳。
+
+## 46.2 创建 ext4 文件系统
+
+作为系统管理员，您可以使用 `mkfs.ext4` 命令在块设备上创建 ext4 文件系统。
+
+**前提条件**
+
+- 磁盘上的一个分区。有关创建 MBR 或 GPT 分区的信息，请参阅[使用 parted 在磁盘上创建分区表](#第-15-章-使用parted在磁盘上创建分区表)。 
+  
+   或者，使用 LVM 或 MD 卷。
+
+**流程**
+
+1. 创建 ext4 文件系统：
+   
+   - 对于常规分区设备、LVM 卷、MD 卷或类似设备，请使用以下命令：
+   
+   ```
+   # mkfs.ext4 /dev/block_device
+   ```
+   
+   将 /dev/block_device 替换为块设备的路径。
+   
+   例如，`/dev/vdb1`、`/dev/disk/by-uuid/15cd6646-bff7-4bbd-90a3-b6f232047a84` 或 `/dev/my-volgroup/my-lv`。通常，默认选项适用于大多数应用场景。
+   
+   - 对于条带化块设备（例如，RAID5 阵列），可以在创建文件系统时指定条带几何结构。使用适当的条带几何可以提高 ext4 文件系统的性能。例如，要在 4k 块文件系统上创建一个 64k（即 16 x 4096）的文件系统，请使用以下命令：
+   
+   ```
+   # mkfs.ext4 -E stride=16,stripe-width=64 /dev/block_device
+   ```
+   
+   在给定的示例中：
+   
+   - stride=value：指定 RAID 块大小
+   - stripe-width=value：指定RAID设备中数据盘的数量，或者条带中的条带单元的数量。
+
+> **注意**
+> 
+> - 在创建文件系统时指定 UUID：
+>   
+>   ```
+>   # mkfs.ext4 -U UUID /dev/block_device
+>   ```
+>   
+>   将 UUID 替换为您要设置的 UUID：例如 `7cd65de3-e0be-41d9-b66d-96d749c02da7`。
+>   
+>   将 */dev/block_device* 替换为 ext4 文件系统的路径以添加 UUID：例如 `/dev/vda8`。
+> 
+> - 在创建文件系统时指定标签：
+>   
+>   ```
+>   # mkfs.ext4 -L label-name /dev/block_device
+>   ```
+
+2. 查看创建的 ext4 文件系统：
+   
+   ```
+   # blkid
+   ```
+
+## 46.3 挂载 ext4 文件系统
+
+作为系统管理员，您可以使用 `mount` 工具挂载 ext4 文件系统。
+
+**前提条件**
+
+- 一个 ext4 文件系统。有关创建 ext4 文件系统的信息，请参阅[创建 ext4 文件系统](#462-创建-ext4-文件系统)。
+
+**流程**
+
+1. 创建一个挂载点来挂载文件系统：
+   
+   ```
+   # mkdir /mount/point
+   ```
+   
+   将 */mount/point* 替换为必须创建分区挂载点的目录名称。
+
+2. 挂载 ext4 文件系统：
+   
+   - 挂载一个没有额外选项的 ext4 文件系统：
+   
+   ```
+   # mount /dev/block_device /mount/point
+   ```
+- 要永久挂载文件系统，请参阅[永久挂载文件系统](#第-30-章-永久挂载文件系统)。
+3. 查看挂载的文件系统：
+   
+   ```
+   # df -h
+   ```
+
+## 46.4 调整 ext4 文件系统的大小
+
+作为系统管理员，您可以使用 `resize2fs` 工具调整 ext4 文件系统的大小。 `resize2fs` 工具以文件系统块大小为单位读取大小，除非使用了指示特定单位的后缀。以下后缀表示具体单位：
+
+- s（扇区）- `512` 字节扇区
+- K（千字节） - `1,024` 字节
+- M（兆字节）- `1,048,576` 字节
+- G（千兆字节） - `1,073,741,824` 字节
+- T（太字节） - `1,099,511,627,776` 字节
+
+**前提条件**
+
+- 一个 ext4 文件系统。有关创建 ext4 文件系统的信息，请参阅[创建 ext4 文件系统](#462-创建-ext4-文件系统)。
+- 调整大小后可保留文件系统的基本块设备。
+
+**流程**
+
+1. 要调整 ext4 文件系统的大小，请执行以下步骤：
+   
+   要缩小和扩大已卸载的 ext4 文件系统的大小：
+   
+   ```
+   # umount /dev/block_device
+   # e2fsck -f /dev/block_device
+   # resize2fs /dev/block_device size
+   ```
+   
+   将 /dev/block_device 替换为块设备的路径，例如 `/dev/vdb1`。
+   
+   使用 `s`、`K`、`M`、`G` 和 `T` 后缀将 *size* 替换为所需的调整大小值。
+
+2. 使用 `resize2fs` 命令挂载时，可以扩展 ext4 文件系统：
+   
+   ```
+   # resize2fs /mount/device size
+   ```
+   
+   > **注意**
+   > 
+   > 扩展时，size 参数是可选的（通常是多余的）。 `resize2fs` 会自动扩展以填充容器的可用空间，通常是逻辑卷或分区。
+
+3. 查看调整大小的文件系统：
+   
+   ```
+   # df -h
+   ```
+
+## 46.5 ext4 和 XFS 使用的工具比较
+
+本节比较了使用哪些工具来完成 ext4 和 XFS 文件系统上的常见任务。
+
+| **任务**    | **ext4**           | **XFS**                          |
+| --------- | ------------------ | -------------------------------- |
+| 创建文件系统    | `mkfs.ext4`        | `mkfs.xfs`                       |
+| 文件系统检查    | `e2fsck`           | `xfs_repair`                     |
+| 调整文件系统的大小 | `resize2fs`        | `xfs_growfs`                     |
+| 保存文件系统的图像 | `e2image`          | `xfs_metadump` 和 `xfs_mdrestore` |
+| 标记或调整文件系统 | `tune2fs`          | `xfs_admin`                      |
+| 备份文件系统    | `dump` 和 `restore` | `xfsdump` 和 `xfsrestore`         |
+| 配额管理      | `quota`            | `xfs_quota`                      |
+| 文件映射      | `filefrag`         | `xfs_bmap`                       |
+
+# 第 47 章 使用系统角色创建和挂载 ext4 文件系统
+
+本节介绍如何在磁盘上创建具有给定标签的 ext4 文件系统，并使用 `storage` 角色永久挂载文件系统。
+
+**前提条件**
+
+- 存在包含 `storage` 角色的 Ansible 剧本。
+
+## 47.1 创建和挂载 Ext4 文件系统的示例 Ansible playbook
+
+本节提供了一个示例 Ansible 剧本。本 playbook 应用 Storage 角色来创建和挂载 Ext4 文件系统。
+
+> **例 47.1 在 /dev/vdb 上创建 Ext4 并将其挂载到 /mnt/data 的剧本**
+> 
+> ```
+> ---
+> - hosts: all
+>   vars:
+>     storage_volumes:
+>       - name: barefs
+>         type: disk
+>         disks:
+>           - vdb
+>         fs_type: ext4
+>         fs_label: label-name
+>         mount_point: /mnt/data
+>   roles:
+>     - rhel-system-roles.storage
+> ```
+> 
+> - playbook 在 `/dev/vdb` 磁盘上创建文件系统。
+> - playbook 将文件系统永久挂载在 `/mnt/data` 目录中。
+> - 文件系统的标签是 `label-name`。
