@@ -85,6 +85,10 @@ nav:
       - 19-24章: network/Network19-24.md
       - 25-30章: network/Network25-30.md
       - 31-36章: network/Network31-36.md
+      - 37-42章: network/Network37-42.md
+      - 43-48章: network/Network43-48.md
+      - 49-54章: network/Network49-54.md
+      - 55-57章: network/Network55-57.md
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
@@ -121,3 +125,13 @@ plugins:
           版本说明: Releases
           常见问题: FAQ
           如何贡献: Contributing
+          1-6章: Chapter 1-6
+          7-12章: Chapter 7-12
+          13-18章: Chapter 13-18
+          19-24章: Chapter 19-24
+          25-30章: Chapter 25-30
+          31-36章: Chapter 31-36
+          37-42章: Chapter 37-42
+          43-48章: Chapter 43-48
+          49-54章: Chapter 49-54
+          55-57章: Chapter 55-57
