@@ -97,6 +97,7 @@ wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Package
  	cat /etc/os-release
  	```
  	返回如下图所示信息：
+
     ![avatar](./images/os_release.png)  
 
  	2. 执行以下命令，检查内核。
