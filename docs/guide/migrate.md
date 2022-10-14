@@ -80,12 +80,16 @@ wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Package
  ```shell
  rpm -ivh migrate2opencloudos-1.0-1.oc8.noarch.rpm
  ```
+
  5. 执行以下命令，开始迁移。
+
  ```shell
  python3 /usr/sbin/migrate2opencloudos.py -v 8
- ```
- 迁移需要一定时间，请耐心等待。脚本执行完成后，输出如下图所示信息，表示已完成迁移。
- ![avatar](./images/migrate_complate.png)
+ ``` 
+&emsp;&emsp;
+迁移需要一定时间，请耐心等待。脚本执行完成后，输出如下图所示信息，表示已完成迁移。
+ 	&emsp;&emsp;
+![avatar](./images/migrate_complate.png)
 
  6. 重启实例，云服务器详情请参见 [重启实例](https://cloud.tencent.com/document/product/213/4928)。
 
