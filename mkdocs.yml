@@ -123,10 +123,12 @@ plugins:
           安全加固: Security
           网络管理: Network
           存储管理: Storage
+          文件系统: File System
           兼容硬件: Hardware Adaptation
           版本说明: Releases
           常见问题: FAQ
           如何贡献: Contributing
+          CentOS迁移OpenCloudOS: Migrate from CentOS
           1-6章: Chapter 1-6
           7-12章: Chapter 7-12
           13-18章: Chapter 13-18
