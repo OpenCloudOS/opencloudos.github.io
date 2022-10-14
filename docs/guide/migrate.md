@@ -86,9 +86,7 @@ wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Package
  ```shell
  python3 /usr/sbin/migrate2opencloudos.py -v 8
  ``` 
-&emsp;&emsp;
 迁移需要一定时间，请耐心等待。脚本执行完成后，输出如下图所示信息，表示已完成迁移。
- 	&emsp;&emsp;
 ![avatar](./images/migrate_complate.png)
 
  6. 重启实例，云服务器详情请参见 [重启实例](https://cloud.tencent.com/document/product/213/4928)。
@@ -101,9 +99,6 @@ wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Package
  	返回如下图所示信息：
     ![avatar](./images/os_release.png)  
 
-
-
-
  	2. 执行以下命令，检查内核。
 
  	```shell
@@ -114,13 +109,12 @@ wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Package
  	![avatar](./images/kernel_check.png) 
 
  	内核默认为 yum 最新版本，请以您的实际返回结果为准，本文以图示版本为例。
- 	
+
 
  	3. 执行以下命令，检查 yum。
  	```shell
  	yum makecache
  	```
-
 
  	返回如下图所示信息：
 
