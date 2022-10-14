@@ -78,6 +78,7 @@ nav:
     - 存储管理: guide/storage.md
     - 文件系统: storage/file_system.md
     - 兼容硬件: guide/adaptation.md
+    - CentOS迁移OpenCloudOS: guide/migrate.md
     - 网络管理: 
       - 1-6章: network/Network1-6.md
       - 7-12章: network/Network7-12.md
@@ -89,6 +90,7 @@ nav:
       - 43-48章: network/Network43-48.md
       - 49-54章: network/Network49-54.md
       - 55-57章: network/Network55-57.md
+
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
