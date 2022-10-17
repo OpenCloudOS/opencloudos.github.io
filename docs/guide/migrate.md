@@ -1,4 +1,5 @@
 ## 操作场景
+
  CentOS 官方已停止维护 CentOS 8，具体情况如下表所示。如需了解更多信息，请参见 [CentOS官方公告](https://blog.centos.org/2020/12/future-is-centos-stream/?spm=a2c4g.11174386.n2.3.348f4c07hk46v4)。
 
  | 操作系统版本 | 停止维护时间 | 使用者影响 |
@@ -9,6 +10,7 @@
 
 
  ## 版本说明
+ 
  **源端主机支持操作系统版本：**
  - 支持 CentOS 8系列操作系统版本：
  CentOS 8.0 64位、CentOS 8.2 64位、CentOS 8.3 64位、CentOS 8.4 64位、CentOS 8.2 ARM 64位
@@ -19,6 +21,7 @@
  - CentOS stream 8公共镜像暂时不支持迁移操作。
 
  ## 注意事项
+ 
  - 以下情况不支持迁移：
  	- 安装了图形界面。
  	- 安装了i686的 rpm 包。
@@ -31,6 +34,7 @@
 
 
  ## 资源要求
+ 
  - 空闲内存大于500MB。
  - 系统盘剩余空间大于10GB。
 
@@ -120,5 +124,7 @@ wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Package
  	返回如下图所示信息：
 
  	![avatar](./images/yum_check.png)
+  
  ## 遇到问题？
+ 
  若您在迁移过程中遇到问题，请联系OpenCloudOS社区 [Bugtracker](https://www.opencloudos.org/?page_id=509)。
