@@ -9,7 +9,7 @@
  若您正在使用 CentOS 8 实例，则可参考本文替换为 OpenCloudOS Server。
 
 
- ## 版本说明
+## 版本说明
  
  **源端主机支持操作系统版本：**
  - 支持 CentOS 8系列操作系统版本：
@@ -20,7 +20,7 @@
 
  - CentOS stream 8公共镜像暂时不支持迁移操作。
 
- ## 注意事项
+## 注意事项
  
  - 以下情况不支持迁移：
  	- 安装了图形界面。
@@ -33,15 +33,15 @@
  - 迁移不影响数据盘，仅 OS 层面的升级，不会对数据盘进行任何操作。
 
 
- ## 资源要求
+## 资源要求
  
  - 空闲内存大于500MB。
  - 系统盘剩余空间大于10GB。
 
 
- ## 操作步骤
+## 操作步骤
 
- ### 迁移准备
+### 迁移准备
 
  1. 迁移操作不可逆，为保障业务数据安全，建议您在执行迁移前备份数据,腾讯云服务器用户可参考 [创建快照](https://cloud.tencent.com/document/product/362/5755) 备份系统盘数据。
  2. 检查并手动卸载 i686 的 rpm 包。
@@ -64,7 +64,7 @@
  ```
 
 
- ### 执行迁移
+### 执行迁移
 
  CentOS 8迁移至 OpenCloudOS8 的步骤如下：
 
@@ -125,6 +125,6 @@ wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Package
 
  	![avatar](./images/yum_check.png)
   
- ## 遇到问题？
+## 遇到问题？
  
  若您在迁移过程中遇到问题，请联系OpenCloudOS社区 [Bugtracker](https://www.opencloudos.org/?page_id=509)。
