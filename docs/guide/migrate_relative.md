@@ -22,7 +22,7 @@ Centos8的停服对原有用户造成了极大的不便，目前各大社区提�
 #### 迁移执行：
 用户迁移手册：[《centos8迁移至openclodos8用户手册》](https://docs.opencloudos.org/guide/migrate/?h=操作)
 #### 迁移后检查：
-业务检查：原油业务能否持续稳定运行。
+业务检查：原有业务能否持续稳定运行。
 系统检查：内核是否为最新内核，系统版本是否为opencloudos，yum源是否替换。
 
 
