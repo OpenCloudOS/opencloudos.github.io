@@ -674,7 +674,7 @@ Storage 角色可以管理：
 > - name: Create LVM VDO volume under volume group 'myvg'
 >  hosts: all
 >  roles:
->    -opencloudos-system-roles.storage
+>    - rhel-system-roles.storage
 >  vars:
 >    storage_pools:
 >     - name: myvg
@@ -693,7 +693,7 @@ Storage 角色可以管理：
 
 - `deduplication` 用于删除存储在存储卷上重复的数据。
 - `compression` 用于压缩存储卷上存储的数据，从而增加存储容量。
-- vdo_pool_size 指定卷在设备上的实际大小。VDO 卷的虚拟大小由 `size` 参数设置。注：由于 Storage 角色使用 LVM VDO，每个池只有一个卷可以使用压缩和删除重复数据。
+- `vdo_pool_size` 指定卷在设备上的实际大小。VDO 卷的虚拟大小由 `size` 参数设置。注：由于 Storage 角色使用 LVM VDO，每个池只有一个卷可以使用压缩和删除重复数据。
 
 ## 2.15 使用使用存储系统角色创建 LUKS 加密卷
 
@@ -4702,7 +4702,7 @@ umount: /run/media/user/FlashDrive: target is busy.
    # mount mount-point
    ```
 
-# 31 使用系统角色持久挂载文件系统
+# 第 31 章 使用系统角色持久挂载文件系统
 
 本节介绍如何使用 `storage` 角色持久挂载文件系统。
 
