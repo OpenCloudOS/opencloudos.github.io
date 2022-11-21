@@ -94,14 +94,15 @@ nav:
       - 43-48章: network/Network43-48.md
       - 49-54章: network/Network49-54.md
       - 55-57章: network/Network55-57.md
-
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
     - OpenCloudOS Stream: release/ocs.md
     - OpenCloudOS Stream Kernel: release/ocsk.md
   - 常见问题: faq.md
-  - 如何贡献: contribute.md
+  - 参与贡献:
+    - 如何贡献: contribution/how-to.md
+    - 文档库格式手册: contribution/docs-format-guide.md
 
 plugins:
   - search
