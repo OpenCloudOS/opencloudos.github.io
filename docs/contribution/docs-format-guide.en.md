@@ -277,22 +277,6 @@ Repository | Language
 [n0vad3v/Tekorret](https://github.com/n0vad3v/Tekorrect) | Python
 [VS Code - huacnlee.auto-correct](https://marketplace.visualstudio.com/items?itemName=huacnlee.auto-correct) | VS Code Extension
 
-### Examples of "Who is doing this?"
-
-Website | Copywriting | UGC
-------- | ----------- | ---
-[Apple China](https://www.apple.com/cn/) | Yes | N/A
-[Apple Hong Kong](https://www.apple.com/hk/) | Yes | N/A
-[Apple Taiwan](https://www.apple.com/tw/) | Yes | N/A
-[Microsoft China](https://www.microsoft.com/zh-cn/) | Yes | N/A
-[Microsoft Hong Kong](https://www.microsoft.com/zh-hk/) | Yes | N/A
-[Microsoft Taiwan](https://www.microsoft.com/zh-tw/) | Yes | N/A
-[LeanCloud](https://leancloud.cn/) | Yes | N/A
-[V2EX](https://www.v2ex.com/) | Yes | Yes
-[Apple4us](https://apple4us.com/) | Yes | N/A
-[Ruby China](https://ruby-china.org/) | Yes | Yes
-[少數派](https://sspai.com/) | Yes | N/A
-
 ### References
 
 - [Guidelines for Using Capital Letters - ThoughtCo.](https://www.thoughtco.com/guidelines-for-using-capital-letters-1691724)
