@@ -40,41 +40,37 @@
 
 正确：
 
-> 在 LeanCloud 上，数据存储是围绕 `AVObject` 进行的。
+> 目标是打造全面中立、开放、安全、稳定易用、高性能的 Linux 服务器操作系统
 
 错误：
 
-> 在 LeanCloud 上，数据存储是围绕`AVObject`进行的。
+> 目标是打造全面中立、开放、安全、稳定易用、高性能的Linux服务器操作系统
 >
-> 在 LeanCloud 上，数据存储是围绕`AVObject` 进行的。
+> 目标是打造全面中立、开放、安全、稳定易用、高性能的 Linux服务器操作系统
 
 完整的正确用法：
 
-> 在 LeanCloud 上，数据存储是围绕 `AVObject` 进行的。每个 `AVObject` 都包含了与 JSON 兼容的 key-value 对应的数据。数据是 schema-free 的，你不需要在每个 `AVObject` 上提前指定存在哪些键，只要直接设定对应的 key-value 即可。
-
-例外：「豆瓣 FM」等产品名词，按照官方所定义的格式书写。
+> OpenCloudOS 是由 20 余家操作系统、云平台、软硬件厂商与个人共同倡议发起的操作系统社区项目，即将进入开放原子开源基金会（OpenAtom Foundation）孵化及运营。目标是打造全面中立、开放、安全、稳定易用、高性能的 Linux 服务器操作系统，共建国产操作系统开源技术社区，扩大社区发行版影响力，构建操作系统健康繁荣的生态。
 
 #### 中文与数字之间需要增加空格
 
 正确：
 
-> 今天出去买菜花了 5000 元。
+> OpenCloudOS 是由 20 余家操作系统、云平台、软硬件厂商与个人共同倡议发起的操作系统社区项目
 
 错误：
 
-> 今天出去买菜花了 5000 元。
->
-> 今天出去买菜花了 5000 元。
+> OpenCloudOS 是由20余家操作系统、云平台、软硬件厂商与个人共同倡议发起的操作系统社区项目
 
 #### 数字与单位之间需要增加空格
 
 正确：
 
-> 我家的光纤入屋宽带有 10 Gbps，SSD 一共有 20 TB
+> 使用 4k 扇区驱动器时，最大大小为 16 TiB。
 
 错误：
 
-> 我家的光纤入屋宽带有 10Gbps，SSD 一共有 20TB
+> 使用 4k 扇区驱动器时，最大大小为 16TiB。
 
 例外：度数／百分比与数字之间不需要增加空格：
 
@@ -94,39 +90,17 @@
 
 正确：
 
-> 刚刚买了一部 iPhone，好开心！
+> chrony 是网络时间协议（NTP）的通用实现。
 
 错误：
 
-> 刚刚买了一部 iPhone，好开心！
->
-> 刚刚买了一部 iPhone，好开心！
+> chrony 是网络时间协议（ NTP ）的通用实现。
 
 #### 用 `text-spacing` 来挽救？
 
 CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#text-spacing-property) 和 Microsoft 的 [`-ms-text-autospace`](https://msdn.microsoft.com/library/ms531164(v=vs.85).aspx) 可以实现自动为中英文之间增加空白。不过目前并未普及，另外在其他应用场景，例如 macOS、iOS、Windows 等用户界面目前并不存在这个特性，所以请继续保持随手加空格的习惯。
 
 ### 标点符号
-
-#### 不重复使用标点符号
-
-即使中国大陆的标点符号用法允许重复使用标点符号，但是这么做会破坏句子的美观性。
-
-正确：
-
-> 德国队竟然战胜了巴西队！
->
-> 她竟然对你说「喵」？！
-
-错误：
-
-> 德国队竟然战胜了巴西队！！
->
-> 德国队竟然战胜了巴西队！！！！！！！！
->
-> 她竟然对你说「喵」？？！！
->
-> 她竟然对你说「喵」？！？！？？！！
 
 ### 全角和半角
 
@@ -136,29 +110,23 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 
 正确：
 
-> 嗨！你知道嘛？今天前台的小妹跟我说「喵」了哎！
->
-> 核磁共振成像（NMRI）是什么原理都不知道？JFGI！
+> chrony 是网络时间协议（NTP）的通用实现。
 
 错误：
 
-> 嗨！你知道嘛？今天前台的小妹跟我说 "喵" 了哎！
+> chrony 是网络时间协议 (NTP) 的通用实现。
 >
-> 嗨！你知道嘛？今天前台的小妹跟我说"喵"了哎！
->
-> 核磁共振成像 (NMRI) 是什么原理都不知道？JFGI!
->
-> 核磁共振成像 (NMRI) 是什么原理都不知道？JFGI!
+> chrony 是网络时间协议(NTP)的通用实现。
 
 #### 数字使用半角字符
 
 正确：
 
-> 这个蛋糕只卖 1000 元。
+> 使用 4k 扇区驱动器时，最大大小为 16 TiB。
 
 错误：
 
-> 这个蛋糕只卖 1000 元。
+> 使用 ４k 扇区驱动器时，最大大小为 １６ TiB。
 
 例外：在设计稿、宣传海报中如出现极少量数字的情形时，为方便文字对齐，是可以使用全角数字的。
 
@@ -180,35 +148,27 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 
 #### 专有名词使用正确的大小写
 
-大小写相关用法原属于英文书写范畴，不属于本 wiki 讨论内容，在这里只对部分易错用法进行简述。
+大小写相关用法原属于英文书写范畴，不属于本文讨论内容，在这里只对部分易错用法进行简述。
 
 正确：
 
-> 使用 GitHub 登录
+> 向文档仓库提交 Pull Request
 >
-> 我们的客户有 GitHub、Foursquare、Microsoft Corporation、Google、Facebook, Inc.。
+> 包括 OpenLinux、SUSE 以及 Turbo Linux 等 Linux 的分发版本都有采用，算是公认的行业标准。
 
 错误：
 
-> 使用 github 登录
+> 向文档仓库提交 pull request
 >
-> 使用 GITHUB 登录
+> 向文档仓库提交 PULL REQUEST
 >
-> 使用 Github 登录
+> 包括 openlinux、suse 以及 turbo linux 等 linux 的分发版本都有采用，算是公认的行业标准。
 >
-> 使用 gitHub 登录
+> 包括 OPENLINUX、SUSE 以及 TURBO LINUX 等 LINUX 的分发版本都有采用，算是公认的行业标准。
 >
-> 使用 g ｲんĤЦ8 登录
+> 包括 openlinux、Suse 以及 Turbo linux 等 Linux 的分发版本都有采用，算是公认的行业标准。
 >
-> 我们的客户有 github、foursquare、microsoft corporation、google、facebook, inc.。
->
-> 我们的客户有 GITHUB、FOURSQUARE、MICROSOFT CORPORATION、GOOGLE、FACEBOOK, INC.。
->
-> 我们的客户有 Github、FourSquare、MicroSoft Corporation、Google、FaceBook, Inc.。
->
-> 我们的客户有 gitHub、fourSquare、microSoft Corporation、google、faceBook, Inc.。
->
-> 我们的客户有 g ｲんĤЦ8、ｷ ouЯƧqu ﾑгє、๓เςг๏ร๏Ŧt ς๏гק๏гคtเ๏ภn、900913、ƒ4 ᄃëв๏๏к, IПᄃ.。
+> 包括 OpenLinux、SuSe 以及 Turbo Linux 等 Linux 的分发版本都有采用，算是公认的行业标准。
 
 注意：当网页中需要配合整体视觉风格而出现全部大写／小写的情形，HTML 中请使用标淮的大小写规范进行书写；并通过 `text-transform: uppercase;`／`text-transform: lowercase;` 对表现形式进行定义。
 
@@ -234,13 +194,13 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 
 用法：
 
-> 请 [提交一个 issue](#) 并分配给相关同事。
+> 请 [提交一个 issue](#) 反馈相关问题。
 >
 > 访问我们网站的最新动态，请 [点击这里](#) 进行订阅！
 
 对比用法：
 
-> 请[提交一个 issue](#)并分配给相关同事。
+> 请[提交一个 issue](#)反馈相关问题。
 >
 > 访问我们网站的最新动态，请[点击这里](#)进行订阅！
 

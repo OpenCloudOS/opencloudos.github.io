@@ -34,4 +34,4 @@
     - 请注意遵守本文档站的 [格式手册](docs-format-guide.md)。
 
 5. 在本地通过预览服务器确认内容与格式正确后，commit 您的修改。
-6. 向 [文档仓库](https://github.com/OpenCloudOS/opencloudos.github.io) 提交 Pull Request，待维护者审核后即可合并。
+6. 向[文档仓库](https://github.com/OpenCloudOS/opencloudos.github.io)提交 Pull Request，待维护者审核后即可合并。
