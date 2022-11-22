@@ -28,7 +28,7 @@ This page lists the some rules that should be followed when writing OpenCloudOS 
 ## Chinese Copywriting Guidelines
 
 !!! note
-    The "Chinese Copywriting Guidelines" referenced below, and written by GitHub user sparanoid, is licensed under the MIT license. [GitHub repository](https://github.com/sparanoid/chinese-copywriting-guidelines)
+    The content below was modified from the "Chinese Copywriting Guidelines" written by GitHub user sparanoid. The original content was licensed under the MIT license. [GitHub repository](https://github.com/sparanoid/chinese-copywriting-guidelines)
 
 ### Spacing
 

@@ -27,8 +27,8 @@
 
 ## 中文文案排版指北
 
-!!! note
-    此处引用 GitHub 用户 sparanoid 的《中文文案排版指北》，其内容使用 MIT 协议授权。[原 GitHub 仓库](https://github.com/sparanoid/chinese-copywriting-guidelines)
+!!! note "提示"
+    以下内容更改自 GitHub 用户 sparanoid 的《中文文案排版指北》，其内容使用 MIT 协议授权。[原 GitHub 仓库](https://github.com/sparanoid/chinese-copywriting-guidelines)
 
 ### 空格
 
