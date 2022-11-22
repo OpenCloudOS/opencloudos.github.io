@@ -126,17 +126,14 @@ plugins:
           内核更新: Update
           系统状态监控: System Monitor
           安全加固: Security
-          网络管理: Network
+          兼容硬件: Hardware Adaptation
           存储管理: Storage
           文件系统: File System
           逻辑卷管理: Logical Volumes
           可用的存储选项: Storage Devices
-          兼容硬件: Hardware Adaptation
-          版本说明: Releases
-          常见问题: FAQ
-          如何贡献: Contributing
           CentOS停服专区: About CentOS End-of-Life
           CentOS迁移OpenCloudOS: Migrate from CentOS
+          网络管理: Network
           1-6章: Chapter 1-6
           7-12章: Chapter 7-12
           13-18章: Chapter 13-18
@@ -147,3 +144,8 @@ plugins:
           43-48章: Chapter 43-48
           49-54章: Chapter 49-54
           55-57章: Chapter 55-57
+          版本说明: Releases
+          常见问题: FAQ
+          参与贡献: Contributing
+          如何贡献: How to contribute
+          文档库格式手册: Documentation format guide
