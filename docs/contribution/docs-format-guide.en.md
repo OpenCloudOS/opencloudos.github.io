@@ -178,9 +178,9 @@ Bad:
 
 ### Nouns
 
-#### 專有名詞使用正確的大小寫
+#### Use correct case for proper nouns
 
-大小寫相關用法原屬於英文書寫範疇，不屬於本 wiki 討論內容，在這裡只對部分易錯用法進行簡述。
+The case usage of proper nouns is related to English writing, and is not the topic of this wiki. So only some common mistakes are listed here.
 
 Good:
 
@@ -210,7 +210,7 @@ Bad:
 >
 > 我們的客戶有 g ｲんĤЦ8、ｷ ouЯƧqu ﾑгє、๓เςг๏ร๏Ŧt ς๏гק๏гคtเ๏ภn、900913、ƒ4 ᄃëв๏๏к, IПᄃ.。
 
-注意：當網頁中需要配合整體視覺風格而出現全部大寫／小寫的情形，HTML 中請使用標準的大小寫規範進行書寫；並通過 `text-transform: uppercase;`／`text-transform: lowercase;` 對表現形式進行定義。
+Please note that when the text needs to be displayed in all uppercase or all lowercase for visual consistency, please use the standard case in HTML and use `text-transform: uppercase;`/`text-transform: lowercase;` to define the presentation.
 
 #### Avoid jargons
 
