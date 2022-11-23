@@ -152,23 +152,27 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 
 正确：
 
-> 向文档仓库提交 Pull Request
+> 欢迎来到 OpenCloudOS 文档库！
 >
-> 包括 OpenLinux、SUSE 以及 Turbo Linux 等 Linux 的分发版本都有采用，算是公认的行业标准。
+> TencentOS Server 是腾讯云针对云的场景研发的 Linux 操作系统。
 
 错误：
 
-> 向文档仓库提交 pull request
+> 欢迎来到 opencloudos 文档库！
 >
-> 向文档仓库提交 PULL REQUEST
+> 欢迎来到 OPENCLOUDOS 文档库！
 >
-> 包括 openlinux、suse 以及 turbo linux 等 linux 的分发版本都有采用，算是公认的行业标准。
+> 欢迎来到 Opencloudos 文档库！
 >
-> 包括 OPENLINUX、SUSE 以及 TURBO LINUX 等 LINUX 的分发版本都有采用，算是公认的行业标准。
+> 欢迎来到 opencloudOS 文档库！
 >
-> 包括 openlinux、Suse 以及 Turbo linux 等 Linux 的分发版本都有采用，算是公认的行业标准。
+> tencentos server 是腾讯云针对云的场景研发的 linux 操作系统。
 >
-> 包括 OpenLinux、SuSe 以及 Turbo Linux 等 Linux 的分发版本都有采用，算是公认的行业标准。
+> TENCENTOS SERVER 是腾讯云针对云的场景研发的 LINUX 操作系统。
+>
+> TencentOS server 是腾讯云针对云的场景研发的 Linux 操作系统。
+>
+> tencentOS Server 是腾讯云针对云的场景研发的 Linux 操作系统。
 
 注意：当网页中需要配合整体视觉风格而出现全部大写／小写的情形，HTML 中请使用标淮的大小写规范进行书写；并通过 `text-transform: uppercase;`／`text-transform: lowercase;` 对表现形式进行定义。
 
