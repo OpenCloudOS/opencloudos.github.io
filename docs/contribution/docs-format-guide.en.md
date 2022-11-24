@@ -32,49 +32,45 @@ This page lists the some rules that should be followed when writing OpenCloudOS 
 
 ### Spacing
 
-> Research shows that, people adding no space between Chinese and English suffer from pathetic relationships. 70% of them are married by the age of 34, with someone they don't love; 30% of them left everything for their cats and died. Blank spaces are essential to both romance and writing.
+> "Research shows that, people adding no space between Chinese and English suffer from pathetic relationships. 70% of them are married by the age of 34, with someone they don't love; 30% of them left everything for their cats and died. Blank spaces are essential to both romance and writing.
 >
-> 與大家共勉之。」——[vinta/paranoid-auto-spacing](https://github.com/vinta/pangu.js)
+> Let's do it." ——[vinta/paranoid-auto-spacing](https://github.com/vinta/pangu.js)
 
-#### Place one space before/after English words
+#### Place one space before & after English words
 
 Good:
 
-> 在 LeanCloud 上，數據儲存是圍繞 `AVObject` 進行的。
+> 目标是打造全面中立、开放、安全、稳定易用、高性能的 Linux 服务器操作系统
 
 Bad:
 
-> 在 LeanCloud 上，數據儲存是圍繞`AVObject`進行的。
+> 目标是打造全面中立、开放、安全、稳定易用、高性能的Linux服务器操作系统
 >
-> 在 LeanCloud 上，數據儲存是圍繞`AVObject` 進行的。
+> 目标是打造全面中立、开放、安全、稳定易用、高性能的 Linux服务器操作系统
 
 An example of complete and correct usage:
 
-> 在 LeanCloud 上，數據儲存是圍繞 `AVObject` 進行的。每個 `AVObject` 都包含了與 JSON 兼容的 key-value 對應的數據。數據是 schema-free 的，你不需要在每個 `AVObject` 上提前指定存在哪些键，只要直接設定對應的 key-value 即可。
+> OpenCloudOS 是由 20 余家操作系统、云平台、软硬件厂商与个人共同倡议发起的操作系统社区项目，即将进入开放原子开源基金会（OpenAtom Foundation）孵化及运营。目标是打造全面中立、开放、安全、稳定易用、高性能的 Linux 服务器操作系统，共建国产操作系统开源技术社区，扩大社区发行版影响力，构建操作系统健康繁荣的生态。
 
-Exceptions: For product and brand names, please refer to the writing format of the official definition. For example, use “豆瓣FM” instead of “豆瓣 FM”.
-
-#### Place one space before/after numbers
+#### Place one space before & after numbers
 
 Good:
 
-> 今天出去買菜花了 5000 元。
+> OpenCloudOS 是由 20 余家操作系统、云平台、软硬件厂商与个人共同倡议发起的操作系统社区项目
 
 Bad:
 
-> 今天出去買菜花了 5000 元。
->
-> 今天出去買菜花了 5000 元。
+> OpenCloudOS 是由20余家操作系统、云平台、软硬件厂商与个人共同倡议发起的操作系统社区项目
 
 #### Place one space between numbers and units
 
 Good:
 
-> 我家的光纖入屋寬頻有 10 Gbps，SSD 一共有 20 TB。
+> 使用 4k 扇区驱动器时，最大大小为 16 TiB。
 
 Bad:
 
-> 我家的光纖入屋寬頻有 10Gbps，SSD 一共有 20TB。
+> 使用 4k 扇区驱动器时，最大大小为 16TiB。
 
 Exceptions: There should not be any spacing between numbers and degrees/percentages.
 
@@ -94,39 +90,17 @@ Bad:
 
 Good:
 
-> 剛剛買了一部 iPhone，好開心！
+> chrony 是网络时间协议（NTP）的通用实现。
 
 Bad:
 
-> 剛剛買了一部 iPhone，好開心！
->
-> 剛剛買了一部 iPhone，好開心！
+> chrony 是网络时间协议（ NTP ）的通用实现。
 
-#### `text-spacing` to the rescue?
+#### `text-spacing` to the help?
 
 [`text-spacing`](https://www.w3.org/TR/css-text-4/#text-spacing-property) and [`-ms-text-autospace`](https://msdn.microsoft.com/library/ms531164(v=vs.85).aspx) provided by CSS Text Module Level and Microsoft can specify the autospacing and narrow space width adjustment of text. However it's not popular, and on other platforms such as OS X and iOS we can not use this feature. So it's better for you to keep up the habit.
 
 ### Punctuation
-
-#### Avoid duplicate punctuation
-
-Although the punctuation usage of China mainland admits to duplicate the punctuations, the sentence may become unpleasing to the eye by doing that.
-
-Good:
-
-> 德國隊竟然戰勝了巴西隊！
->
-> 她竟然對你說「喵」？！
-
-Bad:
-
-> 德國隊竟然戰勝了巴西隊！！
->
-> 德國隊竟然戰勝了巴西隊！！！！！！！！
->
-> 她竟然對你說「喵」？？！！
->
-> 她竟然對你說「喵」？！？！？？！！
 
 ### Fullwidth and halfwidth
 
@@ -136,29 +110,23 @@ If you're not familiar with fullwidth and halfwidth forms please refer to articl
 
 Good:
 
-> 嗨！你知道嘛？今天前台的小妹跟我說「喵」了哎！
->
-> 核磁共振成像（NMRI）是什麼原理都不知道？JFGI！
+> chrony 是网络时间协议（NTP）的通用实现。
 
 Bad:
 
-> 嗨！你知道嘛？今天前台的小妹跟我說 "喵" 了哎！
+> chrony 是网络时间协议 (NTP) 的通用实现。
 >
-> 嗨！你知道嘛？今天前台的小妹跟我說"喵"了哎！
->
-> 核磁共振成像 (NMRI) 是什麼原理都不知道？JFGI!
->
-> 核磁共振成像 (NMRI) 是什麼原理都不知道？JFGI!
+> chrony 是网络时间协议(NTP)的通用实现。
 
 #### Use numbers in halfwidth form
 
 Good:
 
-> 這件蛋糕只賣 1000 元。
+> 使用 4k 扇区驱动器时，最大大小为 16 TiB。
 
 Bad:
 
-> 這件蛋糕只賣 1000 元。
+> 使用 ４k 扇区驱动器时，最大大小为 １６ TiB。
 
 Exceptions: fullwidth numbers are acceptable for better visual alignment in graphic design.
 
@@ -166,15 +134,15 @@ Exceptions: fullwidth numbers are acceptable for better visual alignment in grap
 
 Good:
 
-> 賈伯斯那句話是怎麼說的？「Stay hungry, stay foolish.」
+> 乔布斯那句话是怎么说的？「Stay hungry, stay foolish.」
 >
-> 推薦你閱讀《Hackers & Painters: Big Ideas from the Computer Age》，非常的有趣。
+> 推荐你阅读《Hackers & Painters: Big Ideas from the Computer Age》，非常的有趣。
 
 Bad:
 
-> 賈伯斯那句話是怎麼說的？「Stay hungry，stay foolish。」
+> 乔布斯那句话是怎么说的？「Stay hungry，stay foolish。」
 >
-> 推薦你閱讀《Hackers＆Painters：Big Ideas from the Computer Age》，非常的有趣。
+> 推荐你阅读《Hackers＆Painters：Big Ideas from the Computer Age》，非常的有趣。
 
 ### Nouns
 
@@ -184,31 +152,27 @@ The case usage of proper nouns is related to English writing, and is not the top
 
 Good:
 
-> 使用 GitHub 登錄
+> 欢迎来到 OpenCloudOS 文档库！
 >
-> 我們的客戶有 GitHub、Foursquare、Microsoft Corporation、Google、Facebook, Inc.。
+> TencentOS Server 是腾讯云针对云的场景研发的 Linux 操作系统。
 
 Bad:
 
-> 使用 github 登錄
+> 欢迎来到 opencloudos 文档库！
 >
-> 使用 GITHUB 登錄
+> 欢迎来到 OPENCLOUDOS 文档库！
 >
-> 使用 Github 登錄
+> 欢迎来到 Opencloudos 文档库！
 >
-> 使用 gitHub 登錄
+> 欢迎来到 opencloudOS 文档库！
 >
-> 使用 g ｲんĤЦ8 登錄
+> tencentos server 是腾讯云针对云的场景研发的 linux 操作系统。
 >
-> 我們的客戶有 github、foursquare、microsoft corporation、google、facebook, inc.。
+> TENCENTOS SERVER 是腾讯云针对云的场景研发的 LINUX 操作系统。
 >
-> 我們的客戶有 GITHUB、FOURSQUARE、MICROSOFT CORPORATION、GOOGLE、FACEBOOK, INC.。
+> TencentOS server 是腾讯云针对云的场景研发的 Linux 操作系统。
 >
-> 我們的客戶有 Github、FourSquare、MicroSoft Corporation、Google、FaceBook, Inc.。
->
-> 我們的客戶有 gitHub、fourSquare、microSoft Corporation、google、faceBook, Inc.。
->
-> 我們的客戶有 g ｲんĤЦ8、ｷ ouЯƧqu ﾑгє、๓เςг๏ร๏Ŧt ς๏гק๏гคtเ๏ภn、900913、ƒ4 ᄃëв๏๏к, IПᄃ.。
+> tencentOS Server 是腾讯云针对云的场景研发的 Linux 操作系统。
 
 Please note that when the text needs to be displayed in all uppercase or all lowercase for visual consistency, please use the standard case in HTML and use `text-transform: uppercase;`/`text-transform: lowercase;` to define the presentation.
 
@@ -216,11 +180,11 @@ Please note that when the text needs to be displayed in all uppercase or all low
 
 Good:
 
-> 我們需要一位熟悉 TypeScript、HTML5，至少理解一種框架（如 React、Next.js）的前端開發者。
+> 我们需要一位熟悉 TypeScript、HTML5，至少理解一种框架（如 React、Next.js）的前端开发者。
 
 Bad:
 
-> 我們需要一位熟悉 Ts、h5，至少理解一種框架（如 RJS、nextjs）的 FED。
+> 我们需要一位熟悉 Ts、h5，至少理解一种框架（如 RJS、nextjs）的 FED。
 
 ### Dispute
 
@@ -233,15 +197,15 @@ The following usages comprise of personal characteristics. As such, from the per
 
 Usage:
 
-> 請 [提交一个 issue](#) 並分配给相關同事。
+> 请 [提交一个 issue](#) 反馈相关问题。
 >
-> 訪問我們網站的最新動態，請 [點擊這裡](#) 進行訂閱！
+> 访问我们网站的最新动态，请 [点击这里](#) 进行订阅！
 
 compared with:
 
-> 請[提交一个 issue](#) 並分配给相關同事。
+> 请[提交一个 issue](#)反馈相关问题。
 >
-> 訪問我們網站的最新動態，請[點擊這裡](#)進行訂閱！
+> 访问我们网站的最新动态，请[点击这里](#)进行订阅！
 
 #### Use corner brackets for Chinese Simplified
 

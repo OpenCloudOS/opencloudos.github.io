@@ -193,7 +193,6 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 #### 链接之间增加空格
 
 !!! note "备注"
-
     此处我们建议将链接内容当作普通内容处理，即：如果前后内容均为中文且链接名称为中文，则不需要在链接前后增加空格。否则，在英语/数字与中文之间增加空格。
 
 用法：
@@ -211,7 +210,6 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 #### 简体中文使用直角引号
 
 !!! note "备注"
-
     此处我们建议使用直角引号。
 
 用法：
