@@ -210,7 +210,7 @@ compared with:
 #### Use corner brackets for Chinese Simplified
 
 !!! note
-    We recommend the use of the corner brackets.
+    We recommend the use of the normal brackets (“” and ‘’).
 
 Usage:
 

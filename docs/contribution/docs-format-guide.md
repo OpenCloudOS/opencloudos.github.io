@@ -210,7 +210,7 @@ CSS Text Module Level 4 的 [`text-spacing`](https://www.w3.org/TR/css-text-4/#t
 #### 简体中文使用直角引号
 
 !!! note "备注"
-    此处我们建议使用直角引号。
+    此处我们建议使用普通引号（“” 与 ‘’）。
 
 用法：
 
