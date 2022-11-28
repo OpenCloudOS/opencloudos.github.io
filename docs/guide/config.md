@@ -9,7 +9,7 @@
 
 ### 1.1 配置时间与日期
 
-精确的时间在生产系统中至关重要。opencloudos下，通过NTP协议保证时间的准确性。NTP协议是通过用户态一个守护进程实现的，其会更新内核中的系统时钟，而系统时钟可以采用不同的时钟源去维护时间。
+精确的时间在生产系统中至关重要。OpenCloudOS下，通过NTP协议保证时间的准确性。NTP协议是通过用户态一个守护进程实现的，其会更新内核中的系统时钟，而系统时钟可以采用不同的时钟源去维护时间。
 ```
 [root@VM-6-130-opencloudos /]# date
 
@@ -75,7 +75,7 @@ X11 Layout: us
 
 ## 第二章 配置管理网络环境
 
-本章介绍如何在opencloudos 上配置网络连接，opencloudos默认管理方式为NetworkManager.service，支持NetworkManager的所有配置方式。但是server端管理通过传统ifcfg配置的方式较为方便，这里介绍下ifcfg的配置方式。
+本章介绍如何在OpenCloudOS 上配置网络连接，OpenCloudOS默认管理方式为NetworkManager.service，支持NetworkManager的所有配置方式。但是server端管理通过传统ifcfg配置的方式较为方便，这里介绍下ifcfg的配置方式。
 
 ### 2.1 静态网络配置
 
@@ -195,7 +195,7 @@ nameserver 183.60.82.98
 
 ## 第四章 账户管理
 
-opencloudos支持多账户管理，允许多个账户同时登陆一台系统进行操作。账户一般分为普通账户和系统账户。
+OpenCloudOS支持多账户管理，允许多个账户同时登陆一台系统进行操作。账户一般分为普通账户和系统账户。
 
 - 普通账户
 
@@ -374,7 +374,7 @@ crash\> files //显示内核崩溃前的文件句柄信息
 
 ## 第七章 systemd机制
 
-systemd是opencloudos系统上主要的系统守护进程管理工具，由于init一方面对于进程的管理是串行化的，容易出现阻塞情况，另一方面init也仅仅是执行启动脚本，并不能对服务本身进行更多的管理,所以由systemd取代了init作为默认的系统进程管理工具。
+systemd是OpenCloudOS系统上主要的系统守护进程管理工具，由于init一方面对于进程的管理是串行化的，容易出现阻塞情况，另一方面init也仅仅是执行启动脚本，并不能对服务本身进行更多的管理,所以由systemd取代了init作为默认的系统进程管理工具。
 
 systemd所管理的所有系统资源都称作Unit，通过systemd命令集可以方便的对这些Unit进行管理。比如systemctl、hostnamectl、timedatectl、localctl等命令。
 
