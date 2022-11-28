@@ -6,7 +6,7 @@ CentOS 官方已停止维护 CentOS 8，具体情况如下表所示。如需了�
 |---------|---------|---------|
 | CentOS 8  | 2022年01月01日 | 停止维护后将无法获得包括问题修复和功能更新在内的任何软件维护和支持。 |
 
-若您正在使用 CentOS 8 实例，则可参考本文替换为 OpenCloudOS Server。
+若您正在使用 CentOS 8 实例，则可参考本文替换为 OpenCloudOS 8。
 
 
 ## 版本说明
@@ -19,7 +19,7 @@ CentOS 官方已停止维护 CentOS 8，具体情况如下表所示。如需了�
 
 **目标主机建议操作系统版本：**
 
-- CentOS 8系列建议迁移至 OpenCloudOS Server 8。
+- CentOS 8系列建议迁移至 OpenCloudOS 8。
 - CentOS stream 8公共镜像暂时不支持迁移操作。
 
 ## 注意事项
@@ -67,7 +67,7 @@ EOF
 
 ### 执行迁移
 
-CentOS 8迁移至 OpenCloudOS8 的步骤如下：
+CentOS 8迁移至 OpenCloudOS 8 的步骤如下：
 
 1. 登录目标主机，腾讯云服务器用户详情请参见 [使用标准登录方式登录 Linux 实例](https://cloud.tencent.com/document/product/213/5436)。
 2. 执行以下命令，安装 Python 3。若 yum 源不可用，则使用上述 [centos-vault 源安装 Python 3](#_6)。
