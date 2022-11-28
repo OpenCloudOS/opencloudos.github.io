@@ -80,9 +80,6 @@ nav:
       - 文件系统: storage/file_system.md
       - 逻辑卷管理: storage/configuring_and_managing_logical_volumes.md
       - 可用的存储选项: storage/managing_storage_devices.md
-    - CentOS停服专区:
-      - CentOS停服专区: guide/migrate_relative.md
-      - CentOS迁移OpenCloudOS: guide/migrate.md
     - 网络管理: 
       - 1-6章: network/Network1-6.md
       - 7-12章: network/Network7-12.md
@@ -103,6 +100,9 @@ nav:
   - 参与贡献:
     - 如何贡献: contribution/how-to.md
     - 文档库格式手册: contribution/docs-format-guide.md
+  - CentOS停服专区:
+    - CentOS停服专区: guide/migrate_relative.md
+    - CentOS迁移OpenCloudOS: guide/migrate.md
 
 plugins:
   - search
