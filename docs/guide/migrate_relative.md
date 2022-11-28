@@ -20,7 +20,7 @@ Centos8的停服对原有用户造成了极大的不便，目前各大社区提�
 业务评估：迁移之前需要判断业务类型，依赖组件，是否有高可用架构，是否敏感。
 系统评估：系统组件差异，系统配置差异，系统内核差异。
 #### 迁移执行：
-用户迁移手册：[《centos8迁移至openclodos8用户手册》](https://docs.opencloudos.org/guide/migrate/?h=操作)
+用户迁移手册：[《centos8迁移至opencloudos8用户手册》](https://docs.opencloudos.org/guide/migrate/?h=操作)
 #### 迁移后检查：
 业务检查：原有业务能否持续稳定运行。
 系统检查：内核是否为最新内核，系统版本是否为opencloudos，yum源是否替换。
