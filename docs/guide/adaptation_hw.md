@@ -343,6 +343,7 @@ OpenCloudOS 兼容硬件列表如下：
     | Intel   | Intel(R) Xeon(R) Gold 6133 CPU @  2.50GHz       |  -                | 2.6      |
     | Intel   | Intel(R) Xeon(R) Gold 6146 CPU @  3.20GHz       |  -                | 3.2      |
     | Intel   | Intel Xeon Platinum 6230 CPU @  2.10GHz         | INTEL            | 2.1      |
+    | 澜起   |  Jintide(R) C6330   | X86  | 2 |
     | Phytium | S2500                                           | Phytium 飞腾     | 2.1      |
     | Phytium | FT-2000+                                        | Phytium 飞腾     | 2.2      |
     | Phytium | FT-2000+                                        | FT-2000+         | 2.2      |
@@ -478,6 +479,7 @@ OpenCloudOS 兼容硬件列表如下：
     | 华为    | 03025VYL                       | Raid | 12        | SAS3508                     |
     | 华为    | 6030276                        | HBA  | 16        |     -                        |
     | 华为    | BC5M03FCAA                     | HBA  | 16        |  -                           |
+    | 宏杉    | MS2500A+    | -   |  -   |  -  |
     | 浪潮    |   -                             | HBA  |   -        | Logic SAS3008               |
     | 浪潮    |   -                              | HBA  |    -       | Logic SAS3008               |
     | 浪潮    | HBA 9400-16i                   | HBA  |    -       | LSI SAS3408                 |
@@ -642,6 +644,7 @@ OpenCloudOS 兼容硬件列表如下：
     | YMTC     | SE005-960GB-H        | SSD      | SATA   | 960     | SATA | 2.5  |
     | YMTC     | SE005-480GB-H        | SSD      | SATA   | 480     | SATA | 2.5  |
 
+
 === "内存"
 
     | 厂商    | 厂商 PN                | 类型 | 容量/Gb | 规格  | 频率/MHz |
@@ -729,10 +732,14 @@ OpenCloudOS 兼容硬件列表如下：
     | SiNEAD   | NVIDIA Quadro RTX 6000         |
     | SiNEAD   | GeForce RTX 2080 Ti            |
     | Tencent  | ZiXiaoC100                     |
+    | 西安芯瞳  | GenBu01                        |
 
 
+=== "DPU"
 
-
+    | 厂商     | 型号                           |
+    | -------- | ------------------------------ |
+    | 大禹智芯    |  DPU Paratus  |
 
 
 

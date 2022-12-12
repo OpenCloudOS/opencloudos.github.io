@@ -75,7 +75,8 @@ nav:
     - 内核更新: guide/update.md
     - 系统状态监控: guide/monitor.md
     - 安全加固: guide/security.md
-    - 兼容硬件: guide/adaptation.md
+    - 兼容硬件列表: guide/adaptation_hw.md
+    - 兼容软件列表: guide/adaptation_sw.md
     - 存储管理: 
       - 文件系统: storage/file_system.md
       - 逻辑卷管理: storage/configuring_and_managing_logical_volumes.md
@@ -126,7 +127,8 @@ plugins:
           内核更新: Update
           系统状态监控: System Monitor
           安全加固: Security
-          兼容硬件: Hardware Adaptation
+          兼容硬件列表: Hardware Adaptation
+          兼容软件列表: Software Adaptation
           存储管理: Storage
           文件系统: File System
           逻辑卷管理: Logical Volumes
