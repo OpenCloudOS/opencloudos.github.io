@@ -100,10 +100,10 @@ nav:
     - 如何贡献: contribution/how-to.md
     - 文档库格式手册: contribution/docs-format-guide.md
   - 生态认证:
-    - 认证&兼容列表:
+    - 生态认证流程: adaptation/adaptation_process.md
+    - 认证兼容列表:
       - 兼容硬件列表: adaptation/adaptation_hw.md
       - 兼容软件列表: adaptation/adaptation_sw.md
-    - 生态认证流程: adaptation/adaptation_process.md
   - CentOS停服专区:
     - CentOS停服专区: guide/migrate_relative.md
     - CentOS迁移OpenCloudOS: guide/migrate.md
@@ -130,12 +130,15 @@ plugins:
           内核更新: Update
           系统状态监控: System Monitor
           安全加固: Security
-          兼容硬件列表: Hardware Adaptation
-          兼容软件列表: Software Adaptation
           存储管理: Storage
           文件系统: File System
           逻辑卷管理: Logical Volumes
           可用的存储选项: Storage Devices
+          生态认证: Adaptation
+          生态认证流程: Adaptation Process
+          认证兼容列表: Adaptation Lists
+          兼容硬件列表: Hardware Adaptation
+          兼容软件列表: Software Adaptation
           CentOS停服专区: About CentOS End-of-Life
           CentOS迁移OpenCloudOS: Migrate from CentOS
           网络管理: Network

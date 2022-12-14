@@ -29,7 +29,7 @@
 OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS/projects](https://gitee.com/organizations/OpenCloudOS/projects)    
 ## 4-测试
 
-测试工具代码仓：https://gitee.com/opencloudos-stream/oc-hct    
+测试工具代码仓：[https://gitee.com/opencloudos-stream/oc-hct](https://gitee.com/opencloudos-stream/oc-hct)
 ### 4.1-可自主测试：
 
 在微信群内，OC 社区组织官方成员会提供相应的测试要求文件，请申请者按照标准完成测试，并提供标准测试报告给沟通群内的社区工作人员进行审核。    
