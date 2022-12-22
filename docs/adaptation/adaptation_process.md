@@ -24,7 +24,7 @@
 各版本操作系统 ISO 下载路径：      
 [OpenCloudOS8 下载链接](https://mirrors.opencloudos.tech/opencloudos/8.6/isos/x86_64/opencloudos-8.6-x86_64-dvd1.iso)    
 
-（其他版本可以在[https://www.opencloudos.org/iso选择](https://www.opencloudos.org/iso选择))    
+（其他版本可以在[https://www.opencloudos.org/iso](https://www.opencloudos.org/iso))选择    
 
 OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS/projects](https://gitee.com/organizations/OpenCloudOS/projects)    
 ## 4-测试
