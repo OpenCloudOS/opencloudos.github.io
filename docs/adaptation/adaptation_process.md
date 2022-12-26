@@ -24,12 +24,12 @@
 各版本操作系统 ISO 下载路径：      
 [OpenCloudOS8 下载链接](https://mirrors.opencloudos.tech/opencloudos/8.6/isos/x86_64/opencloudos-8.6-x86_64-dvd1.iso)    
 
-（其他版本可以在[https://www.opencloudos.org/iso选择](https://www.opencloudos.org/iso选择))    
+（其他版本可以在[https://www.opencloudos.org/iso](https://www.opencloudos.org/iso))选择    
 
 OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS/projects](https://gitee.com/organizations/OpenCloudOS/projects)    
 ## 4-测试
 
-测试工具代码仓：https://gitee.com/opencloudos-stream/oc-hct    
+测试工具代码仓：[https://gitee.com/opencloudos-stream/oc-hct](https://gitee.com/opencloudos-stream/oc-hct)
 ### 4.1-可自主测试：
 
 在微信群内，OC 社区组织官方成员会提供相应的测试要求文件，请申请者按照标准完成测试，并提供标准测试报告给沟通群内的社区工作人员进行审核。    
@@ -60,10 +60,11 @@ OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS
 
 - 纸质版：    
 申请者需使用 a4 竖版、加厚纸张打印认证证书，并加盖申请者公章后邮寄至 OC 社区处。    
-暂时由 @devingeng(耿航航)代管，邮寄至如下地址：   
+暂时由 董宾 代管，邮寄至如下地址：   
 
 ``` text
-北京市海淀区希格玛大厦6层，耿航，18310451502    
+姓名：董宾；电话：18923881790
+地址：深圳市南山区科技中一路与高新中一道交叉路口东南侧创益科技大厦  邮编：518052  
 ```
 
 - 电子版：     
