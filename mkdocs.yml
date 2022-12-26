@@ -104,6 +104,7 @@ nav:
       - 兼容硬件列表: adaptation/adaptation_hw.md
       - 兼容软件列表: adaptation/adaptation_sw.md
     - 生态认证流程: adaptation/adaptation_process.md
+    - 适配FAQ: adaptation/adaptation_FAQ.md
   - CentOS停服专区:
     - CentOS停服专区: guide/migrate_relative.md
     - CentOS迁移OpenCloudOS: guide/migrate.md
