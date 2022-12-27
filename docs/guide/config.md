@@ -280,7 +280,7 @@ crashkernel=1800M-64G:256M，64G-128G:512M,128G-:768M
 
 强制触发内核崩溃，测试kdump是否正常工作
 ```
-[root@OpencloudOS~]#echo c \> /proc/sysrq-trigger
+[root@OpencloudOS~]#echo c > /proc/sysrq-trigger
 ```
 ### 5.5 分析vmcore
 
