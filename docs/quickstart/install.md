@@ -6,7 +6,7 @@
 OpenCloudOS的ISO支持两种安装方式：
 
 - **图形安装模式**，用户根据需要选择语言，软件源，安装磁盘，网络配置等操作。本文着重介绍图形安装的过程。
-- 自动探测模式，引导之后安装就会执行安装操作。
+- 自动探测模式，引导之后安装程序就会执行安装操作。
 
 ### 1、介绍
 OpenCloudOS 是企业级社区研发的定制化服务器操作系统。该系统集成了众多服务器系列的优点，加入自主研发的软件，便于用户操作使用，提供全方位（内核及用户态）的操作系统支持。系统特点：安全、易用、稳定、快速、长久支持。安装镜像提供了服务器常用的各种软件支持，同时可以使用线上软件源安装及更新软件。**此说明适用于OpenCloudOS 发行版的安装与使用。**
@@ -34,7 +34,7 @@ OpenCloudOS 是企业级社区研发的定制化服务器操作系统。该系�
 ![OpenCloudOS V8 Installation example picture](../assets/OC_V8_installation_example.png)
 
 ### 5、语言选择
-OpenCloudOS 支持多语言的选择， 选择之后Continue 继续下一步操作。
+OpenCloudOS 支持多语言的选择， 选择之后点Continue 继续下一步操作。
 
 ![OpenCloudOS V8 language selection example picture](../assets/OC_V8_language_selection_example.png)
 
