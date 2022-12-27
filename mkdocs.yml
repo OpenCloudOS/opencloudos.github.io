@@ -102,8 +102,9 @@ nav:
   - 生态认证:
     - 生态认证流程: adaptation/adaptation_process.md
     - 认证兼容列表:
-      - 兼容硬件列表: adaptation/adaptation_hw.md
-      - 兼容软件列表: adaptation/adaptation_sw.md
+      - 硬件兼容列表: adaptation/adaptation_hw.md
+      - 商业软件兼容列表: adaptation/adaptation_sw.md
+      - 开源软件兼容列表: adaptation/adaptation_oss.md
     - 适配FAQ: adaptation/adaptation_FAQ.md
   - CentOS停服专区:
     - CentOS停服专区: guide/migrate_relative.md
@@ -138,8 +139,10 @@ plugins:
           生态认证: Adaptation
           生态认证流程: Adaptation Process
           认证兼容列表: Adaptation Lists
-          兼容硬件列表: Hardware Adaptation
-          兼容软件列表: Software Adaptation
+          硬件兼容列表: Hardware Adaptation
+          商业软件兼容列表: Commercial Software Adaptation
+          开源软件兼容列表: OpenSouce Software Adaptation
+          适配FAQ: Adaptation FAQ
           CentOS停服专区: About CentOS End-of-Life
           CentOS迁移OpenCloudOS: Migrate from CentOS
           网络管理: Network

@@ -287,6 +287,29 @@ OpenCloudOS 兼容硬件列表如下：
     | 宝德 PT2300GII              | 宝德          | PT2300GII(/2G/250G*1)                                        | -                                             |
     | 太行220                     | 山西百信      | 太行220                                                      | HUAWEI Kunpeng 920                            |
     | 天玥 SR123212               | 航天二院706所 | SR123212(Phytium FT1500A*1/16G*4/1T*8 Raid/2*10G NIC)        | Phytium FT1500A                               |
+    | TG125 B1         | 华鲲振宇 | TG125 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*12/10GE*2)     | kunpeng-920    |
+    | TG215 B1         | 华鲲振宇 | TG215 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*6/5GE)         | kunpeng-920    |
+    | TG225 A1         | 华鲲振宇 | TG225 A1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
+    | TG225 B1         | 华鲲振宇 | TG225 B1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
+    | TG245 B1         | 华鲲振宇 | TG245 B1(kunpeng-920*2/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
+    | TG525 B1         | 华鲲振宇 | TG525 B1(kunpeng-920*4/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
+    | TG225 Pro B1     | 华鲲振宇 | TG225 Pro B1(kunpeng-920*2/32G*12/NVMeSSD-12T*10/10GE*2) | kunpeng-920    |
+    | TG125 B1         | 虹信     | TG125 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*12/10GE*2)     | kunpeng-920    |
+    | TG215 B1         | 虹信     | TG215 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*6/5GE)         | kunpeng-920    |
+    | TG225 A1         | 虹信     | TG225 A1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
+    | TG225 B1         | 虹信     | TG225 B1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
+    | TG245 B1         | 虹信     | TG245 B1(kunpeng-920*2/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
+    | TG525 B1         | 虹信     | TG525 B1(kunpeng-920*4/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
+    | TG225 Pro B1     | 虹信     | TG225 Pro B1(kunpeng-920*2/32G*12/NVMeSSD-12T*10/10GE*2) | kunpeng-920    |
+    | 擎天DF7系列      | 长城科技 | DF729(FT-2000/128G/1.2T*4)                               | FT-2000        |
+    | 超强K620系列     | 同方股份 | K620(kunpeng-920*2/32G*8/1.2T*6)                         | kunpeng-920    |
+    | Huang he 2280 V2 | 黄河科技 | Huang he 2280 V2(kunpeng-920*2/32G*8/3.2T*2)             | kunpeng-920    |
+    | Huang he 5280 V2 | 黄河科技 | Huang he 5280 V2(kunpeng-920*2/32G*8/3.2T*2)             | kunpeng-920    |
+    | H620             | 中科可控 | K620(Hygon C86 7285*2/384G/500G*2)                       | Hygon C86 7285 |
+    | H610             | 中科可控 | K620(Hygon C86 7285*2/384G/500G*2)                       | Hygon C86 7285 |
+    | H320             | 中科可控 | K620(Hygon C86 7285*2/200G/500G*2)                       | Hygon C86 7285 |
+    | H520             | 中科可控 | K620(Hygon C86 7285/384G/500G*1)                         | Hygon C86 7285 |
+    | H210             | 中科可控 | K620(Hygon C86 7285*2/384G/500G*1)                       | Hygon C86 7285 |
 
 === "CPU"
 
@@ -643,6 +666,9 @@ OpenCloudOS 兼容硬件列表如下：
     | WDC      | WD4000F9YZ           |   -       | SATA   | 4000    | SATA | 3.5  |
     | YMTC     | SE005-960GB-H        | SSD      | SATA   | 960     | SATA | 2.5  |
     | YMTC     | SE005-480GB-H        | SSD      | SATA   | 480     | SATA | 2.5  |
+    | 宏杉 | MS2500A+ | -    | -    | -    |      |      |
+    | 大普 | J5100    | SSD  | NVMe | 7680 | PCIE | 2.5  |
+    | 大普 | J5300    | SSD  | NVMe | 6400 | PCIE | 2.5  |
 
 
 === "内存"
@@ -740,6 +766,7 @@ OpenCloudOS 兼容硬件列表如下：
     | 厂商     | 型号                           |
     | -------- | ------------------------------ |
     | 大禹智芯    |  DPU Paratus  |
+    | 思威系列DPU卡 | 中科驭数 |
 
 
 
