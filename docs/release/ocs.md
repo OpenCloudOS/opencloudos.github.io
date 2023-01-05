@@ -2,6 +2,9 @@
 
 OpenCloudOS Stream 是 OpenCloudOS 社区联合伙伴共同研发的自主可控的上游版本，其内核及用户态软件均基于社区 Upstream 独立演进、自编译，自主选型和维护，不再依赖任何发行版，完全自主可控。通过内核，用户态软件的全面优化和打磨，为用户和业务提供更先进、更高性能的基础环境和服务能力，彻底解决 CentOS 断供的问题。
 
+## 下载
+下载 OpenCloudOS Stream 23.01，请访问[链接](https://mirrors.opencloudos.org/opencloudos-stream/releases/2301/images/)。
+
 ## OpenCloudOS Stream 23.01 新特性汇总
 
 ### 安全启动与引导
@@ -442,3 +445,10 @@ OpenCloudOS Stream 是 OpenCloudOS 社区联合伙伴共同研发的自主可控
 - 提升解析速度
 - 减少内存使用
 - 增加多个新功能函数，添加对无符号 64 位整数 uint64_t 的支持
+
+## 漏洞管理
+OpenCloudOS Stream 的 bug 追踪系统：
+
+- [http://bugs.opencloudos.tech/](http://bugs.opencloudos.tech/)
+
+使用 OpenCloudOS Stream 版本遇到和任何问题，诚挚欢迎社区的用户、开发者朋友多提宝贵建议。我们还有很多需要改进和完善的地方。
