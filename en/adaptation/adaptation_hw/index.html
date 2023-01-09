@@ -1,0 +1,6445 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../adaptation_process/">
+      
+      
+        <link rel="next" href="../adaptation_sw/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+    
+    
+      
+        <title>Hardware Adaptation - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b71719e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware Adaptation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../adaptation/adaptation_hw/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/config/" class="md-tabs__link">
+        Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../adaptation_process/" class="md-tabs__link md-tabs__link--active">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/install/" class="md-nav__link">
+        Download & Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_6" tabindex="0" aria-expanded="false">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Storage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_7" tabindex="0" aria-expanded="false">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Network" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Releases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="true">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Adaptation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_2" tabindex="0" aria-expanded="true">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Adaptation Lists" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Hardware Adaptation
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About CentOS End-of-Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<p>OpenCloudOS 兼容硬件列表如下：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">整机</label><label for="__tabbed_1_2">CPU</label><label for="__tabbed_1_3">网卡</label><label for="__tabbed_1_4">存储卡</label><label for="__tabbed_1_5">硬盘</label><label for="__tabbed_1_6">内存</label><label for="__tabbed_1_7">GPU</label><label for="__tabbed_1_8">DPU</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="left">标准型号</th>
+<th align="left">供应商</th>
+<th align="left">设备描述</th>
+<th align="left">处理器型号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">DELL C6420</td>
+<td align="left">DELL</td>
+<td align="left">C6420(5120<em>2/32G</em>12/SSD-1.92T<em>6 RAID/25GE</em>2)*4</td>
+<td align="left">Intel 5120</td>
+</tr>
+<tr>
+<td align="left">DELL DCS2210</td>
+<td align="left">DELL</td>
+<td align="left">DCS2210(E5-2609<em>1/8G</em>4/300G*12)</td>
+<td align="left">Intel E5-2609</td>
+</tr>
+<tr>
+<td align="left">DELL DCS5100</td>
+<td align="left">DELL</td>
+<td align="left">DCS5100(X3440<em>1/4G</em>2/500G<em>1)</em>4</td>
+<td align="left">Intel X3440</td>
+</tr>
+<tr>
+<td align="left">DELL DCS5110</td>
+<td align="left">DELL</td>
+<td align="left">DCS5110(E5504<em>1/8G</em>4/146G<em>2)</em>4</td>
+<td align="left">Intel E5504</td>
+</tr>
+<tr>
+<td align="left">DELL DCS5120</td>
+<td align="left">DELL</td>
+<td align="left">DCS5120(i3-540<em>1/4G</em>2/500G*1)</td>
+<td align="left">Intel i3-540</td>
+</tr>
+<tr>
+<td align="left">DELL DCS5125</td>
+<td align="left">DELL</td>
+<td align="left">DCS5120(910e<em>1/4G</em>2/500G*1)</td>
+<td align="left">AMD 910e</td>
+</tr>
+<tr>
+<td align="left">DELL DCS6100</td>
+<td align="left">DELL</td>
+<td align="left">DCS6100(E5620<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">Intel E5620</td>
+</tr>
+<tr>
+<td align="left">DELL DCS6105</td>
+<td align="left">DELL</td>
+<td align="left">DCS6105(4174HE<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">AMD 4174HE</td>
+</tr>
+<tr>
+<td align="left">DELL DCS6130</td>
+<td align="left">DELL</td>
+<td align="left">DCS6130(L5630<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">Intel L5630</td>
+</tr>
+<tr>
+<td align="left">DELL DCS6230</td>
+<td align="left">DELL</td>
+<td align="left">DCS6230(E5-2420<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">DELL DCS7110S</td>
+<td align="left">DELL</td>
+<td align="left">rack node(L5630<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel L5630</td>
+</tr>
+<tr>
+<td align="left">DELL DCS-G7230</td>
+<td align="left">DELL</td>
+<td align="left">DCS-G7230(E5-2420<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">DELL DCS-G8230</td>
+<td align="left">DELL</td>
+<td align="left">DCS-G8230(E5-2420/8G<em>4/2T</em>12/SSD-80G)</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">DELL DS24-ML</td>
+<td align="left">DELL</td>
+<td align="left">DS24-ML(2.5/8G/250G*1)-C1</td>
+<td align="left">Intel X3320</td>
+</tr>
+<tr>
+<td align="left">DELL FS12</td>
+<td align="left">DELL</td>
+<td align="left">FS12(E5405<em>1/8G/750G</em>12)</td>
+<td align="left">Intel E5405</td>
+</tr>
+<tr>
+<td align="left">DELL FS12-SC</td>
+<td align="left">DELL</td>
+<td align="left">FS12SC(2G/8G/750G*12)-A3</td>
+<td align="left">Intel E5504</td>
+</tr>
+<tr>
+<td align="left">DELL FS12-TY</td>
+<td align="left">DELL</td>
+<td align="left">FS12-TY(E5504<em>1/4G</em>8/146G*12)</td>
+<td align="left">Intel E5504</td>
+</tr>
+<tr>
+<td align="left">DELL PE1850</td>
+<td align="left">DELL</td>
+<td align="left">PE1850(/8G/146G*2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">DELL PE1950</td>
+<td align="left">DELL</td>
+<td align="left">PE1950(2.0G/2.0G/146G*2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">DELL PE2850</td>
+<td align="left">DELL</td>
+<td align="left">PE2850(/6G/146G*6)</td>
+<td align="left">Intel E7520</td>
+</tr>
+<tr>
+<td align="left">DELL PE2950</td>
+<td align="left">DELL</td>
+<td align="left">PE2950(E5405<em>1/8G/146G</em>8)</td>
+<td align="left">Intel E5405</td>
+</tr>
+<tr>
+<td align="left">DELL PE860</td>
+<td align="left">DELL</td>
+<td align="left">PE860(X3210<em>1/8G/500G</em>1)</td>
+<td align="left">Intel X3210</td>
+</tr>
+<tr>
+<td align="left">DELL PESC1425</td>
+<td align="left">DELL</td>
+<td align="left">PESC1425(2.8G/8G/80G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">DELL PESC1435</td>
+<td align="left">DELL</td>
+<td align="left">PESC1435(Opteron2212<em>2/8G/80G</em>1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">DELL R210</td>
+<td align="left">DELL</td>
+<td align="left">R210(X3440<em>1/4G</em>2/500G*1)</td>
+<td align="left">Intel X3440</td>
+</tr>
+<tr>
+<td align="left">DELL R210II</td>
+<td align="left">DELL</td>
+<td align="left">R210II(E3-1230v2<em>1/4G</em>2/500G*1)</td>
+<td align="left">Intel E3-1230 v2</td>
+</tr>
+<tr>
+<td align="left">DELL R340</td>
+<td align="left">DELL</td>
+<td align="left">R340(E-2287G/16G<em>2/240G SSD/10GE</em>2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">DELL R410</td>
+<td align="left">DELL</td>
+<td align="left">R410(E5506<em>1/8G</em>4/146G*2)</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">DELL R420</td>
+<td align="left">DELL</td>
+<td align="left">R420(8G<em>8/600G</em>2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">DELL R510</td>
+<td align="left">DELL</td>
+<td align="left">R510(E5606<em>1/8G</em>4/300G*12)</td>
+<td align="left">Intel E5606</td>
+</tr>
+<tr>
+<td align="left">DELL R540</td>
+<td align="left">DELL</td>
+<td align="left">R540(4110/16G<em>4/12T</em>12/S4500-480G/10GE*2)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz</td>
+</tr>
+<tr>
+<td align="left">DELL R610</td>
+<td align="left">DELL</td>
+<td align="left">R610(L5630<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel L5630</td>
+</tr>
+<tr>
+<td align="left">DELL R620</td>
+<td align="left">DELL</td>
+<td align="left">R620(E5-2620<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel E5-2620</td>
+</tr>
+<tr>
+<td align="left">DELL R630</td>
+<td align="left">DELL</td>
+<td align="left">R630(E5-2620v3<em>2/16G</em>4/300G<em>4/P3600-1.2T</em>1)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">DELL R640</td>
+<td align="left">DELL</td>
+<td align="left">R640(6142<em>2/16G</em>16/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6142</td>
+</tr>
+<tr>
+<td align="left">DELL R710</td>
+<td align="left">DELL</td>
+<td align="left">R710(E5645<em>2/8G</em>8/300G<em>4/ioDrive-640G</em>1)</td>
+<td align="left">Intel E5645</td>
+</tr>
+<tr>
+<td align="left">DELL R720</td>
+<td align="left">DELL</td>
+<td align="left">R720(16G<em>8/600G</em>2/ssd*6)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">DELL R720xd</td>
+<td align="left">DELL</td>
+<td align="left">R720xd(E5-2609<em>1/8G</em>4/300G*12)(USA)</td>
+<td align="left">Intel E5-2609</td>
+</tr>
+<tr>
+<td align="left">DELL R730XD</td>
+<td align="left">DELL</td>
+<td align="left">R730XD(E5-2620v3/16G<em>2/2T</em>12/SSD-240G)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">DELL R740</td>
+<td align="left">DELL</td>
+<td align="left">R740(6133<em>2/32G</em>12/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6133</td>
+</tr>
+<tr>
+<td align="left">DELL R740xd</td>
+<td align="left">DELL</td>
+<td align="left">R740xd(6133<em>2/16G</em>12/SSD-480G<em>12 RAID/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">DELL R7415</td>
+<td align="left">DELL</td>
+<td align="left">R7415(EPYC 7551<em>1/16G</em>8/480G<em>6 RAID/10GE</em>2)</td>
+<td align="left">AMD EPYC 7551 32-Core Processor</td>
+</tr>
+<tr>
+<td align="left">DELL R7425</td>
+<td align="left">DELL</td>
+<td align="left">R7425(EPYC 7551<em>2/32G</em>16/S4500-480G<em>1/10GE</em>2)</td>
+<td align="left">AMD EPYC 7551 32-Core Processor</td>
+</tr>
+<tr>
+<td align="left">DELL R910</td>
+<td align="left">DELL</td>
+<td align="left">R910(X7560<em>4/4G</em>16/146G*16)</td>
+<td align="left">Intel X7560</td>
+</tr>
+<tr>
+<td align="left">DELL R930</td>
+<td align="left">DELL</td>
+<td align="left">R930(E7-8890v4<em>4/16G</em>16/SAS-600G<em>8/10G</em>2 NIC/RoCE 40G*2)</td>
+<td align="left">Intel E7-8890 v4</td>
+</tr>
+<tr>
+<td align="left">DELL T630</td>
+<td align="left">DELL</td>
+<td align="left">T630(E5-2650v3<em>2/16G</em>8/1.2T<em>6/300G</em>2/K20C<em>4/RoCE 40G</em>2)</td>
+<td align="left">Intel E5-2650 v3</td>
+</tr>
+<tr>
+<td align="left">Foxconn RM760-FX</td>
+<td align="left">富士康</td>
+<td align="left">RM760-FX(6142<em>2/16G</em>16/SAS3-600G<em>6 RAID/10GE</em>2)</td>
+<td align="left">6142</td>
+</tr>
+<tr>
+<td align="left">Foxconn RM761-FX</td>
+<td align="left">富士康</td>
+<td align="left">RM761-FX(8255C<em>2/32G</em>12/SSD-480G<em>1/25GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Foxconn StarLake</td>
+<td align="left">富士康</td>
+<td align="left">StarLake(AMD EPYC 64-Core Processor<em>2/32G</em>16/M.2-480G SSD<em>1 /P4510-4T</em>1/25GE*2)</td>
+<td align="left">AMD EPYC xxxx 64-Core Processor</td>
+</tr>
+<tr>
+<td align="left">FusionX 2298v5</td>
+<td align="left">FusionX</td>
+<td align="left">SC6-25G_6.1.0_FusionX 2298v5_4214<em>2/2933-32G</em>8/16T<em>24/SSD-960G</em>2/25GE*2(FusionX)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz</td>
+</tr>
+<tr>
+<td align="left">Greatwall DF720</td>
+<td align="left">中国长城</td>
+<td align="left">DF720(Phytium FT-2000+<em>1/32G</em>8/2T<em>8/SSD-480G</em>2 RAID/1GE<em>2+10GE</em>4-MMF)</td>
+<td align="left">Phytium FT-2000+</td>
+</tr>
+<tr>
+<td align="left">Greatwall EF723</td>
+<td align="left">Greatwall</td>
+<td align="left">T3-SW12F-10G_6.1.0_Greatwall EF723_Phytium FT-2000+<em>1/32G</em>8/HDD-12T<em>10/SSD-480G</em>1/NVMeSSD-6.4T<em>2/10GE</em>2(Greatwall)</td>
+<td align="left">FT-2000+</td>
+</tr>
+<tr>
+<td align="left">Greatwall EF860</td>
+<td align="left">Greatwall</td>
+<td align="left">T3-SW23FK-10G_6.2.0_Greatwall EF860_Phytium S2500<em>2/32G</em>32/SSD-480G<em>1/NVMeSSD-3.84T</em>4/SATAHDD-12T<em>10/X710-10GE</em>1(2P,带多模光模块)(Greatwall)</td>
+<td align="left">S2500</td>
+</tr>
+<tr>
+<td align="left">Greatwall F520</td>
+<td align="left">长城</td>
+<td align="left">F520(Phytium FT1500A<em>1/16G</em>4/SSD-240G<em>2/SAS-900G</em>4 Raid/10GE*2)</td>
+<td align="left">Phytium FT1500A</td>
+</tr>
+<tr>
+<td align="left">H3C KUNLUN-TSC180</td>
+<td align="left">H3C</td>
+<td align="left">KUNLUN-TSC180(D1541<em>1/16G</em>4/M.2 SataSSD-480G<em>1/8T</em>18/10GE*2)</td>
+<td align="left">Intel Xeon D-1541</td>
+</tr>
+<tr>
+<td align="left">H3C KUNLUN-TSC180(24N)</td>
+<td align="left">H3C</td>
+<td align="left">KUNLUN-TSC180(D1541<em>1/16G</em>4/M.2 SataSSD-480G<em>1/12T</em>18/10GE-RJ45<em>2)-TSC180</em>24</td>
+<td align="left">Intel Xeon D-1541</td>
+</tr>
+<tr>
+<td align="left">H3C R4300G3</td>
+<td align="left">H3C</td>
+<td align="left">T3-SC23X-10G_6.1.0_H3C R4300G3_4214<em>2/32G</em>4/SSD-480G/HDD-16T<em>36/10GE</em>2(光口，带多模光模块）(H3C)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz</td>
+</tr>
+<tr>
+<td align="left">H3C R4700G3</td>
+<td align="left">H3C</td>
+<td align="left">R4700G3(6133<em>2/16G</em>12/NVMeSSD-3.6T<em>4/SataSSD-480G/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">H3C R4900G3</td>
+<td align="left">H3C</td>
+<td align="left">R4900G3(6133<em>2/32G</em>12/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">H3C R4900G5</td>
+<td align="left">H3C</td>
+<td align="left">X0-GI11X-10G_7.0.0_H3C R4900G5_8360Y<em>2/32G</em>8/SSD-480G<em>1/NVMe SSD 3.84T</em>1/A10<em>1/RJ45-10GE</em>2(H3C)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8360Y CPU @ 2.40GHz</td>
+</tr>
+<tr>
+<td align="left">H3C R4930G5</td>
+<td align="left">H3C</td>
+<td align="left">T0-CS21H-25G_6.2.1_H3C R4930G5_Hygon 7285<em>2/32G</em>16/SSD-480G<em>1/MCX4121A-ACAT-25GE</em>2(H3C)</td>
+<td align="left">Hygon C86 7285 32-core Processor</td>
+</tr>
+<tr>
+<td align="left">H3C R4950G3</td>
+<td align="left">H3C</td>
+<td align="left">R4950G3(EPYC 7551<em>2/16G</em>16/5200-480G<em>6 RAID/10GE</em>2)</td>
+<td align="left">AMD EPYC 7551</td>
+</tr>
+<tr>
+<td align="left">H3C R4960G3</td>
+<td align="left">H3C</td>
+<td align="left">R4960G3(kunpeng-920-6426<em>2/32G</em>12/SSD-480G<em>2/HBA/NVMeSSD-3.84T</em>2/SmartNIC-25GE*2)</td>
+<td align="left">Kunpeng920-6426</td>
+</tr>
+<tr>
+<td align="left">H3C R5300G3</td>
+<td align="left">H3C</td>
+<td align="left">6233<em>2/32G</em>12/SSD 480G<em>1/NVMeSSD-3.84T</em>2/Suiyuan-GPU-T10<em>8/100GE</em>2</td>
+<td align="left">Intel 6233</td>
+</tr>
+<tr>
+<td align="left">H3C R5300G5</td>
+<td align="left">H3C</td>
+<td align="left">X0-GI62X-25G_N7.1.0_H3C R5300G5_8374B<em>2/32G</em>16/SSD-480G<em>2 Raid1/NVMeSSD-3.84T</em>2/3080Ti<em>8/Smart-25GE</em>1(2P)（含HDMI欺骗器）(H3C)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8374B CPU @ 2.70GHz</td>
+</tr>
+<tr>
+<td align="left">H3C R5500G5</td>
+<td align="left">H3C</td>
+<td align="left">T0-GT11A-50G_7.0.1.11_H3C R5500G5_7K62<em>2 / 2933-32G</em>32 / SSD-480G<em>1 / 50G NIC(双口)</em>1 / SXM4 A100*8(H3C)</td>
+<td align="left">AMD EPYC 7K62 48-Core Processor</td>
+</tr>
+<tr>
+<td align="left">H3C R6700G3</td>
+<td align="left">H3C</td>
+<td align="left">DS5-100G_6.1.0_H3C R6700G3_(8255C<em>4/32G</em>24/SSD-960G<em>1/10GE</em>2/CX5-100GE*4)(H3C)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">H3C U70080</td>
+<td align="left">H3C</td>
+<td align="left">U70080(OP P8 11core<em>2/16G</em>16/4T<em>12/10GE</em>4)</td>
+<td align="left">02AA204</td>
+</tr>
+<tr>
+<td align="left">HP Apollo4510G10</td>
+<td align="left">HP</td>
+<td align="left">Apollo4510G10(8164<em>2/64G</em>12/300G<em>2/12T</em>60/25G*2)</td>
+<td align="left">Intel Xeon Platinum 8164</td>
+</tr>
+<tr>
+<td align="left">HP Apollo6500G10</td>
+<td align="left">HP</td>
+<td align="left">Apollo6500G10(6140<em>2/64G</em>8/240G<em>2/1.92T</em>5/25G<em>2/100G</em>2/V100-32GB*8)</td>
+<td align="left">Intel Xeon Gold 6140</td>
+</tr>
+<tr>
+<td align="left">HP DL120G6</td>
+<td align="left">HP</td>
+<td align="left">DL120G6(X3440<em>1/2G</em>4/500G*1)</td>
+<td align="left">Intel X3440</td>
+</tr>
+<tr>
+<td align="left">HP DL120G7</td>
+<td align="left">HP</td>
+<td align="left">DL120G7(E3-1230<em>1/4G</em>2/500G*1)</td>
+<td align="left">Intel E3-1230</td>
+</tr>
+<tr>
+<td align="left">HP DL140G3</td>
+<td align="left">HP</td>
+<td align="left">DL140G3(E5130<em>2/2G/80G</em>1)</td>
+<td align="left">Intel E5130</td>
+</tr>
+<tr>
+<td align="left">HP DL145</td>
+<td align="left">HP</td>
+<td align="left">DL145(/8G/80G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP DL145G3</td>
+<td align="left">HP</td>
+<td align="left">DL145G3(/2G/160G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP DL180G5</td>
+<td align="left">HP</td>
+<td align="left">DL180G5(E5405<em>2/32G/500G</em>4/HW-SSD-512G*2)</td>
+<td align="left">Intel E5405</td>
+</tr>
+<tr>
+<td align="left">HP DL180G6</td>
+<td align="left">HP</td>
+<td align="left">DL180G6(E5520<em>2/4G</em>9/500G<em>4/HW-SSD-512G</em>2)</td>
+<td align="left">Intel E5520</td>
+</tr>
+<tr>
+<td align="left">HP DL2000</td>
+<td align="left">HP</td>
+<td align="left">DL2000(E5506<em>1/8G</em>4/146G<em>2)</em>4</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">HP DL320G5p</td>
+<td align="left">HP</td>
+<td align="left">DL320G5p(X3320/8G/160G*1)</td>
+<td align="left">Intel X3320</td>
+</tr>
+<tr>
+<td align="left">HP DL320G6</td>
+<td align="left">HP</td>
+<td align="left">DL320G6(E5506<em>1/4G</em>8/146G*2)</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">HP DL320S</td>
+<td align="left">HP</td>
+<td align="left">DL320S(2.66G/2G<em>4/500G</em>6)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP DL360G10</td>
+<td align="left">HP</td>
+<td align="left">DL360G10(4114<em>2/16G</em>8/300G<em>2/1.2T</em>4/10G*2)</td>
+<td align="left">Intel Xeon Silver4114</td>
+</tr>
+<tr>
+<td align="left">HP DL360G5</td>
+<td align="left">HP</td>
+<td align="left">DL360G5(2G/16G/146G*4)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP DL360G6</td>
+<td align="left">HP</td>
+<td align="left">DL360G6(E5506/8G/146G*8)-A1</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">HP DL360G7</td>
+<td align="left">HP</td>
+<td align="left">DL360G7(L5630<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel L5630</td>
+</tr>
+<tr>
+<td align="left">HP DL360G9</td>
+<td align="left">HP</td>
+<td align="left">DL360G9(E5-2620v3<em>2/16G</em>4/300G*2)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">HP DL360pG8</td>
+<td align="left">HP</td>
+<td align="left">DL360pG8(E5-2620<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel E5-2620</td>
+</tr>
+<tr>
+<td align="left">HP DL360pG8 HY</td>
+<td align="left">HP</td>
+<td align="left">DL360pG8 HY(E5-2630v2<em>2/16G</em>8/300G*6)</td>
+<td align="left">Intel E5-2630 v2</td>
+</tr>
+<tr>
+<td align="left">HP DL365G1</td>
+<td align="left">HP</td>
+<td align="left">DL365G1(Opteron2210<em>2/16G/146G</em>2)</td>
+<td align="left">Opteron2210</td>
+</tr>
+<tr>
+<td align="left">HP DL380</td>
+<td align="left">HP</td>
+<td align="left">DL380(16G<em>8/300</em>2/1T*24)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP DL380eG8</td>
+<td align="left">HP</td>
+<td align="left">DL380eG8(E5-2407<em>1/8G</em>1/2T*12)</td>
+<td align="left">Intel E5-2407</td>
+</tr>
+<tr>
+<td align="left">HP DL380G10</td>
+<td align="left">HP</td>
+<td align="left">DL380G10(6146<em>2/32G</em>12/SSD-480G<em>2/P100</em>2/100G-IB<em>2/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6146 CPU @ 3.20GHz</td>
+</tr>
+<tr>
+<td align="left">HP DL380G3</td>
+<td align="left">HP</td>
+<td align="left">DL380G3(/2G/36*6)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP DL380G4</td>
+<td align="left">HP</td>
+<td align="left">DL380G4(/4G/146G*6)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP DL380G5</td>
+<td align="left">HP</td>
+<td align="left">DL380G5(E5405<em>2/8G/146G</em>8)</td>
+<td align="left">Intel E5405</td>
+</tr>
+<tr>
+<td align="left">HP DL380G6</td>
+<td align="left">HP</td>
+<td align="left">DL380G6(E5506<em>1/4G</em>8/146G*12)</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">HP DL380G7</td>
+<td align="left">HP</td>
+<td align="left">DL380G7(E5506<em>1/8G</em>4/146G*12)</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">HP DL380G9</td>
+<td align="left">HP</td>
+<td align="left">DL380G9(E5-2620v3/16G<em>2/2T</em>12/SSD-240G)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">HP DL380pG8</td>
+<td align="left">HP</td>
+<td align="left">DL380pG8(E5-2609<em>1/8G</em>4/300G*12)</td>
+<td align="left">Intel E5-2609</td>
+</tr>
+<tr>
+<td align="left">HP DL388pG8</td>
+<td align="left">HP</td>
+<td align="left">HP DL388pG8(E5-2600/4G<em>24/1T</em>1)</td>
+<td align="left">Intel E5-2600</td>
+</tr>
+<tr>
+<td align="left">HP DL580G10</td>
+<td align="left">HP</td>
+<td align="left">DL580G10(8165<em>2/16G</em>12/300G<em>2/1.2T</em>4/1GE<em>4/25G</em>2)</td>
+<td align="left">Intel Xeon Platinum 8165</td>
+</tr>
+<tr>
+<td align="left">HP DL580G7</td>
+<td align="left">HP</td>
+<td align="left">DL580G7(X7560<em>4/8G</em>8/300G*2)</td>
+<td align="left">Intel X7560</td>
+</tr>
+<tr>
+<td align="left">HP R4700G3</td>
+<td align="left">HP</td>
+<td align="left">R4700G3(6134<em>2/16G</em>12/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6134</td>
+</tr>
+<tr>
+<td align="left">HP R4900G3</td>
+<td align="left">HP</td>
+<td align="left">R4900G3(6142<em>2/16G</em>16/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6142</td>
+</tr>
+<tr>
+<td align="left">HP SE1208</td>
+<td align="left">HP</td>
+<td align="left">SE1208(/4G<em>4/750G</em>12)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP SL2500G8</td>
+<td align="left">HP</td>
+<td align="left">SL2500G8(16G<em>8/600G</em>6)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HP SL270</td>
+<td align="left">HP</td>
+<td align="left">SL270(E5-2620<em>2/8G</em>8/600G<em>8/10GE</em>2/K20M<em>4)</em>2</td>
+<td align="left">Intel E5-2620</td>
+</tr>
+<tr>
+<td align="left">HPE 3PAR 8440</td>
+<td align="left">H3C</td>
+<td align="left">T3-PGZZW22_6.1.0_HPE 3PAR 8440_HPE 3PAR 8440(2N/44<em>1.92T SSD RAID5/50</em>1.8T SAS RAID6/94*8T NLSAS RAID6)(H3C)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HUAWEI 1288Hv5</td>
+<td align="left">华为</td>
+<td align="left">1288Hv5(6134<em>2/16G</em>12/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6134</td>
+</tr>
+<tr>
+<td align="left">HUAWEI 2288Hv5</td>
+<td align="left">华为</td>
+<td align="left">2288Hv5(6142<em>2/16G</em>16/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6142</td>
+</tr>
+<tr>
+<td align="left">HUAWEI 2288Hv5+Switch-IB*2</td>
+<td align="left">华为</td>
+<td align="left">X3-PTB61X-10G_6.1.0_HUAWEI 2288Hv5+Switch-IB<em>2_4208</em>2/2933-32G<em>4/SSD-480G</em>2/12T<em>6/HBA/10GE</em>2/IB-100G<em>2/IB switch</em>2/IB cable*2(Huawei)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz</td>
+</tr>
+<tr>
+<td align="left">HUAWEI 2298v5</td>
+<td align="left">华为</td>
+<td align="left">2298v5(8255c<em>2/32G</em>12/4T<em>24/SSD-480G</em>1/10G*2)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Huawei 2488Hv5</td>
+<td align="left">华为</td>
+<td align="left">T3-PGZZW14X-10G_6.1.0_Huawei 2488Hv5_6240<em>4/2933-32G</em>8/SAS-600G<em>2/RAID/SSD-480G</em>2/1GE-RJ45<em>2/10GE-SFP+(含多模光模块)</em>2/HBA-16Gb*2(Huawei)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz</td>
+</tr>
+<tr>
+<td align="left">HUAWEI 5268GV3</td>
+<td align="left">华为</td>
+<td align="left">5268GV3(E5-2680v4<em>2/16G</em>16/SSD-240G<em>1/NVMeSSD-3.2T</em>2/P40-24G<em>8/RoCE 40G</em>2)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">HUAWEI 5268GV3-TR1</td>
+<td align="left">华为</td>
+<td align="left">5268GV3-TR1(E5-2680v4<em>2/32G</em>16/300G<em>2/SSD-800G</em>6/10GE<em>2/P40-24G</em>8)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">Huawei 5288v5</td>
+<td align="left">华为</td>
+<td align="left">T3-SC24X-10G_6.1.0_Huawei 5288v5_4214<em>2/32G</em>4/SSD-480G/HDD-16T<em>36/10GE</em>2(电口）(Huawei)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz</td>
+</tr>
+<tr>
+<td align="left">Huawei Atlas 800 3000</td>
+<td align="left">华为</td>
+<td align="left">X0-GR13W-10G_6.1.0_Huawei Atlas 800 3000_Kunpeng 920 7260<em>2/32G</em>4/SSD-240G<em>1/SSD-960G</em>1/10GE<em>2/Atlas 300C</em>2(Huawei)</td>
+<td align="left">Kunpeng 920-6426</td>
+</tr>
+<tr>
+<td align="left">Huawei Atlas 800 3010</td>
+<td align="left">华为</td>
+<td align="left">X0-GR13X-25G_N6.1.0_Huawei Atlas 800 3010_4214<em>2/32G</em>12/SSD_480G<em>1/NVMeSSD-2T</em>2/25G<em>2/10GE</em>2/Atlas 300I*4(Huawei)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz</td>
+</tr>
+<tr>
+<td align="left">Huawei Atlas 800 9010</td>
+<td align="left">华为</td>
+<td align="left">X0-GR15X-25G_N6.1.0_Huawei Atlas 800 9010_8260<em>2/32G</em>16/SSD-960G<em>2/NVMeSSD-1.92T</em>8/Ascend 910<em>8/25GE</em>2(Huawei)</td>
+<td align="left">Intel Xeon Platinum 8260 CPU @ 2.40GHz</td>
+</tr>
+<tr>
+<td align="left">HUAWEI DH310G1</td>
+<td align="left">华为</td>
+<td align="left">rack node(X3440<em>1/4G</em>2/500G*1)</td>
+<td align="left">Intel X3440</td>
+</tr>
+<tr>
+<td align="left">HUAWEI DH310v2</td>
+<td align="left">华为</td>
+<td align="left">DH310v2(E3-1230v2<em>1/8G</em>2/500G*1)</td>
+<td align="left">Intel E3-1230 v2</td>
+</tr>
+<tr>
+<td align="left">HUAWEI DH320v2</td>
+<td align="left">华为</td>
+<td align="left">DH320v2(E5-2420<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">HUAWEI DH628v2</td>
+<td align="left">华为</td>
+<td align="left">DH628v2(E5-2420/8G<em>4/2T</em>12/SSD-80G)</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">HUAWEI G560-NV</td>
+<td align="left">华为</td>
+<td align="left">G560-NV(6133<em>2/32G</em>12/S4500-480G<em>2/25GE</em>2/V100-SXM2-32G*8)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">HUAWEI G560-PCIe</td>
+<td align="left">华为</td>
+<td align="left">G560-PCIe(6128<em>2/32G</em>8/SSD-480G<em>2 RAID/10GE</em>2/NVIDIA Tesla T4*8)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6128 CPU @ 3.40GHz</td>
+</tr>
+<tr>
+<td align="left">HUAWEI G560-TP1</td>
+<td align="left">华为</td>
+<td align="left">G560-TP1(E5-2680v4<em>2/32G</em>16/300G<em>2/SSD-960G</em>6/10GE<em>2/P40-24G</em>8)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">HUAWEI G560-TP2</td>
+<td align="left">华为</td>
+<td align="left">G560-TP2(E5-2680v4<em>2/32G</em>8/SSD-240G<em>1/P4600-2.0T</em>2/P100-16G<em>8/RoCE 40G</em>2)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">Huawei OceanStor5110v5</td>
+<td align="left">华为</td>
+<td align="left">T3-PX27-25G_6.1.0_Huawei OceanStor5110v5_存储服务器(2U/25盘位/KunPeng Hi1610<em>2/8G</em>4/SAS 600G<em>4/软件RAID/SmartIO卡</em>2/25GE*4光模块/(赠送）基础版+高级版License(Huawei)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">Huawei OceanStor5300v5</td>
+<td align="left">华为</td>
+<td align="left">T3-PX29-10G_6.1.0_Huawei OceanStor5300v5_2U双控/25盘位 1.92T<em>5 SSD, 1.8T</em>9硬盘/128GB/12<em>1Gb ETH/8</em>10GE(Huawei)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">Huawei OceanStor5310v5</td>
+<td align="left">华为</td>
+<td align="left">T3-PX30-25G_6.1.0_Huawei OceanStor5310v5_2U双控/1.92T<em>12 SSD/Kunpeng920</em>2/256GB/8<em>1GE/8</em>10GE/4<em>(4</em>12Gb)SAS/2<em>4U硬盘框/10T</em>30硬盘/4*SAS Cable(Huawei)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HUAWEI OceanStor5500v3(16U)</td>
+<td align="left">华为</td>
+<td align="left">OceanStor5500v3(8TB 7.2k<em>96/DAE22435U4</em>4/HS-SAS-3-01 48G Mini SAS HD Cable-3m<em>4/LIC-5500V3-CLON</em>1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HUAWEI OceanStor5500v3(26U)</td>
+<td align="left">华为</td>
+<td align="left">OceanStor5500v3(FC-SAN main-center)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HUAWEI OceanStor5500v3(8U)</td>
+<td align="left">华为</td>
+<td align="left">OceanStor5500v3(FC-SAN sub-center)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH1288Hv5</td>
+<td align="left">华为</td>
+<td align="left">RH1288Hv5(6134<em>2/16G</em>12/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6134</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH1288v2</td>
+<td align="left">华为</td>
+<td align="left">RH1288v2(E5-2620<em>2/8G</em>8/300G<em>2/2</em>10GIntel-OB)</td>
+<td align="left">Intel E5-2620</td>
+</tr>
+<tr>
+<td align="left">Huawei RH1288v3</td>
+<td align="left">华为</td>
+<td align="left">RH1288v3(E5-2670v3<em>2/16G</em>8/600G<em>6/10GE</em>2))</td>
+<td align="left">Intel E5-2670 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH1288v3(GER)</td>
+<td align="left">华为</td>
+<td align="left">R0-SH110X-10G_N5.1.2_HUAWEI RH1288v3(GER)_E5-2620v3<em>2/16G</em>4/SSD-240G<em>1/NVMeSSD-1.8T</em>4/10GE*2(GER)(Huawei)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH1288v3(KOR)</td>
+<td align="left">华为</td>
+<td align="left">R0-CS518X-10G_N5.4.52_HUAWEI RH1288v3(KOR)_E5-2670v3<em>2/16G</em>8/SAS-300G<em>2 RAID/10GE</em>2(KOR)(Huawei)</td>
+<td align="left">Intel E5-2670 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH1288v3(SG)</td>
+<td align="left">华为</td>
+<td align="left">R0-SH110X-10G_N5.1.2_HUAWEI RH1288v3(SG)_E5-2620v3<em>2/16G</em>4/SSD-240G<em>1/NVMeSSD-1.8T</em>4/10GE*2(SG)(Huawei)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH2285</td>
+<td align="left">华为</td>
+<td align="left">RH2285(E5504<em>1/8G</em>1/1T*12)</td>
+<td align="left">Intel E5504</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH2285v2</td>
+<td align="left">华为</td>
+<td align="left">RH2285v2(E5-2407<em>1/8G</em>1/2T*12)</td>
+<td align="left">Intel E5-2407</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH2288Hv3</td>
+<td align="left">华为</td>
+<td align="left">RH2288Hv3(E5-2650v3<em>2/16G</em>8/300G<em>2/1.2T</em>6/K80<em>2/RoCE 40G</em>2)</td>
+<td align="left">Intel E5-2650 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH2288Hv5</td>
+<td align="left">华为</td>
+<td align="left">RH2288Hv5(6142<em>2/16G</em>16/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6142</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH2288v2</td>
+<td align="left">华为</td>
+<td align="left">RH2288v2(E5-2620<em>2/8G</em>8/300G*4/ES3000-1.2T)</td>
+<td align="left">Intel E5-2620</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH2288v3</td>
+<td align="left">华为</td>
+<td align="left">RH2288v3(E5-2620v3/16G<em>2/2T</em>12/SSD-240G)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH5885Hv3</td>
+<td align="left">华为</td>
+<td align="left">RH5885Hv3(E7-4830v3<em>4/16G</em>40/300G<em>4/FC-HBA</em>2/1G<em>2/10G</em>4)</td>
+<td align="left">Intel E7-4830 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI RH5885v3</td>
+<td align="left">华为</td>
+<td align="left">RH5885v3(E7-4850v3<em>4/16G</em>16/300G<em>3/SataSSD-480G</em>2/FC-HBA<em>2/1GE</em>4/10GE*2)</td>
+<td align="left">Intel E7-4850 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI T3500</td>
+<td align="left">华为</td>
+<td align="left">T3500(/4G<em>8/1T</em>24)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">HUAWEI T3500G2</td>
+<td align="left">华为</td>
+<td align="left">T3500G2(E5506<em>2/32G/1T</em>24)-TS2</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">Huawei Taishan 200 5290</td>
+<td align="left">华为</td>
+<td align="left">X0-SC11W-50G_6.1.0_Huawei Taishan 200 5290_Kunpeng 920 5250<em>2/32G</em>16/SataSSD-3.84T<em>1/SataHDD-16T</em>72/50G*1(2P)(Huawei)</td>
+<td align="left">Kunpeng 920-4826</td>
+</tr>
+<tr>
+<td align="left">HUAWEI Taishan2160</td>
+<td align="left">华为</td>
+<td align="left">Taishan2160(Hi1610E/16G<em>2/4T</em>12/SSD-240G)</td>
+<td align="left">华为海思Hi1610ES</td>
+</tr>
+<tr>
+<td align="left">HUAWEI Taishan2280</td>
+<td align="left">华为</td>
+<td align="left">Taishan2280(Hi1616/16G<em>8/480G-SSD</em>1/1G*2)</td>
+<td align="left">华为海思Hi1616</td>
+</tr>
+<tr>
+<td align="left">HUAWEI Taishan2280V2</td>
+<td align="left">华为</td>
+<td align="left">Taishan2280V2(Kunpeng920-4826<em>2/32G</em>8/SSD-480G<em>2/SATA-4T</em>10/RAID/10GE*2)</td>
+<td align="left">Kunpeng920-4826</td>
+</tr>
+<tr>
+<td align="left">HUAWEI XH310</td>
+<td align="left">华为</td>
+<td align="left">XH310(X3440<em>1/4G</em>2/500G<em>1)</em>4</td>
+<td align="left">Intel X3440</td>
+</tr>
+<tr>
+<td align="left">HUAWEI XH310v2</td>
+<td align="left">华为</td>
+<td align="left">XH310v2(E3-1230v2<em>1/4G</em>2/500G<em>1)</em>4</td>
+<td align="left">Intel E3-1230 v2</td>
+</tr>
+<tr>
+<td align="left">HUAWEI XH310v3</td>
+<td align="left">华为</td>
+<td align="left">XH310v3(E3-1231v3<em>1/8G</em>2/1T<em>1)</em>4</td>
+<td align="left">Intel E3-1231 v3</td>
+</tr>
+<tr>
+<td align="left">HUAWEI XH320</td>
+<td align="left">华为</td>
+<td align="left">XH320(E5606<em>1/8G</em>4/146G<em>2)</em>4</td>
+<td align="left">Intel E5606</td>
+</tr>
+<tr>
+<td align="left">HUAWEI XH320v2</td>
+<td align="left">华为</td>
+<td align="left">XH320v2(E5-2420<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">HUAWEI XH321v3</td>
+<td align="left">华为</td>
+<td align="left">XH321v3(E5-2620v4<em>2/16G</em>8/600G<em>2/2T</em>3/NVMeSSD-1.2T<em>1/10GE</em>4)<em>3+(E5-2680v4</em>2/32G<em>8/600G</em>2/10GE<em>4)</em>1</td>
+<td align="left">Intel E5-2620 v4/E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">IBM X3250</td>
+<td align="left">IBM</td>
+<td align="left">X3250(2.13/8G/160G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">IBM X3250M4</td>
+<td align="left">IBM</td>
+<td align="left">X3250M4(E3-1230v2<em>1/4G</em>2/500G*1)</td>
+<td align="left">Intel E3-1230 v2</td>
+</tr>
+<tr>
+<td align="left">IBM X336</td>
+<td align="left">IBM</td>
+<td align="left">X336(3G/2G/146G*2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">IBM X346</td>
+<td align="left">IBM</td>
+<td align="left">X346(/6G/146G*6)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">IBM X3550</td>
+<td align="left">IBM</td>
+<td align="left">X3550(2G/16G/146G*2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">IBM X3550 M2</td>
+<td align="left">IBM</td>
+<td align="left">X3550 M2(2G/32G/146G*2)-B5</td>
+<td align="left">Intel E5504</td>
+</tr>
+<tr>
+<td align="left">IBM X3550M2</td>
+<td align="left">IBM</td>
+<td align="left">X3550M2(2G/16G/146G*2)</td>
+<td align="left">Intel E5504</td>
+</tr>
+<tr>
+<td align="left">IBM X3550M3</td>
+<td align="left">IBM</td>
+<td align="left">X3550M3(E5506<em>1/8G</em>4/146G*2)</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">IBM X3550M4</td>
+<td align="left">IBM</td>
+<td align="left">X3550M4(E5-2620<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel E5-2620</td>
+</tr>
+<tr>
+<td align="left">IBM X3630M3</td>
+<td align="left">IBM</td>
+<td align="left">X3630M3(E5606<em>2/8G</em>4/2T*12)</td>
+<td align="left">Intel E5606</td>
+</tr>
+<tr>
+<td align="left">IBM X3630M4</td>
+<td align="left">IBM</td>
+<td align="left">X3630M4(E5-2407<em>1/8G</em>1/2T*12)</td>
+<td align="left">Intel E5-2407</td>
+</tr>
+<tr>
+<td align="left">IBM X3650</td>
+<td align="left">IBM</td>
+<td align="left">X650(/8G/146G*8)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">IBM X3650M2</td>
+<td align="left">IBM</td>
+<td align="left">X3650-M2(2G/32G/146G*12)-A5</td>
+<td align="left">Intel E5504</td>
+</tr>
+<tr>
+<td align="left">IBM X3650M3</td>
+<td align="left">IBM</td>
+<td align="left">X3650M3(E5506<em>1/8G</em>4/146G*12)</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">IBM X3650M4</td>
+<td align="left">IBM</td>
+<td align="left">X3650M4(E5-2609<em>1/8G</em>4/300G*12)</td>
+<td align="left">Intel E5-2609</td>
+</tr>
+<tr>
+<td align="left">Inspur CS5260F</td>
+<td align="left">浪潮</td>
+<td align="left">T3-CI22FK-10G_6.2.0_Inspur CS5260F_Phytium S2500<em>2/32G</em>12/SSD-480G<em>1/NVMeSSD-3.84T</em>4/10GE*2(Inspur)</td>
+<td align="left">S2500</td>
+</tr>
+<tr>
+<td align="left">Inspur CS5260H</td>
+<td align="left">浪潮</td>
+<td align="left">T3-SH22HK-10G_6.2.0_Inspur CS5260H_Hygon 5280<em>2/32G</em>4/SSD-480G<em>1/NVMeSSD-3.84T</em>4/10GE*2(Inspur)</td>
+<td align="left">Hygon C86 5280 16-core Processor</td>
+</tr>
+<tr>
+<td align="left">Inspur CS5280H</td>
+<td align="left">浪潮</td>
+<td align="left">T0-CI21H-10G_6.2.1_Inspur CS5280H_Hygon 7285<em>2/32G</em>8/SSD-240G<em>1/NVMeSSD-3.84T</em>1/10GE*2(Inspur)</td>
+<td align="left">Hygon C86 7285 32-core Processor</td>
+</tr>
+<tr>
+<td align="left">Inspur NF2180M3</td>
+<td align="left">浪潮</td>
+<td align="left">NF2180M3(Phytium FT-2000+<em>1/32G</em>8/2T<em>8/SSD-480G</em>2 RAID/1GE<em>2+10GE</em>4-MMF)</td>
+<td align="left">Phytium FT-2000+</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5180M4</td>
+<td align="left">浪潮</td>
+<td align="left">NF5180M4(E5-2680v4<em>2/32G</em>16/1.8T<em>4/NVMe SSD 1.8T</em>4/10GE*2)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5280M4</td>
+<td align="left">浪潮</td>
+<td align="left">NF5280M4(E5-2680v4<em>2/16G</em>16/SSD-480G<em>1/10GE</em>2/FPGA-KU115*2)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5280M5</td>
+<td align="left">浪潮</td>
+<td align="left">X0-DS11X-100G_6.1.0_Inspur NF5280M5_8260<em>2/32G</em>12/SSD-480G<em>2/RAID-9460-8I 2G/X540-10GE</em>2/CX5-Single Port-100GE*2(带光模块)(Inspur)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5466M5</td>
+<td align="left">浪潮</td>
+<td align="left">T3-SC23X-10G_6.1.0_Inspur NF5466M5_4214<em>2/32G</em>4/SSD-480G/HDD-16T<em>36/10GE</em>2(光口，带多模光模块）(Inspur)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5468M5-P</td>
+<td align="left">浪潮</td>
+<td align="left">NF5468M5-P(6133<em>2/32G</em>12/SSD-480G<em>2 RAID/SSD-960G</em>2/RTX-2070<em>8/10GE</em>2)</td>
+<td align="left">6133</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5468M5-S</td>
+<td align="left">浪潮</td>
+<td align="left">NF5468M5-S(6133<em>2/32G</em>12/S4500-480G<em>2/25GE</em>2/V100-SXM2-32G*8)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5488A5</td>
+<td align="left">浪潮</td>
+<td align="left">T0-GT11A-50G_7.0.0_Inspur NF5488A5_7K62<em>2 / 2933-32G</em>24 / SSD-480G<em>1 / 50G NIC(双口)</em>1 / Delta Baseboard (8<em> SXM4 A100)</em>1(Inspur)</td>
+<td align="left">AMD EPYC 7K62 48-Core Processor</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5568M4</td>
+<td align="left">浪潮</td>
+<td align="left">NF5568M4(E5-2680v4<em>2/16G</em>16/300G<em>2/SSD-800G</em>6/M40-24G<em>4/RoCE 40G</em>2)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5568M5</td>
+<td align="left">浪潮</td>
+<td align="left">NF5568M5(8255C<em>2/32G</em>8/SSD-480G<em>2 RAID/25GE</em>2/RTX-2080TI*8)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5588M4</td>
+<td align="left">浪潮</td>
+<td align="left">NF5588M4(E5-2680v4<em>2/16G</em>16/300G<em>2/SSD-800G</em>6/M40-24G<em>8/RoCE 40G</em>2)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5588M4S</td>
+<td align="left">浪潮</td>
+<td align="left">NF5588M4S(E5-2680v4<em>2/32G</em>8/SSD-240G<em>1/NVMeSSD-2T</em>2/P40-24G<em>8/RoCE 40G</em>4)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">Inspur NF5888M5</td>
+<td align="left">浪潮</td>
+<td align="left">NF5888M5(8168<em>2/64G</em>12/SSD-480G<em>1/NVMeSSD-3.2T</em>4/V100<em>16/100GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8168 CPU @ 2.10GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur NF8260M5</td>
+<td align="left">浪潮</td>
+<td align="left">NF8260M5(6132<em>4/32G</em>4/SAS HDD 1.2T<em>2 /SAS HDD 2T</em>20 RAID/1GE<em>2/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6132 CPU @ 2.60GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur NF8480M5</td>
+<td align="left">浪潮</td>
+<td align="left">NF8480M5(5120<em>4/16G</em>40/300G<em>4/FC-HBA</em>2/1G<em>2/10G</em>4)</td>
+<td align="left">5120</td>
+</tr>
+<tr>
+<td align="left">Inspur SA3212M4</td>
+<td align="left">浪潮</td>
+<td align="left">SA3212M4(D-1531/16G<em>4/8T</em>12/SSD-240G/10GE*2)</td>
+<td align="left">Intel Xeon D-1531</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5112M4</td>
+<td align="left">浪潮</td>
+<td align="left">SA5112M4(E5-2620v3<em>2/16G</em>4/300G*2)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5112M5</td>
+<td align="left">浪潮</td>
+<td align="left">SA5112M5(6133<em>2/16G</em>12/NVMeSSD-3.6T<em>4/S4500-480G/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5212M4</td>
+<td align="left">浪潮</td>
+<td align="left">SA5212M4(E5-2620v3<em>2/16G</em>4/2T*12)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5212M5</td>
+<td align="left">浪潮</td>
+<td align="left">SA5212M5(6142<em>2/32G</em>12/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6142</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5212M5+BOX*2</td>
+<td align="left">浪潮</td>
+<td align="left">SA5212M5(6133<em>2/32G</em>12/SSD-480G<em>2/NVMeSSD-1.8T/25GE</em>2)+SF0204P1(V100-PCIE<em>4)</em>2</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5212M5+BX512-IP*2</td>
+<td align="left">浪潮</td>
+<td align="left">SA5212M5(6133<em>2/16G</em>16/5200-480G<em>6 RAID/10GE</em>2)+BX512-IP(VEGA-3318-PCIE<em>3)</em>2</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5212M5+Switch-IB*2</td>
+<td align="left">浪潮</td>
+<td align="left">X3-PTB61X-10G_6.1.0_Inspur SA5212M5+Switch-IB<em>2_4208</em>2/2933-32G<em>4/SSD-480G</em>2/12T<em>6/HBA/10GE</em>2/IB-100G<em>2/IB switch</em>2/IB cable*2(Inspur)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5212X4</td>
+<td align="left">浪潮</td>
+<td align="left">SA5212X4(CN8880/16G<em>2/4T</em>12/SSD-240G)</td>
+<td align="left">Cavium Thunder CN8880</td>
+</tr>
+<tr>
+<td align="left">Inspur SA5214M5</td>
+<td align="left">浪潮</td>
+<td align="left">SA5214M5(4116/32G<em>2/ST Mobula BP-12T</em>24/SSD-480G/10GE*2)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz</td>
+</tr>
+<tr>
+<td align="left">Inspur SN3116M4S</td>
+<td align="left">浪潮</td>
+<td align="left">SN3116M4S(D1541<em>1/16G</em>4/M.2 SataSSD-480G<em>1/8T</em>18/10GE*2)</td>
+<td align="left">Intel Xeon D-1541</td>
+</tr>
+<tr>
+<td align="left">Inspur SN6110M4S</td>
+<td align="left">浪潮</td>
+<td align="left">SN6110M4S(E5-2620v3/16G<em>2/SataSSD-240G</em>1/8T<em>60/10GE</em>2)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">Inventec Kingler</td>
+<td align="left">英业达</td>
+<td align="left">Kingler(D-1567/16G<em>4/12T</em>24/480G/10GE*2)</td>
+<td align="left">Xeon D-1567,12 COREs,2.1GHz,65W</td>
+</tr>
+<tr>
+<td align="left">Inventec RM550D-IV</td>
+<td align="left">英业达</td>
+<td align="left">RM550D-IV(D-1567/32G<em>2/12T</em>24/SSD-480G/10GE*2)</td>
+<td align="left">Intel D-1567</td>
+</tr>
+<tr>
+<td align="left">Inventec RM561-IV</td>
+<td align="left">英业达</td>
+<td align="left">RM561-IV(4214<em>2/2933-32G</em>8/16T<em>24/SSD-960G</em>2/25GE*2)</td>
+<td align="left">Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz</td>
+</tr>
+<tr>
+<td align="left">Inventec RM760-IV</td>
+<td align="left">英业达</td>
+<td align="left">RM760-IV(6133<em>2/16G</em>16/SSD-480G<em>6 RAID/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Inventec RM761-IV</td>
+<td align="left">英业达</td>
+<td align="left">RM761-IV(8255C<em>2/32G</em>12/SSD-480G<em>1/25GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">LENOVO HR630X</td>
+<td align="left">联想</td>
+<td align="left">HR630X(6134<em>2/16G</em>12/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6134</td>
+</tr>
+<tr>
+<td align="left">LENOVO HR650M</td>
+<td align="left">联想</td>
+<td align="left">HR650M(EPYC 7551<em>2/16G</em>16/5200-480G<em>1/XL710QDA1-40GE</em>2/10GE*2)</td>
+<td align="left">AMD EPYC 7551 32-Core Processor</td>
+</tr>
+<tr>
+<td align="left">LENOVO HR650X</td>
+<td align="left">联想</td>
+<td align="left">HR650X(6142<em>2/16G</em>16/SSD-480G<em>1/10GE</em>2)</td>
+<td align="left">Intel 6142</td>
+</tr>
+<tr>
+<td align="left">LENOVO R0-SH412X</td>
+<td align="left">联想</td>
+<td align="left">R0-SH412X-10G_N5.5.9_LENOVO RD450X(GER)_E5-2680v4<em>2/16G</em>4/SSD-300G<em>2 RAID/SSD-800G</em>8/10GE*2(GER)(Lenovo)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">LENOVO R510-5112</td>
+<td align="left">联想</td>
+<td align="left">R520-5C20(2.4G/2G/73G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">LENOVO R512</td>
+<td align="left">联想</td>
+<td align="left">R512(2.5/8G/250G*1)-C1</td>
+<td align="left">Intel X3320</td>
+</tr>
+<tr>
+<td align="left">LENOVO R520-5122</td>
+<td align="left">联想</td>
+<td align="left">R520-5122(/2G/250G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">LENOVO R520-5C20</td>
+<td align="left">联想</td>
+<td align="left">R520-5C20(2.8G/6G/146G*6)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">LENOVO R520G7</td>
+<td align="left">联想</td>
+<td align="left">R520G7(E5506<em>2/8G</em>2/1T*12)</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD350X</td>
+<td align="left">联想</td>
+<td align="left">RD350X(E5-2620v3<em>2/16G</em>4/300G*2)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD430</td>
+<td align="left">联想</td>
+<td align="left">RD430(E5-2407<em>1/8G</em>1/2T*12)</td>
+<td align="left">Intel E5-2407</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD440</td>
+<td align="left">联想</td>
+<td align="left">RD440(E5-2420v2<em>1/8G</em>4/4T<em>12/SSD-240G</em>1)</td>
+<td align="left">Intel E5-2420 v2</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD450X</td>
+<td align="left">联想</td>
+<td align="left">RD450X(E5-2620v3/16G<em>2/2T</em>12/SSD-240G)</td>
+<td align="left">Intel E5-2620 v3</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD530</td>
+<td align="left">联想</td>
+<td align="left">RD530(E5-2640<em>2/16G</em>8/300G*6)</td>
+<td align="left">Intel E5-2640</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD540</td>
+<td align="left">联想</td>
+<td align="left">RD540(E5-2630v2<em>2/16G</em>8/300G*6)</td>
+<td align="left">Intel E5-2630 v2</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD640</td>
+<td align="left">联想</td>
+<td align="left">RD640(E5-2620v2<em>2/8G</em>8/300G*2/ioScale2-3.2T)</td>
+<td align="left">Intel E5-2620 v2</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD650X</td>
+<td align="left">联想</td>
+<td align="left">RD650X(E5-2667v4<em>2/16G</em>24/SAS-300G<em>6/10GE</em>2)</td>
+<td align="left">Intel E5-2667v4</td>
+</tr>
+<tr>
+<td align="left">LENOVO RD850</td>
+<td align="left">联想</td>
+<td align="left">RD850(E5-2680v4<em>2/16G</em>16/300G<em>2/SSD-800G</em>6/M40-24G<em>4/RoCE 40G</em>2)</td>
+<td align="left">Intel E5-2680 v4</td>
+</tr>
+<tr>
+<td align="left">LENOVO RS450X</td>
+<td align="left">联想</td>
+<td align="left">RS450X(D-1531/16G<em>4/8T</em>12/SSD-240G/10GE*2)</td>
+<td align="left">Intel Xeon D-1531</td>
+</tr>
+<tr>
+<td align="left">LENOVO SD210X4</td>
+<td align="left">联想</td>
+<td align="left">SD210X4(X3440<em>1/4G</em>2/500G<em>1)</em>4</td>
+<td align="left">Intel X3440</td>
+</tr>
+<tr>
+<td align="left">LENOVO SD220X4</td>
+<td align="left">联想</td>
+<td align="left">SD220(E5506<em>1/16G/146G</em>2)*4</td>
+<td align="left">Intel E5506</td>
+</tr>
+<tr>
+<td align="left">LENOVO SD221X4</td>
+<td align="left">联想</td>
+<td align="left">SD221X4(L5630<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">Intel L5630</td>
+</tr>
+<tr>
+<td align="left">LENOVO SD330</td>
+<td align="left">联想</td>
+<td align="left">SD330(E5-2420<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">LENOVO SD330C</td>
+<td align="left">联想</td>
+<td align="left">SD330C(E5-2420<em>2/8G</em>8/300G*2)</td>
+<td align="left">Intel E5-2420</td>
+</tr>
+<tr>
+<td align="left">LENOVO SD340</td>
+<td align="left">联想</td>
+<td align="left">SD340(E5-2420v2<em>2/8G</em>8/300G<em>2)</em>4</td>
+<td align="left">Intel E5-2420 v2</td>
+</tr>
+<tr>
+<td align="left">LENOVO SR358F</td>
+<td align="left">联想</td>
+<td align="left">SR358F(Phytium FT1500A<em>1/16G</em>4/300G<em>12 Raid/10GE</em>2)</td>
+<td align="left">Phytium 1500A</td>
+</tr>
+<tr>
+<td align="left">LENOVO SR650gx</td>
+<td align="left">联想</td>
+<td align="left">SR650gx(6146<em>2/32G</em>12/SSD-480G<em>2/P100</em>2/100G-IB<em>2/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6146 CPU @ 3.20GHz</td>
+</tr>
+<tr>
+<td align="left">LENOVO SS430</td>
+<td align="left">联想</td>
+<td align="left">SS430(E3-1230v2<em>1/8G</em>2/1T<em>1)</em>4</td>
+<td align="left">Intel E3-1230 v2</td>
+</tr>
+<tr>
+<td align="left">LENOVO SS440</td>
+<td align="left">联想</td>
+<td align="left">SS440(E3-1231v3<em>1/8G</em>2/1T<em>1)</em>4</td>
+<td align="left">Intel E3-1231 v3</td>
+</tr>
+<tr>
+<td align="left">LENOVO YR290</td>
+<td align="left">联想</td>
+<td align="left">YR290(5520/8G/160G)*4-DC-C1</td>
+<td align="left">Intel E5520</td>
+</tr>
+<tr>
+<td align="left">Nettrix X620-G40</td>
+<td align="left">Nettrix</td>
+<td align="left">X0-GI11X-10G_7.0.0_Nettrix X620-G40_8360Y<em>2/32G</em>8/SSD-480G<em>1/NVMe SSD 3.84T</em>1/A10<em>1/RJ45-10GE</em>2(Nettrix)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8360Y CPU @ 2.40GHz</td>
+</tr>
+<tr>
+<td align="left">Nettrix X640-G30</td>
+<td align="left">Nettrix</td>
+<td align="left">T3-GT19X-25G_6.1.0_Nettrix X640-G30_8260<em>2/32G</em>16/SSD-480G<em>1/A100-SXM4-80GB</em>8/25GE*2(Nettrix)</td>
+<td align="left">Intel Xeon Platinum 8260 CPU @ 2.40GHz</td>
+</tr>
+<tr>
+<td align="left">Nettrix X640-G35</td>
+<td align="left">Nettrix</td>
+<td align="left">Y0-GT56-25G_6.1.0_Nettrix X640-G35_8255C<em>2/32G 2933</em>12/480GSATA <em>1/25GE双口</em>1/V100-SXM2-32GB *8(Nettrix)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Nettrix X640-G40</td>
+<td align="left">Nettrix</td>
+<td align="left">X0-GI61X-25G_N7.1.0_Nettrix X640-G40_8374B<em>2/32G</em>16/SSD-480G<em>2/A30</em>8/25GE*2(Nettrix)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8374B CPU @ 2.70GHz</td>
+</tr>
+<tr>
+<td align="left">PowerLeader PR210K</td>
+<td align="left">宝德</td>
+<td align="left">C-SC1R-25G_6.1.3_PowerLeader PR210K_Kunpeng 920 5220<em>2/32G</em>8/12T<em>12/No HBA/SSD-480G</em>1/TM280-25GE*1(2P)(PowerLeader)</td>
+<td align="left">HUAWEI Kunpeng 920 5220</td>
+</tr>
+<tr>
+<td align="left">PowerLeader PR210K32</td>
+<td align="left">宝德</td>
+<td align="left">T3-CI13WK-10G_6.1.0_PowerLeader PR210K32_Kunpeng 920 5221K<em>2/32G</em>8/NVMeSSD-3.84T<em>4/SSD-480G</em>1/TM280-10GE*1(2P, 带10G多模光模块）(PowerLeader)</td>
+<td align="left">HUAWEI Kunpeng 920 5221K</td>
+</tr>
+<tr>
+<td align="left">PowerLeader PR212K</td>
+<td align="left">宝德</td>
+<td align="left">PowerLeader PR212K</td>
+<td align="left">HUAWEI Kunpeng 920</td>
+</tr>
+<tr>
+<td align="left">PowerLeader PR410K MAX</td>
+<td align="left">宝德</td>
+<td align="left">T0-SC11W-100G_6.1.0_PowerLeader PR410K MAX_Kunpeng 920 5250<em>2/32G</em>16/SataSSD-3.84T<em>1/SataHDD-16T</em>72/MCX623106AN-CDAT-100G*1(2P，带光模块)(PowerLeader)</td>
+<td align="left">Kunpeng 920-4826</td>
+</tr>
+<tr>
+<td align="left">R522</td>
+<td align="left">神州数码</td>
+<td align="left">神州鲲泰通用型服务器</td>
+<td align="left">HUAWEI Kunpeng 920</td>
+</tr>
+<tr>
+<td align="left">R722</td>
+<td align="left">神州数码</td>
+<td align="left">神州鲲泰通用型服务器</td>
+<td align="left">HUAWEI Kunpeng 920</td>
+</tr>
+<tr>
+<td align="left">Sugon A620-G30</td>
+<td align="left">曙光</td>
+<td align="left">A620-G30(EPYC 7551<em>2/32G</em>16/480G<em>1/10GE</em>2)</td>
+<td align="left">AMD EPYC 7551 32-Core Processor</td>
+</tr>
+<tr>
+<td align="left">Sugon I620-G30</td>
+<td align="left">曙光</td>
+<td align="left">I620-G30(6133<em>2/16G</em>16/SSD-480G<em>6 RAID/10GE</em>2)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Sugon X730-G30</td>
+<td align="left">曙光</td>
+<td align="left">X730-G30(6133<em>2/32G</em>12/SSD-480G<em>2/25GE</em>2/V100-SXM2-16G*8)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Sugon X780-G30</td>
+<td align="left">曙光</td>
+<td align="left">X780-G30(6133<em>2/32G</em>8/SSD-480G<em>6/10GE</em>2/RTX2080TI*8)</td>
+<td align="left">6133</td>
+</tr>
+<tr>
+<td align="left">Sugon X785-G30</td>
+<td align="left">曙光</td>
+<td align="left">X0-GR61X-40G_N6.1.0_Sugon X785-G30_6231C<em>2/32G</em>12/SSD-480G<em>2/RTX6000</em>8/40GE*2(Sugon)</td>
+<td align="left">Intel(R) Xeon(R) Gold 6231C CPU @ 3.20GHz</td>
+</tr>
+<tr>
+<td align="left">Sugon X795-G30</td>
+<td align="left">曙光</td>
+<td align="left">X795-G30(8255C<em>2/32G</em>12/SSD-480G<em>1/25GE</em>2/Tesla V100 SXM2-32G*8)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">Suma H320-G30</td>
+<td align="left">Suma</td>
+<td align="left">X0-SW11H-25G_6.1.0_Suma H320-G30_Hygon 7155 16C 2.2G<em>1/2666-32G</em>8/SSD-480G<em>1/12T</em>10/NVMeSSD-6.4T<em>2/25GE</em>2(Suma)</td>
+<td align="left">Hygon C86 7155 16-core Processor</td>
+</tr>
+<tr>
+<td align="left">Suma H620-G30</td>
+<td align="left">Suma</td>
+<td align="left">X0-CS11H-25G_6.1.0_Suma H620-G30_Hygon 7185 32C 2.0G<em>2/2666-32G</em>16/SSD-480G<em>1/25GE</em>2(Suma)</td>
+<td align="left">Hygon C86 7185 32-core Processor</td>
+</tr>
+<tr>
+<td align="left">Suma R5230HA</td>
+<td align="left">Suma</td>
+<td align="left">T3-SH21HK-10G_6.2.0_Suma R5230HA_Hygon 5280<em>2/32G</em>4/SSD-480G<em>1/NVMeSSD-3.2T</em>2/10GE*2(Suma)</td>
+<td align="left">Hygon C86 5280 16-core Processor</td>
+</tr>
+<tr>
+<td align="left">Suma R6230HA</td>
+<td align="left">Suma</td>
+<td align="left">T3-BS21HK-10G_6.2.0_Suma R6230HA_Hygon 7280<em>2/32G</em>8/SSD-480G<em>1/4T</em>12/10GE*2(Suma)</td>
+<td align="left">Hygon C86 7280 32-core Processor</td>
+</tr>
+<tr>
+<td align="left">Tencent KunlunV2_slmb</td>
+<td align="left">Tencent</td>
+<td align="left">X0-KL12A-100G_7.1.0_Tencent KunlunV2_slmb_Milan 7K83<em>2/3200 64G</em>32/M.2 480G<em>1/HDD 16T</em>40/NVMe 6.4T<em>28/OCP 100G(2P)</em>1（无光模块）(Tencent)</td>
+<td align="left">AMD EPYC 7K83 64-Core Processor</td>
+</tr>
+<tr>
+<td align="left">Tencent Qinghai Lake</td>
+<td align="left">Tencent</td>
+<td align="left">X-QH-C1_7.0.0_Tencent Qinghai Lake_Qinghai Lake Test C1 basesystem(Tencent)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">Tencent SkyRiver_slmb</td>
+<td align="left">Tencent</td>
+<td align="left">X0-GI12A-25G_7.0.0_Tencent SkyRiver_slmb_Rome 7K62 <em>2/64G 3200 </em>16/3.84T NVMe SSD <em>1/ 480G SATA SSD </em>1/T4<em>16/25G OCP3.0 </em>1(Tencent)</td>
+<td align="left">AMD EPYC 7K62 48-Core Processor</td>
+</tr>
+<tr>
+<td align="left">Tencent SkyRiver_trmb</td>
+<td align="left">Tencent</td>
+<td align="left">X0-SRC19-25G_7.0.0_Tencent SkyRiver_trmb_Intel ICX CPU QWAU ES2 <em>2/32G-3200</em>32/3.84T NVMe SSD <em>1/ 480G SATA SSD </em>1/T4 Next <em>16/25G</em>1（标卡2P）(Tencent)</td>
+<td align="left">Genuine Intel(R) CPU $0000%@</td>
+</tr>
+<tr>
+<td align="left">Tencent Star Lake</td>
+<td align="left">Tencent</td>
+<td align="left">T-CG1A-10G_7.0.0.2_Tencent Star Lake_AMD 7742 64C 2.2G<em>2/32G</em>16/M.2 SSD 480G<em>1/U.2 SSD 4T</em>1/OCP3.0 10G*1(2ports)(Tencent)</td>
+<td align="left">AMD EPYC 7742 64-Core Processor</td>
+</tr>
+<tr>
+<td align="left">Tencent Tanggula</td>
+<td align="left">Tencent</td>
+<td align="left">T-BOX-SC1_7.0.0_Tencent Tanggula_JBOD 4U/HDD SATA 16T<em>110/HBA</em>8Ports(Tencent)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">Tencent TriRivers</td>
+<td align="left">Tencent</td>
+<td align="left">RD-TR1-BS-2_7.0.3_Tencent TriRivers_ICX QU98<em>2/2933 32G</em>8/M.2 SATA 480G/HDD 16T<em>8/NVMe 6.4T</em>1/OCP3 10G*1(2P)(Tencent)</td>
+<td align="left">ICX HCC QU98</td>
+</tr>
+<tr>
+<td align="left">TG225 A1</td>
+<td align="left">长虹天宫</td>
+<td align="left">TG225 A1</td>
+<td align="left">HUAWEI Kunpeng 920</td>
+</tr>
+<tr>
+<td align="left">TKC SR123212</td>
+<td align="left">天津麒麟</td>
+<td align="left">SR123212(Phytium FT1500A<em>1/16G</em>4/1T<em>2 Raid/2</em>10G NIC)</td>
+<td align="left">Phytium FT1500A</td>
+</tr>
+<tr>
+<td align="left">UNISYUE R3810G5</td>
+<td align="left">紫光恒越</td>
+<td align="left">T3-SH24FK-25G_6.2.0_UNISYUE R3810G5_Phytium S2500<em>2/32G</em>16/SSD-480G<em>1/NVMeSSD-3.84T</em>2/9361-8i/25GE*2(UNISYUE)</td>
+<td align="left">S2500</td>
+</tr>
+<tr>
+<td align="left">UNISYUE R3820G3</td>
+<td align="left">紫光恒越</td>
+<td align="left">UNIS Server R3820 G3(2U)</td>
+<td align="left">HUAWEI Kunpeng 920</td>
+</tr>
+<tr>
+<td align="left">UNISYUE R3830G5</td>
+<td align="left">紫光恒越</td>
+<td align="left">T3-PWB11HK-25G_6.2.0_UNISYUE R3830G5_Hygon 5280<em>2/32G</em>4/SSD-480G<em>2/NVMeSSD-3.2T</em>2/SATA-4T<em>12/RAID(2G)/25GE</em>2(UNISYUE)</td>
+<td align="left">Hygon C86 5280 16-core Processor</td>
+</tr>
+<tr>
+<td align="left">xFusion 2288Hv5</td>
+<td align="left">xFusion</td>
+<td align="left">DS4-100G_6.1.0_xFusion 2288Hv5_8255C<em>2/32G</em>12/SSD-480G<em>1/100GE</em>2(1P)(带光模块)(xFusion)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">xFusion 2298v5</td>
+<td align="left">xFusion</td>
+<td align="left">Y0-MD52-25G_6.1.0_xFusion 2298v5_8255C<em>2/32G</em>12/4T<em>24/SSD-480G/25GE</em>2(xFusion)</td>
+<td align="left">Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz</td>
+</tr>
+<tr>
+<td align="left">宝德 PL4400</td>
+<td align="left">宝德</td>
+<td align="left">PL4400(/2G/250G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">宝德 PR2012NS-G</td>
+<td align="left">宝德</td>
+<td align="left">PR2012NS-G(2G<em>2/16G/750G</em>12)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">宝德 PR2012S</td>
+<td align="left">宝德</td>
+<td align="left">PR2012S(E5405<em>2/2G</em>4/750G*12)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">宝德 PR2012VS</td>
+<td align="left">宝德</td>
+<td align="left">PR2012VS(E3050/2G<em>4/750G</em>12)</td>
+<td align="left">Intel E3050</td>
+</tr>
+<tr>
+<td align="left">宝德 PR2700</td>
+<td align="left">宝德</td>
+<td align="left">PR2700(/2G/146G*2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">宝德 PR3015S</td>
+<td align="left">宝德</td>
+<td align="left">PR3015S(/4G<em>4/146G</em>2)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">宝德 PT2300</td>
+<td align="left">宝德</td>
+<td align="left">PT2300(/2G/250G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">宝德 PT2300GII</td>
+<td align="left">宝德</td>
+<td align="left">PT2300GII(/2G/250G*1)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">太行220</td>
+<td align="left">山西百信</td>
+<td align="left">太行220</td>
+<td align="left">HUAWEI Kunpeng 920</td>
+</tr>
+<tr>
+<td align="left">天玥 SR123212</td>
+<td align="left">航天二院706所</td>
+<td align="left">SR123212(Phytium FT1500A<em>1/16G</em>4/1T<em>8 Raid/2</em>10G NIC)</td>
+<td align="left">Phytium FT1500A</td>
+</tr>
+<tr>
+<td align="left">TG125 B1</td>
+<td align="left">华鲲振宇</td>
+<td align="left">TG125 B1(kunpeng-920<em>2/32G</em>8/NVMeSSD-480G<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG215 B1</td>
+<td align="left">华鲲振宇</td>
+<td align="left">TG215 B1(kunpeng-920<em>2/32G</em>8/NVMeSSD-480G*6/5GE)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG225 A1</td>
+<td align="left">华鲲振宇</td>
+<td align="left">TG225 A1(kunpeng-920<em>2/32G</em>12/NVMeSSD-480G<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG225 B1</td>
+<td align="left">华鲲振宇</td>
+<td align="left">TG225 B1(kunpeng-920<em>2/32G</em>12/NVMeSSD-480G<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG245 B1</td>
+<td align="left">华鲲振宇</td>
+<td align="left">TG245 B1(kunpeng-920<em>2/32G</em>12/NVMeSSD-3.84T<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG525 B1</td>
+<td align="left">华鲲振宇</td>
+<td align="left">TG525 B1(kunpeng-920<em>4/32G</em>12/NVMeSSD-3.84T<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG225 Pro B1</td>
+<td align="left">华鲲振宇</td>
+<td align="left">TG225 Pro B1(kunpeng-920<em>2/32G</em>12/NVMeSSD-12T<em>10/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG125 B1</td>
+<td align="left">虹信</td>
+<td align="left">TG125 B1(kunpeng-920<em>2/32G</em>8/NVMeSSD-480G<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG215 B1</td>
+<td align="left">虹信</td>
+<td align="left">TG215 B1(kunpeng-920<em>2/32G</em>8/NVMeSSD-480G*6/5GE)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG225 A1</td>
+<td align="left">虹信</td>
+<td align="left">TG225 A1(kunpeng-920<em>2/32G</em>12/NVMeSSD-480G<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG225 B1</td>
+<td align="left">虹信</td>
+<td align="left">TG225 B1(kunpeng-920<em>2/32G</em>12/NVMeSSD-480G<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG245 B1</td>
+<td align="left">虹信</td>
+<td align="left">TG245 B1(kunpeng-920<em>2/32G</em>12/NVMeSSD-3.84T<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG525 B1</td>
+<td align="left">虹信</td>
+<td align="left">TG525 B1(kunpeng-920<em>4/32G</em>12/NVMeSSD-3.84T<em>12/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">TG225 Pro B1</td>
+<td align="left">虹信</td>
+<td align="left">TG225 Pro B1(kunpeng-920<em>2/32G</em>12/NVMeSSD-12T<em>10/10GE</em>2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">擎天DF7系列</td>
+<td align="left">长城科技</td>
+<td align="left">DF729(FT-2000/128G/1.2T*4)</td>
+<td align="left">FT-2000</td>
+</tr>
+<tr>
+<td align="left">超强K620系列</td>
+<td align="left">同方股份</td>
+<td align="left">K620(kunpeng-920<em>2/32G</em>8/1.2T*6)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">Huang he 2280 V2</td>
+<td align="left">黄河科技</td>
+<td align="left">Huang he 2280 V2(kunpeng-920<em>2/32G</em>8/3.2T*2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">Huang he 5280 V2</td>
+<td align="left">黄河科技</td>
+<td align="left">Huang he 5280 V2(kunpeng-920<em>2/32G</em>8/3.2T*2)</td>
+<td align="left">kunpeng-920</td>
+</tr>
+<tr>
+<td align="left">H620</td>
+<td align="left">中科可控</td>
+<td align="left">K620(Hygon C86 7285<em>2/384G/500G</em>2)</td>
+<td align="left">Hygon C86 7285</td>
+</tr>
+<tr>
+<td align="left">H610</td>
+<td align="left">中科可控</td>
+<td align="left">K620(Hygon C86 7285<em>2/384G/500G</em>2)</td>
+<td align="left">Hygon C86 7285</td>
+</tr>
+<tr>
+<td align="left">H320</td>
+<td align="left">中科可控</td>
+<td align="left">K620(Hygon C86 7285<em>2/200G/500G</em>2)</td>
+<td align="left">Hygon C86 7285</td>
+</tr>
+<tr>
+<td align="left">H520</td>
+<td align="left">中科可控</td>
+<td align="left">K620(Hygon C86 7285/384G/500G*1)</td>
+<td align="left">Hygon C86 7285</td>
+</tr>
+<tr>
+<td align="left">H210</td>
+<td align="left">中科可控</td>
+<td align="left">K620(Hygon C86 7285<em>2/384G/500G</em>1)</td>
+<td align="left">Hygon C86 7285</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>型号</th>
+<th>架构</th>
+<th>频率/Ghz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AMD</td>
+<td>AMD EPYC 7763 64-Core Processor</td>
+<td>AMD</td>
+<td>2.45</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>AMD EPYC 7H12 64-Core Processor</td>
+<td>AMD</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>AMD EPYC 7513 32-Core Processor</td>
+<td>AMD</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>AMD EPYC 7K83 64-Core Processor</td>
+<td>AMD</td>
+<td>2.55</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>AMD EPYC 7K83 64-Core Processor</td>
+<td>AMD</td>
+<td>2.55</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>AMD EPYC 75F3 32-Core Processor</td>
+<td>AMD</td>
+<td>2.95</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>AMD EPYC 7K62 48-Core Processor</td>
+<td>AMD</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HUAWEI Kunpeng 920 7260</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Kunpeng 920-6426</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HUAWEI Kunpeng 920 5221K</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HUAWEI Kunpeng 920 5220</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HUAWEI Kunpeng 920 5250</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Kunpeng 920-4826</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Kunpeng 920-3226</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Kunpeng 920-4826</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Kunpeng 920-6426</td>
+<td>Huawei Hisilicon</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>Hygon</td>
+<td>Hygon C86 7280 32-core Processor</td>
+<td>Hygon 海光</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Hygon</td>
+<td>Hygon C86 7285 32-core Processor</td>
+<td>Hygon 海光</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Hygon</td>
+<td>Hygon C86 5280 16-core Processor</td>
+<td>Hygon 海光</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Hygon</td>
+<td>Hygon C86 7255 16-core Processor</td>
+<td>Hygon 海光</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Hygon</td>
+<td>Hygon C86 5285 16-core Processor</td>
+<td>Hygon 海光</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Silver 4214 CPU  @ 2.20GHz</td>
+<td>INTEL</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Platinum 8255C  CPU @ 2.50GHz</td>
+<td>INTEL</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 5218R CPU  @ 2.10GHz</td>
+<td>INTEL</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Platinum 8361HC  CPU @ 2.60GHz</td>
+<td>INTEL</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Platinum 8374B  CPU @ 2.70GHz</td>
+<td>INTEL</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Platinum 8374C  CPU @ 2.70GHz</td>
+<td>INTEL</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Platinum 8372C  CPU @ 3.20GHz</td>
+<td>INTEL</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel E5-2680 v4</td>
+<td>INTEL</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Silver 4208 CPU  @ 2.10GHz</td>
+<td>INTEL</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 6231C CPU  @ 3.20GHz</td>
+<td>INTEL</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 5220R CPU  @ 2.20GHz</td>
+<td>INTEL</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Silver 4216 CPU  @ 2.10GHz</td>
+<td>INTEL</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 5218 CPU @  2.10GHz</td>
+<td>INTEL</td>
+<td>2.3</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel Xeon Platinum 8260 CPU @  2.40GHz</td>
+<td>INTEL</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 6148 CPU @  2.40GHz</td>
+<td>INTEL</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 6133 CPU @  2.50GHz</td>
+<td>INTEL</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 6240 CPU @  2.60GHz</td>
+<td>INTEL</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Silver 4210 CPU  @ 2.20GHz</td>
+<td>INTEL</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Silver 4314 CPU  @ 2.40GHz</td>
+<td>INTEL</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Genuine Intel(R) CPU $0000%@</td>
+<td>INTEL</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Genuine processor</td>
+<td>INTEL</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel IceLake Platinum 8372C CPU</td>
+<td>INTEL</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Platinum 8374C  CPU @ 2.70GHz</td>
+<td>INTEL</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Genuine Intel(R) CPU $0000%@</td>
+<td>INTEL</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Platinum 8255C  CPU @ 2.50GHz</td>
+<td>-</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Silver 4208 CPU  @ 2.10GHz</td>
+<td>-</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Silver 4110 CPU  @ 2.10GHz</td>
+<td>-</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 6133 CPU @  2.50GHz</td>
+<td>-</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel(R) Xeon(R) Gold 6146 CPU @  3.20GHz</td>
+<td>-</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Intel Xeon Platinum 6230 CPU @  2.10GHz</td>
+<td>INTEL</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>澜起</td>
+<td>Jintide(R) C6330</td>
+<td>X86</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Phytium</td>
+<td>S2500</td>
+<td>Phytium 飞腾</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>Phytium</td>
+<td>FT-2000+</td>
+<td>Phytium 飞腾</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Phytium</td>
+<td>FT-2000+</td>
+<td>FT-2000+</td>
+<td>2.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>厂商 PN</th>
+<th>速率/Gbps</th>
+<th>端口类型</th>
+<th>产品族</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Broadcom</td>
+<td>BCM957414M4142C</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>BCM957414M4142C</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>BCM957414M4142C</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>BCM957414M4142C</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>BCM957414A4142CC 10Gb/25Gb  Ethernet PCIe</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>BCM957414A4142CC 10Gb/25Gb  Ethernet PCIe</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>BCM957414A4142CC</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>BCM957414A4142CC</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>BCM957508-N2100G</td>
+<td>100000</td>
+<td>QSFP56</td>
+<td>BCM957508-N2100G</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>BCM957414N4140C</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>BCM957414N4140C</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>BCM957416N4160C</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>BCM957416N4160C</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>BCM957508-P2100G</td>
+<td>100000</td>
+<td>QSFP56</td>
+<td>BCM957508-P2100G</td>
+</tr>
+<tr>
+<td>DELL</td>
+<td>-</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet 10G 4P X550/I350 rNDC</td>
+</tr>
+<tr>
+<td>DELL</td>
+<td>-</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>DELL BCM57416 Embed</td>
+</tr>
+<tr>
+<td>DELL</td>
+<td>CD2VM</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet 10G 4P X550/I350 rNDC</td>
+</tr>
+<tr>
+<td>Foxconn</td>
+<td>-</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel  X722/X557,10G,Mezzanine,2P,NC-SI</td>
+</tr>
+<tr>
+<td>Foxconn</td>
+<td>NA</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel  X722/X557,10G,Mezzanine,2P,NC-SI</td>
+</tr>
+<tr>
+<td>H3C</td>
+<td>-</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel  X722/X557,10G,Mezzanine,2P,NC-SI</td>
+</tr>
+<tr>
+<td>H3C</td>
+<td>NA</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel  X722/X557,10G,Mezzanine,2P,NC-SI</td>
+</tr>
+<tr>
+<td>H3C</td>
+<td>560F-B2</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>Ethernet Converged Network  Adapter 82599</td>
+</tr>
+<tr>
+<td>H3C</td>
+<td>UN-NIC-ETH563T-sL-2P</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>UN-NIC-ETH563T-sL-2P</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>Ethernet 1Gb 4-port 366FLR  Adapter;I350</td>
+<td>1000</td>
+<td>RJ45</td>
+<td>Ethernet 1Gb 4-port 366FLR  Adapter;I350</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Huawei TM280</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>TM280</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>SP582</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>SP582</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>TM280</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>TM280</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>BC51DPHA</td>
+<td>100000</td>
+<td>QSFP28</td>
+<td>Hi1822 SP572 (2*100GE)</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>03024QAY</td>
+<td>100000</td>
+<td>QSFP28</td>
+<td>BC5M01IBMB</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>LOM-X722</td>
+<td>1000</td>
+<td>RJ45</td>
+<td>LOM-X722</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>Ethernet Controller 10G X550T  (rev 01)</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Controller 10G X550T  (rev 01)</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>SM233</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>SM233</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>-</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel  X722/X557,10G,Mezzanine,2P,NC-SI</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>Inspur X540</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>10G base-T DP EP102Ti3A Adapter</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>Intel  X722/X557,10G,Mezzanine,2P,NC-SI</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel  X722/X557,10G,Mezzanine,2P,NC-SI</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>YZCA-00431-102</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>82599ES 10G 2P Inspur</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>Ethernet Controller 10G X550T  (rev 01)</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Controller 10G X550T  (rev 01)</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>Ethernet 1G intel i350 PCIE,2P</td>
+<td>1000</td>
+<td>RJ45</td>
+<td>Ethernet 1G intel i350 PCIE,2P</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>YZCA-00431-103</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>10G SFP+ DP EP102Fi4 Adapter</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>YZCA-00431-102</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>82599ES 10G 2P Inspur</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>YZNC-00766-101</td>
+<td>1000</td>
+<td>RJ45</td>
+<td>I350</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>10G base-T DP EP102Ti3A Adapter</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>10G base-T DP EP102Ti3A Adapter</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>I350</td>
+<td>1000</td>
+<td>RJ45</td>
+<td>I350</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>Ethernet Controller 10G X540-T2</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Controller 10G X540-T2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>-</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet OCP 2x10G RJ45 Phy Card  [USI-X557-10GbaseT]</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>X550T2G1P5</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Converged Network  Adapter X550-T2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>X540T2G1P5</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Converged Network  Adapter X540-T2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Ethernet Server Adapter X520-2</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>82599ES 10</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Ethernet Server Adapter OCP  X710-2</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>X710-DA2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>X710DA2G2P5</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>X710DA2G2P5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>I350</td>
+<td>1000</td>
+<td>RJ45</td>
+<td>I350</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>X710-AT2</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>X710-AT2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Ethernet Server Adapter X520-2</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>非标服务器用</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Ethernet Converged Network  Adapter XL710-Q1</td>
+<td>40000</td>
+<td>QSFP+</td>
+<td>Ethernet Converged Network  Adapter XL710-Q1</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>Ethernet Converged Network  Adapter XL710-Q2</td>
+<td>40000</td>
+<td>QSFP+</td>
+<td>Ethernet Converged Network  Adapter XL710-QDA2</td>
+</tr>
+<tr>
+<td>Intel-DELL</td>
+<td>-</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>10GbE 2P X520 Adapter</td>
+</tr>
+<tr>
+<td>Intel-Greatwall</td>
+<td>-</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Converged Network  Adapter X550-T2</td>
+</tr>
+<tr>
+<td>Intel-H3C</td>
+<td>-</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>560F-B</td>
+</tr>
+<tr>
+<td>Intel-HP</td>
+<td>-</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>Ethernet 10Gb 2-port 560SFP+  Adapter     ;82599ES 10</td>
+</tr>
+<tr>
+<td>Intel-Huawei</td>
+<td>Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI</td>
+</tr>
+<tr>
+<td>Intel-Huawei</td>
+<td>SP310</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>SP310;82599ES 10</td>
+</tr>
+<tr>
+<td>Intel-Huawei</td>
+<td>-</td>
+<td>10000</td>
+<td>NA</td>
+<td>Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI</td>
+</tr>
+<tr>
+<td>Intel-Inspur</td>
+<td>Ethernet Converged Network  Adapter X550-T2</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Converged Network  Adapter X550-T2</td>
+</tr>
+<tr>
+<td>Intel-Inspur</td>
+<td>-</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>10G SFP+ DP EP102Fi4  Adapter     ;82599</td>
+</tr>
+<tr>
+<td>Intel-Lenovo</td>
+<td>-</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>Ethernet Server Adapter  X520-2     ;82599ES 10</td>
+</tr>
+<tr>
+<td>Inventec</td>
+<td>Ethernet Connection X722 for  10GBASE-T</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Connection X722 for  10GBASE-T</td>
+</tr>
+<tr>
+<td>Inventec</td>
+<td>NA</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Connection X722 for  10GBASE-T</td>
+</tr>
+<tr>
+<td>联想</td>
+<td>NA</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet OCP 2x10G RJ45 Phy Card  [USI-X557-10GbaseT]</td>
+</tr>
+<tr>
+<td>联想</td>
+<td>0000000MM881</td>
+<td>10000</td>
+<td>SFP+</td>
+<td>82599ES 10-Gigabit SFI/SFP+  Network Connection</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX512A-ACUT</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>MCX512A-ACUT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX516A-CCHT</td>
+<td>100000</td>
+<td>SFP28</td>
+<td>MCX516A-CCHT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX515A-CCAT</td>
+<td>100000</td>
+<td>QSFP28</td>
+<td>MCX515A-CCAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX515A-CCUT</td>
+<td>100000</td>
+<td>QSFP28</td>
+<td>MCX515A-CCUT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX4421A-ACQN</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>MCX4421A-ACQN</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX512A-ACAT</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>MCX512A-ACAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX416A-BCAT, ConnectX-4 EN,  40/56GbE 2P, PCIe3.0</td>
+<td>40000</td>
+<td>QSFP+</td>
+<td>MCX416A-BCAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX516A-BDAT</td>
+<td>40000</td>
+<td>QSFP28</td>
+<td>MCX516A-BDAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX4421A-ACQN ConnectX-4 Lx EN  OCP,2x25G</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>MCX4421A-ACQN ConnectX-4 Lx EN  OCP,2x25G</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>ConnectX-4 Lx 25 GbE Dual Port  SFP28 Adapter</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>MCX4121A-ACAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX4121A-ACAT</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>MCX4121A-ACAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX566A-CDAI_C15</td>
+<td>100000</td>
+<td>QSFP28</td>
+<td>MCX566A-CDAI_C15</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX623436AN-CDAB</td>
+<td>100000</td>
+<td>QSFP56</td>
+<td>MCX623436AN-CDAB</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX562A-ACAI_C15</td>
+<td>25000</td>
+<td>SFP28</td>
+<td>MCX562A-ACAI_C15</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX566A-GDAB_C15</td>
+<td>50000</td>
+<td>QSFP28</td>
+<td>MCX566A-GDAB_C15</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX516A-CCAT</td>
+<td>100000</td>
+<td>QSFP28</td>
+<td>MCX516A-CCAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX516A-CDAT</td>
+<td>100000</td>
+<td>QSFP28</td>
+<td>MCX516A-CDAT</td>
+</tr>
+<tr>
+<td>Mellanox</td>
+<td>MCX623106AN-CDAT</td>
+<td>100000</td>
+<td>QSFP56</td>
+<td>MCX623106AN-CDAT</td>
+</tr>
+<tr>
+<td>Suma</td>
+<td>OE10GI2-X550</td>
+<td>10000</td>
+<td>RJ45</td>
+<td>Ethernet Controller 10G X550T  (rev 01)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>厂商PN</th>
+<th>类型</th>
+<th>速率/Gbps</th>
+<th>主控芯片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Avago</td>
+<td>SAS9300-8i</td>
+<td>HBA</td>
+<td>12</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>SAS9300-8i</td>
+<td>HBA</td>
+<td>-</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>AVAGO MegaRAID SAS 9364-8i</td>
+<td>Raid</td>
+<td>-</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>AVAGO MegaRAID SAS 9361-8i</td>
+<td>Raid</td>
+<td>-</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>LSI MegaRAID SAS 9361-8i</td>
+<td>Raid</td>
+<td>-</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>SAS9305-24i</td>
+<td>HBA</td>
+<td>12</td>
+<td>SAS3224(A1)</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>AVAGO MegaRAID SAS 9361-8i</td>
+<td>Raid</td>
+<td>12</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>LSI MegaRAID SAS 9361-8i</td>
+<td>Raid</td>
+<td>12</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>AVAGO MegaRAID SAS 9361-8i 2GB</td>
+<td>Raid</td>
+<td>12</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>SAS9311-8i</td>
+<td>HBA</td>
+<td>12</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>05-50008-00</td>
+<td>HBA</td>
+<td>12</td>
+<td>SAS3416</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>AVAGO MegaRAID SAS 9361-16i</td>
+<td>Raid</td>
+<td>12</td>
+<td>AVAGO MegaRAID SAS 9361-16i</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>SAS9305-16i</td>
+<td>HBA</td>
+<td>12</td>
+<td>SAS3224</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>SAS9311-8i</td>
+<td>HBA</td>
+<td>-</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>AVAGO MegaRAID SAS 9364-8i</td>
+<td>Raid</td>
+<td>12</td>
+<td>MegaRAID SAS 9364-8i</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>9500-16i</td>
+<td>HBA</td>
+<td>12</td>
+<td>3816</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>LPe31002-M6</td>
+<td>HBA</td>
+<td>16</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Broadcom</td>
+<td>AVAGO MegaRAID SAS 9460-16i</td>
+<td>Raid</td>
+<td>12</td>
+<td>SAS3516</td>
+</tr>
+<tr>
+<td>DELL</td>
+<td>-</td>
+<td>HBA</td>
+<td>-</td>
+<td>SAS3008</td>
+</tr>
+<tr>
+<td>DELL</td>
+<td>-</td>
+<td>Raid</td>
+<td>-</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>DELL</td>
+<td>J7TNV</td>
+<td>HBA</td>
+<td>12</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>DELL</td>
+<td>XYHWN</td>
+<td>Raid</td>
+<td>12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Emulex</td>
+<td>LPe31002-AP</td>
+<td>HBA</td>
+<td>16</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Emulex</td>
+<td>LPE16002B</td>
+<td>HBA</td>
+<td>16</td>
+<td>-</td>
+</tr>
+<tr>
+<td>H3C</td>
+<td>HBA H460 M1</td>
+<td>HBA</td>
+<td>12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>HPE Smart Array P408i-p</td>
+<td>Raid</td>
+<td>12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>-</td>
+<td>HBA</td>
+<td>-</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>BC11RLCA01</td>
+<td>HBA</td>
+<td>-</td>
+<td>Avago3408</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>02312NPS</td>
+<td>Raid</td>
+<td>-</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>BC11RLCA</td>
+<td>HBA</td>
+<td>12</td>
+<td>Avago3408</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>03022CDE</td>
+<td>HBA</td>
+<td>12</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>02312NPS</td>
+<td>Raid</td>
+<td>12</td>
+<td>MegaRAID SAS-3 3108</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>9460-8i</td>
+<td>Raid</td>
+<td>12</td>
+<td>9460-8i</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>03033EFT</td>
+<td>Raid</td>
+<td>12</td>
+<td>SAS3508</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>03025VYL</td>
+<td>Raid</td>
+<td>12</td>
+<td>SAS3508</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>6030276</td>
+<td>HBA</td>
+<td>16</td>
+<td>-</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>BC5M03FCAA</td>
+<td>HBA</td>
+<td>16</td>
+<td>-</td>
+</tr>
+<tr>
+<td>宏杉</td>
+<td>MS2500A+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>-</td>
+<td>HBA</td>
+<td>-</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>-</td>
+<td>HBA</td>
+<td>-</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>HBA 9400-16i</td>
+<td>HBA</td>
+<td>-</td>
+<td>LSI SAS3408</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>-</td>
+<td>HBA</td>
+<td>12</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>YZCA-00582-102</td>
+<td>Raid</td>
+<td>12</td>
+<td>SAS3108</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>YZSA-01188-101</td>
+<td>HBA</td>
+<td>12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>INSPUR 3008IR</td>
+<td>HBA</td>
+<td>12</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>YZRA-01188-101</td>
+<td>Raid</td>
+<td>12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>-</td>
+<td>HBA</td>
+<td>-</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>-</td>
+<td>HBA</td>
+<td>-</td>
+<td>Logic SAS3008</td>
+</tr>
+<tr>
+<td>浪潮</td>
+<td>INSPUR Adaptec PM 8222-HBA</td>
+<td>HBA</td>
+<td>12</td>
+<td>PM8222</td>
+</tr>
+<tr>
+<td>联想</td>
+<td>RAID 730-8i 2GB Flash</td>
+<td>Raid</td>
+<td>12</td>
+<td>9361-8i</td>
+</tr>
+<tr>
+<td>microchip</td>
+<td>1200-16i</td>
+<td>HBA</td>
+<td>12</td>
+<td>1200</td>
+</tr>
+<tr>
+<td>Qlogic</td>
+<td>QLE2692</td>
+<td>HBA</td>
+<td>16</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Suma</td>
+<td>SH08-L3008</td>
+<td>HBA</td>
+<td>12</td>
+<td>Logic SAS3008</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>厂商 PN</th>
+<th>介质</th>
+<th>协议</th>
+<th>容量/Gb</th>
+<th>接口</th>
+<th>尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dera</td>
+<td>P34UTR-04T0U-ST</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Dera</td>
+<td>P34UTM-06T4U-SL</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Dera</td>
+<td>P34UTM-03T2U-ST</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P434T0L005N</td>
+<td>SSD</td>
+<td>NVME</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P434T0L005N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P433T2M002N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P433T2M005N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P433T2M002N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P433T2M005N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE32P43020L000N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE32P43040L0000N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3600</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>-</td>
+<td>SSD</td>
+<td>企业级</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P432T0L002N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P432T0L005N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE32P43040L0000N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>4000</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P436T4M005N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>华为</td>
+<td>HWE52P434T0L005N</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>4000</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HFS480G32FEH-7410A</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HFS960G32FEH-7A10A</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HFS960G3H2X069N</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HFS480G32FEH-7410A</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HFS480G3H2X069N</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HFS3T8GETFEI-D430A</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB480G8</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX040T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX040T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPF2KX038TZ</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2BB480G7</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KE032T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KE032T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPF2KX038TZ</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB480G7</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB960G8</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX020T7</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX020T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX040T7</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3600</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KE032T7</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB019T8</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>1920</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB240G8</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>240</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB038T8</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>3840</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX020T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPF2KX076TZ</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX020T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1920</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX040T7</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>4000</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX040T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>4000</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB480G8</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB480GZ</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSCKKB480G8</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSCKKB480GZ</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KE064T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB960G7</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPF2KX076TZ</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>7680</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPF21Q800GB</td>
+<td>3DXPoint</td>
+<td>NVMe</td>
+<td>800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2BB480G7</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2KB480G7</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2BB480G6</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2BB480G4</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX040T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>4000</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KE016T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1600</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDSC2BB300G4</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>300</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>SSDPE2KX080T8</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>7680</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Kioxia</td>
+<td>KCM61RUL3T84</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Memblaze</td>
+<td>P5910DT0384M00</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Memblaze</td>
+<td>P5920DT0384M00</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Memblaze</td>
+<td>P5916DT0320M00</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Memblaze</td>
+<td>P5916DT0640M00</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Memblaze</td>
+<td>P5920DT0768M00</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTFDDAK480TBY</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTFDDAK960TBY</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTFDDAK480TBY</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTFDDAK480TDC</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7LH480HAHQ-00005</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZWLJ3T8HBLS-0007C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7LM480HMHQ</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZWLJ3T8HBLS-0007C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3200</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7LH960HAJR-00005</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7L3960HCJR-00B7C</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZQL23T8HCLS-00B7C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7LH240HAHQ-00005</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>240</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7LH3T8HMLT-00005</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>3840</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZQLB1T9HAJR-000TC</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZQL23T8HCLS-00B7C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1800</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZWLJ1T9HBJR-0007C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1920</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZQL21T9HCJR-00B7C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1920</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7LH480HAHQ-00005</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7L3480HCHQ-00B7C</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZWLJ7T6HALA-0007C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZNLH480HBLR-00005</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZWLR3T8HBLS-0007C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZQL27T6HBLA-00B7C</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>7680</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZ7LM480HMHQ</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>MZWLL1T6HAJQ</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>1600</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST4000NM0035</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST4000NM000A</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST4000NM0035</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST4000NM000A</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST12000NM0008</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST12000NM0007</td>
+<td>HDD</td>
+<td>ES</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST12000NM0008</td>
+<td>-</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST12000NM001G-2MV103</td>
+<td>-</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST8000NC0002</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>8000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST600MM0208</td>
+<td>HDD</td>
+<td>SAS</td>
+<td>600</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST1200MM0129</td>
+<td>-</td>
+<td>SAS</td>
+<td>1200</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST1200MM0009</td>
+<td>-</td>
+<td>SAS</td>
+<td>1200</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST600MM0009</td>
+<td>-</td>
+<td>SAS</td>
+<td>600</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST8000NM000A</td>
+<td>-</td>
+<td>SATA</td>
+<td>8000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST8000NM0055</td>
+<td>-</td>
+<td>SATA</td>
+<td>8000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST1800MM0129</td>
+<td>-</td>
+<td>SAS</td>
+<td>1800</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST16000NM001G</td>
+<td>-</td>
+<td>SATA</td>
+<td>16000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST4000NM000B</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST20000NM007D-3DJ103</td>
+<td>-</td>
+<td>SATA</td>
+<td>20000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST8000NC0002</td>
+<td>-</td>
+<td>SATA</td>
+<td>8000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>2TW103</td>
+<td>-</td>
+<td>SATA</td>
+<td>16000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST300MM0048</td>
+<td>-</td>
+<td>SAS</td>
+<td>300</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST4000NC001</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>ST12000NM0007</td>
+<td>-</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>SSSTC</td>
+<td>3K07840010</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>SSSTC</td>
+<td>TXPU3T8TOP1500</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>3840</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>TOSHIBA</td>
+<td>MG07ACA12TE</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>TOSHIBA</td>
+<td>MG05ACA800E</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>8000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Toshiba</td>
+<td>MG07ACA12TE</td>
+<td>-</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Toshiba</td>
+<td>AL15SEB120N</td>
+<td>-</td>
+<td>SAS</td>
+<td>1200</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Toshiba</td>
+<td>AL15SEB18EQ</td>
+<td>-</td>
+<td>SAS</td>
+<td>1800</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Toshiba</td>
+<td>MG08ACA16TE</td>
+<td>-</td>
+<td>SATA</td>
+<td>16000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUS726040ALA610</td>
+<td>HDD</td>
+<td>ES</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>WD4002FYYZ</td>
+<td>HDD</td>
+<td>ES</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUS726T4TALA6L4</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUS726T4TALA6L4</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUH721212ALE600</td>
+<td>HDD</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUH721212ALE600</td>
+<td>-</td>
+<td>SATA</td>
+<td>12000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUC101860CSS200</td>
+<td>HDD</td>
+<td>SAS</td>
+<td>600</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUS728T8TALE6L4</td>
+<td>-</td>
+<td>SATA</td>
+<td>8000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>WUH721816ALE6L4</td>
+<td>-</td>
+<td>SATA</td>
+<td>16000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>WUH722020ALE604</td>
+<td>-</td>
+<td>SATA</td>
+<td>20000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUS728T8TALE600</td>
+<td>-</td>
+<td>SATA</td>
+<td>8000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUC101830CSS200</td>
+<td>-</td>
+<td>SAS</td>
+<td>300</td>
+<td>SAS</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>HUS726040ALA610</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>WD4002FYYZ</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>WD4000F9YZ</td>
+<td>-</td>
+<td>SATA</td>
+<td>4000</td>
+<td>SATA</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>YMTC</td>
+<td>SE005-960GB-H</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>960</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>YMTC</td>
+<td>SE005-480GB-H</td>
+<td>SSD</td>
+<td>SATA</td>
+<td>480</td>
+<td>SATA</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>宏杉</td>
+<td>MS2500A+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>大普</td>
+<td>J5100</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>7680</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>大普</td>
+<td>J5300</td>
+<td>SSD</td>
+<td>NVMe</td>
+<td>6400</td>
+<td>PCIE</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>厂商 PN</th>
+<th>类型</th>
+<th>容量/Gb</th>
+<th>规格</th>
+<th>频率/MHz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hynix</td>
+<td>HMA82GR7AFR8N-VK</td>
+<td>DDR4</td>
+<td>16</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA82GR7CJR8N-VK</td>
+<td>DDR4</td>
+<td>16</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7CJR4N-WM</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7JJR4N-WM</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7DJR4N-WM</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7AFR4N-VK</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7CJR4N-VK</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7CJR4N-WM</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7JJR4N-WM</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMAA4GR7AJR8N-WM</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMAA8GR7AJR4N-WM</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA82GR7JJR8N-WM</td>
+<td>DDR4</td>
+<td>16</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7AFR4N-VK</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7CJR4N-VK</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMAA8GR7CJR4N-XN</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMAA8GR7AJR4N-XN</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7MFR4N-UH</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7AFR4N-UH</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7MFR4N-TF</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7CJR4N-XN</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Hynix</td>
+<td>HMA84GR7DJR4N-XN</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA18ASF2G72PDZ-2G6E1</td>
+<td>DDR4</td>
+<td>16</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>36ASF4G72PZ-2G9E2</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF4G72PZ-2G6E1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF4G72PZ-2G9E2</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA18ASF4G72PDZ-2G9E1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF8G72PZ-2G9B2</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF4G72PZ-2G6E1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF4G72PZ-2G6D1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF8G72PZ-3G2E1</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>36ASF4G72PZ-2G3B1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>36ASF4G72PZ-2G3D1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA18ASF4G72PDZ-3G2E1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF4G72PZ-3G2R1</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Micron</td>
+<td>MTA36ASF4G72PZ-3G2E7</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A2K43BB1-CTD</td>
+<td>DDR4</td>
+<td>16</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A2K43CB2-CTD</td>
+<td>DDR4</td>
+<td>16</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40CB2-CVF</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40DB2-CVF</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40BB2-CTD</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40CB2-CTD</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40CB2-CVF</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A8G40MB2-CVF</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A2K43DB2-CVF</td>
+<td>DDR4</td>
+<td>16</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40BB2-CTD</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40CB2-CTD</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2666</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A8G40AB2-CWE</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A8G40BB4-CWE</td>
+<td>DDR4</td>
+<td>64</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40BB1-CRC</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40CB1-CRC</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40BB0-CPB</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>2933</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40DB3-CWE</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>M393A4K40EB3-CWE</td>
+<td>DDR4</td>
+<td>32</td>
+<td>RDIMM</td>
+<td>3200</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>型号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AMD</td>
+<td>Ellesmere [Radeon Pro WX 5100]</td>
+</tr>
+<tr>
+<td>ASUS</td>
+<td>GeForce RTX 2080 Ti</td>
+</tr>
+<tr>
+<td>BC Tech</td>
+<td>GeForce RTX 3080 Ti</td>
+</tr>
+<tr>
+<td>BC Tech</td>
+<td>GeForce RTX 3080</td>
+</tr>
+<tr>
+<td>BC Tech</td>
+<td>GeForce RTX 3090</td>
+</tr>
+<tr>
+<td>BC Tech</td>
+<td>GeForce RTX 3080</td>
+</tr>
+<tr>
+<td>Colorful</td>
+<td>GeForce RTX 3080</td>
+</tr>
+<tr>
+<td>Colorful</td>
+<td>GeForce RTX 3090</td>
+</tr>
+<tr>
+<td>Enflame</td>
+<td>EM0101</td>
+</tr>
+<tr>
+<td>Huawei</td>
+<td>IT21DMPB07</td>
+</tr>
+<tr>
+<td>leadtek</td>
+<td>GeForce RTX 3080</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>Tesla T4</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>Tesla V100-SXM2-32GB</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>A100-SXM4-80GB</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>900-2G133-0020-000</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>Tesla V100-SXM2-32GB</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>900-2G133-0020-100</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>Quadro RTX 6000</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>Tesla T10</td>
+</tr>
+<tr>
+<td>SiNEAD</td>
+<td>GeForce RTX 2080 Ti</td>
+</tr>
+<tr>
+<td>SiNEAD</td>
+<td>NVIDIA Quadro RTX 6000</td>
+</tr>
+<tr>
+<td>SiNEAD</td>
+<td>GeForce RTX 2080 Ti</td>
+</tr>
+<tr>
+<td>Tencent</td>
+<td>ZiXiaoC100</td>
+</tr>
+<tr>
+<td>西安芯瞳</td>
+<td>GenBu01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>型号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大禹智芯</td>
+<td>DPU Paratus</td>
+</tr>
+<tr>
+<td>思威系列DPU卡</td>
+<td>中科驭数</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>
