@@ -34,7 +34,7 @@ OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS
 
 在微信群内，OC 社区组织官方成员会提供相应的测试要求文件，请申请者按照标准完成测试，并提供标准测试报告给沟通群内的社区工作人员进行审核。    
 
-测试报告模板链接：[产品互认证测试模板.docx](https://drive.weixin.qq.com/s?k=AJEAIQdfAAozq7Ph3N)    
+测试报告模板链接：[产品互认证测试模板.docx](https://gitee.com/OpenCloudOS/sig-ecological-adaptation/blob/master/doc/%E4%BA%A7%E5%93%81%E4%BA%92%E8%AE%A4%E8%AF%81_%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A_%E6%A8%A1%E6%9D%BF.docx)    
 
 整机厂商测试用例可参考：[整机认证测试项](https://doc.weixin.qq.com/doc/w3_AfIA2Ab8ADgJUpke0M9QuuBCmPiww?scode=AJEAIQdfAAosbgN97HAfIA2Ab8ADg)    
 ### 4.2-不可自主测试：
