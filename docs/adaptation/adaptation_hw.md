@@ -4,6 +4,7 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 标准型号                    | 供应商        | 设备描述                                                     | 处理器型号                                    |
     | :-------------------------- | :------------ | :----------------------------------------------------------- | :-------------------------------------------- |
+    | RH2280-I32                  | 融科联创      | RH2280-I32(INTEL Xeon 6330/8*8G/5*HUS728T8TAL5204)           | INTEL Xeon 6330                               |
     | DELL C6420                  | DELL          | C6420(5120*2/32G*12/SSD-1.92T*6 RAID/25GE*2)*4               | Intel 5120                                    |
     | DELL DCS2210                | DELL          | DCS2210(E5-2609*1/8G*4/300G*12)                              | Intel E5-2609                                 |
     | DELL DCS5100                | DELL          | DCS5100(X3440*1/4G*2/500G*1)*4                               | Intel X3440                                   |
@@ -213,6 +214,10 @@ OpenCloudOS 兼容硬件列表如下：
     | Inventec RM561-IV           | 英业达        | RM561-IV(4214*2/2933-32G*8/16T*24/SSD-960G*2/25GE*2)         | Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz    |
     | Inventec RM760-IV           | 英业达        | RM760-IV(6133*2/16G*16/SSD-480G*6 RAID/10GE*2)               | Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz      |
     | Inventec RM761-IV           | 英业达        | RM761-IV(8255C*2/32G*12/SSD-480G*1/25GE*2)                   | Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz |
+    | KI2212-MK3                  | 坤前计算      | KI2212-MK3 （4114/32G*8）                                    | Intel 4114                                    |
+    | KA2212-HK3                  | 坤前计算      | KA2212-HK3（7301/32G*8）                                     | AMD 7301                                      |
+    | KH2212-MK2                  | 坤前计算      | KH2212-MK3 （7280/32G*8）                                    | Hygon 7280                                    |
+    | KF2212-MK3                  | 坤前计算      | KF2212-MK3 （2500/32G*8）                                    | FT S2500                                      |
     | LENOVO HR630X               | 联想          | HR630X(6134*2/16G*12/SSD-480G*1/10GE*2)                      | Intel 6134                                    |
     | LENOVO HR650M               | 联想          | HR650M(EPYC 7551*2/16G*16/5200-480G*1/XL710QDA1-40GE*2/10GE*2) | AMD EPYC 7551 32-Core Processor               |
     | LENOVO HR650X               | 联想          | HR650X(6142*2/16G*16/SSD-480G*1/10GE*2)                      | Intel 6142                                    |
@@ -251,7 +256,9 @@ OpenCloudOS 兼容硬件列表如下：
     | PowerLeader PR210K32        | 宝德          | T3-CI13WK-10G_6.1.0_PowerLeader PR210K32_Kunpeng 920 5221K*2/32G*8/NVMeSSD-3.84T*4/SSD-480G*1/TM280-10GE*1(2P, 带10G多模光模块）(PowerLeader) | HUAWEI Kunpeng 920 5221K                      |
     | PowerLeader PR212K          | 宝德          | PowerLeader PR212K                                           | HUAWEI Kunpeng 920                            |
     | PowerLeader PR410K MAX      | 宝德          | T0-SC11W-100G_6.1.0_PowerLeader PR410K MAX_Kunpeng 920 5250*2/32G*16/SataSSD-3.84T*1/SataHDD-16T*72/MCX623106AN-CDAT-100G*1(2P，带光模块)(PowerLeader) | Kunpeng 920-4826                              |
+    | R220K V2                    | 长江计算      | R220K (920*2/32g*12/480*6)                                   | Kunpeng920                                    |
     | R522                        | 神州数码      | 神州鲲泰通用型服务器                                         | HUAWEI Kunpeng 920                            |
+    | R620 G40                    | 宁畅          | R620 (5318Y*2/64G*8/16T)                                     | 5318Y                                         |
     | R722                        | 神州数码      | 神州鲲泰通用型服务器                                         | HUAWEI Kunpeng 920                            |
     | Sugon A620-G30              | 曙光          | A620-G30(EPYC 7551*2/32G*16/480G*1/10GE*2)                   | AMD EPYC 7551 32-Core Processor               |
     | Sugon I620-G30              | 曙光          | I620-G30(6133*2/16G*16/SSD-480G*6 RAID/10GE*2)               | Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz      |
@@ -271,6 +278,7 @@ OpenCloudOS 兼容硬件列表如下：
     | Tencent Tanggula            | Tencent       | T-BOX-SC1_7.0.0_Tencent Tanggula_JBOD 4U/HDD SATA 16T*110/HBA*8Ports(Tencent) | -                                             |
     | Tencent TriRivers           | Tencent       | RD-TR1-BS-2_7.0.3_Tencent TriRivers_ICX QU98*2/2933 32G*8/M.2 SATA 480G/HDD 16T*8/NVMe 6.4T*1/OCP3 10G*1(2P)(Tencent) | ICX HCC QU98                                  |
     | TG225 A1                    | 长虹天宫      | TG225 A1                                                     | HUAWEI Kunpeng 920                            |
+    | T8520 G11                   | 长城超云      | T8520 （6248*2/8G*2/2T）                                     | 6248                                          |
     | TKC SR123212                | 天津麒麟      | SR123212(Phytium FT1500A*1/16G*4/1T*2 Raid/2*10G NIC)        | Phytium FT1500A                               |
     | UNISYUE R3810G5             | 紫光恒越      | T3-SH24FK-25G_6.2.0_UNISYUE R3810G5_Phytium S2500*2/32G*16/SSD-480G*1/NVMeSSD-3.84T*2/9361-8i/25GE*2(UNISYUE) | S2500                                         |
     | UNISYUE R3820G3             | 紫光恒越      | UNIS Server R3820 G3(2U)                                     | HUAWEI Kunpeng 920                            |
@@ -287,189 +295,189 @@ OpenCloudOS 兼容硬件列表如下：
     | 宝德 PT2300GII              | 宝德          | PT2300GII(/2G/250G*1)                                        | -                                             |
     | 太行220                     | 山西百信      | 太行220                                                      | HUAWEI Kunpeng 920                            |
     | 天玥 SR123212               | 航天二院706所 | SR123212(Phytium FT1500A*1/16G*4/1T*8 Raid/2*10G NIC)        | Phytium FT1500A                               |
-    | TG125 B1         | 华鲲振宇 | TG125 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*12/10GE*2)     | kunpeng-920    |
-    | TG215 B1         | 华鲲振宇 | TG215 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*6/5GE)         | kunpeng-920    |
-    | TG225 A1         | 华鲲振宇 | TG225 A1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
-    | TG225 B1         | 华鲲振宇 | TG225 B1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
-    | TG245 B1         | 华鲲振宇 | TG245 B1(kunpeng-920*2/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
-    | TG525 B1         | 华鲲振宇 | TG525 B1(kunpeng-920*4/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
-    | TG225 Pro B1     | 华鲲振宇 | TG225 Pro B1(kunpeng-920*2/32G*12/NVMeSSD-12T*10/10GE*2) | kunpeng-920    |
-    | TG125 B1         | 虹信     | TG125 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*12/10GE*2)     | kunpeng-920    |
-    | TG215 B1         | 虹信     | TG215 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*6/5GE)         | kunpeng-920    |
-    | TG225 A1         | 虹信     | TG225 A1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
-    | TG225 B1         | 虹信     | TG225 B1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)    | kunpeng-920    |
-    | TG245 B1         | 虹信     | TG245 B1(kunpeng-920*2/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
-    | TG525 B1         | 虹信     | TG525 B1(kunpeng-920*4/32G*12/NVMeSSD-3.84T*12/10GE*2)   | kunpeng-920    |
-    | TG225 Pro B1     | 虹信     | TG225 Pro B1(kunpeng-920*2/32G*12/NVMeSSD-12T*10/10GE*2) | kunpeng-920    |
-    | 擎天DF7系列      | 长城科技 | DF729(FT-2000/128G/1.2T*4)                               | FT-2000        |
-    | 超强K620系列     | 同方股份 | K620(kunpeng-920*2/32G*8/1.2T*6)                         | kunpeng-920    |
-    | Huang he 2280 V2 | 黄河科技 | Huang he 2280 V2(kunpeng-920*2/32G*8/3.2T*2)             | kunpeng-920    |
-    | Huang he 5280 V2 | 黄河科技 | Huang he 5280 V2(kunpeng-920*2/32G*8/3.2T*2)             | kunpeng-920    |
-    | H620             | 中科可控 | K620(Hygon C86 7285*2/384G/500G*2)                       | Hygon C86 7285 |
-    | H610             | 中科可控 | K620(Hygon C86 7285*2/384G/500G*2)                       | Hygon C86 7285 |
-    | H320             | 中科可控 | K620(Hygon C86 7285*2/200G/500G*2)                       | Hygon C86 7285 |
-    | H520             | 中科可控 | K620(Hygon C86 7285/384G/500G*1)                         | Hygon C86 7285 |
-    | H210             | 中科可控 | K620(Hygon C86 7285*2/384G/500G*1)                       | Hygon C86 7285 |
+    | TG125 B1                    | 华鲲振宇      | TG125 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*12/10GE*2)         | kunpeng-920                                   |
+    | TG215 B1                    | 华鲲振宇      | TG215 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*6/5GE)             | kunpeng-920                                   |
+    | TG225 A1                    | 华鲲振宇      | TG225 A1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)        | kunpeng-920                                   |
+    | TG225 B1                    | 华鲲振宇      | TG225 B1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)        | kunpeng-920                                   |
+    | TG245 B1                    | 华鲲振宇      | TG245 B1(kunpeng-920*2/32G*12/NVMeSSD-3.84T*12/10GE*2)       | kunpeng-920                                   |
+    | TG525 B1                    | 华鲲振宇      | TG525 B1(kunpeng-920*4/32G*12/NVMeSSD-3.84T*12/10GE*2)       | kunpeng-920                                   |
+    | TG225 Pro B1                | 华鲲振宇      | TG225 Pro B1(kunpeng-920*2/32G*12/NVMeSSD-12T*10/10GE*2)     | kunpeng-920                                   |
+    | TG125 B1                    | 虹信          | TG125 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*12/10GE*2)         | kunpeng-920                                   |
+    | TG215 B1                    | 虹信          | TG215 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*6/5GE)             | kunpeng-920                                   |
+    | TG225 A1                    | 虹信          | TG225 A1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)        | kunpeng-920                                   |
+    | TG225 B1                    | 虹信          | TG225 B1(kunpeng-920*2/32G*12/NVMeSSD-480G*12/10GE*2)        | kunpeng-920                                   |
+    | TG245 B1                    | 虹信          | TG245 B1(kunpeng-920*2/32G*12/NVMeSSD-3.84T*12/10GE*2)       | kunpeng-920                                   |
+    | TG525 B1                    | 虹信          | TG525 B1(kunpeng-920*4/32G*12/NVMeSSD-3.84T*12/10GE*2)       | kunpeng-920                                   |
+    | TG225 Pro B1                | 虹信          | TG225 Pro B1(kunpeng-920*2/32G*12/NVMeSSD-12T*10/10GE*2)     | kunpeng-920                                   |
+    | 擎天DF7系列                 | 长城科技      | DF729(FT-2000/128G/1.2T*4)                                   | FT-2000                                       |
+    | 超强K620系列                | 同方股份      | K620(kunpeng-920*2/32G*8/1.2T*6)                             | kunpeng-920                                   |
+    | Huang he 2280 V2            | 黄河科技      | Huang he 2280 V2(kunpeng-920*2/32G*8/3.2T*2)                 | kunpeng-920                                   |
+    | Huang he 5280 V2            | 黄河科技      | Huang he 5280 V2(kunpeng-920*2/32G*8/3.2T*2)                 | kunpeng-920                                   |
+    | H620                        | 中科可控      | K620(Hygon C86 7285*2/384G/500G*2)                           | Hygon C86 7285                                |
+    | H610                        | 中科可控      | K620(Hygon C86 7285*2/384G/500G*2)                           | Hygon C86 7285                                |
+    | H320                        | 中科可控      | K620(Hygon C86 7285*2/200G/500G*2)                           | Hygon C86 7285                                |
+    | H520                        | 中科可控      | K620(Hygon C86 7285/384G/500G*1)                             | Hygon C86 7285                                |
 
 === "CPU"
 
-    | 厂商    | 型号                                            | 架构             | 频率/Ghz |
-    | ------- | ----------------------------------------------- | ---------------- | -------- |
-    | AMD     | AMD EPYC 7763 64-Core Processor                 | AMD              | 2.45     |
-    | AMD     | AMD EPYC 7H12 64-Core Processor                 | AMD              | 2.6      |
-    | AMD     | AMD EPYC 7513 32-Core Processor                 | AMD              | 2.6      |
-    | AMD     | AMD EPYC 7K83 64-Core Processor                 | AMD              | 2.55     |
-    | AMD     | AMD EPYC 7K83 64-Core Processor                 | AMD              | 2.55     |
-    | AMD     | AMD EPYC 75F3 32-Core Processor                 | AMD              | 2.95     |
-    | AMD     | AMD EPYC 7K62 48-Core Processor                 | AMD              | 2.6      |
-    | 华为  | HUAWEI Kunpeng 920 7260                         | Huawei Hisilicon | 2.6      |
-    | 华为  | Kunpeng 920-6426                                | Huawei Hisilicon | 2.6      |
-    | 华为  | HUAWEI Kunpeng 920 5221K                        | Huawei Hisilicon | 2.6      |
-    | 华为  | HUAWEI Kunpeng 920 5220                         | Huawei Hisilicon | 2.6      |
-    | 华为  | HUAWEI Kunpeng 920 5250                         | Huawei Hisilicon | 2.6      |
-    | 华为  | Kunpeng 920-4826                                | Huawei Hisilicon | 2.6      |
-    | 华为  | Kunpeng 920-3226                                | Huawei Hisilicon | 2.6      |
-    | 华为  | Kunpeng 920-4826                                | Huawei Hisilicon | 2.6      |
-    | 华为  | Kunpeng 920-6426                                | Huawei Hisilicon | 2.6      |
-    | Hygon   | Hygon C86 7280 32-core Processor                | Hygon 海光       | 2        |
-    | Hygon   | Hygon C86 7285 32-core Processor                | Hygon 海光       | 2        |
-    | Hygon   | Hygon C86 5280 16-core Processor                | Hygon 海光       | 2.5      |
-    | Hygon   | Hygon C86 7255 16-core Processor                | Hygon 海光       | 2.2      |
-    | Hygon   | Hygon C86 5285 16-core Processor                | Hygon 海光       | 2.5      |
-    | Intel   | Intel(R) Xeon(R) Silver 4214 CPU  @ 2.20GHz     | INTEL            | 2.2      |
-    | Intel   | Intel(R) Xeon(R) Platinum 8255C  CPU @ 2.50GHz  | INTEL            | 2.5      |
-    | Intel   | Intel(R) Xeon(R) Gold 5218R CPU  @ 2.10GHz      | INTEL            | 2.1      |
-    | Intel   | Intel(R) Xeon(R) Platinum 8361HC  CPU @ 2.60GHz | INTEL            | 2.6      |
-    | Intel   | Intel(R) Xeon(R) Platinum 8374B  CPU @ 2.70GHz  | INTEL            | 2.7      |
-    | Intel   | Intel(R) Xeon(R) Platinum 8374C  CPU @ 2.70GHz  | INTEL            | 2.7      |
-    | Intel   | Intel(R) Xeon(R) Platinum 8372C  CPU @ 3.20GHz  | INTEL            | 3.2      |
-    | Intel   | Intel E5-2680 v4                                | INTEL            | 2.4      |
-    | Intel   | Intel(R) Xeon(R) Silver 4208 CPU  @ 2.10GHz     | INTEL            | 2.1      |
-    | Intel   | Intel(R) Xeon(R) Gold 6231C CPU  @ 3.20GHz      | INTEL            | 3.2      |
-    | Intel   | Intel(R) Xeon(R) Gold 5220R CPU  @ 2.20GHz      | INTEL            | 2.2      |
-    | Intel   | Intel(R) Xeon(R) Silver 4216 CPU  @ 2.10GHz     | INTEL            | 2.2      |
-    | Intel   | Intel(R) Xeon(R) Gold 5218 CPU @  2.10GHz       | INTEL            | 2.3      |
-    | Intel   | Intel Xeon Platinum 8260 CPU @  2.40GHz         | INTEL            | 2.4      |
-    | Intel   | Intel(R) Xeon(R) Gold 6148 CPU @  2.40GHz       | INTEL            | 2.4      |
-    | Intel   | Intel(R) Xeon(R) Gold 6133 CPU @  2.50GHz       | INTEL            | 2.5      |
-    | Intel   | Intel(R) Xeon(R) Gold 6240 CPU @  2.60GHz       | INTEL            | 2.6      |
-    | Intel   | Intel(R) Xeon(R) Silver 4210 CPU  @ 2.20GHz     | INTEL            | 2.2      |
-    | Intel   | Intel(R) Xeon(R) Silver 4314 CPU  @ 2.40GHz     | INTEL            | 2.4      |
-    | Intel   | Genuine Intel(R) CPU $0000%@                    | INTEL            | 2.2      |
-    | Intel   | Intel(R) Genuine processor                      | INTEL            | 2.2      |
-    | Intel   | Intel IceLake Platinum 8372C CPU                | INTEL            | 3.2      |
-    | Intel   | Intel(R) Xeon(R) Platinum 8374C  CPU @ 2.70GHz  | INTEL            | 2.7      |
-    | Intel   | Genuine Intel(R) CPU $0000%@                    | INTEL            | 2.2      |
-    | Intel   | Intel(R) Xeon(R) Platinum 8255C  CPU @ 2.50GHz  |  -                | 2.5      |
-    | Intel   | Intel(R) Xeon(R) Silver 4208 CPU  @ 2.10GHz     | -                  | 2.1      |
-    | Intel   | Intel(R) Xeon(R) Silver 4110 CPU  @ 2.10GHz     |  -                | 2.1      |
-    | Intel   | Intel(R) Xeon(R) Gold 6133 CPU @  2.50GHz       |  -                | 2.6      |
-    | Intel   | Intel(R) Xeon(R) Gold 6146 CPU @  3.20GHz       |  -                | 3.2      |
-    | Intel   | Intel Xeon Platinum 6230 CPU @  2.10GHz         | INTEL            | 2.1      |
-    | 澜起   |  Jintide(R) C6330   | X86  | 2 |
-    | Phytium | S2500                                           | Phytium 飞腾     | 2.1      |
-    | Phytium | FT-2000+                                        | Phytium 飞腾     | 2.2      |
-    | Phytium | FT-2000+                                        | FT-2000+         | 2.2      |
+    | 厂商    | 型号                                           | 架构             | 频率/Ghz |
+    | :------ | :--------------------------------------------- | :--------------- | :------- |
+    | 澜起    | Jintide(R) C6248R                              | X86              | 3        |
+    | AMD     | AMD EPYC 7763 64-Core Processor                | AMD              | 2.45     |
+    | AMD     | AMD EPYC 7H12 64-Core Processor                | AMD              | 2.6      |
+    | AMD     | AMD EPYC 7513 32-Core Processor                | AMD              | 2.6      |
+    | AMD     | AMD EPYC 7K83 64-Core Processor                | AMD              | 2.55     |
+    | AMD     | AMD EPYC 7K83 64-Core Processor                | AMD              | 2.55     |
+    | AMD     | AMD EPYC 75F3 32-Core Processor                | AMD              | 2.95     |
+    | AMD     | AMD EPYC 7K62 48-Core Processor                | AMD              | 2.6      |
+    | 华为    | HUAWEI Kunpeng 920 7260                        | Huawei Hisilicon | 2.6      |
+    | 华为    | Kunpeng 920-6426                               | Huawei Hisilicon | 2.6      |
+    | 华为    | HUAWEI Kunpeng 920 5221K                       | Huawei Hisilicon | 2.6      |
+    | 华为    | HUAWEI Kunpeng 920 5220                        | Huawei Hisilicon | 2.6      |
+    | 华为    | HUAWEI Kunpeng 920 5250                        | Huawei Hisilicon | 2.6      |
+    | 华为    | Kunpeng 920-4826                               | Huawei Hisilicon | 2.6      |
+    | 华为    | Kunpeng 920-3226                               | Huawei Hisilicon | 2.6      |
+    | 华为    | Kunpeng 920-4826                               | Huawei Hisilicon | 2.6      |
+    | 华为    | Kunpeng 920-6426                               | Huawei Hisilicon | 2.6      |
+    | Hygon   | Hygon C86 7280 32-core Processor               | Hygon 海光       | 2        |
+    | Hygon   | Hygon C86 7285 32-core Processor               | Hygon 海光       | 2        |
+    | Hygon   | Hygon C86 5280 16-core Processor               | Hygon 海光       | 2.5      |
+    | Hygon   | Hygon C86 7255 16-core Processor               | Hygon 海光       | 2.2      |
+    | Hygon   | Hygon C86 5285 16-core Processor               | Hygon 海光       | 2.5      |
+    | Intel   | Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz     | INTEL            | 2.2      |
+    | Intel   | Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz  | INTEL            | 2.5      |
+    | Intel   | Intel(R) Xeon(R) Gold 5218R CPU @ 2.10GHz      | INTEL            | 2.1      |
+    | Intel   | Intel(R) Xeon(R) Platinum 8361HC CPU @ 2.60GHz | INTEL            | 2.6      |
+    | Intel   | Intel(R) Xeon(R) Platinum 8374B CPU @ 2.70GHz  | INTEL            | 2.7      |
+    | Intel   | Intel(R) Xeon(R) Platinum 8374C CPU @ 2.70GHz  | INTEL            | 2.7      |
+    | Intel   | Intel(R) Xeon(R) Platinum 8372C CPU @ 3.20GHz  | INTEL            | 3.2      |
+    | Intel   | Intel E5-2680 v4                               | INTEL            | 2.4      |
+    | Intel   | Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz     | INTEL            | 2.1      |
+    | Intel   | Intel(R) Xeon(R) Gold 6231C CPU @ 3.20GHz      | INTEL            | 3.2      |
+    | Intel   | Intel(R) Xeon(R) Gold 5220R CPU @ 2.20GHz      | INTEL            | 2.2      |
+    | Intel   | Intel(R) Xeon(R) Silver 4216 CPU @ 2.10GHz     | INTEL            | 2.2      |
+    | Intel   | Intel(R) Xeon(R) Gold 5218 CPU @ 2.10GHz       | INTEL            | 2.3      |
+    | Intel   | Intel Xeon Platinum 8260 CPU @ 2.40GHz         | INTEL            | 2.4      |
+    | Intel   | Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz       | INTEL            | 2.4      |
+    | Intel   | Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz       | INTEL            | 2.5      |
+    | Intel   | Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz       | INTEL            | 2.6      |
+    | Intel   | Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz     | INTEL            | 2.2      |
+    | Intel   | Intel(R) Xeon(R) Silver 4314 CPU @ 2.40GHz     | INTEL            | 2.4      |
+    | Intel   | Genuine Intel(R) CPU $0000%@                   | INTEL            | 2.2      |
+    | Intel   | Intel(R) Genuine processor                     | INTEL            | 2.2      |
+    | Intel   | Intel IceLake Platinum 8372C CPU               | INTEL            | 3.2      |
+    | Intel   | Intel(R) Xeon(R) Platinum 8374C CPU @ 2.70GHz  | INTEL            | 2.7      |
+    | Intel   | Genuine Intel(R) CPU $0000%@                   | INTEL            | 2.2      |
+    | Intel   | Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz  | -                | 2.5      |
+    | Intel   | Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz     | -                | 2.1      |
+    | Intel   | Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz     | -                | 2.1      |
+    | Intel   | Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz       | -                | 2.6      |
+    | Intel   | Intel(R) Xeon(R) Gold 6146 CPU @ 3.20GHz       | -                | 3.2      |
+    | Intel   | Intel Xeon Platinum 6230 CPU @ 2.10GHz         | INTEL            | 2.1      |
+    | 澜起    | Jintide(R) C6330                               | X86              | 2        |
+    | Phytium | S2500                                          | Phytium 飞腾     | 2.1      |
+    | Phytium | FT-2000+                                       | Phytium 飞腾     | 2.2      |
+    | Phytium | FT-2000+                                       | FT-2000+         | 2.2      |
 
 
 === "网卡"
 
-    | 厂商            | 厂商 PN                                             | 速率/Gbps | 端口类型 | 产品族                                                |
-    | --------------- | -------------------------------------------------- | --------- | -------- | ----------------------------------------------------- |
-    | Broadcom        | BCM957414M4142C                                    | 25000     | SFP28    | BCM957414M4142C                                       |
-    | Broadcom        | BCM957414M4142C                                    | 25000     | SFP28    | BCM957414M4142C                                       |
-    | Broadcom        | BCM957414A4142CC 10Gb/25Gb  Ethernet PCIe          | 25000     | SFP28    | BCM957414A4142CC 10Gb/25Gb  Ethernet PCIe             |
-    | Broadcom        | BCM957414A4142CC                                   | 25000     | SFP28    | BCM957414A4142CC                                      |
-    | Broadcom        | BCM957508-N2100G                                   | 100000    | QSFP56   | BCM957508-N2100G                                      |
-    | Broadcom        | BCM957414N4140C                                    | 25000     | SFP28    | BCM957414N4140C                                       |
-    | Broadcom        | BCM957416N4160C                                    | 10000     | RJ45     | BCM957416N4160C                                       |
-    | Broadcom        | BCM957508-P2100G                                   | 100000    | QSFP56   | BCM957508-P2100G                                      |
-    | DELL            |   -                                                 | 10000     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                        |
-    | DELL            |       -                                             | 10000     | RJ45     | DELL BCM57416 Embed                                   |
-    | DELL            | CD2VM                                              | 10000     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                        |
-    | Foxconn         |   -                                                 | 10000     | RJ45     | Intel  X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | Foxconn         | NA                                                 | 10000     | RJ45     | Intel  X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | H3C             |    -                                                | 10000     | RJ45     | Intel  X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | H3C             | NA                                                 | 10000     | RJ45     | Intel  X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | H3C             | 560F-B2                                            | 10000     | SFP+     | Ethernet Converged Network  Adapter 82599             |
-    | H3C             | UN-NIC-ETH563T-sL-2P                               | 10000     | RJ45     | UN-NIC-ETH563T-sL-2P                                  |
-    | HP              | Ethernet 1Gb 4-port 366FLR  Adapter;I350           | 1000      | RJ45     | Ethernet 1Gb 4-port 366FLR  Adapter;I350              |
-    | 华为          | Huawei TM280                                       | 25000     | SFP28    | TM280                                                 |
-    | 华为          | SP582                                              | 25000     | SFP28    | SP582                                                 |
-    | 华为          | TM280                                              | 25000     | SFP28    | TM280                                                 |
-    | 华为          | BC51DPHA                                           | 100000    | QSFP28   | Hi1822 SP572 (2*100GE)                                |
-    | 华为          | Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI    | 10000     | RJ45     | Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI       |
-    | 华为          | 03024QAY                                           | 100000    | QSFP28   | BC5M01IBMB                                            |
-    | 华为          | LOM-X722                                           | 1000      | RJ45     | LOM-X722                                              |
-    | 华为          | Ethernet Controller 10G X550T  (rev 01)            | 10000     | RJ45     | Ethernet Controller 10G X550T  (rev 01)               |
-    | 华为          | SM233                                              | 10000     | RJ45     | SM233                                                 |
-    | 浪潮          |     -                                               | 10000     | RJ45     | Intel  X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | 浪潮          | Inspur X540                                        | 10000     | RJ45     | 10G base-T DP EP102Ti3A Adapter                       |
-    | 浪潮          | Intel  X722/X557,10G,Mezzanine,2P,NC-SI            | 10000     | RJ45     | Intel  X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | 浪潮          | YZCA-00431-102                                     | 10000     | SFP+     | 82599ES 10G 2P Inspur                                 |
-    | 浪潮          | Ethernet Controller 10G X550T  (rev 01)            | 10000     | RJ45     | Ethernet Controller 10G X550T  (rev 01)               |
-    | 浪潮          | Ethernet 1G intel i350 PCIE,2P                     | 1000      | RJ45     | Ethernet 1G intel i350 PCIE,2P                        |
-    | 浪潮          | YZCA-00431-103                                     | 10000     | SFP+     | 10G SFP+ DP EP102Fi4 Adapter                          |
-    | 浪潮          | YZCA-00431-102                                     | 10000     | SFP+     | 82599ES 10G 2P Inspur                                 |
-    | 浪潮          | YZNC-00766-101                                     | 1000      | RJ45     | I350                                                  |
-    | 浪潮          | 10G base-T DP EP102Ti3A Adapter                    | 10000     | RJ45     | 10G base-T DP EP102Ti3A Adapter                       |
-    | 浪潮          | I350                                               | 1000      | RJ45     | I350                                                  |
-    | 浪潮          | Ethernet Controller 10G X540-T2                    | 10000     | RJ45     | Ethernet Controller 10G X540-T2                       |
-    | Intel           |     -                                               | 10000     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card  [USI-X557-10GbaseT] |
-    | Intel           | X550T2G1P5                                         | 10000     | RJ45     | Ethernet Converged Network  Adapter X550-T2           |
-    | Intel           | X540T2G1P5                                         | 10000     | RJ45     | Ethernet Converged Network  Adapter X540-T2           |
-    | Intel           | Ethernet Server Adapter X520-2                     | 10000     | SFP+     | 82599ES 10                                            |
-    | Intel           | Ethernet Server Adapter OCP  X710-2                | 10000     | SFP+     | X710-DA2                                              |
-    | Intel           | X710DA2G2P5                                        | 10000     | SFP+     | X710DA2G2P5                                           |
-    | Intel           | I350                                               | 1000      | RJ45     | I350                                                  |
-    | Intel           | X710-AT2                                           | 10000     | RJ45     | X710-AT2                                              |
-    | Intel           | Ethernet Server Adapter X520-2                     | 10000     | SFP+     | 非标服务器用                                          |
-    | Intel           | Ethernet Converged Network  Adapter XL710-Q1       | 40000     | QSFP+    | Ethernet Converged Network  Adapter XL710-Q1          |
-    | Intel           | Ethernet Converged Network  Adapter XL710-Q2       | 40000     | QSFP+    | Ethernet Converged Network  Adapter XL710-QDA2        |
-    | Intel-DELL      |      -                                              | 10000     | SFP+     | 10GbE 2P X520 Adapter                                 |
-    | Intel-Greatwall |     -                                               | 10000     | RJ45     | Ethernet Converged Network  Adapter X550-T2           |
-    | Intel-H3C       |      -                                              | 10000     | SFP+     | 560F-B                                                |
-    | Intel-HP        |      -                                              | 10000     | SFP+     | Ethernet 10Gb 2-port 560SFP+  Adapter     ;82599ES 10 |
-    | Intel-Huawei    | Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI    | 10000     | RJ45     | Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI       |
-    | Intel-Huawei    | SP310                                              | 10000     | SFP+     | SP310;82599ES 10                                      |
-    | Intel-Huawei    |      -                                              | 10000     | NA       | Intel X722/X557  (Huawei),10G,Embedded,2P,NC-SI       |
-    | Intel-Inspur    | Ethernet Converged Network  Adapter X550-T2        | 10000     | RJ45     | Ethernet Converged Network  Adapter X550-T2           |
-    | Intel-Inspur    |       -                                             | 10000     | SFP+     | 10G SFP+ DP EP102Fi4  Adapter     ;82599              |
-    | Intel-Lenovo    |      -                                              | 10000     | SFP+     | Ethernet Server Adapter  X520-2     ;82599ES 10       |
-    | Inventec        | Ethernet Connection X722 for  10GBASE-T            | 10000     | RJ45     | Ethernet Connection X722 for  10GBASE-T               |
-    | Inventec        | NA                                                 | 10000     | RJ45     | Ethernet Connection X722 for  10GBASE-T               |
-    | 联想          | NA                                                 | 10000     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card  [USI-X557-10GbaseT] |
-    | 联想          | 0000000MM881                                       | 10000     | SFP+     | 82599ES 10-Gigabit SFI/SFP+  Network Connection       |
-    | Mellanox        | MCX512A-ACUT                                       | 25000     | SFP28    | MCX512A-ACUT                                          |
-    | Mellanox        | MCX516A-CCHT                                       | 100000    | SFP28    | MCX516A-CCHT                                          |
-    | Mellanox        | MCX515A-CCAT                                       | 100000    | QSFP28   | MCX515A-CCAT                                          |
-    | Mellanox        | MCX515A-CCUT                                       | 100000    | QSFP28   | MCX515A-CCUT                                          |
-    | Mellanox        | MCX4421A-ACQN                                      | 25000     | SFP28    | MCX4421A-ACQN                                         |
-    | Mellanox        | MCX512A-ACAT                                       | 25000     | SFP28    | MCX512A-ACAT                                          |
-    | Mellanox        | MCX416A-BCAT, ConnectX-4 EN,  40/56GbE 2P, PCIe3.0 | 40000     | QSFP+    | MCX416A-BCAT                                          |
-    | Mellanox        | MCX516A-BDAT                                       | 40000     | QSFP28   | MCX516A-BDAT                                          |
-    | Mellanox        | MCX4421A-ACQN ConnectX-4 Lx EN  OCP,2x25G          | 25000     | SFP28    | MCX4421A-ACQN ConnectX-4 Lx EN  OCP,2x25G             |
-    | Mellanox        | ConnectX-4 Lx 25 GbE Dual Port  SFP28 Adapter      | 25000     | SFP28    | MCX4121A-ACAT                                         |
-    | Mellanox        | MCX4121A-ACAT                                      | 25000     | SFP28    | MCX4121A-ACAT                                         |
-    | Mellanox        | MCX566A-CDAI_C15                                   | 100000    | QSFP28   | MCX566A-CDAI_C15                                      |
-    | Mellanox        | MCX623436AN-CDAB                                   | 100000    | QSFP56   | MCX623436AN-CDAB                                      |
-    | Mellanox        | MCX562A-ACAI_C15                                   | 25000     | SFP28    | MCX562A-ACAI_C15                                      |
-    | Mellanox        | MCX566A-GDAB_C15                                   | 50000     | QSFP28   | MCX566A-GDAB_C15                                      |
-    | Mellanox        | MCX516A-CCAT                                       | 100000    | QSFP28   | MCX516A-CCAT                                          |
-    | Mellanox        | MCX516A-CDAT                                       | 100000    | QSFP28   | MCX516A-CDAT                                          |
-    | Mellanox        | MCX623106AN-CDAT                                   | 100000    | QSFP56   | MCX623106AN-CDAT                                      |
-    | Suma            | OE10GI2-X550                                       | 10000     | RJ45     | Ethernet Controller 10G X550T  (rev 01)               |
+    | 厂商            | 厂商 PN                                           | 速率/Gbps | 端口类型 | 产品族                                               |
+    | :-------------- | :------------------------------------------------ | :-------- | :------- | :--------------------------------------------------- |
+    | Broadcom        | BCM957414M4142C                                   | 25000     | SFP28    | BCM957414M4142C                                      |
+    | Broadcom        | BCM957414M4142C                                   | 25000     | SFP28    | BCM957414M4142C                                      |
+    | Broadcom        | BCM957414A4142CC 10Gb/25Gb Ethernet PCIe          | 25000     | SFP28    | BCM957414A4142CC 10Gb/25Gb Ethernet PCIe             |
+    | Broadcom        | BCM957414A4142CC                                  | 25000     | SFP28    | BCM957414A4142CC                                     |
+    | Broadcom        | BCM957508-N2100G                                  | 100000    | QSFP56   | BCM957508-N2100G                                     |
+    | Broadcom        | BCM957414N4140C                                   | 25000     | SFP28    | BCM957414N4140C                                      |
+    | Broadcom        | BCM957416N4160C                                   | 10000     | RJ45     | BCM957416N4160C                                      |
+    | Broadcom        | BCM957508-P2100G                                  | 100000    | QSFP56   | BCM957508-P2100G                                     |
+    | DELL            | -                                                 | 10000     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                       |
+    | DELL            | -                                                 | 10000     | RJ45     | DELL BCM57416 Embed                                  |
+    | DELL            | CD2VM                                             | 10000     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                       |
+    | Foxconn         | -                                                 | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | Foxconn         | NA                                                | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | H3C             | -                                                 | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | H3C             | NA                                                | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | H3C             | 560F-B2                                           | 10000     | SFP+     | Ethernet Converged Network Adapter 82599             |
+    | H3C             | UN-NIC-ETH563T-sL-2P                              | 10000     | RJ45     | UN-NIC-ETH563T-sL-2P                                 |
+    | HP              | Ethernet 1Gb 4-port 366FLR Adapter;I350           | 1000      | RJ45     | Ethernet 1Gb 4-port 366FLR Adapter;I350              |
+    | 华为            | Huawei TM280                                      | 25000     | SFP28    | TM280                                                |
+    | 华为            | SP582                                             | 25000     | SFP28    | SP582                                                |
+    | 华为            | TM280                                             | 25000     | SFP28    | TM280                                                |
+    | 华为            | BC51DPHA                                          | 100000    | QSFP28   | Hi1822 SP572 (2*100GE)                               |
+    | 华为            | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI    | 10000     | RJ45     | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
+    | 华为            | 03024QAY                                          | 100000    | QSFP28   | BC5M01IBMB                                           |
+    | 华为            | LOM-X722                                          | 1000      | RJ45     | LOM-X722                                             |
+    | 华为            | Ethernet Controller 10G X550T (rev 01)            | 10000     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
+    | 华为            | SM233                                             | 10000     | RJ45     | SM233                                                |
+    | 浪潮            | -                                                 | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | 浪潮            | Inspur X540                                       | 10000     | RJ45     | 10G base-T DP EP102Ti3A Adapter                      |
+    | 浪潮            | Intel X722/X557,10G,Mezzanine,2P,NC-SI            | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | 浪潮            | YZCA-00431-102                                    | 10000     | SFP+     | 82599ES 10G 2P Inspur                                |
+    | 浪潮            | Ethernet Controller 10G X550T (rev 01)            | 10000     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
+    | 浪潮            | Ethernet 1G intel i350 PCIE,2P                    | 1000      | RJ45     | Ethernet 1G intel i350 PCIE,2P                       |
+    | 浪潮            | YZCA-00431-103                                    | 10000     | SFP+     | 10G SFP+ DP EP102Fi4 Adapter                         |
+    | 浪潮            | YZCA-00431-102                                    | 10000     | SFP+     | 82599ES 10G 2P Inspur                                |
+    | 浪潮            | YZNC-00766-101                                    | 1000      | RJ45     | I350                                                 |
+    | 浪潮            | 10G base-T DP EP102Ti3A Adapter                   | 10000     | RJ45     | 10G base-T DP EP102Ti3A Adapter                      |
+    | 浪潮            | I350                                              | 1000      | RJ45     | I350                                                 |
+    | 浪潮            | Ethernet Controller 10G X540-T2                   | 10000     | RJ45     | Ethernet Controller 10G X540-T2                      |
+    | Intel           | -                                                 | 10000     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card [USI-X557-10GbaseT] |
+    | Intel           | X550T2G1P5                                        | 10000     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
+    | Intel           | X540T2G1P5                                        | 10000     | RJ45     | Ethernet Converged Network Adapter X540-T2           |
+    | Intel           | Ethernet Server Adapter X520-2                    | 10000     | SFP+     | 82599ES 10                                           |
+    | Intel           | Ethernet Server Adapter OCP X710-2                | 10000     | SFP+     | X710-DA2                                             |
+    | Intel           | X710DA2G2P5                                       | 10000     | SFP+     | X710DA2G2P5                                          |
+    | Intel           | I350                                              | 1000      | RJ45     | I350                                                 |
+    | Intel           | X710-AT2                                          | 10000     | RJ45     | X710-AT2                                             |
+    | Intel           | Ethernet Server Adapter X520-2                    | 10000     | SFP+     | 非标服务器用                                         |
+    | Intel           | Ethernet Converged Network Adapter XL710-Q1       | 40000     | QSFP+    | Ethernet Converged Network Adapter XL710-Q1          |
+    | Intel           | Ethernet Converged Network Adapter XL710-Q2       | 40000     | QSFP+    | Ethernet Converged Network Adapter XL710-QDA2        |
+    | Intel-DELL      | -                                                 | 10000     | SFP+     | 10GbE 2P X520 Adapter                                |
+    | Intel-Greatwall | -                                                 | 10000     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
+    | Intel-H3C       | -                                                 | 10000     | SFP+     | 560F-B                                               |
+    | Intel-HP        | -                                                 | 10000     | SFP+     | Ethernet 10Gb 2-port 560SFP+ Adapter ;82599ES 10     |
+    | Intel-Huawei    | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI    | 10000     | RJ45     | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
+    | Intel-Huawei    | SP310                                             | 10000     | SFP+     | SP310;82599ES 10                                     |
+    | Intel-Huawei    | -                                                 | 10000     | NA       | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
+    | Intel-Inspur    | Ethernet Converged Network Adapter X550-T2        | 10000     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
+    | Intel-Inspur    | -                                                 | 10000     | SFP+     | 10G SFP+ DP EP102Fi4 Adapter ;82599                  |
+    | Intel-Lenovo    | -                                                 | 10000     | SFP+     | Ethernet Server Adapter X520-2 ;82599ES 10           |
+    | Inventec        | Ethernet Connection X722 for 10GBASE-T            | 10000     | RJ45     | Ethernet Connection X722 for 10GBASE-T               |
+    | Inventec        | NA                                                | 10000     | RJ45     | Ethernet Connection X722 for 10GBASE-T               |
+    | 联想            | NA                                                | 10000     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card [USI-X557-10GbaseT] |
+    | 联想            | 0000000MM881                                      | 10000     | SFP+     | 82599ES 10-Gigabit SFI/SFP+ Network Connection       |
+    | Mellanox        | MCX512A-ACUT                                      | 25000     | SFP28    | MCX512A-ACUT                                         |
+    | Mellanox        | MCX516A-CCHT                                      | 100000    | SFP28    | MCX516A-CCHT                                         |
+    | Mellanox        | MCX515A-CCAT                                      | 100000    | QSFP28   | MCX515A-CCAT                                         |
+    | Mellanox        | MCX515A-CCUT                                      | 100000    | QSFP28   | MCX515A-CCUT                                         |
+    | Mellanox        | MCX4421A-ACQN                                     | 25000     | SFP28    | MCX4421A-ACQN                                        |
+    | Mellanox        | MCX512A-ACAT                                      | 25000     | SFP28    | MCX512A-ACAT                                         |
+    | Mellanox        | MCX416A-BCAT, ConnectX-4 EN, 40/56GbE 2P, PCIe3.0 | 40000     | QSFP+    | MCX416A-BCAT                                         |
+    | Mellanox        | MCX516A-BDAT                                      | 40000     | QSFP28   | MCX516A-BDAT                                         |
+    | Mellanox        | MCX4421A-ACQN ConnectX-4 Lx EN OCP,2x25G          | 25000     | SFP28    | MCX4421A-ACQN ConnectX-4 Lx EN OCP,2x25G             |
+    | Mellanox        | ConnectX-4 Lx 25 GbE Dual Port SFP28 Adapter      | 25000     | SFP28    | MCX4121A-ACAT                                        |
+    | Mellanox        | MCX4121A-ACAT                                     | 25000     | SFP28    | MCX4121A-ACAT                                        |
+    | Mellanox        | MCX566A-CDAI_C15                                  | 100000    | QSFP28   | MCX566A-CDAI_C15                                     |
+    | Mellanox        | MCX623436AN-CDAB                                  | 100000    | QSFP56   | MCX623436AN-CDAB                                     |
+    | Mellanox        | MCX562A-ACAI_C15                                  | 25000     | SFP28    | MCX562A-ACAI_C15                                     |
+    | Mellanox        | MCX566A-GDAB_C15                                  | 50000     | QSFP28   | MCX566A-GDAB_C15                                     |
+    | Mellanox        | MCX516A-CCAT                                      | 100000    | QSFP28   | MCX516A-CCAT                                         |
+    | Mellanox        | MCX516A-CDAT                                      | 100000    | QSFP28   | MCX516A-CDAT                                         |
+    | Mellanox        | MCX623106AN-CDAT                                  | 100000    | QSFP56   | MCX623106AN-CDAT                                     |
+    | Suma            | OE10GI2-X550                                      | 10000     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
 
 
 === "存储卡"
 
     | 厂商      | 厂商PN                         | 类型 | 速率/Gbps | 主控芯片                    |
-    | --------- | ------------------------------ | ---- | --------- | --------------------------- |
+    | :-------- | :----------------------------- | :--- | :-------- | :-------------------------- |
     | Avago     | SAS9300-8i                     | HBA  | 12        | Logic SAS3008               |
-    | Broadcom  | SAS9300-8i                     | HBA  |     -      | Logic SAS3008               |
-    | Broadcom  | AVAGO MegaRAID SAS 9364-8i     | Raid |    -       | MegaRAID SAS-3 3108         |
-    | Broadcom  | AVAGO MegaRAID SAS 9361-8i     | Raid |     -      | MegaRAID SAS-3 3108         |
-    | Broadcom  | LSI MegaRAID SAS 9361-8i       | Raid |     -      | MegaRAID SAS-3 3108         |
+    | Broadcom  | SAS9300-8i                     | HBA  | -         | Logic SAS3008               |
+    | Broadcom  | AVAGO MegaRAID SAS 9364-8i     | Raid | -         | MegaRAID SAS-3 3108         |
+    | Broadcom  | AVAGO MegaRAID SAS 9361-8i     | Raid | -         | MegaRAID SAS-3 3108         |
+    | Broadcom  | LSI MegaRAID SAS 9361-8i       | Raid | -         | MegaRAID SAS-3 3108         |
     | Broadcom  | SAS9305-24i                    | HBA  | 12        | SAS3224(A1)                 |
     | Broadcom  | AVAGO MegaRAID SAS 9361-8i     | Raid | 12        | MegaRAID SAS-3 3108         |
     | Broadcom  | LSI MegaRAID SAS 9361-8i       | Raid | 12        | MegaRAID SAS-3 3108         |
@@ -478,203 +486,206 @@ OpenCloudOS 兼容硬件列表如下：
     | Broadcom  | 05-50008-00                    | HBA  | 12        | SAS3416                     |
     | Broadcom  | AVAGO MegaRAID SAS 9361-16i    | Raid | 12        | AVAGO MegaRAID SAS 9361-16i |
     | Broadcom  | SAS9305-16i                    | HBA  | 12        | SAS3224                     |
-    | Broadcom  | SAS9311-8i                     | HBA  |      -     | Logic SAS3008               |
+    | Broadcom  | SAS9311-8i                     | HBA  | -         | Logic SAS3008               |
     | Broadcom  | AVAGO MegaRAID SAS 9364-8i     | Raid | 12        | MegaRAID SAS 9364-8i        |
     | Broadcom  | 9500-16i                       | HBA  | 12        | 3816                        |
-    | Broadcom  | LPe31002-M6                    | HBA  | 16        |    -                         |
+    | Broadcom  | LPe31002-M6                    | HBA  | 16        | -                           |
     | Broadcom  | AVAGO MegaRAID SAS 9460-16i    | Raid | 12        | SAS3516                     |
-    | DELL      |      -                          | HBA  |      -     | SAS3008                     |
-    | DELL      |      -                          | Raid |     -      | NA                          |
+    | DELL      | -                              | HBA  | -         | SAS3008                     |
+    | DELL      | -                              | Raid | -         | NA                          |
     | DELL      | J7TNV                          | HBA  | 12        | Logic SAS3008               |
-    | DELL      | XYHWN                          | Raid | 12        |     -                        |
-    | Emulex    | LPe31002-AP                    | HBA  | 16        |    -                         |
-    | Emulex    | LPE16002B                      | HBA  | 16        |   -                          |
-    | H3C       | HBA H460 M1                    | HBA  | 12        |   -                          |
-    | HP        | HPE Smart Array P408i-p        | Raid | 12        |   -                          |
-    | 华为    |    -                            | HBA  |   -        | Logic SAS3008               |
-    | 华为    | BC11RLCA01                     | HBA  |  -         | Avago3408                   |
-    | 华为    | 02312NPS                       | Raid |   -        | MegaRAID SAS-3 3108         |
-    | 华为    | BC11RLCA                       | HBA  | 12        | Avago3408                   |
-    | 华为    | 03022CDE                       | HBA  | 12        | Logic SAS3008               |
-    | 华为    | 02312NPS                       | Raid | 12        | MegaRAID SAS-3 3108         |
-    | 华为    | 9460-8i                        | Raid | 12        | 9460-8i                     |
-    | 华为    | 03033EFT                       | Raid | 12        | SAS3508                     |
-    | 华为    | 03025VYL                       | Raid | 12        | SAS3508                     |
-    | 华为    | 6030276                        | HBA  | 16        |     -                        |
-    | 华为    | BC5M03FCAA                     | HBA  | 16        |  -                           |
-    | 宏杉    | MS2500A+    | -   |  -   |  -  |
-    | 浪潮    |   -                             | HBA  |   -        | Logic SAS3008               |
-    | 浪潮    |   -                              | HBA  |    -       | Logic SAS3008               |
-    | 浪潮    | HBA 9400-16i                   | HBA  |    -       | LSI SAS3408                 |
-    | 浪潮    |    -                            | HBA  | 12        | Logic SAS3008               |
-    | 浪潮    | YZCA-00582-102                 | Raid | 12        | SAS3108                     |
-    | 浪潮    | YZSA-01188-101                 | HBA  | 12        |   -                          |
-    | 浪潮    | INSPUR 3008IR                  | HBA  | 12        | Logic SAS3008               |
-    | 浪潮    | YZRA-01188-101                 | Raid | 12        |     -                        |
-    | 浪潮    |     -                           | HBA  |    -       | Logic SAS3008               |
-    | 浪潮    |     -                           | HBA  |    -       | Logic SAS3008               |
-    | 浪潮    | INSPUR Adaptec PM 8222-HBA     | HBA  | 12        | PM8222                      |
-    | 联想    | RAID 730-8i 2GB Flash          | Raid | 12        | 9361-8i                     |
+    | DELL      | XYHWN                          | Raid | 12        | -                           |
+    | Emulex    | LPe31002-AP                    | HBA  | 16        | -                           |
+    | Emulex    | LPE16002B                      | HBA  | 16        | -                           |
+    | H3C       | HBA H460 M1                    | HBA  | 12        | -                           |
+    | HP        | HPE Smart Array P408i-p        | Raid | 12        | -                           |
+    | 华为      | -                              | HBA  | -         | Logic SAS3008               |
+    | 华为      | BC11RLCA01                     | HBA  | -         | Avago3408                   |
+    | 华为      | 02312NPS                       | Raid | -         | MegaRAID SAS-3 3108         |
+    | 华为      | BC11RLCA                       | HBA  | 12        | Avago3408                   |
+    | 华为      | 03022CDE                       | HBA  | 12        | Logic SAS3008               |
+    | 华为      | 02312NPS                       | Raid | 12        | MegaRAID SAS-3 3108         |
+    | 华为      | 9460-8i                        | Raid | 12        | 9460-8i                     |
+    | 华为      | 03033EFT                       | Raid | 12        | SAS3508                     |
+    | 华为      | 03025VYL                       | Raid | 12        | SAS3508                     |
+    | 华为      | 6030276                        | HBA  | 16        | -                           |
+    | 华为      | BC5M03FCAA                     | HBA  | 16        | -                           |
+    | 宏杉      | MS2500A+                       | -    | -         | -                           |
+    | 浪潮      | -                              | HBA  | -         | Logic SAS3008               |
+    | 浪潮      | -                              | HBA  | -         | Logic SAS3008               |
+    | 浪潮      | HBA 9400-16i                   | HBA  | -         | LSI SAS3408                 |
+    | 浪潮      | -                              | HBA  | 12        | Logic SAS3008               |
+    | 浪潮      | YZCA-00582-102                 | Raid | 12        | SAS3108                     |
+    | 浪潮      | YZSA-01188-101                 | HBA  | 12        | -                           |
+    | 浪潮      | INSPUR 3008IR                  | HBA  | 12        | Logic SAS3008               |
+    | 浪潮      | YZRA-01188-101                 | Raid | 12        | -                           |
+    | 浪潮      | -                              | HBA  | -         | Logic SAS3008               |
+    | 浪潮      | -                              | HBA  | -         | Logic SAS3008               |
+    | 浪潮      | INSPUR Adaptec PM 8222-HBA     | HBA  | 12        | PM8222                      |
+    | 联想      | RAID 730-8i 2GB Flash          | Raid | 12        | 9361-8i                     |
     | microchip | 1200-16i                       | HBA  | 12        | 1200                        |
-    | Qlogic    | QLE2692                        | HBA  | 16        |    -                         |
+    | Qlogic    | QLE2692                        | HBA  | 16        | -                           |
     | Suma      | SH08-L3008                     | HBA  | 12        | Logic SAS3008               |
 
 
 === "硬盘"
 
 
-    | 厂商     | 厂商 PN               | 介质     | 协议   | 容量/Gb | 接口 | 尺寸 |
-    | -------- | -------------------- | -------- | ------ | ------- | ---- | ---- |
-    | Dera     | P34UTR-04T0U-ST      | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Dera     | P34UTM-06T4U-SL      | SSD      | NVMe   | 6400    | PCIE | 2.5  |
-    | Dera     | P34UTM-03T2U-ST      | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | 华为   | HWE52P434T0L005N     | SSD      | NVME   | 3840    | PCIE | 2.5  |
-    | 华为   | HWE52P434T0L005N     | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | 华为   | HWE52P433T2M002N     | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | 华为   | HWE52P433T2M005N     | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | 华为   | HWE52P433T2M002N     | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | 华为   | HWE52P433T2M005N     | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | 华为   | HWE32P43020L000N     | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | 华为   | HWE32P43040L0000N    | SSD      | NVMe   | 3600    | PCIE | 2.5  |
-    | 华为   |  -                    | SSD      | 企业级 | 3200    | PCIE | 2.5  |
-    | 华为   | HWE52P432T0L002N     | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | 华为   | HWE52P432T0L005N     | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | 华为   | HWE32P43040L0000N    | SSD      | NVMe   | 4000    | PCIE | 2.5  |
-    | 华为   | HWE52P436T4M005N     | SSD      | NVMe   | 6400    | PCIE | 2.5  |
-    | 华为   | HWE52P434T0L005N     | SSD      | NVMe   | 4000    | PCIE | 2.5  |
-    | Hynix    | HFS480G32FEH-7410A   | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Hynix    | HFS960G32FEH-7A10A   | SSD      | SATA   | 960     | SATA | 2.5  |
-    | Hynix    | HFS960G3H2X069N      | SSD      | SATA   | 960     | SATA | 2.5  |
-    | Hynix    | HFS480G32FEH-7410A   | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Hynix    | HFS480G3H2X069N      | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Hynix    | HFS3T8GETFEI-D430A   | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Intel    | SSDSC2KB480G8        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Intel    | SSDPF2KX038TZ        | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Intel    | SSDSC2BB480G7        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDPE2KE032T8        | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | Intel    | SSDPE2KE032T8        | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | Intel    | SSDPF2KX038TZ        | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | Intel    | SSDSC2KB480G7        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDSC2KB960G8        | SSD      | SATA   | 960     | SATA | 2.5  |
-    | Intel    | SSDPE2KX020T7        | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | Intel    | SSDPE2KX020T8        | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | Intel    | SSDPE2KX040T7        | SSD      | NVMe   | 3600    | PCIE | 2.5  |
-    | Intel    | SSDPE2KE032T7        | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | Intel    | SSDSC2KB019T8        | SSD      | SATA   | 1920    | SATA | 2.5  |
-    | Intel    | SSDSC2KB240G8        | SSD      | SATA   | 240     | SATA | 2.5  |
-    | Intel    | SSDSC2KB038T8        | SSD      | SATA   | 3840    | SATA | 2.5  |
-    | Intel    | SSDPE2KX020T8        | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | Intel    | SSDPF2KX076TZ        | SSD      | NVMe   | 6400    | PCIE | 2.5  |
-    | Intel    | SSDPE2KX020T8        | SSD      | NVMe   | 1920    | PCIE | 2.5  |
-    | Intel    | SSDPE2KX040T7        | SSD      | NVMe   | 4000    | PCIE | 2.5  |
-    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 4000    | PCIE | 2.5  |
-    | Intel    | SSDSC2KB480G8        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDSC2KB480GZ        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDSCKKB480G8        | SSD      | SATA   | 480     | SATA | 0.2  |
-    | Intel    | SSDSCKKB480GZ        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDPE2KE064T8        | SSD      | NVMe   | 6400    | PCIE | 2.5  |
-    | Intel    | SSDSC2KB960G7        | SSD      | SATA   | 960     | SATA | 2.5  |
-    | Intel    | SSDPF2KX076TZ        | SSD      | NVMe   | 7680    | PCIE | 2.5  |
-    | Intel    | SSDPF21Q800GB        | 3DXPoint | NVMe   | 800     | PCIE | 2.5  |
-    | Intel    | SSDSC2BB480G7        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDSC2KB480G7        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDSC2BB480G6        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDSC2BB480G4        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 4000    | PCIE | 2.5  |
-    | Intel    | SSDPE2KE016T8        | SSD      | NVMe   | 1600    | PCIE | 2.5  |
-    | Intel    | SSDSC2BB300G4        | SSD      | SATA   | 300     | SATA | 2.5  |
-    | Intel    | SSDPE2KX080T8        | SSD      | NVMe   | 7680    | PCIE | 2.5  |
-    | Kioxia   | KCM61RUL3T84         | SSD      | NVMe   | 3800    | PCIE | 2.5  |
-    | Memblaze | P5910DT0384M00       | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Memblaze | P5920DT0384M00       | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Memblaze | P5916DT0320M00       | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | Memblaze | P5916DT0640M00       | SSD      | NVMe   | 6400    | PCIE | 2.5  |
-    | Memblaze | P5920DT0768M00       | SSD      | NVMe   | 6400    | PCIE | 2.5  |
-    | Micron   | MTFDDAK480TBY        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Micron   | MTFDDAK960TBY        | SSD      | SATA   | 960     | SATA | 2.5  |
-    | Micron   | MTFDDAK480TBY        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Micron   | MTFDDAK480TDC        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Samsung  | MZ7LH480HAHQ-00005   | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Samsung  | MZWLJ3T8HBLS-0007C   | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Samsung  | MZ7LM480HMHQ         | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Samsung  | MZWLJ3T8HBLS-0007C   | SSD      | NVMe   | 3200    | PCIE | 2.5  |
-    | Samsung  | MZ7LH960HAJR-00005   | SSD      | SATA   | 960     | SATA | 2.5  |
-    | Samsung  | MZ7L3960HCJR-00B7C   | SSD      | SATA   | 960     | SATA | 2.5  |
-    | Samsung  | MZQL23T8HCLS-00B7C   | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Samsung  | MZ7LH240HAHQ-00005   | SSD      | SATA   | 240     | SATA | 2.5  |
-    | Samsung  | MZ7LH3T8HMLT-00005   | SSD      | SATA   | 3840    | SATA | 2.5  |
-    | Samsung  | MZQLB1T9HAJR-000TC   | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | Samsung  | MZQL23T8HCLS-00B7C   | SSD      | NVMe   | 1800    | PCIE | 2.5  |
-    | Samsung  | MZWLJ1T9HBJR-0007C   | SSD      | NVMe   | 1920    | PCIE | 2.5  |
-    | Samsung  | MZQL21T9HCJR-00B7C   | SSD      | NVMe   | 1920    | PCIE | 2.5  |
-    | Samsung  | MZ7LH480HAHQ-00005   | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Samsung  | MZ7L3480HCHQ-00B7C   | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Samsung  | MZWLJ7T6HALA-0007C   | SSD      | NVMe   | 6400    | PCIE | 2.5  |
-    | Samsung  | MZNLH480HBLR-00005   | SSD      | SATA   | 480     | SATA | 0.2  |
-    | Samsung  | MZWLR3T8HBLS-0007C   | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | Samsung  | MZQL27T6HBLA-00B7C   | SSD      | NVMe   | 7680    | PCIE | 2.5  |
-    | Samsung  | MZ7LM480HMHQ         | SSD      | SATA   | 480     | SATA | 2.5  |
-    | Samsung  | MZWLL1T6HAJQ         | SSD      | NVMe   | 1600    | PCIE | 2.5  |
-    | Seagate  | ST4000NM0035         | HDD      | SATA   | 4000    | SATA | 3.5  |
-    | Seagate  | ST4000NM000A         | HDD      | SATA   | 4000    | SATA | 3.5  |
-    | Seagate  | ST4000NM0035         |    -      | SATA   | 4000    | SATA | 3.5  |
-    | Seagate  | ST4000NM000A         |    -      | SATA   | 4000    | SATA | 3.5  |
-    | Seagate  | ST12000NM0008        | HDD      | SATA   | 12000   | SATA | 3.5  |
-    | Seagate  | ST12000NM0007        | HDD      | ES     | 12000   | SATA | 3.5  |
-    | Seagate  | ST12000NM0008        |     -     | SATA   | 12000   | SATA | 3.5  |
-    | Seagate  | ST12000NM001G-2MV103 |   -       | SATA   | 12000   | SATA | 3.5  |
-    | Seagate  | ST8000NC0002         | HDD      | SATA   | 8000    | SATA | 3.5  |
-    | Seagate  | ST600MM0208          | HDD      | SAS    | 600     | SAS  | 2.5  |
-    | Seagate  | ST1200MM0129         |    -      | SAS    | 1200    | SAS  | 2.5  |
-    | Seagate  | ST1200MM0009         |    -      | SAS    | 1200    | SAS  | 2.5  |
-    | Seagate  | ST600MM0009          |     -     | SAS    | 600     | SAS  | 2.5  |
-    | Seagate  | ST8000NM000A         |     -     | SATA   | 8000    | SATA | 3.5  |
-    | Seagate  | ST8000NM0055         |     -     | SATA   | 8000    | SATA | 3.5  |
-    | Seagate  | ST1800MM0129         |     -     | SAS    | 1800    | SAS  | 2.5  |
-    | Seagate  | ST16000NM001G        |     -     | SATA   | 16000   | SATA | 3.5  |
-    | Seagate  | ST4000NM000B         |     -     | SATA   | 4000    | SATA | 3.5  |
-    | Seagate  | ST20000NM007D-3DJ103 |    -      | SATA   | 20000   | SATA | 3.5  |
-    | Seagate  | ST8000NC0002         |     -     | SATA   | 8000    | SATA | 3.5  |
-    | Seagate  | 2TW103               |     -     | SATA   | 16000   | SATA | 3.5  |
-    | Seagate  | ST300MM0048          |    -      | SAS    | 300     | SAS  | 2.5  |
-    | Seagate  | ST4000NC001          |     -     | SATA   | 4000    | SATA | 3.5  |
-    | Seagate  | ST12000NM0007        |   -       | SATA   | 12000   | SATA | 3.5  |
-    | SSSTC    | 3K07840010           | SSD      | SATA   | 480     | SATA | 0.2  |
-    | SSSTC    | TXPU3T8TOP1500       | SSD      | NVMe   | 3840    | PCIE | 2.5  |
-    | TOSHIBA  | MG07ACA12TE          | HDD      | SATA   | 12000   | SATA | 3.5  |
-    | TOSHIBA  | MG05ACA800E          | HDD      | SATA   | 8000    | SATA | 3.5  |
-    | Toshiba  | MG07ACA12TE          |    -      | SATA   | 12000   | SATA | 3.5  |
-    | Toshiba  | AL15SEB120N          |      -    | SAS    | 1200    | SAS  | 2.5  |
-    | Toshiba  | AL15SEB18EQ          |     -     | SAS    | 1800    | SAS  | 2.5  |
-    | Toshiba  | MG08ACA16TE          |     -     | SATA   | 16000   | SATA | 3.5  |
-    | WDC      | HUS726040ALA610      | HDD      | ES     | 4000    | SATA | 3.5  |
-    | WDC      | WD4002FYYZ           | HDD      | ES     | 4000    | SATA | 3.5  |
-    | WDC      | HUS726T4TALA6L4      | HDD      | SATA   | 4000    | SATA | 3.5  |
-    | WDC      | HUS726T4TALA6L4      |     -     | SATA   | 4000    | SATA | 3.5  |
-    | WDC      | HUH721212ALE600      | HDD      | SATA   | 12000   | SATA | 3.5  |
-    | WDC      | HUH721212ALE600      |     -     | SATA   | 12000   | SATA | 3.5  |
-    | WDC      | HUC101860CSS200      | HDD      | SAS    | 600     | SAS  | 2.5  |
-    | WDC      | HUS728T8TALE6L4      |      -    | SATA   | 8000    | SATA | 3.5  |
-    | WDC      | WUH721816ALE6L4      |     -     | SATA   | 16000   | SATA | 3.5  |
-    | WDC      | WUH722020ALE604      |     -     | SATA   | 20000   | SATA | 3.5  |
-    | WDC      | HUS728T8TALE600      |     -     | SATA   | 8000    | SATA | 3.5  |
-    | WDC      | HUC101830CSS200      |    -      | SAS    | 300     | SAS  | 2.5  |
-    | WDC      | HUS726040ALA610      |     -     | SATA   | 4000    | SATA | 3.5  |
-    | WDC      | WD4002FYYZ           |   -       | SATA   | 4000    | SATA | 3.5  |
-    | WDC      | WD4000F9YZ           |   -       | SATA   | 4000    | SATA | 3.5  |
-    | YMTC     | SE005-960GB-H        | SSD      | SATA   | 960     | SATA | 2.5  |
-    | YMTC     | SE005-480GB-H        | SSD      | SATA   | 480     | SATA | 2.5  |
-    | 宏杉 | MS2500A+ | -    | -    | -    |      |      |
-    | 大普 | J5100    | SSD  | NVMe | 7680 | PCIE | 2.5  |
-    | 大普 | J5300    | SSD  | NVMe | 6400 | PCIE | 2.5  |
+    | 厂商     | 厂商 PN              | 介质     | 协议   | 容量/Gb        | 接口 | 尺寸 |
+    | :------- | :------------------- | :------- | :----- | :------------- | :--- | :--- |
+    | 英韧     | Dongting-N1          | SSD      | NVMe   | 1920/3840/7680 | PCIE | 2.5  |
+    | 忆联     | UH811a               | SSD      | NVMe   | 1920/3840/7680 | PCIE | 2.5  |
+    | 忆联     | TP6520               | SSD      | NVMe   | 3840/7680      | PCIE | 2.5  |
+    | Dera     | P34UTR-04T0U-ST      | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Dera     | P34UTM-06T4U-SL      | SSD      | NVMe   | 6400           | PCIE | 2.5  |
+    | Dera     | P34UTM-03T2U-ST      | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | 华为     | HWE52P434T0L005N     | SSD      | NVME   | 3840           | PCIE | 2.5  |
+    | 华为     | HWE52P434T0L005N     | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | 华为     | HWE52P433T2M002N     | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | 华为     | HWE52P433T2M005N     | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | 华为     | HWE52P433T2M002N     | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | 华为     | HWE52P433T2M005N     | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | 华为     | HWE32P43020L000N     | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | 华为     | HWE32P43040L0000N    | SSD      | NVMe   | 3600           | PCIE | 2.5  |
+    | 华为     | -                    | SSD      | 企业级 | 3200           | PCIE | 2.5  |
+    | 华为     | HWE52P432T0L002N     | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | 华为     | HWE52P432T0L005N     | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | 华为     | HWE32P43040L0000N    | SSD      | NVMe   | 4000           | PCIE | 2.5  |
+    | 华为     | HWE52P436T4M005N     | SSD      | NVMe   | 6400           | PCIE | 2.5  |
+    | 华为     | HWE52P434T0L005N     | SSD      | NVMe   | 4000           | PCIE | 2.5  |
+    | Hynix    | HFS480G32FEH-7410A   | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Hynix    | HFS960G32FEH-7A10A   | SSD      | SATA   | 960            | SATA | 2.5  |
+    | Hynix    | HFS960G3H2X069N      | SSD      | SATA   | 960            | SATA | 2.5  |
+    | Hynix    | HFS480G32FEH-7410A   | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Hynix    | HFS480G3H2X069N      | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Hynix    | HFS3T8GETFEI-D430A   | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Intel    | SSDSC2KB480G8        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Intel    | SSDPF2KX038TZ        | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Intel    | SSDSC2BB480G7        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDPE2KE032T8        | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | Intel    | SSDPE2KE032T8        | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | Intel    | SSDPF2KX038TZ        | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | Intel    | SSDSC2KB480G7        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDSC2KB960G8        | SSD      | SATA   | 960            | SATA | 2.5  |
+    | Intel    | SSDPE2KX020T7        | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | Intel    | SSDPE2KX020T8        | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | Intel    | SSDPE2KX040T7        | SSD      | NVMe   | 3600           | PCIE | 2.5  |
+    | Intel    | SSDPE2KE032T7        | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | Intel    | SSDSC2KB019T8        | SSD      | SATA   | 1920           | SATA | 2.5  |
+    | Intel    | SSDSC2KB240G8        | SSD      | SATA   | 240            | SATA | 2.5  |
+    | Intel    | SSDSC2KB038T8        | SSD      | SATA   | 3840           | SATA | 2.5  |
+    | Intel    | SSDPE2KX020T8        | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | Intel    | SSDPF2KX076TZ        | SSD      | NVMe   | 6400           | PCIE | 2.5  |
+    | Intel    | SSDPE2KX020T8        | SSD      | NVMe   | 1920           | PCIE | 2.5  |
+    | Intel    | SSDPE2KX040T7        | SSD      | NVMe   | 4000           | PCIE | 2.5  |
+    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 4000           | PCIE | 2.5  |
+    | Intel    | SSDSC2KB480G8        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDSC2KB480GZ        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDSCKKB480G8        | SSD      | SATA   | 480            | SATA | 0.2  |
+    | Intel    | SSDSCKKB480GZ        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDPE2KE064T8        | SSD      | NVMe   | 6400           | PCIE | 2.5  |
+    | Intel    | SSDSC2KB960G7        | SSD      | SATA   | 960            | SATA | 2.5  |
+    | Intel    | SSDPF2KX076TZ        | SSD      | NVMe   | 7680           | PCIE | 2.5  |
+    | Intel    | SSDPF21Q800GB        | 3DXPoint | NVMe   | 800            | PCIE | 2.5  |
+    | Intel    | SSDSC2BB480G7        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDSC2KB480G7        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDSC2BB480G6        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDSC2BB480G4        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Intel    | SSDPE2KX040T8        | SSD      | NVMe   | 4000           | PCIE | 2.5  |
+    | Intel    | SSDPE2KE016T8        | SSD      | NVMe   | 1600           | PCIE | 2.5  |
+    | Intel    | SSDSC2BB300G4        | SSD      | SATA   | 300            | SATA | 2.5  |
+    | Intel    | SSDPE2KX080T8        | SSD      | NVMe   | 7680           | PCIE | 2.5  |
+    | Kioxia   | KCM61RUL3T84         | SSD      | NVMe   | 3800           | PCIE | 2.5  |
+    | Memblaze | P5910DT0384M00       | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Memblaze | P5920DT0384M00       | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Memblaze | P5916DT0320M00       | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | Memblaze | P5916DT0640M00       | SSD      | NVMe   | 6400           | PCIE | 2.5  |
+    | Memblaze | P5920DT0768M00       | SSD      | NVMe   | 6400           | PCIE | 2.5  |
+    | Micron   | MTFDDAK480TBY        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Micron   | MTFDDAK960TBY        | SSD      | SATA   | 960            | SATA | 2.5  |
+    | Micron   | MTFDDAK480TBY        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Micron   | MTFDDAK480TDC        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Samsung  | MZ7LH480HAHQ-00005   | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Samsung  | MZWLJ3T8HBLS-0007C   | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Samsung  | MZ7LM480HMHQ         | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Samsung  | MZWLJ3T8HBLS-0007C   | SSD      | NVMe   | 3200           | PCIE | 2.5  |
+    | Samsung  | MZ7LH960HAJR-00005   | SSD      | SATA   | 960            | SATA | 2.5  |
+    | Samsung  | MZ7L3960HCJR-00B7C   | SSD      | SATA   | 960            | SATA | 2.5  |
+    | Samsung  | MZQL23T8HCLS-00B7C   | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Samsung  | MZ7LH240HAHQ-00005   | SSD      | SATA   | 240            | SATA | 2.5  |
+    | Samsung  | MZ7LH3T8HMLT-00005   | SSD      | SATA   | 3840           | SATA | 2.5  |
+    | Samsung  | MZQLB1T9HAJR-000TC   | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | Samsung  | MZQL23T8HCLS-00B7C   | SSD      | NVMe   | 1800           | PCIE | 2.5  |
+    | Samsung  | MZWLJ1T9HBJR-0007C   | SSD      | NVMe   | 1920           | PCIE | 2.5  |
+    | Samsung  | MZQL21T9HCJR-00B7C   | SSD      | NVMe   | 1920           | PCIE | 2.5  |
+    | Samsung  | MZ7LH480HAHQ-00005   | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Samsung  | MZ7L3480HCHQ-00B7C   | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Samsung  | MZWLJ7T6HALA-0007C   | SSD      | NVMe   | 6400           | PCIE | 2.5  |
+    | Samsung  | MZNLH480HBLR-00005   | SSD      | SATA   | 480            | SATA | 0.2  |
+    | Samsung  | MZWLR3T8HBLS-0007C   | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | Samsung  | MZQL27T6HBLA-00B7C   | SSD      | NVMe   | 7680           | PCIE | 2.5  |
+    | Samsung  | MZ7LM480HMHQ         | SSD      | SATA   | 480            | SATA | 2.5  |
+    | Samsung  | MZWLL1T6HAJQ         | SSD      | NVMe   | 1600           | PCIE | 2.5  |
+    | Seagate  | ST4000NM0035         | HDD      | SATA   | 4000           | SATA | 3.5  |
+    | Seagate  | ST4000NM000A         | HDD      | SATA   | 4000           | SATA | 3.5  |
+    | Seagate  | ST4000NM0035         | -        | SATA   | 4000           | SATA | 3.5  |
+    | Seagate  | ST4000NM000A         | -        | SATA   | 4000           | SATA | 3.5  |
+    | Seagate  | ST12000NM0008        | HDD      | SATA   | 12000          | SATA | 3.5  |
+    | Seagate  | ST12000NM0007        | HDD      | ES     | 12000          | SATA | 3.5  |
+    | Seagate  | ST12000NM0008        | -        | SATA   | 12000          | SATA | 3.5  |
+    | Seagate  | ST12000NM001G-2MV103 | -        | SATA   | 12000          | SATA | 3.5  |
+    | Seagate  | ST8000NC0002         | HDD      | SATA   | 8000           | SATA | 3.5  |
+    | Seagate  | ST600MM0208          | HDD      | SAS    | 600            | SAS  | 2.5  |
+    | Seagate  | ST1200MM0129         | -        | SAS    | 1200           | SAS  | 2.5  |
+    | Seagate  | ST1200MM0009         | -        | SAS    | 1200           | SAS  | 2.5  |
+    | Seagate  | ST600MM0009          | -        | SAS    | 600            | SAS  | 2.5  |
+    | Seagate  | ST8000NM000A         | -        | SATA   | 8000           | SATA | 3.5  |
+    | Seagate  | ST8000NM0055         | -        | SATA   | 8000           | SATA | 3.5  |
+    | Seagate  | ST1800MM0129         | -        | SAS    | 1800           | SAS  | 2.5  |
+    | Seagate  | ST16000NM001G        | -        | SATA   | 16000          | SATA | 3.5  |
+    | Seagate  | ST4000NM000B         | -        | SATA   | 4000           | SATA | 3.5  |
+    | Seagate  | ST20000NM007D-3DJ103 | -        | SATA   | 20000          | SATA | 3.5  |
+    | Seagate  | ST8000NC0002         | -        | SATA   | 8000           | SATA | 3.5  |
+    | Seagate  | 2TW103               | -        | SATA   | 16000          | SATA | 3.5  |
+    | Seagate  | ST300MM0048          | -        | SAS    | 300            | SAS  | 2.5  |
+    | Seagate  | ST4000NC001          | -        | SATA   | 4000           | SATA | 3.5  |
+    | Seagate  | ST12000NM0007        | -        | SATA   | 12000          | SATA | 3.5  |
+    | SSSTC    | 3K07840010           | SSD      | SATA   | 480            | SATA | 0.2  |
+    | SSSTC    | TXPU3T8TOP1500       | SSD      | NVMe   | 3840           | PCIE | 2.5  |
+    | TOSHIBA  | MG07ACA12TE          | HDD      | SATA   | 12000          | SATA | 3.5  |
+    | TOSHIBA  | MG05ACA800E          | HDD      | SATA   | 8000           | SATA | 3.5  |
+    | Toshiba  | MG07ACA12TE          | -        | SATA   | 12000          | SATA | 3.5  |
+    | Toshiba  | AL15SEB120N          | -        | SAS    | 1200           | SAS  | 2.5  |
+    | Toshiba  | AL15SEB18EQ          | -        | SAS    | 1800           | SAS  | 2.5  |
+    | Toshiba  | MG08ACA16TE          | -        | SATA   | 16000          | SATA | 3.5  |
+    | WDC      | HUS726040ALA610      | HDD      | ES     | 4000           | SATA | 3.5  |
+    | WDC      | WD4002FYYZ           | HDD      | ES     | 4000           | SATA | 3.5  |
+    | WDC      | HUS726T4TALA6L4      | HDD      | SATA   | 4000           | SATA | 3.5  |
+    | WDC      | HUS726T4TALA6L4      | -        | SATA   | 4000           | SATA | 3.5  |
+    | WDC      | HUH721212ALE600      | HDD      | SATA   | 12000          | SATA | 3.5  |
+    | WDC      | HUH721212ALE600      | -        | SATA   | 12000          | SATA | 3.5  |
+    | WDC      | HUC101860CSS200      | HDD      | SAS    | 600            | SAS  | 2.5  |
+    | WDC      | HUS728T8TALE6L4      | -        | SATA   | 8000           | SATA | 3.5  |
+    | WDC      | WUH721816ALE6L4      | -        | SATA   | 16000          | SATA | 3.5  |
+    | WDC      | WUH722020ALE604      | -        | SATA   | 20000          | SATA | 3.5  |
+    | WDC      | HUS728T8TALE600      | -        | SATA   | 8000           | SATA | 3.5  |
+    | WDC      | HUC101830CSS200      | -        | SAS    | 300            | SAS  | 2.5  |
+    | WDC      | HUS726040ALA610      | -        | SATA   | 4000           | SATA | 3.5  |
+    | WDC      | WD4002FYYZ           | -        | SATA   | 4000           | SATA | 3.5  |
+    | WDC      | WD4000F9YZ           | -        | SATA   | 4000           | SATA | 3.5  |
+    | YMTC     | SE005-960GB-H        | SSD      | SATA   | 960            | SATA | 2.5  |
+    | YMTC     | SE005-480GB-H        | SSD      | SATA   | 480            | SATA | 2.5  |
+    | 宏杉     | MS2500A+             | -        | -      | -              |      |      |
+    | 大普     | J5100                | SSD      | NVMe   | 1920/3840/7680 | PCIE | 2.5  |
+    | 大普     | J5300                | SSD      | NVMe   | 1600/3200/6400 | PCIE | 2.5  |
 
 
 === "内存"
 
-    | 厂商    | 厂商 PN                | 类型 | 容量/Gb | 规格  | 频率/MHz |
-    | ------- | --------------------- | ---- | ------- | ----- | -------- |
+    | 厂商    | 厂商 PN               | 类型 | 容量/Gb | 规格  | 频率/MHz |
+    | :------ | :-------------------- | :--- | :------ | :---- | :------- |
     | Hynix   | HMA82GR7AFR8N-VK      | DDR4 | 16      | RDIMM | 2666     |
     | Hynix   | HMA82GR7CJR8N-VK      | DDR4 | 16      | RDIMM | 2666     |
     | Hynix   | HMA84GR7CJR4N-WM      | DDR4 | 32      | RDIMM | 2933     |
@@ -734,7 +745,14 @@ OpenCloudOS 兼容硬件列表如下：
 === "GPU"
 
     | 厂商     | 型号                           |
-    | -------- | ------------------------------ |
+    | :------- | :----------------------------- |
+    | NVIDIA   | A10                            |
+    | NVIDIA   | A100 NVLink 40G                |
+    | NVIDIA   | vGPU - NVIDIA Tesla T4         |
+    | NVIDIA   | Tesla V100 NVLink 32G          |
+    | NVIDIA   | Tesla P40                      |
+    | NVIDIA   | Tesla P4                       |
+    | Intel    | Intel SG1                      |
     | AMD      | Ellesmere [Radeon Pro WX 5100] |
     | ASUS     | GeForce RTX 2080 Ti            |
     | BC Tech  | GeForce RTX 3080 Ti            |
@@ -750,7 +768,6 @@ OpenCloudOS 兼容硬件列表如下：
     | NVIDIA   | Tesla V100-SXM2-32GB           |
     | NVIDIA   | A100-SXM4-80GB                 |
     | NVIDIA   | 900-2G133-0020-000             |
-    | NVIDIA   | Tesla V100-SXM2-32GB           |
     | NVIDIA   | 900-2G133-0020-100             |
     | NVIDIA   | Quadro RTX 6000                |
     | NVIDIA   | Tesla T10                      |
@@ -758,14 +775,14 @@ OpenCloudOS 兼容硬件列表如下：
     | SiNEAD   | NVIDIA Quadro RTX 6000         |
     | SiNEAD   | GeForce RTX 2080 Ti            |
     | Tencent  | ZiXiaoC100                     |
-    | 西安芯瞳  | GenBu01                        |
+    | 西安芯瞳 | GenBu01                        |
 
 
 === "DPU"
 
-    | 厂商     | 型号                           |
-    | -------- | ------------------------------ |
-    | 大禹智芯    |  DPU Paratus  |
+    | 标准型号      | 供应商   |
+    | :------------ | :------- |
+    | DPU Paratus   | 大禹智芯 |
     | 思威系列DPU卡 | 中科驭数 |
 
 
