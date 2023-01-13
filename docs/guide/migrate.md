@@ -70,7 +70,7 @@ EOF
 CentOS 8迁移至 OpenCloudOS 8 的步骤如下：
 
 1. 登录目标主机，腾讯云服务器用户详情请参见 [使用标准登录方式登录 Linux 实例](https://cloud.tencent.com/document/product/213/5436)。
-2. 执行以下命令，安装 Python 3。若 yum 源不可用，则使用上述 [centos-vault 源安装 Python 3](#_6)。
+2. 执行以下命令，安装 Python 3。若 yum 源不可用，则使用上述**迁移准备**中第3点 [centos-vault 源安装 Python 3](#_6)。
 
     ```shell
     yum install -y python3
