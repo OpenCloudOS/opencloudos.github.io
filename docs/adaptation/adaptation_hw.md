@@ -5,7 +5,7 @@ OpenCloudOS 兼容硬件列表如下：
     | 标准型号                    | 供应商        | 设备描述                                                     | 处理器型号                                    |
     | :-------------------------- | :------------ | :----------------------------------------------------------- | :-------------------------------------------- |
     | 超强K640系列  | 同方股份 | K640(kunpeng-920/384G/SSD-300G)                | kunpeng-920 |
-    | 恒山TS02F-F30 | 山西百信 | TS02F-F30(kunpeng-920*2/32G*4/SSD-480G*2/4*GE) | kunpeng-920 |
+    | 恒山TS02F-F30 | 百信信息 | TS02F-F30(kunpeng-920*2/32G*4/SSD-480G*2/4*GE) | kunpeng-920 |
     | RH2280-I32                  | 融科联创      | RH2280-I32(INTEL Xeon 6330/8*8G/5*HUS728T8TAL5204)           | INTEL Xeon 6330                               |
     | DELL C6420                  | DELL          | C6420(5120*2/32G*12/SSD-1.92T*6 RAID/25GE*2)*4               | Intel 5120                                    |
     | DELL DCS2210                | DELL          | DCS2210(E5-2609*1/8G*4/300G*12)                              | Intel E5-2609                                 |
@@ -295,7 +295,7 @@ OpenCloudOS 兼容硬件列表如下：
     | 宝德 PR3015S                | 宝德          | PR3015S(/4G*4/146G*2)                                        | -                                             |
     | 宝德 PT2300                 | 宝德          | PT2300(/2G/250G*1)                                           | -                                             |
     | 宝德 PT2300GII              | 宝德          | PT2300GII(/2G/250G*1)                                        | -                                             |
-    | 太行220                     | 山西百信      | 太行220                                                      | HUAWEI Kunpeng 920                            |
+    | 太行220                     | 百信信息      | 太行220(kunpeng-920/8G*2/SSD-256G+HDD-1TB/2*GE)              | HUAWEI Kunpeng 920                            |
     | 天玥 SR123212               | 航天二院706所 | SR123212(Phytium FT1500A*1/16G*4/1T*8 Raid/2*10G NIC)        | Phytium FT1500A                               |
     | TG125 B1                    | 华鲲振宇      | TG125 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*12/10GE*2)         | kunpeng-920                                   |
     | TG215 B1                    | 华鲲振宇      | TG215 B1(kunpeng-920*2/32G*8/NVMeSSD-480G*6/5GE)             | kunpeng-920                                   |
