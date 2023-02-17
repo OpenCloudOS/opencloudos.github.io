@@ -87,6 +87,8 @@ make occonfig kvmconfig bzImage -s -j 32 && qemu -kernel arch/x86/boot/bzImage -
     b. stress-ng 测试–如果可以覆盖到。        
 5. 执行测试时的gcov or kcov 代码覆盖率 > 90%。        
 （gcov的数据收集方法 [在Linux内核里使用gcov做代码覆盖率检查](https://www.kernel.org/doc/html/latest/translations/zh_CN/dev-tools/gcov.html) ）
+       
+撰写人：alexsshi 2023-02-17        
 
 参考：
 
