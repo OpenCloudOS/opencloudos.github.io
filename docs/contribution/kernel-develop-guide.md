@@ -68,7 +68,7 @@ Upstream commit 8ebcc62c738f68688ee7c6fec2efe5bc6d3d7e60
 
 每个新的内核特性合入时要求通过以下测试, 并提供测试报告：    
 1. 每个commit的 checkpatch.pl检查和各config 编译：   
- 
+
 - 新加入的内核config, 要在 kernel/configs/nooc.config  文件中关闭并编译通过；
 - OC Kernel 作为上游内核代码，下游用户会有不同的，任意的config使用要求，在ARM 和X86中，除了默认的`default`, `noocconfig`, `occonfig` 必须build通过外， 还必须编译通过代码树中默认的 `defconfig`, `allyesconfig`, `i386config`, `allmodconfig`。
 - **最小要求是不能增加build error/warning.**  一个自测方法如下：
@@ -86,7 +86,9 @@ make occonfig kvmconfig bzImage -s -j 32 && qemu -kernel arch/x86/boot/bzImage -
     a. ltp 相关部分测试不增加failure。        
     b. stress-ng 测试–如果可以覆盖到。        
 5. 执行测试时的gcov or kcov 代码覆盖率 > 90%。        
-（gcov的数据收集方法 在Linux内核里使用gcov做代码覆盖率检查 ）
+（gcov的数据收集方法 [在Linux内核里使用gcov做代码覆盖率检查](https://www.kernel.org/doc/html/latest/translations/zh_CN/dev-tools/gcov.html) ）
+       
+撰写人：alexsshi 2023-02-17        
 
 参考：
 
