@@ -9,7 +9,7 @@ OpenCloudOS 商业软件兼容列表如下：
 | OceanBase                           | V4     | 数据库管理系统 | 北京奥星贝斯科技有限公司       | OpenCloudOS |
 | 旅客全流程服务系统(OneID)           | v3.1.4 | 行业应用 | 东华软件股份公司               | OpenCloudOS |
 | 旅客全流程服务系统(OneID)           | v3.1.4 | 行业应用 | 路辂网络科技(北京)有限公司     | OpenCloudOS |
-| 乾坤大数据操作系统                  | v3.2   | 大数据 | 厦门市美亚柏科信息股份有限公司 | OpenCloudOS |
+| 乾坤大数据操作系统                  | v3.2   | 大数据平台 | 厦门市美亚柏科信息股份有限公司 | OpenCloudOS |
 | 秒云日志分析系统                              | V20.06.1 | 运维平台 | 成都元来云志科技有限公司     | OpenCloudOS |
 | 秒云容器云平台                                | V19.07.3 | 容器云 | 成都元来云志科技有限公司     | OpenCloudOS |
 | Galaxybase                                    | v3       | 数据库管理系统 | 浙江创邻科技有限公司         | OpenCloudOS |
@@ -25,7 +25,7 @@ OpenCloudOS 商业软件兼容列表如下：
 | Gbase 8a MPP Cluster        | V9     | 集群软件 | 天津南大通用数据技术股份有限公司   | OpenCloudOS |
 | 医真云                      | -      | 行业应用   | 西安盈谷网络科技有限公司           | OpenCloudOS |
 | 应用服务器软件              | V10    | 中间件   | 山东中创软件商用中间件股份有限公司 | OpenCloudOS |
-| 电子云大数据平台            | V 3.0  | 大数据   | 中国电子系统技术有限公司           | OpenCloudOS |
+| 电子云大数据平台            | V 3.0  | 大数据平台   | 中国电子系统技术有限公司           | OpenCloudOS |
 | KingbaseES                  | V7     | 数据库管理系统 | 北京人大金仓信息技术股份有限公司   | OpenCloudOS |
 | KingbaseES                  | V8     | 数据库管理系统 | 北京人大金仓信息技术股份有限公司   | OpenCloudOS |
 | 服务器密码机                | -      | 身份鉴别 | 渔翁信息技术股份有限公司           | OpenCloudOS |
@@ -50,7 +50,7 @@ OpenCloudOS 商业软件兼容列表如下：
 | 应用开发平台软件            | V8     | 中间件   | 普元信息技术股份有限公司           | OpenCloudOS |
 | 云操作系统软件              | V1.5   | 虚拟化云平台 | 安超云软件有限公司                 | OpenCloudOS |
 | 桌面云软件                  | V1.5   | 虚拟化云平台 | 安超云软件有限公司                 | OpenCloudOS |
-| HarryData大数据一体化平台   | -      | 大数据 | 广东东华发思特软件有限公司         | OpenCloudOS |
+| HarryData大数据一体化平台   | -      | 大数据平台 | 广东东华发思特软件有限公司         | OpenCloudOS |
 | 安侦运维智能分析管理平台    | -      | 运维平台 | 武汉安侦科技有限公司               | OpenCloudOS |
 | I2coopy                     | V7.1   | 中间件   | 上海英方软件股份有限公司           | OpenCloudOS |
 | I2cdp                       | V7.1   | 中间件   | 上海英方软件股份有限公司           | OpenCloudOS |
