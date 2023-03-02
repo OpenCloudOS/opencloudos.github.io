@@ -801,6 +801,37 @@ OpenCloudOS 兼容硬件列表如下：
     | 思威系列DPU卡 | 中科驭数 |
 
 
+=== "AI服务器"
 
+    | 标准型号                    | 供应商        | 设备描述                                                     | 处理器型号                                    |
+    | :-------------------------- | :------------ | :----------------------------------------------------------- | :-------------------------------------------- |
+    | Greatwall EF723       | Greatwall | T3-SW12F-10G_6.1.0_Greatwall EF723_Phytium FT-2000+*1/32G*8/HDD-12T*10/SSD-480G*1/NVMeSSD-6.4T*2/10GE*2(Greatwall) | FT-2000+                                      |
+    | H3C R5500G5           | H3C       | T0-GT11A-50G_7.0.1.11_H3C R5500G5_7K62*2 / 2933-32G*32 / SSD-480G*1 / 50G NIC(双口)*1 / SXM4 A100*8(H3C) | AMD EPYC 7K62    48-Core Processor               |
+    | H3C R5300G3           | H3C       | 6233*2/32G*12/SSD 480G*1/NVMeSSD-3.84T*2/Suiyuan-GPU-T10*8/100GE*2 | Intel 6233                                    |
+    | H3C R5300G5           | H3C       | X0-GI62X-25G_N7.1.0_H3C R5300G5_8374B*2/32G*16/SSD-480G*2 Raid1/NVMeSSD-3.84T*2/3080Ti*8/Smart-25GE*1(2P)（含HDMI欺骗器）(  H3C) | Intel(R) Xeon(R) Platinum 8374B CPU @ 2.70GHz |
+    | Huawei Atlas 800 3000 | 华为      | X0-GR13W-10G_6.1.0_Huawei Atlas 800 3000_Kunpeng 920 7260*2/32G*4/SSD-240G*1/SSD-960G*1/10GE*2/Atlas 300C*2(Huawei) |   Kunpeng 920-6426                              |
+    | Huawei Atlas 800 3010 | 华为      | X0-GR13X-25G_N6.1.0_Huawei Atlas 800 3010_4214*2/32G*12/SSD_480G*1/NVMeSSD-2T*2/25G*2/10GE*2/Atlas 300I*4(Huawei) | Intel(R)    Xeon(R) Silver 4214 CPU @ 2.20GHz    |
+    | Huawei Atlas 800 9010 | 华为      | X0-GR15X-25G_N6.1.0_Huawei Atlas 800 9010_8260*2/32G*16/SSD-960G*2/NVMeSSD-1.92T*8/Ascend 910*8/25GE*2(Huawei) | Intel Xeon     Platinum 8260 CPU @ 2.40GHz        |
+    | Inspur NF2180M3       | 浪潮      | NF2180M3(Phytium FT-2000+*1/32G*8/2T*8/SSD-480G*2 RAID/1GE*2+10GE*4-MMF) | Phytium FT-2000+                              |
+    | Inspur NF5180M4       | 浪潮      | NF5180M4(E5-2680v4*2/32G*16/1.8T*4/NVMe SSD 1.8T*4/10GE*2)   | Intel E5-2680 v4                              |
+    | Inspur NF5280M4       | 浪潮      | NF5280M4(E5-2680v4*2/16G*16/SSD-480G*1/10GE*2/FPGA-KU115*2)  | Intel E5-2680 v4                              |
+    | Inspur NF5568M4       | 浪潮      | NF5568M4(E5-2680v4*2/16G*16/300G*2/SSD-800G*6/M40-24G*4/RoCE 40G*2) | Intel E5-2680 v4                              |
+    | Inspur NF5568M5       | 浪潮      | NF5568M5(8255C*2/32G*8/SSD-480G*2 RAID/25GE*2/RTX-2080TI*8)  | Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz |
+    | Inspur NF5588M4       | 浪潮      | NF5588M4(E5-2680v4*2/16G*16/300G*2/SSD-800G*6/M40-24G*8/RoCE 40G*2) | Intel E5-2680 v4                              |
+    | Inspur NF5588M4S      | 浪潮      | NF5588M4S(E5-2680v4*2/32G*8/SSD-240G*1/NVMeSSD-2T*2/P40-24G*8/RoCE 40G*4) | Intel E5-2680 v4                              |
+    | Inspur NF5888M5       | 浪潮      | NF5888M5(8168*2/64G*12/SSD-480G*1/NVMeSSD-3.2T*4/V100*16/100GE*2) | Intel(R) Xeon(R) Platinum 8168 CPU @ 2.10GHz  |
+    | Inspur NF8260M5       | 浪潮      | NF8260M5(6132*4/32G*4/SAS HDD 1.2T*2 /SAS HDD 2T*20 RAID/1GE*2/10GE*2) | Intel(R) Xeon(R) Gold 6132 CPU @ 2.60GHz      |
+    | Inspur NF8480M5       | 浪潮      | NF8480M5(5120*4/16G*40/300G*4/FC-HBA*2/1G*2/10G*4)           | 5120                                          |
+    | Nettrix X620-G40      | Nettrix   | X0-GI11X-10G_7.0.0_Nettrix X620-G40_8360Y*2/32G*8/SSD-480G*1/NVMe SSD 3.84T*1/A10*1/RJ45-10GE*2(Nettrix) | Intel(R) Xeon(R)   Platinum 8360Y CPU @ 2.40GHz |
+    | Nettrix X640-G30      | Nettrix   | T3-GT19X-25G_6.1.0_Nettrix X640-G30_8260*2/32G*16/SSD-480G*1/A100-SXM4-80GB*8/25GE*2(Nettrix) | Intel Xeon Platinum 8260 CPU  @ 2.40GHz        |
+    | Nettrix X640-G35      | Nettrix   | Y0-GT56-25G_6.1.0_Nettrix X640-G35_8255C*2/32G 2933*12/480GSATA *1/25GE双口*1/V100-SXM2-32GB *8(Nettrix) | Intel(R) Xeon(R)     Platinum 8255C CPU @ 2.50GHz |
+    | Nettrix X640-G40      | Nettrix   | X0-GI61X-25G_N7.1.0_Nettrix X640-G40_8374B*2/32G*16/SSD-480G*2/A30*8/25GE*2(Nettrix) | Intel(R) Xeon(R) Platinum 8374B CPU @  2.70GHz |
+    | R620 G40              | 宁畅      | R620 (5318Y*2/64G*8/16T)                                     | 5318Y                                         |
+    | PowerLeader PR210K    | 宝德      | C-SC1R-25G_6.1.3_PowerLeader PR210K_Kunpeng 920 5220*2/32G*8/12T*12/No HBA/SSD-480G*1/TM280-25GE*1(2P)(PowerLeader) | HUAWEI    Kunpeng 920 5220                       |
+    | PowerLeader PR210K32  | 宝德      | T3-CI13WK-10G_6.1.0_PowerLeader PR210K32_Kunpeng 920 5221K*2/32G*8/NVMeSSD-3.84T*4/SSD-480G*1/TM280-10GE*1(2P,  带10G多模光模块）(PowerLeader) | HUAWEI Kunpeng 920 5221K                      |
+    | Sugon X730-G30        | 曙光      | X730-G30(6133*2/32G*12/SSD-480G*2/25GE*2/V100-SXM2-16G*8)    | Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz      |
+    | Sugon X780-G30        | 曙光      | X780-G30(6133*2/32G*8/SSD-480G*6/10GE*2/RTX2080TI*8)         | 6133                                          |
+    | Sugon X785-G30        | 曙光      | X0-GR61X-40G_N6.1.0_Sugon X785-G30_6231C*2/32G*12/SSD-480G*2/RTX6000*8/40GE*2(Sugon) | Intel(R) Xeon(R) Gold 6231C CPU @    3.20GHz     |
+    | Sugon X795-G30        | 曙光      | X795-G30(8255C*2/32G*12/SSD-480G*1/25GE*2/Tesla V100 SXM2-32G*8) | Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz |
 
 
