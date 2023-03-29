@@ -67,7 +67,8 @@ markdown_extensions:
 nav:
   - 首页: index.md
   - 快速入门:
-    - 下载及安装: quickstart/install.md
+    - OC V9 下载及安装: quickstart/V9_install.md
+    - OC V8 下载及安装: quickstart/V8_install.md
     - 使用说明: quickstart/use.md
   - 用户指南:
     - 基础配置: guide/config.md
@@ -93,6 +94,7 @@ nav:
   - 版本说明:
     - v8.5: release/v8.5.md
     - v8.6: release/v8.6.md
+    - v9.0: release/v9.0.md
     - OpenCloudOS Stream: release/ocs.md
     - OpenCloudOS Stream Kernel: release/ocsk.md
   - 常见问题: faq.md
