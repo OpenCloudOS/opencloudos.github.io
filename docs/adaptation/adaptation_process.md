@@ -3,7 +3,7 @@
 
 ## 0-适配流程图 
 
-![适配流程图](../assets/OC_Adaptation_Process.png)
+![适配流程图](../assets/OC_Adaptation_Process.png){:height="70%" width="70%"}   
 ## 1-适配申请
 
 目前社区刚刚运行，生态体系即社区影响力正在逐步建立中，目前主要采取邀请制。    
@@ -54,7 +54,7 @@ OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS
 - 左下角：公司名称 + 认证时间   
 适配者完成证书补充后，请回传至沟通群内进行审核。   
 
-![OC_CA_template](../assets/OC_CA_template.png)     
+![OC_CA_template](../assets/OC_CA_template.png){:height="60%" width="60%"}   
  
 ## 7-文档归档
 
