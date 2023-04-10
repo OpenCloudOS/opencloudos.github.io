@@ -3,7 +3,7 @@
 
 ## 0-适配流程图 
 
-[适配流程图](https://doc.weixin.qq.com/flowchart/f3_AfIA2Ab8ADgxadWa23DTtStXutAaF?scode=AJEAIQdfAAoAlXGOEbAfIA2Ab8ADg)
+![适配流程图](../assets/OC_Adaptation_Process.png)
 ## 1-适配申请
 
 目前社区刚刚运行，生态体系即社区影响力正在逐步建立中，目前主要采取邀请制。    
@@ -36,7 +36,7 @@ OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS
 
 测试报告模板链接：[产品互认证测试模板.docx](https://gitee.com/OpenCloudOS/sig-ecological-adaptation/blob/master/doc/%E4%BA%A7%E5%93%81%E4%BA%92%E8%AE%A4%E8%AF%81_%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A_%E6%A8%A1%E6%9D%BF.docx)    
 
-整机厂商测试用例可参考：[整机认证测试项](https://doc.weixin.qq.com/doc/w3_AfIA2Ab8ADgJUpke0M9QuuBCmPiww?scode=AJEAIQdfAAosbgN97HAfIA2Ab8ADg)    
+整机厂商测试用例可参考：[整机认证测试项](testcase.md)    
 ### 4.2-不可自主测试：
 
 在微信群内提出申请，将特殊请求、设备发以及测试方法送至 OC 社区联合实验（E企研究院）处，进行相应测试。    

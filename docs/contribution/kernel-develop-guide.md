@@ -70,7 +70,7 @@ Upstream commit 8ebcc62c738f68688ee7c6fec2efe5bc6d3d7e60
 1. 每个commit的 checkpatch.pl检查和各config 编译：   
 
 - 新加入的内核config, 要在 kernel/configs/nooc.config  文件中关闭并编译通过；
-- OC Kernel 作为上游内核代码，下游用户会有不同的，任意的config使用要求，在ARM 和X86中，除了默认的`default`, `noocconfig`, `occonfig` 必须build通过外， 还必须编译通过代码树中默认的 `defconfig`, `allyesconfig`, `i386config`, `allmodconfig`。
+- OC Kernel 作为上游内核代码，下游用户会有不同的，任意的config使用要求，在ARM 和X86中，除了默认的`default`, `noocconfig`, `occonfig` 必须build通过外， 还必须编译通过代码树中默认的 `defconfig`, `allyesconfig`, `allmodconfig`。
 - **最小要求是不能增加build error/warning.**  一个自测方法如下：
 ``` bash
 make allmodconfig modules all  -s ; make allyesconfig noocconfig all -s 
