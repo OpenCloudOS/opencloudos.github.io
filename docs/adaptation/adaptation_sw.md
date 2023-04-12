@@ -2,6 +2,23 @@ OpenCloudOS 商业软件兼容列表如下：
 
 | 产品名                      | 版本 | 软件类型 | 厂家名称                           | 操作系统    |
 | :-------------------------- | :----- | :------- | :--------------------------------- | :---------- |
+| 观测云                                        | v3.0   | 运维平台       | 上海观测未来信息技术有限公司      | OpenCloudOS |
+| DataXone                                      | V4.1   | 数据库管理系统 | 迪思杰 (北京)数据管理技术有限公司 | OpenCloudOS |
+| SuperSync                                     | V3.2   | 备份恢复软件   | 迪思杰 (北京)数据管理技术有限公司 | OpenCloudOS |
+| 信托综合业务系统                              | V2.0   | 行业应用       | 东华软件股份公司                  | OpenCloudOS |
+| 统一监管报送平台                              | V3.0   | 行业应用       | 东华软件股份公司                  | OpenCloudOS |
+| 东华信贷管理系统                              | V3.0   | 行业应用       | 东华软件股份公司                  | OpenCloudOS |
+| 统一门户管理平台                              | V1.0   | 行业应用       | 东华软件股份公司                  | OpenCloudOS |
+| 东华物联网IOT管理系统                         | V1.0   | 运维平台       | 东华软件股份公司                  | OpenCloudOS |
+| 数字智能集成平台                              | V1.0   | 中间件         | 东华软件股份公司                  | OpenCloudOS |
+| 东华住云数据平台                              | V1.0   | 大数据平台     | 东华软件股份公司                  | OpenCloudOS |
+| iMedical HIS                                  | V8.5   | 数据库管理系统 | 东华医为科技有限公司              | OpenCloudOS |
+| T-ONE CLOUD安全运营中心                       | -      | 网络防护       | 北京神州绿盟科技有限公司          | OpenCloudOS |
+| HyperBDR云容灾软件                            | V2.0   | 备份恢复软件   | 万博智云信息科技(上海)有限公司    | OpenCloudOS |
+| 白鲸调度系统                                  | V2.1   | 大数据平台     | 北京白鲸开源科技有限公司          | OpenCloudOS |
+| 博云 Beyondcontainer 容器资源管理软件         | V3.5   | 容器云         | 江苏博云科技股份有限公司          | OpenCloudOS |
+| 浪潮云海服务器虚拟化系统 [简称:InCloudSphere] | V6     | 虚拟化云平台   | 浪潮电子信息产业股价有限公司      | OpenCloudOS |
+| TAS 应用中间件软件                            | V2.8   | 中间件         | 北京华宇信息技术有限公司          | OpenCloudOS |
 | DaoCloudEnterprise 云原生应用云平台 | V4.0   | 容器云 | 上海道客网络科技有限公司       | OpenCloudOS |
 | 瑞驰全融合存储管理软件（NxSDS）     | v1.0   | 存储软件 | 深圳市瑞驰信息技术有限公司     | OpenCloudOS |
 | KubeSphere                          | v3.3.1 | 容器云 | 北京青云科技股份有限公司     | OpenCloudOS |
