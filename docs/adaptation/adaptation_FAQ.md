@@ -15,7 +15,21 @@ dd if=xxx.iso  of=/dev/xxx  bs=2M
 ## 2-测试相关
 Q1：测试工具编译时，`ts_common.c`缺少`common.h`头文件    
 A：使用如下命令下载测试工具    
+
 ```bash
 git clone --recurse-submodules https://gitee.com/opencloudos-stream/oc-hct.git
 ```
 不要使用直接下载的方式。
+
+Q2：在使用`yum install kernel-devel-$(uname -r)`安装kernel devel包时提示找不到对应内核devel包     
+例如：    
+![image](../assets/install_devel_error.png)      
+A：更换命令为  
+
+```bash
+# TS3
+yum install kernel-devel-$(uname -r).tl3
+
+# OC8
+yum install kernel-devel-$(uname -r).oc8
+```
