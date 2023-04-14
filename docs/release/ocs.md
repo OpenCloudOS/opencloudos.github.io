@@ -3,9 +3,9 @@
 OpenCloudOS Stream 是 OpenCloudOS 社区联合伙伴共同研发的自主可控的上游版本，其内核及用户态软件均基于社区 Upstream 独立演进、自编译，自主选型和维护，不再依赖任何发行版，完全自主可控。通过内核，用户态软件的全面优化和打磨，为用户和业务提供更先进、更高性能的基础环境和服务能力，彻底解决 CentOS 断供的问题。
 
 ## 下载
-下载 OpenCloudOS Stream 23.01，请访问[链接](https://mirrors.opencloudos.org/opencloudos-stream/releases/2301/images/)。
+载 OpenCloudOS Stream 23，请访问[链接](https://mirrors.opencloudos.org/opencloudos-stream/releases/23/images/)。
 
-## OpenCloudOS Stream 23.01 新特性汇总
+## OpenCloudOS Stream 23 新特性汇总
 
 ### 安全启动与引导
 #### dracut 057
@@ -40,24 +40,50 @@ OpenCloudOS Stream 是 OpenCloudOS 社区联合伙伴共同研发的自主可控
 - 现在在 x86_64 上偏向使用 RDRAND 指令集
 
 ### 内核
-#### kernel 5.18，带给社区最新成果体验
-- 内核动态抢占功能，采用 static key 高效实现 arm64 支持。
-- Multi-LLC per node 架构机器调度功能优化，极大提升如 AMD Zen 系列处理器在众多负载场景下性能表现，提供更加强大的算力支持。
-- Tiered memory - 分层内存系统支持，包括具有不同性能特性的多层内存系统。新增根据内存冷热探测自动在多层级内存设备间进行数据升降级搬迁，支持多层级内存容量扩展，降低内存使用成本。
-- DAMON，高效低负载的内存数据存取监控方案，支持虚拟地址、物理地址监控以及轻内存压力下主动内存回收。新增 syfs 接口，精简使用配置，给性能优化带来极大助力。
-- Folios，新的简易高效大页内存管理方案。新增大量内存管理、文件系统等子系统适配，带来 multi-page Folios 完整支持，众多真实负载场景性能提升达到 10%。为后续内存管理、文件读写等操作带来巨大优化潜力。
-- io_uring，新一代异步 IO 框架全功能支持。新增 IORING_OP_MSG_RING 支持、优化多线程场景 ring fd 注册机制、net napi_busy_poll 支持、statx API 稳定性增强等，降低 io_uring 内部开销、提升 IO 异步处理性能。
-- Compute Express Link (CXL)，满足缓存一致性内存高速互联协议。新增基于 CXL/PCIe switch topology 发现 CXL 设备以及支持热插拔，构建大容量、低延迟内存池，内存使用按需提供，极大降低内存使用成本。
+#### Kernel 6.1，带给社区最新成果体验：
+- MGLRU支持，降低内存扫描与回收所占用CPU时间，同时提高内存冷热判断精度，显著提升大内存压力场景下系统性能。
+- Maple Tree 支持，Cacheline 对齐的Btree实现，缓解多进程并发场景下的内存管理关键数据结构竞争问题，提升系统性能。
+- Rust编程语言初始支持，提供基础功能实现。
+- Folios，简易高效大页内存管理方案，带来multi-page Folios完整支持，众多真实负载场景性能提升达到10%。新增shmem Filio支持。
+- io_uring，新一代异步IO框架全功能支持。新增zerocopy sendmsg、non-zerocopy sendto、async work schedule、iopoll io_uring/nvme passthrough等功能。
+- Tiered memory - 分层内存系统支持，包括具有不同性能特性的多层内存系统。新增冷热页识别及层级迁移算法、层级信息用户态展示方案等。
 
-#### 提供坚实的云原生基座支持
-- Cgroupfs，默认使能 cgroup V2，简洁易用的系统级容器资源视图隔离方案，整体提升容器隔离性。
-- 容器级别内存细粒度分类限制回收功能，增强容器可用性及隔离性。
-- 容器场景下强大的功能增强及性能优化，如新的 per-cpu RSS counter 设计、memory.high 功能增强、Slab per-object 支持优化、cgroup v1 bufferIO 控制、per-memcg kmem 功能完善、容器级监控功能等
+#### 提供坚实的云原生基座支持：
+- CGroupFS，简洁易用的系统级容器资源视图隔离方案，整体提升容器隔离性。
+- Cgroup性能优化，增加了可靠的PSI V1支持，将大量V2专属接口适配到V1，提供BufferIO控制等功能。
+- 容器级别内存细粒度分类限制回收功能，增强容器可用性。
 
 #### 其他功能支持：
-- 热补丁支持，x86、arm64 热补丁功能支持。
-- kdump 内核转储能力增强等。
+- 基于Livepatch的x86_64与ARM64平台热补丁功能支持，降低downtime，提高成功率。
+- Kdump内核转储适配与能力增强等。
 - 支持 RISC-V 64 架构。
+
+#### 架构支持
+
+##### ARM
+
+- 支持新SoC：MTK、Qcom为主
+- 联发科Helio X10 MT6795 - M4U/IOMMU支持
+- perf: 内核支持通过SVE函数进行dwarf unwinding
+- Yitian710：添加DDR子系统驱动PMU驱动 
+- sysreg：为SVE EBF16添加hwcap 
+- iommu：支持M1 Pro/Max DART 
+
+##### x86
+
+- bpf: x86: 在trampoline程序中支持注册内结构参数
+- crypto: x86/sha512 - 基于CPU特性的负载
+- intel_idle: 添加AlderLake平台支持
+- iommu/amd: 增加通用IO页表框架对v2页表的支持
+- mm: x86: 添加 CONFIG_ARCH_HAS_NONLEAF_PMD_YOUNG
+- KVM: VMX: 支持更新的eVMCSv1版本
+
+##### LOONGARCH
+
+- 添加BPF JIT支持
+- 添加kdump支持
+- 添加kexec支持
+- 添加perf event支持
 
 
 ### 编译器及开发环境
