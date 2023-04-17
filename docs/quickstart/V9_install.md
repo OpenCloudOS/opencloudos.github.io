@@ -238,4 +238,7 @@ netinst ISO 镜像文件不包含任何软件包，需要在安装源设置界�
 
 # 5. 相关信息
 
-- qcow2 镜像默认用户名及密码为：root/Dis@init3
+- qcow2 镜像默认创建了 root 用户和一个普通用户，其用户名/密码如下：
+
+    - root/Dis@init3
+    - opencloudos/opencloudos
