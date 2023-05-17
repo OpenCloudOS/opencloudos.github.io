@@ -8,6 +8,7 @@ OpenCloudOS 开源软件兼容列表如下：
 | alsa-firmware                       | 1.0.28-2             |
 | alsa-lib                            | 1.1.8-1              |
 | alsa-tools-firmware                 | 1.1.0-1              |
+| APISIX                              | 3.2.0                |
 | apr                                 | 1.4.8-7              |
 | apr-util                            | 1.5.2-6              |
 | ar_mgr                              | 1.0-5.9.1            |

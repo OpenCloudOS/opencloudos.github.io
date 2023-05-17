@@ -2,6 +2,15 @@ OpenCloudOS 商业软件兼容列表如下：
 
 | 产品名                      | 版本 | 软件类型 | 厂家名称                           | 操作系统    |
 | :-------------------------- | :----- | :------- | :--------------------------------- | :---------- |
+| APISIX                                  | V3.2.0 | 中间件         | Apache APISIX 开源社区           | OpenCloudOS |
+| Apusic应用服务器软件                    | V10    | 虚拟化云平台   | 深圳市金蝶天燕云计算股份有限公司 | OpenCloudOS |
+| 云树集群管理平台软件（CTREE DMP）       | V7     | 数据库管理系统 | 上海爱可生信急技术股份有限公司   | OpenCloudOS |
+| 云树数据库软件（ActionDB）              | V1.0   | 数据库管理系统 | 上海爱可生信急技术股份有限公司   | OpenCloudOS |
+| 云树数据库SQL质量管理软件（CTREE SQLE） | V1.0   | 数据库管理系统 | 上海爱可生信急技术股份有限公司   | OpenCloudOS |
+| DeepFlow                                | V6     | 运维平台       | 北京云杉世纪网络科技有限公司     | OpenCloudOS |
+| 海量数据库G100管理系统Vastbase G100     | V2.2   | 数据库管理系统 | 北京海量数据技术股份有限公司     | OpenCloudOS |
+| LinkWeChat企业微信SCRM智能营销系统      | V4.6   | 行业应用       | 合肥仟微网络科技有限公司         | OpenCloudOS |
+| OpenMLDB                                | V0.7   | 机器学习       | 第四范式（北京）技术有限公司     | OpenCloudOS |
 | 观测云                                        | v3.0   | 运维平台       | 上海观测未来信息技术有限公司      | OpenCloudOS |
 | DataXone                                      | V4.1   | 数据库管理系统 | 迪思杰 (北京)数据管理技术有限公司 | OpenCloudOS |
 | SuperSync                                     | V3.2   | 备份恢复软件   | 迪思杰 (北京)数据管理技术有限公司 | OpenCloudOS |

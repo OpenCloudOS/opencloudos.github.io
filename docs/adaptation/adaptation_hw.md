@@ -4,6 +4,19 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 标准型号                    | 供应商        | 设备描述                                                     | 处理器型号                                    |
     | :-------------------------- | :------------ | :----------------------------------------------------------- | :-------------------------------------------- |
+    | S527H4                                    | 广电五舟 | S527H4(Hygon C86 7380\*2/16G\*8/960G/3.84T/4T/10GE\*8) | Hygon C86 7380 |
+    | S527H5                                    | 广电五舟 | S527H5(Hygon C86 7380\*2/16G\*8/960G/3.84T/4T/10GE\*8) | Hygon C86 7380 |
+    | S627H4                                    | 广电五舟 | S627H4(Hygon C86 7380\*2/16G\*8/960G/3.84T/4T/10GE\*8) | Hygon C86 7380 |
+    | S627H5                                    | 广电五舟 | S627H5(Hygon C86 7380\*2/16G\*8/960G/3.84T/4T/10GE\*8) | Hygon C86 7380 |
+    | S722H4                                    | 广电五舟 | S722H4(Hygon C86 7380\*2/16G\*8/960G/3.84T/4T/10GE\*8) | Hygon C86 7380 |
+    | S722H5                                    | 广电五舟 | S722H5(Hygon C86 7380\*2/16G\*8/960G/3.84T/4T/10GE\*8) | Hygon C86 7380 |
+    | R5215系列                                 | 长城超云 | R5215(Xeon 4310)                                    | Xeon 4310      |
+    | R7210系列                                 | 长城超云 | R7210(Xeon 6348H/32G/960G)                          | Xeon 6348H     |
+    | R7410系列                                 | 长城超云 | R7410(Xeon 8260)                                    | Xeon 8260      |
+    | R8424系列                                 | 长城超云 | R8424(Xeon 5218/16G/256G+1T)                        | Xeon 5218      |
+    | R8428系列                                 | 长城超云 | R8428(Xeon 6248/32G/960G+1.8T)                      | Xeon 6248      |
+    | 联想开天KR722h G2 & ThinkServer SR658H V2 | 联想开天 | SR658HV2(Hygon C86 7380)                            | Hygon C86 7380 |
+    | X7340H0 异构加速服务器                    | 中科曙光 | X7340H0 （Hygon 7380\*2/32G\*2/480G\*2/+960G SSD）     | Hygon C86 7380 |
     | FusionServer 2288H V6 | 超聚变 | 2288H V6(Xeon 8352Y\*2/32G\*4/GE350-T2) | INTEL Xeon 8352Y |
     | 超强K640系列  | 同方股份 | K640(kunpeng-920/384G/SSD-300G)                | kunpeng-920 |
     | 恒山TS02F-F30 | 百信信息 | TS02F-F30(kunpeng-920\*2/32G\*4/SSD-480G\*2/4\*GE) | kunpeng-920 |
@@ -388,89 +401,94 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 厂商            | 厂商 PN                                           | 速率/Gbps | 端口类型 | 产品族                                               |
     | :-------------- | :------------------------------------------------ | :-------- | :------- | :--------------------------------------------------- |
-    | Broadcom        | BCM957414M4142C                                   | 25000     | SFP28    | BCM957414M4142C                                      |
-    | Broadcom        | BCM957414M4142C                                   | 25000     | SFP28    | BCM957414M4142C                                      |
-    | Broadcom        | BCM957414A4142CC 10Gb/25Gb Ethernet PCIe          | 25000     | SFP28    | BCM957414A4142CC 10Gb/25Gb Ethernet PCIe             |
-    | Broadcom        | BCM957414A4142CC                                  | 25000     | SFP28    | BCM957414A4142CC                                     |
-    | Broadcom        | BCM957508-N2100G                                  | 100000    | QSFP56   | BCM957508-N2100G                                     |
-    | Broadcom        | BCM957414N4140C                                   | 25000     | SFP28    | BCM957414N4140C                                      |
-    | Broadcom        | BCM957416N4160C                                   | 10000     | RJ45     | BCM957416N4160C                                      |
-    | Broadcom        | BCM957508-P2100G                                  | 100000    | QSFP56   | BCM957508-P2100G                                     |
-    | DELL            | -                                                 | 10000     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                       |
-    | DELL            | -                                                 | 10000     | RJ45     | DELL BCM57416 Embed                                  |
-    | DELL            | CD2VM                                             | 10000     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                       |
-    | Foxconn         | -                                                 | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | Foxconn         | NA                                                | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | H3C             | -                                                 | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | H3C             | NA                                                | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | H3C             | 560F-B2                                           | 10000     | SFP+     | Ethernet Converged Network Adapter 82599             |
-    | H3C             | UN-NIC-ETH563T-sL-2P                              | 10000     | RJ45     | UN-NIC-ETH563T-sL-2P                                 |
-    | HP              | Ethernet 1Gb 4-port 366FLR Adapter;I350           | 1000      | RJ45     | Ethernet 1Gb 4-port 366FLR Adapter;I350              |
-    | 华为            | Huawei TM280                                      | 25000     | SFP28    | TM280                                                |
-    | 华为            | SP582                                             | 25000     | SFP28    | SP582                                                |
-    | 华为            | TM280                                             | 25000     | SFP28    | TM280                                                |
-    | 华为            | BC51DPHA                                          | 100000    | QSFP28   | Hi1822 SP572 (2\*100GE)                               |
-    | 华为            | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI    | 10000     | RJ45     | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
-    | 华为            | 03024QAY                                          | 100000    | QSFP28   | BC5M01IBMB                                           |
-    | 华为            | LOM-X722                                          | 1000      | RJ45     | LOM-X722                                             |
-    | 华为            | Ethernet Controller 10G X550T (rev 01)            | 10000     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
-    | 华为            | SM233                                             | 10000     | RJ45     | SM233                                                |
-    | 浪潮            | -                                                 | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | 浪潮            | Inspur X540                                       | 10000     | RJ45     | 10G base-T DP EP102Ti3A Adapter                      |
-    | 浪潮            | Intel X722/X557,10G,Mezzanine,2P,NC-SI            | 10000     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
-    | 浪潮            | YZCA-00431-102                                    | 10000     | SFP+     | 82599ES 10G 2P Inspur                                |
-    | 浪潮            | Ethernet Controller 10G X550T (rev 01)            | 10000     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
-    | 浪潮            | Ethernet 1G intel i350 PCIE,2P                    | 1000      | RJ45     | Ethernet 1G intel i350 PCIE,2P                       |
-    | 浪潮            | YZCA-00431-103                                    | 10000     | SFP+     | 10G SFP+ DP EP102Fi4 Adapter                         |
-    | 浪潮            | YZCA-00431-102                                    | 10000     | SFP+     | 82599ES 10G 2P Inspur                                |
-    | 浪潮            | YZNC-00766-101                                    | 1000      | RJ45     | I350                                                 |
-    | 浪潮            | 10G base-T DP EP102Ti3A Adapter                   | 10000     | RJ45     | 10G base-T DP EP102Ti3A Adapter                      |
-    | 浪潮            | I350                                              | 1000      | RJ45     | I350                                                 |
-    | 浪潮            | Ethernet Controller 10G X540-T2                   | 10000     | RJ45     | Ethernet Controller 10G X540-T2                      |
-    | Intel           | -                                                 | 10000     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card [USI-X557-10GbaseT] |
-    | Intel           | X550T2G1P5                                        | 10000     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
-    | Intel           | X540T2G1P5                                        | 10000     | RJ45     | Ethernet Converged Network Adapter X540-T2           |
-    | Intel           | Ethernet Server Adapter X520-2                    | 10000     | SFP+     | 82599ES 10                                           |
-    | Intel           | Ethernet Server Adapter OCP X710-2                | 10000     | SFP+     | X710-DA2                                             |
-    | Intel           | X710DA2G2P5                                       | 10000     | SFP+     | X710DA2G2P5                                          |
-    | Intel           | I350                                              | 1000      | RJ45     | I350                                                 |
-    | Intel           | X710-AT2                                          | 10000     | RJ45     | X710-AT2                                             |
-    | Intel           | Ethernet Server Adapter X520-2                    | 10000     | SFP+     | 非标服务器用                                         |
-    | Intel           | Ethernet Converged Network Adapter XL710-Q1       | 40000     | QSFP+    | Ethernet Converged Network Adapter XL710-Q1          |
-    | Intel           | Ethernet Converged Network Adapter XL710-Q2       | 40000     | QSFP+    | Ethernet Converged Network Adapter XL710-QDA2        |
-    | Intel-DELL      | -                                                 | 10000     | SFP+     | 10GbE 2P X520 Adapter                                |
-    | Intel-Greatwall | -                                                 | 10000     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
-    | Intel-H3C       | -                                                 | 10000     | SFP+     | 560F-B                                               |
-    | Intel-HP        | -                                                 | 10000     | SFP+     | Ethernet 10Gb 2-port 560SFP+ Adapter ;82599ES 10     |
-    | Intel-Huawei    | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI    | 10000     | RJ45     | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
-    | Intel-Huawei    | SP310                                             | 10000     | SFP+     | SP310;82599ES 10                                     |
-    | Intel-Huawei    | -                                                 | 10000     | NA       | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
-    | Intel-Inspur    | Ethernet Converged Network Adapter X550-T2        | 10000     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
-    | Intel-Inspur    | -                                                 | 10000     | SFP+     | 10G SFP+ DP EP102Fi4 Adapter ;82599                  |
-    | Intel-Lenovo    | -                                                 | 10000     | SFP+     | Ethernet Server Adapter X520-2 ;82599ES 10           |
-    | Inventec        | Ethernet Connection X722 for 10GBASE-T            | 10000     | RJ45     | Ethernet Connection X722 for 10GBASE-T               |
-    | Inventec        | NA                                                | 10000     | RJ45     | Ethernet Connection X722 for 10GBASE-T               |
-    | 联想            | NA                                                | 10000     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card [USI-X557-10GbaseT] |
-    | 联想            | 0000000MM881                                      | 10000     | SFP+     | 82599ES 10-Gigabit SFI/SFP+ Network Connection       |
-    | Mellanox        | MCX512A-ACUT                                      | 25000     | SFP28    | MCX512A-ACUT                                         |
-    | Mellanox        | MCX516A-CCHT                                      | 100000    | SFP28    | MCX516A-CCHT                                         |
-    | Mellanox        | MCX515A-CCAT                                      | 100000    | QSFP28   | MCX515A-CCAT                                         |
-    | Mellanox        | MCX515A-CCUT                                      | 100000    | QSFP28   | MCX515A-CCUT                                         |
-    | Mellanox        | MCX4421A-ACQN                                     | 25000     | SFP28    | MCX4421A-ACQN                                        |
-    | Mellanox        | MCX512A-ACAT                                      | 25000     | SFP28    | MCX512A-ACAT                                         |
-    | Mellanox        | MCX416A-BCAT, ConnectX-4 EN, 40/56GbE 2P, PCIe3.0 | 40000     | QSFP+    | MCX416A-BCAT                                         |
-    | Mellanox        | MCX516A-BDAT                                      | 40000     | QSFP28   | MCX516A-BDAT                                         |
-    | Mellanox        | MCX4421A-ACQN ConnectX-4 Lx EN OCP,2x25G          | 25000     | SFP28    | MCX4421A-ACQN ConnectX-4 Lx EN OCP,2x25G             |
-    | Mellanox        | ConnectX-4 Lx 25 GbE Dual Port SFP28 Adapter      | 25000     | SFP28    | MCX4121A-ACAT                                        |
-    | Mellanox        | MCX4121A-ACAT                                     | 25000     | SFP28    | MCX4121A-ACAT                                        |
-    | Mellanox        | MCX566A-CDAI_C15                                  | 100000    | QSFP28   | MCX566A-CDAI_C15                                     |
-    | Mellanox        | MCX623436AN-CDAB                                  | 100000    | QSFP56   | MCX623436AN-CDAB                                     |
-    | Mellanox        | MCX562A-ACAI_C15                                  | 25000     | SFP28    | MCX562A-ACAI_C15                                     |
-    | Mellanox        | MCX566A-GDAB_C15                                  | 50000     | QSFP28   | MCX566A-GDAB_C15                                     |
-    | Mellanox        | MCX516A-CCAT                                      | 100000    | QSFP28   | MCX516A-CCAT                                         |
-    | Mellanox        | MCX516A-CDAT                                      | 100000    | QSFP28   | MCX516A-CDAT                                         |
-    | Mellanox        | MCX623106AN-CDAT                                  | 100000    | QSFP56   | MCX623106AN-CDAT                                     |
-    | Suma            | OE10GI2-X550                                      | 10000     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
+    | 网迅 | RP1000P2SFP   | 10         | 2\*SFP+   | RP1000系列   |
+    | 网迅 | SF400T        | 1          | 4\*RJ45   | SF400系列    |
+    | 沐创 | N400LX4FDDBLV | 1          | 4\*SFP+   | N400L-X4F-QD |
+    | 沐创 | N10GX2DCBSV   | 10         | 2\*SFP+   | N10G-X2-DC   |
+    | 浪潮 | ENPB2251-SP2  | 25/10/1 | 2\*SFP28  | ENPB2251-SP2 |
+    | Broadcom        | BCM957414M4142C                                   | 25     | SFP28    | BCM957414M4142C                                      |
+    | Broadcom        | BCM957414M4142C                                   | 25     | SFP28    | BCM957414M4142C                                      |
+    | Broadcom        | BCM957414A4142CC 10Gb/25Gb Ethernet PCIe          | 25     | SFP28    | BCM957414A4142CC 10Gb/25Gb Ethernet PCIe             |
+    | Broadcom        | BCM957414A4142CC                                  | 25     | SFP28    | BCM957414A4142CC                                     |
+    | Broadcom        | BCM957508-N2100G                                  | 100    | QSFP56   | BCM957508-N2100G                                     |
+    | Broadcom        | BCM957414N4140C                                   | 25     | SFP28    | BCM957414N4140C                                      |
+    | Broadcom        | BCM957416N4160C                                   | 10     | RJ45     | BCM957416N4160C                                      |
+    | Broadcom        | BCM957508-P2100G                                  | 100    | QSFP56   | BCM957508-P2100G                                     |
+    | DELL            | -                                                 | 10     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                       |
+    | DELL            | -                                                 | 10     | RJ45     | DELL BCM57416 Embed                                  |
+    | DELL            | CD2VM                                             | 10     | RJ45     | Ethernet 10G 4P X550/I350 rNDC                       |
+    | Foxconn         | -                                                 | 10     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | Foxconn         | NA                                                | 10     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | H3C             | -                                                 | 10     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | H3C             | NA                                                | 10     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | H3C             | 560F-B2                                           | 10     | SFP+     | Ethernet Converged Network Adapter 82599             |
+    | H3C             | UN-NIC-ETH563T-sL-2P                              | 10     | RJ45     | UN-NIC-ETH563T-sL-2P                                 |
+    | HP              | Ethernet 1Gb 4-port 366FLR Adapter;I350           | 1      | RJ45     | Ethernet 1Gb 4-port 366FLR Adapter;I350              |
+    | 华为            | Huawei TM280                                      | 25     | SFP28    | TM280                                                |
+    | 华为            | SP582                                             | 25     | SFP28    | SP582                                                |
+    | 华为            | TM280                                             | 25     | SFP28    | TM280                                                |
+    | 华为            | BC51DPHA                                          | 100    | QSFP28   | Hi1822 SP572 (2\*100GE)                               |
+    | 华为            | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI    | 10     | RJ45     | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
+    | 华为            | 03024QAY                                          | 100    | QSFP28   | BC5M01IBMB                                           |
+    | 华为            | LOM-X722                                          | 1      | RJ45     | LOM-X722                                             |
+    | 华为            | Ethernet Controller 10G X550T (rev 01)            | 10     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
+    | 华为            | SM233                                             | 10     | RJ45     | SM233                                                |
+    | 浪潮            | -                                                 | 10     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | 浪潮            | Inspur X540                                       | 10     | RJ45     | 10G base-T DP EP102Ti3A Adapter                      |
+    | 浪潮            | Intel X722/X557,10G,Mezzanine,2P,NC-SI            | 10     | RJ45     | Intel X722/X557,10G,Mezzanine,2P,NC-SI               |
+    | 浪潮            | YZCA-00431-102                                    | 10     | SFP+     | 82599ES 10G 2P Inspur                                |
+    | 浪潮            | Ethernet Controller 10G X550T (rev 01)            | 10     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
+    | 浪潮            | Ethernet 1G intel i350 PCIE,2P                    | 1      | RJ45     | Ethernet 1G intel i350 PCIE,2P                       |
+    | 浪潮            | YZCA-00431-103                                    | 10     | SFP+     | 10G SFP+ DP EP102Fi4 Adapter                         |
+    | 浪潮            | YZCA-00431-102                                    | 10     | SFP+     | 82599ES 10G 2P Inspur                                |
+    | 浪潮            | YZNC-00766-101                                    | 1      | RJ45     | I350                                                 |
+    | 浪潮            | 10G base-T DP EP102Ti3A Adapter                   | 10     | RJ45     | 10G base-T DP EP102Ti3A Adapter                      |
+    | 浪潮            | I350                                              | 1      | RJ45     | I350                                                 |
+    | 浪潮            | Ethernet Controller 10G X540-T2                   | 10     | RJ45     | Ethernet Controller 10G X540-T2                      |
+    | Intel           | -                                                 | 10     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card [USI-X557-10GbaseT] |
+    | Intel           | X550T2G1P5                                        | 10     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
+    | Intel           | X540T2G1P5                                        | 10     | RJ45     | Ethernet Converged Network Adapter X540-T2           |
+    | Intel           | Ethernet Server Adapter X520-2                    | 10     | SFP+     | 82599ES 10                                           |
+    | Intel           | Ethernet Server Adapter OCP X710-2                | 10     | SFP+     | X710-DA2                                             |
+    | Intel           | X710DA2G2P5                                       | 10     | SFP+     | X710DA2G2P5                                          |
+    | Intel           | I350                                              | 1      | RJ45     | I350                                                 |
+    | Intel           | X710-AT2                                          | 10     | RJ45     | X710-AT2                                             |
+    | Intel           | Ethernet Server Adapter X520-2                    | 10     | SFP+     | 非标服务器用                                         |
+    | Intel           | Ethernet Converged Network Adapter XL710-Q1       | 40     | QSFP+    | Ethernet Converged Network Adapter XL710-Q1          |
+    | Intel           | Ethernet Converged Network Adapter XL710-Q2       | 40     | QSFP+    | Ethernet Converged Network Adapter XL710-QDA2        |
+    | Intel-DELL      | -                                                 | 10     | SFP+     | 10GbE 2P X520 Adapter                                |
+    | Intel-Greatwall | -                                                 | 10     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
+    | Intel-H3C       | -                                                 | 10     | SFP+     | 560F-B                                               |
+    | Intel-HP        | -                                                 | 10     | SFP+     | Ethernet 10Gb 2-port 560SFP+ Adapter ;82599ES 10     |
+    | Intel-Huawei    | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI    | 10     | RJ45     | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
+    | Intel-Huawei    | SP310                                             | 10     | SFP+     | SP310;82599ES 10                                     |
+    | Intel-Huawei    | -                                                 | 10     | NA       | Intel X722/X557 (Huawei),10G,Embedded,2P,NC-SI       |
+    | Intel-Inspur    | Ethernet Converged Network Adapter X550-T2        | 10     | RJ45     | Ethernet Converged Network Adapter X550-T2           |
+    | Intel-Inspur    | -                                                 | 10     | SFP+     | 10G SFP+ DP EP102Fi4 Adapter ;82599                  |
+    | Intel-Lenovo    | -                                                 | 10     | SFP+     | Ethernet Server Adapter X520-2 ;82599ES 10           |
+    | Inventec        | Ethernet Connection X722 for 10GBASE-T            | 10     | RJ45     | Ethernet Connection X722 for 10GBASE-T               |
+    | Inventec        | NA                                                | 10     | RJ45     | Ethernet Connection X722 for 10GBASE-T               |
+    | 联想            | NA                                                | 10     | RJ45     | Ethernet OCP 2x10G RJ45 Phy Card [USI-X557-10GbaseT] |
+    | 联想            | 0000000MM881                                      | 10     | SFP+     | 82599ES 10-Gigabit SFI/SFP+ Network Connection       |
+    | Mellanox        | MCX512A-ACUT                                      | 25     | SFP28    | MCX512A-ACUT                                         |
+    | Mellanox        | MCX516A-CCHT                                      | 100    | SFP28    | MCX516A-CCHT                                         |
+    | Mellanox        | MCX515A-CCAT                                      | 100    | QSFP28   | MCX515A-CCAT                                         |
+    | Mellanox        | MCX515A-CCUT                                      | 100    | QSFP28   | MCX515A-CCUT                                         |
+    | Mellanox        | MCX4421A-ACQN                                     | 25     | SFP28    | MCX4421A-ACQN                                        |
+    | Mellanox        | MCX512A-ACAT                                      | 25     | SFP28    | MCX512A-ACAT                                         |
+    | Mellanox        | MCX416A-BCAT, ConnectX-4 EN, 40/56GbE 2P, PCIe3.0 | 40     | QSFP+    | MCX416A-BCAT                                         |
+    | Mellanox        | MCX516A-BDAT                                      | 40     | QSFP28   | MCX516A-BDAT                                         |
+    | Mellanox        | MCX4421A-ACQN ConnectX-4 Lx EN OCP,2x25G          | 25     | SFP28    | MCX4421A-ACQN ConnectX-4 Lx EN OCP,2x25G             |
+    | Mellanox        | ConnectX-4 Lx 25 GbE Dual Port SFP28 Adapter      | 25     | SFP28    | MCX4121A-ACAT                                        |
+    | Mellanox        | MCX4121A-ACAT                                     | 25     | SFP28    | MCX4121A-ACAT                                        |
+    | Mellanox        | MCX566A-CDAI_C15                                  | 100    | QSFP28   | MCX566A-CDAI_C15                                     |
+    | Mellanox        | MCX623436AN-CDAB                                  | 100    | QSFP56   | MCX623436AN-CDAB                                     |
+    | Mellanox        | MCX562A-ACAI_C15                                  | 25     | SFP28    | MCX562A-ACAI_C15                                     |
+    | Mellanox        | MCX566A-GDAB_C15                                  | 50     | QSFP28   | MCX566A-GDAB_C15                                     |
+    | Mellanox        | MCX516A-CCAT                                      | 100    | QSFP28   | MCX516A-CCAT                                         |
+    | Mellanox        | MCX516A-CDAT                                      | 100    | QSFP28   | MCX516A-CDAT                                         |
+    | Mellanox        | MCX623106AN-CDAT                                  | 100    | QSFP56   | MCX623106AN-CDAT                                     |
+    | Suma            | OE10GI2-X550                                      | 10     | RJ45     | Ethernet Controller 10G X550T (rev 01)               |
 
 
 === "存储卡"
@@ -537,6 +555,10 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 厂商     | 厂商 PN              | 介质     | 协议   | 容量/Gb        | 接口 | 尺寸 |
     | :------- | :------------------- | :------- | :----- | :------------- | :--- | :--- |
+    | 佰维     | SS321   | SSD  | SATA | 240/480/960          | SATA3 | 2.5      |
+    | 佰维     | SS323   | SSD  | SATA | 240/480/960          | SATA3 | M.2 2280 |
+    | 得瑞领新 | D7436   | SSD  | NVMe | 1920/3840/7680/15360 | PCIE  | 2.5      |
+    | 得瑞领新 | D7456   | SSD  | NVMe | 1600/3200/6400/12800 | PCIE  | 2.5      |
     | 长江存储 | YMTC eSSD PE310 Series | SSD  | NVMe | 1920/3840/7680 | PCIE | 2.5  |
     | Memblaze | PBlaze6 6530           | SSD  | NVMe | 3840/7680      | PCIE | 2.5  |
     | Memblaze | PBlaze6 6536           | SSD  | NVMe | 3200/6400      | PCIE | 2.5  |
@@ -765,6 +787,7 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 厂商     | 型号                           |
     | :------- | :----------------------------- |
+    | 海光信息  | 海光DCU Z100                    |
     | 昆仑芯 | R200/R200-8F/R200-8FS 等同系列产品 |
     | NVIDIA   | A10                            |
     | NVIDIA   | A100 NVLink 40G                |
@@ -811,6 +834,7 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 标准型号                    | 供应商        | 设备描述                                                     | 处理器型号                                    |
     | :-------------------------- | :------------ | :----------------------------------------------------------- | :-------------------------------------------- |
+    | X7340H0 异构加速服务器  | 中科可控  |  X7340H0 （Hygon 7380\*2/32G\*2/480G\*2/+960G SSD）| Hygon C86 7380 |
     | Greatwall EF723       | Greatwall | T3-SW12F-10G_6.1.0_Greatwall EF723_Phytium FT-2000+\*1/32G\*8/HDD-12T\*10/SSD-480G\*1/NVMeSSD-6.4T\*2/10GE\*2(Greatwall) | FT-2000+                                      |
     | H3C R5500G5           | H3C       | T0-GT11A-50G_7.0.1.11_H3C R5500G5_7K62\*2 / 2933-32G\*32 / SSD-480G\*1 / 50G NIC(双口)\*1 / SXM4 A100\*8(H3C) | AMD EPYC 7K62    48-Core Processor               |
     | H3C R5300G3           | H3C       | 6233\*2/32G\*12/SSD 480G\*1/NVMeSSD-3.84T\*2/Suiyuan-GPU-T10\*8/100GE\*2 | Intel 6233                                    |
