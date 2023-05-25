@@ -2,7 +2,9 @@
 
 欢迎来到OpenCloudOS文档库！
 
-OpenCloudOS是由20余家操作系统、云平台、软硬件厂商与个人共同倡议发起的操作系统社区项目，即将进入开放原子开源基金会（OpenAtom Foundation）孵化及运营。目标是打造全面中立、开放、安全、稳定易用、高性能的Linux服务器操作系统，共建国产操作系统开源技术社区，扩大社区发行版影响力，构建操作系统健康繁荣的生态。
+OpenCloudOS 操作系统开源社区是由操作系统、软硬件厂商与个人共同倡议发起的操作系统社区项目，为用户提供自主可控、绿色节能、安全可靠、高性能的下一代云原生操作系统，目前社区理事单位已达 31家，联接生态伙伴达 500+家，OpenCloudOS 操作系统将与众多生态伙伴一起打造面向未来开放中立的操作系统开源生态。
+
+截止目前 OpenCloudOS 操作系统已支持 X86_64、ARM64、RISC-V 架构，完善适配 LoongArch、飞腾、海光、兆芯、鲲鹏等芯片。同时提供支持全栈国密和机密计算，下载量和装机量已达千万节点，另有 600 余家企业产品与 OpenCloudOS 操作系统完成适配。
 
 欢迎访问：[https://www.opencloudos.org/](https://www.opencloudos.org/)
 
@@ -39,6 +41,6 @@ OpenCloudOS是由20余家操作系统、云平台、软硬件厂商与个人共�
 
 4. 可以开始贡献啦！
     - 具体markdown及本文档站支持的显示特性可查看mkdocs-material的[说明文档](https://squidfunk.github.io/mkdocs-material/reference/)。
-    - 请注意遵守本文档站的 [格式手册](docs-format-guide.md)。
+    - 请注意遵守本文档站的 [格式手册](https://github.com/OpenCloudOS/opencloudos.github.io/blob/main/docs/contribution/docs-format-guide.md)。
 
 5. 向 [文档仓库](https://github.com/OpenCloudOS/opencloudos.github.io) 提交 Pull Request，待维护者审核后即可合并。
