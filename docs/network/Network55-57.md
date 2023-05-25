@@ -347,7 +347,7 @@ TIPC 支持以下 bearer:
 TIPC 提供了在 TIPC 端口间可靠传送信息，这是所有 TIPC 通讯的端点。
 
 以下是 TIPC 构架图：
-![TIPC](assets/TIPC.png)
+![](assets/TIPC.png)
 
 ## 56.2.系统引导时载入 tipc 模块
 在使用 TIPC 协议前，请加载 tipc 内核模块。本节介绍如何在系统引导时配置 OpenCloudOS 自动载入这个模块。
@@ -385,6 +385,7 @@ TIPC 提供了在 TIPC 端口间可靠传送信息，这是所有 TIPC 通讯的
 
 - tipc 模块已加载。
   
+
 **流程**
 
 1. 可选：设置一个唯一的节点身份，如 UUID 或节点的主机名：
