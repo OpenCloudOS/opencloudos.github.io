@@ -3,7 +3,7 @@
 OpenCloudOS Stream 是 OpenCloudOS 社区联合伙伴共同研发的自主可控的上游版本，其内核及用户态软件均基于社区 Upstream 独立演进、自编译，自主选型和维护，不再依赖任何发行版，完全自主可控。通过内核，用户态软件的全面优化和打磨，为用户和业务提供更先进、更高性能的基础环境和服务能力，彻底解决 CentOS 断供的问题。
 
 ## 下载
-下载 OpenCloudOS Stream 23，请访问[链接](https://mirrors.opencloudos.org/opencloudos-stream/releases/23/images/)。
+载 OpenCloudOS Stream 23，请访问[链接](https://mirrors.opencloudos.org/opencloudos-stream/releases/23/images/)。
 
 ## OpenCloudOS Stream 23 新特性汇总
 
