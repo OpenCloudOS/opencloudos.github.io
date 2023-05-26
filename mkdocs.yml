@@ -133,6 +133,8 @@ plugins:
           下载及安装: Download & Install
           使用说明: How to Use
           用户指南: Guide
+          OC V9 下载及安装: OC V9 Download and Install
+          OC V8 下载及安装: OC V8 Download and Install
           基础配置: Configuation
           系统管理: System Admin
           内核更新: Update
@@ -167,4 +169,5 @@ plugins:
           常见问题: FAQ
           参与贡献: Contributing
           如何贡献: How to contribute
+          内核开发指南: Kernel Development Guide
           文档库格式手册: Documentation format guide
