@@ -33,6 +33,6 @@ OpenCloudOS 操作系统开源社区是由操作系统、软硬件厂商与个�
 
 ### 软硬件厂商兼容性保障：
 #### 硬件兼容性
-OpencloudOS拥有一整套标准的硬件兼容性测试体系，持续测试并更新硬件兼容性列表，目前已验证硬件列表请参考[硬件兼容列表](https://github.com/OpenCloudOS/SysDocs/blob/master/hardware.md)。
+OpencloudOS拥有一整套标准的硬件兼容性测试体系，持续测试并更新硬件兼容性列表，目前已验证硬件列表请参考[硬件兼容列表](https://docs.opencloudos.org/adaptation/adaptation_hw/)。
 #### 软件兼容性
-主要验证主流开源软件和和三方商业软件与OpenCloudOS的兼容性，积极促进和各个厂商的兼容性互认证，持续更新[软件兼容性列表](https://github.com/OpenCloudOS/SysDocs/blob/master/software.md)。
+主要验证主流开源软件和和三方商业软件与OpenCloudOS的兼容性，积极促进和各个厂商的兼容性互认证，持续更新[软件兼容性列表](https://docs.opencloudos.org/adaptation/adaptation_sw/)。
