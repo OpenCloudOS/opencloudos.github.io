@@ -116,9 +116,9 @@ Verfication succeeded, current system settings match the preset profile.
 See TuneD log file ('/var/log/tuned/tuned.log') for details.
 ```
 
-### 1.6 List available tuning profiles
+### 1.6 List available TuneD profiles
 
-1. List all available TuneD configuration files on the system
+1. List all available TuneD profiles
 
 ```
 [root@opencloudos ~]# tuned-adm list
@@ -146,7 +146,7 @@ Available profiles:
 Current active profile: virtual-guest
 ```
 
-2.仅显示当前活动的配置文件
+2. List current active profile
 
 ```
 [root@opencloudos ~]# tuned-adm active
@@ -154,7 +154,7 @@ Current active profile: virtual-guest
 Current active profile: virtual-guest
 ```
 
-### 2. Show only currently active profiles
+### 1.7. Set up an adjusted profile
 
 This process activates the selected TuneD profile on your system
 
