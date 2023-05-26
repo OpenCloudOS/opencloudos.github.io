@@ -5,7 +5,7 @@
 ## 1. Upgrade and configure the kernel
 
 Kernel is the core of linux operating system. It manages system resources as a whole, provides system call interfaces upward for developers to develop programs, and uses drivers downward to manage hardware devices.
-` ` `
+```
 View the kernel version
 [root@OpencloudOS~]# uname -r
 5.4.119-19.0010.ocrelease.6
