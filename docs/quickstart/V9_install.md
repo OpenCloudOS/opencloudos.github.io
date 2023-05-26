@@ -89,8 +89,8 @@ netinst ISO 镜像文件不包含任何软件包，需要在安装源设置界�
 按 "c" 键进入 grub 命令行。
 引导菜单选项说明如下：
 
-| |
-|:--|
+| | |
+|:--|:--|
 |引导菜单选项 |描述 |
 |Install OpenCloudOS 9 |启动图形界面安装 OpenCloudOS 9。 |
 |Test this media &amp; install OpenCloudOS 9 |默认选项，检查安装介质的完整性并启动图形界面安装 OpenCloudOS 9。 |
