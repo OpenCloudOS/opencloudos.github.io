@@ -1,4 +1,4 @@
-## 操作场景
+## Operation Scenario
 
 CentOS has officially stopped maintaining CentOS 8, as shown in the table below. For more information, please refer to[CentOS Official Announcement](https://blog.centos.org/2020/12/future-is-centos-stream/?spm=a2c4g.11174386.n2.3.348f4c07hk46v4)。
 
@@ -124,7 +124,7 @@ The steps to migrate CentOS 8 to OpenCloudOS 8 are as follows:：
       
        The kernel defaults to the latest version of yum, please refer to your actual return results, this article uses the illustrated version as an example.
       
-      3.  Run the following command to check yum.
+      3. Run the following command to check yum.
       
       ```shell
       yum makecache
