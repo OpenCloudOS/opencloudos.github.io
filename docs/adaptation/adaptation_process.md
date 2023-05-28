@@ -32,14 +32,19 @@ OC 社区项目仓库链接如下：[https://gitee.com/organizations/OpenCloudOS
 测试工具代码仓：[https://gitee.com/opencloudos-stream/oc-hct](https://gitee.com/opencloudos-stream/oc-hct)
 ### 4.1-可自主测试：
 
-在微信群内，OC 社区组织官方成员会提供相应的测试要求文件，请申请者按照标准完成测试，并提供标准测试报告给沟通群内的社区工作人员进行审核。    
+在微信群内，OC 社区组织官方成员会提供相应的测试要求文件，请申请者按照标准完成测试，并提供标准测试报告给沟通群内的社区工作人员进行审核。   
 
-测试报告模板链接：[产品互认证测试模板.docx](https://gitee.com/OpenCloudOS/sig-ecological-adaptation/blob/master/doc/%E4%BA%A7%E5%93%81%E4%BA%92%E8%AE%A4%E8%AF%81_%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A_%E6%A8%A1%E6%9D%BF.docx)    
+测试报告模板链接：[产品互认证测试模板.docx](https://gitee.com/OpenCloudOS/sig-ecological-adaptation/blob/master/doc/%E4%BA%A7%E5%93%81%E4%BA%92%E8%AE%A4%E8%AF%81_%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A230526.docx)    
 
 整机厂商测试用例可参考：[整机认证测试项](testcase.md)    
 ### 4.2-不可自主测试：
 
-在微信群内提出申请，将特殊请求、设备发以及测试方法送至 OC 社区联合实验（E企研究院）处，进行相应测试。    
+在微信群内提出申请，将特殊请求、设备发以及测试方法送至 OC 社区联合实验（E企研究院）处，进行相应测试。  
+
+### 4.3-测试报告要求
+
+1. 按照模板指引完成测试报告，填写报告关键信息。      
+2. 将测试关键log与测试报告一同打包，提交审核。        
 ## 5-适配代码、软件包管理
 
 请申请者决定若要加入 OC 社区的 YUM 源，则需完成 OC 社区 Realse SIG 的管理流程[Relase-SIG 快速导航](https://gitee.com/OpenCloudOS/SIG-release)。   
