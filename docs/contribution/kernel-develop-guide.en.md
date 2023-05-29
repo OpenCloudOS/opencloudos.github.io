@@ -87,16 +87,18 @@ Currently in use TAG:
 Each new kernel feature integration requires passing the following tests and providing a test report:   
 
 1. The checkpatch.pl and each config compilation for each commit: 
-- The newly added kernel config needs to be closed and compiled in the kernel/configs/nooc.config file ；
+   
+   - The newly added kernel config needs to be closed and compiled in the kernel/configs/nooc.config file ；
+   
+   - As an upstream kernel code, downstream users may have different requirements for using OC Kernel.  In ARM and X86, in addition to the default `default`, `noocconfig`, `occonfig` must be built and passed, they must also compile and pass the default `defconfig`, `allyesconfig`, `allmodconfig`in the code tree.
+   
+   - **The minimum requirement is not to addbuild error/warning.** A self testing method is as follows:
+     
+     ```bash
+     make allmodconfig modules all  -s ; make allyesconfig noocconfig all -s 
+     ```
 
-- As an upstream kernel code, downstream users may have different requirements for using OC Kernel.  In ARM and X86, in addition to the default `default`, `noocconfig`, `occonfig` must be built and passed, they must also compile and pass the default `defconfig`, `allyesconfig`, `allmodconfig`in the code tree.
-
-- **The minimum requirement is not to addbuild error/warning.** A self testing method is as follows:：
-  
-  ```bash
-  make allmodconfig modules all  -s ; make allyesconfig noocconfig all -s 
-  ```
-2. The recommendations for kernel benchmark self-testing under each config are as follows:：
+2. The recommendations for kernel benchmark self-testing under each config are as follows:
    
    ```bash
    make occonfig kvmconfig bzImage -s -j 32 && qemu -kernel arch/x86/boot/bzImage --nographic -m 4g -smp 4 --enable-kvm  ...
