@@ -51,8 +51,8 @@ As of now, the OpenCloudOS operating system supports X86_ 64. ARM64, RISC-V arch
 
 #### Hardware Compatibility
 
-OpencloudOS has a complete set of standard hardware compatibility testing system, continuously testing and updating the hardware compatibility list, please refer to [Hardware Compatibility List](https://github.com/OpenCloudOS/SysDocs/blob/master/hardware.md) .
+OpencloudOS has a complete set of standard hardware compatibility testing system, continuously testing and updating the hardware compatibility list, please refer to [Hardware Compatibility List](https://docs.opencloudos.org/adaptation/adaptation_hw/) .
 
 #### Software Compatibility
 
-Mainly verify the compatibility of mainstream open source software and third-party commercial software with OpenCloudOS, actively promote compatibility mutual certification with various manufacturers, and continuously update[SoftwareCompatibility List](https://github.com/OpenCloudOS/SysDocs/blob/master/software.md) .
+Mainly verify the compatibility of mainstream open source software and third-party commercial software with OpenCloudOS, actively promote compatibility mutual certification with various manufacturers, and continuously update[SoftwareCompatibility List](https://docs.opencloudos.org/adaptation/adaptation_sw/) .
