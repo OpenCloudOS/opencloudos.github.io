@@ -79,9 +79,9 @@ The steps to migrate CentOS 8 to OpenCloudOS 8 are as follows:：
 3. Run the following command to download and install the migration tool.
    
    ```shell
-    #x86版本
+    #x86
    wget https://mirrors.opencloudos.tech/opencloudos/8.6/AppStream/x86_64/os/Packages/migrate2opencloudos-1.0-1.oc8.noarch.rpm
-   #arm版本
+   #arm
    wget https://mirrors.opencloudos.tech/opencloudos/8/AppStream/aarch64/os/Packages/migrate2opencloudos-1.0-1.oc8.noarch.rpm 
    ```
 
@@ -113,18 +113,17 @@ The steps to migrate CentOS 8 to OpenCloudOS 8 are as follows:：
        Return the information shown in the following figure:
       ![avatar](./images/os_release.png)  
    
-   2. Run the following command to check the kernel.
+   2.  Run the following command to check the kernel.
       
       ```shell
       uname -r
       ```
       
       Return the information shown in the following figure: 
-       ![avatar](./images/kernel_check.png) 
       
-       The kernel defaults to the latest version of yum, please refer to your actual return results, this article uses the illustrated version as an example.
-      
-      3. Run the following command to check yum.
+      The kernel defaults to the latest version of yum, please refer to your actual return results, this article uses the illustrated version as an example.
+   
+   3.  Run the following command to check yum.
       
       ```shell
       yum makecache
