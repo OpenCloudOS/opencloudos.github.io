@@ -109,11 +109,11 @@ Each new kernel feature integration requires passing the following tests and pro
     b. Stress-ng testing - if it can be covered.
 
 5. Gcov or kcov code coverage>90% when executing tests.        
-   （gcov's data collection method [Use gcov to check code coverage in the Linux kernel](https://www.kernel.org/doc/html/latest/translations/zh_CN/dev-tools/gcov.html) ）
+   （gcov's data collection method [Using gcov with the Linux kernel](https://www.kernel.org/doc/html/latest/dev-tools/gcov.html) ）
 
 Written by:alexsshi 2023-02-17        
 
 reference：
 
-1. [Kernel Documentation](https://www.kernel.org/doc/html/latest/translations/zh_CN/index.html#id6)      
-2. [Submitting patches: How to get your changes into the kernel](https://www.kernel.org/doc/html/latest/translations/zh_CN/process/submitting-patches.html)        
+1. [Kernel Documentation](https://www.kernel.org/doc/html/latest/index.html#id6)      
+2. [Submitting patches: the essential guide to getting your code into the kernel](https://www.kernel.org/doc/html/latest/process/submitting-patches.html)        
