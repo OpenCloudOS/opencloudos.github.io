@@ -787,38 +787,39 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 厂商     | 型号                           |
     | :------- | :----------------------------- |
-    | 海光信息  | 海光DCU Z100                    |
-    | 昆仑芯 | R200/R200-8F/R200-8FS 等同系列产品 |
-    | NVIDIA   | A10                            |
-    | NVIDIA   | A100 NVLink 40G                |
-    | NVIDIA   | vGPU - NVIDIA Tesla T4         |
-    | NVIDIA   | Tesla V100 NVLink 32G          |
+    | Tencent  | ZiXiaoC100                     |
+    | Tencent  | 天玑                            |
+    | 西安芯瞳  | GenBu01                         |
+    | 昆仑芯    | R200                           |
+    | 昆仑芯    | R200-8F                        |
+    | 昆仑芯    | R200-8FS                       |
+    | NVIDIA   | Tesla A10                      |
+    | NVIDIA   | Tesla A16                      |
+    | NVIDIA   | Tesla A100                     |
+    | NVIDIA   | Tesla A800                     |
+    | NVIDIA   | Tesla V100                     |
     | NVIDIA   | Tesla P40                      |
     | NVIDIA   | Tesla P4                       |
-    | Intel    | Intel SG1                      |
-    | AMD      | Ellesmere [Radeon Pro WX 5100] |
+    | NVIDIA   | Tesla T4                       |
+    | NVIDIA   | Tesla T4G                      |
+    | NVIDIA   | Tesla T10                      |
+    | NVIDIA   | Tesla L4                       |
+    | NVIDIA   | RTX 6000                       |
+    | NVIDIA   | RTX 3070(LHR)                  |
+    | NVIDIA   | RTX 3080(LHR)                  |
+    | NVIDIA   | RTX 3080(LHR)                  |
     | ASUS     | GeForce RTX 2080 Ti            |
     | BC Tech  | GeForce RTX 3080 Ti            |
     | BC Tech  | GeForce RTX 3080               |
     | BC Tech  | GeForce RTX 3090               |
-    | BC Tech  | GeForce RTX 3080               |
     | Colorful | GeForce RTX 3080               |
     | Colorful | GeForce RTX 3090               |
-    | Enflame  | EM0101                         |
-    | Huawei   | IT21DMPB07                     |
     | leadtek  | GeForce RTX 3080               |
-    | NVIDIA   | Tesla T4                       |
-    | NVIDIA   | Tesla V100-SXM2-32GB           |
-    | NVIDIA   | A100-SXM4-80GB                 |
-    | NVIDIA   | 900-2G133-0020-000             |
-    | NVIDIA   | 900-2G133-0020-100             |
-    | NVIDIA   | Quadro RTX 6000                |
-    | NVIDIA   | Tesla T10                      |
     | SiNEAD   | GeForce RTX 2080 Ti            |
-    | SiNEAD   | NVIDIA Quadro RTX 6000         |
-    | SiNEAD   | GeForce RTX 2080 Ti            |
-    | Tencent  | ZiXiaoC100                     |
-    | 西安芯瞳 | GenBu01                        |
+    | SiNEAD   | Quadro RTX 6000                |
+    | Huawei   | Atlas 300 C                    |
+    | Intel    | SG1                            |
+    | AMD      | Radeon Pro WX 5100             |
 
 
 === "DPU"
