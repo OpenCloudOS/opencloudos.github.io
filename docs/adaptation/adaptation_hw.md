@@ -788,9 +788,11 @@ OpenCloudOS 兼容硬件列表如下：
     | 厂商     | 型号                           |
     | :------- | :----------------------------- |
     | Tencent  | ZiXiaoC100                     |
-    | Tencent  | 天玑                     |
-    | 西安芯瞳 | GenBu01                         |
-    | 昆仑芯 | R200/R200-8F/R200-8FS 等同系列产品  |
+    | Tencent  | 天玑                            |
+    | 西安芯瞳  | GenBu01                         |
+    | 昆仑芯    | R200                           |
+    | 昆仑芯    | R200-8F                        |
+    | 昆仑芯    | R200-8FS                       |
     | NVIDIA   | Tesla A10                      |
     | NVIDIA   | Tesla A16                      |
     | NVIDIA   | Tesla A100                     |
