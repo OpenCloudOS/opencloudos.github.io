@@ -787,12 +787,15 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 厂商     | 型号                           |
     | :------- | :----------------------------- |
+    | 海光信息  | 海光DCU Z100                    |
     | Tencent  | ZiXiaoC100                     |
     | Tencent  | 天玑                            |
     | 西安芯瞳  | GenBu01                         |
     | 昆仑芯    | R200                           |
     | 昆仑芯    | R200-8F                        |
     | 昆仑芯    | R200-8FS                       |
+    | 燧原      | I20                            |
+    | 燧原      | T20                            |
     | NVIDIA   | Tesla A10                      |
     | NVIDIA   | Tesla A16                      |
     | NVIDIA   | Tesla A100                     |
