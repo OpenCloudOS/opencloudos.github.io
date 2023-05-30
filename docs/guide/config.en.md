@@ -35,7 +35,7 @@ NTP service: active
 RTC in local TZ: no
 ```
 
-**More help:** man date(1) / man timedatectl(1)
+- **More help:** man date(1) / man timedatectl(1)
 
 ### 1.2 Configure system locale
 
@@ -81,13 +81,13 @@ This chapter introduces how to configure network connections on OpenCloudOS. The
 
 1. Determine the configuration network card name
 
-/proc/net/dev file to view network devices
+    `/proc/net/dev` file to view network devices
 
 2. Configure ip for eth1
 
 Here we directly adopt the traditional ifcfg configuration method, we only configure ip by default, and do not configure dns and gateway
 
-Edit the file /etc/sysconfig/network-scripts/ifcfg-eth1 directly
+Edit the file `/etc/sysconfig/network-scripts/ifcfg-eth1` directly
 ```
 [root@VM-6-140-opencloudos /]# vim /etc/sysconfig/network-scripts/ifcfg-eth1
 
@@ -116,7 +116,7 @@ NETMASK=255.255.255.0 # subnet mask
 
 1. Determine the configuration network card name
 
-/proc/net/dev file to view network devices
+    `/proc/net/dev` file to view network devices
 
 2. Configure ip for eth1
 
@@ -154,7 +154,7 @@ nameserver 183.60.83.19
 nameserver 183.60.82.98
 ```
 
-- More help man(5) resolve.conf
+- More help: man(5) resolve.conf
 
 ## 3 Systemd management
 
@@ -183,7 +183,7 @@ Note: The masked service cannot be enabled or disabled, it needs to be unmask fi
 ```
 [root@OpencloudOS~]#systemctl start service_name
 ```
-2.restart service
+2. restart service
 ```
 [root@OpencloudOS~]#systemctl restart service_name
 ```
@@ -191,7 +191,7 @@ Note: The masked service cannot be enabled or disabled, it needs to be unmask fi
 ```
 [root@OpencloudOS~]#systemctl status service_name
 ```
-- more help: man systemctl
+- More help: man systemctl
 
 ## 4 Account Management
 
@@ -253,9 +253,9 @@ crashkernel=1800M-64G:256M, 64G-128G:512M,128G-:768M
 ```
 The user can set the amount of reserved memory as a variable based on the total amount of memory installed. The syntax to reserve memory to a variable is crashkernel=\<range1\>:\<size1\>, \<range2\>:\<size2\>. As shown in FIG. If the total system memory is between 1800MB and 64GB, the above example reserves 256MB of memory.
 
-*It should be noted that for the first configuration, the reserved memory needs to be restarted to use kdump normally
+*It should be noted that for the first configuration, the reserved memory needs to be restarted to use kdump normally*
 
-2.Update the grub2 configuration file
+2. Update the grub2 configuration file
 ```
 [root@OpencloudOS~]#grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
@@ -290,7 +290,7 @@ Before capturing the kernel analysis, you need to prepare:
 
 The file is generally located in the "/boot/" directory corresponding to the kernel version, and the file naming format is as follows:
 
-vmlinux-5.4.109-x-xx-xxx
+- vmlinux-5.4.109-x-xx-xxx
 
 If there is no corresponding debug image in this directory, you can download the kernel-debuginfo toolkit corresponding to the kernel version from the link below
 
@@ -391,7 +391,7 @@ The syntax for systemd is as follows:
 | disable: do not automatically run the specified unit when booting | systemctl disable nginx |
 | status: view the current running status of the specified unit | systemctl status nginx |
 
-**systemd**  **Configuration file description**
+**Systemd**  **Configuration file description**
 
 Each Unit needs to have a configuration file to tell systemd how to manage the service
 
@@ -418,7 +418,7 @@ chrony is a generic implementation of the Network Time Protocol (NTP). It can sy
 [root@VM-6-140-opencloudos /]#systemctl enable chronyd
 ```
 
-3.View chrony status
+3. View chrony status
 
 ```
 [root@VM-6-140-opencloudos /]#systemctl status chronyd
@@ -514,7 +514,7 @@ MASTER=bond\_test #Specify the name of the virtual network port
 SLAVE=yes #Standby (slave device)
 ```
 
-2.The parameters of the configuration file ifcfg-eth1 in the /etc/sysconfig/network-scripts/ directory of eth1 are expressed as follows:
+2. The parameters of the configuration file ifcfg-eth1 in the /etc/sysconfig/network-scripts/ directory of eth1 are expressed as follows:
 ```
 [root@VM-6-130-opencloudos ~]# /etc/sysconfig/network-scripts/ifcfg-eth1
 DEVICE=eth1 #Network port name: eth1
@@ -532,7 +532,7 @@ MASTER=bond\_test #Specify the name of the virtual network port
 SLAVE=yes #Standby (slave device)
 ```
 
-3.Configure the bond\_test network card in the /etc/sysconfig/network-scripts/ifcfg-bond\_test directory
+3. Configure the bond\_test network card in the /etc/sysconfig/network-scripts/ifcfg-bond\_test directory
 ```
 [root@VM-6-130-opencloudos ~]# /etc/sysconfig/network-scripts/ifcfg-bond_test
 
@@ -589,7 +589,6 @@ Logical Volume (LV): Divide part of the space from the volume group into a logic
 
 1. Add a physical disk and create a physical volume
 ```
-
 [root@VM-16-5-opencloudos ~]# lsblk | grep "vd[bcd]"
 
 vdb 253:0 0 50G 0 disk
@@ -598,7 +597,7 @@ vdc 253:16 0 50G 0 disk
 
 vdd 253:32 0 50G 0 disk
 ```
-2.Add disk to pv
+2. Add disk to pv
 
 ```
 [root@VM-16-5-opencloudos ~]# pvcreate /dev/vdb
@@ -612,10 +611,9 @@ PV VG Fmt Attr PSize PFree
 /dev/vdb lvm2 --- 50.00g 50.00g
 ```
 
-3.Create a volume group named datavg
+3. Create a volume group named datavg
 
 ```
-
 [root@VM-16-5-opencloudos ~]# vgcreate datavg /dev/vdb
 
 Volume group "datavg" successfully created
@@ -627,7 +625,7 @@ VG #PV #LV #SN Attr VSize VFree
 datavg 1 0 0 wz--n- \<50.00g \<50.00g
 ```
 
-4.Create logical volumes, assign names, and sizes, and specify volume groups
+4. Create logical volumes, assign names, and sizes, and specify volume groups
 
 ```
 [root@VM-16-5-opencloudos ~]# lvcreate -L 100M -n lv1 datavg
@@ -641,7 +639,7 @@ Logical volume "lv1" created.
 ACTIVE '/dev/datavg/lv1' [100.00 MiB] inherit
 ```
 
-5.Format file system
+5. Format file system
 
 ```
 [root@VM-16-5-opencloudos ~]# mkfs.ext4 /dev/datavg/lv1
@@ -655,7 +653,7 @@ Creating journal (4096 blocks): done
 Writing superblocks and filesystem accounting information: done
 ```
 
-6.Mount and use
+6. Mount and use
 
 ```
 [root@VM-16-5-opencloudos ~]#mkdir /lv1
@@ -671,7 +669,7 @@ Filesystem Size Used Avail Use% Mounted on
 
 ### 10.3 Volume group management
 
-- Extend the volume group to add new disks to the volume group
+Extend the volume group to add new disks to the volume group
 
 1. Add new disk to pv
 ```
@@ -682,15 +680,15 @@ Filesystem Size Used Avail Use% Mounted on
 [root@VM-6-140-opencloudos /]#vgextend datavg /dev/vdc
 ```
 
-- shrink volume group
+3. Shrink volume group
 ```
 [root@VM-6-140-opencloudos /]#vgreduce datavg /dev/vdb
 ```
-- Data migration volume group
+Data migration volume group.
 
-Only disks in the same volume group can be migrated online
+Only disks in the same volume group can be migrated online.
 
-1.Check the PV usage in the current logical volume VG
+4. Check the PV usage in the current logical volume VG
 ```
 [root@VM-16-5-opencloudos ~]#pvs
 
@@ -701,13 +699,13 @@ PV VG Fmt Attr PSize PFree
 /dev/vdc vg1 lvm2 a -- 2.00g 2.00g
 ```
 
-2.pvmove migrates /dev/vdb data to /dev/vdc online
+5. Pvmove migrates /dev/vdb data to /dev/vdc online
 
 ```
 [root@VM-16-5-opencloudos ~]#pvmove /dev/vdb /dev/vdc
 ```
 
-3. Check whether the migration is successful
+6. Check whether the migration is successful
 ```
 [root@VM-16-5-opencloudos ~]#pvs
 
@@ -715,7 +713,7 @@ PV VG Fmt Attr PSize PFree
 
 /dev/vdc vg1 lvm2 a -- 2.00g 1.76g
 ```
-- delete volume group
+7. Delete volume group
 ```
 [root@VM-16-5-opencloudos ~]#vgremove vgname
 ```
@@ -723,25 +721,25 @@ Before deleting the volume group, please ensure that the logical volumes in the 
 
 ### 10.4 Logical volume management
 
-- Logical volume extension
+Logical volume extension
 
 The expansion of the logical volume depends on the capacity in the volume group, and the capacity of the logical volume expansion cannot exceed the capacity of the volume group
 
 1. Add 1G capacity to the logical volume
-````
+```
 [root@VM-16-5-opencloudos ~]#lvextend -L +1G /dev/datavg/lv1 (Note: 1G and +1G have different meanings)
-````
+```
 2. Expand the file system
-
+```
 xfs\_growfs /dev/datavg/lv1 //xfs file system expansion
 
 resize2fs /dev/datavg/lv1//ext file system expansion
-
-- Cut the capacity of logical volumes in ext format
+```
+Cut the capacity of logical volumes in ext format
 
 Taking cutting the capacity of the logical volume to 512M as an example, the operation steps are as follows:
 
-1. First create a 1G logical volume as the object to be trimmed
+3. First create a 1G logical volume as the object to be trimmed
 ```
 [root@VM-16-5-opencloudos ~]#lvcreate -n rm_test -L 1G datavg //datavg为卷组
 
@@ -751,34 +749,34 @@ Taking cutting the capacity of the logical volume to 512M as an example, the ope
 
 [root@VM-16-5-opencloudos ~]#mount /dev/datavg/rm_test /rm_test/
 ```
-2.If it is already mounted, it must be uninstalled first
+4. If it is already mounted, it must be uninstalled first
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/datavg/rm_test
 ```
-3. To cut the capacity, the file system must be detected first
+5. To cut the capacity, the file system must be detected first
 ```
 [root@VM-16-5-opencloudos ~]#e2fsck -f /dev/datavg/rm_test
 
 [root@VM-16-5-opencloudos ~]#resize2fs /dev/datavg/rm_test 512M
 ```
-4. After the adjustment, cut the logical volume capacity
+6. After the adjustment, cut the logical volume capacity
 ```
 [root@VM-16-5-opencloudos ~]#lvreduce -L 512M /dev/datavg/rm_test
 ```
-5. Mounting test, if it can be mounted successfully, the file system is not damaged
+7. Mounting test, if it can be mounted successfully, the file system is not damaged
 ```
 [root@VM-16-5-opencloudos ~]#mount /dev/datavg/rm_test
 ```
-- delete logical volume
+Delete logical volume
 
-1.Make sure the logical volume being deleted is not in use
+8. Make sure the logical volume being deleted is not in use
 
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/datavg/rm_test # umount /dev/volume group name/logical volume name
 ```
-2. Delete the logical volume
+9. Delete the logical volume
 
-- lvremove <volume_group>/<logical_volume>
+    `lvremove <volume_group>/<logical_volume>`
 ```
 [root@VM-16-5-opencloudos ~]#lvremove /dev/datavg/rm_test
 ```
@@ -797,16 +795,27 @@ Soft RAID: no independent RAID controller card, all RAID functions are implement
 
 Data striping, no parity, no data protection. Data is written to multiple hard disks concurrently.
 
-Advantages: 1. The read and write performance is the highest among all RAIDs. 2.100% disk space utilization
+Advantages: 
 
-Disadvantage: It does not provide data redundancy protection, and once the data is damaged, it cannot be recovered.
+1. The read and write performance is the highest among all RAIDs. 
+
+2. 2.100% disk space utilization
+
+Disadvantage: 
+
+It does not provide data redundancy protection, and once the data is damaged, it cannot be recovered.
 
 Application scenarios: RAID 0 is suitable for scenarios that require fast reading and writing, but do not require high data security and reliability, such as video and printing.
+
 - RAID1
 
 Data mirroring, no checksum. Half of the space stores redundant data, and the data security is the highest among all RAIDs.
 
-Advantages: 1. The security is the highest among all RAIDs, even if half of the disks fail, they can still operate normally. 2. If all the mirrored disks do not fail, the data will not be lost.
+Advantages: 
+
+1. The security is the highest among all RAIDs, even if half of the disks fail, they can still operate normally. 
+
+2. If all the mirrored disks do not fail, the data will not be lost.
 
 Disadvantages: 1. The disk space utilization rate is 50%, and half of the space is used to store redundant data. 2. High cost.
 
@@ -814,23 +823,45 @@ Disadvantages: 1. The disk space utilization rate is 50%, and half of the space 
 
 Data striping, parity data (1 group) is evenly distributed on each physical disk. When a physical disk fails, the damaged data can be reconstructed according to other data blocks and corresponding parity data in the same stripe.
 
-Advantages: 1. Allow 1 physical disk to fail without data loss. 2. The read performance is relatively high, and the disk space utilization rate is greater than that of RAID 10.
+Advantages: 
 
-Disadvantages: 1. The write performance is relatively low. 2. When rebuilding data, the performance will be greatly affected.
+1. Allow 1 physical disk to fail without data loss. 
+
+2. The read performance is relatively high, and the disk space utilization rate is greater than that of RAID 10.
+
+Disadvantages: 
+
+1. The write performance is relatively low. 
+
+2. When rebuilding data, the performance will be greatly affected.
 
 - RAID10
 
 The combination of RAID 1 and RAID 0, from the perspective of disks, first group four disks in pairs to form two mirror pairs, use RAID1 mode for data backup in the group first, and use RAID0 for data splitting between groups to improve read performance. write rate. Compared with RAID0, RAID1 uses more disks.
 
-Advantages: 1. The read performance is second only to RAID 0. 2. If all the disks in the mirror pair do not fail, the data will not be lost. 3. When half of the physical disks fail, they can still operate normally.
+Advantages: 
 
-Disadvantages: 1. High cost. 2. The disk space utilization rate is 50%, and half of the space is used to store redundant data.
+1. The read performance is second only to RAID 0. 
+
+2. If all the disks in the mirror pair do not fail, the data will not be lost.
+
+3. When half of the physical disks fail, they can still operate normally.
+
+Disadvantages: 
+
+1. High cost. 
+
+2. The disk space utilization rate is 50%, and half of the space is used to store redundant data.
 
 - RAID6
 
 Data striping, parity data (2 groups) are evenly distributed on each physical disk. Even if two disks fail at the same time, the damaged data on the two disks can be reconstructed through two sets of parity data.
 
-Advantages: 1. Allows 2 physical disks to fail without data loss. 2. The read performance is high, and the disk space utilization rate is greater than that of RAID 10.
+Advantages: 
+
+1. Allows 2 physical disks to fail without data loss. 
+
+2. The read performance is high, and the disk space utilization rate is greater than that of RAID 10.
 
 Cons: Higher cost than RAID 5, lower write performance (lower than RAID 5).
 
@@ -838,17 +869,37 @@ Cons: Higher cost than RAID 5, lower write performance (lower than RAID 5).
 
 The combination of RAID 5 and RAID 0, create RAID 5 first, and then create RAID 0. Effectively improves the performance of RAID 5. Divide the constituent disks into several identical RAID 5s. Configuring RAID 50 requires at least 6 disks, divided into 2 RAID 5s with 3 disks in each group.
 
-Advantages: 1. The read and write performance is higher than RAID 5. 2. The fault tolerance is higher than RAID 0 or RAID 5. 3. The failed disks are in different RAID 5, and at most n physical disks are allowed to fail (n is RAID 5 number) without loss of data.
+Advantages: 
 
-Disadvantages: 1. When rebuilding a failed disk, if another disk fails in the same RAID 5, all data will be lost. 2. More space is needed in the disk to store the verification data.
+1. The read and write performance is higher than RAID 5. 
+
+2. The fault tolerance is higher than RAID 0 or RAID 5. 
+
+3. The failed disks are in different RAID 5, and at most n physical disks are allowed to fail (n is RAID 5 number) without loss of data.
+
+Disadvantages: 
+
+1. When rebuilding a failed disk, if another disk fails in the same RAID 5, all data will be lost. 
+
+2. More space is needed in the disk to store the verification data.
 
 - RAID60
 
 The combination of RAID 6 and RAID 0 creates RAID 6 first and then RAID 0. Effectively improves the performance of RAID6. Divide the constituent disks into several identical RAID 6s. Configuring RAID 60 requires at least 8 disks, divided into two RAID 6 groups of 4 disks each.
 
-Advantages: 1. The read and write performance is higher than that of RAID 6. 2. The fault tolerance is higher than that of RAID 0 or RAID 6. 3. There are no more than two failed disks in the same RAID 6, and a maximum of 2n physical disks can be allowed to fail (n for RAID 6) without data loss.
+Advantages: 
 
-Disadvantages: 1. When rebuilding a failed disk, if a third disk fails in the same RAID 6, all data will be lost. 2. More space is needed in the disk to store the verification data.
+1. The read and write performance is higher than that of RAID 6. 
+
+2. The fault tolerance is higher than that of RAID 0 or RAID 6. 
+
+3. There are no more than two failed disks in the same RAID 6, and a maximum of 2n physical disks can be allowed to fail (n for RAID 6) without data loss.
+
+Disadvantages: 
+
+1. When rebuilding a failed disk, if a third disk fails in the same RAID 6, all data will be lost. 
+
+2. More space is needed in the disk to store the verification data.
 
 The selection of RAID mode is shown in the table below:
 
@@ -887,13 +938,13 @@ mdadm: array /dev/md10 started.
 
 Parameter Description:
 
--C create
+- `-C` create
 
--v visualize
+- `-v` visualize
 
--l specifies the RAID level
+- `-l` specifies the RAID level
 
--n specifies the number of devices
+- `-n` specifies the number of devices
 
 
 2. View saved configuration
@@ -936,13 +987,13 @@ Basic partitions are also called primary partitions. The sum of boot partitions,
 
 Basic partitions can be used immediately after creation, but there is an upper limit on the number of partitions.
 
-- extension partion
+- Extension partion
 
 Each disk can only be divided into one extended partition, and any logical partition can be divided into the extended partition
 
 After the extended partition is created, it cannot be used directly, and a logical partition needs to be created in the extended partition
 
-- logical partition
+- Logical partition
 
 A logical partition is a partition created within an extended partition
 
@@ -1012,7 +1063,7 @@ After the partition is not used, the partition can be unmounted
 
 The fdisk command is used to create and maintain disk partitions, and fdisk can only partition hard disks smaller than 2TB. For hard disks larger than 2TB, you need to use the parted tool to partition. Using fdisk to create partitions can only create MBR partition schemes.
 
-1.Enter parted interactive mode
+1. Enter parted interactive mode
 
 ```
 [root@VM-6-130-opencloudos /]# parted
@@ -1036,7 +1087,7 @@ End? 5G
 (parted)quit
 ```
 
-3.Format the disk as a GPT disk
+3. Format the disk as a GPT disk
 ```
 (parted) mklabel gpt
 ```
@@ -1044,7 +1095,7 @@ End? 5G
 
 Parted can adjust the size of the partition. Note that when parted adjusts the mounted partition, it will not affect the data in the partition. But be sure to unmount the partition first, and then resize the partition, otherwise there will be problems with the data. In addition, the partition to be resized must have established a file system (formatted), otherwise an error will be reported.
 
-Take resizing the /dev/vdb1 partition as an example:
+Take resizing the /dev/vdb1 partition as an example
 
 1. Unmount the partition
 ```
@@ -1075,3 +1126,11 @@ End? 10G
 Execute the following command
 ```
 [root@VM-6-130-opencloudos /]# parted /dev/vdb
+
+(parted) rm
+
+Partition number? 1
+
+(parted) quit
+```
+It should be noted that all operations in parted take effect immediately, and there is no concept of saving and taking effect. This is obviously different from the fdisk interactive command, so all operations should be done with care.
