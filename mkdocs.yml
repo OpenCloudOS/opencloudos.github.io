@@ -16,6 +16,8 @@ theme:
   language: zh
   features:
     # - announce.dismiss
+    - content.action.edit
+    - content.action.view
     - content.code.annotate
     # - content.tabs.link
     - content.tooltips
@@ -54,6 +56,8 @@ theme:
   logo: assets/logo.svg
   icon:
     repo: fontawesome/brands/github
+    edit: material/pencil 
+    view: material/eye
 
 # Extensions
 markdown_extensions:
