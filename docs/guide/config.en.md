@@ -419,7 +419,6 @@ chrony is a generic implementation of the Network Time Protocol (NTP). It can sy
 ```
 
 3. View chrony status
-
 ```
 [root@VM-6-140-opencloudos /]#systemctl status chronyd
 ```
@@ -430,8 +429,7 @@ chrony is a generic implementation of the Network Time Protocol (NTP). It can sy
 ```
 [root@VM-6-140-opencloudos /]#vim /etc/chrony.conf
 ```
-2. Add time source parameters
-
+2. Add time source parameters<br/>
 Add the following parameters to the /etc/chrony.conf configuration file:
 ```
 [root@VM-6-140-opencloudos /]#server time.tencentyun.com iburst
@@ -558,7 +556,6 @@ GATEWAY='9.27.148.65' #Gateway
 
 BONDING\_OPTS='mode=4 miimon=100 lacp\_rate=fast xmit\_hash\_policy=1'
 ```
-
 Among them, miimon means link monitoring: miimon=100 means that the system monitors the link status every 100ms, and if one line fails, it will transfer to another line
 
 4. Configure bonding
@@ -598,7 +595,6 @@ vdc 253:16 0 50G 0 disk
 vdd 253:32 0 50G 0 disk
 ```
 2. Add disk to pv
-
 ```
 [root@VM-16-5-opencloudos ~]# pvcreate /dev/vdb
 
@@ -612,7 +608,6 @@ PV VG Fmt Attr PSize PFree
 ```
 
 3. Create a volume group named datavg
-
 ```
 [root@VM-16-5-opencloudos ~]# vgcreate datavg /dev/vdb
 
@@ -626,7 +621,6 @@ datavg 1 0 0 wz--n- \<50.00g \<50.00g
 ```
 
 4. Create logical volumes, assign names, and sizes, and specify volume groups
-
 ```
 [root@VM-16-5-opencloudos ~]# lvcreate -L 100M -n lv1 datavg
 
@@ -640,7 +634,6 @@ ACTIVE '/dev/datavg/lv1' [100.00 MiB] inherit
 ```
 
 5. Format file system
-
 ```
 [root@VM-16-5-opencloudos ~]# mkfs.ext4 /dev/datavg/lv1
 
@@ -654,7 +647,6 @@ Writing superblocks and filesystem accounting information: done
 ```
 
 6. Mount and use
-
 ```
 [root@VM-16-5-opencloudos ~]#mkdir /lv1
 
@@ -684,8 +676,7 @@ Extend the volume group to add new disks to the volume group
 ```
 [root@VM-6-140-opencloudos /]#vgreduce datavg /dev/vdb
 ```
-Data migration volume group.
-
+Data migration volume group.<br />
 Only disks in the same volume group can be migrated online.
 
 4. Check the PV usage in the current logical volume VG
@@ -700,7 +691,6 @@ PV VG Fmt Attr PSize PFree
 ```
 
 5. Pvmove migrates /dev/vdb data to /dev/vdc online
-
 ```
 [root@VM-16-5-opencloudos ~]#pvmove /dev/vdb /dev/vdc
 ```
@@ -735,8 +725,7 @@ xfs\_growfs /dev/datavg/lv1 //xfs file system expansion
 
 resize2fs /dev/datavg/lv1//ext file system expansion
 ```
-Cut the capacity of logical volumes in ext format
-
+Cut the capacity of logical volumes in ext format<br />
 Taking cutting the capacity of the logical volume to 512M as an example, the operation steps are as follows:
 
 3. First create a 1G logical volume as the object to be trimmed
@@ -770,12 +759,10 @@ Taking cutting the capacity of the logical volume to 512M as an example, the ope
 Delete logical volume
 
 8. Make sure the logical volume being deleted is not in use
-
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/datavg/rm_test # umount /dev/volume group name/logical volume name
 ```
-9. Delete the logical volume
-
+9. Delete the logical volume<br />
     `lvremove <volume_group>/<logical_volume>`
 ```
 [root@VM-16-5-opencloudos ~]#lvremove /dev/datavg/rm_test
@@ -1064,7 +1051,6 @@ After the partition is not used, the partition can be unmounted
 The fdisk command is used to create and maintain disk partitions, and fdisk can only partition hard disks smaller than 2TB. For hard disks larger than 2TB, you need to use the parted tool to partition. Using fdisk to create partitions can only create MBR partition schemes.
 
 1. Enter parted interactive mode
-
 ```
 [root@VM-6-130-opencloudos /]# parted
 
@@ -1101,8 +1087,7 @@ Take resizing the /dev/vdb1 partition as an example
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/vdb1
 ```
-2. Enter parted interactive mode
-
+2. Enter parted interactive mode<br />
 Execute the following command
 ```
 [root@VM-6-130-opencloudos /]# parted /dev/vdb
@@ -1121,8 +1106,7 @@ End? 10G
 ```
 [root@VM-16-5-opencloudos ~]#umount /dev/vdb1
 ```
-2. Enter parted interactive mode
-
+2. Enter parted interactive mode<br />
 Execute the following command
 ```
 [root@VM-6-130-opencloudos /]# parted /dev/vdb
