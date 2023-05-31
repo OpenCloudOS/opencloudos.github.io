@@ -192,13 +192,6 @@ OpenCloudOS 兼容硬件列表如下：
     | 宝德 PR3015S                | 宝德          | Intel Xeon 5110                  | x86 |
     | 恒山TS02F-F30               | 百信信息      | Huawei Kunpeng 920               | Arm    |
     | 太行220                     | 百信信息      | Huawei Kunpeng 920               | Arm    |
-    | Tencent KunlunV2_slmb       | Tencent       | AMD EPYC 7K83                    | x86 |
-    | Tencent Qinghai Lake        | Tencent       | -                                |        |
-    | Tencent SkyRiver_slmb       | Tencent       | AMD EPYC 7K62                    | x86 |
-    | Tencent SkyRiver_trmb       | Tencent       | -                                | -      |
-    | Tencent Star Lake           | Tencent       | AMD EPYC 7742                    | x86 |
-    | Tencent Tanggula            | Tencent       | -                                |        |
-    | Tencent TriRivers           | Tencent       | Intel Xeon ICX                   | x86 |
     | Suma H320-G30               | Suma          | Hygon C86 7155 16-core Processor | x86 |
     | Suma H620-G30               | Suma          | Hygon C86 7185 32-core Processor | x86 |
     | Suma R5230HA                | Suma          | Hygon C86 5280 16-core Processor | x86 |
