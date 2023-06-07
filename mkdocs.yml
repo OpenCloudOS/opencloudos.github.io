@@ -119,6 +119,9 @@ nav:
   - CentOS停服专区:
     - CentOS停服专区: guide/migrate_relative.md
     - CentOS迁移OpenCloudOS: guide/migrate.md
+  - 下载:
+    - ISO: download/iso.md
+    - 镜像源: download/mirrors.md
 
 plugins:
   - search
