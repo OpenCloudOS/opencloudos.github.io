@@ -326,8 +326,9 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 厂商    | 型号                                           | 架构             | 频率/Ghz |
     | :------ | :--------------------------------------------- | :--------------- | :------- |
-    | 澜起 | Montage Jintide(R) C8452Y | X86  | 2    |
-    | 澜起    | Jintide(R) C6248R                              | X86              | 3        |
+    | 澜起    | Montage Jintide(R) C8452Y                       | X86              | 2        |
+    | 澜起    | Montage Jintide(R) C6248R                       | X86              | 3        |
+    | 澜起    | Montage Jintide(R) C6330                        | X86              | 2        |
     | AMD     | AMD EPYC 7763 64-Core Processor                | AMD              | 2.45     |
     | AMD     | AMD EPYC 7H12 64-Core Processor                | AMD              | 2.6      |
     | AMD     | AMD EPYC 7513 32-Core Processor                | AMD              | 2.6      |
@@ -379,7 +380,6 @@ OpenCloudOS 兼容硬件列表如下：
     | Intel   | Intel(R) Xeon(R) Gold 6133 CPU @ 2.50GHz       | -                | 2.6      |
     | Intel   | Intel(R) Xeon(R) Gold 6146 CPU @ 3.20GHz       | -                | 3.2      |
     | Intel   | Intel Xeon Platinum 6230 CPU @ 2.10GHz         | INTEL            | 2.1      |
-    | 澜起    | Jintide(R) C6330                               | X86              | 2        |
     | Phytium | S2500                                          | Phytium 飞腾     | 2.1      |
     | Phytium | FT-2000+                                       | Phytium 飞腾     | 2.2      |
     | Phytium | FT-2000+                                       | FT-2000+         | 2.2      |
