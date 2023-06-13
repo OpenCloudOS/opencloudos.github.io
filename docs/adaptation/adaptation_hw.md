@@ -95,12 +95,15 @@ OpenCloudOS 兼容硬件列表如下：
     | Inspur SA5212M5+Switch-IB*2 | 浪潮          | Intel Xeon 4208     | x86 |
     | Inspur SA5212X4             | 浪潮          | Cavium Thunder CN8880            | Arm    |
     | Inspur SA5214M5             | 浪潮          | Intel Xeon 4116     | x86 |
+    | Inspur SA5280M6            | 浪潮           | Intel Xeon 5318Y         | x86  |
     | Inspur SN3116M4S            | 浪潮          | Intel Xeon D-1541                | x86 |
     | Inspur SN6110M4S            | 浪潮          | Intel Xeon E5-2620 v3                 | x86 |
     | KI2212-MK3                  | 坤前计算      | Intel Xeon 4114                       | x86 |
     | KA2212-HK3                  | 坤前计算      | AMD 7301                         | x86 |
     | KH2212-MK2                  | 坤前计算      | Hygon C86 7280                   | x86 |
     | KF2212-MK3                  | 坤前计算      | Phytium S2500                    | Arm    |
+    | Huanghe OceanAI 800         | 黄河科技      | Huawei Kunpeng 920                      | Arm  |
+    | Huanghe OceanAI 900         | 黄河科技      | Huawei Kunpeng 920                      | Arm  |
     | Huang he 2280 V2            | 黄河科技      | Huawei Kunpeng 920               | Arm    |
     | Huang he 5280 V2            | 黄河科技      | Huawei Kunpeng 920               | Arm    |
     | Huawei 1288Hv5              | 华为          | Intel Xeon 6134                       | x86 |
@@ -180,6 +183,7 @@ OpenCloudOS 兼容硬件列表如下：
     | R8424系列                   | 长城超云      | Intel Xeon 5218                  | x86 |
     | R8428系列                   | 长城超云      | Intel Xeon 6248                  | x86 |
     | T8520 G11                   | 长城超云      | Intel Xeon 6248                  | x86 |
+    | 双路云服务器PR2715E           | 宝德         | Intel Xeon                       | x86  |
     | PowerLeader PR210K          | 宝德          | Huawei Kunpeng 920               | Arm    |
     | PowerLeader PR210K32        | 宝德          | Huawei Kunpeng 920               | Arm    |
     | PowerLeader PR212K          | 宝德          | Huawei Kunpeng 920               | Arm    |
@@ -541,8 +545,13 @@ OpenCloudOS 兼容硬件列表如下：
 === "硬盘"
 
 
-    | 厂商     | 厂商 PN              | 介质     | 协议   | 容量/Gb        | 接口 | 尺寸 |
+    | 厂商     | 厂商 PN              | 介质     | 协议   | 容量/GB        | 接口 | 尺寸 |
     | :------- | :------------------- | :------- | :----- | :------------- | :--- | :--- |
+    | 江波龙 | RSZE4836P-1920 | eTLC | NVMe | 1920 | PCIe 4.0\*4 | 2.5inch U.2 |
+    | 江波龙 | RSZE4836M-3200 | eTLC | NVMe | 3200 | PCIe 4.0\*4 | 2.5inch U.2 |
+    | 江波龙 | RSZE4836P-3840 | eTLC | NVMe | 3840 | PCIe 4.0\*4 | 2.5inch U.2 |
+    | 江波龙 | RSZE4836M-6400 | eTLC | NVMe | 6400 | PCIe 4.0\*4 | 2.5inch U.2 |
+    | 江波龙 | RSZE4836P-7680 | eTLC | NVMe | 7680 | PCIe 4.0\*4 | 2.5inch U.2 |
     | 佰维     | SS321   | SSD  | SATA | 240/480/960          | SATA3 | 2.5      |
     | 佰维     | SS323   | SSD  | SATA | 240/480/960          | SATA3 | M.2 2280 |
     | 得瑞领新 | D7436   | SSD  | NVMe | 1920/3840/7680/15360 | PCIE  | 2.5      |
@@ -826,6 +835,8 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 标准型号                    | 供应商        | 处理器型号                                    | 架构                                 |
     | :-------------------------- | :------------ | :-------------------------------------------- | --------------------------------------------- |
+    | Huanghe OceanAI 800 | 黄河科技 | Huawei Kunpeng 920 | Arm  |
+    | Huanghe OceanAI 900 | 黄河科技 | Huawei Kunpeng 920 | Arm  |
     | X7340H0 异构加速服务器  | 中科可控  | Hygon C86 7380 | x86 |
     | Greatwall EF723       | 中国长城 | Phytium FT-2000+                           | Arm                                   |
     | H3C R5500G5           | H3C       | AMD EPYC 7K62               | x86            |
