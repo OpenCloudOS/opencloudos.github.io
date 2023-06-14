@@ -77,6 +77,12 @@ nav:
     - OC V8 下载及安装: quickstart/V8_install.md
     - 使用说明: quickstart/use.md
   - 用户指南:
+    - 安装启动指南: 
+      - 系统启动管理: 
+        - 系统引导管理: guide/grub2_boot.md
+        - UEFI引导启动项管理: guide/uefi_boot.md
+    - 系统管理指南: 
+      - 日志管理: guide/syslog_config.md
     - 基础配置: guide/config.md
     - 系统管理: guide/sysadmin.md
     - 内核更新: guide/update.md
