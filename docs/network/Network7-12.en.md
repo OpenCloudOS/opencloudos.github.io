@@ -68,7 +68,7 @@ Here's how to export the settings for the ens3 interface to a file, modify the c
 
 2. Modify the ~/network-config.yml file using a text editor to update the configuration.
 
-3. Apply the settings in the ~/network-config.yml file:~/network-config.yml 文件中的设置：
+3. Apply the settings in the ~/network-config.yml file:~/network-config.yml file's setting：
 
    ```
    # nmstatectl apply ~/network-config.yml
@@ -93,7 +93,7 @@ Here's how to export the settings for the ens3 interface to a file, modify the c
    # nmcli connection add con-name test-con ifname ens4 type ethernet
    ```
 
-   修改 test-con 为您需要的网络连接配置集。
+   Change test-con to Configure the set for the network connection you need.
 
 2. Set the IPv4 address:
 
@@ -611,7 +611,7 @@ You can identify the device path with the following command:
 
      The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.
 
-   如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。
+   If the -u user_name option is not specified, the ansible-playbook connects to the managed host as the user currently logged in to the control node.
 
 ## 8.6. Configuring Dynamic Ethernet Connections Using nmcli
 
@@ -676,8 +676,8 @@ You can identify the device path with the following command:
      
    ```
      # ping 2001:db8:2::1
-     ```
-     
+   ```
+   
      -  If the command fails, ping the default gateway to verify the settings.
        IPv4:
      
@@ -776,26 +776,26 @@ You can identify the device path with the following command:
 
 
         IPv4:
-
+    
      ```
      # ping 192.0.2.3
      ```
-
+    
         IPv6:
-
+    
          ```
       # ping 2001:db8:1::2
          ```
-
+    
      -  If the command fails, ping the default gateway to verify the settings.
        IPv4:
-
+    
        ```
        # ping 192.0.2.254
        ```
-
+    
        IPv6:
-
+    
        ```
        # ping 2001:db8:1::fff3
        ```
@@ -938,7 +938,7 @@ The process defines the interface configuration in YAML format. Alternatively, y
      # ansible-playbook -u user_name --ask-become-pass ~/ethernet-dynamic-IP.yml
      ```
 
-     --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。
+     The --ask-become-pass option ensures that the ansible-playbook command prompts for the user's sudo password as defined in the -u user_name option.
 
    If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.
 
@@ -1046,7 +1046,7 @@ Note that control-center does not support as many configuration options as the n
 
 **Verify**
 
-1. 显示设备和连接的状态：
+1. Displays the status of devices and connections:
 
    ```
    # nmcli device status
@@ -1054,7 +1054,7 @@ Note that control-center does not support as many configuration options as the n
    enp7s0      ethernet  connected  Example-Connection
    ```
 
-2. 显示连接配置集的所有设置：
+2. Displays all Settings for the connection configuration set:
 
    ```
    # nmcli connection show Example-Connection
@@ -1066,19 +1066,20 @@ Note that control-center does not support as many configuration options as the n
    ...
    ```
 
-3. 使用 ping 程序来验证网络连通性。
+3. Use the ping program to verify network connectivity.
 
-   - 查找同一子网中的 IP 地址。
+   - Find an IP address in the same subnet.
      IPv4:
+     
          ```
          # ping 192.0.2.3
          ```
-         IPv6:
+     ​    IPv6:
          ```
          # ping 2001:db8:1::2
-         ```
-
-   - 在远程子网中查找 IP 地址。
+       ```
+     
+   - Find an IP address in a remote subnet.
      IPv4:
 
      ```
@@ -1091,7 +1092,7 @@ Note that control-center does not support as many configuration options as the n
      # ping 2001:db8:2::1
      ```
 
-     - 如果命令失败，则使用 ping 默认网关来验证设置。
+     - If the command fails, ping the default gateway is used to verify the Settings.
        IPv4:
 
        ```
@@ -1104,13 +1105,13 @@ Note that control-center does not support as many configuration options as the n
        # ping 2001:db8:1::fff3
        ```
 
-4. 使用 host 命令验证域名解析是否正常：
+4. Run the host command to verify that domain name resolution is normal:
 
    ```
    # host client.test.com
    ```
 
-   如果命令错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。
+   If the command is wrong, such as connection timed out or no servers could be reached, verify your DNS Settings.
 
 **Troubleshooting Steps**
 
@@ -1175,54 +1176,56 @@ If the connection fails, or the network interface toggles between the up and dow
 
    - Find IP addresses on the same subnet.
      IPv4:
-     
+
          ```
          # ping 192.0.2.3
          ```
+
      ​    IPv6:
+
          ```
          # ping 2001:db8:1::2
-    ```
-     
+         ```
+
    - Look up IP addresses in remote subnets.
-  IPv4:
-   
+     IPv4:
+
      ```
      # ping 198.162.3.1
-  ```
-   
-  IPv6:
-   
+     ```
+
+     IPv6:
+
      ```
      # ping 2001:db8:2::1
-  ```
-   
-     -  If the command fails, ping the default gateway to verify the settings.
-    IPv4:
-   
+     ```
+
+     - If the command fails, ping the default gateway to verify the settings.
+       IPv4:
+
        ```
        # ping 192.0.2.254
-    ```
-   
-    IPv6:
-   
+       ```
+
+       IPv6:
+
        ```
        # ping 2001:db8:1::fff3
-    ```
-   
-- Use the host command to verify whether the domain name resolution is normal:
-   
+       ```
+
+   - Use the host command to verify whether the domain name resolution is normal:
+
    ```
    # host client.test.com
-```
-   
+   ```
+
    If the command is wrong, such as connection timed out or no servers could be reached, verify your DNS settings.
 
 ## 8.13. Change NetworkManager's DHCP client
 
 By default, NetworkManager uses its internal DHCP client. However, if you need a DHCP client that does not provide a built-in client, you can also configure NetworkManager to use dhclient.
 
-**Process**
+Process
 
 1. Create the /etc/NetworkManager/conf.d/dhcp-client.conf file:
 
@@ -1231,7 +1234,7 @@ By default, NetworkManager uses its internal DHCP client. However, if you need a
    dhcp=dhclient
    ```
 
-   You can set the dhcp parameter to internal (default) or dhclient.
+    You can set the dhcp parameter to internal (default) or dhclient.
 
 2. If you set the dhcp parameter for dhclient, install the dhcp-client package:
 
@@ -1245,7 +1248,7 @@ By default, NetworkManager uses its internal DHCP client. However, if you need a
    # systemctl restart NetworkManager
    ```
 
-   Note that restarting temporarily interrupts all network connections.
+    Note that restarting temporarily interrupts all network connections.
 
 **Verify**
 
@@ -1275,7 +1278,7 @@ When you configure a connection to retrieve an IP address from a DHCP server, Ne
    # nmcli connection modify connection_name ipv4.dhcp-timeout 30 ipv6.dhcp-timeout 30
    ```
 
-   Also, set the parameter to infinity to configure NetworkManager to not stop trying to request and renew an IP address until it succeeds.
+    Also, set the parameter to infinity to configure NetworkManager to not stop trying to request and renew an IP address until it succeeds.
 
 2. Optional: Configure the behavior if NetworkManager does not receive an IPv4 address before timing out:
 
@@ -1285,20 +1288,20 @@ When you configure a connection to retrieve an IP address from a DHCP server, Ne
 
    If the ipv4.may-fail option is set to:
 
-   - yes ,the state of the connection depends on the IPv6 configuration:
-     -  If the IPv6 configuration is enabled and successful, NetworkManager activates the IPv6 connection and does not attempt to activate the IPv4 connection.
-     -  If IPv6 configuration is disabled or not configured, the connection will fail.
-   - no , the connection will be stopped. in this case:
-     -  If the connection's autoconnect property is enabled, NetworkManager tries to activate the connection as many times as the value set in the autoconnect-retries property. The default value is 4.
-     - If the connection still cannot obtain a DHCP address, auto activation will fail. Note that after 5 minutes, the automatic connection process starts again to obtain an IP address from the DHCP server.
+      - yes ,the state of the connection depends on the IPv6 configuration:
+        -  If the IPv6 configuration is enabled and successful, NetworkManager activates the IPv6 connection and does not attempt to activate the IPv4 connection.
+        -  If IPv6 configuration is disabled or not configured, the connection will fail.
+      - no , the connection will be stopped. in this case:
+        -  If the connection's autoconnect property is enabled, NetworkManager tries to activate the connection as many times as the value set in the autoconnect-retries property. The default value is 4.
+        -  If the connection still cannot obtain a DHCP address, auto activation will fail. Note that after 5 minutes, the automatic connection process starts again to obtain an IP address from the DHCP server.
 
-3. 可选：配置如果网络管理器（NetworkManager）在超时前没有接收 IPv6 地址时的行为：
+3. Optional: Configure the behavior if NetworkManager does not receive an IPv6 address before timeout:
 
    ```
    # nmcli connection modify connection_name ipv6.may-fail value
    ```
 
-##   8.15. Configuring Multiple Ethernet Interfaces Using a Single Connection Profile by Interface Name
+## 8.15. Configuring Multiple Ethernet Interfaces Using a Single Connection Profile by Interface Name
 
 In most cases, a connection profile contains the settings for a network device. However, NetworkManager also supports wildcards when you set interface names in connection profiles. You can use this feature to create a single connection profile that can be used for multiple Ethernet interfaces if the host is roaming between Ethernets with dynamic IP address assignment.
 
@@ -1331,9 +1334,9 @@ In most cases, a connection profile contains the settings for a network device. 
    ...
    ```
 
-   3 means **the number of interfaces that are active on the connection profile at the same time**, not the number of network interfaces in the connection profile. The connection profile uses all devices that match the pattern in the match.interface-name parameter, so the connection profiles have the same universally unique identifier (UUID).
+   3 indicates ** The number of interfaces that are active on the connection profile at the same time **, not the number of network interfaces in the connection profile. The connection profile uses all devices that match the pattern in the match.interface-name parameter, so the connection profile has the same universal unique identifier (UUID).
 
-2. 显示连接的状态：
+2. Display the status of the connection:
 
    ```
    #nmcli connection show
@@ -1399,6 +1402,8 @@ A PCI ID is a unique identifier for a device connected to the system. A connecti
 
 This connection profile uses all devices whose PCI ID matches the pattern in the match.path parameter, so the connection profile has the same universally unique identifier (UUID).
 
+
+
 # Chapter 9 Managing Wi-Fi Connections
 
 ##   9.1. Use nmcli to configure Wi-Fi connection
@@ -1408,10 +1413,6 @@ This connection profile uses all devices whose PCI ID matches the pattern in the
 - The nmcli tool is installed.
 
 - Make sure WiFi is enabled:
-
-  ```
-  $ nmcli radio wifi on
-  ```
 
 **Process**
 
@@ -1537,7 +1538,7 @@ This connection profile uses all devices whose PCI ID matches the pattern in the
      - Gateway - The IP address of the gateway for the remote network, subnetwork, or host entered above.
      - metric - network cost, the preferred value given to this route. The lower the number, the higher the priority.
 
-- 仅将此连接用于其网络上的资源
+- Use this connection only for resources on their network
   - use this connection only for resources on its network
     - Select this checkbox to prevent the connection from being the default route.
   - IPv6
