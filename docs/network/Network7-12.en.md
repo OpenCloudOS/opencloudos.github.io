@@ -275,7 +275,7 @@ Here's how to export the settings for the ens3 interface to a file, modify the c
    nmcli> set ipv6.dns AD80::ABAA:0000:00C2:0001
    ```
 
-   要设置多个 DNS 服务器，以空格分隔并用引号括起来。
+   To set up multiple DNS servers, separate them by Spaces and enclose them in quotation marks.
 
 8. Set up DNS search domains for IPv4 and IPv6 connections:
 
@@ -517,7 +517,7 @@ If the connection fails, or the network interface toggles between the up and dow
             state: up
    ```
 
-3. 运行playbook：
+3. Run playbook：
 
    -  To connect to the managed host as root, enter:
 
