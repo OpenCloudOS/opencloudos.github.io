@@ -128,6 +128,19 @@ nav:
   - 下载:
     - ISO: download/iso.md
     - 镜像源: download/mirrors.md
+  - 测试:
+    - 一、项目管理: tcase/proj.md
+    - 二、用例管理: 
+      - 编写用例: tcase/case_create.md
+      - 提取用例: tcase/case_extract.md
+      - 导入用例: tcase/case_import.md
+      - 用例集: tcase/case_set.md
+    - 三、执行环境:
+      - 新增节点: tcase/node.md
+      - 新增集群: tcase/cluster.md
+    - 四、任务管理:
+      - 创建任务: tcase/task_create.md
+      - 执行任务: tcase/task_execute.md
 
 plugins:
   - search
@@ -185,3 +198,4 @@ plugins:
           内核开发指南: Kernel Development Guide
           文档库格式手册: Documentation format guide
           下载: Download
+          测试: Test
