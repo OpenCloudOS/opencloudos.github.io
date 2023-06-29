@@ -2,7 +2,7 @@
 
 ### 1.1 执行模式
 
-执行模式有【apdtest/nose/pytest】三种，详细请参考[执行模式说明](./case_create.md)
+执行模式有【pytest/类gtest/nose】三种，详细请参考[执行模式说明](./case_create.md)
 
 ### 1.2 执行环境
 可以选择单个节点或者执行集群  
