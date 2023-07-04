@@ -453,7 +453,7 @@ active-backup、balance-tlb 和 balance-alb 模式不需要网络交换机的任
 5. 配置绑定的 IP 设置。如果要使用这个绑定作为其它设备的端口，请跳过这一步。
    1. 在 IPv4 Settings 选项卡中，配置 IPv4 设置。例如，设置静态 IPv4 地址、网络掩码、默认网关、DNS 服务器和 DNS 搜索域：
    ![nm-connection-editor配置bond_2](././assets/nm-connection-editor配置bond_2.png)
-   2. 在 IPv4 Settings 选项卡中，配置 IPv4 设置。例如，设置静态 IPv4 地址、网络掩码、默认网关、DNS 服务器和 DNS 搜索域：
+   2. 在 IPv6 Settings 选项卡中，配置 IPv6 设置。例如，设置静态 IPv6 地址、网络掩码、默认网关、DNS 服务器和 DNS 搜索域：
    ![nm-connection-editor配置bond_3](././assets/nm-connection-editor配置bond_3.png)
 6. 点 Save 保存绑定连接。
 7. 关闭 nm-connection-editor。
