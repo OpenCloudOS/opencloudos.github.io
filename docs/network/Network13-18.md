@@ -481,6 +481,7 @@ active-backup、balance-tlb 和 balance-alb 模式不需要网络交换机的任
 **流程**
 
 1. 创建 ~/create-bond.yml YAML文件：
+
     ```
     ---
     interfaces:
@@ -572,6 +573,7 @@ active-backup、balance-tlb 和 balance-alb 模式不需要网络交换机的任
     node.example.com
     ```
 2. 创建 ~/bond-ethernet.yml playbook：
+
     ```
     ---
     - name: Configure a network bond that uses two Ethernet ports
