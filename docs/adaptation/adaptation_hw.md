@@ -547,6 +547,7 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 厂商     | 厂商 PN              | 介质     | 协议   | 容量/GB        | 接口 | 尺寸 |
     | :------- | :------------------- | :------- | :----- | :------------- | :--- | :--- |
+    | 惠科存储 | HKCStorage H7000 系列 NVMe SSD | SSD | NVMe | 1024/2048 | PCIE Gen4*4 | M.2 2280 |
     | 江波龙 | RSZE4836P-1920 | eTLC | NVMe | 1920 | PCIe 4.0\*4 | 2.5inch U.2 |
     | 江波龙 | RSZE4836M-3200 | eTLC | NVMe | 3200 | PCIe 4.0\*4 | 2.5inch U.2 |
     | 江波龙 | RSZE4836P-3840 | eTLC | NVMe | 3840 | PCIe 4.0\*4 | 2.5inch U.2 |
