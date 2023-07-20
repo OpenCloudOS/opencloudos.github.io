@@ -4,6 +4,13 @@ OpenCloudOS 兼容硬件列表如下：
 
     | 标准型号                    | 供应商        | 处理器型号                       | 架构   |
     | --------------------------- | ------------- | -------------------------------- | ------ |
+    | H3C UniServer R4900 G5服务器 | 紫光华山      | Intel                            | X86    |
+    | H3C UniServer R4300 G5服务器 | 紫光华山      | Intel                            | X86    |
+    | H3C UniServer R4930 G5 H3服务器 | 紫光华山   | Hygon C86 7360                   | X86    |
+    | H3C UniServer R4930 G5 服务器| 紫光华山      | Hygon C86 7265                   | X86    |
+    | H3C UniServer R4950 G5服务器 | 紫光华山      | AMD EPYC 7543                    | X86    |
+    | H3C UniServer R4960 G3服务器 | 紫光华山      | Kunpeng 920                      | Arm    |
+    | H3C UniServer R6900 G5服务器 | 紫光华山      | Intel                            | X86    |    
     | UNISYUE R3810G5             | 紫光恒越      | Phytium S2500                    | Arm    |
     | UNISYUE R3820G3             | 紫光恒越      | Huawei Kunpeng 920               | Arm    |
     | UNISYUE R3830G5             | 紫光恒越      | Hygon C86 5280                   | x86 |
