@@ -1,0 +1,2900 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../uefi_boot/">
+      
+      
+        <link rel="next" href="../config/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>日志管理 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-journald" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              日志管理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../guide/syslog_config/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../../en/guide/syslog_config/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        用户指南
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        版本说明
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      常见问题
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        参与贡献
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        生态认证
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../migrate_relative/" class="md-tabs__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        下载
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        测试
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          快速入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        使用说明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          用户指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          用户指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          日志管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        日志管理
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-journald" class="md-nav__link">
+    1. journald服务
+  </a>
+  
+    <nav class="md-nav" aria-label="1. journald服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 查看系统日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 管理系统日志
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rsyslog" class="md-nav__link">
+    2. rsyslog 的安装和配置
+  </a>
+  
+    <nav class="md-nav" aria-label="2. rsyslog 的安装和配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-rsyslog" class="md-nav__link">
+    2.1 rsyslog 简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rsyslog" class="md-nav__link">
+    2.2 安装 rsyslog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-rsyslog" class="md-nav__link">
+    2.3 配置 rsyslog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-rsyslog" class="md-nav__link">
+    2.4 rsyslog 的基本使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 配置日志转发规则
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 配置日志转发规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251" class="md-nav__link">
+    2.5.1 转发本机日志消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252" class="md-nav__link">
+    2.5.2 接收远程日志消息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-rsyslog-journal" class="md-nav__link">
+    2.6 结合使用 rsyslog 和 journal
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 结合使用 rsyslog 和 journal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-rsyslog-journal" class="md-nav__link">
+    2.6.1 如何在 rsyslog 中使用 journal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262-journal-rsyslog" class="md-nav__link">
+    2.6.2 如何在 journal 中使用 rsyslog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263-rsyslog-journal" class="md-nav__link">
+    2.6.3 结合使用 rsyslog 和 journal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264" class="md-nav__link">
+    2.6.4 常见问题和解决方案
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6.4 常见问题和解决方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsyslog" class="md-nav__link">
+    rsyslog 常见问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journal" class="md-nav__link">
+    journal 常见问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 日志转储
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 日志转储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-logrotate" class="md-nav__link">
+    3.1 安装logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-logrotate" class="md-nav__link">
+    3.2 配置logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-logrotate" class="md-nav__link">
+    3.3 手动执行logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-logrotate" class="md-nav__link">
+    3.4 自动执行logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-logrotate-rsyslog" class="md-nav__link">
+    3.5 通过 logrotate 转储 rsyslog 日志
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 通过 logrotate 转储 rsyslog 日志">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-logrotate" class="md-nav__link">
+    3.5.1 配置logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    3.5.2 设置旋转周期与保留策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 查看系统日志文件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        基础配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/" class="md-nav__link">
+        系统管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update/" class="md-nav__link">
+        内核更新
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor/" class="md-nav__link">
+        系统状态监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        安全加固
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          存储管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          存储管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        逻辑卷管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        可用的存储选项
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          网络管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          网络管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network1-6/" class="md-nav__link">
+        1-6章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network7-12/" class="md-nav__link">
+        7-12章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network13-18/" class="md-nav__link">
+        13-18章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network19-24/" class="md-nav__link">
+        19-24章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network25-30/" class="md-nav__link">
+        25-30章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network31-36/" class="md-nav__link">
+        31-36章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network37-42/" class="md-nav__link">
+        37-42章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network43-48/" class="md-nav__link">
+        43-48章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network49-54/" class="md-nav__link">
+        49-54章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network55-57/" class="md-nav__link">
+        55-57章
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          版本说明
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          版本说明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          参与贡献
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          参与贡献
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        如何贡献
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        文档库格式手册
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        内核开发指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          生态认证
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          生态认证
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        生态认证流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        硬件测试用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          认证兼容列表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          认证兼容列表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        硬件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        商业软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        开源软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        适配FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          CentOS停服专区
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          CentOS停服专区
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate_relative/" class="md-nav__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/" class="md-nav__link">
+        CentOS迁移OpenCloudOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          下载
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          下载
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          测试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-journald" class="md-nav__link">
+    1. journald服务
+  </a>
+  
+    <nav class="md-nav" aria-label="1. journald服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 查看系统日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 管理系统日志
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rsyslog" class="md-nav__link">
+    2. rsyslog 的安装和配置
+  </a>
+  
+    <nav class="md-nav" aria-label="2. rsyslog 的安装和配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-rsyslog" class="md-nav__link">
+    2.1 rsyslog 简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rsyslog" class="md-nav__link">
+    2.2 安装 rsyslog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-rsyslog" class="md-nav__link">
+    2.3 配置 rsyslog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-rsyslog" class="md-nav__link">
+    2.4 rsyslog 的基本使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 配置日志转发规则
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 配置日志转发规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251" class="md-nav__link">
+    2.5.1 转发本机日志消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252" class="md-nav__link">
+    2.5.2 接收远程日志消息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-rsyslog-journal" class="md-nav__link">
+    2.6 结合使用 rsyslog 和 journal
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 结合使用 rsyslog 和 journal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-rsyslog-journal" class="md-nav__link">
+    2.6.1 如何在 rsyslog 中使用 journal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262-journal-rsyslog" class="md-nav__link">
+    2.6.2 如何在 journal 中使用 rsyslog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263-rsyslog-journal" class="md-nav__link">
+    2.6.3 结合使用 rsyslog 和 journal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264" class="md-nav__link">
+    2.6.4 常见问题和解决方案
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6.4 常见问题和解决方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsyslog" class="md-nav__link">
+    rsyslog 常见问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journal" class="md-nav__link">
+    journal 常见问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 日志转储
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 日志转储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-logrotate" class="md-nav__link">
+    3.1 安装logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-logrotate" class="md-nav__link">
+    3.2 配置logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-logrotate" class="md-nav__link">
+    3.3 手动执行logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-logrotate" class="md-nav__link">
+    3.4 自动执行logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-logrotate-rsyslog" class="md-nav__link">
+    3.5 通过 logrotate 转储 rsyslog 日志
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 通过 logrotate 转储 rsyslog 日志">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-logrotate" class="md-nav__link">
+    3.5.1 配置logrotate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    3.5.2 设置旋转周期与保留策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 查看系统日志文件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/guide/syslog_config.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/guide/syslog_config.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+  <h1>日志管理</h1>
+
+<h2 id="1-journald">1. journald服务</h2>
+<h3 id="11">1.1 查看系统日志</h3>
+<p>在 Linux 中，您可以使用以下命令查看系统日志：</p>
+<ul>
+<li>查看所有日志：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo journalctl
+</code></pre></div>
+该命令将显示所有系统日志。</p>
+<ul>
+<li>查看特定服务的日志：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo journalctl -u service-name
+</code></pre></div>
+将 "service-name" 替换为您要查看的服务名称。该命令将显示特定服务的日志。</p>
+<ul>
+<li>查看特定时间段的日志：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo journalctl --since &quot;2022-01-01 00:00:00&quot; --until &quot;2022-01-02 00:00:00&quot;
+</code></pre></div>
+将日期和时间替换为您要查看的时间段。该命令将显示指定时间段内的日志。</p>
+<ul>
+<li>查看内核日志</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo journalctl -k
+</code></pre></div>
+<ul>
+<li>查看所有启动日志</li>
+</ul>
+<p>当前系统中journald默认只会保存当次启动的日志，存储位置在<code>/run/log/journal/</code>下，如果需要记录所有的启动日志，可以手动创建<code>/var/log/journal</code>目录，创建后journald服务会把启动日志存储到这里。再次重启后，<code>journalctl --list-boots</code>就能查看到之前的启动记录了。
+<div class="highlight"><pre><span></span><code># mkdir -p /var/log/journal/
+# reboot
+...
+# journalctl --list-boots
+IDX BOOT ID                          FIRST ENTRY                 LAST ENTRY                 
+ -1 506feea161494cff925010ea7599ab5d Fri 2023-05-26 15:57:28 CST Fri 2023-05-26 16:00:10 CST
+  0 59f4624ce2d94299be2afd80d3650c1a Fri 2023-05-26 16:00:18 CST Fri 2023-05-26 16:03:20 CST
+</code></pre></div></p>
+<h3 id="12">1.2 管理系统日志</h3>
+<p>在 Linux 中，您可以使用以下命令管理系统日志：</p>
+<ul>
+<li>清除所有日志：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo journalctl --vacuum-time=1s
+</code></pre></div>
+该命令将清除所有日志。</p>
+<ul>
+<li>清除特定时间段的日志：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo journalctl --vacuum-time=1s --since &quot;2022-01-01 00:00:00&quot; --until &quot;2022-01-02 00:00:00&quot;
+</code></pre></div>
+将日期和时间替换为您要清除的时间段。该命令将清除指定时间段内的日志。</p>
+<ul>
+<li>将日志输出到文件：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo journalctl &gt; log.txt
+</code></pre></div>
+该命令会将所有日志输出到名为 "log.txt" 的文件中。</p>
+<ul>
+<li>将特定服务的日志输出到文件：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo journalctl -u service-name &gt; service-log.txt
+</code></pre></div>
+将 "service-name" 替换为您要输出的服务名称。该命令会将特定服务的日志输出到名为 "service-log.txt" 的文件中。</p>
+<h2 id="2-rsyslog">2. rsyslog 的安装和配置</h2>
+<h3 id="21-rsyslog">2.1 rsyslog 简介</h3>
+<p>rsyslog (Reliable System Logging) 是一个强大的系统日志处理引擎，它提供了一套完整的工具集，可以轻松传输、后处理和存储各种来源的系统与应用日志。rsyslog 对 Syslog 协议进行了改良与扩展，包括更高的可靠性、性能以及强大的插件架构。</p>
+<h3 id="22-rsyslog">2.2 安装 rsyslog</h3>
+<p>在 OpenCloudOS 中，rsyslog 通常已经预装。同时可以使用包管理器（ dnf ）来安装：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>update
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>rsyslog
+</code></pre></div>
+<h3 id="23-rsyslog">2.3 配置 rsyslog</h3>
+<p>rsyslog 的配置文件通常位于 <code>/etc/rsyslog.conf</code>。在这个文件中定义日志消息的来源、格式和目的地。例如，配置 rsyslog 从特定的 Unix 套接字读取日志，从 journald 读取日志或者将日志消息发送到远程服务器。</p>
+<p>rsyslog 的配置文件使用了一种特殊的语法，其中包括模块、模板和规则。例如，以下是一个简单的配置：</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 加载模块</span>
+module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imuxsock&quot;</span><span class="o">)</span><span class="w"> </span><span class="c1"># 提供 Unix 套接字支持</span>
+module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imklog&quot;</span><span class="o">)</span><span class="w">  </span><span class="c1"># 提供内核日志支持</span>
+
+<span class="c1"># 提供 UDP syslog 接收</span>
+module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span><span class="o">)</span>
+input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span><span class="w"> </span><span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
+
+<span class="c1"># 提供 TCP syslog 接收</span>
+module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span><span class="o">)</span>
+input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span><span class="w"> </span><span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
+
+<span class="c1"># 指定日志文件的位置</span>
+auth,authpriv.*<span class="w">                 </span>/var/log/auth.log
+*.*<span class="p">;</span>auth,authpriv.none<span class="w">          </span>-/var/log/syslog
+daemon.*<span class="w">                        </span>-/var/log/daemon.log
+kern.*<span class="w">                          </span>-/var/log/kern.log
+</code></pre></div>
+ 修改配置文件后，需要重启 rsyslog 服务：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>rsyslog
+</code></pre></div>
+<h3 id="24-rsyslog">2.4 rsyslog 的基本使用</h3>
+<p>一旦 rsyslog 安装并配置好，它就会开始自动运行，并处理日志消息。使用 <code>systemctl</code> 命令来管理 rsyslog 服务，例如启动、停止或重启服务：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>rsyslog
+sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>rsyslog
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>rsyslog
+</code></pre></div>
+<p>设置 rsyslog 随系统默认启动：
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>rsyslog
+</code></pre></div></p>
+<p>同时可以查看 rsyslog 的状态，以确保它正在正常运行：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>rsyslog
+</code></pre></div>
+<h3 id="25">2.5 配置日志转发规则</h3>
+<p>rsyslog 的强大之处体现在其便捷的日志文件转发功能，用户可以通过 rsyslog 的配置文件，方便地发送本机日志文件至远程服务器，或者接收来自远程服务器的日志信息。</p>
+<h4 id="251">2.5.1 转发本机日志消息</h4>
+<p>用户配置 /etc/rsyslog.conf 文件，从而将本机所有日志消息通过 rsyslog 转发到其他服务器：</p>
+<div class="highlight"><pre><span></span><code>*.*<span class="w"> </span>@@192.168.1.1:514
+</code></pre></div>
+<p>在这个示例中，<code>*.*</code> 表示所有设施和所有优先级的日志消息，<code>@@</code> 表示使用 TCP 连接，<code>192.168.1.1:514</code> 是远程服务器的 IP 地址和端口。</p>
+<p>修改配置文件后，请重新启动 rsyslog 服务使更改生效：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>rsyslog
+</code></pre></div>
+<h4 id="252">2.5.2 接收远程日志消息</h4>
+<p>用户配置 /etc/rsyslog.conf 文件，加载特定模块并打开特定端口，接收来自其他服务器的日志消息：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 提供 UDP syslog 接收</span>
+module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span><span class="o">)</span>
+input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imudp&quot;</span><span class="w"> </span><span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
+
+<span class="c1"># 提供 TCP syslog 接收</span>
+module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span><span class="o">)</span>
+input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;imtcp&quot;</span><span class="w"> </span><span class="nv">port</span><span class="o">=</span><span class="s2">&quot;514&quot;</span><span class="o">)</span>
+</code></pre></div>
+<p>在这个示例中，rsyslog 打开了 TCP 和 UDP 接收模块，接收来自其他服务器的 syslog 消息。</p>
+<p>修改配置文件后，请重新启动 rsyslog 服务使更改生效：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>rsyslog
+</code></pre></div>
+<h3 id="26-rsyslog-journal">2.6 结合使用 rsyslog 和 journal</h3>
+<p>rsyslog 和 journal 都是用于处理和管理系统日志的工具，但它们在设计和实现上有一些主要的区别。rsyslog 使用的是传统的文本文件格式，可以直接阅读和处理，而 journal 使用的是二进制格式，需要通过特定的工具进行处理。此外，rsyslog 更加注重网络日志收集，而 journal 则更加注重本地日志的结构化和索引。</p>
+<h4 id="261-rsyslog-journal">2.6.1 如何在 rsyslog 中使用 journal</h4>
+<p>rsyslog 可以配置为从 journal 中读取日志。这可以通过在 rsyslog 配置文件中加载 imjournal 模块来实现。加载此模块后，rsyslog 将从 journal 中读取日志，而不是从传统的 syslog UNIX 套接字。这样可以使 rsyslog 利用 journal 提供的结构化日志数据。</p>
+<p>在 rsyslog 的配置文件 <code>/etc/rsyslog.conf</code> 中，添加以下行来加载 imjournal 模块（在 OpenCloudOS 中，通常已默认配置）：</p>
+<div class="highlight"><pre><span></span><code>module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">&quot;imjournal&quot;</span><span class="w"> </span><span class="nv">StateFile</span><span class="o">=</span><span class="s2">&quot;imjournal.state&quot;</span><span class="o">)</span>
+</code></pre></div>
+<p>这将使 rsyslog 从 journal 中读取日志。</p>
+<h4 id="262-journal-rsyslog">2.6.2 如何在 journal 中使用 rsyslog</h4>
+<p>虽然 journal 本身并不直接使用 rsyslog，但它可以配置为将日志消息转发给 rsyslog。这可以通过在 journal 的配置文件中设置 ForwardToSyslog 选项来实现。设置此选项后，journal 将把所有日志消息都发送到 rsyslog，这样 rsyslog 就可以像处理传统的 syslog 消息一样处理这些消息。</p>
+<p>在 journal 的配置文件 <code>/etc/systemd/journald.conf</code> 中，添加或修改以下行来启用 ForwardToSyslog 选项 (默认选项为 no )：</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ForwardToSyslog</span><span class="o">=</span>yes
+</code></pre></div>
+<p>然后重启 systemd-journald 服务以使更改生效：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>systemd-journald
+</code></pre></div>
+<p>一般情况下，如果需要将 journal 的日志消息转发至 rsyslog 时，建议用户同时打开 rsyslog 的 imjournal 模块和 journald 的 ForwardToSyslog 选项，这样能够确保所有的日志消息都能正确地被 rsyslog 捕获。</p>
+<h4 id="263-rsyslog-journal">2.6.3 结合使用 rsyslog 和 journal</h4>
+<p>结合使用 rsyslog 和 journal 可以充分利用两者的优点。通过 journal获得结构化和索引的日志，这使得日志查询和分析更加方便。而通过 rsyslog将日志消息发送到网络上的其他服务器，这对于集中式日志管理非常有用。此外，由于 rsyslog 可以处理传统的 syslog 消息，所以它可以与那些仍然使用这种消息格式的旧应用程序兼容。</p>
+<p>例如，配置 /etc/rsyslog.conf 文件，从而将本机所有 journal 日志消息通过 rsyslog 转发到其他服务器：</p>
+<div class="highlight"><pre><span></span><code>*.*<span class="w"> </span>@@192.168.1.1:514
+</code></pre></div>
+<h4 id="264">2.6.4 常见问题和解决方案</h4>
+<h5 id="rsyslog">rsyslog 常见问题</h5>
+<ul>
+<li>
+<p><strong>rsyslog 服务无法启动</strong>
+   如果 rsyslog 服务无法启动，首先检查 rsyslog 的配置文件是否有语法错误。使用 <code>rsyslogd -N1</code> 命令来检查配置文件。如果这个命令没有输出任何错误，那么配置文件应该是正确的。
+   另一个可能的原因是 rsyslog 服务没有足够的权限来读取或写入日志文件。检查日志文件的权限确保 rsyslog 服务有权访问它们。</p>
+</li>
+<li>
+<p><strong>rsyslog 不接收远程日志</strong>
+   如果 rsyslog 不接收远程日志，首先检查防火墙设置，确保 rsyslog 的端口（默认是 514）没有被阻塞。也可以检查 rsyslog 的配置文件，确保已经加载了 imudp 或 imtcp 模块，并且已经启动了 UDP 或 TCP 服务器。</p>
+</li>
+</ul>
+<h5 id="journal">journal 常见问题</h5>
+<ul>
+<li>
+<p><strong>journal 日志丢失</strong>
+   如果 journal 的日志丢失，可能的原因是 journal 的存储空间不足。在 journal 的配置文件中设置 <code>SystemMaxUse</code> 选项，以限制 journal 可以使用的最大磁盘空间。
+   另一个可能的原因是系统崩溃或意外关机。因为 journal 默认在内存中存储日志，所以在这些情况下，日志可能会丢失。在 journal 的配置文件中设置 <code>Storage=persistent</code> 选项，以在磁盘上持久化存储日志。</p>
+</li>
+<li>
+<p><strong>journal 日志过大</strong>
+   如果 journal 的日志过大，使用 <code>journalctl --vacuum-size</code> 或 <code>journalctl --vacuum-time</code> 命令来清理旧的日志。也可以在 journal 的配置文件中设置 <code>SystemMaxUse</code> 和 <code>SystemKeepFree</code> 选项，以自动管理日志的大小。</p>
+</li>
+</ul>
+<h2 id="3">3. 日志转储</h2>
+<h3 id="31-logrotate">3.1 安装logrotate</h3>
+<p>logrotate是一个Linux系统中常用的日志转储工具，可以通过以下命令来安装：
+<div class="highlight"><pre><span></span><code>sudo dnf install logrotate
+</code></pre></div></p>
+<h3 id="32-logrotate">3.2 配置logrotate</h3>
+<p>logrotate的配置文件通常位于<code>/etc/logrotate.conf</code>和<code>/etc/logrotate.d/</code>目录下，可以通过编辑这些文件来配置日志转储的规则。系统中目前的<code>/etc/logrotate.conf</code>配置为：
+<div class="highlight"><pre><span></span><code>weekly
+rotate 4
+create
+dateext
+include /etc/logrotate.d
+</code></pre></div>
+该文件指定了</p>
+<ul>
+<li>
+<p>日志转储的时间为每周</p>
+</li>
+<li>
+<p>最多存在4个备份文件</p>
+</li>
+<li>
+<p>每次转储时，都创建新的文件</p>
+</li>
+<li>
+<p>使用日期作为转储的文件的前缀</p>
+</li>
+<li>
+<p>最后包括了/etc/logrotate.d目录下其他的配置文件</p>
+</li>
+</ul>
+<p>当软件包组件安装的时候，部分有日志的包也会默认安装其日志转储的配置文件，可以看到在 /etc/logrotate.d 目录下看到
+<div class="highlight"><pre><span></span><code># ls /etc/logrotate.d
+btmp  chrony  dnf  httpd  iptraf-ng  iscsiuiolog  libvirtd  libvirtd.qemu  mariadb  numad  openstack-trove  psacct  rabbitmq-server  wtmp
+</code></pre></div>
+以下面一个配置文件为例，详细说明一下logrotate配置文件中的基本规则</p>
+<div class="highlight"><pre><span></span><code>/var/log/myapp.log {
+    rotate 7
+    daily
+    missingok
+    notifempty
+    compress
+    delaycompress
+    postrotate
+        /usr/bin/systemctl restart myapp.service &gt; /dev/null 2&gt;&amp;1 || true
+    endscript
+}
+</code></pre></div>
+<p>上述配置文件中，我们定义了对/var/log/myapp.log文件进行日志转储的规则，具体说明如下：</p>
+<ul>
+<li>
+<p><code>rotate 7</code> ：保留7个旧的日志文件，超过7个则自动删除。</p>
+</li>
+<li>
+<p><code>daily</code> ：每天执行一次日志转储。</p>
+</li>
+<li>
+<p><code>missingok</code> ：如果日志文件不存在，则忽略错误。</p>
+</li>
+<li>
+<p><code>notifempty</code> ：如果日志文件为空，则不进行转储。</p>
+</li>
+<li>
+<p><code>compress</code> ：使用gzip压缩旧的日志文件。</p>
+</li>
+<li>
+<p><code>delaycompress</code> ：在下一次转储时压缩旧的日志文件。</p>
+</li>
+<li>
+<p><code>postrotate</code> ：在转储完成后执行的命令，例如重启服务等。</p>
+</li>
+<li>
+<p><code>endscript</code> ：postrotate命令的结束标记。</p>
+</li>
+</ul>
+<h3 id="33-logrotate">3.3 手动执行logrotate</h3>
+<p>可以使用以下命令手动执行logrotate：
+<div class="highlight"><pre><span></span><code>logrotate -f /etc/logrotate.conf
+</code></pre></div>
+这将按照配置文件中的规则对所有日志文件进行转储。</p>
+<h3 id="34-logrotate">3.4 自动执行logrotate</h3>
+<p>logrotate服务会在系统启动时自动启动，并按照配置文件中的规则定期执行日志转储操作。
+可以使用以下命令来检查logrotate服务的状态：
+<div class="highlight"><pre><span></span><code>systemctl status logrotate.service
+</code></pre></div>
+如果logrotate服务未启动，可以使用以下命令来启动它：
+<div class="highlight"><pre><span></span><code>systemctl start logrotate.service
+</code></pre></div>
+在修改配置文件后，需要重新启动logrotate服务才能使新的配置生效：
+<div class="highlight"><pre><span></span><code>systemctl restart logrotate.service
+</code></pre></div></p>
+<h3 id="35-logrotate-rsyslog">3.5 通过 logrotate 转储 rsyslog 日志</h3>
+<p>结合使用 rsyslog 和 logrotate 可以带来更高效的日志管理。rsyslog 在接收、处理与存储日志方面具有丰富的功能与高性能，而 logrotate 带来灵活的日志轮换策略以避免资源浪费。通过调整配置，可以实现日志从生成、收集、处理到存储与轮换的全程自动管理，以满足日志保留、审计、故障排查等需求。</p>
+<p>接下来将介绍如何在 OpenCloudOS 系统上使用 rsyslog 与 logrotate，从而能够高效地管理系统和应用日志。</p>
+<h4 id="351-logrotate">3.5.1 配置logrotate</h4>
+<p>要配置日志轮换，需要对logrotate进行设置。</p>
+<p>在 <code>/etc/logrotate.d/</code> 目录下，可以为指定的日志设置logrotate配置文件。例如，为rsyslog创建名为 <code>rsyslog</code> 的配置文件：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>touch<span class="w"> </span>/etc/logrotate.d/rsyslog
+</code></pre></div>
+<p>用文本编辑器打开刚刚创建的文件，添加以下配置：</p>
+<div class="highlight"><pre><span></span><code>/var/log/cron
+/var/log/maillog
+/var/log/messages
+/var/log/secure
+/var/log/spooler
+{
+    daily
+    rotate 7
+    create
+}
+</code></pre></div>
+<p>这行配置表示每天转储 <code>/var/log</code> 目录下的这些日志文件，保留最近7天的日志副本。</p>
+<h4 id="352">3.5.2 设置旋转周期与保留策略</h4>
+<p>用户可根据需求设置 logrotat要转储的日志周期以及保留策略。以下几个选项可以实现不同的策略：</p>
+<ul>
+<li>
+<p><code>daily</code>：每天转储日志文件。</p>
+</li>
+<li>
+<p><code>weekly</code>：每周转储日志文件。</p>
+</li>
+<li>
+<p><code>monthly</code>：每月转储日志文件。</p>
+</li>
+<li>
+<p><code>rotate N</code>：保留N个日志副本。N是一个整数。</p>
+</li>
+</ul>
+<p>至此，完成 logrotate 转储 rsyslog 系统日志的基本配置。</p>
+<h2 id="4">4. 查看系统日志文件</h2>
+<p>系统中的日志主要在/var/log/目录下，包括以下文件：</p>
+<ul>
+<li>
+<p><code>/var/log/messages</code></p>
+<ul>
+<li>/var/log/messages 文件包含了系统的大部分消息和错误信息，包括内核消息、系统启动信息、系统服务启动和停止信息等。这个文件通常是系统管理员进行故障排除和监控的主要来源。</li>
+</ul>
+</li>
+<li>
+<p><code>/var/log/secure</code></p>
+<ul>
+<li>/var/log/secure 文件包含了系统的身份验证和安全相关的日志信息，包括用户登录和注销信息、sudo 命令使用信息、SSH 连接信息等。这个文件通常是系统管理员进行安全审计和监控的主要来源。</li>
+</ul>
+</li>
+<li>
+<p><code>/var/log/audit/audit.log</code></p>
+<ul>
+<li>/var/log/audit/audit.log记录了系统中的安全审计信息。这个文件通常由 auditd 守护进程生成和维护，它可以帮助系统管理员监控系统中的安全事件和活动。</li>
+</ul>
+</li>
+<li>
+<p><code>/var/log/dnf.log</code></p>
+<ul>
+<li>/var/log/dnf.log 文件记录了系统中使用 DNF 包管理器进行软件包安装、更新和卸载等操作的详细信息。</li>
+</ul>
+</li>
+<li>
+<p><code>/var/log/boot.log</code></p>
+<ul>
+<li>/var/log/boot.log 文件包含了系统启动期间的日志信息，包括启动脚本的输出信息、服务启动和停止信息等。这个文件通常是系统管理员进行启动故障排除和监控的主要来源。</li>
+</ul>
+</li>
+<li>
+<p><code>/var/log/lastlog</code></p>
+<ul>
+<li>记录了系统中所有用户最后一次登录的信息。</li>
+</ul>
+</li>
+<li>
+<p><code>/var/log/wtmp</code></p>
+<ul>
+<li>记录了系统中所有用户的登录和注销信息，包括用户名、登录时间、注销时间、登录来源、登录 IP 地址等。</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

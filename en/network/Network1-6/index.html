@@ -1,0 +1,2914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../storage/managing_storage_devices/">
+      
+      
+        <link rel="next" href="../Network7-12/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Chapter 1-6 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-nic-interface-naming-convention" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 1-6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../network/Network1-6/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 1-6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 1-6
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-network-interface-device-naming-scheme" class="md-nav__link">
+    1.1 Network interface device naming scheme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-working-method-of-network-device-renaming" class="md-nav__link">
+    1.2. Working method of network device renaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predictable-network-interface-name-interpretation-on-13x86_64-platforms" class="md-nav__link">
+    Predictable network interface name interpretation on 1.3.x86_64 platforms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-predictable-network-interface-device-name-interpretation-in-system-z-platforms" class="md-nav__link">
+    1.4. Predictable Network Interface Device Name Interpretation in System z Platforms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-disable-interface-device-naming-conventions-during-installation" class="md-nav__link">
+    1.5. Disable interface device naming conventions during installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-disable-interface-device-naming-conventions-in-installed-systems" class="md-nav__link">
+    1.6. Disable interface device naming conventions in installed systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-custom-ethernet-interface-prefix" class="md-nav__link">
+    1.7. Custom Ethernet interface prefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-assign-custom-network-interface-names-using-udev-device-manager" class="md-nav__link">
+    1.8. Assign custom network interface names using udev device manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-assign-user-defined-network-interface-names-using-the-systemd-linker-file" class="md-nav__link">
+    1.9. Assign user-defined network interface names using the systemd linker file
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-network-interface-device-naming-scheme" class="md-nav__link">
+    1.1 Network interface device naming scheme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-working-method-of-network-device-renaming" class="md-nav__link">
+    1.2. Working method of network device renaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predictable-network-interface-name-interpretation-on-13x86_64-platforms" class="md-nav__link">
+    Predictable network interface name interpretation on 1.3.x86_64 platforms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-predictable-network-interface-device-name-interpretation-in-system-z-platforms" class="md-nav__link">
+    1.4. Predictable Network Interface Device Name Interpretation in System z Platforms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-disable-interface-device-naming-conventions-during-installation" class="md-nav__link">
+    1.5. Disable interface device naming conventions during installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-disable-interface-device-naming-conventions-in-installed-systems" class="md-nav__link">
+    1.6. Disable interface device naming conventions in installed systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-custom-ethernet-interface-prefix" class="md-nav__link">
+    1.7. Custom Ethernet interface prefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-assign-custom-network-interface-names-using-udev-device-manager" class="md-nav__link">
+    1.8. Assign custom network interface names using udev device manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-assign-user-defined-network-interface-names-using-the-systemd-linker-file" class="md-nav__link">
+    1.9. Assign user-defined network interface names using the systemd linker file
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network1-6.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network1-6.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-1-nic-interface-naming-convention">Chapter 1 NIC interface naming convention</h1>
+<p>In order to facilitate finding and distinguishing network interfaces and ensure the consistency and visibility of network interfaces, OpenCloudOS provides a naming convention for network interfaces.</p>
+<p>Network interface names consist of a fixed prefix and a serial number generated by the kernel to initialize the network device. For example, eth0 represents the first network device detected by the system at boot time, but these names do not necessarily correspond to the label names on the host's shell. Ambiguous interface naming may be encountered on servers with multiple network adapters, which affects embedded network adapters and additional adapters in the system.</p>
+<p>In OpenCloudOS, the udev device manager supports various naming schemes. By default, udev assigns names to devices based on firmware, topology and location information, which has several advantages:</p>
+<ul>
+<li>Device names are fully predictable.</li>
+<li>Adding or removing hardware will not change the device name as the serial number will not be regenerated.</li>
+<li>Facilitates replacement of faulty hardware.</li>
+</ul>
+<h2 id="11-network-interface-device-naming-scheme">1.1 Network interface device naming scheme</h2>
+<p>Following is the udev device manager default device naming scheme:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The device name contains the BIOS index number or firmware, applicable to the device on the motherboard. When this scheme is not applicable, udev will use scheme 2.</td>
+<td>eno1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The device name contains the PCIe hot-plug slot index number provided by the firmware or BIOS. When this scheme is not applicable, udev will use scheme 3.</td>
+<td>ens1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The device name contains the physical location of the hardware connector. When this scheme is not applicable, udev will use scheme 5.</td>
+<td>enp2s0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The device name contains the MAC address. OpenCloudOS does not use this scheme by default, but administrators can choose to use it.</td>
+<td>enx00ff2420b540</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Legacy unforeseen kernel naming schemes. The device manager uses this scheme if udev cannot apply any other scheme.</td>
+<td>eth0</td>
+</tr>
+</tbody>
+</table>
+<p>By default, OpenCloudOS chooses the device name according to the NamePolicy setting in the /usr/lib/systemd/network/99-default.link file. The order of the values in the NamePolicy is important. OpenCloudOS uses the first device name specified in the file and generated by udev.</p>
+<p>If you manually configure udev rules to change kernel device names, those rules take precedence.</p>
+<h2 id="12-working-method-of-network-device-renaming">1.2. Working method of network device renaming</h2>
+<p>By default, OpenCloudOS enables the same device naming rules. The udev device manager renames devices according to different schemes. The following list describes the order in which udev handles these scenarios, and the actions these rules are responsible for:</p>
+<ol>
+<li>
+<p>The /usr/lib/udev/rules.d/60-net.rules file defines the /lib/udev/rename_device helper tool to search the /etc/sysconfig/network-scripts/ifcfg-* files for the HWADDR parameter. When the NIC MAC address matches the value set by the variable, the helper tool renames the NIC interface to the name in the DEVICE parameter of the file.</p>
+</li>
+<li>
+<p>The /usr/lib/udev/rules.d/71-biosdevname.rules file defines the biosdevname tool to rename the interface according to its naming policy if the device was not renamed in the previous step.</p>
+</li>
+<li>
+<p>The /usr/lib/udev/rules.d/75-net-description.rules file defines what udev checks for network interface devices and sets properties in the udev-internal variable that will be processed in the next step. Note that some of these properties may not be defined.</p>
+</li>
+<li>
+<p>The /usr/lib/udev/rules.d/80-net-setup-link.rules file calls the built-in net_setup_link udev and then applies the renaming scheme. The following are the default policies stored in the /usr/lib/systemd/network/99-default.link file:</p>
+<div class="highlight"><pre><span></span><code>[Link]
+NamePolicy=kernel database onboard slot path
+MACAddressPolicy=persistent
+</code></pre></div>
+<p>With this policy, udev will not rename interfaces if the kernel uses persistent names. If the kernel does not use persistent names, udev will rename the interface to the name provided by udev's hardware database. If this database is not available, OpenCloudOS falls back to the above mechanism.</p>
+<p>Also, for interface names based on Media Access Control (MAC) addresses, set the NamePolicy parameter in this file to mac.</p>
+</li>
+<li>
+<p>The /usr/lib/udev/rules.d/80-net-setup-link.rules file defines that udev renames interfaces according to the udev-internal parameter in the following order:</p>
+<ol>
+<li>ID_NET_NAME_ONBOARD</li>
+<li>ID_NET_NAME_SLOT</li>
+<li>ID_NET_NAME_PATH
+   If no parameter is set, udev will use the next parameter. If no parameters are set, the interface will not be renamed.</li>
+</ol>
+</li>
+</ol>
+<p>Steps 3 and 4 implement the naming schemes 1 through 4 described in Network Interface Device Naming Scheme.</p>
+<h2 id="predictable-network-interface-name-interpretation-on-13x86_64-platforms">Predictable network interface name interpretation on 1.3.x86_64 platforms</h2>
+<p>When the consistent network device names feature is enabled, the udev device manager creates device names according to different standards. This section explains the naming scheme when installing OpenCloudOS on x86_64 platforms.</p>
+<p>Interface names begin with a two-character prefix based on the interface type:</p>
+<ul>
+<li>en for Ethernet</li>
+<li>wl for wireless LAN (WLAN)</li>
+<li>ww for Wireless Wide Area Network (WWAN)</li>
+</ul>
+<p>Additionally, one of the following is appended to one of the above prefixes depending on the mode applied by the udev device manager:</p>
+<ul>
+<li>
+<p>o<on-board_index_number></p>
+</li>
+<li>
+<p>s<hot_plug_slot_index_number>[f\<function>][d]</p>
+</li>
+</ul>
+<p>Note that all multifunction PCI devices contain the number [f\<function>] in the device name, including function 0 devices.</p>
+<ul>
+<li>
+<p>x<MAC_address></p>
+</li>
+<li>
+<p>[P\<domain_number>]p\<bus>s\<slot>[f\<function>][d]</p>
+</li>
+</ul>
+<p>The [P\<domain_number>] section defines the physical location of the PCI. This part is only set if the domain number is not 0 .</p>
+<ul>
+<li>[P\<domain_number>]p\<bus>s\<slot>[f\<function>][u][…][c][i\<interface>]</li>
+</ul>
+<p>For USB devices, the full chain of hub port numbers consists of the hub's port numbers. If the name is larger than the maximum (15 characters), it will not be exported. If there are multiple USB devices in the chain, udev suppresses the default values for the USB configuration descriptor (c1) and USB interface descriptor (i0).</p>
+<h2 id="14-predictable-network-interface-device-name-interpretation-in-system-z-platforms">1.4. Predictable Network Interface Device Name Interpretation in System z Platforms</h2>
+<p>The udev device manager on System z platforms creates device names based on bus IDs when the consistent network device names feature is enabled. The bus ID identifies a device in the s390 channel subsystem.</p>
+<p>For channel command word (CCW) devices, the bus ID is the device number prefixed with 0.n, where n is the subchannel set ID.</p>
+<p>For example, an Ethernet interface is named enccw0.0.1234. For example, a Serial Line Internet Protocol (SLIP) channel-to-channel (CTC) network device is named slccw0.0.1234.</p>
+<p>Use the znetconf -c or lscss -a commands to display available network devices and their bus IDs.</p>
+<h2 id="15-disable-interface-device-naming-conventions-during-installation">1.5. Disable interface device naming conventions during installation</h2>
+<p>This section describes how to disable interface device naming conventions during installation.</p>
+<div class="highlight"><pre><span></span><code>OpenCloudOS recommends against disabling this specification. Disabling the interface device naming convention may cause different types of problems, for example, after adding a network card, the device name assigned by the kernel will not be fixed, and the kernel may use different schemes to name the network card after each reboot.
+</code></pre></div>
+<p>process:</p>
+<ol>
+<li>
+<p>Boot the OpenCloudOS installation media</p>
+</li>
+<li>
+<p>In Boot Manager, select Install OpenCloudOS and press the [Tab] key to edit the entry.</p>
+</li>
+<li>
+<p>Append the net.ifnames=0 parameter to the kernel command line:</p>
+<div class="highlight"><pre><span></span><code>vmlinu... net.ifnames=0
+</code></pre></div>
+</li>
+<li>
+<p>Press the [Enter] key to start the installation.</p>
+</li>
+</ol>
+<h2 id="16-disable-interface-device-naming-conventions-in-installed-systems">1.6. Disable interface device naming conventions in installed systems</h2>
+<p>This section describes how to disable interface device naming conventions on an installed Open Cloud OS system.</p>
+<div class="highlight"><pre><span></span><code>OpenCloudOS recommends against disabling this specification. Disabling the interface device naming convention may cause different types of problems, for example, after adding a network card, the device name assigned by the kernel will not be fixed, and the kernel may use different schemes to name the network card after each reboot.
+</code></pre></div>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The system has used the interface device naming convention by default</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Edit the /etc/default/grub file and append the net.ifnames=0 parameter to the GRUB_CMDLINE_LINUX variable:</p>
+<div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX=&quot;...net.ifnames=0&quot;
+</code></pre></div>
+</li>
+<li>
+<p>Rebuild the grub.cfg file:</p>
+<ul>
+<li>On systems with UEFI boot mode:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+</code></pre></div>
+<ul>
+<li>On systems using the old boot mode:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># grub2-mkconfig -o /boot/grub2/grub.cfg
+</code></pre></div>
+</li>
+<li>
+<p>Display the current profile name and associated device name:</p>
+<div class="highlight"><pre><span></span><code># nmcli -f NAME,DEVICE,FILENAME connection show
+ NAME           DEVICE  FILENAME
+ System enp1s0  enp1s0  /etc/sysconfig/network-scripts/ifcfg-enp1s0
+ System enp7s0  enp7s0  /etc/NetworkManager/system-connections/enp7s0.nmconnection
+</code></pre></div>
+<p>Note which profile and file name each device is associated with.</p>
+</li>
+<li>
+<p>Remove the HWADDR parameter from all connection profiles:</p>
+<div class="highlight"><pre><span></span><code># sed -i &#39;/^HWADDR=/d&#39; /etc/sysconfig/network-scripts/ifcfg-enp1s0 /etc/NetworkManager/system-connections/enp7s0.nmconnection
+</code></pre></div>
+</li>
+<li>
+<p>Display the MAC address associated with the Ethernet device:</p>
+<div class="highlight"><pre><span></span><code># ip link show
+...
+2: enp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+     link/ether 00:53:00:c5:98:1c brd ff:ff:ff:ff:ff:ff
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+     link/ether 00:53:00:b6:87:c6 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+</li>
+<li>
+<p>Reboot the host:</p>
+<div class="highlight"><pre><span></span><code># reboot
+</code></pre></div>
+</li>
+<li>
+<p>After restarting, the Ethernet devices are displayed and the new interface name is recognized based on the MAC address:</p>
+<div class="highlight"><pre><span></span><code># ip link show
+ ...
+ 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+     link/ether 00:53:00:b6:87:c6 brd ff:ff:ff:ff:ff:ff
+ 3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+     link/ether 00:53:00:c5:98:1c brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+<p>If you compare the current output with the previous output:</p>
+<ul>
+<li>Interface enp7s0 (MAC address 00:53:00:b6:87:c6 ) is named eth0 now.</li>
+<li>Interface enp1s0 (MAC address 00:53:00:c5:98:1c ) is named eth1 now.</li>
+</ul>
+</li>
+<li>
+<p>Rename the configuration file:</p>
+<div class="highlight"><pre><span></span><code># mv /etc/NetworkManager/system-connections/enp7s0.nmconnection /etc/NetworkManager/system-connections/eth0.nmconnection
+# mv /etc/sysconfig/network-scripts/ifcfg-enp1s0 /etc/sysconfig/network-scripts/ifcfg-eth1
+</code></pre></div>
+</li>
+<li>
+<p>Reload NetworkManager:</p>
+<div class="highlight"><pre><span></span><code># nmcli connetction reload
+</code></pre></div>
+</li>
+<li>
+<p>If no file name is set in the configuration file, NetworkManager will use the default value. To determine the current profile name after renaming and reloading the connection, use the following command:</p>
+<div class="highlight"><pre><span></span><code># nmcli -f NAME,DEVICE,FILENAME connection show
+NAME           FILENAME
+System enp7s0  /etc/NetworkManager/system-connections/eth0.nmconnection
+System enp1s0  /etc/sysconfig/network-scripts/ifcfg-eth1
+</code></pre></div>
+<p>Configure the file name in the next step.</p>
+</li>
+<li>
+<p>Rename the NetworkManager connection profiles and update the interface names in each profile:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify &quot;System enp7s0&quot; connection.id eth0 connection.interface-name eth0
+# nmcli connection modify &quot;System enp1s0&quot; connection.id eth1 connection.interface-name eth1
+</code></pre></div>
+</li>
+<li>
+<p>Reactivate the NetworkManager connection:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection up eth0
+# nmcli connection up eth1
+</code></pre></div>
+</li>
+</ol>
+<h2 id="17-custom-ethernet-interface-prefix">1.7. Custom Ethernet interface prefix</h2>
+<p>This section describes how to customize the prefix of Ethernet interface names during Open Cloud OS installation.</p>
+<div class="highlight"><pre><span></span><code>Customizing prefixes using the prefixdevname tool on installed systems is not currently supported.
+</code></pre></div>
+<p>After Open Cloud OS installation, the udev service will name ethernet devices in the format \<prefix>.\<index>. For example, if you wish to use net as a prefix, Open Cloud OS will name Ethernet interfaces net0 , net1 , and so on.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The prefix format requirements to be set are as follows:</li>
+<li>consists of ASCII characters</li>
+<li>only letters and numbers</li>
+<li>less than 16 characters</li>
+<li>Does not conflict with any existing network interface prefixes such as eth , eno , ens and em .</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Boot the Open Cloud OS installation media.</li>
+<li>In Boot Manager: a.<ol>
+<li>Select the Install Open CLoud OS\<version> option and press the [Tab] key to edit the option.</li>
+<li>Append net.ifnames.prefix=\<prefix> to the kernel options.</li>
+<li>Press the [Enter] key to start the installer.</li>
+</ol>
+</li>
+<li>Install Open Cloud OS.</li>
+</ol>
+<p><strong>verify</strong></p>
+<ul>
+<li>After installation, show ethernet interface:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link show
+  ...
+  2: net0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+      link/ether 00:53:00:c5:98:1c brd ff:ff:ff:ff:ff:ff
+  3: net1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+      link/ether 00:53:00:c2:39:9e brd ff:ff:ff:ff:ff:ff
+  ...
+</code></pre></div>
+<h2 id="18-assign-custom-network-interface-names-using-udev-device-manager">1.8. Assign custom network interface names using udev device manager</h2>
+<p>udev device manager supports a set of rules to customize interface names</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Display all network interfaces and their MAC addresses:</p>
+<div class="highlight"><pre><span></span><code># ip link list
+
+ enp6s0f0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+     link/ether b4:96:91:14:ae:58 brd ff:ff:ff:ff:ff:ff
+ enp6s0f1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+     link/ether b4:96:91:14:ae:5a brd ff:ff:ff:ff:ff:ff
+ enp4s0f0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+     link/ether 00:90:fa:6a:7d:90 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+</li>
+<li>
+<p>Create the file /etc/udev/rules.d/70-custom-ifnames.rules with the following content:</p>
+<div class="highlight"><pre><span></span><code>SUBSYSTEM==&quot;net&quot;,ACTION==&quot;add&quot;,ATTR{address}==&quot;b4:96:91:14:ae:58&quot;,ATTR{type}==&quot;1&quot;,NAME=&quot;provider0&quot;
+SUBSYSTEM==&quot;net&quot;,ACTION==&quot;add&quot;,ATTR{address}==&quot;b4:96:91:14:ae:5a&quot;,ATTR{type}==&quot;1&quot;,NAME=&quot;provider1&quot;
+SUBSYSTEM==&quot;net&quot;,ACTION==&quot;add&quot;,ATTR{address}==&quot;00:90:fa:6a:7d:90&quot;,ATTR{type}==&quot;1&quot;,NAME=&quot;provider2&quot;
+</code></pre></div>
+<p>These rules match the MAC addresses of network interfaces and rename them to the names specified in the NAME property. In these examples, the ATTR{type} parameter value set to 1 defines the interface type as Ethernet .</p>
+</li>
+</ol>
+<p><strong>verify</strong></p>
+<ol>
+<li>
+<p>Restart the system:</p>
+<div class="highlight"><pre><span></span><code># reboot
+</code></pre></div>
+</li>
+<li>
+<p>Verify that the interface name for each MAC address matches the value you set in the NAME parameter in the rules file:</p>
+<div class="highlight"><pre><span></span><code># ip link show
+
+provider0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether b4:96:91:14:ae:58 brd ff:ff:ff:ff:ff:ff
+altname enp6s0f0
+provider1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether b4:96:91:14:ae:5a brd ff:ff:ff:ff:ff:ff
+    altname enp6s0f1
+provider2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:90:fa:6a:7d:90 brd ff:ff:ff:ff:ff:ff
+    altname enp4s0f0
+</code></pre></div>
+</li>
+</ol>
+<h2 id="19-assign-user-defined-network-interface-names-using-the-systemd-linker-file">1.9. Assign user-defined network interface names using the systemd linker file</h2>
+<p>Create a naming scheme by renaming the network interface to provider0.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Display all interface names and their MAC addresses:</p>
+<div class="highlight"><pre><span></span><code># ip link show
+
+enp6s0f0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether b4:96:91:14:ae:58 brd ff:ff:ff:ff:ff:ff
+enp6s0f1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether b4:96:91:14:ae:5a brd ff:ff:ff:ff:ff:ff
+enp4s0f0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 00:90:fa:6a:7d:90 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+</li>
+<li>
+<p>To name the interface with MAC address b4:96:91:14:ae:58 as provider0 , you need to create the /etc/systemd/network/70-custom-ifnames.link file with the following content:</p>
+<div class="highlight"><pre><span></span><code>[Match]
+MACAddress=b4:96:91:14:ae:58
+
+[Link]
+Name=provider0
+</code></pre></div>
+<p>This link file matches the MAC address and renames the network interface to the name set in the Name parameter.</p>
+</li>
+</ol>
+<p><strong>verify</strong></p>
+<ol>
+<li>
+<p>Restart the system:</p>
+<div class="highlight"><pre><span></span><code># reboot
+</code></pre></div>
+</li>
+<li>
+<p>Verify that the device with the MAC address you specified in the file is assigned to provider0 :</p>
+<div class="highlight"><pre><span></span><code># ip link show
+
+provider0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether b4:96:91:14:ae:58 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+</li>
+</ol>
+<h1 id="chapter-2-getting-started-with-networkmanager">Chapter 2 Getting Started with NetworkManager</h1>
+<p>By default, Open Cloud OS uses NetworkManager to manage and configure network connections.</p>
+<h2 id="21-advantages-of-networkmanager">2.1. Advantages of NetworkManager</h2>
+<p>The main advantages of using NetworkManager are:</p>
+<ul>
+<li>Provides an API via D-Bus, which allows querying and controlling network configuration and status. This allows multiple applications to check and configure the network, ensuring a synchronized and up-to-date network state. For example, the web console (monitoring and configuration services via a web browser) uses the NetworkManager D-BUS interface to configure the network, and the Gnome GUI, nmcli, and nm-connection-editor tools. Every change made to these tools will be detected by all other users.</li>
+<li>More convenient mirroring of network configuration: NetworkManager (NetworkManager) ensures that network connections are working properly. NetworkManager creates temporary connections to provide connectivity when it finds that there is no network configuration but there are network devices in the system.</li>
+<li>Provides users with easy connection setup: NetworkManager provides management through different tools - GUI, nmtui, nmcli.</li>
+<li>Support flexible configuration. For example, configure a WiFi interface and NetworkManager will scan and display available wifi networks. You can select an interface and NetworkManager will display the credentials needed to provide an automatic connection after the restart process. NetworkManager can configure network aliases, IP addresses, static routes, DNS information, and VPN connections as well as many connection-specific parameters. You can modify the configuration options to suit your needs.</li>
+<li>Persist the device state after the restart process and take over the interface that was set to managed mode during the restart process.</li>
+<li>Handles devices that are not explicitly set but are manually controlled by a user or other network device.</li>
+</ul>
+<h2 id="22-overview-of-tools-and-programs-for-networkmanager-management-connections">2.2. Overview of tools and programs for NetworkManager management connections</h2>
+<p>You can try the following tools to manage NetworkManager connections:</p>
+<ul>
+<li>nmcli : A command-line tool for managing connections.</li>
+<li>nmtui : Mouse cursor based to Text User Interface (TUI). Requires the NetworkManager-tui package to be installed.</li>
+<li>nm-connection-editor : Graphical User Interface (GUI) for NetworkManager related tasks. To start the program, type nm-connection-editor in a GNOME session terminal.</li>
+<li>control-center : GNOME Shell's GUI for desktop users. Note that this program supports fewer features than nm-connection-editor.</li>
+<li>Network Connection Icon in GNOME Shell: This icon indicates the status of your network connection and acts as a visual indicator of the type of connection you are using.</li>
+</ul>
+<h2 id="23-load-the-manually-configured-ifcfg-file-into-networkmanager">2.3. Load the manually configured ifcfg file into NetworkManager</h2>
+<p>In Open Cloud OS, if you edit the ifcfg file, NetworkManager does not automatically pick up the change. If you use one of these tools to update NetworkManager profile settings, NetworkManager will not implement those changes until you reconnect using that profile. For example, if a configuration file is modified using an editor, NetworkManager must read the configuration file again.</p>
+<div class="highlight"><pre><span></span><code>NetworkManager supports configuration sets stored in keyfile format. However, NetworkManager uses the ifcfg format by default when creating or updating configuration files using the NetworkManager API.
+</code></pre></div>
+<p>The /etc/sysconfig/ directory is where configuration files and scripts are located. With the exception of VPN, Mobile Broadband, and PPPoE configuration, most network configuration information is stored in the /etc/NetworkManager/ subdirectory. For example, interface-specific information is stored in the ifcfg file in the /etc/sysconfig/network-scripts/ directory.</p>
+<p>Information for VPN, Mobile Broadband and PPPoE connections is stored in /etc/NetworkManager/system-connections/.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>To load a new configuration file:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection load /etc/sysconfig/network-scripts/ifcfg-connection_name
+</code></pre></div>
+</li>
+<li>
+<p>If you updated the connection file loaded into NetworkManager, enter:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection up connection_name
+</code></pre></div>
+</li>
+</ol>
+<h1 id="chapter-3-configuring-networkmanager-to-ignore-certain-devices">Chapter 3 Configuring NetworkManager to ignore certain devices</h1>
+<p>By default, NetworkManager manages all devices except the lo (loopback) device. However, you can configure NetworkManager to ignore certain devices, making them unmanaged. With this setting, you can manage these devices manually, for example using scripts.</p>
+<h2 id="31-configure-permanent-unmanaged-devices">3.1. Configure permanent unmanaged devices</h2>
+<p>You can configure a device to be unmanaged based on several criteria, such as interface name, MAC address, or device type. The following procedure describes how to permanently set the enp1s0 interface to unmanaged in NetworkManager.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Optional: Display a list of devices to identify the device you want to set as unmanaged:</p>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE  TYPE      STATE         CONNECTION
+enp1s0  ethernet  disconnected  --
+...
+</code></pre></div>
+</li>
+<li>
+<p>Create the /etc/NetworkManager/conf.d/99-unmanaged-devices.conf file:</p>
+<div class="highlight"><pre><span></span><code>[keyfile]
+unmanaged-devices=interface-name:enp1s0
+</code></pre></div>
+<p>To set multiple devices as unmanaged, separate the entries in the unmanaged-devices parameter with semicolons:</p>
+<div class="highlight"><pre><span></span><code>[keyfile]
+unmanaged-devices=interface-name:interface_1;interface-name:interface_2;...
+</code></pre></div>
+</li>
+<li>
+<p>Reload the NetworkManager service:</p>
+<div class="highlight"><pre><span></span><code># systemctl reload NetworkManager
+</code></pre></div>
+</li>
+</ol>
+<p><strong>verify</strong></p>
+<ul>
+<li>Display device list:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE  TYPE      STATE      CONNECTION
+enp1s0  ethernet  unmanaged  --
+...
+</code></pre></div>
+<p>The unmanaged status next to the enp1s0 device indicates that NetworkManager is not managing the device.</p>
+<h2 id="32-configure-temporary-unmanaged-devices">3.2. Configure temporary unmanaged devices</h2>
+<p>You can configure a device to be unmanaged based on several criteria, such as interface name, MAC address, or device type. This procedure describes how to temporarily set the enp1s0 interface to unmanaged in NetworkManager.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Optional: Display a list of devices to identify the device you want to set as unmanaged:</p>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE  TYPE      STATE         CONNECTION
+enp1s0  ethernet  disconnected  --
+...
+</code></pre></div>
+</li>
+<li>
+<p>Set the enp1s0 device to the unmanaged state:</p>
+<div class="highlight"><pre><span></span><code># nmcli device set enp1s0 managed no
+</code></pre></div>
+</li>
+</ol>
+<p><strong>verify</strong></p>
+<ul>
+<li>Display device list:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE  TYPE      STATE      CONNECTION
+enp1s0  ethernet  unmanaged  --
+...
+</code></pre></div>
+<p>The unmanaged status next to the enp1s0 device indicates that NetworkManager is not managing the device.</p>
+<h1 id="chapter-4-using-the-nmtui-text-interface-to-manage-network-connections">Chapter 4 Using the nmtui Text Interface to Manage Network Connections</h1>
+<h2 id="41-start-the-nmtui-tool">4.1. Start the nmtui tool</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>NetworkManager-tui package installed</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Start nmtui and enter at the command line:</p>
+<div class="highlight"><pre><span></span><code># nmtui
+</code></pre></div>
+<p><img alt="nmtui启动界面" src="../assets/nmtui%E6%96%87%E6%9C%AC%E7%95%8C%E9%9D%A2.png" /></p>
+</li>
+<li>
+<p>Enter nmtui:</p>
+<ul>
+<li>In options, use the cursor or press the [Tab] key to move forward, press [Shift]+[Tab] to go back.</li>
+<li>Use [Enter] to select an option.</li>
+<li>Use [Space] to toggle the checkbox state.</li>
+</ul>
+</li>
+</ol>
+<h2 id="42-use-nmtui-to-add-connection-configuration-set">4.2. Use nmtui to add connection configuration set</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>NetworkManager-tui package installed</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Start nmtui and enter at the command line:</p>
+<div class="highlight"><pre><span></span><code># nmtui
+</code></pre></div>
+</li>
+<li>
+<p>Select the Edit a connection option and press [Enter] to enter editing.</p>
+</li>
+<li>
+<p>Select the [Add] option and press [Enter] to enter.</p>
+</li>
+<li>
+<p>Select Ethernet and press [Enter] to enter
+    <img alt="nmtui添加新连接" src="../assets/nmtui%E6%B7%BB%E5%8A%A0%E6%96%B0%E8%BF%9E%E6%8E%A5.png" /></p>
+</li>
+<li>
+<p>Enter the connection details.
+    <img alt="nmtui连接配置详情" src="../assets/nmtui%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E8%AF%A6%E6%83%85.png" /></p>
+</li>
+<li>
+<p>Select [OK] to save the changes.</p>
+</li>
+<li>
+<p>Select Back to return to the main menu.</p>
+</li>
+<li>
+<p>Select Activate a connection and select [Enter].</p>
+</li>
+<li>
+<p>Select the new connection and press [Enter] to activate the connection.</p>
+</li>
+<li>
+<p>Select [Back] to return to the main menu.</p>
+</li>
+<li>
+<p>Choose Quit.</p>
+</li>
+</ol>
+<p><strong>verify</strong></p>
+<ol>
+<li>
+<p>Display device and connection status:</p>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+ens3      ethernet  connected  ens3
+</code></pre></div>
+</li>
+<li>
+<p>Display all settings of the connection profile:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection show ens3
+connection.id:                          ens3
+connection.uuid:                        f46c8406-74f4-458f-a884-a1889377aebc
+connection.stable-id:                   --
+connection.type:                        802-3-ethernet
+connection.interface-name:              ens3
+connection.autoconnect:                 yes
+connection.autoconnect-priority:        0
+...
+</code></pre></div>
+<p>Note that if the configuration on disk does not match the configuration in the device, starting or restarting NetworkManager will create an in-memory connection representing the device's configuration.</p>
+</li>
+</ol>
+<h2 id="43-change-connection-using-nmtui-application">4.3. Change connection using nmtui application</h2>
+<p>After modifying a connection in nmtui, you must reactivate the connection. Note that reactivating a connection in nmtui temporarily deactivates the connection.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The connection profile does not have the auto-connect setting enabled.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Select the Activate a connection option from the main menu:
+    <img alt="nmtui修改连接_1" src="../assets/nmtui%E4%BF%AE%E6%94%B9%E8%BF%9E%E6%8E%A5_1.png" /></li>
+<li>Select the modified connection.</li>
+<li>On the right, select the Deactivate button and press [Enter]:
+    <img alt="nmtui修改连接_2" src="../assets/nmtui%E4%BF%AE%E6%94%B9%E8%BF%9E%E6%8E%A5_2.png" /></li>
+<li>Select Connect again.</li>
+<li>On the right, select the Activate button and press [Enter]:
+    <img alt="nmtui修改连接_3" src="../assets/nmtui%E4%BF%AE%E6%94%B9%E8%BF%9E%E6%8E%A5_3.png" /></li>
+</ol>
+<h1 id="chapter-5-getting-started-with-nmcli">Chapter 5 Getting Started with nmcli</h1>
+<h2 id="51-nmcli-output-in-different-formats">5.1. nmcli output in different formats</h2>
+<p>The nmcli tool supports controlling the output of commands through different parameters. By using these options, you can display only the information you need. This simplifies the process of processing output in scripts.</p>
+<p>By default, nmcli displays its output in a table-like format:</p>
+<div class="highlight"><pre><span></span><code># nmcli device
+DEVICE      TYPE      STATE                   CONNECTION
+ens3        ethernet  connected               ens3
+virbr0      bridge    connected (externally)  virbr0
+lo          loopback  unmanaged               --
+virbr0-nic  tun       unmanaged               --
+</code></pre></div>
+<p>Using the -f parameter, you can display columns in a custom order, for example:</p>
+<div class="highlight"><pre><span></span><code># nmcli -f DEVICE,STATE device
+DEVICE      STATE
+ens3        connected
+virbr0      connected (externally)
+lo          unmanaged
+virbr0-nic  unmanaged
+</code></pre></div>
+<p>Use the -t parameter to display each field of the output in colon-separated form:</p>
+<div class="highlight"><pre><span></span><code># nmcli -t device
+ens3:ethernet:connected:ens3
+virbr0:bridge:connected (externally):virbr0
+lo:loopback:unmanaged:
+virbr0-nic:tun:unmanaged:
+</code></pre></div>
+<p>When you use a script to process output, combine -f with -t to display only specific fields in colon-separated form:</p>
+<div class="highlight"><pre><span></span><code># nmcli -f DEVICE,STATE -t device
+ens3:connected
+virbr0:connected (externally)
+lo:unmanaged
+virbr0-nic:unmanaged
+</code></pre></div>
+<h2 id="52-use-the-tab-key-to-automatically-complete-nmcli-commands">5.2. Use the tab key to automatically complete nmcli commands</h2>
+<p>The nmcli tool supports tab completion if the bash-completion package is installed on your host machine. This allows you to autocomplete option names and identify possible options and values.</p>
+<p>For example, if you type nmcli con and press Tab, the shell autocompletes the command nmcli connection.</p>
+<p>The option or value you enter must be unique. If it is not unique, nmcli displays all possible options. For example, if you type nmcli connection d , and press Tab , the command displays the commands delete and down as possible options.</p>
+<p>You can also use tab completion to display all properties that can be set in a connection configuration set. For example, if you type nmcli connection modify connection_name and press Tab, the command displays the full list of available properties.</p>
+<h2 id="53-commonly-used-nmcli-commands">5.3. Commonly used nmcli commands</h2>
+<ul>
+<li>Display a list of connection profiles:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection show
+NAME    UUID                                  TYPE      DEVICE
+ens3    f46c8406-74f4-458f-a884-a1889377aebc  ethernet  ens3
+</code></pre></div>
+<ul>
+<li>Display the configuration for the specified connection:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection show CONNECTION-NAME
+connection.id:                          ens3
+connection.uuid:                        f46c8406-74f4-458f-a884-a1889377aebc
+connection.stable-id:                   --
+connection.type:                        802-3-ethernet
+connection.interface-name:              ens3
+connection.autoconnect:                 yes
+...
+</code></pre></div>
+<ul>
+<li>modify connection properties:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>nmcli connection modify CONNECTION-NAME PROPERTY VALUE
+</code></pre></div>
+<p>Supports simultaneous modification of multiple properties using multiple PROPERTY VALUE combinations.</p>
+<ul>
+<li>Displays a list of network devices, status, type and connection sets:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli device
+DEVICE      TYPE      STATE                   CONNECTION
+ens3        ethernet  connected               ens3
+...
+</code></pre></div>
+<ul>
+<li>Activate connection:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection up CONNECTION-NAME
+</code></pre></div>
+<ul>
+<li>Deactivate connection:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection down CONNECTION-NAME
+</code></pre></div>
+<h1 id="chapter-6-getting-started-with-configuring-a-network-using-the-gnome-gui">Chapter 6 Getting started with configuring a network using the GNOME GUI</h1>
+<p>You can manage and configure network connections in GNOME using:</p>
+<ul>
+<li>the GNOME Shell network connection icon in the upper right corner of the desktop</li>
+<li>GNOME control-center application</li>
+<li>GNOME nm-connection-editor application</li>
+</ul>
+<h2 id="61-manage-network-connections-through-desktop-icons">6.1. Manage network connections through desktop icons</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The GNOME package group is installed.</li>
+<li>You are logged into GNOME.</li>
+<li>If the network requires specific configuration, such as a static IP address or 802.1x configuration, then a connection profile needs to have been created.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Click the network connection icon in the upper right corner of the desktop.</p>
+<p><img alt="GNOME配置网络_1" src="../assets/GNOME%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C_1.png" /></p>
+</li>
+<li>
+<p>Depending on the connection type, select Wired or Wi-Fi.</p>
+<p><img alt="GNOME配置网络_2" src="../assets/GNOME%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C_2.png" /></p>
+</li>
+<li>
+<p>For a wired connection, select Connect to connect to the network.</p>
+</li>
+<li>
+<p>For a Wi-Fi connection, tap Select network, choose the network you want to connect to, and enter the password</p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

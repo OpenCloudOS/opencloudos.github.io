@@ -1,0 +1,2698 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network49-54/">
+      
+      
+        <link rel="next" href="../../release/v8.5/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Chapter 55-57 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-55-network-tracing-using-the-bpf-compiler-collection" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 55-57
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../network/Network55-57/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 55-57
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 55-57
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#551-introduction-to-bcc" class="md-nav__link">
+    55.1. Introduction to BCC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#552-install-the-bcc-tools-package" class="md-nav__link">
+    55.2. Install the bcc-tools package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#553-display-tcp-connections-added-to-the-kernels-accept-queue" class="md-nav__link">
+    55.3. Display TCP connections added to the kernel's accept queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#564-tracking-outgoing-tcp-connection-attempts" class="md-nav__link">
+    56.4. Tracking Outgoing TCP Connection Attempts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#555-measuring-the-latency-of-outbound-tcp-connections" class="md-nav__link">
+    55.5. Measuring the Latency of Outbound TCP Connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#556-display-details-of-tcp-packets-and-fragments-dropped-by-the-kernel" class="md-nav__link">
+    55.6. Display details of TCP packets and fragments dropped by the kernel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#557-tracing-tcp-sessions" class="md-nav__link">
+    55.7. Tracing TCP sessions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#558-tracking-tcp-retransmissions" class="md-nav__link">
+    55.8. Tracking TCP retransmissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#559-display-tcp-state-change-information" class="md-nav__link">
+    55.9. Display TCP state change information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5510-aggregate-tcp-traffic-sent-to-a-specific-subnet" class="md-nav__link">
+    55.10. Aggregate TCP traffic sent to a specific subnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5511-display-network-throughput-by-ip-address-and-port" class="md-nav__link">
+    55.11. Display network throughput by IP address and port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5512-tracking-established-tcp-connections" class="md-nav__link">
+    55.12. Tracking established TCP connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5513-tracking-ipv4-and-ipv6-listen-requests" class="md-nav__link">
+    55.13. Tracking IPv4 and IPv6 listen requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5514-overview-of-service-time-of-softirqs" class="md-nav__link">
+    55.14. Overview of Service Time of Softirqs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#551-introduction-to-bcc" class="md-nav__link">
+    55.1. Introduction to BCC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#552-install-the-bcc-tools-package" class="md-nav__link">
+    55.2. Install the bcc-tools package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#553-display-tcp-connections-added-to-the-kernels-accept-queue" class="md-nav__link">
+    55.3. Display TCP connections added to the kernel's accept queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#564-tracking-outgoing-tcp-connection-attempts" class="md-nav__link">
+    56.4. Tracking Outgoing TCP Connection Attempts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#555-measuring-the-latency-of-outbound-tcp-connections" class="md-nav__link">
+    55.5. Measuring the Latency of Outbound TCP Connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#556-display-details-of-tcp-packets-and-fragments-dropped-by-the-kernel" class="md-nav__link">
+    55.6. Display details of TCP packets and fragments dropped by the kernel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#557-tracing-tcp-sessions" class="md-nav__link">
+    55.7. Tracing TCP sessions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#558-tracking-tcp-retransmissions" class="md-nav__link">
+    55.8. Tracking TCP retransmissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#559-display-tcp-state-change-information" class="md-nav__link">
+    55.9. Display TCP state change information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5510-aggregate-tcp-traffic-sent-to-a-specific-subnet" class="md-nav__link">
+    55.10. Aggregate TCP traffic sent to a specific subnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5511-display-network-throughput-by-ip-address-and-port" class="md-nav__link">
+    55.11. Display network throughput by IP address and port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5512-tracking-established-tcp-connections" class="md-nav__link">
+    55.12. Tracking established TCP connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5513-tracking-ipv4-and-ipv6-listen-requests" class="md-nav__link">
+    55.13. Tracking IPv4 and IPv6 listen requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5514-overview-of-service-time-of-softirqs" class="md-nav__link">
+    55.14. Overview of Service Time of Softirqs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network55-57.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network55-57.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-55-network-tracing-using-the-bpf-compiler-collection">Chapter 55 Network Tracing Using the BPF Compiler Collection</h1>
+<p>This chapter explains what the BPF Compiler Collection (BCC) is, how to install BCC, and how to use the pre-built scripts provided by the bcc-tools package to perform different network tracing operations. All of these scripts support the --ebpf argument to display the eBPF code uploaded by the tool to the kernel. You can use these codes to learn more about writing eBPF scripts.</p>
+<h2 id="551-introduction-to-bcc">55.1. Introduction to BCC</h2>
+<p>The BPF Compiler Collection (BCC) is a library that facilitates the creation of extended Berkeley Packet Filter (eBPF) programs. The primary tool for eBPF programs is to analyze operating system performance and network performance without additional overhead or security concerns.</p>
+<p>BCC no longer requires users to know the technical details of eBPF, and provides many out-of-the-box tools, such as the bcc-tools package with pre-built eBPF programs.</p>
+<p>eBPF programs are triggered on events such as disk I/O, TCP connections, and process creation. Programs are less likely to cause the kernel to panic, loop, or become unresponsive because they run in the kernel's secure virtual machine.</p>
+<h2 id="552-install-the-bcc-tools-package">55.2. Install the bcc-tools package</h2>
+<p>This section describes how to install the bcc-tools package, which also installs the BPF Compiler Collection (BCC) library as a dependency.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Install bcc-tools:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># yum install bcc-tools
+</code></pre></div>
+<p>​       The BCC tools are installed in the /usr/share/bcc/tools/ directory.</p>
+<ol>
+<li>(Optional) Check tool:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ll /usr/share/bcc/tools/
+...
+-rwxr-xr-x. 1 root root  4198 Dec 14 17:53 dcsnoop
+-rwxr-xr-x. 1 root root  3931 Dec 14 17:53 dcstat
+-rwxr-xr-x. 1 root root 20040 Dec 14 17:53 deadlock_detector
+-rw-r--r--. 1 root root  7105 Dec 14 17:53 deadlock_detector.c
+drwxr-xr-x. 3 root root  8192 Mar 11 10:28 doc
+-rwxr-xr-x. 1 root root  7588 Dec 14 17:53 execsnoop
+-rwxr-xr-x. 1 root root  6373 Dec 14 17:53 ext4dist
+-rwxr-xr-x. 1 root root 10401 Dec 14 17:53 ext4slower
+...
+</code></pre></div>
+<p>The doc directory in the table above contains documentation for each tool.</p>
+<h2 id="553-display-tcp-connections-added-to-the-kernels-accept-queue">55.3. Display TCP connections added to the kernel's accept queue</h2>
+<p>After the kernel receives an ACK packet in the TCP 3-way handshake, the kernel moves the connection from the SYN queue to the accept queue until the connection's state becomes ESTABLISHED. Therefore, only successful TCP connections will be seen in this queue.</p>
+<p>The tcpaccept tool displays all connections added to the accept queue by the kernel using eBPF features. The tool is lightweight because it traces the kernel's accept() function instead of capturing and filtering packets. For example, use tcpaccept for general troubleshooting to show new connections accepted by the server.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Enter the following command to start tracing the kernel accept queue</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpaccept
+PID   COMM      IP RADDR         RPORT  LADDR    LPORT
+843   sshd      4  192.0.2.17    50598  192.0.2.1  22
+1107  ns-slapd  4  198.51.100.6  38772  192.0.2.1  389
+1107  ns-slapd  4  203.0.113.85  38774  192.0.2.1  389
+...
+</code></pre></div>
+<p>Every time the kernel accepts a connection, tcpaccept displays the details of the connection.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="564-tracking-outgoing-tcp-connection-attempts">56.4. Tracking Outgoing TCP Connection Attempts</h2>
+<p>The tcpconnect tool uses eBPF features to track outgoing TCP connection attempts. The tool's output also includes failed connections.</p>
+<p>The tcpconnect tool is lightweight because it only traces the kernel's connect() function, rather than capturing and filtering packets.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Enter the following command to start a trace that displays all outgoing connections:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpconnect
+PID    COMM         IP SADDR      DADDR          DPORT
+31346  curl         4  192.0.2.1  198.51.100.16  80
+31348  telnet       4  192.0.2.1  203.0.113.231  23
+31361  isc-worker00 4  192.0.2.1  192.0.2.254    53
+...
+</code></pre></div>
+<p>Every time the kernel handles an outgoing connection, tcpconnect displays the details of the connection.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="555-measuring-the-latency-of-outbound-tcp-connections">55.5. Measuring the Latency of Outbound TCP Connections</h2>
+<p>TCP connection latency is the time it takes to establish a connection. This usually involves kernel TCP/IP processing and network round-trip time, not application runtime.</p>
+<p>The tcpconnlat tool uses eBPF features to measure the time between sending a SYN packet and receiving a response packet.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Start measuring the latency of outbound connections:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpconnlat
+PID    COMM         IP SADDR      DADDR          DPORT LAT(ms)
+32151  isc-worker00 4  192.0.2.1  192.0.2.254    53    0.60
+32155  ssh          4  192.0.2.1  203.0.113.190  22    26.34
+32319  curl         4  192.0.2.1  198.51.100.59  443   188.96
+...
+</code></pre></div>
+<p>Every time the kernel handles an outgoing connection, tcpconnlat displays the details of the connection after the kernel receives a response packet.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="556-display-details-of-tcp-packets-and-fragments-dropped-by-the-kernel">55.6. Display details of TCP packets and fragments dropped by the kernel</h2>
+<p>The tcpdrop tool enables administrators to display details of TCP packets and segments dropped by the kernel. Use this utility to debug high rates of dropped packets for remote systems to send timer-based retransmissions. High rates of freeing packets and fragments can affect server performance.</p>
+<p>The tcpdrop tool uses eBPF features, rather than capturing and filtering resource-intensive packets, to retrieve information directly from the kernel.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Enter the following command to display dropped TCP packets and fragments details:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpdrop
+TIME     PID    IP SADDR:SPORT       &gt; DADDR:DPORT   STATE (FLAGS)
+13:28:39 32253  4  192.0.2.85:51616  &gt; 192.0.2.1:22  CLOSE_WAIT (FIN|ACK)
+    b&#39;tcp_drop+0x1&#39;
+    b&#39;tcp_data_queue+0x2b9&#39;
+    ...
+
+13:28:39 1      4  192.0.2.85:51616  &gt; 192.0.2.1:22   CLOSE (ACK)
+    b&#39;tcp_drop+0x1&#39;
+    b&#39;tcp_rcv_state_process+0xe2&#39;
+    ...
+</code></pre></div>
+<p>Every time the kernel drops a TCP packet and segment, tcpdrop displays details of the connection, including the kernel stack trace that caused the packet to be dropped.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="557-tracing-tcp-sessions">55.7. Tracing TCP sessions</h2>
+<p>The tcplife tool keeps track of open and closed TCP sessions using eBPF and prints a line of output summarizing each session. Administrators can use tcplife to identify connections and the amount of traffic transmitted.</p>
+<p>The examples in this section describe how to display connections to port 22 (SSH) to retrieve the following information:</p>
+<ul>
+<li>Local Process ID (PID)</li>
+<li>local process name</li>
+<li>Local IP address and port number</li>
+<li>Remote IP address and port number</li>
+<li>The amount of traffic received and transmitted in KB.</li>
+<li>Amount of time the connection was active (milliseconds)</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Enter the following command to start tracing connections to local port 22:、</li>
+</ol>
+<div class="highlight"><pre><span></span><code>/usr/share/bcc/tools/tcplife -L 22
+PID   COMM    LADDR      LPORT RADDR       RPORT TX_KB  RX_KB      MS
+19392 sshd    192.0.2.1  22    192.0.2.17  43892    53     52 6681.95
+19431 sshd    192.0.2.1  22    192.0.2.245 43902    81 249381 7585.09
+19487 sshd    192.0.2.1  22    192.0.2.121 43970  6998     7 16740.35
+...
+</code></pre></div>
+<p>Every time a connection is closed, tcplife will display the details of the connection.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="558-tracking-tcp-retransmissions">55.8. Tracking TCP retransmissions</h2>
+<p>The tcpretrans tool displays detailed information about TCP retransmissions, such as local and remote IP addresses and port numbers, and the state of TCP at the time of the retransmission.</p>
+<p>The tool uses eBPF functionality, so the overhead is very low.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Use the following command to display TCP retransmission details:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpretrans
+TIME     PID  IP LADDR:LPORT   T&gt; RADDR:RPORT         STATE
+00:23:02 0    4  192.0.2.1:22  R&gt; 198.51.100.0:26788  ESTABLISHED
+00:23:02 0    4  192.0.2.1:22  R&gt; 198.51.100.0:26788  ESTABLISHED
+00:45:43 0    4  192.0.2.1:22  R&gt; 198.51.100.0:17634  ESTABLISHED
+...
+</code></pre></div>
+<p>cpretrans displays connection details each time the kernel calls a TCP retransmit function.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="559-display-tcp-state-change-information">55.9. Display TCP state change information</h2>
+<p>During a TCP session, the TCP state changes. The tcpstates tool tracks these state changes using eBPF functionality and prints detailed information including the duration of each state. For example, use tcpstates to determine if a connection is spending too much time in the initialization state.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Start tracking TCP state changes with the following command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpstates
+SKADDR           C-PID C-COMM     LADDR     LPORT RADDR       RPORT OLDSTATE    -&gt; NEWSTATE    MS
+ffff9cd377b3af80 0     swapper/1  0.0.0.0   22    0.0.0.0     0     LISTEN      -&gt; SYN_RECV    0.000
+ffff9cd377b3af80 0     swapper/1  192.0.2.1 22    192.0.2.45  53152 SYN_RECV    -&gt; ESTABLISHED 0.067
+ffff9cd377b3af80 818   sssd_nss   192.0.2.1 22    192.0.2.45  53152 ESTABLISHED -&gt; CLOSE_WAIT  65636.773
+ffff9cd377b3af80 1432  sshd       192.0.2.1 22    192.0.2.45  53152 CLOSE_WAIT  -&gt; LAST_ACK    24.409
+ffff9cd377b3af80 1267  pulseaudio 192.0.2.1 22    192.0.2.45  53152 LAST_ACK    -&gt; CLOSE       0.376
+...
+</code></pre></div>
+<p>Each time a connection changes its state, tcpstates displays a new row with updated connection details. </p>
+<p>If multiple connections have changed their state at the same time, use the socket address (SKADDR) in the first column to determine which entries belong to the same connection.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="5510-aggregate-tcp-traffic-sent-to-a-specific-subnet">55.10. Aggregate TCP traffic sent to a specific subnet</h2>
+<p>The tcpsubnet tool summarizes and aggregates IPv4 TCP traffic from a local host to a subnet and displays the output at regular intervals. The tool uses eBPF functionality to collect and summarize data to reduce overhead.</p>
+<p>By default, tcpsubnet aggregates traffic for the following subnets:</p>
+<ul>
+<li>127.0.0.1/32</li>
+<li>10.0.0.0/8</li>
+<li>172.16.0.0/12</li>
+<li>192.0.2.0/24/16</li>
+<li>0.0.0.0/0</li>
+</ul>
+<p>Note that the last subnet (0.0.0.0/0) is an all-inclusive option. The tcpsubnet tool counts all traffic on subnets other than the first four in this all-inclusive entry.</p>
+<p>Follow the procedure below to calculate the traffic of the 192.0.2.0/24 and 198.51.100.0/24 subnets. Traffic to other subnets will be tracked in the 0.0.0.0/0 all-inclusive subnet entry.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Start monitoring traffic sent to 192.0.2.0/24, 198.51.100.0/24, and other subnets:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpsubnet 192.0.2.0/24,198.51.100.0/24,0.0.0.0/0
+Tracing... Output every 1 secs. Hit Ctrl-C to end
+[02/21/20 10:04:50]
+192.0.2.0/24           856
+198.51.100.0/24       7467
+[02/21/20 10:04:51]
+192.0.2.0/24          1200
+198.51.100.0/24       8763
+0.0.0.0/0              673
+...
+</code></pre></div>
+<p>This command displays the traffic per second for the specified subnet in bytes.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="5511-display-network-throughput-by-ip-address-and-port">55.11. Display network throughput by IP address and port</h2>
+<p>The tcptop tool displays the TCP traffic sent and received by the host in KB. This report is automatically refreshed and contains only active TCP connections. The tool uses eBPF functionality, so the overhead is very low.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>To monitor sent and received traffic, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcptop
+13:46:29 loadavg: 0.10 0.03 0.01 1/215 3875
+
+PID    COMM         LADDR           RADDR              RX_KB   TX_KB
+3853   3853         192.0.2.1:22    192.0.2.165:41838  32     102626
+1285   sshd         192.0.2.1:22    192.0.2.45:39240   0           0
+...
+</code></pre></div>
+<p>command The output includes only active TCP connections. If the local or remote system closes the connection, the connection is no longer visible in the output. </p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="5512-tracking-established-tcp-connections">55.12. Tracking established TCP connections</h2>
+<p>The tcptracer tool traces connections, kernel functions that accept and close TCP connections. The tool uses eBPF functionality, so the overhead is very low.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Start the tracing process with the following command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcptracer
+Tracing TCP established connections. Ctrl-C to end.
+T  PID    COMM        IP SADDR        DADDR       SPORT  DPORT
+A  1088   ns-slapd    4  192.0.2.153  192.0.2.1   0      65535
+A  845    sshd        4  192.0.2.1    192.0.2.67  22     42302
+X  4502   sshd        4  192.0.2.1    192.0.2.67  22     42302
+...
+</code></pre></div>
+<p>Whenever the kernel connects, accepts, or closes a connection, tcptracer displays connection details.</p>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="5513-tracking-ipv4-and-ipv6-listen-requests">55.13. Tracking IPv4 and IPv6 listen requests</h2>
+<p>The solisten tool tracks all IPv4 and IPv6 listen requests. It keeps track of listening requests, including listeners that eventually fail or do not accept connections. When a program wants to listen for a TCP connection, the program traces the function called by the kernel.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Enter the following command to start a trace that displays all listening TCP attempts:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/solisten
+PID    COMM           PROTO         BACKLOG     PORT     ADDR
+3643   nc             TCPv4         1           4242     0.0.0.0
+3659   nc             TCPv6         1           4242     2001:db8:1::1
+4221   redis-server   TCPv6         128         6379     ::
+4221   redis-server   TCPv4         128         6379     0.0.0.0
+....
+</code></pre></div>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h2 id="5514-overview-of-service-time-of-softirqs">55.14. Overview of Service Time of Softirqs</h2>
+<p>The softirqs tool summarizes the time spent servicing soft interrupts (soft IRQs) and displays this time as a total or a histogram distribution. This tool uses the irq:softirq_enter and irq:softirq_exit kernel tracepoints and is a stable tracing mechanism.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Enter the following command to start tracking soft irq event times:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/softirqs
+Tracing soft irq event time... Hit Ctrl-C to end.
+^C
+SOFTIRQ          TOTAL_usecs
+tasklet                  166
+block                   9152
+net_rx                 12829
+rcu                    53140
+sched                 182360
+timer                 306256
+</code></pre></div>
+<ol>
+<li>Press Ctrl+C to stop the tracing process.</li>
+</ol>
+<h1 id="chapter-56-getting-started-with-tipc">Chapter 56 Getting Started with TIPC</h1>
+<p>Transparent Interprocess Communication (TIPC) (also known as cluster domain sockets) is an interprocess communication (IPC) service for cluster-wide operations.</p>
+<p>Applications running in high availability and dynamic cluster environments have special needs. The number of nodes in the cluster may vary, routers may fail, and functions may be moved to different nodes in the cluster for load balancing purposes. TIPC minimizes the work of application developers to deal with such issues and handles them in the correct and best way possible. In addition, TIPC provides more efficient and fault-tolerant communication than common protocols such as TCP.</p>
+<p><strong>56.1. TIPC Architecture</strong></p>
+<p>TIPC is a layer between applications using TIPC and the packet transport service (bearer), spanning the transport layer, network layer, and signaling link layer. However, TIPC can use a different transport protocol as a bearer, so that a TCP connection can act as a bearer for a TIPC signal connection.</p>
+<p>TIPC supports the following bearers:</p>
+<ul>
+<li>Ethernet</li>
+<li>InfiniBand</li>
+<li>UDP protocol</li>
+</ul>
+<p>TIPC provides reliable transfer of information between TIPC ports, which are the endpoints for all TIPC communications.</p>
+<p>The following is the TIPC architecture diagram:</p>
+<p><img alt="TIPC" src="../assets/TIPC.png" /></p>
+<h2 id="562-load-the-tipc-module-when-the-system-boots">56.2. Load the tipc module when the system boots</h2>
+<p>Before using the TIPC protocol, please load the tipc kernel module. This section describes how to configure OpenCloudOS to automatically load this module when the system boots.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Create the /etc/modules-load.d/tipc.conf file with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>tipc
+</code></pre></div>
+<ol>
+<li>Restart the systemd-modules-load service to load modules without rebooting the system:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl start systemd-modules-load
+</code></pre></div>
+<p><strong>verify</strong></p>
+<ul>
+<li>Verify that RHEL has loaded the tipc module with the following command:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># lsmod | grep tipc
+tipc    311296  0
+</code></pre></div>
+<p>If the command does not show an entry for the tipc module, it is not loaded by OpenCloudOS.</p>
+<h2 id="563-create-tipc-network">56.3. Create TIPC network</h2>
+<p>Note that the following commands only temporarily configure the TIPC network. To permanently configure TIPC on a node, use the commands of this process in a script and configure OpenCloudOS to execute the script when the system boots.</p>
+<p><strong>prerequisite</strong></p>
+<ul>
+<li>The tipc module is loaded.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Optional: Set a unique node identity, such as UUID or hostname of the node:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># tipc node set identity host_name
+</code></pre></div>
+<p>Identity can be any unique string of up to 16 letters and numbers.</p>
+<pre><code>You cannot set or change identities after this step.
+</code></pre>
+<ol>
+<li>Add a bearer. For example, to use Ethernet as the medium and the enp0s1 device as the physical bearer device, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># tipc bearer enable media eth device enp1s0
+</code></pre></div>
+<ol>
+<li>Optional: For redundancy and better performance, attach more bearers using the command from the previous step. You can configure up to three bearers, but no more than two on the same medium.</li>
+<li>Repeat all previous steps in each node that should join the TIPC network.</li>
+</ol>
+<p><strong>verify</strong></p>
+<ol>
+<li>Display the link status of cluster members:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># tipc link list
+broadcast-link: up
+5254006b74be:enp1s0-525400df55d1:enp1s0: up
+</code></pre></div>
+<p>This output indicates that the link between bearer enp1s0 on node 5254006b74be and bearer enp1s0 on node 525400df55d1 is up.</p>
+<ol>
+<li>Display the TIPC release table:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># tipc nametable show
+Type       Lower      Upper      Scope    Port       Node
+0          1795222054 1795222054 cluster  0          5254006b74be
+0          3741353223 3741353223 cluster  0          525400df55d1
+1          1          1          node     2399405586 5254006b74be
+2          3741353223 3741353223 node     0          5254006b74be
+</code></pre></div>
+<p>Two entries with a service type of 0 indicate that two nodes are members of this cluster. </p>
+<p>An entry with a service type of 1 represents the built-in topology service tracking service.</p>
+<p>Entries with a service type of 2 show links as seen from the publishing node. The range limit 3741353223 represents the address of the peer endpoint in decimal format (based on a unique 32-bit hash of the node's identity).</p>
+<h1 id="chapter-57-automating-network-interface-configuration-in-public-clouds-using-nm-cloud-setup">Chapter 57 Automating Network Interface Configuration in Public Clouds Using nm-cloud-setup</h1>
+<p>Typically, a virtual machine (VM) has only one DHCP-configurable interface. However, some virtual machines may have multiple network interfaces, IP addresses, and IP subnets within a single interface that cannot be configured by DHCP. Additionally, administrators can reconfigure the network while the machine is running. The nm-cloud-setup tool automatically retrieves configuration information from a cloud service provider's metadata server and updates the network configuration of a virtual machine in a public cloud.</p>
+<h2 id="571-configuring-and-pre-deploying-nm-cloud-setup">57.1. Configuring and pre-deploying nm-cloud-setup</h2>
+<p>To enable and configure network interfaces in the public cloud, run nm-cloud-setup as a timer and service. The following procedure describes how to use nm-cloud-setup with Amazon EC2.</p>
+<p><strong>prerequisite</strong></p>
+<ul>
+<li>There is a network connection.</li>
+<li>The connection uses DHCP. By default, NetworkManager creates a connection profile that uses DHCP. If no configuration file was created because you set the no-auto-default parameter in /etc/NetworkManager/NetworkManager.conf, create this initial connection manually.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Install the nm-cloud-setup package:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># yum install NetworkManager-cloud-setup
+</code></pre></div>
+<ol>
+<li>
+<p>Create and run the snap-in file for the nm-cloud-setup service:</p>
+</li>
+<li>
+<p>Start editing the snap-in file with the following command:</p>
+<div class="highlight"><pre><span></span><code># systemctl edit nm-cloud-setup.service
+</code></pre></div>
+<p>It is very important to explicitly start the service or reboot the system for the configuration settings to take effect.</p>
+</li>
+<li>
+<p>Use systemd snap-in files to configure cloud providers in nm-cloud-setup. For example, to use Amazon EC2, enter:</p>
+<div class="highlight"><pre><span></span><code>[Service]
+Environment=NM_CLOUD_SETUP_EC2=yes
+</code></pre></div>
+<p>You can set the following environment variables to enable the cloud provider you are using:</p>
+<ul>
+<li>NM_CLOUD_SETUP_AZURE for Microsoft Azure</li>
+<li>NM_CLOUD_SETUP_EC2 for Amazon EC2 (AWS)</li>
+<li>NM_CLOUD_SETUP_GCP for Google Cloud Platform (GCP)</li>
+<li>for Alibaba Cloud ( Aliyun's) NM_CLOUD_SETUP_ALIYUN</li>
+</ul>
+</li>
+<li>
+<p>Save the file and exit the editor.</p>
+</li>
+<li>
+<p>Reload the systemd configuration:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl daemon-reload
+</code></pre></div>
+<ol>
+<li>Enable and start the nm-cloud-setup service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl enable --now nm-cloud-setup.service
+</code></pre></div>
+<ol>
+<li>Enable and start the nm-cloud-setup timer:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl enable --now nm-cloud-setup.timer
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

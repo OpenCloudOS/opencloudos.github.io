@@ -1,0 +1,4582 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network1-6/">
+      
+      
+        <link rel="next" href="../Network13-18/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Chapter 7-12 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-7-introduction-to-nmstate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 7-12
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../network/Network7-12/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 7-12
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 7-12
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-using-libnmstate-library-in-python-program" class="md-nav__link">
+    7.1. Using libnmstate library in Python program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-use-nmstatectl-to-update-the-network-configuration" class="md-nav__link">
+    7.2. Use nmstatectl to update the network configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-others" class="md-nav__link">
+    7.3. Others
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-using-libnmstate-library-in-python-program" class="md-nav__link">
+    7.1. Using libnmstate library in Python program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-use-nmstatectl-to-update-the-network-configuration" class="md-nav__link">
+    7.2. Use nmstatectl to update the network configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-others" class="md-nav__link">
+    7.3. Others
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network7-12.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network7-12.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-7-introduction-to-nmstate">Chapter 7 Introduction to Nmstate</h1>
+<p>Nmstate is a declarative network management tool. The nmstate software provides the libnmstate Python library, and nmstatectl, a command-line tool for managing NetworkManager. When using Nmstate, you can describe the expected network state using descriptions in YAML or JSON format.</p>
+<p>Advantages of using Nmstate:</p>
+<ul>
+<li>
+<p>Provides a stable and extensible interface to manage OpenCLoudOS network functions</p>
+</li>
+<li>
+<p>Supports atomic and transactional operations at the host and cluster levels</p>
+</li>
+<li>
+<p>Supports partial editing of most properties and preserves existing settings not specified in description</p>
+</li>
+<li>
+<p>Provides plugin support to enable administrators to use their own plugins</p>
+</li>
+</ul>
+<h2 id="71-using-libnmstate-library-in-python-program">7.1. Using libnmstate library in Python program</h2>
+<p>The libnmstate Python library enables developers to use Nmstate in their own applications</p>
+<p>To use the library, import it in your source code:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">libnmstate</span>
+</code></pre></div>
+<p>Note that you must have the nmstate package installed to use this library.</p>
+<p>Case: Use the libnmstate library to query the network status</p>
+<p>The following code imports the libnmstate library and displays the available network interfaces and their states:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">libnmstate</span>
+<span class="kn">from</span> <span class="nn">libnmstate.schema</span> <span class="kn">import</span> <span class="n">Interface</span>
+
+
+<span class="n">net_state</span> <span class="o">=</span> <span class="n">libnmstate</span><span class="o">.</span> <span class="n">show</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">iface_state</span> <span class="ow">in</span> <span class="n">net_state</span><span class="p">[</span><span class="n">Interface</span><span class="o">.</span><span class="n">KEY</span><span class="p">]:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iface_state</span><span class="p">[</span><span class="n">Interface</span><span class="o">.</span><span class="n">NAME</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span>
+    <span class="o">+</span> <span class="n">iface_state</span><span class="p">[</span><span class="n">Interface</span><span class="o">.</span><span class="n">STATE</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="72-use-nmstatectl-to-update-the-network-configuration">7.2. Use nmstatectl to update the network configuration</h2>
+<p>You can use the nmstatectl tool to store the current network configuration for one or more interfaces in a file. Then you can use this file:</p>
+<ul>
+<li>
+<p>Modify the configuration and apply it to the same system.</p>
+</li>
+<li>
+<p>Copy the files to other hosts and configure the hosts with the same or modified settings.</p>
+</li>
+</ul>
+<p>Here's how to export the settings for the ens3 interface to a file, modify the configuration, and apply the settings on the host.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The nmstate package is installed.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Export the settings of the ens3 interface to the ~/network-config.yml file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl show ens3 &gt; ~/network-config.yml
+</code></pre></div>
+<p>This command will store ens3 configuration in YAML format. To store output in JSON format, pass the --json option to the command.</p>
+<p>If no interface name is specified, nmstatectl will export the configuration of all interfaces.</p>
+<ol>
+<li>
+<p>Modify the ~/network-config.yml file using a text editor to update the configuration.</p>
+</li>
+<li>
+<p>Apply the settings in the ~/network-config.yml file:~/network-config.yml file's setting：</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl apply ~/network-config.yml
+</code></pre></div>
+<p>If you export settings in JSON format, pass the --json option to the command.</p>
+<h2 id="73-others">7.3. Others</h2>
+<pre><code>/usr/share/doc/nmstate/README.md
+/usr/share/doc/nmstate/examples/
+</code></pre>
+<h1 id="chapter-8-configuring-ethernet-connections">Chapter 8 Configuring Ethernet Connections</h1>
+<h2 id="81-configure-static-ethernet-connection-using-nmcli">8.1. Configure static ethernet connection using nmcli</h2>
+<p><strong>process</strong></p>
+<ol>
+<li>Add a new NetworkManager network connection configuration set:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add con-name test-con ifname ens4 type ethernet
+</code></pre></div>
+<p>Change test-con to Configure the set for the network connection you need.</p>
+<ol>
+<li>Set the IPv4 address:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify test-con ipv4.addresses 192.128.1.1/24
+</code></pre></div>
+<ol>
+<li>Set the IPv6 address:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv6.addresses AD80::ABAA:0000:00C2:0002/64
+</code></pre></div>
+<ol>
+<li>Set the IPv4 and IPv6 connection method to manual:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv6.method manual
+#  nmcli connection modify test-con ipv4.method manual
+</code></pre></div>
+<ol>
+<li>Set the IPv4 and IPv6 default gateways：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv4.gateway 192.128.1.254
+#  nmcli connection modify test-con ipv6.gateway AD80::ABAA:0000:00C2:FFFE
+</code></pre></div>
+<ol>
+<li>Set the IPv4 and IPv6 DNS server addresses：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv6.dns &quot;AD80::ABAA:0000:00C2:0001&quot;
+#  nmcli connection modify test-con ipv4.dns &quot;114.114.114.114&quot;
+</code></pre></div>
+<ol>
+<li>Set up DNS search domains for IPv4 and IPv6 connections：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv4.dns-search test.com
+#  nmcli connection modify test-con ipv6.dns-search test.com
+</code></pre></div>
+<ol>
+<li>Activate the connection profile：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up test-con
+</code></pre></div>
+<p><strong>verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+ens4      ethernet  connected  test-con
+</code></pre></div>
+<ol>
+<li>Display all settings of the networking profile：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show test-con
+connection.id:              test-con
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  ens4
+...
+</code></pre></div>
+<ol>
+<li>
+<p>Verify network connectivity using the ping command：</p>
+</li>
+<li>
+<p>same subnet：
+     IPv4:</p>
+<div class="highlight"><pre><span></span><code># ping 192.128.1.3
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:0005
+</code></pre></div>
+<p>If the command fails, check the IP and subnet settings.</p>
+</li>
+<li>
+<p>Remote subnet:
+     IPv4:</p>
+<div class="highlight"><pre><span></span><code># ping 192.168.1.3
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C3:0005
+</code></pre></div>
+<ul>
+<li>If the command fails, first ping the default gateway to verify the settings.
+   IPv4:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ping 192.128.1.254
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:FFFE
+</code></pre></div>
+</li>
+<li>
+<p>Use the host command to verify whether the domain name resolution is normal:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+<p>If the command returns any errors, such as connection timed out or no servers could be reached, verify your DNS settings.</p>
+<ul>
+<li><strong>Troubleshooting Steps</strong></li>
+</ul>
+<p>If the connection fails, or the network interface toggles between the up and down states:</p>
+<ul>
+<li>
+<p>Make sure the network cable is plugged into the host and switch.</p>
+</li>
+<li>
+<p>Check if the connection failure exists only on this host, or other hosts connected to the same switch that this server is connected to.</p>
+</li>
+<li>
+<p>Verify that the network cables and network interfaces are working as expected. Perform hardware diagnostic steps and replace defective cables and network interface cards.</p>
+</li>
+<li>
+<p>If the configuration on disk does not match the configuration in the device, starting or restarting NetworkManager creates an in-memory connection representing the device's configuration.</p>
+</li>
+</ul>
+<h2 id="82-configuring-static-ethernet-connections-using-the-nmcli-interactive-editor">8.2. Configuring Static Ethernet Connections Using the nmcli Interactive Editor</h2>
+<p><strong>process</strong></p>
+<ol>
+<li>Add a NetworkManager networking profile in interactive mode:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection edit type ethernet con-name test-con
+</code></pre></div>
+<ol>
+<li>Set up the network interface:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set connection.interface-name ens4
+</code></pre></div>
+<ol>
+<li>Set the IPv4 address:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.addresses 192.128.1.1/24
+</code></pre></div>
+<ol>
+<li>Set the IPv6 address:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv6.addresses AD80::ABAA:0000:00C2:0002/64
+</code></pre></div>
+<ol>
+<li>Set the IPv4 and IPv6 connection method to manual:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.method manual
+nmcli&gt; set ipv6.method manual
+</code></pre></div>
+<ol>
+<li>Set the IPv4 and IPv6 default gateways:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.gateway 192.128.1.254
+nmcli&gt; set ipv6.gateway AD80::ABAA:0000:00C2:FFFE
+</code></pre></div>
+<ol>
+<li>Set the IPv4 and IPv6 DNS server addresses:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dns 114.114.114.114
+nmcli&gt; set ipv6.dns AD80::ABAA:0000:00C2:0001
+</code></pre></div>
+<p>To set up multiple DNS servers, separate them by Spaces and enclose them in quotation marks.</p>
+<ol>
+<li>Set up DNS search domains for IPv4 and IPv6 connections:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dns-search example.com
+nmcli&gt; set ipv6.dns-search example.com
+</code></pre></div>
+<ol>
+<li>Save and activate the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+Saving the connection with &#39;autoconnect=yes&#39;. That might result in an immediate activation of the connection.
+Do you still want to save? (yes/no) [yes] yes
+</code></pre></div>
+<ol>
+<li>
+<p>Exit interactive mode:</p>
+<div class="highlight"><pre><span></span><code>nmcli&gt; quit
+</code></pre></div>
+</li>
+</ol>
+<p><strong>verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+ens4      ethernet  connected  test-con
+</code></pre></div>
+<ol>
+<li>Display all settings of the networking profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show test-con
+connection.id:              test-con
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  ens4
+...
+</code></pre></div>
+<ol>
+<li>
+<p>Verify network connectivity using the ping command:</p>
+</li>
+<li>
+<p>same subnet:
+     IPv4:</p>
+<div class="highlight"><pre><span></span><code># ping 192.128.1.3
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:0005
+</code></pre></div>
+<p>If the command fails, check the IP and subnet settings.</p>
+</li>
+<li>
+<p>Remote subnet:</p>
+<p>IPv4:</p>
+<div class="highlight"><pre><span></span><code># ping 192.168.1.3
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C3:0005
+</code></pre></div>
+<ul>
+<li>If the command fails, first ping the default gateway to verify the settings.
+   IPv4:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ping 192.128.1.254
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:FFFE
+</code></pre></div>
+</li>
+<li>
+<p>Use the host command to verify whether the domain name resolution is normal:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+<p>If the command returns any errors, such as connection timed out or no servers could be reached, verify your DNS settings.</p>
+<p><strong>Troubleshooting Steps</strong></p>
+<p>If the connection fails, or the network interface toggles between the up and down states:</p>
+<ul>
+<li>
+<p>Make sure the network cable is plugged into the host and switch.</p>
+</li>
+<li>
+<p>Check if the connection failure exists only on this host, or other hosts connected to the same switch that this server is connected to.</p>
+</li>
+<li>
+<p>Verify that the network cables and network interfaces are working as expected. Perform hardware diagnostic steps and replace defective cables and network interface cards.</p>
+</li>
+<li>
+<p>If the configuration on disk does not match the configuration in the device, starting or restarting NetworkManager creates an in-memory connection representing the device's configuration.</p>
+</li>
+</ul>
+<h2 id="83configure-a-static-ethernet-connection-using-nmstatectl">8.3.Configure a static Ethernet connection using nmstatectl</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>nmstate installed.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Create a YAML file ~/create-ethernet-profile.yml with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+dns-resolver:
+config:
+    search: []
+    server:
+    - 114.114.114.114
+route-rules:
+config: []
+routes:
+config:
+- destination: 0.0.0.0/0
+    metric: 100
+    next-hop-address: 192.168.128.1
+    next-hop-interface: ens3
+    table-id: 254
+interfaces:
+- name: ens3
+type: ethernet
+state: up
+accept-all-mac-addresses: false
+ipv4:
+    enabled: true
+    address:
+  - ip: 192.168.133.95
+    prefix-length: 20
+  dhcp: false
+ipv6:
+  enabled: true
+  address:
+  - ip: fe80::f816:3eff:fec6:ce86
+    prefix-length: 64
+  auto-dns: true
+  auto-gateway: true
+  auto-route-table-id: 0
+  auto-routes: true
+  autoconf: true
+  dhcp: true
+</code></pre></div>
+<ol>
+<li>Apply the configuration to the system:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-ethernet-profile.yml
+</code></pre></div>
+<p><strong>verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+ens3      ethernet  connected  ens3
+</code></pre></div>
+<ol>
+<li>Display all settings of the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show ens3
+connection.id:              ens3
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  ens3
+...
+</code></pre></div>
+<ol>
+<li>Display the connection settings in YAML format:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl show ens3
+</code></pre></div>
+<h2 id="84-configuring-static-ethernet-connections-with-interface-names-using-rhel-ssystem-roles">8.4. Configuring static ethernet connections with interface names using rhel-ssystem-roles</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>rhel-system-roles and ansible installed.</p>
+</li>
+<li>
+<p>If you are using a non-root user to run the playbook, that user is required to have sudo privileges.</p>
+</li>
+<li>
+<p>The host uses NetworkManager to configure the network.</p>
+</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Add the host IP or name to the /etc/ansible/hosts Ansible inventory file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+<ol>
+<li>Create playbook ~/ethernet-static-IP.yml:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with static IP
+  hosts: node.example.com
+  become: true
+  tasks:
+ - include_role:
+     name: rhel-system-roles.network
+
+   vars:
+     network_connections:
+       - name: enp7s0
+         interface_name: enp7s0
+         type: ethernet
+         autoconnect: yes
+         ip:
+           address:
+             - 192.0.2.1/24
+             - 2001:db8:1::1/64
+           gateway4: 192.0.2.254
+           gateway6: 2001:db8:1::fffe
+           dns:
+             - 192.0.2.200
+             - 2001:db8:1::ffbb
+           dns_search:
+             - example.com
+         state: up
+</code></pre></div>
+<ol>
+<li>
+<p>Run playbook：</p>
+</li>
+<li>
+<p>To connect to the managed host as root, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-static-IP.yml
+</code></pre></div>
+</li>
+<li>
+<p>To connect to a managed host as a user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-static-IP.yml
+</code></pre></div>
+<p>The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.</p>
+</li>
+</ol>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.</p>
+<h2 id="85-using-rhel-ssystem-roles-to-configure-static-ethernet-connections-with-device-paths">8.5. Using rhel-ssystem-roles to configure static ethernet connections with device paths</h2>
+<p>You can identify the device path with the following command:</p>
+<div class="highlight"><pre><span></span><code># udevadm info /sys/class/net/&lt;device_name&gt; | grep ID_PATH=
+</code></pre></div>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>rhel-system-roles and ansible installed.</p>
+</li>
+<li>
+<p>If you are using a non-root user to run the playbook, that user is required to have sudo privileges.</p>
+</li>
+<li>
+<p>The host uses NetworkManager to configure the network.</p>
+</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Add the host IP or name to the /etc/ansible/hosts Ansible inventory file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+<ol>
+<li>Create playbook ~/ethernet-dynamic-IP.yml includes things as below：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+  - name: Configure an Ethernet connection with dynamic IP
+  hosts: node.example.com
+  become: true
+  tasks:
+  - include_role:
+     name: rhel-system-roles.network
+
+   vars:
+     network_connections:
+       - name: example
+         match:
+           path:
+             - pci-0000:00:0[1-3].0
+             - &amp;!pci-0000:00:02.0
+         type: ethernet
+         autoconnect: yes
+         ip:
+           address:
+             - 192.0.2.1/24
+             - 2001:db8:1::1/64
+           gateway4: 192.0.2.254
+           gateway6: 2001:db8:1::fffe
+           dns:
+             - 192.0.2.200
+             - 2001:db8:1::ffbb
+           dns_search:
+             - example.com
+         state: up
+</code></pre></div>
+<p>The match parameter in this example defines Ansible to apply the script to devices that match PCI ID 0000:00:0[1-3].0, but not 0000:00:02.0. See the match parameter description in the /usr/share/ansible/roles/rhel-system-roles.network/README.md file for details on the special modifiers and wildcards that can be used.</p>
+<ol>
+<li>
+<p>Run the playbook:</p>
+</li>
+<li>
+<p>To connect to the managed host as root, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+</li>
+<li>
+<p>To connect to a managed host as a user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+<p>The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.</p>
+</li>
+</ol>
+<p>If the -u user_name option is not specified, the ansible-playbook connects to the managed host as the user currently logged in to the control node.</p>
+<h2 id="86-configuring-dynamic-ethernet-connections-using-nmcli">8.6. Configuring Dynamic Ethernet Connections Using nmcli</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>There is a DHCP server in the network</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Add a new NetworkManager connection profile for Ethernet connections:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add con-name Example-Connection ifname enp7s0 type ethernet
+</code></pre></div>
+<ol>
+<li>(Optional) Change the hostname that NetworkManager sends to the DHCP server when using the Example-Connection configuration file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify Example-Connection ipv4.dhcp-hostname Example ipv6.dhcp-hostname Example
+</code></pre></div>
+<ol>
+<li>(Optional) Change the client ID that NetworkManager sends to the IPv4 DHCP server when using the Example-Connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify Example-Connection ipv4.dhcp-client-id client-ID
+</code></pre></div>
+<p>Note that for IPv6 there is no dhcp-client-id parameter. To create an identifier for IPv6, configure the dhclient service.</p>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  Example-Connection
+</code></pre></div>
+<ol>
+<li>Display all settings of the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show Example-Connection
+connection.id:              Example-Connection
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div>
+<ol>
+<li>
+<p>Use the ping program to verify network connectivity.</p>
+</li>
+<li>
+<p>Find IP addresses on the same subnet.
+     IPv4:</p>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+<p>IPv6:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>  # ping 2001:db8:2::1
+</code></pre></div>
+<pre><code> -  If the command fails, ping the default gateway to verify the settings.
+   IPv4:
+
+   ```
+   # ping 192.0.2.254
+   ```
+
+   IPv6:
+
+   ```
+   # ping 2001:db8:1::fff3
+   ```
+</code></pre>
+<ol>
+<li>Use the host command to verify whether the domain name resolution is normal:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+<p>If the command is wrong, such as connection timed out or no servers could be reached, verify your DNS settings.</p>
+<h2 id="87-configure-dynamic-ethernet-connections-using-the-nmcli-interactive-editor">8.7. Configure dynamic ethernet connections using the nmcli interactive editor</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>There is a DHCP server in the network.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Add a new NetworkManager connection profile for the Ethernet connection and start interactive mode:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection edit type ethernet con-name Example-Connection
+</code></pre></div>
+<ol>
+<li>Set up the network interface:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set connection.interface-name enp7s0
+</code></pre></div>
+<ol>
+<li>(Optional) Change the hostname that NetworkManager sends to the DHCP server when using the Example-Connection configuration file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dhcp-hostname Example
+nmcli&gt; set ipv6.dhcp-hostname Example
+</code></pre></div>
+<ol>
+<li>(Optional) Change the client ID that NetworkManager sends to the IPv4 DHCP server when using the Example-Connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dhcp-client-id client-ID
+</code></pre></div>
+<p>Note that for IPv6 there is no dhcp-client-id parameter. To create an identifier for IPv6, configure the dhclient service.</p>
+<ol>
+<li>Save and activate the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+Saving the connection with &#39;autoconnect=yes&#39;. That might result in an immediate activation of the connection.
+Do you still want to save? (yes/no) [yes] yes
+</code></pre></div>
+<ol>
+<li>Save and exit interactive mode:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>nmcli&gt; quit
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  Example-Connection
+</code></pre></div>
+<ol>
+<li>Display all settings of the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show Example-Connection
+connection.id:              Example-Connection
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div>
+<ol>
+<li>
+<p>Use the ping program to verify network connectivity.</p>
+</li>
+<li>
+<p>Find IP addresses on the same subnet.</p>
+<pre><code>IPv4:
+</code></pre>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+<pre><code>IPv6:
+
+ ```
+</code></pre>
+<p># ping 2001:db8:1::2
+     ```</p>
+<ul>
+<li>If the command fails, ping the default gateway to verify the settings.
+   IPv4:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.254
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping 2001:db8:1::fff3
+</code></pre></div>
+</li>
+<li>
+<p>11111</p>
+</li>
+<li>
+<p>Use the host command to verify whether the domain name resolution is normal:</p>
+<div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+<p>If the command is wrong, such as connection timed out or no servers could be reached, verify your DNS settings.</p>
+</li>
+</ol>
+<h2 id="88use-nmstatectl-to-configure-a-dynamic-ethernet-connection">8.8.Use nmstatectl to configure a dynamic Ethernet connection</h2>
+<p>This section describes how to add a dynamic ethernet connection to the enp7s0 device using the nmstatectl tool. During setup during this process, NetworkManager requests IP settings for this connection from a DHCP server.</p>
+<p>The nmstatectl tool ensures that when a configuration is set, the results match the configuration file. If anything fails, nmstatectl automatically rolls back the changes to avoid leaving the system in an incorrect state.</p>
+<p>The process defines the interface configuration in YAML format. Alternatively, you can also specify configuration in JSON format:</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The nmstate software is installed.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Create a YAML file ~/create-ethernet-profile.yml with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: enp7s0
+type: ethernet
+state: up
+ipv4:
+    enabled: true
+    auto-dns: true
+    auto-gateway: true
+    auto-routes: true
+    dhcp: true
+ipv6:
+    enabled: true
+    auto-dns: true
+    auto-gateway: true
+    auto-routes: true
+    autoconf: true
+    dhcp: true
+</code></pre></div>
+<ol>
+<li>Apply the configuration to the system:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-ethernet-profile.yml
+</code></pre></div>
+<p><strong>verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  enp7s0
+</code></pre></div>
+<ol>
+<li>Display all settings of the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show enp7s0
+connection.id:              enp7s0
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div>
+<ol>
+<li>Display the connection settings in YAML format:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl show enp7s0
+</code></pre></div>
+<h2 id="89-configure-dynamic-ethernet-connections-using-rhel-system-roles-with-interface-names">8.9. Configure dynamic ethernet connections using rhel-system-roles with interface names</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>There is a DHCP server in the network.</p>
+</li>
+<li>
+<p>Ansible and rhel-system-roles packages are installed on the control node.</p>
+</li>
+<li>
+<p>If you are using a non-root user to run the playbook, that user is required to have sudo privileges.</p>
+</li>
+<li>
+<p>The host uses NetworkManager to configure the network.</p>
+</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>If the host you want to execute the playbook on is not already listed, add the host's IP or name to the /etc/ansible/hosts Ansible inventory file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+<ol>
+<li>Creat playbook ~/ethernet-dynamic-IP.yml with the following：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with dynamic IP
+    hosts: node.example.com
+    become: true
+    tasks:
+    - include_role:
+        name: rhel-system-roles.network
+
+    vars:
+        network_connections:
+        - name: enp7s0
+            interface_name: enp7s0
+            type: ethernet
+            autoconnect: yes
+            ip:
+            dhcp4: yes
+            auto6: yes
+            state: up
+</code></pre></div>
+<ol>
+<li>
+<p>Run the playbook：</p>
+</li>
+<li>
+<p>To connect to the managed host as root, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+</li>
+<li>
+<p>To connect to a managed host as a user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+<p>The --ask-become-pass option ensures that the ansible-playbook command prompts for the user's sudo password as defined in the -u user_name option.</p>
+</li>
+</ol>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.</p>
+<h2 id="810-configuring-dynamic-ethernet-connections-with-device-paths-using-rhel-system-roles">8.10. Configuring dynamic ethernet connections with device paths using rhel-system-roles</h2>
+<p>You can identify the device path with the following command:</p>
+<div class="highlight"><pre><span></span><code># udevadm info /sys/class/net/&lt;device_name&gt; | grep ID_PATH=
+</code></pre></div>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>There is a DHCP server in the network.</p>
+</li>
+<li>
+<p>Ansible and rhel-system-roles packages are installed on the control node.</p>
+</li>
+<li>
+<p>If you are using a non-root user to run the playbook, that user is required to have sudo privileges.</p>
+</li>
+<li>
+<p>The host uses NetworkManager to configure the network.</p>
+</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>If the host you want to execute the playbook on is not already listed, add the host's IP or name to the /etc/ansible/hosts Ansible inventory file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+<ol>
+<li>Create a playbook with ~/ethernet-dynamic-IP.yml:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with dynamic IP
+hosts: node.example.com
+become: true
+tasks:
+- include_role:
+    name: rhel-system-roles.network
+
+    vars:
+    network_connections:
+        - name: example
+        match:
+            path:
+            - pci-0000:00:0[1-3].0
+            - &amp;!pci-0000:00:02.0
+        type: ethernet
+        autoconnect: yes
+        ip:
+            dhcp4: yes
+            auto6: yes
+        state: up
+</code></pre></div>
+<p>The match parameter in this example defines Ansible to apply the playbook to devices that match PCI ID 0000:00:0[1-3].0, but not 0000:00:02.0. See the match parameter description in the /usr/share/ansible/roles/rhel-system-roles.network/README.md file for details on the special modifiers and wildcards that can be used.</p>
+<ol>
+<li>
+<p>Run the playbook：</p>
+</li>
+<li>
+<p>To connect to the managed host as root, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+</li>
+<li>
+<p>To connect to a managed host as a user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+<p>The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.</p>
+</li>
+</ol>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.</p>
+<h2 id="811-use-control-center-to-configure-ethernet-connection">8.11. Use control-center to configure Ethernet connection</h2>
+<p>This section describes how to configure Ethernet connections in the GNOME control-center.</p>
+<p>Note that control-center does not support as many configuration options as the nm-connection-editor application or the nmcli command.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>There is a physical or virtual Ethernet device in the server configuration.</p>
+</li>
+<li>
+<p>GNOME is installed.</p>
+</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Go to Settings.</p>
+</li>
+<li>
+<p>Select Network in the left navigation.</p>
+</li>
+<li>
+<p>Click the + button next to the Wired entry to create a new configuration file.</p>
+</li>
+<li>
+<p>Optional: Set a name for the connection on the Identity tab.</p>
+</li>
+<li>
+<p>On the IPv4 tab, configure the IPv4 settings. For example, select the configuration mode Manual, and set the static IPv4 address, netmask, default gateway and DNS server:<img alt="control-center配置网络_1" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C_1.png" /></p>
+</li>
+<li>
+<p>On the IPv6 tab, configure the IPv6 settings. For example, select the method Manual to set a static IPv6 address, netmask, default gateway, and DNS server:<img alt="control-center配置网络_2" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C_2.png" /></p>
+</li>
+<li>
+<p>Click the Add button to save the connection. GNOME control-center automatically activates the connection.</p>
+</li>
+</ol>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Displays the status of devices and connections:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  Example-Connection
+</code></pre></div>
+<ol>
+<li>Displays all Settings for the connection configuration set:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show Example-Connection
+connection.id:              Example-Connection
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div>
+<ol>
+<li>
+<p>Use the ping program to verify network connectivity.</p>
+</li>
+<li>
+<p>Find an IP address in the same subnet.
+     IPv4:</p>
+<pre><code> ```
+ # ping 192.0.2.3
+ ```
+</code></pre>
+<p>​    IPv6:
+     <code># ping 2001:db8:1::2</code></p>
+</li>
+<li>
+<p>Find an IP address in a remote subnet.
+     IPv4:</p>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping 2001:db8:2::1
+</code></pre></div>
+<ul>
+<li>If the command fails, ping the default gateway is used to verify the Settings.
+   IPv4:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.254
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping 2001:db8:1::fff3
+</code></pre></div>
+</li>
+<li>
+<p>Run the host command to verify that domain name resolution is normal:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+<p>If the command is wrong, such as connection timed out or no servers could be reached, verify your DNS Settings.</p>
+<p><strong>Troubleshooting Steps</strong></p>
+<p>If the connection fails, or the network interface toggles between the up and down states:</p>
+<ul>
+<li>
+<p>Make sure the network cable is plugged into the host and switch.</p>
+</li>
+<li>
+<p>Check if the connection failure exists only on this host, or other hosts connected to the same switch that this server is connected to.</p>
+</li>
+<li>
+<p>Verify that the network cables and network interfaces are working as expected. Perform hardware diagnostic steps and replace defective cables and network interface cards.</p>
+</li>
+<li>
+<p>If the configuration on disk does not match the configuration in the device, starting or restarting NetworkManager creates an in-memory connection representing the device's configuration.</p>
+</li>
+</ul>
+<h2 id="812-configure-ethernet-connection-using-nm-connection-editor">8.12. Configure Ethernet connection using nm-connection-editor</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>There is a physical or virtual Ethernet device in the server configuration.</p>
+</li>
+<li>
+<p>GNOME is installed.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Enter in the terminal:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nm-connection-editor
+</code></pre></div>
+<ol>
+<li>
+<p>Click the [+] button to add a new connection.</p>
+</li>
+<li>
+<p>Select the Ethernet type, and click [Create].</p>
+</li>
+<li>
+<p>On the General tab: </p>
+</li>
+<li>
+<p>To enable this connection automatically at system startup or when the NetworkManager service is restarted:</p>
+<ol>
+<li>Select Connect automatically with priority.</li>
+<li>Optional: Change the priority value next to Connect automatically with priority.</li>
+</ol>
+<p>If there are multiple connection profiles for the same device, NetworkManager only enables one profile. By default, NetworkManager activates the last used profile with autoconnect enabled. However, if you set a priority value in a configuration set, NetworkManager activates the configuration set with the highest priority.</p>
+</li>
+<li>
+<p>If the profile should only be available to the user who created the connection profile, clear the All users may connect to this network check box.
+      <img alt="nm-connection-editor配置连接_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_1.png" /></p>
+</li>
+<li>
+<p>On the Ethernet tab, select a device and optionally select other settings related to Ethernet.
+   <img alt="nm-connection-editor配置连接_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_2.png" /></p>
+</li>
+<li>
+<p>On the IPv4 Settings tab, configure the IPv4 settings. For example, to set a static IPv4 address, netmask, default gateway and DNS server:
+   <img alt="nm-connection-editor配置连接_3" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_3.png" /></p>
+</li>
+<li>
+<p>On the IPv6 Settings tab, configure the IPv6 settings. For example, to set a static IPv6 address, netmask, default gateway and DNS server:
+   <img alt="nm-connection-editor配置连接_4" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_4.png" /></p>
+</li>
+<li>
+<p>Save the connection.</p>
+</li>
+<li>
+<p>Close nm-connection-editor.</p>
+</li>
+</ol>
+<p><strong>Verify</strong></p>
+<ol>
+<li>
+<p>Use the ping program to verify network connectivity.</p>
+</li>
+<li>
+<p>Find IP addresses on the same subnet.
+     IPv4:</p>
+<pre><code> ```
+ # ping 192.0.2.3
+ ```
+</code></pre>
+<p>​    IPv6:</p>
+<pre><code> ```
+ # ping 2001:db8:1::2
+ ```
+</code></pre>
+</li>
+<li>
+<p>Look up IP addresses in remote subnets.
+     IPv4:</p>
+<div class="highlight"><pre><span></span><code># ping 198.162.3.1
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping 2001:db8:2::1
+</code></pre></div>
+<ul>
+<li>If the command fails, ping the default gateway to verify the settings.
+   IPv4:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.254
+</code></pre></div>
+<p>IPv6:</p>
+<div class="highlight"><pre><span></span><code># ping 2001:db8:1::fff3
+</code></pre></div>
+</li>
+<li>
+<p>Use the host command to verify whether the domain name resolution is normal:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+<p>If the command is wrong, such as connection timed out or no servers could be reached, verify your DNS settings.</p>
+<h2 id="813-change-networkmanagers-dhcp-client">8.13. Change NetworkManager's DHCP client</h2>
+<p>By default, NetworkManager uses its internal DHCP client. However, if you need a DHCP client that does not provide a built-in client, you can also configure NetworkManager to use dhclient.</p>
+<p>Process</p>
+<ol>
+<li>Create the /etc/NetworkManager/conf.d/dhcp-client.conf file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[main]
+dhcp=dhclient
+</code></pre></div>
+<pre><code>You can set the dhcp parameter to internal (default) or dhclient.
+</code></pre>
+<ol>
+<li>If you set the dhcp parameter for dhclient, install the dhcp-client package:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># yum install dhcp-client
+</code></pre></div>
+<ol>
+<li>Restart NetworkManager：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl restart NetworkManager
+</code></pre></div>
+<pre><code>Note that restarting temporarily interrupts all network connections.
+</code></pre>
+<p><strong>Verify</strong></p>
+<ul>
+<li>Search for entries similar to the following in the /var/log/messages log file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Sep  5 06:41:52 server NetworkManager[27748]: &lt;info&gt;  [1650959659.8483] dhcp-init: Using DHCP client &#39;dhclient&#39;
+</code></pre></div>
+<p>This log entry confirms that NetworkManager is using dhclient as the DHCP client.</p>
+<h2 id="814-configuring-dhcp-behavior-for-networkmanager-connections">8.14. Configuring DHCP behavior for NetworkManager connections</h2>
+<p>A DHCP client requests a dynamic IP address and corresponding configuration information from a DHCP server each time it connects to the network.</p>
+<p>When you configure a connection to retrieve an IP address from a DHCP server, NetworkManager requests an IP address from a DHCP server. By default, the client waits 45 seconds for this request to complete. When a DHCP connection is initiated, the dhcp client requests an IP address from the DHCP server.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>A connection using DHCP is configured on the host.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Set the ipv4.dhcp-timeout and ipv6.dhcp-timeout properties. For example, to set both options to 30 seconds, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv4.dhcp-timeout 30 ipv6.dhcp-timeout 30
+</code></pre></div>
+<pre><code>Also, set the parameter to infinity to configure NetworkManager to not stop trying to request and renew an IP address until it succeeds.
+</code></pre>
+<ol>
+<li>Optional: Configure the behavior if NetworkManager does not receive an IPv4 address before timing out:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv4.may-fail value
+</code></pre></div>
+<p>If the ipv4.may-fail option is set to:</p>
+<pre><code>  - yes ,the state of the connection depends on the IPv6 configuration:
+    -  If the IPv6 configuration is enabled and successful, NetworkManager activates the IPv6 connection and does not attempt to activate the IPv4 connection.
+    -  If IPv6 configuration is disabled or not configured, the connection will fail.
+  - no , the connection will be stopped. in this case:
+    -  If the connection's autoconnect property is enabled, NetworkManager tries to activate the connection as many times as the value set in the autoconnect-retries property. The default value is 4.
+    -  If the connection still cannot obtain a DHCP address, auto activation will fail. Note that after 5 minutes, the automatic connection process starts again to obtain an IP address from the DHCP server.
+</code></pre>
+<ol>
+<li>Optional: Configure the behavior if NetworkManager does not receive an IPv6 address before timeout:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv6.may-fail value
+</code></pre></div>
+<h2 id="815-configuring-multiple-ethernet-interfaces-using-a-single-connection-profile-by-interface-name">8.15. Configuring Multiple Ethernet Interfaces Using a Single Connection Profile by Interface Name</h2>
+<p>In most cases, a connection profile contains the settings for a network device. However, NetworkManager also supports wildcards when you set interface names in connection profiles. You can use this feature to create a single connection profile that can be used for multiple Ethernet interfaces if the host is roaming between Ethernets with dynamic IP address assignment.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>DHCP is available in the network</p>
+</li>
+<li>
+<p>The host has multiple ethernet adapters</p>
+</li>
+<li>
+<p>The connection profile does not exist on the host</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Add a connection profile that can be applied to all interface names starting with enp:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#nmcli connection add con-name Example connection.multi-connect multiple match.interface-name enp* type ethernet
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display all settings for a single connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#nmcli connection show Example
+connection.id:                      Example
+...
+connection.multi-connect:           3 (multiple)
+match.interface-name:               `enp*`
+...
+</code></pre></div>
+<p>3 indicates ** The number of interfaces that are active on the connection profile at the same time **, not the number of network interfaces in the connection profile. The connection profile uses all devices that match the pattern in the match.interface-name parameter, so the connection profile has the same universal unique identifier (UUID).</p>
+<ol>
+<li>Display the status of the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#nmcli connection show
+NAME                    UUID                    TYPE     DEVICE
+...
+Example  6f22402e-c0cc-49cf-b702-eaf0cd5ea7d1  ethernet  enp7s0
+Example  6f22402e-c0cc-49cf-b702-eaf0cd5ea7d1  ethernet  enp8s0
+Example  6f22402e-c0cc-49cf-b702-eaf0cd5ea7d1  ethernet  enp9s0
+</code></pre></div>
+<h2 id="816-configure-a-connection-profile-for-multiple-ethernet-interfaces-using-pci-ids">8.16. Configure a connection profile for multiple Ethernet interfaces using PCI IDs</h2>
+<p>A PCI ID is a unique identifier for a device connected to the system. A connection profile adds multiple devices by matching interfaces based on a list of PCI IDs. You can use this process to connect multiple device PCI IDs to a connection profile.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>A DHCP server is available in the network</li>
+<li>The host has multiple ethernet adapters</li>
+<li>The connection profile does not exist on the system</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Identify the device path. For example, to display device paths for all interfaces beginning with enp, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#udevadm info /sys/class/net/enp* | grep ID_PATH=
+...
+E: ID_PATH=pci-0000:07:00.0
+E: ID_PATH=pci-0000:08:00.0
+</code></pre></div>
+<ol>
+<li>Add a connection profile that applies to all PCI IDs that match the expression 0000:00:0[7-8].0:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#nmcli connection add type ethernet connection.multi-connect multiple match.path &quot;pci-0000:07:00.0 pci-0000:08:00.0&quot; con-name Example
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display the status of the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#nmcli connection show
+
+NAME   UUID     TYPE        DEVICE
+...
+Example      9cee0958-512f-4203-9d3d-b57af1d88466  ethernet  enp7s0
+Example      9cee0958-512f-4203-9d3d-b57af1d88466  ethernet  enp8s0
+...
+</code></pre></div>
+<ol>
+<li>Display all settings of the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#nmcli connection show Example
+
+connection.id:               Example
+...
+connection.multi-connect:    3 (multiple)
+match.path:                  pci-0000:07:00.0,pci-0000:08:00.0
+...
+</code></pre></div>
+<p>This connection profile uses all devices whose PCI ID matches the pattern in the match.path parameter, so the connection profile has the same universally unique identifier (UUID).</p>
+<h1 id="chapter-9-managing-wi-fi-connections">Chapter 9 Managing Wi-Fi Connections</h1>
+<h2 id="91-use-nmcli-to-configure-wi-fi-connection">9.1. Use nmcli to configure Wi-Fi connection</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>The nmcli tool is installed.</p>
+</li>
+<li>
+<p>Make sure WiFi is enabled:</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create a Wi-Fi connection profile with a static IP configuration:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli con add con-name MyCafe ifname wlan0 type wifi ssid MyCafe ip4 192.0.2.101/24 gw4 192.0.2.1
+</code></pre></div>
+<ol>
+<li>Set up a DNS server. For example, to set 192.0.2.1 as the DNS server:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli con modify con-name MyCafe ipv4.dns &quot;192.0.2.1&quot;
+</code></pre></div>
+<ol>
+<li>Optionally, set DNS search domains. For example, to set the search domain to example.com:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli con modify con-name MyCafe ipv4.dns-search &quot;example.com&quot;
+</code></pre></div>
+<ol>
+<li>Check specific attributes such as mtu:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli connection show id MyCafe | grep mtu
+802-11-wireless.mtu:                     auto
+</code></pre></div>
+<ol>
+<li>Change the properties of the setting:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli connection modify id MyCafe wireless.mtu 1350
+</code></pre></div>
+<ol>
+<li>Verify the changes:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli connection show id MyCafe | grep mtu
+802-11-wireless.mtu:                     1350
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>
+<p>Use the ping command to verify whether the wifi network is connected:：</p>
+</li>
+<li>
+<p>same subnet:</p>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.103
+</code></pre></div>
+<p>If the command fails, verify the IP and subnet settings.</p>
+</li>
+<li>
+<p>Extranet:</p>
+<div class="highlight"><pre><span></span><code># ping 198.51.16.3
+</code></pre></div>
+<ul>
+<li>If the command fails, ping the default gateway to verify the settings.</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ping 192.0.2.1
+</code></pre></div>
+</li>
+<li>
+<p>Use the host command to verify whether the domain name resolution is normal.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># host client.example.com
+</code></pre></div>
+<p>If the command returns any errors, such as connection timed out or no servers could be reached, verify your DNS settings.</p>
+<h2 id="92-use-control-center-to-configure-wi-fi-connection">9.2. Use control-center to configure Wi-Fi connection</h2>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Go to Settings and select the WI-FI option in the left menu bar to see the available Wi-Fi networks.</p>
+</li>
+<li>
+<p>Select the gear wheel icon to the right of the name of the Wi-Fi connection you want to edit and the Edit Connection dialog will appear. The Details menu window displays connection details that you can further configure.</p>
+</li>
+</ol>
+<p><strong>Options</strong></p>
+<ol>
+<li>If you select "Connect automatically", NetworkManager will automatically connect to the connection when NetworkManager detects that it is available. Clear the check box if you do not want NetworkManager to connect automatically. Note that when the check box is cleared, you must select the connection in the network connection icon's menu to make it connect.</li>
+<li>To make the connection available to other users, select the Make available to other users check box.</li>
+<li>
+<p>You can also control background data usage by changing Restrict background data usage.</p>
+</li>
+<li>
+<p>Select the Identity menu item to view basic configuration options.</p>
+</li>
+</ol>
+<p>SSID - The Service Set Identifier (SSID) of the Access Point (AP).</p>
+<p>BSSID - The Basic Service Set Identifier (BSSID) is the MAC address (also known as the hardware address) of the specific wireless access point you are connecting to in infrastructure mode. By default, this field is blank and you can connect to a wireless access point by SSID without specifying a BSSID. If a BSSID is specified, it will force the system to only associate to a specific access point. For ad-hoc networks, the BSSID is randomly generated by the mac80211 subsystem when the ad-hoc network is created. NetworkManager doesn't show it.</p>
+<p>MAC Address - A MAC address allows you to associate a specific wireless adapter with a specific connection (or connections).</p>
+<p>Clone Address - Uses a cloned MAC address instead of the actual hardware address. Leave blank unless required.</p>
+<ol>
+<li>For further IP address configuration, select the IPv4 and IPv6 menu item.</li>
+</ol>
+<p>By default, both IPv4 and IPv6 are set to auto-configure based on the current network settings. This means that when the interface is connected to the network, the local IP address, DNS address and other settings are automatically detected. If a DHCP server assigns the IP configuration in this network, but you can also provide static configuration in IPv4 and IPv6 settings. In the IPv4 and IPv6 menu entries you can see the following settings:</p>
+<ul>
+<li>
+<p>IPv4</p>
+<ul>
+<li>
+<p>Automatic (DHCP) - select this option if the network you are connecting to uses a Router Advertisement (RA) or DHCP server to assign dynamic IP addresses. You can see the assigned IP address in the Details menu entry.</p>
+</li>
+<li>
+<p>Link Only - Select this option if the network you are connecting to does not have a DHCP server and you do not want to assign IP addresses manually. Random addresses will be assigned a prefix of 169.254/16 according to RFC 3927.</p>
+</li>
+<li>
+<p>Manual - Select this option if you want to assign IP addresses manually.</p>
+</li>
+<li>
+<p>disable - IPv4 is disabled for this connection.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>DNS</p>
+<ul>
+<li>If Automatic is ON and there is no DHCP server available to assign a DNS server for this connection, switch it to OFF to enter the IP addresses of the DNS servers separated by commas.</li>
+</ul>
+</li>
+<li>
+<p>Routes</p>
+<p>Note that in the Routes section, when Automatic is ON, routes from Router Advertisement (RA) or DHCP are used, but you can also add additional static routes. When OFF, only static routes are used.</p>
+<ul>
+<li>
+<p>Address - Enter the IP address of the remote network, subnet, or host.</p>
+</li>
+<li>
+<p>Subnet Mask - The subnet mask or prefix length for the IP address entered above.</p>
+</li>
+<li>Gateway - The IP address of the gateway for the remote network, subnetwork, or host entered above.</li>
+<li>metric - network cost, the preferred value given to this route. The lower the number, the higher the priority.</li>
+</ul>
+</li>
+<li>
+<p>Use this connection only for resources on their network</p>
+</li>
+<li>use this connection only for resources on its network<ul>
+<li>Select this checkbox to prevent the connection from being the default route.</li>
+</ul>
+</li>
+<li>
+<p>IPv6</p>
+<ul>
+<li>Automatic—Select this option to use IPv6 Stateless Address Autoconfiguration (SLAAC) to create an automatic stateless configuration based on hardware addresses and Router Advertisements (RAs).</li>
+<li>Automatic, DHCP Only - Select this option to not use RA and instead request information directly from DHCPv6 to create a stateful configuration.</li>
+<li>Link Only - Select this option if the network you are connecting to does not have a DHCP server and you do not want to assign IP addresses manually. Random addresses will be assigned according to RFC 4862 with a prefix of FE80::0.</li>
+<li>Manual - Select this option if you want to assign IP addresses manually.</li>
+<li>disable - IPv6 is disabled for this connection.</li>
+</ul>
+</li>
+<li>
+<p>Select the Security menu item to configure the security settings.</p>
+</li>
+<li>safety<ul>
+<li>None - encryption is disabled, data is transmitted in plain text across the network.</li>
+<li>WEP 40/128 bit key - Wired Equivalent Privacy (WEP), from the IEEE 802.11 standard. Use a single pre-shared key (PSK).</li>
+<li>WEP 128-bit passphrase - MD5 hash of the passphrase used to generate the WEP key.</li>
+<li>Dynamic WEP(802.1X) - WEP key changes dynamically.</li>
+<li>LEAP - Lightweight Extensible Authentication Protocol for Cisco Systems.</li>
+<li>WPA and WPA2 Personal - Wi-Fi Protected Access (WPA) from the IEEE 802.11i draft standard. Wi-Fi Protected Access 2 (WPA2) from the 802.11i-2004 standard. Personal mode, using a pre-shared key (WPA-PSK).</li>
+<li>WPA &amp; WPA2 Enterprise—WPA and WPA2 are used with RADIUS authentication servers to provide IEEE 802.1X network access control.</li>
+<li>WPA3 Personal - Wi-Fi Protected Access 3 (WPA3) Personal uses Simultaneous Authentication of Equals (SAE) instead of Pre-Shared Key (PSK) to prevent dictionary attacks. WPA3 uses perfect forward secrecy.</li>
+</ul>
+</li>
+<li>
+<p>password</p>
+<ul>
+<li>Enter the password to be used during the verification process.</li>
+</ul>
+</li>
+<li>
+<p>After completing the configuration, click the Apply button to save the configuration.</p>
+</li>
+</ul>
+<h2 id="93-connect-to-wi-fi-network-using-nmcli">9.3. Connect to Wi-Fi network using nmcli</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>The nmcli tool is installed.</p>
+</li>
+<li>
+<p>Make sure WiFi is enabled (default):</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ nmcli radio wifi on
+</code></pre></div>
+<p><strong>Process</strong></p>
+<ol>
+<li>Refresh the list of available Wi-Fi connections:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli device wifi rescan
+</code></pre></div>
+<ol>
+<li>View available Wi-Fi access points:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli dev wifi list
+
+IN-USE  SSID      MODE   CHAN  RATE        SIGNAL  BARS  SECURITY
+...
+        MyCafe    Infra  3     405 Mbit/s  85      ▂▄▆█  WPA1 WPA2
+</code></pre></div>
+<ol>
+<li>Connect to the Wi-Fi connection using nmcli:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nmcli dev wifi connect SSID-Name password wireless-password
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>$ nmcli dev wifi connect MyCafe password wireless-password
+</code></pre></div>
+<p>禁用 Wi-Fi ：</p>
+<div class="highlight"><pre><span></span><code>$ nmcli radio wifi off
+</code></pre></div>
+<h2 id="94-connect-to-a-hidden-wi-fi-network-using-nmcli">9.4. Connect to a hidden Wi-Fi network using nmcli</h2>
+<p>All Wi-Fi access points have a Service Set Identifier (SSID) to identify them. However, an access point can be configured not to broadcast its SSID, in which case it will be hidden and not appear in NetworkManager's list of available networks.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>The nmcli tool is installed.</p>
+</li>
+<li>
+<p>Know the SSID, and password for your Wi-Fi connection.</p>
+</li>
+<li>
+<p>Make sure WiFi is enabled (default):</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ nmcli radio wifi on
+</code></pre></div>
+<p><strong>Process</strong></p>
+<ul>
+<li>Connect to a hidden SSID:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ nmcli dev wifi connect SSID_Name password wireless_password hidden yes
+</code></pre></div>
+<h2 id="95-connect-to-wi-fi-network-using-gnome-gui">9.5. Connect to Wi-Fi network using GNOME GUI</h2>
+<p><strong>Process</strong></p>
+<ol>
+<li>
+<p>Open the GNOME Shell network connections icon menu in the upper right corner of the screen.</p>
+</li>
+<li>
+<p>Select Wi-Fi Not Connected.</p>
+</li>
+<li>
+<p>Click the Select Network option.</p>
+</li>
+<li>
+<p>Click the name of the network you want to connect to, and then click Connect.</p>
+</li>
+</ol>
+<p>Note that if you do not see the network, it may be hidden.</p>
+<ol>
+<li>If a password or encryption key is required to secure the network, enter the password and click Connect.</li>
+</ol>
+<p>Please note: If you do not know the password, please contact the administrator of the Wi-Fi network.</p>
+<ol>
+<li>If the connection is successful, you will see the network connection in the connection icon menu, the WiFi icon is located in the upper right corner of the screen.</li>
+</ol>
+<h2 id="96-configure-8021x-network-authentication-on-an-existing-wi-fi-connection-using-nmcli">9.6. Configure 802.1X network authentication on an existing Wi-Fi connection using nmcli</h2>
+<p>Using the nmcli tool, you can configure network authentication. This procedure describes how to configure Protected Extensible Authentication Protocol (PEAP) authentication using Microsoft Challenge-Handshake Authentication Protocol version 2 (MSCHAPv2) in an existing NetworkManager Wi-Fi connection profile named wlp1s0.</p>
+<p><strong>Prerequisites</strong></p>
+<ol>
+<li>
+<p>The network must have 802.1X network authentication.</p>
+</li>
+<li>
+<p>A Wi-Fi connection profile exists in NetworkManager and has a valid IP configuration.</p>
+</li>
+<li>
+<p>If the client is required to verify the authenticator's certificate, the Certificate Authority (CA) certificate must be stored in the /etc/pki/ca-trust/source/anchors/ directory.</p>
+</li>
+<li>
+<p>The wpa_supplicant package is installed.</p>
+</li>
+</ol>
+<p><strong>Process</strong></p>
+<ol>
+<li>Set the Wi-Fi security mode to wpa-eap, set the Extensible Authentication Protocol (EAP) to peap, set the internal authentication protocol to mschapv2, and set the username:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify wlp1s0 wireless-security.key-mgmt wpa-eap 802-1x.eap peap 802-1x.phase2-auth mschapv2 802-1x.identity user_name
+</code></pre></div>
+<p>Note that you must set the wireless-security.key-mgmt, 802-1x.eap, 802-1x.phase2-auth, and 802-1x.identity parameters in a single command.</p>
+<ol>
+<li>Alternatively, store the password in the configuration:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify wlp1s0 802-1x.password password
+</code></pre></div>
+<p>By default, NetworkManager saves passwords in clear text in the /etc/sysconfig/network-scripts/keys-connection_name file, which is only readable by the root user. However, clearing text passwords in configuration files has security implications.</p>
+<p>For increased security, set the 802-1x.password-flags parameter to 0x1. With this setup, on servers with the GNOME desktop environment or running nm-applet, NetworkManager retrieves passwords from these services. In other cases, NetworkManager will prompt for a password.</p>
+<ol>
+<li>If you want the client to verify the authenticator's certificate, set the 802-1x.ca-cert parameter in the connection configuration file to the path to the CA certificate:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify wlp1s0 802-1x.ca-cert /etc/pki/ca-trust/source/anchors/ca.crt
+</code></pre></div>
+<ol>
+<li>Activate the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up wlp1s0
+</code></pre></div>
+<h1 id="chapter-10-configuring-vlan-tags">Chapter 10 Configuring VLAN Tags</h1>
+<p>This chapter discusses how to configure virtual local area networks (VLANs). A VLAN is a logical network within a physical network. When the packet passes through the VLAN interface, it will carry the interface tag and VLAN ID, and the tag will be removed when the packet returns.</p>
+<p>You can create a VLAN interface on another interface such as an Ethernet, bond, team, or bridge device. This interface is called the parent interface.</p>
+<h2 id="101-use-the-nmcli-command-to-configure-vlan-tags">10.1. Use the nmcli command to configure VLAN tags</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>The parent interface that you plan to use as the virtual VLAN interface supports VLAN tagging.</p>
+</li>
+<li>
+<p>If you configure VLANs on bonded interfaces:</p>
+</li>
+<li>The bound port is online.</li>
+<li>This binding is not configured with the fail_over_mac=follow option. A VLAN virtual device cannot change its MAC address to match the new MAC address of the parent device. In this case, traffic is still sent with the incorrect source MAC address.</li>
+<li>
+<p>This binding normally does not expect to obtain an IP address from a DHCP server or IPv6 autoconfiguration. Set the ipv4.method=disable and ipv6.method=ignore options when creating the binding. Otherwise, the interface might go down if DHCP or IPv6 autoconfiguration fails after a period of time.</p>
+</li>
+<li>
+<p>The switch to which the host is connected is configured to support VLAN tagging. See your switch instructions for details.</p>
+</li>
+</ul>
+<h2 id="101-use-the-nmcli-command-to-configure-vlan-tags_1">10.1. Use the nmcli command to configure VLAN tags</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>The parent interface that you plan to use as the virtual VLAN interface supports VLAN tagging.</p>
+</li>
+<li>
+<p>If you configure VLANs on bonded interfaces:</p>
+</li>
+<li>
+<p>The bound port is online.</p>
+</li>
+<li>
+<p>This binding is not configured with the fail_over_mac=follow option. A VLAN virtual device cannot change its MAC address to match the new MAC address of the parent device. In this case, traffic is still sent with the incorrect source MAC address.</p>
+</li>
+<li>
+<p>This binding normally does not expect to obtain an IP address from a DHCP server or IPv6 autoconfiguration. Set the ipv4.method=disable and ipv6.method=ignore options when creating the binding. Otherwise, the interface might go down if DHCP or IPv6 autoconfiguration fails after a period of time.</p>
+</li>
+<li>
+<p>The switch to which the host is connected is configured to support VLAN tagging. See your switch instructions for details.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Show network interfaces:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE   TYPE      STATE         CONNECTION
+enp1s0   ethernet  disconnected  enp1s0
+bridge0  bridge    connected     bridge0
+bond0    bond      connected     bond0
+...
+</code></pre></div>
+<ol>
+<li>Create a VLAN interface. For example, to create a VLAN interface named vlan10 that uses enp1s0 as its parent interface and tags packets with VLAN ID 10, enter：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type vlan con-name vlan10 ifname vlan10 vlan.parent enp1s0 vlan.id 10
+</code></pre></div>
+<p>Note that VLAN must be in the range 0 to 4094.</p>
+<ol>
+<li>By default, VLAN attachments inherit the Maximum Transmission Unit (MTU) of the parent interface. Alternatively, a different MTU value can be set:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify vlan10 ethernet.mtu 2000
+</code></pre></div>
+<ol>
+<li>
+<p>Configure the IP settings of the VLAN device. If you want to use this VLAN device as the port of other devices, please skip this step.</p>
+</li>
+<li>
+<p>Configure the IPv4 settings. For example, to set a static IPv4 address, netmask, default gateway, and DNS server settings for a vlan10 connection, enter:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify vlan10 ipv4.addresses &#39;192.0.2.1/24&#39;
+# nmcli connection modify vlan10 ipv4.gateway &#39;192.0.2.254&#39;
+# nmcli connection modify vlan10 ipv4.dns &#39;192.0.2.253&#39;
+# nmcli connection modify vlan10 ipv4.method manual
+</code></pre></div>
+<ol>
+<li>Configure the IPv6 settings. For example, to set a static IPv6 address, netmask, default gateway, and DNS server settings for a vlan10 connection, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify vlan10 ipv6.addresses &#39;2001:db8:1::1/32&#39;
+# nmcli connection modify vlan10 ipv6.gateway &#39;2001:db8:1::fffe&#39;
+# nmcli connection modify vlan10 ipv6.dns &#39;2001:db8:1::fffd&#39;
+# nmcli connection modify vlan10 ipv6.method manual
+</code></pre></div>
+</li>
+<li>
+<p>To activate the connection:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up vlan10
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ul>
+<li>Verify the configuration:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip -d addr show vlan10
+4: vlan10@enp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:72:2f:6e brd ff:ff:ff:ff:ff:ff promiscuity 0
+    vlan protocol 802.1Q id 10 &lt;REORDER_HDR&gt; numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
+    inet 192.0.2.1/24 brd 192.0.2.255 scope global noprefixroute vlan10
+    valid_lft forever preferred_lft forever
+    inet6 2001:db8:1::1/32 scope global noprefixroute
+    valid_lft forever preferred_lft forever
+    inet6 fe80::8dd7:9030:6f8e:89e6/64 scope link noprefixroute
+    valid_lft forever preferred_lft forever
+</code></pre></div>
+<h2 id="102-configure-vlan-tags-using-nm-connection-editor">10.2. Configure VLAN tags using nm-connection-editor</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>The parent interface that you plan to use as the virtual VLAN interface supports VLAN tagging.</p>
+</li>
+<li>
+<p>If you configure VLANs on bonded interfaces:</p>
+</li>
+<li>The bound port is online.</li>
+<li>
+<p>This binding is not configured with the fail_over_mac=follow option. A VLAN virtual device cannot change its MAC address to match the new MAC address of the parent device. In this case, traffic is still sent with the incorrect source MAC address.</p>
+</li>
+<li>
+<p>The switch to which the host is connected is configured to support VLAN tagging. See your switch instructions for details.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Open the terminal and enter nm-connection-editor ：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ nm-connection-editor
+</code></pre></div>
+<ol>
+<li>
+<p>Click the + button to add a new connection.</p>
+</li>
+<li>
+<p>Select the VLAN connection type and click Create.</p>
+</li>
+<li>
+<p>On the VLAN tab: </p>
+</li>
+<li>
+<p>Select the higher-level interface.</p>
+</li>
+<li>
+<p>Select a VLAN ID. Note that VLAN must be in the range 0 to 4094.</p>
+</li>
+<li>
+<p>By default, VLAN attachments inherit the Maximum Transmission Unit (MTU) of the parent interface. In addition, different MTU values can be set.</p>
+</li>
+<li>
+<p>Optionally, set the name of the VLAN interface and other VLAN-specific options.<img alt="nm-connection-editor配置vlan_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AEvlan_1.png" /></p>
+</li>
+<li>
+<p>Configure the IP settings of the VLAN device. If you want to use this VLAN device as the port of other devices, please skip this step.</p>
+</li>
+<li>
+<p>On the IPv4 Settings tab, configure the IPv4 settings. For example, to set a static IPv4 address, netmask, default gateway and DNS server:
+      <img alt="nm-connection-editor配置vlan_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AEvlan_2.png" /></p>
+</li>
+<li>
+<p>On the IPv6 Settings tab, configure the IPv6 settings. For example, to set a static IPv6 address, netmask, default gateway and DNS server:
+      <img alt="nm-connection-editor配置vlan_3" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AEvlan_3.png" /></p>
+</li>
+<li>
+<p>Click Save to save the VLAN connection.</p>
+</li>
+<li>
+<p>Close nm-connection-editor.</p>
+</li>
+</ol>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Verify the configuration:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip -d addr show vlan3
+4: vlan3@ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:d5:e0:fb brd ff:ff:ff:ff:ff:ff promiscuity 0
+    vlan protocol 802.1Q id 10 &lt;REORDER_HDR&gt; numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
+    inet 192.0.2.1/24 brd 192.0.2.255 scope global noprefixroute vlan10
+    valid_lft forever preferred_lft forever
+    inet6 2001:db8:1::1/32 scope global noprefixroute
+    valid_lft forever preferred_lft forever
+    inet6 fe80::8dd7:9030:6f8e:89e6/64 scope link noprefixroute
+    valid_lft forever preferred_lft forever
+</code></pre></div>
+<h2 id="103-configuring-vlan-tagging-with-nmstatectl">10.3. Configuring VLAN tagging with nmstatectl</h2>
+<p>This section describes how to use the nmstatectl tool to configure a VLAN with ID 10 using an Ethernet connection. As a sub-device, VLAN attachments contain IP, default gateway, and DNS configurations.</p>
+<p>Depending on your environment, adjust the YAML file accordingly. For example, to use a bridge or bonded device in a VLAN, adjust the base-iface and type attributes of the ports you use in the VLAN.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>To use an Ethernet device as a port in a VLAN, a physical or virtual Ethernet device must be installed in the server.</p>
+</li>
+<li>
+<p>The nmstate package is installed.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create a YAML file containing the following content, ~/create-vlan.yml:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: vlan10
+type: vlan
+state: up
+ipv4:
+    enabled: true
+    address:
+    - ip: 192.0.2.1
+    prefix-length: 24
+    dhcp: false
+ipv6:
+    enabled: true
+    address:
+    - ip: 2001:db8:1::1
+    prefix-length: 64
+    autoconf: false
+    dhcp: false
+vlan:
+    base-iface: enp1s0
+    id: 10
+- name: enp1s0
+type: ethernet
+state: up
+
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.254
+    next-hop-interface: vlan10
+- destination: ::/0
+    next-hop-address: 2001:db8:1::fffe
+    next-hop-interface: vlan10
+
+dns-resolver:
+config:
+    search:
+    - example.com
+    server:
+    - 192.0.2.200
+    - 2001:db8:1::ffbb
+</code></pre></div>
+<ol>
+<li>Apply the settings to the system:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-vlan.yml
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+vlan10      vlan      connected  vlan10
+</code></pre></div>
+<ol>
+<li>Display all settings of the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show vlan10
+connection.id:              vlan10
+connection.uuid:            1722970f-788e-4f81-bd7d-a86bf21c9df5
+connection.stable-id:       --
+connection.type:            vlan
+connection.interface-name:  vlan10
+...
+</code></pre></div>
+<ol>
+<li>Display the connection settings in YAML format:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl show vlan0
+</code></pre></div>
+<h2 id="104-configure-vlan-tags-using-rhel-system-roles">10.4. Configure VLAN tags using rhel-system-roles</h2>
+<p>This section describes how to add a VLAN with Ethernet connection ID 10 on top of this Ethernet connection. As a sub-device, VLAN attachments contain IP, default gateway, and DNS configurations.</p>
+<p>Depending on your environment, adjust accordingly. For example:</p>
+<p>To use the VLAN as a port in other connections (such as bonding), omit the ip attribute and set the IP configuration in the subconfiguration.</p>
+<p>To use a team, bridge, or bond device in a VLAN, adjust the interface_name and type properties of the port you are using in the VLAN.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>Ansible and rhel-system-roles packages are installed on the control node.</p>
+</li>
+<li>
+<p>If you are using a non-root user when running the playbook, make sure this user has sudo privileges on the node.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>If the host you want to execute the playbook on is not already listed, add the host's IP or name to the /etc/ansible/hosts Ansible inventory file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+<ol>
+<li>Create a ~/vlan-ethernet.yml playbook with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+- name: Configure a VLAN that uses an Ethernet connection
+  hosts: node.example.com
+  become: true
+  tasks:
+  - include_role:
+      name: rhel-system-roles.network
+
+    vars:
+      network_connections:
+        # Add an Ethernet profile for the underlying device of the VLAN
+        - name: enp1s0
+          type: ethernet
+          interface_name: enp1s0
+          autoconnect: yes
+          state: up
+          ip:
+            dhcp4: no
+            auto6: no
+
+        # Define the VLAN profile
+        - name: enp1s0.10
+          type: vlan
+          ip:
+            address:
+              - &quot;192.0.2.1/24&quot;
+              - &quot;2001:db8:1::1/64&quot;
+            gateway4: 192.0.2.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+              - 192.0.2.200
+              - 2001:db8:1::ffbb
+            dns_search:
+              - example.com
+          vlan_id: 10
+          parent: enp1s0
+          state: up
+</code></pre></div>
+<p>The parent attribute in the VLAN configuration file configures the VLAN to run on top of the enp1s0 device.</p>
+<ol>
+<li>
+<p>Run the playbook:</p>
+</li>
+<li>
+<p>To connect to a managed host as root, enter:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/vlan-ethernet.yml
+</code></pre></div>
+<ul>
+<li>To connect to a managed host as a user, enter:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/vlan-ethernet.yml
+</code></pre></div>
+<p>The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.</p>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.</p>
+<h1 id="chapter-11-creating-virtual-layer-2-domains-for-virtual-machines-using-vxlan">Chapter 11 Creating Virtual Layer 2 Domains for Virtual Machines Using VXLAN</h1>
+<p>Virtual Extensible LAN (VXLAN) is a network protocol that tunnels Layer 2 traffic over an IP network using the UDP protocol. For example, some virtual machines (VMs) running on different hosts can communicate through VXLAN tunnels. Hosts can be on different subnets, or even in different data centers around the world. From the perspective of the virtual machine, other virtual machines in the same VXLAN are in the same layer 2 domain.</p>
+<p>This document describes how to configure VM-invisible VXLAN on an OpenCLoudOS host:<img alt="vxlan-tunnel" src="../assets/vxlan-tunnel.jpg" /></p>
+<p>In this example, OpenCloudOS-host-A and OpenCloudOS-host-B use bridge br0 to connect the virtual machines' virtual networks on each host with VXLAN vxlan10. Due to this configuration, VXLAN is invisible to the virtual machine and the virtual machine does not require any special configuration. If you later connect more virtual machines to the same virtual network, the virtual machines will automatically become members of the same virtual layer 2 domain.</p>
+<p>Data in VXLAN is not encrypted just like normal Layer 2 traffic. For security reasons, use VXLAN over VPN or other types of encrypted connections.</p>
+<h2 id="111-advantages-of-vxlan">11.1. Advantages of VXLAN</h2>
+<p>Virtual Extensible LAN (VXLAN) offers the following key benefits:</p>
+<ul>
+<li>
+<p>VXLAN uses 24-bit IDs. Therefore, you can create up to 16,777,216 isolated networks. For example, virtual LANs (VLANs) only support 4,096 isolated networks.</p>
+</li>
+<li>
+<p>VXLAN uses the IP protocol. This allows you to control traffic through routing and run systems virtually on different networks and locations within the same Layer 2 domain.</p>
+</li>
+<li>
+<p>Unlike most tunneling protocols, VXLAN is not just a point-to-point network. VXLAN can learn the IP addresses of other endpoints dynamically, or it can use statically configured forwarding entries.</p>
+</li>
+<li>
+<p>Some NICs support UDP tunnel related offload functionality.</p>
+</li>
+</ul>
+<h2 id="112-configure-the-ethernet-interface-on-the-host">11.2. Configure the Ethernet interface on the host</h2>
+<p>To connect an OpenCloudOS virtual machine host to Ethernet, create a network connection profile, configure IP settings, and activate the profile.</p>
+<p>Run this procedure on the OpenCloudOS host and adjust the IP address configuration accordingly.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The host is connected to the Ethernet host.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Add a new Ethernet connection profile in NetworkManager:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add con-name Example ifname enp1s0 type ethernet
+</code></pre></div>
+<ol>
+<li>Configure the IPv4 settings:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify Example ipv4.addresses 198.51.100.2/24 ipv4.method manual ipv4.gateway 198.51.100.254 ipv4.dns 198.51.100.200 ipv4.dns-search example.com
+</code></pre></div>
+<p>Skip this step if your network uses DHCP.</p>
+<ol>
+<li>Activate the Example connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up Example
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp1s0      ethernet  connected  Example
+</code></pre></div>
+<ol>
+<li>Ping the host on the remote network to verify the IP settings:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ping OpenCloudOS-host-B.example.com
+</code></pre></div>
+<p>Note that you cannot ping other virtual machine hosts until networking is configured on that host.</p>
+<h2 id="113-create-a-bridge-with-vxlan-attached">11.3. Create a bridge with VXLAN attached</h2>
+<p>To make Virtual Extensible LAN (VXLAN) invisible to virtual machines (VMs), create a bridge on the host and attach VXLAN to the bridge. Use NetworkManager to create bridges and VXLANs. You cannot add any traffic access point (TAP) devices (often called vnet* on the host machine) of virtual machines to the bridge. They are added dynamically by the libvirtd service when the virtual machine starts.</p>
+<p>Run this procedure on the OpenCloudOS host and adjust the IP address accordingly.</p>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create bridge br0:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type bridge con-name br0 ifname br0 ipv4.method disabled ipv6.method disabled
+</code></pre></div>
+<p>This command sets no IPv4 and IPv6 addresses on the bridge device because the bridge works at layer 2.</p>
+<ol>
+<li>Create a VXLAN interface and attach it to br0:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type vxlan slave-type bridge con-name br0-vxlan10 ifname vxlan10 id 10 local 198.51.100.2 remote 203.0.113.1 master br0
+</code></pre></div>
+<p>This command uses the following settings:</p>
+<ul>
+<li>
+<p>ID 10 : Set the VXLAN identifier.</p>
+<ul>
+<li>local 198.51.100.2 : Sets the source IP address of outgoing packets.</li>
+<li>remote 203.0.113.1 : Sets the unicast or multicast IP address to use in outgoing packets when the destination link-layer address is unknown in the VXLAN device forwarding database.</li>
+<li>remote 203.0.113.1 : Sets the unicast or multicast IP address to use in outgoing packets when the destination link-layer address is unknown in the VXLAN device forwarding database.</li>
+<li>ipv4.method disabled and ipv6.method disabled: Disable IPv4 and IPv6 on the bridge.</li>
+</ul>
+</li>
+<li>
+<p>Activate the br0 connection profile:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection up br0
+</code></pre></div>
+<ol>
+<li>Open port 8472 in the local firewall for incoming UDP connections:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up br0
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ul>
+<li>show forwarding table:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># bridge fdb show dev vxlan10
+2a:53:bd:d5:b3:0a master br0 permanent
+00:00:00:00:00:00 dst 203.0.113.1 self permanent
+...
+</code></pre></div>
+<h2 id="114-create-a-virtual-network-in-libvirt-with-an-existing-bridge">11.4. Create a virtual network in libvirt with an existing bridge</h2>
+<p>To enable a virtual machine (VM) to use the br0 bridge with Virtual Extensible LAN (VXLAN) attached, first add a virtual network to the libvirtd service that uses this bridge.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>You have installed the libvirt package.</p>
+</li>
+<li>
+<p>You have installed the libvirt package.</p>
+</li>
+<li>
+<p>You have configured a br0 device with VXLAN on OpenCloudOS.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create a ~/vxlan10-bridge.xml file with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>&lt;network&gt;&lt;name&gt;vxlan10-bridge&lt;/name&gt;&lt;forward mode=&quot;bridge&quot; /&gt;&lt;bridge name=&quot;br0&quot; /&gt;&lt;/network&gt;
+</code></pre></div>
+<ol>
+<li>Use the ~/vxlan10-bridge.xml file to create a new virtual network in libvirt:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># virsh net-define ~/vxlan10-bridge.xml
+</code></pre></div>
+<ol>
+<li>Delete the ~/vxlan10-bridge.xml file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># rm ~/vxlan10-bridge.xml
+</code></pre></div>
+<ol>
+<li>Start the vxlan10-bridge virtual network:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># virsh net-start vxlan10-bridge
+</code></pre></div>
+<ol>
+<li>Configure the vxlan10-bridge virtual network to start automatically when the libvirtd service starts:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># virsh net-autostart vxlan10-bridge
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ul>
+<li>Display a list of virtual networks:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># virsh net-list
+Name              State    Autostart   Persistent
+----------------------------------------------------
+vxlan10-bridge    active   yes         yes
+...
+</code></pre></div>
+<h2 id="115-configuring-virtual-machines-to-use-vxlan">11.5. Configuring Virtual Machines to Use VXLAN</h2>
+<p>To configure a virtual machine on a host to use a bridge device with an attached Virtual Extensible LAN (VXLAN), create a new virtual machine that uses the vxlan10-bridge virtual network or update the settings of an existing virtual machine to use this network .</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>You configured the vxlan10-bridge virtual network in libvirtd.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ul>
+<li>To create a new virtual machine and configure it to use the vxlan10-bridge network, pass the --network network:vxlan10-bridge option to the virt-install command when creating the virtual machine:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># virt-install ... --network network:vxlan10-bridge
+</code></pre></div>
+<ul>
+<li>
+<p>To change the network settings of an existing virtual machine:</p>
+</li>
+<li>
+<p>Connect the virtual machine's network interface to the vxlan10-bridge virtual network:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code># virt-xml VM_name --edit --network network=vxlan10-bridge
+</code></pre></div>
+<ol>
+<li>Shut down the virtual machine, and restart it:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># virsh shutdown VM_name
+# virsh start VM_name
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display the virtual network interfaces of the virtual machines on the host:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># virsh domiflist VM_name
+Interface   Type     Source           Model    MAC
+-------------------------------------------------------------------
+vnet1       bridge   vxlan10-bridge   virtio   52:54:00:c5:98:1c
+</code></pre></div>
+<ol>
+<li>Display the interfaces connected to the vxlan10-bridge bridge:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip link show master vxlan10-bridge
+18: vxlan10: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br0 state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether 2a:53:bd:d5:b3:0a brd ff:ff:ff:ff:ff:ff
+19: vnet1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br0 state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:c5:98:1c brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+<p>Note that the libvirtd service dynamically updates the configuration of the bridge. When you start a virtual machine that uses the vxlan10-bridge network, the corresponding vnet* device on the host will appear as the port of the bridge.</p>
+<ol>
+<li>
+<p>Use Address Resolution Protocol (ARP) requests to verify that the virtual machines are in the same VXLAN:</p>
+</li>
+<li>
+<p>Start two or more virtual machines in the same VXLAN.</p>
+</li>
+<li>
+<p>Send an ARP request from one virtual machine to another:</p>
+<div class="highlight"><pre><span></span><code> # arping -c 1 192.0.2.2
+ ARPING 192.0.2.2 from 192.0.2.1 enp1s0
+ Unicast reply from 192.0.2.2 [52:54:00:c5:98:1c] 1.450ms
+ Sent 1 probe(s) (0 broadcast(s))
+ Received 1 response(s) (0 request(s), 0 broadcast(s))
+</code></pre></div>
+</li>
+</ol>
+<p>If the command displays a reply, then the virtual machines are in the same Layer 2 domain, in this case, the same VXLAN.</p>
+<p>Install the iputils package to use the arping tool.</p>
+<h1 id="chapter-12-configuring-network-bridging">Chapter 12 Configuring Network Bridging</h1>
+<p>A network bridge is a link-layer device that forwards traffic between networks based on a list of MAC addresses. Bridges build MAC address tables by listening to network traffic and learning about the hosts connected to each network. For example, you can use software bridging on an OpenCLoudOS host to emulate hardware bridging or in a virtualized environment to integrate virtual machines (VMs) into the same network as the host.</p>
+<p>Bridging requires a network device in each network that the bridge should connect to. When you configure a bridge, the bridge is called a controller, which is a device that uses ports.</p>
+<p>You can create bridges in different types of devices, such as:</p>
+<ul>
+<li>
+<p>Physical and virtual Ethernet devices</p>
+</li>
+<li>
+<p>network binding</p>
+</li>
+<li>
+<p>Network team (team)</p>
+</li>
+<li>
+<p>VLAN devices</p>
+</li>
+</ul>
+<p>Since the IEEE 802.11 standard specifies the use of 3 address frames in Wi-Fi to effectively use random time, you cannot configure a bridge over a Wi-Fi network in Ad-Hoc or Infrastructure mode.</p>
+<h2 id="121-use-the-nmcli-command-to-configure-network-bridging">12.1. Use the nmcli command to configure network bridging</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>Install two or more physical or virtual network devices in the server.</p>
+</li>
+<li>
+<p>To use an Ethernet device as a port of a bridge, a physical or virtual Ethernet device must be installed in the server.</p>
+</li>
+<li>
+<p>To use team, bond, or VLAN devices as ports for the bridge, you can create these devices when creating the bridge, or create them beforehand.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create a bridge interface:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type bridge con-name bridge0 ifname bridge0
+</code></pre></div>
+<p>This command creates a bridge named bridge0.</p>
+<ol>
+<li>Display the network interfaces, and note the name of the interface you want to add to the bridge:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE  TYPE      STATE         CONNECTION
+enp7s0  ethernet  disconnected  --
+enp8s0  ethernet  disconnected  --
+bond0   bond      connected     bond0
+bond1   bond      connected     bond1
+...
+</code></pre></div>
+<p>In this example:</p>
+<ul>
+<li>
+<p>enp7s0 and enp8s0 are not configured. To use these devices as ports, add a connection profile in the next step.</p>
+</li>
+<li>
+<p>bond0 and bond1 already have connection profiles. To use these devices as ports, modify their configuration sets in the next step.</p>
+</li>
+<li>
+<p>Assign the interface to the bridge.</p>
+</li>
+<li>
+<p>If the interface you want to assign to the bridge is not configured, create a new connection profile for it:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection add type ethernet slave-type bridge con-name bridge0-port1 ifname enp7s0 master bridge0
+# nmcli connection add type ethernet slave-type bridge con-name bridge0-port2 ifname enp8s0 master bridge0
+</code></pre></div>
+</li>
+<li>
+<p>If you want to assign existing connection profiles to bridges, set the master parameter of these connections to bridge0:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify bond0 master bridge0
+# nmcli connection modify bond1 master bridge0
+</code></pre></div>
+<p>These commands assign the existing connection profiles named bond0 and bond1 to the bridge0 connection.</p>
+</li>
+<li>
+<p>Configure the IP settings for the bridge. Skip this step if you want to use this bridge as a port for other devices.</p>
+</li>
+<li>Configure the IPv4 settings. Example: To set a static IPv4 address, netmask, default gateway, DNS server, and DNS search domain for the bridge0 connection, enter:</li>
+<li>
+<p>Configure the IPv6 settings. Example: To set a static IPv6 address, netmask, default gateway, DNS server, and DNS search domain for the bridge0 connection, enter:</p>
+</li>
+<li>
+<p>Optional: Configure other properties of the bridge. For example, to set the Spanning Tree Protocol (STP) priority of bridge0 to 16384, enter:</p>
+</li>
+<li>
+<p>Activate the connection:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection up bridge0
+</code></pre></div>
+<ol>
+<li>Verify that the port is connected and that the CONNECTION column shows the port's connection name:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device
+DEVICE   TYPE      STATE      CONNECTION
+...
+enp7s0   ethernet  connected  bridge0-port1
+enp8s0   ethernet  connected  bridge0-port2
+</code></pre></div>
+<p>When you activate any port connected, NetworkManager also activates the bridge, but not its other ports. You can configure Red Hat Enterprise Linux to automatically enable all ports when bridging is enabled:</p>
+<ol>
+<li>
+<p>Enable the connection.autoconnect-slaves parameter for the bridge connection:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify bridge0 connection.autoconnect-slaves 1
+</code></pre></div>
+</li>
+<li>
+<p>Reactivate the bridge:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection up bridge0
+</code></pre></div>
+</li>
+</ol>
+<p><strong>Verify</strong></p>
+<ul>
+<li>Use the ip tool to display the link status of the ethernet device as a specific bridge port:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link show master bridge0
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:62:61:0e brd ff:ff:ff:ff:ff:ff
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:9e:f1:ce brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+<ul>
+<li>Use the bridge tool to display the status of Ethernet devices acting as ports on any bridge device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># bridge link show
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state forwarding priority 32 cost 100
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state listening priority 32 cost 100
+5: enp9s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state forwarding priority 32 cost 100
+6: enp11s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state blocking priority 32 cost 100
+...
+</code></pre></div>
+<p>To display the status of a specific Ethernet device, use the bridge link show dev ethernet_device_name command.</p>
+<h2 id="122-use-nm-connection-editor-to-configure-network-bridging">12.2. Use nm-connection-editor to configure network bridging</h2>
+<p>This section describes how to configure the bridge using the nm-connection-editor application. Note that nm-connection-editor can only add new ports to bridges. To use an existing connection profile as a port, use the nmcli tool to create a bridge.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>Install two or more physical or virtual network devices in the server.</p>
+</li>
+<li>
+<p>To use an Ethernet device as a port of a bridge, a physical or virtual Ethernet device must be installed in the server.</p>
+</li>
+<li>
+<p>To use team, bond or VLAN devices as bridge ports, make sure those devices are not already configured.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>
+<p>Open the terminal and enter nm-connection-editor</p>
+</li>
+<li>
+<p>Click the + button to add a new connection.</p>
+</li>
+<li>
+<p>Select the Bridge connection type and click Create.</p>
+</li>
+<li>
+<p>On the Bridge tab: </p>
+</li>
+<li>Optional: Set a name for the bridge interface in the Interface name field.</li>
+<li>Click the Add button to create a new connection profile for the network interface and add the profile as a port to the bridge.<ol>
+<li>Select the connection type of the interface. For example, choose Ethernet for a wired connection.</li>
+<li>In addition, a connection name can be set for the port device.</li>
+<li>If you are creating a connection profile for an Ethernet device, open the Ethernet tab, and in the Device field select the network interface you want to add as a port to the bridge. If you selected a different device type, configure it accordingly.</li>
+</ol>
+</li>
+</ol>
+<p><strong>Process</strong></p>
+<ol>
+<li>Open the terminal and enter nm-connection-editor</li>
+<li>Click the + button to add a new connection.</li>
+<li>Select the Bridge connection type and click Create.</li>
+<li>On the Bridge tab:</li>
+<li>Optional: Set a name for the bridge interface in the Interface name field.</li>
+<li>Click the Add button to create a new connection profile for the network interface and add the profile as a port to the bridge.<ol>
+<li>Select the connection type of the interface. For example, choose Ethernet for a wired connection.</li>
+<li>In addition, a connection name can be set for the port device.</li>
+<li>If you are creating a connection profile for an Ethernet device, open the Ethernet tab, and in the Device field select the network interface you want to add as a port to the bridge. If you selected a different device type, configure it accordingly.
+     <img alt="nm-connection-editor配置网桥_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E6%A1%A5_1.png" /></li>
+</ol>
+</li>
+<li>Optional: Configure other bridge settings, such as Spanning Tree Protocol (STP) options.</li>
+<li>Configure the IP settings for the bridge. Skip this step if you want to use this bridge as a port for other devices.</li>
+<li>On the IPv4 Settings tab, configure the IPv4 settings. For example, to set a static IPv4 address, netmask, default gateway, DNS server, and DNS search domain:
+      <img alt="nm-connection-editor配置网桥_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E6%A1%A5_2.png" /></li>
+<li>On the IPv6 Settings tab, configure the IPv6 settings. For example, to set a static IPv6 address, netmask, default gateway, DNS server, and DNS search domain:
+      <img alt="nm-connection-editor配置网桥_3" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E6%A1%A5_3.png" /></li>
+<li>Save the bridge connection.</li>
+<li>Close nm-connection-editor.</li>
+</ol>
+<p><strong>Verify</strong></p>
+<ul>
+<li>Use the ip command to display the link status of the Ethernet device as a specific bridge port.</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link show master bridge0
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:62:61:0e brd ff:ff:ff:ff:ff:ff
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:9e:f1:ce brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+<ul>
+<li>Use the bridge command to display the status of Ethernet devices that are ports in any bridge device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># bridge link show
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state forwarding priority 32 cost 100
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state listening priority 32 cost 100
+5: enp9s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state forwarding priority 32 cost 100
+6: enp11s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state blocking priority 32 cost 100
+...
+</code></pre></div>
+<p>To display the status of a specific Ethernet device, use the bridge link show dev ethernet_device_name command.</p>
+<h2 id="123-use-nmstatectl-to-configure-network-bridging">12.3. Use nmstatectl to configure network bridging</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>
+<p>Install two or more physical or virtual network devices in the server.</p>
+</li>
+<li>
+<p>To use an Ethernet device as a port of a bridge, a physical or virtual Ethernet device must be installed in the server.</p>
+</li>
+<li>
+<p>To use a team, bond or VLAN device as a port in a bridge, set the interface name in the port list and define the corresponding interface.</p>
+</li>
+<li>
+<p>The nmstate package is installed.</p>
+</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create a YAML file, ~/create-bridge.yml , with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: bridge0
+type: linux-bridge
+state: up
+ipv4:
+    enabled: true
+    address:
+    - ip: 192.0.2.1
+    prefix-length: 24
+    dhcp: false
+ipv6:
+    enabled: true
+    address:
+    - ip: 2001:db8:1::1
+    prefix-length: 64
+    autoconf: false
+    dhcp: false
+bridge:
+    options:
+    stp:
+        enabled: true
+    port:
+    - name: enp1s0
+    - name: enp7s0
+- name: enp1s0
+type: ethernet
+state: up
+- name: enp7s0
+type: ethernet
+state: up
+
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.254
+    next-hop-interface: bridge0
+- destination: ::/0
+    next-hop-address: 2001:db8:1::fffe
+    next-hop-interface: bridge0
+dns-resolver:
+config:
+    search:
+    - example.com
+    server:
+    - 192.0.2.200
+    - 2001:db8:1::ffbb
+</code></pre></div>
+<ol>
+<li>Apply the settings to the system:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-bridge.yml
+</code></pre></div>
+<p><strong>Verify</strong></p>
+<ol>
+<li>Display the status of the device and the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+bridge0     bridge    connected  bridge0
+</code></pre></div>
+<ol>
+<li>Display all settings of the connection profile:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show bridge0
+connection.id:              bridge0
+connection.uuid:            e2cc9206-75a2-4622-89cf-1252926060a9
+connection.stable-id:       --
+connection.type:            bridge
+connection.interface-name:  bridge0
+...
+</code></pre></div>
+<ol>
+<li>Display the connection settings in YAML format:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmstatectl show bridge0
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

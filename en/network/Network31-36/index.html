@@ -1,0 +1,2699 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network25-30/">
+      
+      
+        <link rel="next" href="../Network37-42/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Chapter 31-36 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-31-linux-flow-control" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 31-36
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../network/Network31-36/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 31-36
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 31-36
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#311-overview-of-queuing-disciplines" class="md-nav__link">
+    31.1. Overview of queuing disciplines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312-qdiscs-available-in-opencloudos" class="md-nav__link">
+    31.2. qdiscs available in OpenCloudOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313-check-qdiscs-of-a-network-interface-using-the-tc-tool" class="md-nav__link">
+    31.3. Check qdiscs of a network interface using the tc tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporarily-set-the-qdisk-of-the-network-interface-using-the-tc-tool" class="md-nav__link">
+    Temporarily set the qdisk of the network interface using the tc tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#316-use-networkmanager-to-permanently-set-the-current-qdisk-of-a-network-interface" class="md-nav__link">
+    31.6. Use NetworkManager to permanently set the current qdisk of a network interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#311-overview-of-queuing-disciplines" class="md-nav__link">
+    31.1. Overview of queuing disciplines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312-qdiscs-available-in-opencloudos" class="md-nav__link">
+    31.2. qdiscs available in OpenCloudOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313-check-qdiscs-of-a-network-interface-using-the-tc-tool" class="md-nav__link">
+    31.3. Check qdiscs of a network interface using the tc tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporarily-set-the-qdisk-of-the-network-interface-using-the-tc-tool" class="md-nav__link">
+    Temporarily set the qdisk of the network interface using the tc tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#316-use-networkmanager-to-permanently-set-the-current-qdisk-of-a-network-interface" class="md-nav__link">
+    31.6. Use NetworkManager to permanently set the current qdisk of a network interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network31-36.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network31-36.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-31-linux-flow-control">Chapter 31 Linux Flow Control</h1>
+<p>Linux provides tools to manage and manipulate packet transmissions. The Linux Traffic Control (TC) subsystem helps in policing, classifying, controlling, and scheduling network traffic. TC can also take advantage of packet content segmentation during classification by using filters and actions. The TC subsystem does this through queuing disciplines (qdiscs), a fundamental element of the TC architecture.</p>
+<p>Scheduling mechanisms determine or reschedule packets before entering or exiting different queues. The most common scheduler is the first-in-first-out (FIFO) scheduler. You can perform qdiscs operations temporarily using the tc tool, or permanently using NetworkManager.</p>
+<p>This chapter explains queuing disciplines and describes how to update the default qdiscs in OpenCloudOS.</p>
+<h2 id="311-overview-of-queuing-disciplines">31.1. Overview of queuing disciplines</h2>
+<p>Queuing disciplines (qdiscs) help plan queuing and then schedule traffic delivery across network interfaces. qdisc has two operations:
+- Queue requests to queue packets for later transmission
+- Dequeue requests so that one of the queued packets can be selected for immediate transmission.</p>
+<p>Each qdisc has a 16-digit hexadecimal identification number called handle , with an appended colon, like 1: or abcd: this number is called the qdisc main number. If the qdisc has a type, the identifier is a pair of two digits with the major number preceding the minor number, i.e. \<major>:\<minor>, eg abcd:1. The numbering scheme for minor numbers depends on the qdisc type. Sometimes the numbering is systematized, where the first class has an ID of &lt; \<major>:1, the second class has an ID of \<major>:2, and so on. Some qdiscs allow the user to randomly set the minor number of a class when creating the class.</p>
+<p><strong>Classful qdiscs</strong></p>
+<p>There are different types of qdiscs that help to receive and transmit packets from network interfaces. You can configure qdiscs using root, parent, or subclasses. The places where subobjects can be attached are called classes. Classes in a qdisc are flexible and always contain multiple subclasses or a single qdisc. Classes containing the class qdisc itself are not prohibited, which facilitates complex flow control scenarios.</p>
+<p>The class qdiscs itself does not store any packets. Instead, they pass enqueue and dequeue requests to one of their subclasses according to the criteria specified in the qdisc. Finally, this recursive packet is delivered to where the packet is finally saved (or extracted from if there is a queue).</p>
+<p><strong>Classless qdiscs</strong></p>
+<p>Some qdiscs do not contain subclasses, they are called classless qdiscs. Classless qdiscs require less customization than class-like qdiscs. Usually, it is sufficient to attach them to the interface.</p>
+<h2 id="312-qdiscs-available-in-opencloudos">31.2. qdiscs available in OpenCloudOS</h2>
+<p>Each qdisc solves uniquely corresponding and related network problems. Below is a list of qdiscs available in OpenCloudOS. You can use any of the following qdiscs to shape network traffic according to your network requirements.</p>
+<table>
+<thead>
+<tr>
+<th>qdisc name</th>
+<th>module in which</th>
+<th>offload support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asynchronous Transfer Mode (ATM)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Class-based queues</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>credit-based builder</td>
+<td>kernel-modules-extra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>CHOose and Keep for responsive traffic, CHOose and Kill for unresponsive traffic (CHOKE)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Controlled Latency (CoDel)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>Round Robin (DRR)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Differentiated Services marker (DSMARK)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Enhanced Transmission Selection (ETS)</td>
+<td>kernel-modules-extra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Fair Queue (FQ)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>Fair Queuing Controlled Delay (FQ_CODel)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>Generalized Random Early Detection (GRED)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Hierarchical Fair Service Curve (HSFC)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>Heavy-Hitter Filter (HHF)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>Hierarchy Token Bucket (HTB)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>INGRESS</td>
+<td>kernel-core</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Multi Queue Priority (MQPRIO)</td>
+<td>kernel-modules-extra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Multiqueue (MULTIQ)</td>
+<td>kernel-modules-extra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Network Emulator (NETEM)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Proportional Integral-controller Enhanced (PIE)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>PLUG</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>Quick Fair Queueing (QFQ)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Random Early Detection (RED)</td>
+<td>kernel-modules-extra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Stochastic Fair Blue (SFB)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td>Stochastic Fairness Queueing (SFQ)</td>
+<td>kernel-core</td>
+<td></td>
+</tr>
+<tr>
+<td>Token Bucket Filter (TBF)</td>
+<td>kernel-core</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Trivial Link Equalizer (TEQL)</td>
+<td>kernel-modules-extra</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Note that qdisc offload requires hardware and driver support for the NIC.</p>
+<h2 id="313-check-qdiscs-of-a-network-interface-using-the-tc-tool">31.3. Check qdiscs of a network interface using the tc tool</h2>
+<p>By default, the OpenCloudOS system uses fq_codel , qdisc. This procedure describes how to check qdisc counters.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>Optional: View your current qdisc:
+    <div class="highlight"><pre><span></span><code># tc qdisc show dev enp0s1
+</code></pre></div></li>
+<li>Check the current qdisc counters:
+    <div class="highlight"><pre><span></span><code># tc -s qdisc show dev enp0s1
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn
+Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0)
+backlog 0b 0p requeues 0
+maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+new_flows_len 0 old_flows_len 0
+</code></pre></div></li>
+<li>Update an existing qdisc:
+     <div class="highlight"><pre><span></span><code># sysctl -w net.core.default_qdisc=pfifo_fast
+</code></pre></div></li>
+<li>Reload the network driver to apply the changes:
+     <div class="highlight"><pre><span></span><code># rmmod NETWORKDRIVERNAME
+# modprobe NETWORKDRIVERNAME
+</code></pre></div></li>
+<li>Start the network interface:
+     <div class="highlight"><pre><span></span><code># IP link set enp0s1 up
+</code></pre></div></li>
+</ol>
+<p><strong>verify</strong></p>
+<ul>
+<li>View qdiscs for ethernet connections:
+     <div class="highlight"><pre><span></span><code># tc -s qdisc show dev enp0s1
+qdisc pfifo_fast 0: root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+Sent 373186 bytes 5333 pkt (dropped 0, overlimits 0 requeues 0)
+backlog 0b 0p requeues 0
+....
+</code></pre></div></li>
+</ul>
+<h2 id="temporarily-set-the-qdisk-of-the-network-interface-using-the-tc-tool">Temporarily set the qdisk of the network interface using the tc tool</h2>
+<p>You can update the current temporary qdisc without changing the default qdisc.</p>
+<p><strong>process</strong></p>
+<p><strong>process</strong></p>
+<ol>
+<li>Optional: View the current qdisc:
+     <div class="highlight"><pre><span></span><code># tc -s qdisc show dev enp0s1
+</code></pre></div></li>
+<li>Update the current qdisc:
+     <div class="highlight"><pre><span></span><code># tc qdisc replace dev enp0s1 root htb
+</code></pre></div></li>
+</ol>
+<p><strong>verify</strong></p>
+<ul>
+<li>View updated current qdisc:
+     <div class="highlight"><pre><span></span><code># tc -s qdisc show dev enp0s1
+qdisc htb 8001: root refcnt 2 r2q 10 default 0 direct_packets_stat 0 direct_qlen 1000
+Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0)
+backlog 0b 0p requeues 0
+</code></pre></div></li>
+</ul>
+<h2 id="316-use-networkmanager-to-permanently-set-the-current-qdisk-of-a-network-interface">31.6. Use NetworkManager to permanently set the current qdisk of a network interface</h2>
+<p><strong>process</strong></p>
+<ol>
+<li>Optional: View the current qdisc:
+     <div class="highlight"><pre><span></span><code># tc qdisc show dev enp0s1
+ qdisc fq_codel 0: root refcnt 2
+</code></pre></div></li>
+<li>Update the current qdisc:
+     <div class="highlight"><pre><span></span><code># nmcli connection modify enp0s1 tc.qdiscs &#39;root pfifo_fast&#39;
+</code></pre></div></li>
+<li>Optional: To add another qdisc on top of an existing qdisc, use the +tc.qdisc option:
+     <div class="highlight"><pre><span></span><code># nmcli connection modify enp0s1 +tc.qdisc &#39;ingress handle ffff:&#39;
+</code></pre></div></li>
+<li>Activate the changes:
+     <div class="highlight"><pre><span></span><code># nmcli connection up enp0s1
+</code></pre></div></li>
+</ol>
+<p><strong>verify</strong></p>
+<ul>
+<li>View updated current qdisc:
+     <div class="highlight"><pre><span></span><code># tc qdisc show dev enp0s1
+qdisc pfifo_fast 8001: root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc ingress ffff: parent ffff:fff1 ----------------
+</code></pre></div></li>
+</ul>
+<h1 id="chapter-32-configure-dns-server-order">Chapter 32 Configure DNS server order</h1>
+<p>Most applications use the getaddrinfo() function of the glibc library to resolve DNS requests. By default, glibc sends all DNS requests to the first DNS server specified in the /etc/resolv.conf file. If this server does not reply, OpenCloudOS will use the next server in this file.</p>
+<p>This chapter describes how to customize the DNS server order.</p>
+<h2 id="321-order-dns-servers-in-etcresolvconf-using-networkmanager">32.1. Order DNS servers in /etc/resolv.conf using NetworkManager</h2>
+<p>NetworkManager sorts the DNS servers in the /etc/resolv.conf file according to the following rules:
+- If there is only one connection profile, NetworkManager will use the order of IPv4 and IPv6 DNS servers specified in that connection.
+- If multiple connection profiles are activated, NetworkManager sorts the DNS servers according to the DNS priority value. If you set DNS priority, NetworkManager's behavior depends on the value set in the dns parameter. You can set this parameter in the [main] section of the /etc/NetworkManager/NetworkManager.conf file:</p>
+<ul>
+<li>
+<p>dns=default or if the dns parameter is not set:</p>
+<p>NetworkManager sorts the DNS servers for different connections according to the ipv4.dns-priority and ipv6.dns-priority parameters in each connection.</p>
+<p>If no value is set, or if you set ipv4.dns-priority and ipv6.dns-priority to 0 , NetworkManager will use the global defaults. See the default value for the DNS Priority parameter.</p>
+</li>
+<li>
+<p>dns=dnsmasq or dns=systemd-resolved:</p>
+<p>When you use one of these settings, NetworkManager sets 127.0.0.1 or 127.0.0.53 for dnsmasq as the nameserver entry in the /etc/resolv.conf file.</p>
+<p>The dnsmasq and systemd-resolved services forward queries for search domains set in a NetworkManager connection to the DNS servers specified in that connection, and forward queries for other domains to connections with default routes. When multiple connections have the same set of search domains, dnsmasq and systemd-resolved forward queries for this domain to the DNS server set in the connection with the lowest priority value.</p>
+</li>
+</ul>
+<p>Default value for the DNS priority parameter
+NetworkManager uses the following defaults for connections:</p>
+<ul>
+<li>50 for VPN connections</li>
+<li>100 for other connections</li>
+</ul>
+<p>Valid DNS priority values:
+You can set the global default and connection-specific ipv4.dns-priority and ipv6.dns-priority parameters to values between -2147483647 and 2147483647.</p>
+<ul>
+<li>Lower values have higher priority.</li>
+<li>Negative values have a special effect that exclude other configurations with larger values. For example, if at least one connection has a negative priority value, NetworkManager only uses the DNS server with the lowest priority specified in the connection configuration set.</li>
+<li>
+<p>If multiple connections have the same DNS priority, NetworkManager prioritizes DNS in the following order:</p>
+<ol>
+<li>VPN connection</li>
+<li>A connection with an active default route. The active default route is the default route with the lowest metric.</li>
+</ol>
+</li>
+</ul>
+<h2 id="322-set-networkmanager-dns-default-server-priority-value">32.2. Set NetworkManager DNS default server priority value</h2>
+<p>NetworkManager uses the following DNS priority defaults for connections:</p>
+<ul>
+<li>50 for VPN connections</li>
+<li>100 for other connections</li>
+</ul>
+<p>This section discusses how to override these system-wide defaults with custom defaults for IPv4 and IPv6 connections.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>Edit the /etc/NetworkManager/NetworkManager.conf file:</p>
+<ol>
+<li>Add the [connection] section (if not present):
+ <div class="highlight"><pre><span></span><code>[connection]
+</code></pre></div></li>
+<li>Add custom defaults to the [connection] section. For example, to set a new default of 200 for IPv4 and IPv6, add:
+ <div class="highlight"><pre><span></span><code>ipv4.dns-priority=200
+ipv6.dns-priority=200
+</code></pre></div>
+ You can set the parameter to a value between -2147483647 and 2147483647. Note that setting the parameter to 0 will enable the built-in default ( 50 for VPN connections and 100 for other connections).</li>
+</ol>
+</li>
+<li>
+<p>Reload the NetworkManager service:
+     <div class="highlight"><pre><span></span><code># systemctl reload NetworkManager
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="323-set-dns-priority-for-networkmanager-connections">32.3. Set DNS priority for NetworkManager connections</h2>
+<p>This section describes how to define the order of DNS servers when NetworkManager creates or updates the /etc/resolv.conf file.</p>
+<p>Note that setting DNS priority only makes sense if you have configured multiple connections to multiple different DNS servers. If you have only one connection configured with multiple DNS servers, manually set the DNS servers sequentially in the connection configuration set.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The system is configured with multiple NetworkManager connections.</li>
+<li>The system does not set the dns parameter in the /etc/NetworkManager/NetworkManager.conf file, or it is set to default.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Optionally, display available connections:
+     <div class="highlight"><pre><span></span><code># nmcli connection show
+NAME UUID TYPE DEVICE
+Example_con_1 d17ee488-4665-4de2-b28a-48befab0cd43 ethernet enp1s0
+Example_con_2 916e4f67-7145-3ffa-9f7b-e7cada8f6bf7 ethernet enp7s0
+...
+</code></pre></div></li>
+<li>Set the ipv4.dns-priority and ipv6.dns-priority parameters. For example, for
+Example_con_1 connection, with both parameters set to 10 :
+     <div class="highlight"><pre><span></span><code># nmcli connection modify Example_con_1 ipv4.dns-priority 10 ipv6.dns-priority 10
+</code></pre></div></li>
+<li>Reactivate your updated connection:
+     <div class="highlight"><pre><span></span><code># nmcli connection up Example_con_1
+</code></pre></div></li>
+</ol>
+<p><strong>verify</strong></p>
+<ul>
+<li>Display the contents of the /etc/resolv.conf file to verify that the DNS servers are in the correct order:
+     <div class="highlight"><pre><span></span><code># cat /etc/resolv.conf
+</code></pre></div></li>
+</ul>
+<h1 id="chapter-33-using-ifcfg-file-to-configure-ip-network">Chapter 33 Using ifcfg file to configure ip network</h1>
+<p>This chapter describes how to manually configure network interfaces by editing the ifcfg file.</p>
+<p>NetworkManager supports configuration sets stored in keyfile format. However, NetworkManager uses the ifcfg format by default when creating or updating configuration files using the NetworkManager API.</p>
+<p>Interface configuration (ifcfg) files control the software interfaces of individual network devices. When the system boots, it uses these files to decide which interfaces to start and how to configure them. These files are usually named ifcfg-name, where the suffix name refers to the name of the device controlled by the configuration file. By convention, the ifcfg file has the same suffix as the string provided by the DEVICE directive in the configuration file.</p>
+<h2 id="331-using-the-ifcfg-file-to-configure-an-interface-with-static-network-settings">33.1. Using the ifcfg file to configure an interface with static network settings</h2>
+<p>This section describes how to configure network interfaces using the ifcfg file.</p>
+<p><strong>process</strong></p>
+<ul>
+<li>If you need to configure an interface with static network settings for an interface named enp1s0, create a file named ifcfg-enp1s0 in the /etc/sysconfig/network-scripts/ directory with the following content:</li>
+<li>For IPv4 configuration:
+     <div class="highlight"><pre><span></span><code>DEVICE=enp1s0
+BOOTPROTO=none
+ONBOOT=yes
+PREFIX=24
+IPADDR=10.0.1.27
+GATEWAY=10.0.1.1
+</code></pre></div></li>
+<li>For IPv6 configuration:
+     <div class="highlight"><pre><span></span><code>DEVICE=enp1s0
+BOOTPROTO=none
+ONBOOT=yes
+IPV6INIT=yes
+IPV6ADDR=2001:db8:1::2/64
+</code></pre></div></li>
+</ul>
+<h2 id="332-using-the-ifcfg-file-to-configure-an-interface-with-dynamic-network-settings">33.2. Using the ifcfg file to configure an interface with dynamic network settings</h2>
+<p>This section describes how to use the ifcfg file to configure a network interface with dynamic network settings.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>If you need to configure an interface with dynamic network settings for an interface named em1, create a file named ifcfg-em1 in the /etc/sysconfig/network-scripts/ directory with the following content:
+     <div class="highlight"><pre><span></span><code>DEVICE=em1
+BOOTPROTO=dhcp
+ONBOOT=yes
+</code></pre></div></p>
+</li>
+<li>
+<p>To configure the sending interface:</p>
+</li>
+<li>If the DHCP server uses a different hostname, add the following line to the ifcfg file:
+     <div class="highlight"><pre><span></span><code>DHCP_HOSTNAME=hostname
+</code></pre></div></li>
+<li>The DHCP server uses a different Fully Qualified Domain Name (FQDN), add the following line to the ifcfg file:
+     <div class="highlight"><pre><span></span><code>DHCP_FQDN=fully.qualified.domain.name
+</code></pre></div></li>
+</ol>
+<p>Note that you can only use one of these settings. If you specify both DHCP_HOSTNAME and DHCP_FQDN, only DHCP_FQDN is used.</p>
+<ol>
+<li>To configure the interface to use specific DNS servers, add the following line to the ifcfg file:
+     <div class="highlight"><pre><span></span><code>PEERDNS=no
+DNS1=ip-address
+DNS2=ip-address
+</code></pre></div>
+     where ip-address is the address of the DNS server. This causes the web service to update /etc/resolv.conf with the specified DNS servers. Only one DNS server address is required, the other is optional.</li>
+</ol>
+<h2 id="333-using-the-ifcfg-file-to-manage-system-wide-and-private-connection-configuration-sets">33.3. Using the ifcfg file to manage system-wide and private connection configuration sets</h2>
+<p>This section describes how to configure the ifcfg file to manage system-wide and private connection configuration files.</p>
+<p><strong>process</strong>
+Access rights correspond to the USERS directive in the ifcfg file. Without the USERS directive, the network configuration file is available to all users.</p>
+<ul>
+<li>For example, modify the ifcfg file with the following line, which will make the connection only available to the listed users:
+     <div class="highlight"><pre><span></span><code>USERS=&quot;joe bob alice&quot;
+</code></pre></div></li>
+</ul>
+<h1 id="chapter-34-disabling-ipv6-for-specific-connections-using-networkmanager">Chapter 34 Disabling IPv6 for Specific Connections Using NetworkManager</h1>
+<p>This section describes how to disable the IPv6 protocol on systems using NetworkManager to manage network interfaces. If you disable IPv6, NetworkManager automatically sets the corresponding sysctl value in the kernel. If IPv6 is disabled using a kernel tunable or kernel boot parameter, additional system configuration considerations must be taken.</p>
+<p><strong>Prerequisites</strong>
+- The system uses NetworkManager to manage network interfaces</p>
+<h2 id="341-disable-ipv6-in-connection-using-nmcli">34.1. Disable IPv6 in connection using nmcli</h2>
+<p><strong>process</strong></p>
+<ol>
+<li>Optionally, display a list of network connections:
+     <div class="highlight"><pre><span></span><code># nmcli connection show
+NAME UUID TYPE DEVICE
+Example 7a7e0151-9c18-4e6f-89ee-65bb2d64d365 ethernet enp1s0
+...
+</code></pre></div></li>
+<li>Display a list of network connections:
+     <div class="highlight"><pre><span></span><code># nmcli connection modify Example ipv6.method &quot;disabled&quot;
+</code></pre></div></li>
+<li>Restart the network connection:
+     <div class="highlight"><pre><span></span><code># nmcli connection up Example
+</code></pre></div></li>
+</ol>
+<p><strong>verify</strong></p>
+<ol>
+<li>
+<p>Enter the ip address show command to display the IP settings of the device:
+     <div class="highlight"><pre><span></span><code># ip address show enp1s0
+2: enp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:6b:74:be brd ff:ff:ff:ff:ff:ff
+    inet 192.0.2.1/24 brd 192.10.2.255 scope global noprefixroute enp1s0
+    valid_lft forever preferred_lft forever
+</code></pre></div>
+     If no inet6 entry is displayed, IPv6 is disabled on the device.</p>
+</li>
+<li>
+<p>Verify that the /proc/sys/net/ipv6/conf/enp1s0/disable_ipv6 file now contains the value 1 :
+     <div class="highlight"><pre><span></span><code># cat /proc/sys/net/ipv6/conf/enp1s0/disable_ipv6
+1
+</code></pre></div>
+     A value of 1 disables IPv6 for this device.</p>
+</li>
+</ol>
+<h1 id="chapter-35-manually-configure-the-etcresolvconf-file">Chapter 35 Manually configure the /etc/resolv.conf file</h1>
+<p>By default, NetworkManager on OpenCloudOS dynamically updates the /etc/resolv.conf file with the DNS settings in the connection configuration file. This chapter describes how to disable this feature to manually configure DNS settings in /etc/resolv.conf.</p>
+<h2 id="351-disable-dns-handling-in-networkmanager-configuration">35.1. Disable DNS handling in NetworkManager configuration</h2>
+<p>This section describes how to manually configure the /etc/resolv.conf file to disable DNS processing in the NetworkManager configuration.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>As the root user, use a text editor to create the /etc/NetworkManager/conf.d/90-dns-none.conf file with the following content:
+     <div class="highlight"><pre><span></span><code>[main]
+dns=none
+</code></pre></div></p>
+</li>
+<li>
+<p>Reload the NetworkManager service:
+     <div class="highlight"><pre><span></span><code># systemctl reload NetworkManager
+</code></pre></div>
+     Note that NetworkManager no longer updates the /etc/resolv.conf file after a service reload. But the last content of the file will be preserved.</p>
+</li>
+<li>
+<p>(Optional) Remove NetworkManager-generated comments from /etc/resolv.conf for easier reading.</p>
+</li>
+</ol>
+<p><strong>verify</strong></p>
+<ol>
+<li>Edit the /etc/resolv.conf file and manually update the configuration.</li>
+<li>Reload the NetworkManager service:
+     <div class="highlight"><pre><span></span><code># systemctl reload NetworkManager
+</code></pre></div></li>
+<li>Display the /etc/resolv.conf file:
+     <div class="highlight"><pre><span></span><code># cat /etc/resolv.conf
+</code></pre></div>
+     If you successfully disable DNS processing, NetworkManager will not override manually configured settings.</li>
+</ol>
+<h2 id="352-manually-configure-dns-settings-by-replacing-etcresolvconf-with-symlinks">35.2. Manually configure DNS settings by replacing /etc/resolv.conf with symlinks</h2>
+<p>NetworkManager does not automatically update the DNS configuration if /etc/resolv.conf is a symbolic link. This section describes how to replace /etc/resolv.conf with symlinks to files with DNS configuration.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The rc-manager option is not set to file. To verify, use the NetworkManager --print-config command.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Create a file, such as /etc/resolv.conf.manually-configured, and add your environment's DNS configuration to it. Use the same parameters and syntax as in the original /etc/resolv.conf.</li>
+<li>Delete the /etc/resolv.conf file:
+     <div class="highlight"><pre><span></span><code># rm /etc/resolv.conf
+</code></pre></div></li>
+<li>Create a symbolic link named /etc/resolv.conf that points to /etc/resolv.conf.manually-configured :
+     <div class="highlight"><pre><span></span><code># ln -s /etc/resolv.conf.manually-configured /etc/resolv.conf
+</code></pre></div></li>
+</ol>
+<h1 id="chapter-36-monitoring-and-adjusting-nic-ring-buffer">Chapter 36 Monitoring and Adjusting NIC Ring Buffer</h1>
+<p>The receive ring buffer is a shared buffer shared between the device driver and the network interface controller (NIC). The card allocates a transmit (TX) and receive (RX) ring buffer. As the name suggests, a ring buffer is a circular buffer where overflowing data overwrites existing data. There are two methods of moving data from the NIC to the core, hardware interrupts and software interrupts, also known as SoftIRQs.</p>
+<p>The RX ring buffer is used by the kernel to store incoming packets until they can be processed by a device driver. Device drivers typically use SoftIRQ to drain the RX ring, which places incoming packets into a kernel data structure called sk_buff or skb, and the packet begins its journey through the kernel until it reaches the application owning the associated socket .</p>
+<p>The kernel uses a TX ring buffer to hold outgoing packets destined for the wire.</p>
+<p>These ring buffers sit at the bottom of the stack and are key points where packet loss can occur, which can also adversely affect network performance.</p>
+<h2 id="361-display-the-number-of-dropped-packets">36.1. Display the number of dropped packets</h2>
+<p>The ethtool utility allows administrators to query, configure, or control network driver settings.</p>
+<p>Exhaustion of the RX ring buffer results in incremented counters such as "discard" or "drop" in the output of ethtool -S interface_name. A dropped packet means that the available buffer is filling up faster than the kernel can process the packet.</p>
+<p>This section describes how to display drop counters using ethtool.</p>
+<p><strong>process</strong></p>
+<ul>
+<li>To view the drop counters for the enp1s0 interface, enter:
+     <div class="highlight"><pre><span></span><code>$ ethtool -S enp1s0
+</code></pre></div></li>
+</ul>
+<h2 id="362-increase-the-rx-ring-buffer-to-reduce-the-rate-of-packet-discarding">36.2. Increase the RX ring buffer to reduce the rate of packet discarding</h2>
+<p>The ethtool tool can help to increase the RX buffer size to reduce the high drop rate of packets.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>View the maximum value of the RX ring buffer:
+     <div class="highlight"><pre><span></span><code># ethtool -g enp1s0
+Ring parameters for enp1s0:
+Pre-set maximums:
+RX: 4080
+RX Mini: 0
+RX Jumbo: 16320
+TX: 255
+Current hardware settings:
+RX: 255
+RX Mini: 0
+RX Jumbo: 0
+TX: 255
+</code></pre></div></p>
+</li>
+<li>
+<p>If the value in the Pre-set maximums section is greater than the Current hardware settings section, increase the RX ring buffer:</p>
+<ul>
+<li>To temporarily change the RX ring buffer of the enp1s0 device to 4080, enter:
+     <div class="highlight"><pre><span></span><code># ethtool -G enp1s0 rx 4080
+</code></pre></div></li>
+<li>To permanently change the RX ring buffer, create a NetworkManager allocator script.</li>
+</ul>
+</li>
+</ol>
+<p>Note that, depending on the drivers used by your network card, changes to the ring buffer can break network connections very quickly.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

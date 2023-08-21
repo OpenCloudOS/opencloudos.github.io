@@ -1,0 +1,4012 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network13-18/">
+      
+      
+        <link rel="next" href="../Network25-30/">
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>19-24章 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#19-mac" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              19-24章
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../en/network/Network19-24/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        用户指南
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        版本说明
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      常见问题
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        参与贡献
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        生态认证
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        下载
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        测试
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          快速入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        使用说明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          用户指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          用户指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        基础配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        系统管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        内核更新
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        系统状态监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        安全加固
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          存储管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          存储管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        逻辑卷管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        可用的存储选项
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          网络管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          网络管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        1-6章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        7-12章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        13-18章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          19-24章
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        19-24章
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#191-iproute2" class="md-nav__link">
+    19.1.使用 iproute2 临时配置网卡混杂模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-nmcli" class="md-nav__link">
+    19.2.使用 nmcli 配置网卡混杂模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-nmstatectl" class="md-nav__link">
+    19.3.使用 nmstatectl 配置网卡混杂模式
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        25-30章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        31-36章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        37-42章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        43-48章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        49-54章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        55-57章
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          版本说明
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          版本说明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          参与贡献
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          参与贡献
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        如何贡献
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        文档库格式手册
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        内核开发指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          生态认证
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          生态认证
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        生态认证流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        硬件测试用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          认证兼容列表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          认证兼容列表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        硬件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        商业软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        开源软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        适配FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          CentOS停服专区
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          CentOS停服专区
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        CentOS迁移OpenCloudOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          下载
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          下载
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          测试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#191-iproute2" class="md-nav__link">
+    19.1.使用 iproute2 临时配置网卡混杂模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-nmcli" class="md-nav__link">
+    19.2.使用 nmcli 配置网卡混杂模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-nmstatectl" class="md-nav__link">
+    19.3.使用 nmstatectl 配置网卡混杂模式
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network19-24.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network19-24.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="19-mac">第19章 配置网络设备接受来自所有 MAC 地址的流量(混杂模式)</h1>
+<p>网络设备通常会拦截和读取程序所需要接收的数据包。您可以在虚拟交换机或端口组层面上，将网络设备配置为接受来自所有 MAC 地址的流量。</p>
+<p>使用这项设置可以用来：</p>
+<ul>
+<li>诊断网络连接问题，</li>
+<li>监控网络活动提高安全性，</li>
+<li>拦截传输中的私有数据或网络中的入侵。</li>
+</ul>
+<p>本章介绍了如何使用 iproute2、 nmcli 或 nmstatectl 工具来将网络设备配置为接受来自所有 MAC 地址的流量。您可以为除 InfiniBand 以外的任何类型的网络设备启用此模式。</p>
+<h2 id="191-iproute2">19.1.使用 iproute2 临时配置网卡混杂模式</h2>
+<p>本节介绍了配置网络设备来接受所有流量，而不考虑 MAC 地址。使用 iproute2 工具所做的任何更改都是临时的，并在机器重启后丢失。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>可选：显示网络接口以确定您要接收所有流量的接口：
+    <div class="highlight"><pre><span></span><code># ip a
+1: enp1s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 98:fa:9b:a4:34:09 brd ff:ff:ff:ff:ff:ff
+2: bond0: &lt;NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 6a:fd:16:b0:83:5c brd ff:ff:ff:ff:ff:ff
+3: wlp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+...
+</code></pre></div></li>
+<li>修改设备以启用或禁用 accept-all-mac-addresses 属性。<ul>
+<li>为 enp1s0 启用 accept-all-mac-addresses 模式：
+    <div class="highlight"><pre><span></span><code># ip link set enp1s0 promisc on
+</code></pre></div></li>
+<li>为 enp1s0 禁用 accept-all-mac-addresses 模式：
+    <div class="highlight"><pre><span></span><code># ip link set enp1s0 promisc off
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>验证 accept-all-mac-addresses 模式是否已启用：
+    <div class="highlight"><pre><span></span><code># ip link show enp1s0
+1: enp1s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,PROMISC,UP&gt; mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether 98:fa:9b:a4:34:09 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+    设备描述中的 PROMISC 标志表示启用了该模式。</li>
+</ul>
+<h2 id="192-nmcli">19.2.使用 nmcli 配置网卡混杂模式</h2>
+<p><strong>流程</strong></p>
+<ol>
+<li>可选：显示网络接口以确定您要接收所有流量的接口：
+    <div class="highlight"><pre><span></span><code># ip a
+1: enp1s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 98:fa:9b:a4:34:09 brd ff:ff:ff:ff:ff:ff
+2: bond0: &lt;NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 6a:fd:16:b0:83:5c brd ff:ff:ff:ff:ff:ff
+3: wlp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+...
+</code></pre></div></li>
+<li>修改设备以启用或禁用 accept-all-mac-addresses 属性。<ul>
+<li>为 enp1s0 启用 accept-all-mac-addresses 模式：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 ethernet.accept-all-mac-addresses yes
+</code></pre></div></li>
+<li>为 enp1s0 禁用 accept-all-mac-addresses 模式：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 ethernet.accept-all-mac-addresses no
+</code></pre></div></li>
+</ul>
+</li>
+<li>重启网卡以应用更改：
+    <div class="highlight"><pre><span></span><code># nmcli connection up enp1s0
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>验证 ethernet.accept-all-mac-addresses 模式是否已启用：
+    <div class="highlight"><pre><span></span><code># nmcli connection show enp1s0
+...
+802-3-ethernet.accept-all-mac-addresses:1     (true)
+</code></pre></div>
+    802-3-ethernet.accept-all-mac-addresses: true 表示该模式已启用。</li>
+</ul>
+<h2 id="193-nmstatectl">19.3.使用 nmstatectl 配置网卡混杂模式</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>nmstate 软件包已安装</li>
+<li>用于配置设备的 .yml 文件可用</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>编辑或新建 enp1s0.yml 文件，修改 accept -all-mac-address: true ：
+    <div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: enp1s0
+    type: ethernet
+    state: up
+    accept -all-mac-address: true
+</code></pre></div></li>
+<li>应用设置：
+    <div class="highlight"><pre><span></span><code># nmstatectl apply /enp1s0.yml
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>验证 ethernet.accept-all-mac-addresses 模式是否已启用：
+    <div class="highlight"><pre><span></span><code># nmcli connection show enp1s0
+...
+802-3-ethernet.accept-all-mac-addresses:1     (true)
+</code></pre></div>
+    802-3-ethernet.accept-all-mac-addresses: true 表示该模式已启用。</li>
+</ul>
+<h1 id="20-8021x">第20章 设置 802.1x 网络身份验证服务</h1>
+<p>IEEE 802.1X 标准定义了安全身份验证和授权方法，以保护网络不接受未授权的客户端。使用 hostapd 服务和 FreeRADIUS，您可以在您的网络中提供网络访问控制(NAC)。</p>
+<p>在本文档中，主机充当一个网桥，以使用现有的网络连接不同的客户端。但是，主机只授权认证的客户端可以访问网络。</p>
+<p><img alt="authenticator-802-1x" src="../assets/authenticator-802-1x.png" /></p>
+<h2 id="201-freeradius">20.1.安装 freeradius</h2>
+<div class="highlight"><pre><span></span><code># yum install freeradius
+</code></pre></div>
+<p>如果 freeradius 软件包已安装，请删除 /etc/raddb/ 目录，卸载，然后再次安装该软件包。不要使用 yum reinstall 命令重新安装软件包，因为 /etc/raddb/ 目录中的权限和符号链接会不同。</p>
+<h2 id="202">20.2.在验证主机上设置网桥</h2>
+<p>网桥是一个链路层设备，它根据 MAC 地址表在主机和网络之间转发流量。如果将主机设置为 802.1X 验证器，请将要在其上执行身份验证的接口和 LAN 接口添加到网桥。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>主机有多个网卡接口</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建网桥：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type bridge con-name br0 ifname br0
+</code></pre></div></li>
+<li>将太网接口分配给网桥：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet slave-type bridge con-name br0-port1 ifname enp1s0 master br0
+# nmcli connection add type ethernet slave-type bridge con-name br0-port2 ifname enp7s0 master br0
+# nmcli connection add type ethernet slave-type bridge con-name br0-port3 ifname enp8s0 master br0
+# nmcli connection add type ethernet slave-type bridge con-name br0-port4 ifname enp9s0 master br0
+</code></pre></div></li>
+<li>启用网桥以转发 LAN(EAPOL)数据包上的可扩展验证协议：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify br0 group-forward-mask 8
+</code></pre></div></li>
+<li>配置连接以自动激活端口：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify br0 connection.autoconnect-slaves 1
+</code></pre></div></li>
+<li>激活网卡连接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up br0
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示作为网桥端口的设备状态：
+    <div class="highlight"><pre><span></span><code># ip link show master br0
+3: enp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master br0 state UP mode DEFAULT group default qlen 1000
+link/ether 52:54:00:62:61:0e brd ff:ff:ff:ff:ff:ff
+...
+</code></pre></div></li>
+<li>查看 br0 上是否启用了 EAPOL 数据包的转发：
+    <div class="highlight"><pre><span></span><code># cat /sys/class/net/br0/bridge/group_fwd_mask
+0x8
+</code></pre></div>
+    如果返回值为 0x8 ，则说明启用了转发。</li>
+</ol>
+<h2 id="203freeradius">20.3.FreeRADIUS 的证书要求</h2>
+<p>在使用 FreeRADIUS 安全服务时，您需要不同的 TLS 证书来满足不同的目的：</p>
+<ul>
+<li>
+<p>用于加密连接到服务器的 TLS 服务器证书。使用信任的证书颁发机构(CA)来发布证书。
+服务器证书要求将扩展密钥使用(EKU)字段设为 TLS Web Server Authentication。</p>
+</li>
+<li>
+<p>由同一 CA 为扩展身份验证协议传输层安全(EAP-TLS)发布的客户端证书。EAP-TLS 提供基于证书的身份验证，并默认启用。
+客户端证书需要其 EKU 字段设为 TLS Web Client Authentication。</p>
+</li>
+</ul>
+<p>如果要保证连接的私密性，请使用您公司的 CA 或创建自己的 CA 来为 FreeRADIUS 发布证书。如果使用公共 CA，则您将允许其验证用户，并为 EAP-TLS 发布客户端证书。</p>
+<h2 id="204-freeradius">20.4.在 FreeRADIUS 服务器上，创建一组测试证书</h2>
+<p>出于测试目的，freeradius 软件包会在 /etc/raddb/certs/ 目录中安装脚本和配置文件，以创建自己的证书颁发机构(CA)并发布证书。</p>
+<p>如果您使用默认配置，这些脚本生成的证书会在 60 天后过期，密钥使用不安全的密码("whatever")。您也可以自定义 CA、服务器和客户端配置。</p>
+<p>按流程创建以下所需的文件：</p>
+<ul>
+<li>/etc/raddb/certs/ca.pem: CA 证书</li>
+<li>/etc/raddb/certs/server.key: 服务器证书的私钥</li>
+<li>/etc/raddb/certs/server.pem: 服务器证书</li>
+<li>/etc/raddb/certs/client.key: 客户端证书的私钥</li>
+<li>/etc/raddb/certs/client.pem: 客户端证书</li>
+</ul>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 freeradius 。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>进入 /etc/raddb/certs/ 目录：
+    <div class="highlight"><pre><span></span><code># cd /etc/raddb/certs/
+</code></pre></div></li>
+<li>可选：自定义 CA 配置 ca.conf：
+    <div class="highlight"><pre><span></span><code>...
+[ req ]
+default_bits            = 2048
+input_password          = ca_password
+output_password         = ca_password
+...
+[certificate_authority]
+countryName             = US
+stateOrProvinceName     = North Carolina
+localityName            = Raleigh
+organizationName        = Example Inc.
+emailAddress            = admin@example.org
+commonName              = &quot;Example Certificate Authority&quot;
+...
+</code></pre></div></li>
+<li>可选：自定义服务器配置 server.cnf：
+    <div class="highlight"><pre><span></span><code>...
+[ CA_default ]
+default_days            = 730
+...
+[ req ]
+distinguished_name      = server
+default_bits            = 2048
+input_password          = key_password
+output_password         = key_password
+...
+[server]
+countryName             = US
+stateOrProvinceName     = North Carolina
+localityName            = Raleigh
+organizationName        = Example Inc.
+emailAddress            = admin@example.org
+commonName              = &quot;Example Server Certificate&quot;
+...
+</code></pre></div></li>
+<li>可选：自定义客户端配置 client.cnf：
+    <div class="highlight"><pre><span></span><code>...
+[ CA_default ]
+default_days            = 365
+...
+[ req ]
+distinguished_name      = client
+default_bits            = 2048
+input_password          = password_on_private_key
+output_password         = password_on_private_key
+...
+[client]
+countryName             = US
+stateOrProvinceName     = North Carolina
+localityName            = Raleigh
+organizationName        = Example Inc.
+emailAddress            = user@example.org
+commonName              = user@example.org
+...
+</code></pre></div></li>
+<li>创建证书：
+    <div class="highlight"><pre><span></span><code># make all
+</code></pre></div></li>
+<li>将 /etc/raddb/certs/server.pem 文件中的组更改为 radiusd ：
+    <div class="highlight"><pre><span></span><code># chgrp radiusd /etc/raddb/certs/server.pem*
+</code></pre></div></li>
+</ol>
+<h2 id="205-freeradius-eap">20.5.配置 FreeRADIUS 以使用 EAP 安全地验证网络客户端</h2>
+<p>FreeRADIUS 支持不同的扩展验证协议(EAP)。但是出于网络安全的目的，本文档介绍了如何配置 FreeRADIUS 来支持以下安全 EAP 身份验证方法：</p>
+<ul>
+<li>EAP-TLS（传输层安全协议）使用安全 TLS 连接来验证使用证书的客户端。要使用 EAP-TLS，需要每个网络客户端的 TLS 客户端证书，以及服务器的服务器证书。请注意，同样的证书颁发机构(CA)必须已发布了证书。始终使用您自己的 CA 来创建证书，因为您使用的 CA 发布的所有客户端证书都可以向 FreeRADIUS 服务器进行身份验证。</li>
+<li>EAP-TTLS（隧道传输层安全协议）使用安全 TLS 连接，并使用密码认证协议(PAP)或挑战握手身份验证协议(CHAP)等机制来验证客户端。要使用 EAP-TTLS，您需要一个 TLS 服务器证书。</li>
+<li>EAP-PEAP（受保护的身份验证协议）使用安全 TLS 连接作为外部身份验证协议来设置隧道。验证器验证 RADIUS 服务器的证书。之后，请求方通过使用 Microsoft 挑战握手身份验证协议版本 2(MS-CHAPv2)或其他方法加密的隧道来进行身份验证。
+默认的 FreeRADIUS 配置文件充当了描述了所有参数和指令的文档。如果要禁用某些特性，请注释掉它们，而不是删除配置文件中的相应部分。这可让您保留配置文件和包含的文档的结构。</li>
+</ul>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 freeradius 。</li>
+<li>/etc/raddb/ 目录中的配置文件保持不变，与 freeradius 软件提供的一样。</li>
+<li>服务器存在以下文件：</li>
+<li>FreeRADIUS 主机的 TLS 私钥：/etc/raddb/certs/server.key</li>
+<li>FreeRADIUS 主机的 TLS 服务器证书：/etc/raddb/certs/server.pem</li>
+<li>TLS CA 证书：/etc/raddb/certs/ca.pem
+  如果您将文件存储在不同的位置或者它们有不同的名称，请在 /etc/raddb/mods-available/eap 文件中相应地设置 private_key_file、certificate_file 和 ca_file 参数。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>如果带有 Diffie-Hellman(DH)参数的 /etc/raddb/certs/dh 不存在，就创建一个。例如，要创建带有 2048 位素数的 DH 文件，请输入：
+<div class="highlight"><pre><span></span><code>#openssl dhparam -out /etc/raddb/certs/dh 2048
+</code></pre></div>
+为了安全起见，请不要使用小于 2048 位素数的 DH 文件。根据位数，文件的创建可能需要几分钟。</li>
+<li>使用 DH 参数对 TLS 私钥、服务器证书、CA 证书和文件设置安全权限：
+<div class="highlight"><pre><span></span><code># chmod 640 /etc/raddb/certs/server.key /etc/raddb/certs/server.pem /etc/raddb/certs/ca.pem /etc/raddb/certs/dh
+# chown root:radiusd /etc/raddb/certs/server.key /etc/raddb/certs/server.pem /etc/raddb/certs/ca.pem /etc/raddb/certs/dh
+</code></pre></div></li>
+<li>编辑 /etc/raddb/mods-available/eap 文件：<ol>
+<li>在 private_key_password 参数中设置私钥的密码：
+<div class="highlight"><pre><span></span><code>eap {
+    ...
+    tls-config tls-common {
+        ...
+        private_key_password = key_password
+        ...
+    }
+}
+</code></pre></div></li>
+<li>根据您的环境，将 eap 指令中的 default_eap_type 参数设为您使用的主要 EAP 类型：
+<div class="highlight"><pre><span></span><code>eap {
+    ...
+    default_eap_type = ttls
+    ...
+}
+</code></pre></div>
+出于安全性考虑，请仅使用 ttls、tls 或 peap。</li>
+<li>注释掉 md5 指令，以禁用不安全的 EAP-MD5 身份验证方法：
+<div class="highlight"><pre><span></span><code>eap {
+    ...
+    # md5 {
+    # }
+    ...
+}
+</code></pre></div></li>
+</ol>
+</li>
+<li>编辑 /etc/raddb/sites-available/default 文件，然后注释掉 eap 以外的所有身份验证方法：
+<div class="highlight"><pre><span></span><code>authenticate {
+    ...
+    # Auth-Type PAP {
+    #     pap
+    # }
+
+    # Auth-Type CHAP {
+    #     chap
+    # }
+
+    # Auth-Type MS-CHAP {
+    #     mschap
+    # }
+
+    # mschap
+
+    # digest
+    ...
+}
+</code></pre></div>
+这只会启用 EAP，并禁用纯文本身份验证方法。</li>
+<li>编辑 /etc/raddb/clients.conf 文件：<ol>
+<li>在 localhost 和 localhost_ipv6 客户端指令中设置安全密码：
+<div class="highlight"><pre><span></span><code>client localhost {
+    ipaddr = 127.0.0.1
+    ...
+    secret = client_password
+    ...
+}
+
+client localhost_ipv6 {
+    ipv6addr = ::1
+    secret = client_password
+}
+</code></pre></div></li>
+<li>如果远程主机上的 RADIUS 客户端（如网络验证器）应能够访问 FreeRADIUS 服务，请为它们添加相应的客户端指令：
+<div class="highlight"><pre><span></span><code>client hostapd.example.org {
+    ipaddr = 192.0.2.2/32
+    secret = client_password
+}
+</code></pre></div>
+ipaddr 参数接受 IPv4 和 IPv6 地址，您可以使用可选的无类别域间路由(CIDR)表示法来指定范围。但是，在这个参数中您只能设置一个值。例如，若要授予对 IPv4 和 IPv6 地址的访问权限，请添加两个客户端指令。
+为客户端指令使用一个描述性名称，如主机名或一个描述 IP 范围在哪里使用的词语。</li>
+</ol>
+</li>
+<li>如果要使用 EAP-TTLS 或 EAP-PEAP，请将用户添加到 /etc/raddb/users 文件中：
+<div class="highlight"><pre><span></span><code>example_user        Cleartext-Password := &quot;user_password&quot;
+</code></pre></div></li>
+<li>验证配置文件：
+<div class="highlight"><pre><span></span><code># radiusd -XC
+...
+Configuration appears to be OK
+</code></pre></div></li>
+<li>启用并启动 radiusd 服务：
+<div class="highlight"><pre><span></span><code># systemctl enable --now radiusd
+</code></pre></div></li>
+</ol>
+<p><strong>故障排除</strong></p>
+<ol>
+<li>停止 radiusd 服务：
+<div class="highlight"><pre><span></span><code># systemctl stop radiusd
+</code></pre></div></li>
+<li>以debug 模式启动该服务：
+<div class="highlight"><pre><span></span><code># radiusd -X
+...
+Ready to process requests
+</code></pre></div></li>
+<li>在 FreeRADIUS 主机上执行验证测试，如 20.7 、20.8 小节中所述。</li>
+</ol>
+<h2 id="206-hostapd">20.6.在有线网络中将 hostapd 配置为验证器</h2>
+<p>主机访问点守护进程（hostapd）服务可在有线网络中充当验证器，来提供 802.1X 身份验证。为此，hostapd 服务需要一个用来验证客户端的 RADIUS 服务器。</p>
+<p>hostapd 服务提供集成的 RADIUS 服务器。但是，使用集成的 RADIUS 服务器只用于测试目的。对于生产环境，请使用 FreeRADIUS 服务器，它支持其他特性，如不同的身份验证方法和访问控制。</p>
+<p>hostapd 服务不与流量平面交互。该服务仅充当身份验证器。例如，使用脚本或服务，该脚本或服务使用 hostapd 控制接口、根据身份验证事件的结果来允许或拒绝流量。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 hostapd 软件包</li>
+<li>FreeRADIUS 服务器已配置，可以对客户端进行身份验证。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>使用以下内容创建 /etc/hostapd/hostapd.conf 文件：
+<div class="highlight"><pre><span></span><code># General settings of hostapd
+# ===========================
+
+# Control interface settings
+ctrl_interface=/var/run/hostapd
+ctrl_interface_group=wheel
+
+# Enable logging for all modules
+logger_syslog=-1
+logger_stdout=-1
+
+# Log level
+logger_syslog_level=2
+logger_stdout_level=2
+
+
+# Wired 802.1X authentication
+# ===========================
+
+# Driver interface type
+driver=wired
+
+# Enable IEEE 802.1X authorization
+ieee8021x=1
+
+# Use port access entry (PAE) group address
+# (01:80:c2:00:00:03) when sending EAPOL frames
+use_pae_group_addr=1
+
+
+# Network interface for authentication requests
+interface=br0
+
+
+# RADIUS client configuration
+# ===========================
+
+# Local IP address used as NAS-IP-Address
+own_ip_addr=192.0.2.2
+
+# Unique NAS-Identifier within scope of RADIUS server
+nas_identifier=hostapd.example.org
+
+# RADIUS authentication server
+auth_server_addr=192.0.2.1
+auth_server_port=1812
+auth_server_shared_secret=client_password
+
+# RADIUS accounting server
+acct_server_addr=192.0.2.1
+acct_server_port=1813
+acct_server_shared_secret=client_password
+</code></pre></div>
+有关此配置中使用的参数的详情，请查看 /usr/share/doc/hostapd/hostapd/hostapd.conf 示例配置文件中的描述。</li>
+<li>启用 hostapd 服务：
+<div class="highlight"><pre><span></span><code># systemctl enable --now hostapd
+</code></pre></div></li>
+</ol>
+<p><strong>故障排除</strong></p>
+<ol>
+<li>停止 radiusd 服务：
+<div class="highlight"><pre><span></span><code># systemctl stop radiusd
+</code></pre></div></li>
+<li>以debug 模式启动该服务：
+<div class="highlight"><pre><span></span><code># radiusd -X
+...
+Ready to process requests
+</code></pre></div></li>
+<li>在 FreeRADIUS 主机上执行验证测试，如 20.7 、20.8 小节中所述。</li>
+</ol>
+<h2 id="207-freeradius-eap-ttls">20.7. 针对 FreeRADIUS 服务器或验证器测试 EAP-TTLS 身份验证</h2>
+<p>要测试在隧道传输层安全协议(EAP-TTLS)上使用可扩展身份验证协议(EAP-TTLS)的身份验证是否按预期工作，请运行此流程：</p>
+<ul>
+<li>设置 FreeRADIUS 服务器。</li>
+<li>将 hostapd 服务设为 802.1X 网络身份验证验证器。</li>
+</ul>
+<p>此流程中使用的测试工具的输出提供有关 EAP 通信的其他信息，可以帮助您调试问题。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>当您要验证：</li>
+<li>FreeRADIUS 服务器：<ul>
+<li>hostapd 软件包提供的 eapol_test 工具已安装。</li>
+<li>您在其上运行此流程的客户端已在 FreeRADIUS 服务器的客户端数据库中被授权。</li>
+</ul>
+</li>
+<li>由同名软件包提供的验证器 wpa_supplicant 工具已安装。</li>
+<li>您在 /etc/pki/tls/certs/ca.pem 文件中存储了证书颁发机构(CA)证书。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>使用以下内容创建 /etc/wpa_supplicant/wpa_supplicant-TTLS.conf 文件：
+    <div class="highlight"><pre><span></span><code>    ap_scan=0
+
+network={
+    eap=TTLS
+    eapol_flags=0
+    key_mgmt=IEEE8021X
+
+    # Anonymous identity (sent in unencrypted phase 1)
+    # Can be any string
+    anonymous_identity=&quot;anonymous&quot;
+
+    # Inner authentication (sent in TLS-encrypted phase 2)
+    phase2=&quot;auth=PAP&quot;
+    identity=&quot;example_user&quot;
+    password=&quot;user_password&quot;
+
+    # CA certificate to validate the RADIUS server&#39;s identity
+    ca_cert=&quot;/etc/pki/tls/certs/ca.pem&quot;
+}
+</code></pre></div></li>
+<li>要向以下进行身份验证：<ul>
+<li>FreeRADIUS 服务器，请输入：
+    <div class="highlight"><pre><span></span><code># eapol_test -c /etc/wpa_supplicant/wpa_supplicant-TTLS.conf -a 192.0.2.1 -s client_password
+...
+EAP: Status notification: remote certificate verification (param=success)
+...
+CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+SUCCESS
+</code></pre></div>
+    -a 选项定义了 FreeRADIUS 服务器的 IP 地址，而 -s 选项指定您要在其上运行 FreeRADIUS 服务器的客户端配置中命令的主机的密码。</li>
+<li>验证器，请输入：
+    <div class="highlight"><pre><span></span><code># wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant-TTLS.conf -D wired -i enp0s31f6
+...
+enp0s31f6: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+</code></pre></div>
+    -i 选项指定 wpa_supplicant 通过 LAN(EAPOL)数据包发送扩展验证协议的网络接口名称。
+    若要了解更多调试信息，请将 -d 选项传给命令。</li>
+</ul>
+</li>
+</ol>
+<h2 id="208-freeradius-eap-tls">20.8.针对 FreeRADIUS 服务器或验证器测试 EAP-TLS 身份验证</h2>
+<p>要测试使用可扩展身份验证协议(EAP)传输层安全(EAP-TLS)的身份验证是否按预期工作，请执行以下流程：</p>
+<ul>
+<li>设置 FreeRADIUS 服务器。</li>
+<li>将 hostapd 服务设为 802.1X 网络身份验证验证器。</li>
+</ul>
+<p>此流程中使用的测试工具的输出提供有关 EAP 通信的其他信息，可以帮助您调试问题。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>当您要验证：</li>
+<li>FreeRADIUS 服务器：<ul>
+<li>hostapd 软件包提供的 eapol_test 工具已安装。</li>
+<li>您在其上运行此流程的客户端已在 FreeRADIUS 服务器的客户端数据库中被授权。</li>
+</ul>
+</li>
+<li>由同名软件包提供的验证器 wpa_supplicant 工具已安装。</li>
+<li>您在 /etc/pki/tls/certs/ca.pem 文件中存储了证书颁发机构(CA)证书。</li>
+<li>发布客户端证书的 CA 与发布 FreeRADIUS 服务器的服务器证书的 CA 是同一个。</li>
+<li>您将客户端证书存储在 /etc/pki/tls/certs/client.pem 文件中。</li>
+<li>将客户端的私钥存储在 /etc/pki/tls/private/client.key中</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>使用以下内容创建 /etc/wpa_supplicant/wpa_supplicant-TTLS.conf 文件：
+    <div class="highlight"><pre><span></span><code>ap_scan=0
+
+network={
+    eap=TLS
+    eapol_flags=0
+    key_mgmt=IEEE8021X
+
+    identity=&quot;user@example.org&quot;
+    client_cert=&quot;/etc/pki/tls/certs/client.pem&quot;
+    private_key=&quot;/etc/pki/tls/private/client.key&quot;
+    private_key_passwd=&quot;password_on_private_key&quot;
+
+    # CA certificate to validate the RADIUS server&#39;s identity
+    ca_cert=&quot;/etc/pki/tls/certs/ca.pem&quot;
+}
+</code></pre></div></li>
+<li>要向以下进行身份验证：<ul>
+<li>FreeRADIUS 服务器，请输入：
+    <div class="highlight"><pre><span></span><code># eapol_test -c /etc/wpa_supplicant/wpa_supplicant-TLS.conf -a 192.0.2.1 -s client_password
+...
+EAP: Status notification: remote certificate verification (param=success)
+...
+CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+SUCCESS
+</code></pre></div>
+    -a 选项定义了 FreeRADIUS 服务器的 IP 地址，而 -s 选项指定您要在其上运行 FreeRADIUS 服务器的客户端配置中命令的主机的密码。</li>
+<li>验证器，请输入：
+    <div class="highlight"><pre><span></span><code># wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant-TLS.conf -D wired -i enp0s31f6
+...
+enp0s31f6: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+</code></pre></div>
+    -i 选项指定 wpa_supplicant 通过 LAN(EAPOL)数据包发送扩展验证协议的网络接口名称。
+    若要了解更多调试信息，请将 -d 选项传给命令。</li>
+</ul>
+</li>
+</ol>
+<h2 id="209-hostapd">20.9.根据 hostapd 验证事件阻止和允许流量</h2>
+<p>hostapd 服务不与流量平面交互。该服务仅充当身份验证器。但是，您可以编写一个脚本，根据身份验证事件的结果来允许或拒绝流量。</p>
+<p>此流程不受支持，没有企业级的解决方案。它只演示如何通过评估由 hostapd_cli 检索的事件来阻止或允许流量。</p>
+<p>当 802-1x-tr-mgmt systemd 服务启动时，OpenCloudOS 会阻止 hostapd 监听端口上的所有流量，但 LAN(EAPOL)数据包上可扩展验证协议除外，并使用 hostapd_cli 工具连接到 hostapd 控制接口。/usr/local/bin/802-1x-tr-mgmt 脚本随后评估事件。根据 hostapd_cli 收到的不同事件，该脚本允许或阻止 MAC 地址的流量。请注意，当 802-1x-tr-mgmt 服务停止时，所有流量会自动允许。</p>
+<p>在 hostapd 服务器上执行此流程。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>hostapd 服务已配置，服务已准备好对客户端进行身份验证。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用以下内容创建 /usr/local/bin/802-1x-tr-mgmt 文件：
+<div class="highlight"><pre><span></span><code>#!/bin/sh
+
+if [ &quot;x$1&quot; == &quot;xblock_all&quot; ]
+then
+
+    nft delete table bridge tr-mgmt-br0 2&gt;/dev/null || true
+    nft -f - &lt;&lt; EOF
+table bridge tr-mgmt-br0 {
+        set allowed_macs {
+                type ether_addr
+        }
+
+        chain accesscontrol {
+                ether saddr @allowed_macs accept
+                ether daddr @allowed_macs accept
+                drop
+        }
+
+        chain forward {
+                type filter hook forward priority 0; policy accept;
+                meta ibrname &quot;br0&quot; jump accesscontrol
+        }
+}
+EOF
+    echo &quot;802-1x-tr-mgmt Blocking all traffic through br0. Traffic for given host will be allowed after 802.1x authentication&quot;
+
+elif [ &quot;x$1&quot; == &quot;xallow_all&quot; ]
+then
+
+    nft delete table bridge tr-mgmt-br0
+    echo &quot;802-1x-tr-mgmt Allowed all forwarding again&quot;
+
+fi
+
+case ${2:-NOTANEVENT} in
+
+    AP-STA-CONNECTED | CTRL-EVENT-EAP-SUCCESS | CTRL-EVENT-EAP-SUCCESS2)
+        nft add element bridge tr-mgmt-br0 allowed_macs { $3 }
+        echo &quot;$1: Allowed traffic from $3&quot;
+        ;;
+
+    AP-STA-DISCONNECTED | CTRL-EVENT-EAP-FAILURE)
+        nft delete element bridge tr-mgmt-br0 allowed_macs { $3 }
+        echo &quot;802-1x-tr-mgmt $1: Denied traffic from $3&quot;
+        ;;
+
+esac
+</code></pre></div></p>
+</li>
+<li>
+<p>使用以下内容创建 /etc/systemd/system/802-1x-tr-mgmt@.service systemd 服务文件：
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=Example 802.1x traffic management for hostapd
+After=hostapd.service
+After=sys-devices-virtual-net-%i.device
+
+[Service]
+Type=simple
+ExecStartPre=-/bin/sh -c &#39;/usr/sbin/tc qdisc del dev %i ingress &gt; /dev/null 2&gt;&amp;1&#39;
+ExecStartPre=-/bin/sh -c &#39;/usr/sbin/tc qdisc del dev %i clsact &gt; /dev/null 2&gt;&amp;1&#39;
+ExecStartPre=/usr/sbin/tc qdisc add dev %i clsact
+ExecStartPre=/usr/sbin/tc filter add dev %i ingress pref 10000 protocol 0x888e matchall action ok index 100
+ExecStartPre=/usr/sbin/tc filter add dev %i ingress pref 10001 protocol all matchall action drop index 101
+ExecStart=/usr/sbin/hostapd_cli -i %i -a /usr/local/bin/802-1x-tr-mgmt
+ExecStopPost=-/usr/sbin/tc qdisc del dev %i clsact
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></p>
+</li>
+<li>
+<p>重新载入 systemd：
+<div class="highlight"><pre><span></span><code># systemctl daemon-reload
+</code></pre></div></p>
+</li>
+<li>
+<p>启动接口 hostapd 正在侦听的 802-1x-tr-mgmt 服务：
+<div class="highlight"><pre><span></span><code># systemctl enable --now 802-1x-tr-mgmt@br0.service
+</code></pre></div></p>
+</li>
+</ol>
+<h1 id="21-8021x">第21章 使用证书保存在文件系统上的 802.1X 标准来向网络验证客户端</h1>
+<p>管理员通常使用基于 IEEE 802.1X 标准的基于端口的网络访问控制（NAC）来保护网络不受未授权 LAN 和 Wi-Fi 客户端的影响。本章中的步骤描述了配置网络身份验证的不同选项。</p>
+<h2 id="211-nmcli-8021x">21.1.使用 nmcli 在现有以太网连接中配置 802.1X 网络身份验证</h2>
+<p>使用 nmcli 工具，您可以将客户端配置为向网络进行身份验证。本节介绍了如何在名为 enp1s0 的现有以太网连接配置文件中配置 TLS 身份验证，以向网络进行身份验证。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络支持 802.1X 网络身份验证。</li>
+<li>以太网连接配置集存在于 NetworkManager 中，且具有有效的 IP 配置。</li>
+<li>
+<p>客户端上存在 TLS 身份验证所需的以下文件：</p>
+</li>
+<li>
+<p>客户端密钥存储在 /etc/pki/tls/private/client.key 文件中，该文件归 root 用户所有，且只对 root 可读。</p>
+</li>
+<li>客户端证书存储在 /etc/pki/tls/certs/client.crt 文件中。</li>
+<li>证书颁发机构(CA)证书存储在 /etc/pki/tls/certs/ca.crt 文件中。</li>
+<li>wpa_supplicant 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>将扩展验证协议(EAP)设置为 tls，将路径设置为客户端证书和密钥文件：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.eap tls 802-1x.client-cert /etc/pki/tls/certs/client.crt 802-1x.private-key /etc/pki/tls/certs/certs/client.key
+</code></pre></div>
+    请注意，您必须在同一个命令中设置 802-1x.eap、802-1x.client-cert 和 802-1x.private-key 参数。</li>
+<li>设置 CA 证书的路径：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.ca-cert /etc/pki/tls/certs/ca.crt
+</code></pre></div></li>
+<li>设置证书中使用的用户的身份：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.identity user@example.com
+</code></pre></div></li>
+<li>
+<p>另外，还可将该密码存储在配置中：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.private-key-password password
+</code></pre></div></p>
+<p>默认情况下，NetworkManager 在 /etc/sysconfig/network-scripts/keys-connection_name 文件中以明文形式保存密码，该文件只对 root 用户可读。但是，在配置文件中清除文本密码会有安全隐患。</p>
+<p>要提高安全性，请将 802-1x.password-flags 参数设为 0x1。有了这个设置，在具有 GNOME 桌面环境或运行 nm-applet 的服务器上，NetworkManager 可以从这些服务中检索密码。在其他情况下，NetworkManager 会提示输入密码。
+5. 激活连接配置集：
+<div class="highlight"><pre><span></span><code># nmcli connection up enp1s0
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="212-nmstatectl-8021x">21.2.使用 nmstatectl 配置带有 802.1X 网络身份验证的静态以太网连接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络支持 802.1X 网络身份验证。</li>
+<li>以太网连接配置集存在于 NetworkManager 中，且具有有效的 IP 配置。</li>
+<li>
+<p>客户端上存在 TLS 身份验证所需的以下文件：</p>
+</li>
+<li>
+<p>客户端密钥存储在 /etc/pki/tls/private/client.key 文件中，该文件归 root 用户所有，且只对 root 可读。</p>
+</li>
+<li>客户端证书存储在 /etc/pki/tls/certs/client.crt 文件中。</li>
+<li>证书颁发机构(CA)证书存储在 /etc/pki/tls/certs/ca.crt 文件中。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建 YAML 文件 ~/create-ethernet-profile.yml ：
+    <div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: enp1s0
+type: ethernet
+state: up
+ipv4:
+    enabled: true
+    address:
+    - ip: 192.0.2.1
+    prefix-length: 24
+    dhcp: false
+ipv6:
+    enabled: true
+    address:
+    - ip: 2001:db8:1::1
+    prefix-length: 64
+    autoconf: false
+    dhcp: false
+802.1x:
+    ca-cert: /etc/pki/tls/certs/ca.crt
+    client-cert: /etc/pki/tls/certs/client.crt
+    eap-methods:
+    - tls
+    identity: client.example.org
+    private-key: /etc/pki/tls/private/client.key
+    private-key-password: password
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.254
+    next-hop-interface: enp1s0
+- destination: ::/0
+    next-hop-address: 2001:db8:1::fffe
+    next-hop-interface: enp1s0
+dns-resolver:
+config:
+    search:
+    - example.com
+    server:
+    - 192.0.2.200
+    - 2001:db8:1::ffbb
+</code></pre></div></li>
+<li>应用配置：
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-ethernet-profile.yml
+</code></pre></div></li>
+</ol>
+<h2 id="rhel-system-roles-8021x">使用 rhel-system-roles 配置带有 802.1X 网络身份验证的静态以太网连接</h2>
+<p>在 Ansible 控制节点上运行此步骤。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>ansible 和 rhel-system-roles 软件包已安装在控制节点上。</li>
+<li>如果您使用非 root 用户运行 playbook ，请确保该用户在受管节点上具有合适的 sudo 权限。</li>
+<li>网络支持 802.1X 网络身份验证。</li>
+<li>以太网连接配置集存在于 NetworkManager 中，且具有有效的 IP 配置。</li>
+<li>
+<p>客户端上存在 TLS 身份验证所需的以下文件：</p>
+</li>
+<li>
+<p>客户端密钥存储在 /etc/pki/tls/private/client.key 文件中，该文件归 root 用户所有，且只对 root 可读。</p>
+</li>
+<li>客户端证书存储在 /etc/pki/tls/certs/client.crt 文件中。</li>
+<li>证书颁发机构(CA)证书存储在 /etc/pki/tls/certs/ca.crt 文件中。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>将执行 playbook 的主机 IP 添加到 /etc/ansible/hosts Ansible 清单中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></li>
+<li>创建 playbook ~/enable-802.1x.yml :
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with 802.1X authentication
+hosts: node.example.com
+become: true
+tasks:
+    - name: Copy client key for 802.1X authentication
+    copy:
+        src: &quot;/srv/data/client.key&quot;
+        dest: &quot;/etc/pki/tls/private/client.key&quot;
+        mode: 0600
+
+    - name: Copy client certificate for 802.1X authentication
+    copy:
+        src: &quot;/srv/data/client.crt&quot;
+        dest: &quot;/etc/pki/tls/certs/client.crt&quot;
+
+    - name: Copy CA certificate for 802.1X authentication
+    copy:
+        src: &quot;/srv/data/ca.crt&quot;
+        dest: &quot;/etc/pki/ca-trust/source/anchors/ca.crt&quot;
+
+    - include_role:
+        name: rhel-system-roles.network
+    vars:
+        network_connections:
+        - name: enp1s0
+            type: ethernet
+            autoconnect: yes
+            ip:
+            address:
+                - 192.0.2.1/24
+                - 2001:db8:1::1/64
+            gateway4: 192.0.2.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+                - 192.0.2.200
+                - 2001:db8:1::ffbb
+            dns_search:
+                - example.com
+            ieee802_1x:
+            identity: user_name
+            eap: tls
+            private_key: &quot;/etc/pki/tls/private/client.key&quot;
+            private_key_password: &quot;password&quot;
+            client_cert: &quot;/etc/pki/tls/certs/client.crt&quot;
+            ca_cert: &quot;/etc/pki/ca-trust/source/anchors/ca.crt&quot;
+            domain_suffix_match: example.com
+            state: up
+</code></pre></div></li>
+<li>
+<p>运行 playbook：</p>
+<ul>
+<li>要以 root 用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/enable-802.1x.yml
+</code></pre></div></li>
+<li>以用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-static-IP.yml
+</code></pre></div>
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</li>
+</ul>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<h1 id="22">第22章 管理默认网关设置</h1>
+<p>默认网关是在没有其他路由与数据包的目的地匹配时转发网络数据包的路由器。在本地网络中，默认网关通常是与距离互联网一跳的主机。</p>
+<h2 id="221-nmcli">22.1.使用 nmcli 在现有网络连接上设置默认网关</h2>
+<p>在大多数情况下，管理员会在创建连接时设置默认网关，本节讲述了如何使用 nmcli 工具在之前创建的连接上设置或更新默认网关。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>至少需要在设置默认网关的连接上配置一个静态 IP 地址。</li>
+<li>如果用户能够在物理控制台中登录，说明用户权限足够。否则，用户必须具有 root 权限。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>设置默认网关 IP 地址。
+    例如，要将 example 的默认网关的 IPv4 地址设为 192.0.2.1 ：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify example ipv4.gateway &quot;192.0.2.1&quot;
+</code></pre></div>
+    将 example 的默认网关的 IPv6 地址设为 2001:db8:1::1 ：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify example ipv6.gateway &quot;2001:db8:1::1&quot;
+</code></pre></div></li>
+<li>重启网络连接以使更改生效。例如，要使用命令行重启 example 连接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up example
+</code></pre></div></li>
+<li>（可选）验证路由是否活跃。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.0.2.1 dev example proto static metric 100
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></li>
+</ol>
+<h2 id="222-nmcli">22.2.使用 nmcli 互动模式在现有网络连接上设置默认网关</h2>
+<p>在大多数情况下，管理员会在创建连接时设置默认网关，如 使用 nmcli 交互式编辑器配置动态以太网连接 中所述。</p>
+<p>本节介绍了如何使用 nmcli 工具的交互模式在之前创建的连接上设置或更新默认网关。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>需要设置默认网关的网络连接至少拥有一个静态 IP 地址</li>
+<li>工作用户需要能在物理控制台登录，否则用户必须具有 root 权限</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>打开  nmcli 交互模式配置网络连接，例如为连接 example 打开 nmcli 交互模式：
+    <div class="highlight"><pre><span></span><code># sudo nmcli connection edit example
+</code></pre></div></li>
+<li>设置默认网关。
+    例如，要将 example 连接上的默认网关的 IPv4 地址设为 192.0.2.1 ：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.gateway 192.0.2.1
+</code></pre></div>
+    例如，要将 example 连接上的默认网关的 IPv6 地址设为 2001:db8:1::1 ：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv6.gateway 2001:db8:1::1
+</code></pre></div></li>
+<li>可选，验证默认网关是否正确设置：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; print
+...
+ipv4.gateway:                           192.0.2.1
+...
+ipv6.gateway:                           2001:db8:1::1
+...
+</code></pre></div></li>
+<li>保存配置：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+</code></pre></div></li>
+<li>重启网络连接应用更改：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; activate example
+</code></pre></div>
+    重启过程中网络连接会暂时中断。</li>
+<li>退出 nmcli 交互模式：
+    ```
+    nmcli&gt; quit</li>
+<li>（可选）验证路由是否活跃。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.0.2.1 dev example proto static metric 100
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></li>
+</ol>
+<h2 id="223-nm-connection-editor">22.3.使用 nm-connection-editor 为已有网络连接设置默认网关</h2>
+<p>在大多数情况下，管理员在创建连接时设置默认网关。本节介绍了如何使用 nm-connection-editor 应用程序在之前创建的连接上设置或更新默认网关。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>需要设置默认网关的网络连接至少拥有一个静态 IP 地址</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>在终端输入 nm-connection-editor ：</li>
+<li>选择要修改的连接，并点击齿轮图标编辑现有连接。</li>
+<li>设置 IPv4 默认网关。
+<img alt="nm-connection-editor配置网关_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_1.png" /></li>
+<li>设置 IPv6 默认网关。
+<img alt="nm-connection-editor配置网关_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_2.png" /></li>
+<li>点击 Save 。</li>
+<li>重启网络连接使更改生效。例如，要使用命令行重启 example 连接：
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection up example
+</code></pre></div></li>
+<li>（可选）验证路由是否活跃。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.168.138.1 dev example proto static metric 100
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></li>
+</ol>
+<h2 id="224-control-center">22.4.使用 control-center 为现有网络连接设置默认网关</h2>
+<p>在大多数情况下，管理员在创建连接时设置默认网关。本节描介绍了如何使用 control-center 应用程序在之前创建的连接上设置或更新默认网关。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>需要设置默认网关的网络连接至少拥有一个静态 IP 地址</li>
+<li>网络连接配置可以在 control-center 应用程序中打开。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>进入设置 Settings ，选择 Network ,点击所要配置的网络连接右侧齿轮进行编辑。</li>
+<li>设置 IPv4 默认网关。
+<img alt="control-center配置网关_1" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_1.png" /></li>
+<li>设置 IPv6 默认网关。
+<img alt="control-center配置网关_2" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_2.png" /></li>
+<li>点击 Apply 。</li>
+<li>将配置的网络连接状态切换成 Off ，然后再切换成 On 来重启网络连接应用更改。</li>
+<li>（可选）验证路由是否活跃。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.168.138.1 dev example proto static metric 100
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></li>
+</ol>
+<h2 id="225-nmstatectl">22.5.使用 nmstatectl 为现有网络连接设置默认网关</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>需要设置默认网关的网络连接至少拥有一个静态 IP 地址</li>
+<li>已安装 nmstate 。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建~/set-default-gateway.yml  YAML 文件：
+    <div class="highlight"><pre><span></span><code>---
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.1
+    next-hop-interface: enp1s0
+</code></pre></div></li>
+<li>应用设置:
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/set-default-gateway.yml
+</code></pre></div></li>
+</ol>
+<h2 id="226-rhel-system-roles">22.6.使用 rhel-system-roles 为现有网络连接设置默认网关</h2>
+<p>当您运行使用 Networking RHEL system roles 的脚本时，如果设置的值与脚本中指定的名称不匹配，则系统角色会覆盖具有相同名称的现有的连接配置文件。因此，始终在脚本中指定网络连接配置文件的整个配置，即使 IP 配置已经存在。否则，role 会将这些值重置为默认值。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>控制节点上 ansible 和 rhel-system-roles 软件包已安装。</li>
+<li>如果您在运行 playbook 时使用非 root 用户，请确保使用的用户拥有 sudo 权限。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>如果您用来执行 playbook 中指令的主机还没有被列入清单，则将主机 IP 或名称添加到 /etc/ansible/hosts Ansible 清单文件中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>使用以下内容创建 ~/ethernet-connection.yml playbook：
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with static IP and default gateway
+hosts: node.example.com
+become: true
+tasks:
+- include_role:
+    name: rhel-system-roles.network
+
+    vars:
+    network_connections:
+        - name: enp1s0
+        type: ethernet
+        autoconnect: yes
+        ip:
+            address:
+            - 198.51.100.20/24
+            - 2001:db8:1::1/64
+            gateway4: 198.51.100.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+            - 198.51.100.200
+            - 2001:db8:1::ffbb
+            dns_search:
+            - example.com
+        state: up
+</code></pre></div></p>
+</li>
+<li>
+<p>运行 playbook：</p>
+<ul>
+<li>要以 root 用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-connection.yml
+</code></pre></div></li>
+<li>以用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-connection.yml
+</code></pre></div>
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</li>
+</ul>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<h2 id="227-network-scripts">22.7.使用 network scripts 为现有网络连接设置默认网关</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>NetworkManager 软件包未安装，或者 NetworkManager 服务被禁用。</li>
+<li>network-scripts 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>将 /etc/sysconfig/network-scripts/ifcfg-enp1s0 文件中的 GATEWAY 参数设为 192.0.2.1 ：
+    <div class="highlight"><pre><span></span><code>GATEWAY=192.0.2.1
+</code></pre></div></li>
+<li>在 /etc/sysconfig/network-scripts/route-enp0s1 文件中添加 default 条目：
+    <div class="highlight"><pre><span></span><code>default via 192.0.2.1
+</code></pre></div></li>
+<li>重启网络：
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></li>
+</ol>
+<h2 id="228-networkmanager">22.8.使用 NetworkManager 管理多个默认网关</h2>
+<p>在某些情况下，您可能需要在主机上设置多个默认网关。但是，为了避免异步路由问题，同一协议的每个默认网关都需要单独的指标值。请注意，OpenCloudOS 只使用到设置成最低路由权的默认网关的连接。</p>
+<p>您可以使用以下命令为连接的 IPv4 和 IPv6 网关设置指标：
+<div class="highlight"><pre><span></span><code># nmcli connection modify connection-name ipv4.route-metric value ipv6.route-metric value
+</code></pre></div></p>
+<p>不要为多个连接配置集中的同一协议设置相同的路由权值以避免路由问题。</p>
+<p>如果您设置了没有路由权的默认网关，则 NetworkManager 会自动根据接口类型设置路由权。NetworkManager 会将这个网络类型的默认值分配给激活的第一个连接，并根据激活的顺序为同一类型的每一个其他连接设置递增值。例如，如果带有默认网关的两个以太网连接存在，则 NetworkManager 会将您首先激活的连接的默认网关路由上的路由权设置为 100 。对于第二个连接，NetworkManager 会设为 101。</p>
+<p>以下是经常使用的网络类型及其默认路由权的对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>连接类型</th>
+<th>默认路由权</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPN</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Ethernet</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MACsec</td>
+<td>125</td>
+</tr>
+<tr>
+<td>InfiniBand</td>
+<td>150</td>
+</tr>
+<tr>
+<td>Bond</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>350</td>
+</tr>
+<tr>
+<td>VLAN</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Bridge</td>
+<td>425</td>
+</tr>
+<tr>
+<td>TUN</td>
+<td>450</td>
+</tr>
+<tr>
+<td>Wi-Fi</td>
+<td>600</td>
+</tr>
+<tr>
+<td>IP tunnel</td>
+<td>675</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="229-networkmanager">22.9.配置 NetworkManager 避免特定配置文件提供默认网关</h2>
+<p>您可以配置 NetworkManager 来不使用特定的配置文件来提供默认网关。对于没有连接到默认网关的连接配置集，请按照以下步骤操作。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>未配置默认网关的网络连接存在 NetworkManager 连接配置文件。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>如果网络连接使用动态 IP 配置，请配置 NetworkManager 不使用 IPv4 和 IPv6 默认路由：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv4.never-default yes ipv6.never-default yes
+</code></pre></div>
+    请注意，将 ipv4.never-default 和 ipv6.never-default 设为 yes，会自动从连接配置文件中删除相应协议默认网关的 IP 地址。</li>
+<li>激活链接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up connection_name
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>使用 ip -4 route 或 ip -6 route 验证是否启用默认网关。</li>
+</ul>
+<h2 id="2210">22.10.修复因为多个默认网关导致的意外路由行为</h2>
+<p>只有在很少情况下（比如使用多路径 TCP 时），在主机上需要多个默认网关。在大多数情况下，您只配置一个默认网关，来避免意外的路由行为或异步路由问题。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>主机使用 NetworkManager 管理网络连接。</li>
+<li>主机有多个网络接口。</li>
+<li>主机配置了多个默认网关。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>显示路由表：<ul>
+<li>IPv4:
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.0.2.1 dev enp1s0 proto static metric 101
+default via 198.51.100.1 dev enp7s0 proto static metric 102
+...
+</code></pre></div></li>
+<li>IPv6:
+    <div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev enp1s0 proto static metric 101 pref medium
+default via 2001:db8:2::1 dev enp7s0 proto static metric 102 pref medium
+...
+</code></pre></div>
+以 default 开头的条目表示默认路由。注意 dev 旁边显示的这些条目的接口名称。</li>
+</ul>
+</li>
+<li>使用以下命令显示您在上一步中识别的 NetworkManager 连接：
+    <div class="highlight"><pre><span></span><code># nmcli -f GENERAL.CONNECTION,IP4.GATEWAY,IP6.GATEWAY device show enp1s0
+GENERAL.CONNECTION:      Corporate-LAN
+IP4.GATEWAY:             192.168.122.1
+IP6.GATEWAY:             2001:db8:1::1
+
+# nmcli -f GENERAL.CONNECTION,IP4.GATEWAY,IP6.GATEWAY device show enp7s0
+GENERAL.CONNECTION:      Internet-Provider
+IP4.GATEWAY:             198.51.100.1
+IP6.GATEWAY:             2001:db8:2::1
+</code></pre></div>
+    在这些示例中，名为 Corporate-LAN 和 Internet-Provider 的配置文件设置了默认网关。因为在本地网络中，默认网关通常是距离互联网一跳的主机，所以此流程的剩下部分假设 Corporate-LAN 中的默认网关是不正确的。</li>
+<li>配置 NetworkManager 不使用 Corporate-LAN 连接作为 IPv4 和 IPv6 连接的默认路由：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify Corporate-LAN ipv4.never-default yes ipv6.never-default yes
+</code></pre></div></li>
+<li>激活 Corporate-LAN 连接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up Corporate-LAN
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>使用 ip -4 route 或 ip -6 route 验证是否只有一个网关。</li>
+</ul>
+<h1 id="23">第23章 配置静态路由</h1>
+<p>路由可确保您可以在相互连接的网络间发送和接收流量。在较大环境中，管理员通常配置服务以便路由器可以动态地了解其他路由器。在较小的环境中，管理员通常会配置静态路由，以确保流量可以从一个网络到下一个网络访问。</p>
+<p>如果适用以下这些条件，您可能需要静态路由以在多个网络间获得正常运行的通信：
+- 流量必须通过多个网络。
+- 通过默认网关的独占流量流不足。</p>
+<h2 id="231">23.1.需要静态路由的网络示例</h2>
+<p>因为并非所有 IP 网络都通过一个路由器直接连接，如果没有静态路由，一些网络将无法相互通信。而某些网络流的流量仅有一个方向也可以配置静态路由。</p>
+<p>您可以配置静态路由，如下所示：</p>
+<ul>
+<li>简单配置：仅在路由器 1 上设置此静态路由。但是，这会增加路由器 1 上的流量，因为数据中心（203.0.113.0/24的主机）发送到 Network B (198.51.100.0/24)的流量，始终通过路由器 1 到路由器 2。</li>
+<li>复杂配置：请在数据中心的所有主机上配置此静态路由(203.0.113.0/24)。然后，此子网中的所有主机直接向路由器 2(203.0.113.10)发送更接近 Network B 的主机(198.51.100.0/24)。
+更多详情，请参见以下示意图中的说明。
+<img alt="routing-example" src="../assets/routing-example.png" /></li>
+</ul>
+<p>如果没有配置所需的静态路由，下面描述了各网络通信工作情况：</p>
+<ul>
+<li>Network A 中的主机(192.0.2.0/24)：</li>
+<li>可以与同一子网中的其他主机通信，因为它们是直接连接的。</li>
+<li>可以与互联网通信，因为路由器 1 位于 Network A 网络(192.0.2.0/24)中，并有一个与互联网相连的默认网关。</li>
+<li>可以与数据中心网络通信(203.0.113.0/24)，因为路由器 1 在 Network A (192.0.2.0/24)和数据中心(203.0.113.0/24)网络中有接口。</li>
+<li>
+<p>无法与 Network B (198.51.100.0/24)通信，因为路由器 1 在此网络中没有接口。因此，路由器 1 会将流量发送到自己的默认网关(Internet)。</p>
+</li>
+<li>
+<p>数据中心网络中的主机(203.0.113.0/24):</p>
+</li>
+<li>可以与同一子网中的其他主机通信，因为它们是直接连接的。</li>
+<li>可以与互联网通信，因为它们的默认网关设置为路由器 1，路由器 1 在网络、数据中心(203.0.113.0/24)和互联网上均有接口。</li>
+<li>可以与 Network A (192.0.2.0/24)通信，因为它们的默认网关设置为路由器 1，并且路由器 1 在数据中心(203.0.113.0/24)和 Network A (192.0.2.0/24)网络中都存在接口。</li>
+<li>
+<p>无法与 Network B 网络(198.51.100.0/24)通信，因为该网络中没有接口。因此，数据中心中的主机(203.0.113.0/24)将流量发送到其默认网关(Router 1)。路由器 1 在 Network B（198.51.100.0/24中）没有接口，因此 Router 1 会将这个流量发送到自己的默认网关(Internet)。</p>
+</li>
+<li>
+<p>Network B 网络中的主机(198.51.100.0/24)：</p>
+</li>
+<li>可以与同一子网中的其他主机通信，因为它们是直接连接的。</li>
+<li>无法与互联网上的主机通信。路由器 2 将流量发送到路由器 1，因为默认网关设置。路由器 1 的实际行为取决于反向路径过滤器(rp_filter)系统控制(sysctl)设置。默认情况下，在 OpenCloudOS 中，路由器 1 会丢弃传出流量，而不是将其路由到互联网。但是，无论配置的行为如何，都无法在没有静态路由的情况下进行通信。</li>
+<li>无法与数据中心网络通信(203.0.113.0/24)。由于默认网关设置，传出流量通过路由器 2 到达目的地。但是，对数据包的回复不会到达发送者，因为数据中心网络中的主机(203.0.113.0/24)将回复发送到其默认网关(Router 1)。然后，路由器 1 将流量发送到互联网。</li>
+<li>无法与 Network A 通信(192.0.2.0/24)。路由器 2 将流量发送到路由器 1，因为默认网关设置。路由器 1 的实际行为取决于 rp_filter sysctl 设置。默认情况下，在 OpenCloudOS 中，路由器 1 会丢弃传出流量，而不是将其发送到 Network A (192.0.2.0/24)。但是，无论配置的行为如何，都无法在没有静态路由的情况下进行通信。</li>
+</ul>
+<p>注意，除了配置静态路由外，还必须在两个路由器上启用 IP 转发。</p>
+<h2 id="232-nmcli">23.2. nmcli 命令配置静态路由简介</h2>
+<p>可以使用以下命令配置静态路由：
+<div class="highlight"><pre><span></span><code>$ nmcli connection modify connection_name ipv4.routes &quot;ip[/prefix] [next_hop] [metric] [attribute=value] [attribute=value] ...&quot;
+</code></pre></div></p>
+<p>此命令支持配置以下属性：
+- cwnd=n ：设置拥塞窗口(CWND)大小，以数据包数量定义。
+- lock-cwnd=true|false ：定义内核是否可以更新 CWND 值。
+- lock-mtu=true|false ：定义内核是否可以将 MTU 更新为路径 MTU （PMTU）。
+- lock-window=true|false ：定义内核是否可更新 TCP 数据包的最大窗口大小。
+- mtu=n ：设置发往目的地址路径的最大传输单元(MTU)。
+- onlink=true|false ：定义下一跳是否直接附加到此链接，即使它与任何接口前缀都不匹配。
+- scope=n: 对于 IPv4 路由，此属性设置路由前缀所涵盖的目的地的范围。将值设为整数(0-255)。
+- src=address ：当将流量发送到路由前缀所涵盖的目的地时，将源地址设为首选。
+- table=table_id ：设置应将路由添加到的表的 ID。如果省略此参数，NetworkManager 将使用 main 表。
+- tos=n ：设置服务类型(TOS)密钥。将值设为整数(0-255)。
+- type=value ：设置路由类型。NetworkManager 支持 unicast、local、blackhole、unreachable、prohibit 和 throw 路由类型。默认为 unicast。
+- window=n ：设置播发到这些目的地的 TCP 的最大窗口大小，以字节为单位。</p>
+<p>如果使用 ipv4.routes 子命令，nmcli 会覆盖这个参数的所有当前设置。</p>
+<p>添加一个路由：
+<div class="highlight"><pre><span></span><code>$ nmcli connection modify connection_name +ipv4.routes &quot;...&quot;
+</code></pre></div>
+删除一个路由：
+<div class="highlight"><pre><span></span><code>$ nmcli connection modify connection_name -ipv4.routes &quot;...&quot;
+</code></pre></div></p>
+<h2 id="233-nmcli">23.3.使用 nmcli 命令配置静态路由</h2>
+<p>您可以使用 nmcli connection modify 命令将一个静态路由添加网络连接配置中。</p>
+<p>本节中的流程描述了如何将一个路由添加到 192.0.2.0/24 网络，该网络使用运行在 198.51.100.1 上的网关，该网关可通过 example 连接访问。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络已配置</li>
+<li>静态路由的网关必须能在接口上直接访问。</li>
+<li>用户需要能在物理控制台中登录。否则，命令需要 root 权限。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>将静态路由添加到 example 连接中：
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection modify example +ipv4.routes &quot;192.0.2.0/24 198.51.100.1&quot;
+</code></pre></div>
+    要在一个步骤中设置多个路由，请使用逗号分隔每个静态路由传递给该命令。例如，要将路由添加到 192.0.2.0/24 和 203.0.113.0/24 网络中，这两个网络都通过 198.51.100.1 网关进行路由，请输入：
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection modify example +ipv4.routes &quot;192.0.2.0/24 198.51.100.1, 203.0.113.0/24 198.51.100.1&quot;
+</code></pre></div></li>
+<li>（可选）验证路由是否已正确添加到配置中：
+    <div class="highlight"><pre><span></span><code>$ nmcli connection show example
+...
+ipv4.routes:        { ip = 192.0.2.1/24, nh = 198.51.100.1 }
+...
+</code></pre></div></li>
+<li>重启网络连接：
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection up example
+</code></pre></div></li>
+<li>
+<p>（可选）验证路由是否活跃：</p>
+<div class="highlight"><pre><span></span><code>$ ip route
+...
+192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+</code></pre></div>
+</li>
+</ol>
+<h2 id="234-control-center">23.4.使用 control-center 配置静态路由</h2>
+<p>您可以在 GNOME 中使用 control-center，来将静态路由添加到网络连接配置中。</p>
+<p>本节中的流程描述了如何将路由添加到 192.0.2.0/24 网络，该网络使用运行在 198.51.100.1 上的网关。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络已配置。</li>
+<li>静态路由的网关必须能在接口上直接访问。</li>
+<li>连接的网络配置能在 control-center 应用程序中打开。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>进入设置，选择Network，点击需要添加静态路由的网络条目中的齿轮进行编辑。</li>
+<li>（可选）通过单击 IPv4 选项卡的 Routes 部分中的 On 按钮来禁用自动路由，以便只使用静态路由。如果启用了自动路由，OpenCloudOS 将使用静态路由和从 DHCP 服务器接收的路由。</li>
+<li>输入地址、子网掩码、网关和路由权(可选)：
+<img alt="control-center配置静态路由" src="../assets/control-center%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1.png" /></li>
+<li>点击 Apply 。</li>
+<li>返回到 Network 窗口，通过将连接的按钮切换为 Off ，然后切换回 On 来重新启用连接应用更改。</li>
+<li>（可选）验证路由是否活跃：
+    <div class="highlight"><pre><span></span><code>$ ip route
+...
+192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+</code></pre></div></li>
+</ol>
+<h2 id="235-nm-connection-editor">23.5.使用 nm-connection-editor 配置静态路由</h2>
+<p>您可以使用 nm-connection-editor 应用程序将静态路由添加到网络连接配置中。</p>
+<p>本节中的流程描述了如何将路由添加到 192.0.2.0/24 网络，该网络使用运行在 198.51.100.1 上的网关，该网关可通过 example 连接访问。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络已配置。</li>
+<li>静态路由的网关必须能在接口上直接访问。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>在终端输入：</li>
+<li>选择 example 连接，并点击齿轮图标来编辑连接。</li>
+<li>打开 IPv4 选项卡。</li>
+<li>点击 Route 按钮。</li>
+<li>点击 Add 按钮并输入地址、子网掩码、网关以及路由权(可选)。
+<img alt="nm-connection-editor配置静态路由" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1.png" /></li>
+<li>点击 OK 。</li>
+<li>点击 Save 。</li>
+<li>重启网络应用更改。
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection up example
+</code></pre></div></li>
+<li>（可选）验证路由是否活跃：
+    ```
+    $ ip route
+    ...
+    192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+    ````</li>
+</ol>
+<h2 id="236-nmcli">23.6.使用 nmcli 互动模式配置静态路由</h2>
+<p>您可以使用 nmcli 工具的交互模式，将静态路由添加到网络连接配置中。</p>
+<p>本节中的流程描述了如何将路由添加到 192.0.2.0/24 网络，该网络使用运行在 198.51.100.1 上的网关，该网关可通过 example 连接访问。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络已配置</li>
+<li>静态路由的网关必须在接口上直接访问。</li>
+<li>用户需要能在物理控制台中登录。否则，命令需要 root 权限。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>使用 nmcli 交互模式编辑 example ：
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection edit example
+</code></pre></div></li>
+<li>添加静态路由：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.routes 192.0.2.0/24 198.51.100.1
+</code></pre></div></li>
+<li>（可选）验证路由是否已正确添加到配置中：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; print
+...
+ipv4.routes:        { ip = 192.0.2.1/24, nh = 198.51.100.1 }
+...
+</code></pre></div>
+    ip 属性对应要路由的网络，nh 属性对应网关（下一跳）。</li>
+<li>保存配置：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+</code></pre></div></li>
+<li>重启网络连接：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; activate example
+</code></pre></div></li>
+<li>退出nmcli 交互模式：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; quit
+</code></pre></div></li>
+<li>（可选）验证路由是否活跃：
+    <div class="highlight"><pre><span></span><code>$ ip route
+...
+192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+</code></pre></div></li>
+</ol>
+<h2 id="237-nmstatectl">23.7.使用 nmstatectl 配置静态路由</h2>
+<p>您可以使用 nmstatectl 工具将静态路由添加到网络连接配置中。</p>
+<p>本节中的流程描述了如何将路由添加到 192.0.2.0/24 网络，该网络使用运行在 198.51.100.1 上的网关，该网关可通过 example 网络接口访问。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>example 网络接口已配置。</li>
+<li>静态路由的网关必须能在网络接口上直接访问。</li>
+<li>nmstate 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建 YAML 文件 ~/add-static-route-to-enp1s0.yml，其内容如下：
+    <div class="highlight"><pre><span></span><code>---
+routes:
+config:
+- destination: 192.0.2.0/24
+    next-hop-address: 198.51.100.1
+    next-hop-interface: enp1s0
+</code></pre></div></li>
+<li>应用设置：
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/add-static-route-to-enp1s0.yml
+</code></pre></div></li>
+</ol>
+<h2 id="238-rhel-system-roles">23.8.使用 rhel-system-roles 配置静态路由</h2>
+<p>当您运行使用 Networking RHEL system roles 的脚本时，如果设置的值与脚本中指定的名称不匹配，则系统角色会覆盖具有相同名称的现有的连接配置文件。因此，始终在脚本中指定网络连接配置文件的整个配置，即使 IP 配置已经存在。否则，role 会将这些值重置为默认值。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>控制节点上 ansible 和 rhel-system-roles 软件包已安装。</li>
+<li>如果您在运行 playbook 时使用非 root 用户，请确保使用的用户拥有 sudo 权限。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>如果您用来执行 playbook 中指令的主机还没有被列入清单，则将主机 IP 或名称添加到 /etc/ansible/hosts Ansible 清单文件中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>使用以下内容创建 ~/ethernet-connection.yml playbook：
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with static IP and additional routes
+hosts: node.example.com
+become: true
+tasks:
+- include_role:
+    name: rhel-system-roles.network
+
+    vars:
+    network_connections:
+        - name: enp7s0
+        type: ethernet
+        autoconnect: yes
+        ip:
+            address:
+            - 198.51.100.20/24
+            - 2001:db8:1::1/64
+            gateway4: 198.51.100.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+            - 198.51.100.200
+            - 2001:db8:1::ffbb
+            dns_search:
+            - example.com
+            route:
+            - network: 192.0.2.0
+                prefix: 24
+                gateway: 198.51.100.1
+            - network: 203.0.113.0
+                prefix: 24
+                gateway: 198.51.100.2
+        state: up
+</code></pre></div></p>
+</li>
+<li>
+<p>运行 playbook：</p>
+<ul>
+<li>要以 root 用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/add-static-routes.yml
+</code></pre></div></li>
+<li>以用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/add-static-routes.yml
+</code></pre></div>
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</li>
+</ul>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>显示路由表：
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 198.51.100.254 dev enp7s0 proto static metric 100
+192.0.2.0/24 via 198.51.100.1 dev enp7s0 proto static metric 100
+203.0.113.0/24 via 198.51.100.2 dev enp7s0 proto static metric 100
+...
+</code></pre></div></li>
+</ul>
+<h2 id="239-network-scripts">23.9.使用 network scripts 以键值对格式创建静态路由配置文件</h2>
+<p>本节流程描述了当使用 network scripts 而不是 NetworkManager 时，如何手动为到 192.0.2.0/24 网络的 IPv4 路由创建一个路由配置文件。在本例中，IP 地址为 198.51.100.1 的相应的网关可以通过 enp1s0 接口访问。</p>
+<p>此流程中的示例使用 key-value-format 中的配置条目。</p>
+<p>注意，network scripts 只支持静态 IPv4 路由的键值格式。对于 IPv6 路由，请使用 ip-command-format。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>静态路由的网关必须能在接口上直接访问。</li>
+<li>NetworkManager 软件包未安装，或者 NetworkManager 服务被禁用。</li>
+<li>network-scripts 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将静态 IPv4 路由添加到 /etc/sysconfig/network-scripts/route-enp0s1 文件中：
+    <div class="highlight"><pre><span></span><code>ADDRESS0=192.0.2.0
+NETMASK0=255.255.255.0
+GATEWAY0=198.51.100.1
+</code></pre></div></p>
+<ul>
+<li>ADDRESS0 变量定义第一个路由条目的网络。</li>
+<li>NETMASK0 变量定义第一个路由条目的子网掩码。</li>
+<li>GATEWAY0 变量定义到远程网络的网关的 IP 地址或第一个路由条目的主机。</li>
+</ul>
+<p>如果您添加多个静态路由，请增加变量名称的数量。请注意，每个路由的变量都必须按顺序编号。例如，ADDRESS0 、ADDRESS1、ADDRESS3 ，等等。</p>
+</li>
+<li>
+<p>重启网络：
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="2310-network-scripts-ip-command-format">23.10.使用 network scripts 以 ip-command-format 格式创建静态路由配置文件</h2>
+<p>本节流程描述了如何使用 network scripts 为以下静态路由手动创建路由配置文件：</p>
+<ul>
+<li>到 192.0.2.0/24 网络的 IPv4 路由。IP 地址为 198.51.100.1 的相应的网关可以通过 enp1s0 接口访问。</li>
+<li>到 2001:db8:1::/64 网络的 IPv6 路由。IP 地址为 2001:db8:2::1 的相应的网关可以通过 enp1s0 接口访问。</li>
+</ul>
+<p>此流程中的示例使用 ip-command-format 中的配置条目。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>静态路由的网关必须能在网络接口上直接访问。</li>
+<li>NetworkManager 软件包未安装，或者 NetworkManager 服务被禁用。</li>
+<li>network-scripts 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>将静态 IPv4 路由添加到 /etc/sysconfig/network-scripts/route-enp0s1 文件中：
+    <div class="highlight"><pre><span></span><code>192.0.2.0/24 via 198.51.100.1 dev enp0s1
+</code></pre></div></li>
+<li>将静态 IPv6 路由添加到 /etc/sysconfig/network-scripts/route6-enp0s1 文件中：
+    <div class="highlight"><pre><span></span><code>2001:db8:1::/64 via 2001:db8:2::1 dev enp0s1
+</code></pre></div></li>
+<li>重启网络：
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></li>
+</ol>
+<h1 id="24">第24章 配置策略路由以定义其他路由</h1>
+<p>默认情况下，OpenCloudOS 中的内核会决定使用路由表根据目标地址转发网络数据包。策略路由允许您配置复杂的路由场景。例如，您可以根据各种条件来路由数据包，如源地址、数据包元数据或协议。</p>
+<p>本节论述了如何使用 NetworkManager 配置策略路由。</p>
+<p>注意，在使用 NetworkManager 的系统上，只有 nmcli 工具支持设置路由规则，并将路由分配给特定的表。</p>
+<h2 id="241-networkmanager">24.1. 使用 NetworkManager 将特定子网的流量路由到不同的默认网关</h2>
+<p>本节介绍了如何将 OpenCloudOS 配置默认路由为将所有流量路由到互联网供应商 A 的路由器。使用策略路由，OpenCloudOS 会将从内部工作站子网接收的流量路由到供应商 B。</p>
+<p>流程网络拓扑如下图：
+<img alt="policy-based-routing" src="../assets/policy-based-routing.png" /></p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>系统使用 NetworkManager 配置网络。</li>
+<li>要在流程中配置的路由器有四个网络接口：</li>
+<li>enp7s0 接口已连接到提供商 A 的网络。提供商网络中的网关 IP 为 198.51.100.2，网络使用 /30 网络掩码。</li>
+<li>enp1s0 接口连接到提供商 B 的网络。提供商网络中的网关 IP 为 192.0.2.2，网络使用 /30 网络掩码。</li>
+<li>enp8s0 接口已与连有内部工作站的 10.0.0.0/24 子网相连。</li>
+<li>enp9s0 接口已与连有公司服务器的 203.0.113.0/24 子网相连。</li>
+<li>内部工作站子网中的主机使用 10.0.0.1 作为默认网关。在此流程中，您可以将这个 IP 地址分配给路由器的 enp8s0 网络接口。</li>
+<li>服务器子网中的主机使用 203.0.113.1 作为默认网关。在此流程中，您可以将这个 IP 地址分配给路由器的 enp9s0 网络接口。</li>
+<li>firewalld 服务已启用，并处于活动状态。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将网络接口配置为Provider A:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Provider-A ifname enp7s0 ipv4.method manual ipv4.addresses 198.51.100.1/30 ipv4.gateway 198.51.100.2 ipv4.dns 198.51.100.200 connection.zone external
+</code></pre></div>
+    nmcli connection add 命令创建 NetworkManager 连接配置文件。下面描述了该命令的选项参数：</p>
+<ul>
+<li>type ethernet ：定义连接类型为以太网。</li>
+<li>con-name connection_name ：设置配置文件的名称。使用有意义的名称以避免混淆。</li>
+<li>ifname network_device ：配置的网络接口。</li>
+<li>ipv4.method manual: 允许配置静态 IP 地址。</li>
+<li>ipv4.addresses IP_address/subnet_mask ：设置 IPv4 地址和子网掩码。</li>
+<li>ipv4.gateway IP_address ：设置默认网关地址。</li>
+<li>ipv4.dns IP_of_DNS_server ：设置 DNS 服务器的 IPv4 地址。</li>
+<li>connection.zone firewalld_zone ：将网络接口分配给定义的 firewalld 区域。请注意，firewalld 会为分配给 external 区域的接口自动启用伪装。</li>
+</ul>
+</li>
+<li>
+<p>将网络接口配置为Provider B:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Internal-Workstations ifname enp8s0 ipv4.method manual ipv4.addresses 10.0.0.1/24 ipv4.routes &quot;10.0.0.0/24 table=5000&quot; ipv4.routing-rules &quot;priority 5 from 10.0.0.0/24 table 5000&quot; connection.zone trusted
+</code></pre></div>
+    此命令使用 ipv4.routes 参数而不是 ipv4.gateway 来设置默认网关。这需要将这个连接的默认网关分配给不同于默认的路由表(5000)。当连接被激活时，NetworkManager 会自动创建这个新的路由表。</p>
+</li>
+<li>
+<p>将网络接口配置为内部工作站子网：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Internal-Workstations ifname enp8s0 ipv4.method manual ipv4.addresses 10.0.0.1/24 ipv4.routes &quot;10.0.0.0/24 table=5000&quot; ipv4.routing-rules &quot;priority 5 from 10.0.0.0/24 table 5000&quot; connection.zone trusted
+</code></pre></div>
+    此命令使用 ipv4.routes 参数将静态路由添加到 ID 为 5000 的路由表中。10.0.0.0/24 子网的这个静态路由使用到供应商 B 的本地网络接口的 IP 地址(192.0.2.1)来作为下一跳。</p>
+<p>另外，命令使用 ipv4.routing-rules 参数来添加优先级为 5 的路由规则，该规则将来自 10.0.0.0/24 子网的流量路由到表 5000。低的值具有更高的优先级。</p>
+<p>请注意，ipv4.routing-rules 参数的语法与 ip rule add 命令中的语法相同，但 ipv4.routing-rules 总是需要指定优先级。</p>
+</li>
+<li>
+<p>将网络接口配置为服务器子网：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Servers ifname enp9s0 ipv4.method manual ipv4.addresses 203.0.113.1/24 connection.zone trusted
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>在内部工作站子网的主机上：</li>
+<li>安装 traceroute 软件包：
+        <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+<li>使用 traceroute 工具显示到互联网上主机的路由：
+        <div class="highlight"><pre><span></span><code># traceroute host.com
+traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+1  10.0.0.1 (10.0.0.1)     0.337 ms  0.260 ms  0.223 ms
+2  192.0.2.1 (192.0.2.1)   0.884 ms  1.066 ms  1.248 ms
+...
+</code></pre></div>
+        命令的输出显示路由器通过 192.0.2.1 ，即提供商 B 的网络来发送数据包。</li>
+<li>在服务器子网的主机上：<ol>
+<li>安装 traceroute 软件包：
+    <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+</ol>
+</li>
+<li>使用 traceroute 工具显示到互联网上主机的路由：
+        <code># traceroute host.com
+        traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+        1  203.0.113.1 (203.0.113.1)    2.179 ms  2.073 ms  1.944 ms
+        2  198.51.100.2 (198.51.100.2)  1.868 ms  1.798 ms  1.549 ms
+        ...</code>
+        命令的输出显示路由器通过 198.51.100.2 ，即供应商 A 的网络来发送数据包。</li>
+</ol>
+<p><strong>故障排除</strong></p>
+<p>在使用 OpenCloudOS 路由的主机中：
+1. 显示 ip 规则列表：
+    <div class="highlight"><pre><span></span><code># ip rule list
+0:  from all lookup local
+5:  from 10.0.0.0/24 lookup 5000
+32766:  from all lookup main
+32767:  from all lookup default
+</code></pre></div>
+    默认情况下包含 local 、 main 、 default 的规则。
+2. 显示 id 为 5000 的表中的路由：
+    <div class="highlight"><pre><span></span><code># ip route list table 5000
+0.0.0.0/0 via 192.0.2.2 dev enp1s0 proto static metric 100
+10.0.0.0/24 dev enp8s0 proto static scope link src 192.0.2.1 metric 102 
+</code></pre></div>
+3. 显示接口和防火墙域：
+    <div class="highlight"><pre><span></span><code># firewall-cmd --get-active-zones
+external
+interfaces: enp1s0 enp7s0
+trusted
+interfaces: enp8s0 enp9s0
+</code></pre></div>
+4. 验证 external 域是否启用了伪装：
+    <div class="highlight"><pre><span></span><code># firewall-cmd --info-zone=external
+external (active)
+target: default
+icmp-block-inversion: no
+interfaces: enp1s0 enp7s0
+sources:
+services: ssh
+ports:
+protocols:
+masquerade: yes
+...
+</code></pre></div></p>
+<h2 id="242-network-scripts">24.2.使用 network scripts 配置策略路由概述</h2>
+<p>使用 network scripts 配置策略路由时会涉及以下配置文件：</p>
+<ul>
+<li>/etc/sysconfig/network-scripts/route-interface ：此文件定义 IPv4 路由。使用 table 选项来指定路由表。例如：
+    <div class="highlight"><pre><span></span><code>192.0.2.0/24 via 198.51.100.1 table 1
+203.0.113.0/24 via 198.51.100.2 table 2
+</code></pre></div></li>
+<li>/etc/sysconfig/network-scripts/route6-interface ：此文件定义 IPv6 路由。</li>
+<li>/etc/sysconfig/network-scripts/rule-interface ：此文件定义内核将流量路由到特定路由表的 IPv4 源网络的规则。例如：
+    <div class="highlight"><pre><span></span><code>from 192.0.2.0/24 lookup 1
+from 203.0.113.0/24 lookup 2
+</code></pre></div></li>
+<li>/etc/sysconfig/network-scripts/rule6-interface ：此文件定义内核将流量路由到特定路由表的 IPv6 源网络的规则。</li>
+<li>/etc/iproute2/rt_tables ：如果您想要使用名称而不是数字来引用特定的路由表，这个文件定义了映射。例如：
+    <div class="highlight"><pre><span></span><code>1     Provider_A
+2     Provider_B
+</code></pre></div></li>
+</ul>
+<h2 id="243-network-scripts">24.3.使用 network scripts 将指定子网的流量路由到不同的默认网关</h2>
+<p>您可以配置策略路由使指定子网的流量路由到非默认的网关。例如，将默认路由到 Provider A 的内部工作站子网流量路由到 Provider B 。</p>
+<p>流程网络拓扑如下所示：
+<img alt="" src="../assets/policy-based-routing.png" /></p>
+<p>注意，network scripts 会按照字母顺序处理配置文件。因此，您必须为配置文件命名，确保当依赖接口需要时，用于其他接口的规则和路由的接口会被启动。要实现正确的顺序，流程使用 ifcfg-<em>、route-</em> 和 rules-* 文件中的数字。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>NetworkManager 软件包未安装，或者 NetworkManager 服务被禁用。</li>
+<li>network-scripts 软件包已安装。</li>
+<li>要在流程中设置的 OpenCloudOS 路由器有四个网络接口：</li>
+<li>enp7s0 接口已连接到提供商 A 的网络。提供商网络中的网关 IP 为 198.51.100.2，网络使用 /30 网络掩码。</li>
+<li>enp1s0 接口连接到提供商 B 的网络。提供商网络中的网关 IP 为 192.0.2.2，网络使用 /30 网络掩码。</li>
+<li>enp8s0 接口已与连有内部工作站的 10.0.0.0/24 子网相连。</li>
+<li>enp9s0 接口已与连有公司服务器的 203.0.113.0/24 子网相连。</li>
+<li>内部工作站子网中的主机使用 10.0.0.1 作为默认网关。在此流程中，您可以将这个 IP 地址分配给路由器的 enp8s0 网络接口。</li>
+<li>服务器子网中的主机使用 203.0.113.1 作为默认网关。在此流程中，您可以将这个 IP 地址分配给路由器的 enp9s0 网络接口。</li>
+<li>firewalld 服务已启用，并处于活动状态。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建 /etc/sysconfig/network-scripts/ifcfg-1_Provider-A 文件将网络接口的配置添加给提供商 A：
+    <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=198.51.100.1
+PREFIX=30
+GATEWAY=198.51.100.2
+DNS1=198.51.100.200
+DEFROUTE=yes
+NAME=1_Provider-A
+DEVICE=enp7s0
+ONBOOT=yes
+ZONE=external
+</code></pre></div>
+    文件参数描述如下：</p>
+<ul>
+<li>TYPE=Ethernet ：定义连接类型为以太网。</li>
+<li>IPADDR=IP_address ：设置 IPv4 地址。</li>
+<li>PREFIX=subnet_mask ：设置子网掩码。</li>
+<li>GATEWAY=IP_address ：设置默认网关地址。</li>
+<li>DNS1=IP_of_DNS_server ：设置 DNS 服务器的 IPv4 地址。</li>
+<li>DEFROUTE=yes|no ：定义连接是否为默认路由。</li>
+<li>NAME=connection_name ：设置连接配置文件的名称。使用有意义的名称以避免混淆。</li>
+<li>DEVICE=network_device ：设置网络接口。</li>
+<li>ONBOOT=yes ：定义 RHEL 在系统引导时启动此连接。</li>
+<li>ZONE=firewalld_zone ：将网络接口分配给定义的 firewalld 区域。请注意，firewalld 会为分配给 external 区域的接口自动启用伪装。</li>
+</ul>
+</li>
+<li>
+<p>为供应商 B 添加网络接口配置：</p>
+</li>
+<li>使用以下内容创建 /etc/sysconfig/network-scripts/ifcfg-2_Provider-B 文件：
+        <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=192.0.2.1
+PREFIX=30
+DEFROUTE=no
+NAME=2_Provider-B
+DEVICE=enp1s0
+ONBOOT=yes
+ZONE=external
+</code></pre></div>
+    请注意，这个接口的配置文件不包含默认的网关设置。</li>
+<li>
+<p>将 2_Provider-B 连接的网关分配给单独的路由表。因此，使用以下内容创建 /etc/sysconfig/network-scripts/route-2_Provider-B 文件：
+        <div class="highlight"><pre><span></span><code>0.0.0.0/0 via 192.0.2.2 table 5000
+</code></pre></div>
+        此条目将通过这个网关路由的所有子网的网关和流量分配给表 5000 。</p>
+</li>
+<li>
+<p>为内部工作站子网创建网络接口配置：</p>
+</li>
+<li>使用以下内容创建 /etc/sysconfig/network-scripts/ifcfg-3_Internal-Workstations 文件：
+        <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=10.0.0.1
+PREFIX=24
+DEFROUTE=no
+NAME=3_Internal-Workstations
+DEVICE=enp8s0
+ONBOOT=yes
+ZONE=internal
+</code></pre></div></li>
+<li>为内部工作站子网添加路由规则配置。因此，使用以下内容创建 /etc/sysconfig/network-scripts/rule-3_Internal-Workstations 文件：
+        <div class="highlight"><pre><span></span><code>pri 5 from 10.0.0.0/24 table 5000
+</code></pre></div>
+        此配置定义了优先级为 5 的路由规则，该规则将来自 10.0.0.0/24 子网的所有流量路由到表 5000。低的值具有更高的优先级。</li>
+<li>
+<p>使用以下内容创建 /etc/sysconfig/network-scripts/route-3_Internal-Workstations 文件，以将静态路由添加到 ID 为 5000 的路由表：
+        <div class="highlight"><pre><span></span><code>10.0.0.0/24 via 192.0.2.1 table 5000
+</code></pre></div>
+        此静态路由定义 RHEL 将从 10.0.0.0/24 子网到本地网络接口的 IP 的流量发送给提供商 B (192.0.2.1)。这个接口是到路由表 5000，并用作下一跳。</p>
+</li>
+<li>
+<p>通过创建包含以下内容的 /etc/sysconfig/network-scripts/ifcfg-4_Servers 文件来将网络接口的配置添加到服务器子网中：
+    <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=203.0.113.1
+PREFIX=24
+DEFROUTE=no
+NAME=4_Servers
+DEVICE=enp9s0
+ONBOOT=yes
+ZONE=internal
+</code></pre></div></p>
+</li>
+<li>
+<p>重启网络：
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>在内部工作站子网的主机上：</li>
+<li>安装 traceroute 软件包：
+        <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+<li>使用 traceroute 工具显示到互联网上主机的路由：
+        <div class="highlight"><pre><span></span><code># traceroute host.com
+traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+1  10.0.0.1 (10.0.0.1)     0.337 ms  0.260 ms  0.223 ms
+2  192.0.2.1 (192.0.2.1)   0.884 ms  1.066 ms  1.248 ms
+...
+</code></pre></div>
+        命令的输出显示路由器通过 192.0.2.1 ，即提供商 B 的网络来发送数据包。</li>
+<li>在服务器子网的主机上：<ol>
+<li>安装 traceroute 软件包：
+    <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+</ol>
+</li>
+<li>使用 traceroute 工具显示到互联网上主机的路由：
+        <code># traceroute host.com
+        traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+        1  203.0.113.1 (203.0.113.1)    2.179 ms  2.073 ms  1.944 ms
+        2  198.51.100.2 (198.51.100.2)  1.868 ms  1.798 ms  1.549 ms
+        ...</code>
+        命令的输出显示路由器通过 198.51.100.2 ，即供应商 A 的网络来发送数据包。</li>
+</ol>
+<p><strong>故障排除</strong></p>
+<p>在使用 OpenCloudOS 路由的主机中：
+1. 显示 ip 规则列表：
+    <div class="highlight"><pre><span></span><code># ip rule list
+0:  from all lookup local
+5:  from 10.0.0.0/24 lookup 5000
+32766:  from all lookup main
+32767:  from all lookup default
+</code></pre></div>
+    默认情况下包含 local 、 main 、 default 的规则。
+2. 显示 id 为 5000 的表中的路由：
+    <div class="highlight"><pre><span></span><code># ip route list table 5000
+0.0.0.0/0 via 192.0.2.2 dev enp1s0 proto static metric 100
+10.0.0.0/24 dev enp8s0 proto static scope link src 192.0.2.1 metric 102 
+</code></pre></div>
+3. 显示接口和防火墙域：
+    <div class="highlight"><pre><span></span><code># firewall-cmd --get-active-zones
+external
+interfaces: enp1s0 enp7s0
+trusted
+interfaces: enp8s0 enp9s0
+</code></pre></div>
+4. 验证 external 域是否启用了伪装：
+    <div class="highlight"><pre><span></span><code># firewall-cmd --info-zone=external
+external (active)
+target: default
+icmp-block-inversion: no
+interfaces: enp1s0 enp7s0
+sources:
+services: ssh
+ports:
+protocols:
+masquerade: yes
+...
+</code></pre></div></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

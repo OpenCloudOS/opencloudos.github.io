@@ -1,0 +1,2734 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network49-54/">
+      
+      
+        <link rel="next" href="../../release/v8.5/">
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>55-57章 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#55-bpf" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              55-57章
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../en/network/Network55-57/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        用户指南
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        版本说明
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      常见问题
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        参与贡献
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        生态认证
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        下载
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        测试
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          快速入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        使用说明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          用户指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          用户指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        基础配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        系统管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        内核更新
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        系统状态监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        安全加固
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          存储管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          存储管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        逻辑卷管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        可用的存储选项
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          网络管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          网络管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        1-6章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        7-12章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        13-18章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        19-24章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        25-30章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        31-36章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        37-42章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        43-48章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        49-54章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          55-57章
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        55-57章
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#551bcc" class="md-nav__link">
+    55.1.BCC 介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#552-bcc-tools" class="md-nav__link">
+    55.2.安装 bcc-tools 软件包
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#553-tcp" class="md-nav__link">
+    55.3.显示添加到内核的接受队列中的 TCP 连接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#564-tcp" class="md-nav__link">
+    56.4.追踪出去的 TCP 连接尝试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#555-tcp" class="md-nav__link">
+    55.5.测量出站 TCP 连接的延迟
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#556-tcp" class="md-nav__link">
+    55.6.显示被内核丢弃的 TCP 数据包和片段详情
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#557-tcp" class="md-nav__link">
+    55.7.追踪 TCP 会话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#558-tcp" class="md-nav__link">
+    55.8.追踪 TCP 重新传输
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#559-tcp" class="md-nav__link">
+    55.9.显示 TCP 状态更改信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5510-tcp" class="md-nav__link">
+    55.10. 聚合发送到特定子网的 TCP 流量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5511-ip" class="md-nav__link">
+    55.11.通过 IP 地址和端口显示网络吞吐量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5512-tcp" class="md-nav__link">
+    55.12.追踪已建立的 TCP 连接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5513-ipv4-ipv6" class="md-nav__link">
+    55.13.追踪 IPv4 和 IPv6 侦听请求
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5514" class="md-nav__link">
+    55.14.软中断的服务时间概述
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          版本说明
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          版本说明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          参与贡献
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          参与贡献
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        如何贡献
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        文档库格式手册
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        内核开发指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          生态认证
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          生态认证
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        生态认证流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        硬件测试用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          认证兼容列表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          认证兼容列表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        硬件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        商业软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        开源软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        适配FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          CentOS停服专区
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          CentOS停服专区
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        CentOS迁移OpenCloudOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          下载
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          下载
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          测试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#551bcc" class="md-nav__link">
+    55.1.BCC 介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#552-bcc-tools" class="md-nav__link">
+    55.2.安装 bcc-tools 软件包
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#553-tcp" class="md-nav__link">
+    55.3.显示添加到内核的接受队列中的 TCP 连接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#564-tcp" class="md-nav__link">
+    56.4.追踪出去的 TCP 连接尝试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#555-tcp" class="md-nav__link">
+    55.5.测量出站 TCP 连接的延迟
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#556-tcp" class="md-nav__link">
+    55.6.显示被内核丢弃的 TCP 数据包和片段详情
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#557-tcp" class="md-nav__link">
+    55.7.追踪 TCP 会话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#558-tcp" class="md-nav__link">
+    55.8.追踪 TCP 重新传输
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#559-tcp" class="md-nav__link">
+    55.9.显示 TCP 状态更改信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5510-tcp" class="md-nav__link">
+    55.10. 聚合发送到特定子网的 TCP 流量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5511-ip" class="md-nav__link">
+    55.11.通过 IP 地址和端口显示网络吞吐量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5512-tcp" class="md-nav__link">
+    55.12.追踪已建立的 TCP 连接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5513-ipv4-ipv6" class="md-nav__link">
+    55.13.追踪 IPv4 和 IPv6 侦听请求
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5514" class="md-nav__link">
+    55.14.软中断的服务时间概述
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network55-57.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network55-57.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="55-bpf">第55章 使用 BPF 编译器集合进行网络追踪</h1>
+<p>本章解释了 BPF 编译器集合(BCC)是什么，如何安装 BCC，以及如何使用 bcc-tools 软件包提供的预创建的脚本来执行不同的网络追踪操作。所有这些脚本都支持 --ebpf 参数，来显示工具上传到内核的 eBPF 代码。您可以使用这些代码了解更多有关编写 eBPF 脚本的信息。</p>
+<h2 id="551bcc">55.1.BCC 介绍</h2>
+<p>BPF Compiler Collection（BCC）是一个库，可帮助创建扩展的 Berkeley Packet Filter（eBPF）程序。eBPF 程序的主要工具是在不需要额外的开销或存在安全问题的情况下，分析操作系统性能和网络性能。</p>
+<p>BCC 不再需要用户了解 eBPF 的技术详情，并提供了许多开箱即用的工具，如带有预先创建的 eBPF 程序的 bcc-tools 软件包。</p>
+<p>eBPF 程序会在事件中触发，如磁盘 I/O、TCP 连接以及进程创建。程序不太可能导致内核崩溃、循环或者变得无响应，因为它们在内核的安全性虚拟机中运行。</p>
+<h2 id="552-bcc-tools">55.2.安装 bcc-tools 软件包</h2>
+<p>本节论述了如何安装 bcc-tools 软件包，该软件包还会将 BPF Compiler Collection (BCC) 库作为依赖项安装。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>安装 bcc-tools ：</p>
+<p><div class="highlight"><pre><span></span><code># yum install bcc-tools
+</code></pre></div>
+BCC 工具安装在 /usr/share/bcc/tools/ 目录中。</p>
+</li>
+<li>
+<p>（可选）检查工具：</p>
+<p><div class="highlight"><pre><span></span><code># ll /usr/share/bcc/tools/
+...
+-rwxr-xr-x. 1 root root  4198 Dec 14 17:53 dcsnoop
+-rwxr-xr-x. 1 root root  3931 Dec 14 17:53 dcstat
+-rwxr-xr-x. 1 root root 20040 Dec 14 17:53 deadlock_detector
+-rw-r--r--. 1 root root  7105 Dec 14 17:53 deadlock_detector.c
+drwxr-xr-x. 3 root root  8192 Mar 11 10:28 doc
+-rwxr-xr-x. 1 root root  7588 Dec 14 17:53 execsnoop
+-rwxr-xr-x. 1 root root  6373 Dec 14 17:53 ext4dist
+-rwxr-xr-x. 1 root root 10401 Dec 14 17:53 ext4slower
+...
+</code></pre></div>
+上表中的 doc 目录包含每个工具的文档。</p>
+</li>
+</ol>
+<h2 id="553-tcp">55.3.显示添加到内核的接受队列中的 TCP 连接</h2>
+<p>内核在 TCP 3 向握手中接收 ACK 数据包后，内核会将来自 SYN 队列的连接移到 accept 队列，直到连接的状态变为 ESTABLISHED。因此，只有成功的 TCP 连接才能在此队列中看到。</p>
+<p>tcpaccept 工具使用 eBPF 特性显示内核添加到 accept 队列的所有连接。该工具是轻量级的，因为它跟踪内核的 accept（） 函数，而不是捕获和过滤数据包。例如，使用 tcpaccept 进行常规故障排除，来显示服务器已接受的新连接。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>输入以下命令来启动对内核 accept 队列的追踪：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpaccept
+PID   COMM      IP RADDR         RPORT  LADDR    LPORT
+843   sshd      4  192.0.2.17    50598  192.0.2.1  22
+1107  ns-slapd  4  198.51.100.6  38772  192.0.2.1  389
+1107  ns-slapd  4  203.0.113.85  38774  192.0.2.1  389
+...
+</code></pre></div>
+每次内核接受一个连接时，tcpaccept 都会显示连接的详情。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="564-tcp">56.4.追踪出去的 TCP 连接尝试</h2>
+<p>tcpconnect 工具使用 eBPF 特性来跟踪出去的 TCP 连接尝试。该工具的输出还包括失败的连接。</p>
+<p>tcpconnect 工具是轻量级的，因为它只跟踪内核的 connect（） 函数，而不是捕获和过滤数据包。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>输入以下命令启动显示所有传出连接的追踪过程：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpconnect
+PID    COMM         IP SADDR      DADDR          DPORT
+31346  curl         4  192.0.2.1  198.51.100.16  80
+31348  telnet       4  192.0.2.1  203.0.113.231  23
+31361  isc-worker00 4  192.0.2.1  192.0.2.254    53
+...
+</code></pre></div>
+每次内核处理一个出去的连接时，tcpconnect 都会显示连接的详情。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="555-tcp">55.5.测量出站 TCP 连接的延迟</h2>
+<p>TCP 连接延迟是建立连接所需的时间。这通常涉及内核 TCP/IP 处理和网络往返时间，而不是应用程序运行时。</p>
+<p>tcpconnlat 工具使用 eBPF 特性来测量发送 SYN 数据包和接收响应数据包之间的时间。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>开始测量出站连接的延迟：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpconnlat
+PID    COMM         IP SADDR      DADDR          DPORT LAT(ms)
+32151  isc-worker00 4  192.0.2.1  192.0.2.254    53    0.60
+32155  ssh          4  192.0.2.1  203.0.113.190  22    26.34
+32319  curl         4  192.0.2.1  198.51.100.59  443   188.96
+...
+</code></pre></div>
+每次内核处理一个出去的连接时，tcpconnlat 都会在内核接收响应数据包后显示连接的详细信息。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="556-tcp">55.6.显示被内核丢弃的 TCP 数据包和片段详情</h2>
+<p>tcpdrop 工具使管理员能够显示内核所丢弃的 TCP 数据包和段的详情。使用这个实用程序调试丢弃数据包的高速率，以便远程系统发送基于计时器的重新传输。释放数据包和片段的高速率可能会影响服务器的性能。</p>
+<p>tcpdrop 工具使用 eBPF 特性，而不是捕获和过滤资源密集型的数据包，来直接从内核检索信息。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>输入以下命令来显示丢弃 TCP 数据包和片段详情：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpdrop
+TIME     PID    IP SADDR:SPORT       &gt; DADDR:DPORT   STATE (FLAGS)
+13:28:39 32253  4  192.0.2.85:51616  &gt; 192.0.2.1:22  CLOSE_WAIT (FIN|ACK)
+    b&#39;tcp_drop+0x1&#39;
+    b&#39;tcp_data_queue+0x2b9&#39;
+    ...
+
+13:28:39 1      4  192.0.2.85:51616  &gt; 192.0.2.1:22   CLOSE (ACK)
+    b&#39;tcp_drop+0x1&#39;
+    b&#39;tcp_rcv_state_process+0xe2&#39;
+    ...
+</code></pre></div>
+每次内核丢弃 TCP 数据包和段时，tcpdrop 都会显示连接的详情，包括导致软件包丢弃的内核堆栈追踪。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="557-tcp">55.7.追踪 TCP 会话</h2>
+<p>tcplife 工具使用 eBPF 跟踪打开和关闭的 TCP 会话，并打印一行输出来总结每一个会话。管理员可以使用 tcplife 来识别连接和传输的流量数。</p>
+<p>本节中的示例描述了如何显示到端口 22 (SSH)的连接，以检索以下信息：</p>
+<ul>
+<li>本地进程 ID（PID）</li>
+<li>本地进程名称</li>
+<li>本地 IP 地址和端口号</li>
+<li>远程 IP 地址和端口号</li>
+<li>接收和传输的流量的数量（以 KB 为单位）。</li>
+<li>连接处于活跃状态的时间（毫秒）</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>输入以下命令来开始追踪到本地端口 22 的连接：</p>
+<p><div class="highlight"><pre><span></span><code>/usr/share/bcc/tools/tcplife -L 22
+PID   COMM    LADDR      LPORT RADDR       RPORT TX_KB  RX_KB      MS
+19392 sshd    192.0.2.1  22    192.0.2.17  43892    53     52 6681.95
+19431 sshd    192.0.2.1  22    192.0.2.245 43902    81 249381 7585.09
+19487 sshd    192.0.2.1  22    192.0.2.121 43970  6998     7 16740.35
+...
+</code></pre></div>
+每次关闭连接时，tcplife 都会显示连接的详情。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="558-tcp">55.8.追踪 TCP 重新传输</h2>
+<p>tcpretrans 工具显示有关 TCP 重新传输的详细信息，如本地和远程的 IP 地址和端口号，以及重新传输时 TCP 的状态。</p>
+<p>该工具使用 eBPF 功能，因此开销非常低。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用以下命令来显示 TCP 重新传输详情：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpretrans
+TIME     PID  IP LADDR:LPORT   T&gt; RADDR:RPORT         STATE
+00:23:02 0    4  192.0.2.1:22  R&gt; 198.51.100.0:26788  ESTABLISHED
+00:23:02 0    4  192.0.2.1:22  R&gt; 198.51.100.0:26788  ESTABLISHED
+00:45:43 0    4  192.0.2.1:22  R&gt; 198.51.100.0:17634  ESTABLISHED
+...
+</code></pre></div>
+每次内核调用 TCP 重新传输函数时，tcpretrans 都会显示连接的详情。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="559-tcp">55.9.显示 TCP 状态更改信息</h2>
+<p>在 TCP 会话中，TCP 状态会改变。tcpstates 工具使用 eBPF 功能跟踪这些状态变化，并打印包括每个状态持续时间的详细信息。例如，使用 tcpstates 来确定连接是否在初始化状态中花费了太多时间。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用以下命令开始追踪 TCP 状态更改：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpstates
+SKADDR           C-PID C-COMM     LADDR     LPORT RADDR       RPORT OLDSTATE    -&gt; NEWSTATE    MS
+ffff9cd377b3af80 0     swapper/1  0.0.0.0   22    0.0.0.0     0     LISTEN      -&gt; SYN_RECV    0.000
+ffff9cd377b3af80 0     swapper/1  192.0.2.1 22    192.0.2.45  53152 SYN_RECV    -&gt; ESTABLISHED 0.067
+ffff9cd377b3af80 818   sssd_nss   192.0.2.1 22    192.0.2.45  53152 ESTABLISHED -&gt; CLOSE_WAIT  65636.773
+ffff9cd377b3af80 1432  sshd       192.0.2.1 22    192.0.2.45  53152 CLOSE_WAIT  -&gt; LAST_ACK    24.409
+ffff9cd377b3af80 1267  pulseaudio 192.0.2.1 22    192.0.2.45  53152 LAST_ACK    -&gt; CLOSE       0.376
+...
+</code></pre></div>
+每次连接改变其状态时，tcpstates 都会显示一个新行，其中包含更新的连接详情。
+如果多个连接同时改变了其状态，请使用第一列中的套接字地址(SKADDR)来确定哪些条目属于同一个连接。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="5510-tcp">55.10. 聚合发送到特定子网的 TCP 流量</h2>
+<p>tcpsubnet 工具汇总并合计了本地主机发往子网的 IPv4 TCP 流量，并按固定间隔显示输出。该工具使用 eBPF 功能来收集并总结数据，以减少开销。</p>
+<p>默认情况下，tcpsubnet 为以下子网汇总流量：</p>
+<ul>
+<li>127.0.0.1/32</li>
+<li>10.0.0.0/8</li>
+<li>172.16.0.0/12</li>
+<li>192.0.2.0/24/16</li>
+<li>0.0.0.0/0</li>
+</ul>
+<p>请注意，最后一个子网(0.0.0.0/0)是一个全包括选项。tcpsubnet 工具计算与这个全包括条目中前四个不同的子网的所有流量。</p>
+<p>按照以下流程计算 192.0.2.0/24 和 198.51.100.0/24 子网的流量。到其他子网的流量将在 0.0.0.0/0 全包括子网条目中跟踪。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>开始监控发送到 192.0.2.0/24、198.51.100.0/24 以及其他子网的流量数：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcpsubnet 192.0.2.0/24,198.51.100.0/24,0.0.0.0/0
+Tracing... Output every 1 secs. Hit Ctrl-C to end
+[02/21/20 10:04:50]
+192.0.2.0/24           856
+198.51.100.0/24       7467
+[02/21/20 10:04:51]
+192.0.2.0/24          1200
+198.51.100.0/24       8763
+0.0.0.0/0              673
+...
+</code></pre></div>
+这个命令以字节为单位显示指定子网每秒一次的流量。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="5511-ip">55.11.通过 IP 地址和端口显示网络吞吐量</h2>
+<p>tcptop 工具以 KB 为单位显示主机发送并接收的 TCP 流量。这个报告会自动刷新并只包含活跃的 TCP 连接。该工具使用 eBPF 功能，因此开销非常低。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要监控发送和接收的流量，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcptop
+13:46:29 loadavg: 0.10 0.03 0.01 1/215 3875
+
+PID    COMM         LADDR           RADDR              RX_KB   TX_KB
+3853   3853         192.0.2.1:22    192.0.2.165:41838  32     102626
+1285   sshd         192.0.2.1:22    192.0.2.45:39240   0           0
+...
+</code></pre></div>
+命令的输出只包括活跃的 TCP 连接。如果本地或者远程系统关闭了连接，则该连接在输出中不再可见。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="5512-tcp">55.12.追踪已建立的 TCP 连接</h2>
+<p>tcptracer 工具跟踪连接、接受和关闭 TCP 连接的内核函数。该工具使用 eBPF 功能，因此开销非常低。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用以下命令启动追踪过程：</p>
+<p><div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/tcptracer
+Tracing TCP established connections. Ctrl-C to end.
+T  PID    COMM        IP SADDR        DADDR       SPORT  DPORT
+A  1088   ns-slapd    4  192.0.2.153  192.0.2.1   0      65535
+A  845    sshd        4  192.0.2.1    192.0.2.67  22     42302
+X  4502   sshd        4  192.0.2.1    192.0.2.67  22     42302
+...
+</code></pre></div>
+每当内核连接、接受或关闭连接时，tcptracer 都会显示连接的详情。</p>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="5513-ipv4-ipv6">55.13.追踪 IPv4 和 IPv6 侦听请求</h2>
+<p>solisten 工具追踪所有 IPv4 和 IPv6 侦听请求。它跟踪监听请求，包括最终失败或者不接受连接的监听程序。当程序要侦听 TCP 连接时，程序会追踪内核调用的功能。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>输入以下命令启动显示所有监听 TCP 尝试的追踪过程：</p>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/solisten
+PID    COMM           PROTO         BACKLOG     PORT     ADDR
+3643   nc             TCPv4         1           4242     0.0.0.0
+3659   nc             TCPv6         1           4242     2001:db8:1::1
+4221   redis-server   TCPv6         128         6379     ::
+4221   redis-server   TCPv4         128         6379     0.0.0.0
+....
+</code></pre></div>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h2 id="5514">55.14.软中断的服务时间概述</h2>
+<p>softirqs 工具总结了服务软中断（soft IRQ）所花费的时间，并将这个时间显示为总计或直方图分布。这个工具使用 irq:softirq_enter 和 irq:softirq_exit 内核追踪点，是一个稳定的追踪机制。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>输入以下命令启动追踪 soft irq 事件时间：</p>
+<div class="highlight"><pre><span></span><code># /usr/share/bcc/tools/softirqs
+Tracing soft irq event time... Hit Ctrl-C to end.
+^C
+SOFTIRQ          TOTAL_usecs
+tasklet                  166
+block                   9152
+net_rx                 12829
+rcu                    53140
+sched                 182360
+timer                 306256
+</code></pre></div>
+</li>
+<li>
+<p>按 Ctrl+C 停止追踪过程。</p>
+</li>
+</ol>
+<h1 id="56-tipc">第56章 TIPC入门</h1>
+<p>透明进程间通信(TIPC)（也称为 集群域套接字）是用于集群范围操作的进程间通信(IPC)服务。</p>
+<p>在高可用性和动态集群环境中运行的应用程序有特殊需要。集群中的节点数量可能会有所不同，路由器可能会失败，且出于负载均衡的考虑，功能也可以移到集群中的不同节点。TIPC 可最大程度降低应用程序开发人员处理此类问题的工作，并尽可能以正确和最佳的方式处理它们。另外，TIPC 比一般协议（如 TCP）提供效率更高且容错的通讯。</p>
+<h2 id="561-tipc">56.1. TIPC 的构架</h2>
+<p>TIPC 是使用 TIPC 和数据包传输服务(bearer)的应用程序之间的一个层，横跨传输层、网络层和信令链路层。然而，TIPC 可以使用不同的传输协议作为 bearer，这样 TCP 连接就可以充当 TIPC 信号连接的 bearer。</p>
+<p>TIPC 支持以下 bearer:</p>
+<ul>
+<li>Ethernet</li>
+<li>InfiniBand</li>
+<li>UDP 协议</li>
+</ul>
+<p>TIPC 提供了在 TIPC 端口间可靠传送信息，这是所有 TIPC 通讯的端点。</p>
+<p>以下是 TIPC 构架图：
+<img alt="TIPC" src="../assets/TIPC.png" /></p>
+<h2 id="562-tipc">56.2.系统引导时载入 tipc 模块</h2>
+<p>在使用 TIPC 协议前，请加载 tipc 内核模块。本节介绍如何在系统引导时配置 OpenCloudOS 自动载入这个模块。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用以下内容创建 /etc/modules-load.d/tipc.conf 文件：</p>
+<div class="highlight"><pre><span></span><code>tipc
+</code></pre></div>
+</li>
+<li>
+<p>重启 systemd-modules-load 服务，以在不重启系统的情况下加载模块：</p>
+<div class="highlight"><pre><span></span><code># systemctl start systemd-modules-load
+</code></pre></div>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>使用以下命令验证 RHEL 是否已载入 tipc 模块：</p>
+<div class="highlight"><pre><span></span><code># lsmod | grep tipc
+tipc    311296  0
+</code></pre></div>
+</li>
+</ul>
+<p>如果命令没有显示 tipc 模块的条目，则说明 OpenCloudOS 没有加载它。</p>
+<h2 id="563-tipc">56.3.创建 TIPC 网络</h2>
+<p>注意，以下命令只临时配置 TIPC 网络。要在节点上永久配置 TIPC，在脚本中使用此流程的命令，并将 OpenCloudOS 配置为在系统引导时执行该脚本。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>tipc 模块已加载。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>可选：设置一个唯一的节点身份，如 UUID 或节点的主机名：</p>
+<p><div class="highlight"><pre><span></span><code># tipc node set identity host_name
+</code></pre></div>
+身份可以是任何由最多 16 个字母和数字组成的唯一字符串。
+您不能在此步骤后设置或改变身份。</p>
+</li>
+<li>
+<p>添加一个 bearer。例如，要将 Ethernet 用作介质，并将 enp0s1 设备用作物理 bearer 设备，请输入：</p>
+<div class="highlight"><pre><span></span><code># tipc bearer enable media eth device enp1s0
+</code></pre></div>
+</li>
+<li>
+<p>可选： 要获得冗余和更好的性能，请使用上一步中的命令附加更多 bearer。您可以配置最多三个 bearer，但在同一介质上不能超过两个。</p>
+</li>
+<li>
+<p>在应该加入 TIPC 网络的每个节点中重复前面的所有步骤。</p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>显示集群成员的链接状态：</p>
+<p><div class="highlight"><pre><span></span><code># tipc link list
+broadcast-link: up
+5254006b74be:enp1s0-525400df55d1:enp1s0: up
+</code></pre></div>
+此输出表示，节点 5254006b74be 上的 bearer enp1s0 和节点 525400df55d1 上的 bearer enp1s0 之间的链接为 up。</p>
+</li>
+<li>
+<p>显示 TIPC 发布表：</p>
+<p><div class="highlight"><pre><span></span><code># tipc nametable show
+Type       Lower      Upper      Scope    Port       Node
+0          1795222054 1795222054 cluster  0          5254006b74be
+0          3741353223 3741353223 cluster  0          525400df55d1
+1          1          1          node     2399405586 5254006b74be
+2          3741353223 3741353223 node     0          5254006b74be
+</code></pre></div>
+服务类型为 0 的两个条目表示两个节点是这个集群的成员。
+服务类型为 1 的条目代表内置的拓扑服务跟踪服务。
+服务类型为 2 的条目显示从发布节点看到的链接。范围限制 3741353223 代表十进制格式表示的对等端点的地址（基于节点身份的唯一 32 位哈希值）。</p>
+</li>
+</ol>
+<h1 id="57-nm-cloud-setup">第57章 使用 nm-cloud-setup 在公有云中自动配置网络接口</h1>
+<p>通常，虚拟机(VM)只有一个可由 DHCP 配置的接口。但是，一些虚拟机在一个无法由 DHCP 配置的接口中可能有多个网络接口、IP 地址和 IP 子网。另外，管理员可以在机器运行时重新配置网络。nm-cloud-setup 工具从云服务提供商的元数据服务器自动检索配置信息，并更新公有云中虚拟机的网络配置。</p>
+<h2 id="571-nm-cloud-setup">57.1.配置和预部署 nm-cloud-setup</h2>
+<p>要在公有云中启用和配置网络接口，请运行 nm-cloud-setup 作为计时器和服务。以下流程描述了如何对 Amazon EC2 使用 nm-cloud-setup 。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>存在网络连接。</li>
+<li>连接使用 DHCP。
+  默认情况下，NetworkManager 会创建一个使用 DHCP 的连接配置文件。如果因为您在 /etc/NetworkManager/NetworkManager.conf 中设置了 no-auto-default 参数而没有创建配置文件，请手动创建此初始连接。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>安装 nm-cloud-setup 软件包：</p>
+<div class="highlight"><pre><span></span><code># yum install NetworkManager-cloud-setup
+</code></pre></div>
+</li>
+<li>
+<p>为 nm-cloud-setup 服务创建并运行 管理单元文件：</p>
+<ol>
+<li>
+<p>使用以下命令开始编辑管理单元文件：</p>
+<p><div class="highlight"><pre><span></span><code># systemctl edit nm-cloud-setup.service
+</code></pre></div>
+显式启动服务或重启系统，以使配置设置生效，这点非常重要的。</p>
+</li>
+<li>
+<p>使用 systemd 管理单元文件来在 nm-cloud-setup 中配置云提供商。例如，要使用 Amazon EC2，请输入：</p>
+<p><div class="highlight"><pre><span></span><code>[Service]
+Environment=NM_CLOUD_SETUP_EC2=yes
+</code></pre></div>
+您可以设置以下环境变量来启用您所使用的云提供商：
+ - 用于 Microsoft Azure 的 NM_CLOUD_SETUP_AZURE
+ - 用于 Amazon EC2(AWS)的 NM_CLOUD_SETUP_EC2
+ - 用于 Google Cloud Platform(GCP)的 NM_CLOUD_SETUP_GCP
+ - 用于 Alibaba Cloud (Aliyun) 的 NM_CLOUD_SETUP_ALIYUN</p>
+</li>
+<li>
+<p>保存文件并退出编辑器。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>重新载入 systemd 配置：</p>
+<div class="highlight"><pre><span></span><code># systemctl daemon-reload
+</code></pre></div>
+</li>
+<li>
+<p>启用并启动 nm-cloud-setup 服务：</p>
+<div class="highlight"><pre><span></span><code># systemctl enable --now nm-cloud-setup.service
+</code></pre></div>
+</li>
+<li>
+<p>启用并启动 nm-cloud-setup 计时器：</p>
+<div class="highlight"><pre><span></span><code># systemctl enable --now nm-cloud-setup.timer
+</code></pre></div>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,5371 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network43-48/">
+      
+      
+        <link rel="next" href="../Network55-57/">
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>49-54章 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#49" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              49-54章
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../en/network/Network49-54/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        用户指南
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        版本说明
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      常见问题
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        参与贡献
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        生态认证
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        下载
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        测试
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          快速入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        使用说明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          用户指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          用户指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        基础配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        系统管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        内核更新
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        系统状态监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        安全加固
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          存储管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          存储管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        逻辑卷管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        可用的存储选项
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          网络管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          网络管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        1-6章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        7-12章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        13-18章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        19-24章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        25-30章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        31-36章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        37-42章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        43-48章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          49-54章
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        49-54章
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#491-xdpdump-xdp" class="md-nav__link">
+    49.1.使用 xdpdump 捕获包括 XDP 程序丢弃的数据包在内的网络数据包
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        55-57章
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          版本说明
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          版本说明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          参与贡献
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          参与贡献
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        如何贡献
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        文档库格式手册
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        内核开发指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          生态认证
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          生态认证
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        生态认证流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        硬件测试用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          认证兼容列表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          认证兼容列表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        硬件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        商业软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        开源软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        适配FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          CentOS停服专区
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          CentOS停服专区
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        CentOS迁移OpenCloudOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          下载
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          下载
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          测试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#491-xdpdump-xdp" class="md-nav__link">
+    49.1.使用 xdpdump 捕获包括 XDP 程序丢弃的数据包在内的网络数据包
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network49-54.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network49-54.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="49">第49章 捕获网络数据包</h1>
+<p>要调试网络和通讯问题，您可以捕获网络数据包分析。以下部分提供有关捕获网络数据包的步骤和附加信息。</p>
+<h2 id="491-xdpdump-xdp">49.1.使用 xdpdump 捕获包括 XDP 程序丢弃的数据包在内的网络数据包</h2>
+<p>xdpdump 工具可以帮助我们捕获网络数据包。与 tcpdump 工具不同，xdpdump 使用扩展的 Berkeley 数据包过滤(eBPF)程序。这也使 xdpdump 能够捕获快速数据路径(XDP)程序丢弃的数据包。用户空间工具（如 tcpdump ）无法捕获被丢弃的数据包或是 XDP 程序修改的原始数据包。</p>
+<p>您可以使用 xdpdump 来调试已附加到接口上的 XDP 程序。工作程序可以在 XDP 程序启动前或是程序结束后捕获数据包。在后一种情况下，xdpdump 也捕获 XDP 操作。默认情况下，xdpdump 会在 XDP 程序的入口处捕获传入的数据包。</p>
+<p>请注意，xdpdump 没有数据包过滤或解码功能。但是，您可以将它与 tcpdump 结合使用来解码数据包。</p>
+<p>以下流程描述了如何捕获 enp1s0 接口上的所有数据包，并将它们写入到 /root/capture.pcap 文件。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>安装了支持 XDP 程序的网络驱动程序。</li>
+<li>XDP 程序被加载到 enp1s0 接口。如果没有程序载入，xdpdump 会以与 tcpdump 类似的方式捕获数据包，以便向后兼容。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要捕获 enp1s0 接口上的数据包，并将它们写入到 /root/capture.pcap 文件，请输入：</p>
+<div class="highlight"><pre><span></span><code># xdpdump -i enp1s0 -w /root/capture.pcap
+</code></pre></div>
+</li>
+<li>
+<p>要停止捕获数据包，请按 Ctrl+C。</p>
+</li>
+</ol>
+<h1 id="50-firewalld">第50章 使用和配置 firewalld</h1>
+<p>防火墙是保护机器不受来自外部的、不需要的网络数据的一种方式。它允许用户通过定义一组防火墙规则 来控制主机上的入站网络流量。这些规则用于对进入的流量进行排序，并可以阻断或允许流量。</p>
+<p>firewalld 是一个防火墙服务守护进程，其提供一个带有 D-Bus 接口的、动态可定制的、基于主机的防火墙。因为是动态的，它不需要在每次修改规则后重启进程。</p>
+<p>firewalld 使用域和服务的概念来简化流量管理。域 （zones） 是预定义的规则集。网络接口和源可以分配给域。流量是否允许进出取决于您计算机连接到的网络，和这个网络的安全级别。防火墙服务是预定义的规则，覆盖了允许进入特定服务的流量的所有必要设置，并在域中应用。</p>
+<p>服务使用一个或多个端口或地址进行网络通信。防火墙会根据端口过滤通讯。要允许服务的网络流量通过，必须打开其端口。firewalld 会阻止未明确设置为开放的端口上的所有流量。一些域（如可信域）默认允许所有流量。</p>
+<p>请注意，带有 nftables 后端的 firewalld 不支持使用 --direct 选项将自定义的 nftables 规则传递到 firewalld。</p>
+<h2 id="501firewalld">50.1.firewalld入门</h2>
+<h3 id="5011-firewalldnftables-iptables">50.1.1.使用 firewalld、nftables 或者 iptables</h3>
+<p>以下是您应该使用的工具简介：</p>
+<ul>
+<li>firewalld ：将 firewalld 工具用于简单的防火墙用例。此工具易于使用，并涵盖了这些场景的典型用例。</li>
+<li>nftables ：使用 nftables 工具来设置复杂和性能关键的防火墙，如整个网络。</li>
+<li>iptables ：iptables 工具使用 nf_tables 内核 API ，而不是 legacy 后端。nf_tables API 提供向后兼容性，因此使用 iptables 命令的脚本仍可在 OpenCloudOS 上工作。对于新的防火墙脚本，建议使用 nftables。</li>
+</ul>
+<p>要避免不同的防火墙服务相互影响，请在主机中只使用一个服务，并禁用其他服务。</p>
+<h3 id="5012-zones">50.1.2. Zones</h3>
+<p>firewalld 可以根据用户在网络中的接口和流量上设置的信任级别将网络划分为不同的域。一个连接只能是一个域的一部分，但一个域可以被用来进行很多网络连接。</p>
+<p>NetworkManager 通知接口域的 firewalld。您可以用以下工具为接口分配域：</p>
+<ul>
+<li>NetworkManager</li>
+<li>firewall-config 工具</li>
+<li>firewall-cmd 命令行工具</li>
+</ul>
+<p>后两个只能编辑适当的 NetworkManager 配置文件。如果您使用 firewall-cmd 或 firewall-config 修改了接口域，那么请求会被转发到 NetworkManager，并且不会由 ⁠firewalld 来处理。</p>
+<p>预定义域存储在 /usr/lib/firewalld/zones/ 目录中，并可立即应用到任何可用的网络接口上。只有在修改后，这些文件才会复制到 /etc/firewalld/zones/ 目录中。预定义域的默认设置如下：</p>
+<ul>
+<li>block
+    任何传入的网络连接都会被拒绝，对于 IPv4 会显示 icmp-host-prohibited 消息，对于 IPv6 会显示 icmp6-adm-prohibited 消息。只有从系统启动的网络连接才能进行。</li>
+<li>dmz
+    对于您的非企业化域里的计算机来说，这些计算机可以被公开访问，且有限访问您的内部网络。只接受所选的入站连接。</li>
+<li>drop
+    所有传入的网络数据包都会丢失，没有任何通知。只有外发网络连接是可行的。</li>
+<li>external
+    适用于启用了伪装的外部网络，特别是路由器。您不信任网络中的其他计算机不会损害您的计算机。只接受所选的入站连接。</li>
+<li>home
+    用于家用，因为您可以信任其他计算机。只接受所选的入站连接。</li>
+<li>internal
+    当您信任网络中的其他计算机时，供内部网络使用。只接受所选的入站连接。</li>
+<li>public
+    可用于您不信任网络中其他计算机的公共区域。只接受所选的入站连接。</li>
+<li>trusted
+    所有网络连接都被接受。</li>
+<li>work
+    可用于您主要信任网络中其他计算机的工作设置。只接受所选的入站连接。</li>
+</ul>
+<p>这些域中的一个被设置为 default 域。当接口连接被添加到 NetworkManager 时，它们会被分配给默认域。安装时，firewalld 中的默认域被设置为 public 域。默认域可以被修改。</p>
+<h3 id="5013">50.1.3.预定义的服务</h3>
+<p>服务可以是本地端口、协议、源端口和目的地列表，并在启用了服务时自动载入防火墙帮助程序模块列表。使用服务可节省用户时间，因为它们可以完成一些任务，如打开端口、定义协议、启用数据包转发等等，而不必在另外的步骤中设置所有任务。</p>
+<p>服务通过单独的 XML 配置文件来指定，这些文件采用以下格式命名：service-name.xml 。协议名称优先于 firewalld 中的服务或应用程序名称。</p>
+<p>可以使用图形化的 firewall-config 工具、firewall-cmd 和 firewall-offline-cmd 来添加和删除服务。</p>
+<p>或者，您可以编辑 /etc/firewalld/services/ 目录中的 XML 文件。如果用户未添加或更改服务，则在 /etc/firewalld/services/ 中没有相应的 XML 文件。如果要添加或更改服务，/usr/lib/firewalld/services/ 目录中的文件可作用作模板。</p>
+<h3 id="5014-firewalld">50.1.4.启动 firewalld</h3>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要启动 firewalld，请以 root 用户身份输入以下命令：</p>
+<div class="highlight"><pre><span></span><code># systemctl unmask firewalld
+# systemctl start firewalld
+</code></pre></div>
+</li>
+<li>
+<p>要确保 firewalld 在系统启动时自动启动，请以 root 用户身份输入以下命令：</p>
+<div class="highlight"><pre><span></span><code># systemctl enable firewalld
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5015-firewalld">50.1.5.禁用 firewalld</h3>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要禁用 firewalld，请以 root 用户身份输入以下命令：</p>
+<div class="highlight"><pre><span></span><code># systemctl stop firewalld
+</code></pre></div>
+</li>
+<li>
+<p>要防止 firewalld 在系统启动时自动启动：</p>
+<div class="highlight"><pre><span></span><code># systemctl disable firewalld
+</code></pre></div>
+</li>
+<li>
+<p>要确保访问 firewalld D-Bus接口时未启动firewalld，并且其他服务需要 firewalld 时也未启动 firewalld ：</p>
+<div class="highlight"><pre><span></span><code># systemctl mask firewalld
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5016-firewalld">50.1.6.验证永久 firewalld 配置</h3>
+<p>在某些情况下，例如在手动编辑 firewalld 配置文件后，管理员想验证更改是否正确。本节描述了如何验证 firewalld 服务的永久配置。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>firewalld 服务在运行。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>验证 firewalld 服务的永久配置：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --check-config
+success
+</code></pre></div>
+如果永久配置有效，该命令将返回 成功。在其他情况下，命令返回一个带有更多详情的错误，如下所示：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --check-config
+Error: INVALID_PROTOCOL: &#39;public.xml&#39;: &#39;tcpx&#39; not from {&#39;tcp&#39;|&#39;udp&#39;|&#39;sctp&#39;|&#39;dcc
+</code></pre></div>
+</li>
+</ol>
+<h2 id="502-firewalld">50.2.查看 firewalld的当前状态和设置</h2>
+<h3 id="5021-firewalld">50.2.1.查看 firewalld 的当前状态</h3>
+<p>默认情况下，防火墙服务 firewalld 会在系统上安装。使用 firewalld CLI 接口可检查该服务是否正在运行。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>查看服务的状态：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --state
+</code></pre></div>
+</li>
+<li>
+<p>如需有关服务状态的更多信息，请使用 systemctl status 子命令：</p>
+<div class="highlight"><pre><span></span><code># systemctl status firewalld
+firewalld.service - firewalld - dynamic firewall daemon
+Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor pr
+Active: active (running) since Mon 2017-12-18 16:05:15 CET; 50min ago
+    Docs: man:firewalld(1)
+Main PID: 705 (firewalld)
+    Tasks: 2 (limit: 4915)
+CGroup: /system.slice/firewalld.service
+        └─705 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5022-gui">50.2.2.使用 GUI 查看服务</h3>
+<p>要使用图形化的 firewall-config 工具来查看服务列表，请按 Super 键（也称 Win 键）进入"活动概览"，输入 firewall，然后按 Enter 键。firewall-config 工具就会出现。您可以在 Services 选项卡下查看服务列表。</p>
+<p>您也可以使用命令行启动图形防火墙配置工具。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 firewall-config 软件包。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>使用命令行启动图形防火墙配置工具：</p>
+<p><div class="highlight"><pre><span></span><code>$ firewall-config
+</code></pre></div>
+<img alt="firewall-config" src="../assets/firewall-config.png" />
+firewall-config 窗口打开。请注意，这个命令可以以普通用户身份运行，但偶尔会提示您输入管理员密码。</p>
+</li>
+</ul>
+<h3 id="5023-cli-firewalld">50.2.3.使用 CLI 查看 firewalld 设置</h3>
+<p>使用 CLI 客户端可能会看到和当前防火墙设置不同的视图。--list-all 选项显示 firewalld 设置的完整概述。</p>
+<p>Firewalld 使用域来管理流量。如果没有用 --zone 选项来指定域，该命令将在分配给活跃网络接口和连接的默认域中有效。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要列出默认域的所有相关信息：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-all
+public
+target: default
+icmp-block-inversion: no
+interfaces:
+sources:
+services: ssh dhcpv6-client
+ports:
+protocols:
+masquerade: no
+forward-ports:
+source-ports:
+icmp-blocks:
+rich rules:
+</code></pre></div>
+</li>
+<li>
+<p>要指定显示设置的域，请在 firewall-cmd--list-all 命令中添加 --zone=zone-name 参数，例如：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-all --zone=home
+home
+target: default
+icmp-block-inversion: no
+interfaces:
+sources:
+services: ssh mdns samba-client dhcpv6-client
+... [trimmed for clarity]
+</code></pre></div>
+</li>
+<li>
+<p>要查看特定信息（如服务或端口）的设置，请使用特定选项。使用命令帮助来查看 firewalld 手册页或获取选项列表：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --help
+</code></pre></div>
+</li>
+<li>
+<p>查看当前域中允许哪些服务：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-services
+ssh dhcpv6-client
+</code></pre></div>
+</li>
+</ol>
+<p>注意，使用 CLI 工具列出某个子部分的设置有时会比较困难。例如，您允许 SSH 服务，firewalld 为该服务开放必要的端口(22)。之后，如果您列出允许的服务，列表将显示 SSH 服务，但如果列出开放的端口，则不会显示任何内容。因此，建议您使用 --list-all 选项来确保您收到完整的信息。</p>
+<h2 id="503-firewalld">50.3.使用 firewalld 控制网络流量</h2>
+<h3 id="5031-cli">50.3.1.使用 CLI 禁用紧急事件的所有流量</h3>
+<p>在紧急情况下，如受到系统攻击，可以禁用所有网络流量来切断攻击者的流量。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要立即禁用网络流量，请切换到 panic 模式：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --panic-on
+</code></pre></div>
+注意，启用 panic 模式可停止所有网络流量。因此，只有当您具有对机器的物理访问权限或使用串行控制台登录时，才应该使用它。</p>
+</li>
+<li>
+<p>关闭 panic 模式会使该设置自动设为防火墙的永久设置。要关闭 panic 模式，请输入：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --panic-off
+</code></pre></div>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>要查看是否打开或关闭 panic 模式，请使用：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --query-panic
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5032-cli">50.3.2.使用 CLI 控制预定义服务的流量</h3>
+<p>控制流量的最简单的方法是向 firewalld 添加预定义的服务。这会打开所有必需的端口并根据 服务定义文件 修改其他设置。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>检查该服务是否还未被允许：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-services
+ssh dhcpv6-client
+</code></pre></div>
+</li>
+<li>
+<p>列出所有预定义的服务：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --get-services
+RH-Satellite-6 amanda-client amanda-k5-client bacula bacula-client bitcoin bitcoin-rpc bitcoin-testnet bitcoin-testnet-rpc ceph ceph-mon cfengine condor-collector ctdb dhcp dhcpv6 dhcpv6-client dns docker-registry ...
+[trimmed for clarity]
+</code></pre></div>
+</li>
+<li>
+<p>添加允许的服务：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-service=&lt;service-name&gt;
+</code></pre></div>
+</li>
+<li>
+<p>使新设置持久：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5033-gui">50.3.3.通过 GUI，使用预定义服务控制流量</h3>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 firewall-config 软件包</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>启用或禁用预定义或自定义服务：</p>
+</li>
+<li>
+<p>启动 firewall-config 工具并选择要配置的服务的网络域。</p>
+</li>
+<li>选择 Zones 选项卡，然后选择下面的 Services 选项卡。</li>
+<li>
+<p>选择您要信任的每种服务类型的复选框，或者清除复选框以阻止所选区中的服务。</p>
+</li>
+<li>
+<p>编辑服务：</p>
+</li>
+<li>
+<p>启动 firewall-config 工具。</p>
+</li>
+<li>从标为 Configuration 的菜单中选择 Permanent 。其它图标和菜单按钮会出现在 Service 窗口底部。</li>
+<li>选择您要配置的服务。</li>
+</ol>
+<p>Ports 、Protocols 和 Source Port 选项卡可为所选的服务启用、更改和删除端口、协议和源端口。模块标签是用来配置 Netfilter helper 模块。Destination 选项卡允许将流量限制到特定的目标地址和Internet协议(IPv4 或 IPv6)。</p>
+<p>注意，在Runtime 模式下无法更改服务设置。</p>
+<h3 id="5034">50.3.4.添加新服务</h3>
+<p>您可以使用图形化的 firewall-config 工具、firewall-cmd 和 firewall-offline-cmd 来添加和删除服务。或者，您可以编辑 /etc/firewalld/services/ 中的 XML 文件。如果用户未添加或更改服务，则在 /etc/firewalld/services/ 中没有相应的 XML 文件。如果要添加或更改服务，则文件 /usr/lib/firewalld/services/ 可用作模板。</p>
+<p>注意，服务名称必须是字母数字，此外只能包含 _ （下划线）和 - （短划线）字符。</p>
+<p><strong>流程</strong></p>
+<p>要在终端中添加新服务，请使用 firewall-cmd 或在 firewalld 未激活的情况下，使用firewall-offline-cmd 。</p>
+<ol>
+<li>
+<p>运行以下命令以添加新和空服务：</p>
+<div class="highlight"><pre><span></span><code>$ firewall-cmd --new-service=service-name --permanent
+</code></pre></div>
+</li>
+<li>
+<p>要使用本地文件添加新服务，请使用以下命令：</p>
+<p><div class="highlight"><pre><span></span><code>$ firewall-cmd --new-service-from-file=service-name.xml --permanent
+</code></pre></div>
+您可以使用 --name=service-name 选项来更改服务名称。</p>
+</li>
+<li>
+<p>更改服务设置后，服务的更新副本放在 /etc/firewalld/services/ 中。</p>
+<p>作为 root 用户，您可以输入以下命令来手动复制服务：</p>
+<p><div class="highlight"><pre><span></span><code># cp /usr/lib/firewalld/services/service-name.xml /etc/firewalld/services/service-name.xml
+</code></pre></div>
+firewalld 首先从 /usr/lib/firewalld/services 加载文件。如果文件放在 /etc/firewalld/services 中，并且有效，则这些文件将覆盖 /usr/lib/firewalld/services 中的匹配文件。一旦删除了 /etc/firewalld/services 中的匹配文件，或者要求 firewalld 加载服务的默认值，就会使用 /usr/lib/firewalld/services 中的覆盖文件。这只适用于永久性环境。要在运行时环境中获取这些回退，则需要重新载入。</p>
+</li>
+</ol>
+<h3 id="5035-gui">50.3.5.使用 GUI 打开端口</h3>
+<p>如果您要允许流量通过防火墙到达某个端口，可以在 GUI 中打开端口。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 firewall-config 软件包</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>启动 firewall-config 工具并选择要更改的网络区。</li>
+<li>选择 Ports 选项卡，然后点击右侧的 Add 按钮。此时会打开 端口和协议 窗口。</li>
+<li>输入要允许的端口号或者端口范围。</li>
+<li>从列表中选择 tcp 或 udp。</li>
+</ol>
+<h3 id="5036-gui">50.3.6.使用 GUI 控制协议的流量</h3>
+<p>您可以使用 GUI 控制某种协议允许流量通过防火墙。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 firewall-config 软件包</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>启动 firewall-config 工具并选择要更改的网络区。</li>
+<li>选择 Protocols 选项卡，然后点击右侧的 Add 按钮。此时会打开 协议 窗口。</li>
+<li>从列表中选择协议，或者选择 Other Protocol 复选框，并在字段中输入协议。</li>
+</ol>
+<h3 id="5037-gui">50.3.7.使用 GUI 打开源端口</h3>
+<p>要允许来自某个端口的流量通过防火墙，您可以使用 GUI。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 firewall-config 软件包</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>启动 firewall-config 工具并选择要更改的网络区。</li>
+<li>选择 Source Port 选项卡，然后点击右侧的 Add 按钮。源端口 窗口将打开。</li>
+<li>输入要允许的端口号或者端口范围。从列表中选择 tcp 或 udp。</li>
+</ol>
+<h2 id="504-cli">50.4.使用 CLI 控制端口</h2>
+<p>端口是可让操作系统接收和区分网络流量并将其转发到系统服务的逻辑设备。它们通常由侦听端口的守护进程来表示，它会等待到达这个端口的任何流量。</p>
+<p>通常，系统服务会为它们保留标准的侦听端口。例如，httpd 守护进程监听 80 端口。但默认情况下，系统管理员会将守护进程配置为在不同端口上侦听以便增强安全性或其他原因。</p>
+<h3 id="5041">50.4.1.打开端口</h3>
+<p>通过打开端口，系统可被从外部访问，这代表了安全风险。通常让端口保持关闭，且只在某些服务需要时才打开。</p>
+<p><strong>流程</strong></p>
+<p>要获得当前区的打开端口列表：</p>
+<ol>
+<li>
+<p>列出所有允许的端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-ports
+</code></pre></div>
+</li>
+<li>
+<p>在允许的端口中添加一个端口，以便为入站流量打开这个端口：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --add-port=port-number/port-type
+</code></pre></div>
+端口类型为 tcp、udp、sctp 或 dccp。这个类型必须与网络通信的类型匹配。</p>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+端口类型为 tcp、udp、sctp 或 dccp。这个类型必须与网络通信的类型匹配。</p>
+</li>
+</ol>
+<h3 id="5042">50.4.2.关闭端口</h3>
+<p>当打开的端口不再需要时，在 firewalld 中关闭此端口。强烈建议您尽快关闭所有不必要的端口，因为端口处于打开状态会存在安全隐患。</p>
+<p><strong>流程</strong></p>
+<p>要关闭某个端口，请将其从允许的端口列表中删除：</p>
+<ol>
+<li>
+<p>列出所有允许的端口：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --list-ports
+</code></pre></div>
+注意，这个命令只为您提供已打开作为端口的端口列表。您将无法看到作为服务打开的任何打开端口。因此，您应该考虑使用 --list-all 选项查看详细信息，而不是 --list-ports。</p>
+</li>
+<li>
+<p>从允许的端口中删除端口，以便对传入的流量关闭：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --remove-port=port-number/port-type
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<h2 id="505-system-roles">50.5.使用 system-roles 配置端口</h2>
+<p>您可以使用 firewalld 系统角色来在本地防火墙中为传入的流量打开或关闭端口，并使配置在重启后保持不变。以下示例描述了如何配置默认域以允许 HTTPS 服务的传入流量。</p>
+<p>在 Ansible 控制节点上运行此步骤。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>拥有对一个或多个受管节点的访问等权限，这些节点是您要使用 firewalld 系统角色配置的系统。</li>
+<li>拥有对控制节点的访问等权限，控制节点是 Ansible Engine 配置其他系统的主机。</li>
+<li>ansible 和 rhel-system-roles 软件包已安装在控制节点上。</li>
+<li>如果您在运行 playbook 时使用了与 root 不同的远程用户，则此用户在受管节点上具有适当的 sudo 权限。</li>
+<li>主机使用 NetworkManager 配置网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>如果要在其上执行 playbook 中指令的主机还没有被列入清单，请将此主机的 IP 或名称添加到 /etc/ansible/hosts Ansible 清单文件中：</p>
+<p><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+node.example.com
+<div class="highlight"><pre><span></span><code>2. 使用以下内容创建 ~/adding-and-removing-ports.yml playbook：
+
+---
+- name: Allow incoming HTTPS traffic to the local host
+hosts: node.example.com
+become: true
+
+tasks:
+    - include_role:
+        name: linux-system-roles.firewall
+
+    vars:
+        firewall:
+        - port: 443/tcp
+            service: http
+            state: enabled
+            runtime: true
+            permanent: true
+</code></pre></div>
+permanent: true 选项可使新设置在重启后保持不变。</p>
+</li>
+<li>
+<p>运行 playbook：</p>
+<ul>
+<li>要以 root 用户身份连接到受管主机，请输入：</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/adding-and-removing-ports.yml
+</code></pre></div>
+<ul>
+<li>以用户身份连接到受管主机，请输入：</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/adding-and-removing-ports.yml
+</code></pre></div>
+--ask-become-pass 选项可确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</p>
+</li>
+</ol>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>连接到受管节点：</p>
+<div class="highlight"><pre><span></span><code>$ ssh user_name@node.example.com
+</code></pre></div>
+</li>
+<li>
+<p>验证与 HTTPS 服务关联的 443/tcp 端口是否打开：</p>
+<div class="highlight"><pre><span></span><code>$ sudo firewall-cmd --list-ports
+443/tcp
+</code></pre></div>
+</li>
+</ol>
+<h2 id="506-firewalld">50.6.使用 firewalld 域</h2>
+<p>zones 代表一种更透明管理传入流量的概念。这些区域会连接到联网接口或者分配一系列源地址。您可以独立为每个域管理防火墙规则，这样就可以定义复杂的防火墙设置并将其应用到流量传输中。</p>
+<h3 id="5061">50.6.1.列出防火墙域</h3>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>查看系统中有哪些可用区：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --get-zones
+</code></pre></div>
+firewall-cmd --get-zones 命令显示系统上所有可用的域，但不显示特定域的任何详情。</p>
+</li>
+<li>
+<p>查看所有域的详细信息：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-all-zones
+</code></pre></div>
+</li>
+<li>
+<p>查看特定域的详细信息：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone-name --list-all
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5062-firewalld">50.6.2.更改特定域的 firewalld 设置</h3>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>要在不同的域中工作，请使用 --zone=zone-name 选项。例如，允许在域 public 中使用 SSH 服务：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-service=ssh --zone=public
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5063">50.6.3.更改默认域</h3>
+<p>系统管理员在其配置文件中为网络接口分配区域。如果接口没有被分配给指定域，它将被分配给默认域。每次重启 firewalld 服务后，firewalld 加载默认域的设置，使其处于活动状态。</p>
+<p><strong>流程</strong></p>
+<p>设置默认域：</p>
+<ol>
+<li>
+<p>显示当前的默认域：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --get-default-zone
+</code></pre></div>
+</li>
+<li>
+<p>设置新的默认区：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --set-default-zone zone-name
+</code></pre></div>
+</li>
+</ol>
+<p>注意，此流程设置是永久设置，即使没有 --permanent 选项。</p>
+<h3 id="5064">50.6.4.将网络接口分配给域</h3>
+<p>您可以为不同域定义不同的规则集，然后通过更改所使用的接口的域来快速改变设置。使用多个接口，可以为每个具体域设置一个域来区分通过它们的网络流量。</p>
+<p><strong>流程</strong></p>
+<p>要将域分配给特定的接口：</p>
+<ol>
+<li>
+<p>列出活跃区以及分配给它们的接口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --get-active-zones
+</code></pre></div>
+</li>
+<li>
+<p>为不同的区分配接口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone_name --change-interface=interface_name --permanent
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5065-nmcli">50.6.5.使用 nmcli 为连接分配区域</h3>
+<p>以下流程描述了如何使用 nmcli 工具将 firewalld 区添加到 NetworkManager 连接中。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将域分配到 NetworkManager 连接配置文件：</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify profile connection.zone zone_name
+</code></pre></div>
+</li>
+<li>
+<p>激活连接：</p>
+<div class="highlight"><pre><span></span><code># nmcli connection up profile
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5066-ifcfg">50.6.6.在 ifcfg 文件中手动将区分配给网络连接</h3>
+<p>当连接由 网络管理器（NetworkManager）管理时，必须了解它在哪个区域使用。为每个网络连接指定区域，则根据计算机有可移植设备的位置提供各种防火墙设置，体现了配置的灵活性。因此，可以为不同的场合指定防火墙域和设置。</p>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>要为连接设置域，请编辑 /etc/sysconfig/network-scripts/ifcfg-connection_name 文件，并添加一行，将区分配给这个连接：</p>
+<div class="highlight"><pre><span></span><code>ZONE=zone_name
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5067">50.6.7.创建一个新域</h3>
+<p>要使用自定义域，可以创建一个新的域并像预定义域一样使用它。新域需要 --permanent 选项，否则 命令不起作用。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建一个新域：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --new-zone=zone-name
+</code></pre></div>
+</li>
+<li>
+<p>检查是否在您的永久设置中添加了新的区：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --get-zones
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5068">50.6.8.域配置文件</h3>
+<p>域也可以通过域配置文件创建。如果您需要创建新域，但想从不同域重复使用设置，这种方法就很有用了。</p>
+<p>firewalld 域配置文件包含域的信息。分别是域的描述、服务、端口、协议、icmp-blocks、masquerade、forward-ports 和丰富的语言规则，采用 XML 文件格式存储。文件名必须是 zone-name.xml，其中 zone-name 的长度目前限制为 17 个字符。域配置文件位于 /usr/lib/firewalld/zones/ 和 /etc/firewalld/zones/ 目录中。</p>
+<p>以下示例显示了允许一个服务(SSH)和一个端口范围的配置，适用于 TCP 和 UDP 协议：</p>
+<pre><code>```
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;zone&gt;
+&lt;short&gt;My Zone&lt;/short&gt;
+&lt;description&gt;Here you can describe the characteristic features of the zone.&lt;/description&gt;
+&lt;service name="ssh"/&gt;
+&lt;port protocol="udp" port="1025-65535"/&gt;
+&lt;port protocol="tcp" port="1025-65535"/&gt;
+&lt;/zone&gt;
+```
+要更改那个域的设置，请添加或者删除相关的部分来添加端口、转发端口、服务等等。
+</code></pre>
+<h3 id="5069">50.6.9.使用域目标设定传入流量的默认行为</h3>
+<p>对于每个域，您可以设置一种处理尚未进一步确定的传入流量的默认行为。此行为是通过设置域的目标来定义的。有四个选项：</p>
+<ul>
+<li>ACCEPT ：接受除特定规则不允许的所有传入的数据包。</li>
+<li>REJECT ：拒绝除特定规则允许的所有传入的数据包。当 firewalld 拒绝数据包时，会告知源机器有关拒绝的信息。</li>
+<li>DROP ：丢弃除特定规则允许的所有传入的数据包。当 firewalld 丢弃数据包时，不会告知源机器有关丢弃数据包的信息。</li>
+<li>default ：与 REJECT 的行为类似，但在某些情况下具有特殊含义。详情请查看 firewall-cmd(1) 手册页中的 适应和查询区和策略的选项 部分。</li>
+</ul>
+<p><strong>流程</strong></p>
+<p>为域设置目标：</p>
+<ol>
+<li>
+<p>列出特定区的信息以查看默认目标：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone-name --list-all
+</code></pre></div>
+</li>
+<li>
+<p>在区中设置一个新目标：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --zone=zone-name --set-target=&lt;default|ACCEPT|REJEC
+</code></pre></div>
+</li>
+</ol>
+<h2 id="507">50.7.根据源使用区管理传入流量</h2>
+<p>您可以使用域根据其源管理传入的流量。这可让您对进入的流量进行分类，并将其路由到不同的域，以允许或禁止该流量可访问的服务。</p>
+<p>如果您给域添加一个源，域就会成为活跃的，来自该源的所有进入流量都会被定向到它。您可以为每个域指定不同的设置，这些设置相应地应用于来自给定源的网络流量。即使只有一个网络接口，您也可以使用多个域。</p>
+<h3 id="5071">50.7.1.添加源</h3>
+<p>要将传入的流量路由到特定域，请将源添加到那个区。源可以是一个使用 CIDR 格式的 IP 地址或 IP 掩码。</p>
+<p>注意，如果您添加多个带有重叠网络范围的域，则根据域名称排序，且只考虑第一个域。</p>
+<ul>
+<li>
+<p>在当前区中设置源：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-source=&lt;source&gt;
+</code></pre></div>
+</li>
+<li>
+<p>要为特定区设置源 IP 地址：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone-name --add-source=&lt;source&gt;
+</code></pre></div>
+以下流程允许来自受信任域中 192.168.2.15 的所有传入的流量：</p>
+</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>列出所有可用域：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --get-zones
+</code></pre></div>
+</li>
+<li>
+<p>将源 IP 添加到持久性模式的信任区中：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=trusted --add-source=192.168.2.15
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5072">50.7.2.删除源</h3>
+<p>从域中删除源会关闭来自它的网路流量</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>列出所需区的允许源：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone-name --list-sources
+</code></pre></div>
+</li>
+<li>
+<p>从区永久删除源：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone-name --remove-source=&lt;source&gt;
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<h2 id="5073">50.7.3.添加源端口</h2>
+<p>要启用基于源端口的流量排序，请使用 --add-source-port 选项来指定源端口。您还可以将其与 --add-source 选项结合使用，将流量限制在某个 IP 地址或 IP 范围。</p>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>添加源端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone-name --add-source-port=&lt;port-name&gt;/&lt;tcp|udp|sctp|dccp&gt;
+</code></pre></div>
+</li>
+</ul>
+<h2 id="5074">50.7.4.删除源端口</h2>
+<p>通过删除源端口，您可以根据原始端口禁用对流量排序。</p>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>要删除源端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=zone-name --remove-source-port=&lt;port-name&gt;/&lt;tcp|udp|sctp|dccp&gt;
+</code></pre></div>
+</li>
+</ul>
+<h2 id="5075-zones-domain">50.7.5.使用 区（zones） 和源来配置一个服务只适用于一个特定的域（domain）</h2>
+<p>要允许特定网络的流量在机器上使用服务，请使用区和源。以下流程只允许来自 192.0.2.0/24 网络的 HTTP 流量，而任何其他流量都被阻止。</p>
+<p>注意，配置此场景时，请使用具有默认目标的区。使用将目标设为 ACCEPT 的区存在安全风险，因为对于来自 192.0.2.0/24 的流量，所有网络连接都将被接受。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>列出所有可用区：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --get-zones
+block dmz drop external home internal public trusted work
+</code></pre></div>
+</li>
+<li>
+<p>将 IP 范围添加到 internal 区，以将来自源的流量路由到区：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=internal --add-source=192.0.2.0/24
+</code></pre></div>
+</li>
+<li>
+<p>将http 服务添加到 internal 区中：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=internal --add-service=http
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>检查 internal 区是否处于活跃状态，以及该区中是否允许服务：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=internal --list-all
+internal (active)
+target: default
+icmp-block-inversion: no
+interfaces:
+sources: 192.0.2.0/24
+services: cockpit dhcpv6-client mdns samba-client ssh http
+...
+</code></pre></div>
+</li>
+</ul>
+<h2 id="508">50.8.在区域间过滤转发的流量</h2>
+<p>通过使用策略对象，用户可以对策略中需要类似权限的不同身份进行分组。您可以根据流量的方向使用策略。</p>
+<p>策略对象功能在 firewalld 中提供转发和输出过滤。以下描述了使用 firewalld 来过滤不同区域之间的流量，以允许访问本地托管的虚拟机来连接主机。</p>
+<h3 id="5081">50.8.1.策略对象和区域之间的关系</h3>
+<p>策略对象允许用户将 firewalld 的原语（如服务、端口和丰富的规则）附加到策略上。您可以将策略对象应用到以有状态和单向的方式在区域间传输的流量上。</p>
+<pre><code>```
+# firewall-cmd --permanent --new-policy myOutputPolicy
+
+# firewall-cmd --permanent --policy myOutputPolicy --add-ingress-zone HOST
+
+# firewall-cmd --permanent --policy myOutputPolicy --add-egress-zone ANY
+```
+HOST 和 ANY 是 ingress 和 egress 区域列表中使用的符号区域。
+</code></pre>
+<ul>
+<li>HOST 符号区域对于来自运行 firewalld 的主机的流量，或具有到运行 firewalld 的主机的流量允许策略。</li>
+<li>ANY 符号区对所有当前和将来的区域应用策略。ANY 符号区域充当所有区域的通配符。</li>
+</ul>
+<h3 id="5082">50.8.2. 使用优先级对策略进行排序</h3>
+<p>多个策略可以应用到同一组流量，因此应使用优先级为可能应用的策略创建优先级顺序。</p>
+<p>要设置优先级来对策略进行排序：</p>
+<pre><code>```
+# firewall-cmd --permanent --policy mypolicy --set-priority -500
+```
+</code></pre>
+<p>在上例中，-500 是较低的优先级值，但具有较高的优先级。因此，-500 将在 -100 之前执行。较高的优先级级值优先于较低的优先级级值。</p>
+<p>以下规则适用于策略优先级：</p>
+<ul>
+<li>具有负优先级的策略在区域中的规则之前应用。</li>
+<li>具有正优先级的策略在区域中的规则之后应用。</li>
+<li>优先级 0 被保留，因此不能使用。</li>
+</ul>
+<h3 id="5083">50.8.3. 使用策略对象来过滤本地托管容器与主机物理连接的网络之间的流量</h3>
+<p>策略对象功能允许用户过滤其容器和虚拟机流量。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建新策略。</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --new-policy podmanToHost
+</code></pre></div>
+</li>
+<li>
+<p>阻止所有流量。</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --policy podmanToHost --set-target REJECT
+
+# firewall-cmd --permanent --policy podmanToHost --add-service dhcp
+
+# firewall-cmd --permanent --policy podmanToHost --add-service dns
+</code></pre></div>
+</li>
+<li>
+<p>定义与策略一起使用的 ingress 区域。</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --policy podmanToHost --add-ingress-zone podman
+</code></pre></div>
+</li>
+<li>
+<p>定义与策略一起使用的 egress 区域。</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --policy podmanToHost --add-egress-zone ANY
+</code></pre></div>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>验证关于策略的信息。</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --info-policy podmanToHost
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5084">50.8.4. 设置策略对象的默认目标</h3>
+<p>您可以为策略指定 --set-target 选项。可用的参数如下：</p>
+<ul>
+<li>ACCEPT - 接受数据包</li>
+<li>DROP - 丢弃不需要的数据包</li>
+<li>REJECT - 拒绝不需要的数据包，并带有 ICMP 回复</li>
+<li>
+<p>CONTINUE （默认） - 数据包将遵循以下策略和区域中的规则。</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --policy mypolicy --set-target CONTINUE
+</code></pre></div>
+</li>
+</ul>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>验证有关策略的信息</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --info-policy mypolicy
+</code></pre></div>
+</li>
+</ul>
+<h2 id="509-firewalld-nat">50.9. 使用 firewalld 配置 NAT</h2>
+<p>使用 firewalld，您可以配置以下网络地址转换(NAT)类型：</p>
+<ul>
+<li>伪装</li>
+<li>源 NAT（SNAT）</li>
+<li>目标 NAT（DNAT）</li>
+<li>重定向</li>
+</ul>
+<h3 id="5091-nat-masqueradingsource-natdestination-nat-redirect">50.9.1. 不同的 NAT 类型： masquerading、source NAT、destination NAT 和 redirect</h3>
+<p>这些是不同的网络地址转换（NAT）类型：</p>
+<ul>
+<li>
+<p>伪装和源 NAT（SNAT）
+    使用以上 NAT 类型之一更改数据包的源 IP 地址。例如，互联网服务提供商不会路由私有 IP 范围，如 10.0.0.0/8。如果您在网络中使用私有 IP 范围，并且用户应该能够访问 Internet 上的服务器，请将这些范围内的数据包的源 IP 地址映射到公共 IP 地址。</p>
+<p>伪装和 SNAT 都非常相似。不同之处是：</p>
+<ul>
+<li>伪装自动使用传出接口的 IP 地址。因此，如果传出接口使用了动态 IP 地址，则使用伪装。</li>
+<li>SNAT 将数据包的源 IP 地址设置为指定的 IP 地址，且不会动态查找传出接口的 IP 地址。因此，SNAT 要比伪装更快。如果传出接口使用了固定 IP 地址，则使用 SNAT。</li>
+</ul>
+</li>
+<li>
+<p>目标 NAT（DNAT）
+    使用此 NAT 类型重写传入数据包的目标地址和端口。例如，如果您的 Web 服务器使用私有 IP 范围内的 IP 地址，那么无法直接从互联网访问它，您可以在路由器上设置 DNAT 规则，以便将传入的流量重定向到此服务器。</p>
+</li>
+<li>
+<p>重定向
+    这个类型是 IDT 的特殊示例，它根据链 hook 将数据包重定向到本地机器。例如，如果服务运行在与其标准端口不同的端口上，您可以将传入的流量从标准端口重定向到此特定端口。</p>
+</li>
+</ul>
+<h3 id="5092-ip">50.9.2. 配置 IP 地址伪装</h3>
+<p>以下流程描述了如何在系统中启用 IP 伪装。IP 伪装会在访问互联网时隐藏网关后面的独立机器。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要检查是否启用了 IP 伪装（例如，对于 external 区），以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --zone=external --query-masquerade
+</code></pre></div>
+如果已启用，命令将会打印 yes，且退出状态为 0。否则，将打印 no ，且退出状态为 1。如果省略了 zone，则将使用默认区。</p>
+</li>
+<li>
+<p>要启用 IP 伪装，请以 root 用户身份输入以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=external --add-masquerade
+</code></pre></div>
+</li>
+<li>
+<p>要使此设置持久，请将 --permanent 选项传给命令。</p>
+</li>
+<li>
+<p>要禁用 IP 伪装，请以 root 身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --zone=external --remove-masquerade
+</code></pre></div>
+要使此设置永久生效，请将 --permanent 选项传给命令。</p>
+</li>
+</ol>
+<h2 id="5010">50.10. 端口转发</h2>
+<p>使用此方法重定向端口只可用于基于 IPv4 的流量。对于 IPv6 重定向设置，您必须使用丰富的规则。</p>
+<p>要重定向到外部系统，需要启用伪装。您无法通过主机上配置了本地转发的重定向端口访问服务。</p>
+<h3 id="50101">50.10.1. 添加一个端口来重定向</h3>
+<p>使用 firewalld ，您可以设置端口重定向，以便任何到达您系统上特定端口的流量都会被传送到您选择的另一个内部端口或另一台机器上的外部端口。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>在您将从一个端口的流量重新指向另一个端口或另一个地址前，您必须了解 3 个信息：数据包到达哪个端口，使用什么协议，以及您要重定向它们的位置。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将端口重新指向另一个端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-forward-port=port=port-number:proto=tcp|udp|sctp|dccp:toport=port-number
+</code></pre></div>
+</li>
+<li>
+<p>将端口重定向到不同 IP 地址的另一个端口：</p>
+<ol>
+<li>
+<p>添加要转发的端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-forward-port=port=port-number:proto=tcp|udp:toport=port-number:toaddr=IP
+</code></pre></div>
+</li>
+<li>
+<p>启用伪装：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-masquerade
+</code></pre></div>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="50102-tcp-80-88">50.10.2. 将 TCP 端口 80 重定向到同一台机器中的 88 端口</h3>
+<p>按照以下步骤将 TCP 端口 80 重定向到端口 88。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将端口 80 重定向到 TCP 流量的端口 88:</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-forward-port=port=80:proto=tcp:toport=88
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+<li>
+<p>检查是否重定向了端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-all
+</code></pre></div>
+</li>
+</ol>
+<h3 id="50103">50.10.3. 删除重定向的端口</h3>
+<p>这个步骤描述了如何删除重定向的端口。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要删除重定向的端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --remove-forward-port=port=port-number:proto=&lt;tcp|udp&gt;:toport=port-number:toaddr=&lt;IP&gt;
+</code></pre></div>
+</li>
+<li>
+<p>要删除重定向到不同地址的转发端口：</p>
+<ol>
+<li>删除转发的端口：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># firewall-cmd --remove-forward-port=port=port-number:proto=&lt;tcp|udp&gt;:toport=port-number:toaddr=&lt;IP&gt;
+</code></pre></div>
+<ol>
+<li>禁用伪装：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># firewall-cmd --remove-masquerade
+</code></pre></div>
+</li>
+</ol>
+<h3 id="50104-tcp-80-88">50.10.4. 在同一台机器上将 TCP 端口 80 转发到端口 88</h3>
+<p>这个步骤描述了如何删除端口重定向。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>列出重定向的端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-forward-ports
+port=80:proto=tcp:toport=88:toaddr=
+</code></pre></div>
+</li>
+<li>
+<p>从防火墙中删除重定向的端口：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd  --remove-forward-port=port=80:proto=tcp:toport=88:toaddr=
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<h2 id="5011-icmp">50.11. 管理 ICMP 请求</h2>
+<p>Internet 控制消息协议 (ICMP)是一种支持协议，供各种网络设备用来发送错误消息和表示连接问题的操作信息，例如，请求的服务不可用。ICMP 与 TCP 和 UDP 等传输协议不同，因为它不用于在系统之间交换数据。</p>
+<p>不幸的是，可以使用 ICMP 消息（特别是 echo-request 和 echo-reply ）来揭示关于您网络的信息，并将这些信息滥用于各种欺诈活动。因此，firewalld 允许阻止 ICMP 请求，来保护您的网络信息。</p>
+<h3 id="50111-icmp">50.11.1. 列出和阻塞 ICMP 请求</h3>
+<p><strong>列出 ICMP 请求</strong></p>
+<p>位于 /usr/lib/firewalld/icmptypes/ 目录中的单独的 XML 文件描述了 ICMP 请求。您可以阅读这些文件来查看请求的描述。firewall-cmd 命令控制 ICMP 请求操作。</p>
+<ul>
+<li>
+<p>要列出所有可用的 ICMP 类型：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --get-icmptypes
+</code></pre></div>
+</li>
+<li>
+<p>IPv4、IPv6 或这两种协议都可以使用 ICMP 请求。要查看 ICMP 请求使用了哪种协议：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --info-icmptype=&lt;icmptype&gt;
+</code></pre></div>
+</li>
+<li>
+<p>如果请求当前被阻止了，则 ICMP 请求的状态显示为 yes ，如果没有被阻止，则显示为 no。查看 ICMP 请求当前是否被阻断了：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --query-icmp-block=&lt;icmptype&gt;
+</code></pre></div>
+</li>
+</ul>
+<p><strong>阻止或取消阻止 ICMP 请求</strong></p>
+<p>当您的服务器阻止了 ICMP 请求时，它不会提供任何通常会提供的信息。但这并不意味着根本不给出任何信息。客户端会收到特定的 ICMP 请求被阻止（拒绝）的信息。应仔细考虑阻止 ICMP 请求，因为它可能会导致通信问题，特别是与 IPv6 流量有关的通信问题。</p>
+<ul>
+<li>
+<p>要查看 ICMP 请求当前是否被阻断了：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --query-icmp-block=&lt;icmptype&gt;
+</code></pre></div>
+</li>
+<li>
+<p>要阻止 ICMP 请求：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-icmp-block=&lt;icmptype&gt;
+</code></pre></div>
+</li>
+<li>
+<p>要删除 ICMP 请求的块：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --remove-icmp-block=&lt;icmptype&gt;
+</code></pre></div>
+</li>
+</ul>
+<p><strong>在不提供任何信息的情况下阻塞 ICMP 请求</strong></p>
+<p>通常，如果您阻止了 ICMP 请求，客户端会知道您阻止了 ICMP 请求。这样潜在的攻击者仍然可以看到您的 IP 地址在线。要完全隐藏此信息，您必须丢弃所有 ICMP 请求。</p>
+<ul>
+<li>要阻止和丢弃所有 ICMP 请求：</li>
+<li>
+<p>将区的目标设为 DROP ：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --permanent --set-target=DROP
+</code></pre></div>
+现在，除您明确允许的流量外，所有流量（包括 ICMP 请求）都将被丢弃。</p>
+</li>
+</ul>
+<p>阻止和丢弃某些 ICMP 请求，而允许其他的请求：</p>
+<ol>
+<li>
+<p>将区的目标设为 DROP ：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --set-target=DROP
+</code></pre></div>
+</li>
+<li>
+<p>添加 ICMP block inversion 以一次阻止所有 ICMP 请求：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-icmp-block-inversion
+</code></pre></div>
+</li>
+<li>
+<p>为您要允许的 ICMP 请求添加 ICMP 块：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --add-icmp-block=&lt;icmptype&gt;
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<p>block inversion 会颠倒 ICMP 请求块的设置，因此所有之前没有被阻止的请求都会被阻止，因为区的目标变成了 DROP。被阻断的请求不会被阻断。这意味着，如果您想要取消阻塞请求，则必须使用 blocking 命令。</p>
+<p>将块 inversion 恢复到完全 permissive 设置：</p>
+<ol>
+<li>
+<p>将区的目标设置为 default 或 ACCEPT:</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --set-target=default
+</code></pre></div>
+</li>
+<li>
+<p>删除 ICMP 请求的所有添加的块：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --remove-icmp-block=&lt;icmptype&gt;
+</code></pre></div>
+</li>
+<li>
+<p>删除 ICMP block inversion：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --remove-icmp-block-inversion
+</code></pre></div>
+</li>
+<li>
+<p>使新设置具有持久性：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --runtime-to-permanent
+</code></pre></div>
+</li>
+</ol>
+<h3 id="50112-gui-icmp">50.11.2. 使用 GUI 配置 ICMP 过滤器</h3>
+<ul>
+<li>要启用或禁用 ICMP 过滤器，请启动 firewall-config 工具,并选择其消息要被过滤的网络区。选择 ICMP Filter 选项卡，再选中您要过滤的每种 ICMP 消息的复选框。清除复选框以禁用过滤器。这个设置按方向设置，默认允许所有操作。</li>
+<li>若要启用反向 ICMP Filter，可点击右侧的 Invert Filter 复选框。现在只接受标记为 ICMP 的类型，所有其他的均被拒绝。在使用 DROP 目标的区域里它们会被丢弃。</li>
+</ul>
+<h2 id="5012-firewalld-ip">50.12. 使用 firewalld 设置和控制 IP 集</h2>
+<p>要查看 firewalld 所支持的 IP 集设置类型列表，请以 root 用户身份输入以下命令。</p>
+<pre><code>```
+# firewall-cmd --get-ipset-types
+hash:ip hash:ip,mark hash:ip,port hash:ip,port,ip hash:ip,port,net hash:mac hash:net hash:net,iface hash:net,net hash:net,port hash:net,port,net
+```
+</code></pre>
+<h3 id="50121-cli-ip">50.12.1. 使用 CLI 配置 IP 设置选项</h3>
+<p>IP 集可以在 firewalld 区中用作源，也可以用作富规则中的源。在 Red Hat Enterprise Linux 中，首选的方法是使用 firewalld 在直接规则中创建的 IP 集合。</p>
+<ul>
+<li>
+<p>要列出 permanent 环境中 firewalld 已知的 IP 集，请以 root 用户身份运行以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --get-ipsets
+</code></pre></div>
+</li>
+<li>
+<p>要添加新的 IP 集，请以 root 用户身份使用 permanent 环境来运行以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --new-ipset=test --type=hash:net
+success
+</code></pre></div>
+</li>
+</ul>
+<p>上述命令为 IPv4 创建了一个名为 test ， 类型为 hash:net 的新的 IP 集。要创建用于 IPv6 的 IP 集，请添加 --option=family=inet6 选项。要使新设置在运行时环境中有效，请重新加载 firewalld。</p>
+<ul>
+<li>
+<p>使用以下命令，以 root 用户身份列出新的 IP 集：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --get-ipsets
+test
+</code></pre></div>
+</li>
+<li>
+<p>要获取有关 IP 集的更多信息，请以 root 用户身份运行以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --permanent --info-ipset=test
+test
+type: hash:net
+options:
+entries:
+</code></pre></div>
+请注意，IP 集目前没有任何条目。</p>
+</li>
+<li>
+<p>要在 test IP 集中添加一个条目，请以 root 用户身份运行以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --permanent --ipset=test --add-entry=192.168.0.1
+success
+</code></pre></div>
+前面的命令将 IP 地址 192.168.0.1 添加到 IP 集合中。</p>
+</li>
+<li>
+<p>要获取 IP 集中的当前条目列表，请以 root 用户身份运行以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --ipset=test --get-entries
+192.168.0.1
+</code></pre></div>
+</li>
+<li>
+<p>生成包含 IP 地址列表的文件，例如：</p>
+<p><div class="highlight"><pre><span></span><code># cat &gt; iplist.txt &lt;&lt;EOL
+192.168.0.2
+192.168.0.3
+192.168.1.0/24
+192.168.2.254
+EOL
+</code></pre></div>
+包含 IP 集合 IP 地址列表的文件应该每行包含一个条目。以 hash、分号或空行开头的行将被忽略。</p>
+</li>
+<li>
+<p>要添加 iplist.txt 文件中的地址，请以 root 用户身份运行以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --ipset=test --add-entries-from-file=iplist.txt
+success
+</code></pre></div>
+</li>
+<li>
+<p>要查看 IP 集的扩展条目列表，请以 root 用户身份运行以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --ipset=test --get-entries
+192.168.0.1
+192.168.0.2
+192.168.0.3
+192.168.1.0/24
+192.168.2.254
+</code></pre></div>
+</li>
+<li>
+<p>要从 IP 集中删除地址，并检查更新的条目列表，请以 root 用户身份运行以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --permanent --ipset=test --remove-entries-from-file=iplist.txt
+success
+# firewall-cmd --permanent --ipset=test --get-entries
+192.168.0.1
+</code></pre></div>
+</li>
+<li>
+<p>您可以将 IP 集合作为一个源添加到区，以便处理所有来自 IP 集合中列出的任意地址的网络流量。例如，要将 test IP 集作为源添加到 drop 区域，以便丢弃来自 test IP 集中列出的所有条目的所有数据包，请以 root 用户身份运行以下命令 ：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --permanent --zone=drop --add-source=ipset:test
+success
+</code></pre></div>
+源中的 ipset: 前缀显示 firewalld 的源是一个 IP 集，而不是 IP 地址或地址范围。</p>
+</li>
+</ul>
+<p>IP 集的创建和删除只限于 permanent 环境，所有其他 IP 集选项也可以用在运行时环境中，而不需要 --permanent 选项。</p>
+<p>不推荐使用不是通过 firewalld 管理的 IP 集。要使用这样的 IP 组，需要一个永久直接规则来引用集合，且必须添加自定义服务来创建这些 IP 组件。这个服务需要在 firewalld 启动前启动，否则 firewalld 无法使用这些集合来添加直接规则。您可以使用 /etc/firewalld/direct.xml 文件来添加永久的直接规则。</p>
+<h2 id="5013_1">50.13. 丰富规则的优先级</h2>
+<p>默认情况下，富规则是根据其规则操作进行组织的。例如，deny 规则优先于 allow 规则。富规则中的 priority 参数可让管理员对富规则及其执行顺序进行精细的控制。</p>
+<h3 id="50131-priority">50.13.1. priority 参数如何将规则组织为不同的链</h3>
+<p>您可以将富规则中的 priority 参数设置为 -32768 和 32767 之间的任意数字，值越小优先级越高。</p>
+<p>firewalld 服务会根据其优先级的值将规则组织到不同的链中：</p>
+<ul>
+<li>优先级低于 0：规则被重定向到带有 _pre 后缀的链中。</li>
+<li>优先级高于 0：规则被重定向到带有 _post 后缀的链中。</li>
+<li>优先级等于 0：根据操作，规则将重定向到带有 _log、_deny 或 _allow 的链中。</li>
+</ul>
+<p>在这些子链中，firewalld 会根据其优先级的值对规则进行排序。</p>
+<h3 id="50132">50.13.2. 设置丰富的规则的优先级</h3>
+<p>该流程描述了如何创建一个富规则的示例，该规则使用 priority 参数来记录其他规则不允许或拒绝的所有流量。您可以使用此规则标记意非预期的流量。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>添加一个带有非常低优先级的丰富规则来记录未由其他规则匹配的所有流量：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --add-rich-rule=&#39;rule priority=32767 log prefix=&quot;UNEXPECTED: &quot; limit value=&quot;5/m&quot;&#39;
+</code></pre></div>
+命令还将日志条目的数量限制为每分钟 5 个。</p>
+</li>
+<li>
+<p>另外，还可显示上一步中命令创建的 nftables 规则：</p>
+<div class="highlight"><pre><span></span><code># nft list chain inet firewalld filter_IN_public_post
+table inet firewalld {
+chain filter_IN_public_post {
+    log prefix &quot;UNEXPECTED: &quot; limit rate 5/minute
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h2 id="5014">50.14. 配置防火墙锁定</h2>
+<p>如果本地应用或服务以 root 身份运行（如 libvirt），则可以更改防火墙配置。使用这个特性，管理员可以锁定防火墙配置，从而达到没有应用程序或只有添加到锁定白名单中的应用程序可以请求防火墙更改的目的。锁定设置默认会被禁用。如果启用，用户就可以确定，防火墙没有被本地的应用程序或服务进行了不必要的配置更改。</p>
+<h3 id="50141-cli">50.14.1. 使用 CLI 配置锁定</h3>
+<p>这个流程描述了如何使用命令行来启用或禁用锁定。</p>
+<ul>
+<li>
+<p>要查询是否启用了锁定，请以 root 用户身份运行以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --query-lockdown
+</code></pre></div>
+如果启用了锁定，该命令将打印 yes，且退出状态为 0。否则，将打印 no ，且退出状态为 1。</p>
+</li>
+<li>
+<p>要启用锁定，请以 root 用户身份输入以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --lockdown-on
+</code></pre></div>
+</li>
+<li>
+<p>要禁用锁定，请以 root 用户身份使用以下命令：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --lockdown-off
+</code></pre></div>
+</li>
+</ul>
+<h3 id="50142-cli">50.14.2. 使用 CLI 配置锁定允许列表选项</h3>
+<p>锁定允许名单中可以包含命令、安全上下文、用户和用户 ID。如果允许列表中的命令条目以星号"<em>"结尾，则以该命令开头的所有命令行都将匹配。如果没有 "</em>"，那么包括参数的绝对命令必须匹配。</p>
+<ul>
+<li>
+<p>上下文是正在运行的应用程序或服务的安全（SELinux）上下文。要获得正在运行的应用程序的上下文，请使用以下命令：</p>
+<p><div class="highlight"><pre><span></span><code>$ ps -e --context
+</code></pre></div>
+该命令返回所有正在运行的应用程序。通过 grep 工具管道输出以便获取您感兴趣的应用程序。例如：</p>
+<p><div class="highlight"><pre><span></span><code>$ ps -e --context | grep example_program
+</code></pre></div>
+- 要列出允许列表中的所有命令行，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --list-lockdown-whitelist-commands
+</code></pre></div>
+- 要在允许列表中添加命令 command ，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --add-lockdown-whitelist-command=&#39;/usr/bin/python3 -Es /usr/bin/command&#39;
+</code></pre></div>
+- 要从允许列表中删除命令 command ，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --remove-lockdown-whitelist-command=&#39;/usr/bin/python3 -Es /usr/bin/command&#39;
+</code></pre></div>
+- 要查询命令 command 是否在允许列表中，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --query-lockdown-whitelist-command=&#39;/usr/bin/python3 -Es /usr/bin/command&#39;
+</code></pre></div>
+如果为真，该命令将打印 yes，且退出状态为 0。否则，将打印 no ，且退出状态为 1。</p>
+</li>
+<li>
+<p>要列出允许列表中的所有安全上下文，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --list-lockdown-whitelist-contexts
+</code></pre></div>
+- 要在允许列表中添加上下文 context，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --add-lockdown-whitelist-context=context
+</code></pre></div>
+- 要从允许列表中删除上下文 context，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --remove-lockdown-whitelist-context=context
+</code></pre></div>
+- 要查询上下文 context 是否在允许列表中，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --query-lockdown-whitelist-context=context
+</code></pre></div>
+如果为真，则打印 yes ，且退出状态为 0 ，否则，打印 no，且退出状态为 1。</p>
+</li>
+<li>
+<p>要列出允许列表中的所有用户 ID，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --list-lockdown-whitelist-uids
+</code></pre></div>
+- 要在允许列表中添加用户 ID uid，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --add-lockdown-whitelist-uid=uid
+</code></pre></div>
+- 要从允许列表中删除用户 ID uid，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --remove-lockdown-whitelist-uid=uid
+</code></pre></div>
+- 要查询用户 ID uid 是否在 allowlist 中，请输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code>$ firewall-cmd --query-lockdown-whitelist-uid=uid
+</code></pre></div>
+如果为真，则打印 yes ，且退出状态为 0 ，否则，打印 no，且退出状态为 1。</p>
+</li>
+<li>
+<p>要列出允许列表中的所有用户名，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --list-lockdown-whitelist-users
+</code></pre></div>
+- 要在允许列表中添加用户名 user，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --add-lockdown-whitelist-user=user
+</code></pre></div>
+- 要从允许列表中删除用户名 user，请以 root 用户身份输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --remove-lockdown-whitelist-user=user
+</code></pre></div>
+- 要查询用户名 user 是否在 allowlist 中，请输入以下命令：</p>
+<p><div class="highlight"><pre><span></span><code>$ firewall-cmd --query-lockdown-whitelist-user=user
+</code></pre></div>
+如果为真，则打印 yes ，且退出状态为 0 ，否则，打印 no，且退出状态为 1。</p>
+</li>
+</ul>
+<h3 id="50143-allowlist">50.14.3. 使用配置文件配置锁定的 allowlist 选项</h3>
+<p>默认的允许列表配置文件包含 NetworkManager 上下文和 libvirt 的默认上下文。用户 ID 0 也位于列表中。</p>
+<p>+ allowlist 配置文件存储在 /etc/firewalld/ 目录中。</p>
+<p><div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;whitelist&gt;
+      &lt;selinux context=&quot;system_u:system_r:NetworkManager_t:s0&quot;/&gt;
+      &lt;selinux context=&quot;system_u:system_r:virtd_t:s0-s0:c0.c1023&quot;/&gt;
+      &lt;user id=&quot;0&quot;/&gt;
+    &lt;/whitelist&gt;
+</code></pre></div>
+以下是一个允许列表配置文件示例，为 firewall-cmd 工具启用所有命令，对于名为 user 的用户，其用户 ID 为 815 ：</p>
+<p><div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;whitelist&gt;
+      &lt;command name=&quot;/usr/libexec/platform-python -s /bin/firewall-cmd*&quot;/&gt;
+      &lt;selinux context=&quot;system_u:system_r:NetworkManager_t:s0&quot;/&gt;
+      &lt;user id=&quot;815&quot;/&gt;
+      &lt;user name=&quot;user&quot;/&gt;
+    &lt;/whitelist&gt;
+</code></pre></div>
+此示例显示了user id 和 user name，但只需要其中一个选项。Python 是程序解释器，它位于命令行的前面。您还可以使用特定的命令，例如：</p>
+<p><div class="highlight"><pre><span></span><code>/usr/bin/python3 /bin/firewall-cmd --lockdown-on
+</code></pre></div>
+在该示例中，只允许 --lockdown-on 命令。</p>
+<p>在 OpenCloudOS 中，所有工具都放在 /usr/bin/ 目录中，/bin/ 目录则符号链接到 /usr/bin/ 目录。换句话说，尽管以 root 身份输入的 firewall-cmd 的路径可能会被解析为 /bin/firewall-cmd，但现在 /usr/bin/firewall-cmd 可以使用。所有新脚本都应该使用新位置。但请注意，如果以 root 身份运行的脚本被写为使用 /bin/firewall-cmd 路径，那么除了通常只用于非root 用户的 /usr/bin/firewall-cmd 路径外，还必须在允许列表中添加该命令的路径。</p>
+<p>命令的 name 属性末尾的 * 表示所有以这个字符串开头的命令都匹配。如果没有 *，则包括参数的绝对命令必须匹配。</p>
+<h2 id="5015-firewalld_1">50.15. 启用 firewalld 区域中不同接口或源之间的流量转发</h2>
+<p>区内转发是 firewalld 的一种功能，它允许 firewalld 区域内接口或源之间的流量转发。</p>
+<h3 id="50151-accept">50.15.1. 区域内部转发与默认目标设置为 ACCEPT 的区域之间的区别</h3>
+<p>启用区内部转发时，单个 firewalld 区域中的流量可以从一个接口或源流到另一个接口或源。区域指定接口和源的信任级别。如果信任级别相同，则接口或源之间的通信是可能的。</p>
+<p>请注意，如果您在 firewalld 的默认区域中启用了区域内部转发，则它只适用于添加到当前默认区域的接口和源。</p>
+<p>firewalld 的 trusted 区域使用设为 ACCEPT 的默认目标。这个区域接受所有转发的流量，但不支持区域内转发。</p>
+<p>对于其他默认目标值，默认情况下会丢弃转发的流量，这适用于除可信区域之外的所有标准的区域。</p>
+<h3 id="50152-wi-fi">50.15.2. 使用区域内部转发来在以太网和 Wi-Fi 网络间转发流量</h3>
+<p>您可以使用区域内部转发来转发同一 firewalld 区域内接口和源之间转发流量。例如，使用此功能来转发连接到 enp1s0 以太网和连接到 wlp0s20 Wi-Fi 网络之间的流量。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>在内核中启用数据包转发：</p>
+<p><div class="highlight"><pre><span></span><code># echo &quot;net.ipv4.ip_forward=1&quot; &gt; /etc/sysctl.d/95-IPv4-forwarding.conf
+
+# sysctl -p /etc/sysctl.d/95-IPv4-forwarding.conf
+</code></pre></div>
+2. 确保要在其之间启用区域内部转发的接口没有被分配给与 internal 区域不同的区域：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --get-active-zones
+</code></pre></div>
+3. 如果接口当前分配给了 internal 以外的区域，请对其重新分配：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --zone=internal --change-interface=interface_name --permanent
+</code></pre></div>
+4. 将 enp1s0 和 wlp0s20 接口添加到 internal 区域：</p>
+<p><div class="highlight"><pre><span></span><code># firewall-cmd --zone=internal --add-interface=enp1s0 --add-interface=wlp0s20
+</code></pre></div>
+5. 启用区域内部转发：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=internal --add-forward
+</code></pre></div>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<p>以下验证步骤要求 nmap-ncat 软件包在两个主机上都已安装。</p>
+<ol>
+<li>登录到与您启用了区域转发的主机的 enp1s0 接口位于同一网络的主机。</li>
+<li>
+<p>使用 ncat 启动 echo 服务来测试连接：</p>
+<p><div class="highlight"><pre><span></span><code># ncat -e /usr/bin/cat -l 12345
+</code></pre></div>
+3. 登录到与 wlp0s20 接口位于同一网络的主机。
+4. 连接到运行在与 enp1s0 在同一网络的主机上的 echo 服务器：</p>
+<p><div class="highlight"><pre><span></span><code># ncat &lt;other host&gt; 12345
+</code></pre></div>
+5. 输入一些内容，并按 Enter，然后验证文本是否发送回来。</p>
+</li>
+</ol>
+<h2 id="5016-ansible-rhel-firewalld">50.16. 使用 Ansible 的 RHEL 系统角色来配置 firewalld 设置</h2>
+<p>您可以使用 Ansible 的防火墙系统角色一次性在多个客户端上配置 firewalld 服务的设置。这个解决方案：</p>
+<ul>
+<li>提供具有有效输入设置的接口。</li>
+<li>将所有预期的 firewalld 参数保存在一个地方。
+在控制节点上运行 防火墙 角色后，系统角色会立即向受管节点应用 firewalld 参数，并使其在重启后保持不变。</li>
+</ul>
+<p>请注意，通过通道传递的 RHEL 系统角色可在默认的 AppStream 软件仓库中作为 RPM 软件包提供给客户。RHEL 系统角色也作为一个集合提供给通过 Ansible Automation Hub 订阅了 Ansible 的客户。</p>
+<h3 id="50161-rhel">50.16.1. 防火墙 RHEL 系统角色简介</h3>
+<p>RHEL 系统角色是 Ansible 自动化工具的一组内容。此内容与 Ansible 自动化工具一起提供了一致的配置界面，来远程管理多个系统。</p>
+<p>RHEL 系统角色中的 rhel-system-roles.firewall 角色是为 firewalld 服务的自动配置而引入的。rhel-system-roles 软件包包含这个系统角色以及参考文档。</p>
+<p>要以自动化的方式在一个或多个系统上应用 firewalld 参数，请在 playbook 中使用 firewall 系统角色变量。playbook 是一个或多个以基于文本的 YAML 格式编写的 play 的列表。</p>
+<p>您可以使用清单文件来定义您希望 Ansible 来配置的一组系统。</p>
+<p>使用 firewall 角色，您可以配置许多不同的 firewalld 参数，例如：</p>
+<ul>
+<li>区。</li>
+<li>应允许哪些数据包的服务。</li>
+<li>授权、拒绝或丢弃访问端口的流量。</li>
+<li>区的端口或端口范围的转发。</li>
+</ul>
+<h3 id="50162">50.16.2. 将传入的流量从一个本地端口转发到不同的本地端口</h3>
+<p>使用 rhel-system-roles.firewall 角色，您可以远程配置 firewalld 参数，并在多个受管主机上持久有效。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>根据订阅授予的权利，您在控制节点上已安装了 ansible-core 和 rhel-system-roles 软件包。</li>
+<li>受管主机的清单存在于控制机器上，Ansible 能够连接到它们。</li>
+<li>您有权限再受管主机上运行 Ansible playbook。</li>
+<li>如果您运行 playbook 时使用了与 root 不同的远程用户，则此用户在受管主机上具有合适的 sudo 权限。</li>
+<li>清单文件列出 playbook 应该在其上执行操作的主机。此流程中的 playbook 在组 testinservers 中的主机上运行。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建 ~/port_forwarding.yml 文件，并添加以下内容：</p>
+<p><div class="highlight"><pre><span></span><code>---
+- name: Forward incoming traffic on port 8080 to 443
+hosts: testingservers
+
+tasks:
+    - include_role:
+        name: rhel-system-roles.firewall
+
+vars:
+    firewall:
+    - { forward_port: 8080/tcp;443;, state: enabled, runtime: true, permanent: true }
+</code></pre></div>
+此文件代表一个 playbook，通常包含了一组有特定顺序的任务（也称为 play ）列表。这些任何会根据 inventory 文件中选择的特定管理主机进行。在这种情况下，playbook 将针对受管主机的 testingservers 组运行。</p>
+<p>Play 中的 hosts 键指定对其运行 play 的主机。您可以为这个键提供值来作为受管主机的名称，或作为 清单 文件中定义的主机组。</p>
+<p>tasks 部分包含 include_role 键，它指定了哪个系统角色将配置 vars 部分中提到的参数和值。</p>
+<p>vars 部分包含一个称为 firewall 的角色变量。此变量是一个字典值列表，指定将要应用于受管主机上的 firewalld 的参数。example 角色将去往端口 8080 的流量转发到端口 443。设置将立即生效，并将在重启后保持不变。</p>
+</li>
+<li>
+<p>（可选）验证 playbook 中的语法是否正确：</p>
+<p><div class="highlight"><pre><span></span><code># ansible-playbook --syntax-check ~/port_forwarding.yml
+
+playbook: port_forwarding.yml
+</code></pre></div>
+本例演示了对 playbook 的成功验证。</p>
+</li>
+<li>
+<p>执行 playbook：</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code># ansible-playbook ~/port_forwarding.yml
+</code></pre></div>
+<strong>验证</strong></p>
+<ul>
+<li>
+<p>在受管主机上：</p>
+</li>
+<li>
+<p>重启主机以验证 firewalld 设置在重启后是否仍然有效：</p>
+<p><div class="highlight"><pre><span></span><code># reboot
+</code></pre></div>
+  - 显示 firewalld 设置：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --list-forward-ports
+</code></pre></div>
+</li>
+</ul>
+<h3 id="50163">50.16.3. 使用系统角色配置端口</h3>
+<p>您可以使用 firewalld 系统角色来在本地防火墙中为传入的流量打开或关闭端口，并使配置在重启后保持不变。这个示例描述了如何配置默认区以允许 HTTPS 服务的传入流量。</p>
+<p>在 Ansible 控制节点上运行此步骤。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>对一个或多个 受管节点 的访问和权限，这些节点是您要使用 firewalld 系统角色配置的系统。</li>
+<li>对 控制节点 的访问和权限，控制节点是 Red Hat Ansible Engine 配置其他系统的系统。</li>
+<li>ansible 和 rhel-system-roles 软件包已安装在控制节点上。</li>
+<li>如果您在运行 playbook 时使用了与 root 不同的远程用户，则此用户在受管节点上具有适当的 sudo 权限。</li>
+<li>主机使用 NetworkManager 配置网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>如果要在其上执行 playbook 中指令的主机还没有被列入清单，请将此主机的 IP 或名称添加到 /etc/ansible/hosts Ansible 清单文件中：</p>
+<p><div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+2. 使用以下内容创建 ~/adding-and-removing-ports.yml playbook：</p>
+<p><div class="highlight"><pre><span></span><code>---
+- name: Allow incoming HTTPS traffic to the local host
+hosts: node.example.com
+become: true
+
+tasks:
+    - include_role:
+        name: linux-system-roles.firewall
+
+    vars:
+        firewall:
+        - port: 443/tcp
+            service: http
+            state: enabled
+            runtime: true
+            permanent: true
+</code></pre></div>
+permanent: true 选项可使新设置在重启后保持不变。</p>
+</li>
+<li>
+<p>运行 playbook：</p>
+</li>
+<li>
+<p>要以 root 用户身份连接到受管主机，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/adding-and-removing-ports.yml
+</code></pre></div>
+   - 以用户身份连接到受管主机，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/adding-and-removing-ports.yml
+</code></pre></div>
+--ask-become-pass 选项可确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</p>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>连接到受管节点：</p>
+<p><div class="highlight"><pre><span></span><code>$ ssh user_name@node.example.com
+</code></pre></div>
+2. 验证与 HTTPS 服务关联的 443/tcp 端口是否打开：</p>
+<div class="highlight"><pre><span></span><code>$ sudo firewall-cmd --list-ports
+443/tcp
+</code></pre></div>
+</li>
+</ol>
+<h3 id="50164-firewalld-rhel-dmz-firewalld">50.16.4. 使用 firewalld RHEL 系统角色配置 DMZ firewalld 区</h3>
+<p>作为系统管理员，您可以使用 RHEL firewalld 系统角色来在 enp1s0 接口上配置 dmz 区，以允许 HTTPS 流量进入到区。这样，您可以让外部用户访问您的 web 服务器。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>对一个或多个 受管节点 的访问和权限，受管节点是您要使用 VPN 系统角色配置的系统。</li>
+<li>对 控制节点 的访问和权限，控制节点是 Red Hat Ansible Engine 用来配置其他系统的系统。</li>
+<li>列出受管节点的清单文件。</li>
+<li>ansible 和 rhel-system-roles 软件包已安装在控制节点上。</li>
+<li>如果您在运行 playbook 时使用了与 root 不同的远程用户，则此用户在受管节点上拥有合适的 sudo 权限。</li>
+<li>受管节点使用 NetworkManager 来配置网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用以下内容创建 ~/configuring-a-dmz-using-the-firewall-system-role.yml playbook：</p>
+<p><div class="highlight"><pre><span></span><code>---
+- name: Creating a DMZ with access to HTTPS port and masquerading for hosts in DMZ
+hosts: node.example.com
+become: true
+
+tasks:
+    - include_role:
+        name: linux-system-roles.firewall
+
+    vars:
+        firewall:
+        - zone: dmz
+            interface: enp1s0
+            service: https
+            state: enabled
+            runtime: true
+            permanent: true
+</code></pre></div>
+2. 运行 playbook：</p>
+</li>
+<li>
+<p>要以 root 用户身份连接到受管主机，请输入：</p>
+<p><div class="highlight"><pre><span></span><code>$ ansible-playbook -u root ~/configuring-a-dmz-using-the-firewall-system-role.yml
+</code></pre></div>
+   - 以用户身份连接到受管主机，请输入：</p>
+<p><div class="highlight"><pre><span></span><code>$ ansible-playbook -u user_name --ask-become-pass ~/configuring-a-dmz-using-the-firewall-system-role.yml
+</code></pre></div>
+--ask-become-pass 选项可确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</p>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>在受管节点上，查看关于 dmz 区的详细信息：</p>
+<div class="highlight"><pre><span></span><code># firewall-cmd --zone=dmz --list-all
+dmz (active)
+target: default
+icmp-block-inversion: no
+interfaces: enp1s0
+sources:
+services: https ssh
+ports:
+protocols:
+forward: no
+masquerade: no
+forward-ports:
+source-ports:
+icmp-blocks:
+</code></pre></div>
+</li>
+</ul>
+<h1 id="51-nftables">第 51 章 nftables 入门</h1>
+<p>nftables 框架提供了数据包分类功能。最显著的功能是：</p>
+<ul>
+<li>内置查找表而不是线性处理</li>
+<li>IPv4 和 IPv6 使用同一个协议框架</li>
+<li>规则会以一个整体被应用，而不是分为抓取、更新和存储完整的规则集的步骤</li>
+<li>支持在规则集(nftrace)和监控追踪事件（nft）中调试和追踪</li>
+<li>更加一致和压缩的语法，没有特定协议的扩展</li>
+<li>用于第三方应用程序的 Netlink API</li>
+</ul>
+<p>nftables 框架使用表来存储链。链包含执行动作的独立规则。libnftnl 库可用于通过 libmnl 库与 nftables Netlink API 进行低级交互。</p>
+<p>要显示规则集变化的影响，请使用 nft list ruleset 命令。由于这些工具将表、链、规则、集合和其他对象添加到 nftables 规则集中，请注意， nftables 规则集操作（如 nft flush ruleset 命令）可能会影响使用之前独立的旧命令安装的规则集。</p>
+<h2 id="511-iptables-nftables">51.1. 从 iptables 迁移到 nftables</h2>
+<p>如果您的防火墙配置仍然使用 iptables 规则，您可以将 iptables 规则迁移到 nftables。</p>
+<h3 id="5111-firewalldnftables-iptables">51.1.1. 使用 firewalld、nftables 或者 iptables 时</h3>
+<p>以下是您应该使用以下工具之一的概述：</p>
+<ul>
+<li>firewalld ：将 firewalld 工具用于简单的防火墙用例。此工具易于使用，并涵盖了这些场景的典型用例。</li>
+<li>nftables ：使用 nftables 工具来设置复杂和性能关键的防火墙，如整个网络。</li>
+<li>iptables ：Red Hat Enterprise Linux 上的 iptables 工具使用 nf_tables 内核 API ，而不是 legacy 后端。nf_tables API 提供向后兼容性，因此使用 iptables 命令的脚本仍可在 Red Hat Enterprise Linux 上工作。对于新的防火墙脚本，红帽建议使用 nftables。</li>
+</ul>
+<p>注意，要避免不同的防火墙服务相互影响，在主机中应只有一个防火墙服务，并禁用其他防火墙。</p>
+<h3 id="5112-iptables-ip6tables-nftables">51.1.2. 将 iptables 和 ip6tables 规则集转换为 nftables</h3>
+<p>使用 iptables-restore-translate 和 ip6tables-restore-translate 实用程序将 iptables 和 ip6tables 规则集转换为 nftables。</p>
+<p>前提条件</p>
+<ul>
+<li>已安装 nftables 和 iptables 软件包。</li>
+<li>系统配置了 iptables 和 ip6tables 规则。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将 iptables 和 ip6tables 规则写入一个文件：</p>
+<p><div class="highlight"><pre><span></span><code># iptables-save &gt;/root/iptables.dump
+# ip6tables-save &gt;/root/ip6tables.dump
+</code></pre></div>
+2. 将转储文件转换为 nftables 指令：</p>
+<p><div class="highlight"><pre><span></span><code># iptables-restore-translate -f /root/iptables.dump &gt; /etc/nftables/ruleset-migrated-from-iptables.nft
+# ip6tables-restore-translate -f /root/ip6tables.dump &gt; /etc/nftables/ruleset-migrated-from-ip6tables.nft
+</code></pre></div>
+3. 检查，如果需要，手动更新生成的 nftables 规则。
+4. 要启用 nftables 服务来加载生成的文件，请在 /etc/sysconfig/nftables.conf 文件中添加以下内容：</p>
+<p><div class="highlight"><pre><span></span><code>include &quot;/etc/nftables/ruleset-migrated-from-iptables.nft&quot;
+include &quot;/etc/nftables/ruleset-migrated-from-ip6tables.nft&quot;
+</code></pre></div>
+5. 停止并禁用 iptables 服务：</p>
+<p><div class="highlight"><pre><span></span><code># systemctl disable --now iptables
+</code></pre></div>
+如果您使用自定义脚本加载 iptables 规则，请确保脚本不再自动启动并重新引导以刷新所有表。</p>
+</li>
+<li>
+<p>启用并启动 nftables 服务：</p>
+<div class="highlight"><pre><span></span><code># systemctl enable --now nftables
+</code></pre></div>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>显示 nftables 规则集：</p>
+<div class="highlight"><pre><span></span><code># nft list ruleset
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5113-iptables-ip6tables-nftables">51.1.3. 将单个 iptables 和 ip6tables 规则转换为 nftables</h3>
+<p>OpenCloudOS 提供了 iptables-translate 和 ip6tables-translate 工具，以将 iptables 或 ip6tables 规则转换为 nftables 的对等规则。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 nftables 软件包。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>使用 iptables-translate 或 ip6tables-translate 程序而不是 iptables 或 ip6tables 显示对应的 nftables 规则，例如：</p>
+<p><div class="highlight"><pre><span></span><code># iptables-translate -A INPUT -s 192.0.2.0/24 -j ACCEPT
+nft add rule ip filter INPUT ip saddr 192.0.2.0/24 counter accept
+</code></pre></div>
+请注意，一些扩展可能缺少响应的转换支持。在这些情况下，实用程序会输出以 # 符号为前缀的未转换规则，例如：</p>
+<div class="highlight"><pre><span></span><code># iptables-translate -A INPUT -j CHECKSUM --checksum-fill
+nft # -A INPUT -j CHECKSUM --checksum-fill
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5114-iptables-nftables">51.1.4. 常见的 iptables 和 nftables 命令的比较</h3>
+<p>以下是常见的 iptables 和 nftables 命令的比较：</p>
+<ul>
+<li>
+<p>列出所有规则：</p>
+<table>
+<thead>
+<tr>
+<th>iptables</th>
+<th>nftables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iptables-save</td>
+<td>nft list ruleset</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>列出某个表和链：</p>
+<table>
+<thead>
+<tr>
+<th>iptables</th>
+<th>nftables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iptables -L</td>
+<td>nft list table ip filter</td>
+</tr>
+<tr>
+<td>iptables -L INPUT</td>
+<td>nft list chain ip filter INPUT</td>
+</tr>
+<tr>
+<td>iptables -t nat -L PREROUTING</td>
+<td>nft list chain ip nat PREROUTING</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>nft 命令不会预先创建表和链。只有当用户手动创建它们时它们才会存在。</p>
+<p>示例：列出 firewalld 生成的规则</p>
+<div class="highlight"><pre><span></span><code># nft list table inet firewalld
+# nft list table ip firewalld
+# nft list table ip6 firewalld
+</code></pre></div>
+</li>
+</ul>
+<h2 id="512-nftables">51.2. 编写和执行 nftables 脚本</h2>
+<p>nftables 框架提供了一个原生脚本环境，与使用shell脚本来维护防火墙规则相比，它带来了一个主要好处：执行脚本是原子的。这意味着，系统会应用整个脚本，或者在出现错误时防止执行。这样可保证防火墙始终处于一致状态。</p>
+<p>另外，nftables 脚本环境使管理员能够：</p>
+<ul>
+<li>添加评论</li>
+<li>定义变量</li>
+<li>包含其他规则集文件</li>
+</ul>
+<p>本节介绍了如何使用这些功能，以及如何创建和执行 nftables 脚本。</p>
+<p>当安装 nftables 软件包时，Red Hat Enterprise Linux 会在 /etc/nftables/ 目录中自动创建 *.nft 脚本。这些脚本包含为不同目的创建表和空链的命令。</p>
+<h3 id="5121-nftables">51.2.1. 支持的 nftables 脚本格式</h3>
+<p>nftables 脚本环境支持以下格式的脚本：</p>
+<ul>
+<li>
+<p>您可以以与 nft list ruleset 命令相同的格式来编写脚本，显示规则集：</p>
+<p><div class="highlight"><pre><span></span><code>#!/usr/sbin/nft -f
+
+# Flush the rule set
+flush ruleset
+
+table inet example_table {
+chain example_chain {
+    # Chain for incoming packets that drops all packets that
+    # are not explicitly allowed by any rule in this chain
+    type filter hook input priority 0; policy drop;
+
+    # Accept connections to port 22 (ssh)
+    tcp dport ssh accept
+}
+}
+</code></pre></div>
+- 你可以对命令使用与 nft 命令相同的语法：</p>
+<div class="highlight"><pre><span></span><code>#!/usr/sbin/nft -f
+
+# Flush the rule set
+flush ruleset
+
+# Create a table
+add table inet example_table
+
+# Create a chain for incoming packets that drops all packets
+# that are not explicitly allowed by any rule in this chain
+add chain inet example_table example_chain { type filter hook input priority 0 ; policy drop ; }
+
+# Add a rule that accepts connections to port 22 (ssh)
+add rule inet example_table example_chain tcp dport ssh accept
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5122-nftables">51.2.2. 运行 nftables 脚本</h3>
+<p>您可以通过将其传给 nft 工具或直接执行脚本来运行 nftables 脚本。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>本节的流程假设您在 /etc/nftables/example_firewall.nft 文件中存储了 nftables 脚本。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>要通过将其传给 nft 工具来运行 nftables 脚本，请输入：</p>
+<div class="highlight"><pre><span></span><code># nft -f /etc/nftables/example_firewall.nft
+</code></pre></div>
+</li>
+<li>
+<p>要直接运行 nftables 脚本：</p>
+<ol>
+<li>
+<p>只需要执行一次的步骤：</p>
+<ol>
+<li>
+<p>确保脚本以以下 shebang 序列开头：</p>
+<div class="highlight"><pre><span></span><code>#!/usr/sbin/nft -f
+</code></pre></div>
+<p>如果省略了 -f 参数，nft 工具不会读取脚本，并显示： Error: syntax error, unexpected newline, expecting string。</p>
+</li>
+<li>
+<p>可选：将脚本的所有者设为 root ：</p>
+<p><div class="highlight"><pre><span></span><code># chown root /etc/nftables/example_firewall.nft
+</code></pre></div>
+        3. 使脚本可以被其所有者执行：</p>
+<p><div class="highlight"><pre><span></span><code># chmod u+x /etc/nftables/example_firewall.nft
+</code></pre></div>
+    2. 运行脚本：</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code># /etc/nftables/example_firewall.nft
+</code></pre></div>
+如果没有输出结果，系统将成功执行该脚本。</p>
+<p>注意，即使 nft 成功执行了脚本，在脚本中错误放置的规则、缺少参数或其他问题都可能导致防火墙的行为不符合预期。</p>
+</li>
+</ul>
+<h3 id="5123-nftables">51.2.3. 使用 nftables 脚本中的注释</h3>
+<p>nftables 脚本环境将 # 字符右侧的所有内容都视为注释。</p>
+<ul>
+<li>
+<p>例 51.1. nftables 脚本中的注释</p>
+<p>注释可在一行的开始，也可以在命令后：</p>
+<div class="highlight"><pre><span></span><code>...
+# Flush the rule set
+flush ruleset
+
+add table inet example_table  # Create a table
+...
+</code></pre></div>
+</li>
+</ul>
+<h3 id="5124-nftables">51.2.4. 使用 nftables 脚本中的变量</h3>
+<p>要在 nftables 脚本中定义变量，请使用 define 关键字。您可以在变量中存储单个值和匿名集合。对于更复杂的场景，请使用 set 或 verdict 映射。</p>
+<ul>
+<li>
+<p>只有一个值的变量
+    以下示例定义了一个名为 INET_DEV 的变量，其值为 enp1s0 ：</p>
+<p><div class="highlight"><pre><span></span><code>define INET_DEV = enp1s0
+</code></pre></div>
+您可以在脚本中使用变量，方法是在 $ 符号后跟变量名：</p>
+<p><div class="highlight"><pre><span></span><code>...
+add rule inet example_table example_chain iifname $INET_DEV tcp dport ssh accept
+...
+</code></pre></div>
+- 包含匿名集合的变量
+以下示例定义了一个包含匿名集合的变量：</p>
+<p><div class="highlight"><pre><span></span><code>define DNS_SERVERS = { 192.0.2.1, 192.0.2.2 }
+</code></pre></div>
+您可以在脚本中使用变量，方法是在 $ 符号后跟变量名：</p>
+<div class="highlight"><pre><span></span><code>add rule inet example_table example_chain ip daddr $DNS_SERVERS accept
+</code></pre></div>
+</li>
+</ul>
+<p>请注意，在规则中使用大括号时具有特殊的意义，因为它们表示变量代表一个集合。</p>
+<h3 id="5125-nftables">51.2.5. 在 nftables 脚本中包含文件</h3>
+<p>nftables 脚本环境可让管理员通过使用 include 语句来包含其他脚本。</p>
+<p>如果您只指定文件名，而没有绝对路径或相对路径，则 nftables 包括默认搜索路径中的文件，该路径被设为 Red Hat Enterprise Linux 上的 /etc。</p>
+<ul>
+<li>
+<p>例 51.2. 包含默认搜索目录中的文件</p>
+<p>从默认搜索目录中包含一个文件：</p>
+<div class="highlight"><pre><span></span><code>include &quot;example.nft&quot;
+</code></pre></div>
+</li>
+<li>
+<p>例 51.3. 包含目录中的所有 *.nft 文件</p>
+<p>要包括所有存储在 /etc/nftables/rulesets/ 目录中、以 *.nft 结尾的文件：</p>
+<p><div class="highlight"><pre><span></span><code>include &quot;/etc/nftables/rulesets/*.nft&quot;
+</code></pre></div>
+请注意，include 语句不匹配以点开头的文件。</p>
+</li>
+</ul>
+<h3 id="5126-nftables">51.2.6. 系统引导时自动载入 nftables 规则</h3>
+<p>nftables systemd 服务加载包含在 /etc/sysconfig/nftables.conf 文件中的防火墙脚本。这部分论述了如何在系统引导时载入防火墙规则。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>nftables 脚本存储在 /etc/nftables/ 目录中。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>编辑 /etc/sysconfig/nftables.conf 文件。</p>
+</li>
+<li>
+<p>如果您在安装 nftables 软件包时增强了在 /etc/nftables/ 中创建的 *.nft 脚本，请取消对这些脚本的 include 语句的注释。</p>
+</li>
+<li>
+<p>如果您从头开始编写脚本，请添加 include 语句来包含这些脚本。例如，要在 nftables 服务启动时载入 /etc/nftables/example.nft 脚本，请添加：</p>
+<div class="highlight"><pre><span></span><code>include &quot;/etc/nftables/example.nft&quot;
+</code></pre></div>
+</li>
+<li>
+<p>（可选）启动 nftables 服务来载入防火墙规则，而不用重启系统：</p>
+<div class="highlight"><pre><span></span><code># systemctl start nftables
+</code></pre></div>
+</li>
+<li>
+<p>启用 nftables 服务。</p>
+<div class="highlight"><pre><span></span><code># systemctl enable nftables
+</code></pre></div>
+</li>
+</ol>
+<h2 id="513-nftables">51.3. 创建和管理 nftables 表、链和规则</h2>
+<p>本节介绍了如何显示 nftables 规则集以及如何管理它们。</p>
+<h3 id="5131">51.3.1. 标准链优先级值和文本名称</h3>
+<p>当创建链时，您可以将 priority 设为整数值或标准名称，来指定具有相同 hook 值链的顺序。</p>
+<p>名称和值是根据 xtables 在注册其默认链时使用的优先级来定义的。</p>
+<p>注意，nft list chain 命令默认显示文本优先级值。您可以通过将 -y 选项传给命令来查看数字值。</p>
+<ul>
+<li>
+<p>例 51.4. 使用文本值设定优先级</p>
+<p>以下命令使用标准优先级值 50， 在 example_table 中创建一个名为 example_chain 的链：</p>
+<div class="highlight"><pre><span></span><code># nft add chain inet example_table example_chain { type filter hook input priority 50 \; policy accept \; }
+</code></pre></div>
+<p>因为优先级是一个标准值，所以您可以使用文本值：</p>
+<div class="highlight"><pre><span></span><code># nft add chain inet example_table example_chain { type filter hook input priority security \; policy accept \; }
+</code></pre></div>
+</li>
+<li>
+<p>表 51.1. 标准优先级名称、系列和 hook 兼容性列表</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>值</th>
+<th>系列</th>
+<th>Hook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>raw</td>
+<td>-300</td>
+<td>ip ip6、inet</td>
+<td>all</td>
+</tr>
+<tr>
+<td>mangle</td>
+<td>-150</td>
+<td>ip ip6、inet</td>
+<td>all</td>
+</tr>
+<tr>
+<td>dstnat</td>
+<td>-100</td>
+<td>ip ip6、inet</td>
+<td>prerouting</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>0</td>
+<td>ip、ip6、inet、arp、netdev</td>
+<td>all</td>
+</tr>
+<tr>
+<td>security</td>
+<td>50</td>
+<td>ip ip6、inet</td>
+<td>all</td>
+</tr>
+<tr>
+<td>srcnat</td>
+<td>100</td>
+<td>ip ip6、inet</td>
+<td>postrouting</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>所有系列都使用相同的值，但 bridge 系列使用以下值：</p>
+<ul>
+<li>
+<p>表 51.2. 网桥系列的标准优先级名称和 hook 兼容性</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>值</th>
+<th>Hook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dstnat</td>
+<td>-300</td>
+<td>prerouting</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>-200</td>
+<td>all</td>
+</tr>
+<tr>
+<td>out</td>
+<td>100</td>
+<td>output</td>
+</tr>
+<tr>
+<td>srcnat</td>
+<td>300</td>
+<td>postrouting</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="5132-nftables">51.3.2. 显示 nftables 规则集</h3>
+<p>nftables 的规则集包含表、链和规则。本节介绍如何显示规则集。</p>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>要显示规则集，请输入：</p>
+<div class="highlight"><pre><span></span><code># nft list ruleset
+table inet example_table {
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+    tcp dport http accept
+    tcp dport ssh accept
+}
+}
+</code></pre></div>
+</li>
+</ul>
+<p>注意，默认情况下，nftables 不预先创建表。因此，在没有表的情况下显示主机上设置的规则，nft list ruleset 命令不会显示任何结果。</p>
+<h3 id="5133-nftables">51.3.3. 创建 nftables 表</h3>
+<p>nftables 中的表是包含链、规则、集合和其他对象的集合的名字空间。本节介绍如何创建表。</p>
+<p>每个表都必须定义一个地址系列。表的地址系列定义了表进程的类型。在创建表时，您可以设置以下地址系列之一：</p>
+<ul>
+<li>ip ：只匹配 IPv4 数据包。如果没有指定地址系列，这是默认设置。</li>
+<li>ip6 ：只匹配 IPv6 数据包。</li>
+<li>inet ：匹配 IPv4 和 IPv6 数据包。</li>
+<li>arp：匹配 IPv4 地址解析协议(ARP)数据包。</li>
+<li>bridge ：匹配通过网桥设备的数据包。</li>
+<li>netdev ：匹配来自 ingress 的数据包。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用 nft add table 命令来创建新表。例如，要创建一个名为 example_table 、用来处理 IPv4 和 IPv6 数据包的表：</p>
+<div class="highlight"><pre><span></span><code># nft add table inet example_table
+</code></pre></div>
+</li>
+<li>
+<p>另外，还可列出规则集中的所有表：</p>
+<div class="highlight"><pre><span></span><code># nft list tables
+table inet example_table
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5134-nftables">51.3.4. 创建 nftables 链</h3>
+<p>chains 是规则的容器。存在以下两种规则类型：</p>
+<ul>
+<li>基本链：您可以使用基础链作为来自网络堆栈的数据包的入口点。</li>
+<li>常规链：您可以使用常规链作为 跳板 目标，并更好地组织规则。</li>
+</ul>
+<p>这个步骤描述了如何在现有表中添加基本链。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已存在您要添加新链的表。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用 nft add chain 命令来创建新链。例如，要在 example_table 中创建一个名为 example_chain 的链：</p>
+<div class="highlight"><pre><span></span><code># nft add chain inet example_table example_chain { type filter hook input priority 0 \; policy accept \; }
+</code></pre></div>
+<p>注意，为避免 shell 将分号解析为命令的结尾，请在分号前加上 \ 转义字符。</p>
+<p>这个链过滤传入的数据包。priority 参数指定 nftables 进程处理相同 hook 值的链的顺序。较低优先级的值优先于优先级更高的值。policy 参数设置此链中规则的默认操作。请注意，如果您远程登录到服务器，并将默认策略设置为 drop，如果没有其他规则允许远程访问，则会立即断开连接。</p>
+</li>
+<li>
+<p>另外，还可以显示所有链：</p>
+<div class="highlight"><pre><span></span><code># nft list chains
+table inet example_table {
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5135-nftables">51.3.5. 将规则附加到 nftables 链的末尾</h3>
+<p>本节介绍了如何将规则附加到现有 nftables 链的末尾。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您要添加该规则的链已存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要添加新的规则，请使用 nft add rule 命令。例如，要在 example_table 的 example_chain 中添加一条允许端口 22 上 TCP 流量的规则：</p>
+<p><div class="highlight"><pre><span></span><code># nft add rule inet example_table example_chain tcp dport 22 accept
+</code></pre></div>
+您可以选择指定服务名称而不是端口号。在该示例中，您可以使用 ssh 而不是端口号 22。请注意，会根据其在 /etc/services 文件中的条目将服务名称解析为端口号。</p>
+</li>
+<li>
+<p>另外，还可在 example_table 中显示所有的链及其规则：</p>
+<div class="highlight"><pre><span></span><code># nft list table inet example_table
+table inet example_table {
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+    ...
+    tcp dport ssh accept
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5136-nftables">51.3.6. 在 nftables 链的开头插入一条规则</h3>
+<p>本节介绍了如何在现有 nftables 链的开头插入一条规则。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您要添加该规则的链已存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>要插入新规则，请使用 nft insert rule 命令。例如，要在 example_table 的 example_chain 中插入一条允许端口 22 上 TCP 流量的规则：</p>
+<p><div class="highlight"><pre><span></span><code># nft insert rule inet example_table example_chain tcp dport 22 accept
+</code></pre></div>
+您还可以指定服务名称而不是端口号。在该示例中，您可以使用 ssh 而不是端口号 22。请注意，会根据其在 /etc/services 文件中的条目将服务名称解析为端口号。</p>
+</li>
+<li>
+<p>另外，还可在 example_table 中显示所有的链及其规则：</p>
+<div class="highlight"><pre><span></span><code># nft list table inet example_table
+table inet example_table {
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+    tcp dport ssh accept
+    ...
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5137-nftables">51.3.7. 在 nftables 链的特定位置插入一条规则</h3>
+<p>本节介绍了如何在 nftables 链中现有规则的前和后插入规则。这样，您可以将新规则放在正确的位置上。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您要添加规则的链存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用 nft -a list ruleset 命令显示 example_table 中的所有的链及其规则，包括它们的句柄：</p>
+<p><div class="highlight"><pre><span></span><code># nft -a list table inet example_table
+table inet example_table { # handle 1
+chain example_chain { # handle 1
+    type filter hook input priority filter; policy accept;
+    tcp dport 22 accept # handle 2
+    tcp dport 443 accept # handle 3
+    tcp dport 389 accept # handle 4
+}
+}
+</code></pre></div>
+使用 -a 显示句柄。您需要此信息才能在后续步骤中定位新规则。</p>
+</li>
+<li>
+<p>在 example_table 的 example_chain 链中插入新规则 ：</p>
+</li>
+<li>
+<p>要在句柄 3 前插入一条允许端口 636 上TCP 流量的规则，请输入：</p>
+<div class="highlight"><pre><span></span><code># nft insert rule inet example_table example_chain position 3 tcp dport 636 accept
+</code></pre></div>
+</li>
+<li>
+<p>要在句柄 3 后添加一条允许端口 80 上 TCP 流量的规则，请输入：</p>
+<div class="highlight"><pre><span></span><code># nft add rule inet example_table example_chain position 3 tcp dport 80 accept
+</code></pre></div>
+</li>
+<li>
+<p>另外，还可在 example_table 中显示所有的链及其规则：</p>
+<div class="highlight"><pre><span></span><code># nft -a list table inet example_table
+table inet example_table { # handle 1
+chain example_chain { # handle 1
+    type filter hook input priority filter; policy accept;
+    tcp dport 22 accept # handle 2
+    tcp dport 636 accept # handle 5
+    tcp dport 443 accept # handle 3
+    tcp dport 80 accept # handle 6
+    tcp dport 389 accept # handle 4
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h2 id="514-nftables-nat">51.4. 使用 nftables 配置 NAT</h2>
+<p>使用 nftables，您可以配置以下网络地址转换(NAT)类型：</p>
+<ul>
+<li>伪装</li>
+<li>源 NAT（SNAT）</li>
+<li>目标 NAT（DNAT）</li>
+<li>重定向</li>
+</ul>
+<p>注意，您只能在 iifname 和 oifname 参数中使用实际的接口名称，不支持替代名称(altname)。</p>
+<h3 id="5141-nat-masqueradingsource-natdestination-nat-redirect">51.4.1. 不同的 NAT 类型： masquerading、source NAT、destination NAT 和 redirect</h3>
+<p>这些是不同的网络地址转换（NAT）类型：</p>
+<ul>
+<li>
+<p>伪装和源 NAT（SNAT）
+    使用以上 NAT 类型之一更改数据包的源 IP 地址。例如，互联网服务提供商不会路由私有 IP 范围，如 10.0.0.0/8。如果您在网络中使用私有 IP 范围，并且用户应该能够访问 Internet 上的服务器，请将这些范围内的数据包的源 IP 地址映射到公共 IP 地址。</p>
+<p>伪装和 SNAT 都非常相似。不同之处是：</p>
+<ul>
+<li>伪装自动使用传出接口的 IP 地址。因此，如果传出接口使用了动态 IP 地址，则使用伪装。</li>
+<li>SNAT 将数据包的源 IP 地址设置为指定的 IP 地址，且不会动态查找传出接口的 IP 地址。因此，SNAT 要比伪装更快。如果传出接口使用了固定 IP 地址，则使用 SNAT。</li>
+</ul>
+</li>
+<li>
+<p>目标 NAT（DNAT）
+    使用此 NAT 类型重写传入数据包的目标地址和端口。例如，如果您的 Web 服务器使用私有 IP 范围内的 IP 地址，那么无法直接从互联网访问它，您可以在路由器上设置 DNAT 规则，以便将传入的流量重定向到此服务器。</p>
+</li>
+<li>
+<p>重定向
+    这个类型是 IDT 的特殊示例，它根据链 hook 将数据包重定向到本地机器。例如，如果服务运行在与其标准端口不同的端口上，您可以将传入的流量从标准端口重定向到此特定端口。</p>
+</li>
+</ul>
+<h3 id="5142-nftables">51.4.2. 使用 nftables 配置伪装</h3>
+<p>伪装使路由器动态地更改通过接口到接口 IP 地址发送的数据包的源 IP。这意味着，如果接口被分配了新的 IP，nftables 会在替换源 IP 时自动使用新的 IP。</p>
+<p>以下流程描述了如何将通过 ens3 接口的离开主机的数据包的源 IP 替换为 ens3 上设置的 IP。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建一个表：</p>
+<div class="highlight"><pre><span></span><code># nft add table nat
+</code></pre></div>
+</li>
+<li>
+<p>将 prerouting 和 postrouting 链添加到表中：</p>
+<div class="highlight"><pre><span></span><code># nft -- add chain nat prerouting { type nat hook prerouting priority -100 \; }
+# nft add chain nat postrouting { type nat hook postrouting priority 100 \; }
+</code></pre></div>
+<p>注意，即使您没有向 prerouting 添加规则，nftables 框架也要求此链与传入的数据包回复匹配。</p>
+<p>请注意，您必须将 -- 选项传给 nft 命令，以避免 shell 将负优先级的值解析为 nft 命令的一个选项。</p>
+</li>
+<li>
+<p>在 postrouting 链中添加一条与 ens3 接口上的传出数据包匹配的规则：</p>
+<div class="highlight"><pre><span></span><code># nft add rule nat postrouting oifname &quot;ens3&quot; masquerade
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5143-nftables-nat">51.4.3. 使用 nftables 配置源 NAT</h3>
+<p>在路由器中，源 NAT（SNAT）可让您将通过接口发送的数据包 IP 改为专门的 IP 地址。</p>
+<p>以下流程描述了如何将通过 ens3 接口的离开路由器的数据包的源 IP 替换为 192.0.2.1。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建一个表：</p>
+<div class="highlight"><pre><span></span><code># nft add table nat
+</code></pre></div>
+</li>
+<li>
+<p>将 prerouting 和 postrouting 链添加到表中：</p>
+<div class="highlight"><pre><span></span><code># nft -- add chain nat prerouting { type nat hook prerouting priority -100 \; }
+# nft add chain nat postrouting { type nat hook postrouting priority 100 \; }
+</code></pre></div>
+<p>即使您没有向 postrouting 链添加规则，nftables 框架也要求此链与传出的数据包回复匹配。</p>
+<p>请注意，您必须将 -- 选项传给 nft 命令，以避免 shell 将负优先级的值解析为 nft 命令的一个选项。</p>
+</li>
+<li>
+<p>在 postrouting 链中添加一条规则，其将通过 ens3 传出的数据包的源 IP 替换为 192.0.2.1 ：</p>
+<div class="highlight"><pre><span></span><code># nft add rule nat postrouting oifname &quot;ens3&quot; snat to 192.0.2.1
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5144-nftables-nat">51.4.4. 使用 nftables 配置目标 NAT</h3>
+<p>目标 NAT 可让您将路由器中的流量重新指向无法直接从互联网访问的主机。</p>
+<p>以下流程描述了如何将发送到路由器端口 80 和 443 的传入流量重定向到 IP 地址为 192.0.2.1 的主机。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建一个表：</p>
+<div class="highlight"><pre><span></span><code># nft add table nat
+</code></pre></div>
+</li>
+<li>
+<p>将 prerouting 和 postrouting 链添加到表中：</p>
+<div class="highlight"><pre><span></span><code># nft -- add chain nat prerouting { type nat hook prerouting priority -100 \; }
+# nft add chain nat postrouting { type nat hook postrouting priority 100 \; }
+</code></pre></div>
+<p>即使您没有向 postrouting 链添加规则，nftables 框架也要求此链与传出的数据包回复匹配。</p>
+<p>请注意，您必须将 -- 选项传给 nft 命令，以避免 shell 将负优先级的值解析为 nft 命令的一个选项。</p>
+</li>
+<li>
+<p>在 prerouting 链中添加一条规则，将发送到端口 80 和 443 的 ens3 接口上的传入流量重定向到 IP 为 192.0.2.1 的主机：</p>
+<div class="highlight"><pre><span></span><code># nft add rule nat prerouting iifname ens3 tcp dport { 80, 443 } dnat to 192.0.2.1
+</code></pre></div>
+</li>
+<li>
+<p>根据您的环境，添加 SNAT 或伪装规则以更改源地址：</p>
+<ol>
+<li>
+<p>如果 ens3 接口使用动态 IP 地址，请添加一条伪装规则：</p>
+<div class="highlight"><pre><span></span><code># nft add rule nat postrouting oifname &quot;ens3&quot; masquerade
+</code></pre></div>
+</li>
+<li>
+<p>如果 ens3 接口使用静态 IP 地址，请添加一条 SNAT 规则。例如，如果 ens3 使用 198.51.100.1 IP 地址：</p>
+<div class="highlight"><pre><span></span><code># nft add rule nat postrouting oifname &quot;ens3&quot; snat to 198.51.100.1
+</code></pre></div>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="5145-nftables">51.4.5. 使用 nftables 配置重定向</h3>
+<p>重定向 功能是目标网络地址转换(DNAT)的一种特殊情况，它根据链 hook 将数据包重定向到本地计算机。</p>
+<p>以下流程描述了如何将发送到本地主机端口 22 的传入和转发流量重定向到端口 2222。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建一个表：</p>
+<div class="highlight"><pre><span></span><code># nft add table nat
+</code></pre></div>
+</li>
+<li>
+<p>在表中添加 prerouting 链:</p>
+<p><div class="highlight"><pre><span></span><code># nft -- add chain nat prerouting { type nat hook prerouting priority -100 \; }
+</code></pre></div>
+请注意，您必须将 -- 选项传给 nft 命令，以避免 shell 将负优先级的值解析为 nft 命令的一个选项。</p>
+</li>
+<li>
+<p>在 prerouting 链中添加一条规则，将端口 22 上的传入流量重定向到端口 2222 ：</p>
+<div class="highlight"><pre><span></span><code># nft add rule nat prerouting tcp dport 22 redirect to 2222
+</code></pre></div>
+</li>
+</ol>
+<h2 id="515-nftables">51.5. 使用 nftables 命令中的设置</h2>
+<p>nftables 框架原生支持集合。您可以使用一个集合，例如，规则匹配多个 IP 地址、端口号、接口或其他匹配标准。</p>
+<h3 id="5151-nftables">51.5.1. 在 nftables 中使用匿名集合</h3>
+<p>匿名集合包含以逗号分开的值，用花括号括起来，如 { 22、80、443 }，你可以直接在规则中使用。您还可以将匿名集合用于 IP 地址或其他匹配标准。</p>
+<p>匿名集合的缺陷是，如果要更改集合，则需要替换规则。对于动态解决方案，使用命名集合，如 在 nftables 中使用命名集合 中所述。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>inet 系列中的 example_chain 链和 example_table 表存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>例如，在 example_table 中的 example_chain 中添加一条规则，允许传入流量流到端口 22、80 和 443 ：</p>
+<div class="highlight"><pre><span></span><code># nft add rule inet example_table example_chain tcp dport { 22, 80, 443 } accept
+</code></pre></div>
+</li>
+<li>
+<p>另外，还可在 example_table 中显示所有的链及其规则：</p>
+<div class="highlight"><pre><span></span><code># nft list table inet example_table
+table inet example_table {
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+    tcp dport { ssh, http, https } accept
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5152-nftables">51.5.2. 在 nftables 中使用命名集</h3>
+<p>nftables 框架支持可变命名集。命名集是一个列表或一组元素，您可以在表中的多个规则中使用。匿名集合的另外一个好处在于，您可以更新命名的集合而不必替换使用集合的规则。</p>
+<p>当您创建一个命名集时，必须指定集合包含的元素类型。您可以设置以下类型：</p>
+<ul>
+<li>包含 IPv4 地址或范围的集合的 ipv4_addr，如 192.0.2.1 或 192.0.2.0/24。</li>
+<li>包含 IPv6 地址或范围的集合的 ipv6_addr，如 2001:db8:1::1 或 2001:db8:1::1/64。</li>
+<li>包含介质访问控制(MAC)地址列表的集合的 ether_addr，如 51:54:00:6b:66:42。</li>
+<li>包含 Internet 协议类型列表的集合的 inet_proto ，如 tcp。</li>
+<li>包含互联网服务列表的集合的 inet_service，如 ssh。</li>
+<li>包含数据包标记列表的集合的 mark。数据包标记可以是任何 32 位正整数值（0 到 2147483647）。</li>
+</ul>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>example_chain 链和 example_table 表存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建一个空集。以下示例为 IPv4 地址创建了一个集合：</p>
+</li>
+<li>
+<p>要创建可存储多个独立 IPv4 地址的集合：</p>
+<div class="highlight"><pre><span></span><code># nft add set inet example_table example_set { type ipv4_addr \; }
+</code></pre></div>
+</li>
+<li>
+<p>要创建可存储 IPv4 地址范围的集合：</p>
+<div class="highlight"><pre><span></span><code># nft add set inet example_table example_set { type ipv4_addr \; flags interval \; }
+</code></pre></div>
+<p>要避免 shell 认为分号作为命令结尾，您必须用反斜杠转义分号。</p>
+</li>
+<li>
+<p>另外，还可创建使用该集合的规则。例如，以下命令向 example_table 中的 example_chain 添加一条规则，该规则将丢弃来自 example_set 中 IPv4 地址的所有数据包。</p>
+<p><div class="highlight"><pre><span></span><code># nft add rule inet example_table example_chain ip saddr @example_set drop
+</code></pre></div>
+因为 example_set 仍然为空，因此该规则目前无效。</p>
+</li>
+<li>
+<p>在 example_set 中添加 IPv4 地址：</p>
+</li>
+<li>
+<p>如果您创建存储单个 IPv4 地址的集合，请输入：</p>
+<div class="highlight"><pre><span></span><code># nft add element inet example_table example_set { 192.0.2.1, 192.0.2.2 }
+</code></pre></div>
+</li>
+<li>
+<p>如果您创建存储 IPv4 范围的集合，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># nft add element inet example_table example_set { 192.0.2.0-192.0.2.255 }
+</code></pre></div>
+当指定 IP 地址范围时，你也可以使用无类别域间路由(CIDR)标记，如上例中的 192.0.2.0/24。</p>
+</li>
+</ol>
+<h2 id="516-nftables-verdict">51.6. 在 nftables 命令中使用 verdict 映射</h2>
+<p>Verdict 映射（也称为字典）使 nft 能够通过将匹配标准映射到操作来根据数据包信息执行操作。</p>
+<h3 id="5161-nftables">51.6.1. 在 nftables 中使用匿名映射</h3>
+<p>匿名映射是您直接在规则中使用的 { match_criteria : action } 语句。这个语句可以包含多个用逗号分开的映射。</p>
+<p>匿名映射的缺点是，如果要修改映射，则必须替换规则。对于动态解决方案，请使用命名映射，如 在 nftables 中使用命名映射 中所述。</p>
+<p>这个示例描述了如何使用匿名映射将 IPv4 和 IPv6 协议的 TCP 和 UDP 数据包路由到不同的链，以分别计算传入的 TCP 和 UDP 数据包。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建 example_table:</p>
+<div class="highlight"><pre><span></span><code># nft add table inet example_table
+</code></pre></div>
+</li>
+<li>
+<p>在 example_table 中创建 tcp_packets 链：</p>
+<div class="highlight"><pre><span></span><code># nft add chain inet example_table tcp_packets
+</code></pre></div>
+</li>
+<li>
+<p>在 tcp_packets 中添加一条计算此链中流量的规则：</p>
+<div class="highlight"><pre><span></span><code># nft add rule inet example_table tcp_packets counter
+</code></pre></div>
+</li>
+<li>
+<p>在 example_table 中创建 udp_packets 链</p>
+<div class="highlight"><pre><span></span><code># nft add chain inet example_table udp_packets
+</code></pre></div>
+</li>
+<li>
+<p>在udp_packets 中添加一条计算此链中流量的规则：</p>
+<div class="highlight"><pre><span></span><code># nft add rule inet example_table udp_packets counter
+</code></pre></div>
+</li>
+<li>
+<p>为传入的流量创建一个链。例如，在 example_table 中创建一个名为 incoming_traffic 的链，用于过滤传入的流量：</p>
+<div class="highlight"><pre><span></span><code># nft add chain inet example_table incoming_traffic { type filter hook input priority 0 \; }
+</code></pre></div>
+</li>
+<li>
+<p>在incoming_traffic 中添加一条带有匿名映射的规则：</p>
+<p><div class="highlight"><pre><span></span><code># nft add rule inet example_table incoming_traffic ip protocol vmap { tcp : jump tcp_packets, udp : jump udp_packets }
+</code></pre></div>
+匿名映射区分数据包，并根据它们的协议将它们发送到不同的计数链。</p>
+</li>
+<li>
+<p>要列出流量计数器，请显示 example_table:</p>
+<p><div class="highlight"><pre><span></span><code># nft list table inet example_table
+table inet example_table {
+chain tcp_packets {
+    counter packets 36379 bytes 2103816
+}
+
+chain udp_packets {
+    counter packets 10 bytes 1559
+}
+
+chain incoming_traffic {
+    type filter hook input priority filter; policy accept;
+    ip protocol vmap { tcp : jump tcp_packets, udp : jump udp_packets }
+}
+}
+</code></pre></div>
+tcp_packets 和 udp_packets 链中的计数器会显示收到的数据包数和字节数。</p>
+</li>
+</ol>
+<h3 id="5162-nftables">51.6.2. 在 nftables 中使用命名映射</h3>
+<p>nftables 框架支持命名映射。您可以在表中的多个规则中使用这些映射。匿名映射的另一个好处在于，您可以更新命名映射而不比替换使用它的规则。</p>
+<p>在创建命名映射时，您必须指定元素的类型：</p>
+<ul>
+<li>匹配部分包含 IPv4 地址的映射的 ipv4_addr ，如 192.0.2.1。</li>
+<li>匹配部分包含 IPv6 地址的映射的 ipv6_addr ，如 2001:db8:1::1。</li>
+<li>匹配部分包含介质访问控制(MAC)地址的映射的 ether_addr，如 51:54:00:6b:66:42。</li>
+<li>匹配部分包含 Internet 协议类型的映射的 inet_proto ，如 tcp 。</li>
+<li>匹配部分包含互联网服务名称端口号的映射的 inet_service ，如 ssh 或 22 。</li>
+<li>匹配部分包含数据包标记的映射的 mark 。数据包标记可以是任何 32 位的正整数值（0 到 2147483647）。</li>
+<li>匹配部分包含计数器值的映射的 counter。计数器值可以是任意正 64 位整数值。</li>
+<li>匹配部分包含配额值的映射的 quota 。配额值可以是任意正 64 位整数值。</li>
+</ul>
+<p>这个示例论述了如何根据源 IP 地址允许或丢弃传入的数据包。使用命名映射时，您只需要一条规则来配置这种场景，而 IP 地址和操作被动态存储在映射中。此流程还描述了如何从映射中添加和删除条目。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建表。例如，要创建一个名为 example_table 的表来处理 IPv4 数据包：</p>
+<div class="highlight"><pre><span></span><code># nft add table ip example_table
+</code></pre></div>
+</li>
+<li>
+<p>创建链。例如，要在 example_table 中创建一个名为 example_chain 的链：</p>
+<p><div class="highlight"><pre><span></span><code># nft add chain ip example_table example_chain { type filter hook input priority 0 \; }
+</code></pre></div>
+要避免 shell 认为分号作为命令结尾，您必须用反斜杠转义分号。</p>
+</li>
+<li>
+<p>创建一个空的映射。例如，要为 IPv4 地址创建映射：</p>
+<div class="highlight"><pre><span></span><code># nft add map ip example_table example_map { type ipv4_addr : verdict \; }
+</code></pre></div>
+</li>
+<li>
+<p>创建使用该映射的规则。例如，以下命令向 example_table 中的 example_chain 添加了一条规则，它把操作应用到 example_map 中定义的 IPv4 地址上：</p>
+<div class="highlight"><pre><span></span><code># nft add rule example_table example_chain ip saddr vmap @example_map
+</code></pre></div>
+</li>
+<li>
+<p>在 example_map 中添加 IPv4 地址和相应的操作：</p>
+<p><div class="highlight"><pre><span></span><code># nft add element ip example_table example_map { 192.0.2.1 : accept, 192.0.2.2 : drop }
+</code></pre></div>
+这个示例定义了 IPv4 地址到操作的映射。结合上面创建的规则，防火墙会接受来自 192.0.2.1 的数据包，而丢弃来自 192.0.2.2 的数据包。</p>
+</li>
+<li>
+<p>另外，还可添加另一个 IP 地址和 action 语句来增强映射：</p>
+<div class="highlight"><pre><span></span><code># nft add element ip example_table example_map { 192.0.2.3 : accept }
+</code></pre></div>
+</li>
+<li>
+<p>（可选）从映射中删除条目：</p>
+<div class="highlight"><pre><span></span><code># nft delete element ip example_table example_map { 192.0.2.1 }
+</code></pre></div>
+</li>
+<li>
+<p>另外，还可显示规则集：</p>
+<div class="highlight"><pre><span></span><code># nft list ruleset
+table ip example_table {
+map example_map {
+    type ipv4_addr : verdict
+    elements = { 192.0.2.2 : drop, 192.0.2.3 : accept }
+}
+
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+    ip saddr vmap @example_map
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h2 id="517-nftables">51.7. 使用 nftables 配置端口转发</h2>
+<p>端口转发可让管理员将发送到特定目的端口的数据包转发到不同的本地或者远程端口。</p>
+<p>例如，如果您的 Web 服务器没有公共 IP 地址，您可以在防火墙上设置端口转发规则，该规则将防火墙端口 80 和 443 上传入的数据包转发到 Web 服务器。使用这个防火墙规则，互联网中的用户可以使用防火墙的 IP 或主机名访问网页服务器。</p>
+<h3 id="5171">51.7.1. 将传入的数据包转发到不同的本地端口</h3>
+<p>这部分描述了如何将端口 8022 上传入的 IPv4 数据包转发到本地系统端口 22 上的示例。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用 ip 地址系列创建一个名为 nat 的表：</p>
+<div class="highlight"><pre><span></span><code># nft add table ip nat
+</code></pre></div>
+</li>
+<li>
+<p>将 prerouting 和 postrouting 链添加到表中：</p>
+<p><div class="highlight"><pre><span></span><code># nft -- add chain ip nat prerouting { type nat hook prerouting priority -100 \; }
+</code></pre></div>
+注意，将 -- 选项传给 nft 命令，以避免 shell 将负优先级的值解析为 nft 命令的一个选项。</p>
+</li>
+<li>
+<p>在 prerouting 链中添加一条规则，将端口 8022 上传入的数据包重定向到本地端口 22 ：</p>
+<div class="highlight"><pre><span></span><code># nft add rule ip nat prerouting tcp dport 8022 redirect to :22
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5172">51.7.2. 将特定本地端口上传入的数据包转发到不同主机</h3>
+<p>您可以使用目标网络地址转换（DNAT）规则将本地端口上传入的数据包转发到远程主机。这可让互联网中的用户访问使用专用 IP 地址在主机上运行的服务。</p>
+<p>这个步骤描述了如何将本地端口 443 上传入的 IPv4 数据包转发到 IP 地址为 192.0.2.1 的远程系统上的同一端口号。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您以 root 用户身份登录到应该可以转发数据包的系统。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用 ip 地址系列创建一个名为 nat 的表：</p>
+<div class="highlight"><pre><span></span><code># nft add table ip nat
+</code></pre></div>
+</li>
+<li>
+<p>将 prerouting 和 postrouting 链添加到表中：</p>
+<p><div class="highlight"><pre><span></span><code># nft -- add chain ip nat prerouting { type nat hook prerouting priority -100 \; }
+# nft add chain ip nat postrouting { type nat hook postrouting priority 100 \; }
+</code></pre></div>
+注意，将 -- 选项传给 nft 命令，以避免 shell 将负优先级的值解析为 nft 命令的一个选项。</p>
+</li>
+<li>
+<p>在 prerouting 链中添加一条规则，将端口 443 上传入的数据包重定向到 192.0.2.1 上的同一端口：</p>
+<div class="highlight"><pre><span></span><code># nft add rule ip nat prerouting tcp dport 443 dnat to 192.0.2.1
+</code></pre></div>
+</li>
+<li>
+<p>在 postrouting 链中添加一条规则来伪装传出的流量：</p>
+<div class="highlight"><pre><span></span><code># nft add rule ip nat postrouting daddr 192.0.2.1 masquerade
+</code></pre></div>
+</li>
+<li>
+<p>启用数据包转发：</p>
+<div class="highlight"><pre><span></span><code># echo &quot;net.ipv4.ip_forward=1&quot; &gt; /etc/sysctl.d/95-IPv4-forwarding.conf
+# sysctl -p /etc/sysctl.d/95-IPv4-forwarding.conf
+</code></pre></div>
+</li>
+</ol>
+<h2 id="518-nftables">51.8. 使用 nftables 来限制连接数量</h2>
+<p>您可以使用 nftables 来限制连接数量或阻止尝试建立给定数量连接的 IP 地址，以防止它们使用过多的系统资源。</p>
+<h3 id="5181-nftables">51.8.1. 使用 nftables 限制连接数量</h3>
+<p>nft 工具的 ct count 参数可让管理员限制连接数量。这个步骤描述了如何限制进入的连接的基本示例。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>example_table 中的基 example_chain 存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>为 IPv4 地址创建动态集合：</p>
+<div class="highlight"><pre><span></span><code># nft add set inet example_table example_meter { type ipv4_addr\; flags dynamic \;}
+</code></pre></div>
+</li>
+<li>
+<p>添加一条规则，该规则只允许从 IPv4 地址同时连接到 SSH 端口（22），并从同一 IP 拒绝所有后续连接：</p>
+<div class="highlight"><pre><span></span><code># nft add rule ip example_table example_chain tcp dport ssh meter example_meter { ip saddr ct count over 2 } counter reject
+</code></pre></div>
+</li>
+<li>
+<p>另外，还可显示上一步中创建的集合：</p>
+<p><div class="highlight"><pre><span></span><code># nft list set inet example_table example_meter
+table inet example_table {
+meter example_meter {
+    type ipv4_addr
+    size 65535
+    elements = { 192.0.2.1 ct count over 2 , 192.0.2.2 ct count over 2  }
+}
+}
+</code></pre></div>
+elements 条目显示目前与该规则匹配的地址。在本例中，elements 列出了与 SSH 端口有活动连接的 IP 地址。请注意，输出不会显示活跃连接的数量，或者连接是否被拒绝。</p>
+</li>
+</ol>
+<h3 id="5182-tcp-ip">51.8.2. 在一分钟内尝试超过十个进入的 TCP 连接的 IP 地址</h3>
+<p>本节介绍了您如何临时阻止在一分钟内建立了十个 IPv4 TCP 连接的主机。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用 ip 地址系列创建 filter 表：</p>
+<div class="highlight"><pre><span></span><code># nft add table ip filter
+</code></pre></div>
+</li>
+<li>
+<p>在 filter 表中添加 input 链：</p>
+<div class="highlight"><pre><span></span><code># nft add chain ip filter input { type filter hook input priority 0 \; }
+</code></pre></div>
+</li>
+<li>
+<p>添加一条规则，其丢弃来自源地址的所有数据包，并尝试在一分钟内建立十个 TCP 连接：</p>
+<p><div class="highlight"><pre><span></span><code># nft add rule ip filter input ip protocol tcp ct state new, untracked meter ratemeter { ip saddr timeout 5m limit rate over 10/minute } drop
+</code></pre></div>
+timeout 5m 参数定义 nftables 在五分钟后自动删除条目，以防止 meter 被过时的条目填满。</p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>要显示 meter 的内容，请输入：</p>
+<div class="highlight"><pre><span></span><code># nft list meter ip filter ratemeter
+table ip filter {
+meter ratemeter {
+    type ipv4_addr
+    size 65535
+    flags dynamic,timeout
+    elements = { 192.0.2.1 limit rate over 10/minute timeout 5m expires 4m58s224ms }
+}
+}
+</code></pre></div>
+</li>
+</ul>
+<h2 id="519-nftables">51.9. 调试 nftables 规则</h2>
+<p>nftables 框架为管理员提供了不同的选项来调试规则，以及数据包是否匹配规则。本节描述了这些选项。</p>
+<h3 id="5191">51.9.1. 创建带有计数器的规则</h3>
+<p>在识别规则是否匹配时，可以使用计数器。本节描述了如何创建带有计数器的新规则。</p>
+<ul>
+<li>有关向现有规则添加计数器的流程的更多信息，请参阅 向现有规则添加计数器。</li>
+</ul>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您要添加该规则的链已存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>在链中添加带有 counter 参数的新规则。以下示例添加一个带有计数器的规则，它允许端口 22 上的 TCP 流量，并计算与这个规则匹配的数据包和网络数据的数量：</p>
+<div class="highlight"><pre><span></span><code># nft add rule inet example_table example_chain tcp dport 22 counter accept
+</code></pre></div>
+</li>
+<li>
+<p>显示计数器值：</p>
+<div class="highlight"><pre><span></span><code># nft list ruleset
+table inet example_table {
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+    tcp dport ssh counter packets 6872 bytes 105448565 accept
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5192">51.9.2. 在现有规则中添加计数器</h3>
+<p>在识别规则是否匹配时，可以使用计数器。本节论述了如何在现有规则中添加计数器。</p>
+<ul>
+<li>有关添加带有计数器的新规则的流程的更多信息，请参阅 创建带有计数器的规则 。</li>
+</ul>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您要添加计数器的规则已存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>在链中显示规则及其句柄：</p>
+<div class="highlight"><pre><span></span><code># nft --handle list chain inet example_table example_chain
+table inet example_table {
+chain example_chain { # handle 1
+    type filter hook input priority filter; policy accept;
+    tcp dport ssh accept # handle 4
+}
+}
+</code></pre></div>
+</li>
+<li>
+<p>通过将规则替换为 counter 参数来添加计数器。以下示例替换了上一步中显示的规则并添加计数器：</p>
+<div class="highlight"><pre><span></span><code># nft replace rule inet example_table example_chain handle 4 tcp dport 22 counter accept
+</code></pre></div>
+</li>
+<li>
+<p>显示计数器值：</p>
+<div class="highlight"><pre><span></span><code># nft list ruleset
+table inet example_table {
+chain example_chain {
+    type filter hook input priority filter; policy accept;
+    tcp dport ssh counter packets 6872 bytes 105448565 accept
+}
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="5193">51.9.3. 监控与现有规则匹配的数据包</h3>
+<p>nftables 中的追踪功能与 nft monitor 命令相结合，可让管理员显示与规则匹配的数据包。该流程描述了如何为规则启用追踪以及与本规则匹配的监控数据包。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您要添加计数器的规则已存在。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>在链中显示规则及其句柄：</p>
+<div class="highlight"><pre><span></span><code># nft --handle list chain inet example_table example_chain
+table inet example_table {
+chain example_chain { # handle 1
+    type filter hook input priority filter; policy accept;
+    tcp dport ssh accept # handle 4
+}
+}
+</code></pre></div>
+</li>
+<li>
+<p>通过将规则替换为 meta nftrace set 1 参数来添加追踪功能。以下示例替换了上一步中显示的规则并启用追踪：</p>
+<div class="highlight"><pre><span></span><code># nft replace rule inet example_table example_chain handle 4 tcp dport 22 meta nftrace set 1 accept
+</code></pre></div>
+</li>
+<li>
+<p>使用 nft monitor 命令来显示追踪。以下示例过滤命令的输出，来显示只包含 inet example_table example_chain 的条目：</p>
+<div class="highlight"><pre><span></span><code># nft monitor | grep &quot;inet example_table example_chain&quot;
+trace id 3c5eb15e inet example_table example_chain packet: iif &quot;enp1s0&quot; ether saddr 51:54:00:17:ff:e4 ether daddr 51:54:00:72:2f:6e ip saddr 192.0.2.1 ip daddr 192.0.2.2 ip dscp cs0 ip ecn not-ect ip ttl 64 ip id 49710 ip protocol tcp ip length 60 tcp sport 56728 tcp dport ssh tcp flags == syn tcp window 64240
+trace id 3c5eb15e inet example_table example_chain rule tcp dport ssh nftrace set 1 accept (verdict accept)
+...
+</code></pre></div>
+<p>根据启用追踪的规则的数量以及匹配的流量数量，nft monitor 命令可能产生大量的输出。使用 grep 或其他工具来过滤输出。</p>
+</li>
+</ol>
+<h2 id="5110-nftables">51.10. 备份和恢复 nftables 规则集</h2>
+<p>本节描述了如何将 nftables 规则备份到文件，以及如何从文件中恢复规则。</p>
+<p>管理员可以使用具有规则的文件将规则传送到不同的服务器。</p>
+<h3 id="51101-nftables">51.10.1. 将 nftables 规则集备份到文件</h3>
+<p>本节描述了如何将 nftables 规则集备份到文件。</p>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>备份 nftables 规则：</p>
+</li>
+<li>
+<p>以 nft list ruleset 格式生成的格式：</p>
+<div class="highlight"><pre><span></span><code># nft list ruleset &gt; file.nft
+</code></pre></div>
+</li>
+<li>
+<p>JSON 格式：</p>
+<div class="highlight"><pre><span></span><code># nft -j list ruleset &gt; file.json
+</code></pre></div>
+</li>
+</ul>
+<h3 id="51102-nftables">51.10.2. 从文件中恢复 nftables 规则集</h3>
+<p>本节描述了如何恢复 nftables 规则集。</p>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>恢复 nftables 规则：</p>
+</li>
+<li>
+<p>如果要恢复的文件为 nft list ruleset 生成的格式或直接包含 nft 命令：</p>
+<div class="highlight"><pre><span></span><code># nft -f file.nft
+</code></pre></div>
+</li>
+<li>
+<p>如果要恢复的文件采用 JSON 格式：</p>
+<div class="highlight"><pre><span></span><code># nft -j -f file.json
+</code></pre></div>
+</li>
+</ul>
+<h1 id="52-xdp-filter-ddos">第 52 章 使用 xdp-filter 进行高性能流量过滤以防止 DDoS 攻击</h1>
+<p>与 nftables 等数据包过滤器相比，Express Data Path(XDP)在网络接口处处理和丢弃网络数据包。因此，XDP 在到达防火墙或其他应用程序前决定了软件包的下一步。因此，XDP 过滤器需要较少的资源，处理网络数据包的速度要比传统数据包过滤器快得多，从而防止分布式拒绝服务(DDoS)攻击。例如，在测试过程中，红帽在单核上每秒丢弃了 2,600万个网络数据包，这比同一硬件上的 nftables 的丢弃率要高得多。</p>
+<p>xdp-filter 工具使用 XDP 允许或丢弃传入的网络数据包。您可以创建规则来过滤与特定对象或特定命令的流量：</p>
+<ul>
+<li>IP 地址</li>
+<li>MAC 地址</li>
+<li>端口</li>
+</ul>
+<p>请注意，即使 xdp-filter 具有非常高的数据包处理率，但它不具有与 nftables 相同的功能。将 xdp-filter 视为一个概念性工具，来演示使用 XDP 的数据包过滤。另外，您可以使用工具代码来更好地了解如何编写您自己的 XDP 应用程序。</p>
+<h2 id="521-xdp-filter">52.1. 丢弃匹配 xdp-filter 规则的网络数据包</h2>
+<p>这部分描述了如何使用 xdp-filter 来丢弃网络数据包：</p>
+<ul>
+<li>到特定目的地端口</li>
+<li>从一个指定的 IP 地址</li>
+<li>从一个指定的 MAC 地址</li>
+</ul>
+<p>xdp-filter 的allow 策略定义了允许的所有流量，以及过滤器只丢弃与特定规则匹配的网络数据包。例如，如果您知道要丢弃的数据包的源 IP 地址，请使用这个方法。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>xdp-tools 软件包已安装。</li>
+<li>支持 XDP 程序的网络驱动程序。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>加载 xdp-filter 以处理特定接口上传入的数据包，如 enp1s0 ：</p>
+<p><div class="highlight"><pre><span></span><code># xdp-filter load enp1s0
+</code></pre></div>
+默认情况下，xdp-filter 使用 allow 策略，该工具只丢弃与任何规则相匹配的流量。</p>
+<p>（可选）使用 -f feature 选项仅启用特定的特性，如 tcp、ipv4 或 ethernet。仅加载所需的特性而不是全部特性，来提高软件包处理的速度。要启用多个功能，使用逗号分隔它们。</p>
+<p>如果该命令出错，则网络驱动程序不支持 XDP 程序。</p>
+</li>
+<li>
+<p>添加规则来丢弃与它们匹配的数据包。例如：</p>
+</li>
+<li>
+<p>要将传入的数据包丢弃到端口 22，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># xdp-filter port 22
+</code></pre></div>
+这个命令添加一个匹配 TCP 和 UDP 流量的规则。要只匹配特定的协议，请使用 -p protocol 选项。</p>
+</li>
+<li>
+<p>要丢弃来自 192.0.2.1 的数据包，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># xdp-filter ip 192.0.2.1 -m src
+</code></pre></div>
+请注意，xdp-filter 不支持 IP 范围。</p>
+</li>
+<li>
+<p>要丢弃来自 MAC 地址 00:53:00:AA:07:BE 的数据包，请输入：</p>
+<div class="highlight"><pre><span></span><code># xdp-filter ether 00:53:00:AA:07:BE -m src
+</code></pre></div>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>使用以下命令显示丢弃和允许的数据包统计信息：</p>
+<div class="highlight"><pre><span></span><code># xdp-filter status
+</code></pre></div>
+</li>
+</ul>
+<h2 id="522-xdp-filter">52.2. 丢弃所有与 xdp-filter 规则匹配的网络数据包</h2>
+<p>这部分描述了如何使用 xdp-filter 来仅允许网络数据包:</p>
+<ul>
+<li>来自和到一个特定目的地端口</li>
+<li>来自和到一个特定 IP 地址</li>
+<li>来自和到特定的 MAC 地址</li>
+</ul>
+<p>为此，可使用 xdp-filter 的 deny 策略，该策略定义过滤器丢弃除与特定规则相匹配的网络数据包之外的所有网络数据包。例如，如果您不知道要丢弃的数据包的源 IP 地址，请使用这个方法。</p>
+<p>如果您在一个接口上加载 xdp-filter 时将默认策略设为 deny，则内核会立即丢弃来自该接口的所有数据包，直到您创建允许某些流量的规则。要避免从系统中锁定，在本地输入命令或者通过不同的网络接口连接到主机。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>xdp-tools 软件包已安装。</li>
+<li>您登录到本地主机，或使用您不计划过滤流量的网络接口。</li>
+<li>支持 XDP 程序的网络驱动程序。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>加载 xdp-filter 来处理特定接口上的数据包，如 enp1s0 ：</p>
+<p><div class="highlight"><pre><span></span><code># xdp-filter load enp1s0 -p deny
+</code></pre></div>
+（可选）使用 -f feature 选项仅启用特定的特性，如 tcp、ipv4 或 ethernet。仅加载所需的特性而不是全部特性，来提高软件包处理的速度。要启用多个功能，使用逗号分隔它们。</p>
+<p>如果该命令出错，则网络驱动程序不支持 XDP 程序。</p>
+</li>
+<li>
+<p>添加规则以允许匹配它们的数据包。例如：</p>
+</li>
+<li>
+<p>要允许数据包到端口 22，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># xdp-filter port 22
+</code></pre></div>
+这个命令添加一个匹配 TCP 和 UDP 流量的规则。要仅匹配特定的协议，请将 -p protocol 选项传给命令。</p>
+</li>
+<li>
+<p>要允许数据包到 192.0.2.1 ，请输入：</p>
+<p><div class="highlight"><pre><span></span><code># xdp-filter ip 192.0.2.1
+</code></pre></div>
+请注意，xdp-filter 不支持 IP 范围。</p>
+</li>
+<li>
+<p>要允许数据包到 MAC 地址 00:53:00:AA:07:BE ，请输入：</p>
+<div class="highlight"><pre><span></span><code># xdp-filter ether 00:53:00:AA:07:BE
+</code></pre></div>
+</li>
+</ol>
+<p>xdp-filter 工具不支持有状态数据包检查。这要求您不要使用 -m mode 选项设置模式，或者您添加显式规则以允许机器接收的传入流量响应传出流量。</p>
+<p><strong>验证</strong></p>
+<ul>
+<li>
+<p>使用以下命令显示丢弃和允许的数据包统计信息：</p>
+<div class="highlight"><pre><span></span><code># xdp-filter status
+</code></pre></div>
+</li>
+</ul>
+<h1 id="53-dpdk">第 53 章 DPDK 入门</h1>
+<p>数据平面开发套件(DPDK)提供库和网络驱动程序来加快用户空间中的软件包处理。</p>
+<p>管理员使用 DPDK，例如，在虚拟机中使用单一根 I/O 虚拟化（SR-IOV）来减少延迟并增加 I/O 吞吐量。</p>
+<h2 id="531-dpdk">53.1. 安装 dpdk 软件包</h2>
+<p>这部分描述了如何安装 dpdk 软件包。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>安装了 OpenCLoudOS 。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ul>
+<li>
+<p>使用 yum 工具安装 dpdk 软件包：</p>
+<div class="highlight"><pre><span></span><code># yum install dpdk
+</code></pre></div>
+</li>
+</ul>
+<h1 id="54-ebpf">第 54 章 了解 eBPF 网络功能</h1>
+<p>扩展的 Berkeley Packet 过滤器（eBPF）是一个内核中的虚拟机，允许在内核空间中执行代码。此代码运行在一个受限的沙箱环境中，仅可访问有限功能集。</p>
+<p>在网络中，您可以使用 eBPF 来补充或替换内核数据包处理。根据您使用的 hook，eBPF 程序有：</p>
+<ul>
+<li>对元数据的读和写的访问权限</li>
+<li>可以查找套接字和路由</li>
+<li>可以设置套接字选项</li>
+<li>可以重定向数据包</li>
+</ul>
+<h2 id="541-ebpf">54.1. 网络 eBPF 功能概述</h2>
+<p>您可以将扩展的 Berkeley 数据包过滤器(eBPF)网络程序附加到 OpenCloudOS 中的以下钩子：</p>
+<ul>
+<li>Express Data Path(XDP)：在内核网络堆栈处理它们之前，对接收的数据包提供早期的访问权限。</li>
+<li>带有直接动作标志的 tc eBPF 分类器：对入口和出口提供强大的数据包处理。</li>
+<li>控制组版本 2(cgroup v2)：在控制组中，对程序所执行的基于套接字的操作启用过滤和覆盖。</li>
+<li>套接字过滤：启用对从套接字接收的数据包进行过滤。这个功能也可用于经典 Berkeley Packet Filter（cBPF），但已扩展为支持 eBPF 程序。</li>
+<li>流解析器：启用将流分成单独的消息、过滤并将其重定向到套接字。</li>
+<li>SO_REUSEPORT 套接字选择：对来自 reuseport 套接字组的接收套接字提供可编程选择。</li>
+<li>流程分析器：在某些情况下，启用覆盖内核解析数据包头的方式。</li>
+<li>TCP 拥塞控制回调：启用实现一个自定义 TCP 拥塞控制算法。</li>
+<li>带有封装的路由： 允许创建自定义隧道封装。</li>
+</ul>
+<p><strong>XDP</strong></p>
+<p>您可以将 BPF_PROG_TYPE_XDP 类型的程序附加到网络接口。然后，在内核网络堆栈开始处理之前，内核会在接收的数据包上执行该程序。在某些情况下，这允许快速数据包转发，如快速数据包丢弃以防止分布式拒绝服务(DDoS)攻击，以及负载均衡场景的快速数据包重定向。</p>
+<p>您还可以使用 XDP 进行不同类型的数据包监控和抽样。内核允许 XDP 程序修改数据包，并将其传送到内核网络堆栈进行进一步处理。</p>
+<p>以下的 XDP 模式可用：</p>
+<ul>
+<li>原生（驱动程序）XDP：内核在数据包接收过程从最早可能的点执行程序。目前，内核无法解析数据包，因此无法使用内核提供的元数据。这个模式要求网络接口驱动程序支持 XDP，但并非所有驱动程序都支持这种原生模式。</li>
+<li>通用 XDP：内核网络栈在进程早期执行 XDP 程序。此时内核数据结构已被分配，数据包已被预先处理。如果数据包被丢弃或重定向，与原生模式相比，这需要大量开销。但是，通用模式不需要支持网络接口驱动，它可适用于所有网络接口。</li>
+<li>Offloaded XDP：内核在网络接口而不是主机 CPU 上执行 XDP 程序。请注意，这需要特定的硬件，这个模式中只有某些 eBPF 功能可用。</li>
+</ul>
+<p>在 OpenCLoudOS 上，使用 libxdp 库加载所有 XDP 程序。这个程序库启用系统控制的 XDP 使用。</p>
+<p>注意，目前，XDP 程序有一些系统配置限制。例如：您必须禁用接收接口中某些硬件卸载功能。另外，并非所有功能都可用于支持原生模式的所有驱动程序。</p>
+<p>在 OpenCLoudOS 中，仅在满足以下所有条件时才支持 XDP 特性：</p>
+<ul>
+<li>您可以在 AMD 或者 Intel 64 位构架中载入 XDP 程序。</li>
+<li>您可以使用 libxdp 库将程序加载到内核中。</li>
+<li>XDP 程序不使用 XDP 硬件卸载。</li>
+</ul>
+<p>另外，OpenCLoudOS 还提供以下使用 XDP 功能作为不受支持的技术预览：</p>
+<ul>
+<li>在 AMD 和 Intel 64 位以外的构架中载入 XDP 程序。请注意，libxdp 库不适用于 AMD 和 Intel 64 位的构架。</li>
+<li>XDP 硬件卸载。</li>
+</ul>
+<p><strong>AF_XDP</strong></p>
+<p>使用过滤并将数据包重定向到给定的 AF_XDP 套接字的 XDP 程序，您可以使用 AF_XDP 协议系列中的一个或多个套接字，来快速将数据包从内核复制到用户空间。</p>
+<p>在 OpenCLoudOS 中提供此特性，来作为一个不受支持的技术预览。</p>
+<ul>
+<li>
+<p>流量控制
+    流量控制(tc)子系统提供以下 eBPF 程序类型：</p>
+<ul>
+<li>BPF_PROG_TYPE_SCHED_CLS</li>
+<li>BPF_PROG_TYPE_SCHED_ACT</li>
+</ul>
+<p>这些类型允许您在 eBPF 中编写自定义的 tc 分类器和 tc 操作。与 tc 生态系统的各个部分一起，这为强大的数据包处理提供了能力，是一些容器编排解决方案的核心部分。</p>
+<p>在大多数情况下，只有类符被使用，与 direct-action 标记一样，eBPF 分类器可以直接从同一 eBPF 程序执行操作。clsact 排队规程(qdisc)被设计为在入口端启用此功能。</p>
+<p>请注意，使用流解析器 eBPF 程序可能会影响其他 qdiscs 和 tc 分类器的操作，如 flower。</p>
+</li>
+<li>
+<p>套接字过滤器</p>
+<p>一些实用程序会使用或在过去使用了 classic Berkeley Packet Filter（cBPF）过滤套接字上接收到的数据包。例如，tcpdump 工具允许用户指定表达式，tcpdump 然后将它们转换为 cBPF 码。</p>
+<p>作为 cBPF 的替代方案，内核允许 BPF_PROG_TYPE_SOCKET_FILTER 类型的 eBPF 程序实现相同的目的。</p>
+</li>
+<li>
+<p>控制组群</p>
+<p>在 OpenCLoudOS 中，您可以使用多种 eBPF 程序，供您附加到 cgroup。当给定 cgroup 中的某个程序执行某个操作时，内核会执行这些程序。请注意，您只能使用 cgroups 版本 2。</p>
+<p>OpenCLoudOS 中提供以下与网络相关的 cgroup eBPF 程序：</p>
+<ul>
+<li>BPF_PROG_TYPE_SOCK_OPS ：内核对各种 TCP 事件调用该程序。程序可以调整内核 TCP 堆栈的行为，包括自定义 TCP 头选项等。</li>
+<li>BPF_PROG_TYPE_CGROUP_SOCK_ADDR ：在 connect 、bind、sendto、recvmsg、getpeername 和 getockname 操作过程中，内核调用该程序。该程序允许更改 IP 地址和端口。当您在 eBPF 中实现基于套接字的网络地址转换(NAT)时，这很有用。</li>
+<li>BPF_PROG_TYPE_CGROUP_SOCKOPT ：在 setockopt 和 getsockopt 过程中，内核调用该程序，并允许更改选项。</li>
+<li>BPF_PROG_TYPE_CGROUP_SOCK ：在套接字创建、套接字释放和绑定到地址的过程中，内核调用该程序。您可以使用这些程序来允许或拒绝操作，或者只检查套接字创建统计信息。</li>
+<li>BPF_PROG_TYPE_CGROUP_SKB ：该程序在入口和出口处过滤单个数据包，并可以接受或拒绝数据包。</li>
+<li>BPF_PROG_TYPE_CGROUP_SYSCTL ：该程序允许访问系统控制的过滤(sysctl)。</li>
+<li>BPF_CGROUP_INET4_GETPEERNAME、BPF_CGROUP_INET6_GETPEERNAME、BPF_CGROUP_INET4_GETSOCKNAME 和 BPF_CGROUP_INET6_GETSOCKNAME: 使用这些程序，您可以覆盖 getockname 和 getername 系统调用的结果。当您在 eBPF 中实现基于套接字的网络地址转换(NAT)时，这很有用。</li>
+</ul>
+</li>
+<li>
+<p>流解析器（Stream Parser）</p>
+<p>流解析器对添加到特殊 eBPF 映射中的一组套接字进行操作。然后 eBPF 程序处理内核在那些套接字上接收或发送的数据包。</p>
+<p>OpenCLoudOS 中提供了以下流解析程序 eBPF 程序：</p>
+<ul>
+<li>BPF_PROG_TYPE_SK_SKB ：eBPF 程序将来自套接字的数据包解析为单独的消息，并指示内核丢弃这些消息或将其发送给组中的另一个套接字。</li>
+<li>BPF_PROG_TYPE_SK_MSG ：此程序过滤出口消息。eBPF 程序将数据包解析到单个信息中，并批准或拒绝它们。</li>
+</ul>
+</li>
+<li>
+<p>SO_REUSEPORT 套接字选择</p>
+<p>使用这个套接字选项，您可以绑定多个套接字到相同的 IP 地址和端口。如果没有 eBPF，内核会根据连接散列选择接收套接字。有了 BPF_PROG_TYPE_SK_REUSEPORT 程序，接收套接字的选择是完全可编程的。</p>
+</li>
+<li>
+<p>dissector 流程</p>
+<p>当内核需要处理数据包头，而不需要查看全部协议解码时，会对它们进行 剖析。例如，这会在 tc 子系统、多路径路由、绑定或者计算数据包哈希时发生。在这种情况下，内核解析数据包的标头，并使用数据包标头中的信息填充内部结构。您可以使用 BPF_PROG_TYPE_FLOW_DISSECTOR 程序替换此内部解析。请注意，您只能在 RHEL 的 eBPF 的 IPv4 和 IPv6 上分离 TCP 和 UDP。</p>
+</li>
+<li>
+<p>TCP 阻塞控制</p>
+<p>您可以使用一组实现 struct tcp_congestion_oops 回调的 BPF_PROG_TYPE_STRUCT_OPS 程序来编写一个自定义的 TCP 阻塞控制算法。以这种方式实现的算法和内置的内核算法一起可提供给系统使用。</p>
+</li>
+<li>
+<p>带有封装的路由</p>
+<p>您可以将以下 eBPF 程序类型之一附加到路由表中作为隧道封装属性的路由：</p>
+<ul>
+<li>BPF_PROG_TYPE_LWT_IN</li>
+<li>BPF_PROG_TYPE_LWT_OUT</li>
+<li>BPF_PROG_TYPE_LWT_XMIT</li>
+</ul>
+<p>这样的 eBPF 程序的功能仅限于特定的隧道配置，它不允许创建通用封装或封装解决方案。</p>
+</li>
+<li>
+<p>套接字查找</p>
+<p>要绕过 bind 系统调用的限制，请使用 BPF_PROG_TYPE_SK_LOOKUP 类型的 eBPF 程序。此类程序可以为新传入的 TCP 连接选择侦听套接字，或为 UDP 数据包选择一个未连接的套接字。</p>
+</li>
+</ul>
+<h2 id="552-xdp">55.2. 按网卡的 XDP 特性概述</h2>
+<p>以下是启用了 XDP 的网卡和您可以使用的 XDP 特性的概述：</p>
+<table>
+<thead>
+<tr>
+<th>网卡</th>
+<th>驱动</th>
+<th>基本的</th>
+<th>重定向</th>
+<th>目标</th>
+<th>HW 卸载</th>
+<th>零复制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon 弹性网络适配卡</td>
+<td>ena</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Broadcom NetXtreme-C/E 10/25/40/50 千兆以太网</td>
+<td>bnxt_en</td>
+<td>是</td>
+<td>是</td>
+<td>是 [a] [b]</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Cavium Thunder 虚拟功能</td>
+<td>nicvf</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Intel® 以太网控制器 XL710 系列</td>
+<td>i40e</td>
+<td>是</td>
+<td>是</td>
+<td>是 [a] [b]</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Intel® 以太网连接 E800 系列</td>
+<td>Ice</td>
+<td>是</td>
+<td>是</td>
+<td>是 [a] [b]</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Intel® PCI Express 千兆适配卡</td>
+<td>igb</td>
+<td>是</td>
+<td>是</td>
+<td>是 [a]</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Intel® 10GbE PCI Express 适配卡</td>
+<td>ixgbe</td>
+<td>是</td>
+<td>是</td>
+<td>是 [a] [b]</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Intel® 10GbE PCI Express 虚拟功能以太网</td>
+<td>ixgbevf</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Mellanox Technologies 1/10/40Gbit 以太网</td>
+<td>mlx4_en</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Mellanox 第 5 代网络适配卡（ConnectX 系列）</td>
+<td>mlx5_core</td>
+<td>是</td>
+<td>是</td>
+<td>是 [b]</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Netronome® NFP4000/NFP6000 NIC</td>
+<td>nfp</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>QLogic QED 25/40/100Gb 以太网 NIC</td>
+<td>qede</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Solarflare SFC9000/SFC9100/EF100-系列</td>
+<td>sfc</td>
+<td>是</td>
+<td>是</td>
+<td>是 [b]</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Microsoft Hyper-V 虚拟网络</td>
+<td>hv_netvsc</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>通用 TUN/TAP 设备</td>
+<td>tun</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>虚拟以太网对设备</td>
+<td>veth</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>QEMU Virtio 网络</td>
+<td>virtio_net</td>
+<td>是</td>
+<td>是</td>
+<td>是 [a] [b]</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>***</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>[a] 只有在接口上加载 XDP 程序时。</p>
+<p>[b] 需要分配一些大于或等于最大 CPU 索引的 XDP TX 队列。</p>
+<hr />
+<p>联想：</p>
+<ul>
+<li>基本的：支持基本的返回代码：DROP、PASS、ABORTED 和 TX。</li>
+<li>重定向：支持 REDIRECT 返回码。</li>
+<li>目标：可以是 REDIRECT 返回码的目标。</li>
+<li>HW 卸载：支持 XDP 硬件卸载。</li>
+<li>零复制：支持 AF_XDP 协议系列的零复制模式。</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

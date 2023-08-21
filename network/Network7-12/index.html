@@ -1,0 +1,4144 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network1-6/">
+      
+      
+        <link rel="next" href="../Network13-18/">
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>7-12章 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-nmstate" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7-12章
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../en/network/Network7-12/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        用户指南
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        版本说明
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      常见问题
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        参与贡献
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        生态认证
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        下载
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        测试
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          快速入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        使用说明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          用户指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          用户指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        基础配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        系统管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        内核更新
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        系统状态监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        安全加固
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          存储管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          存储管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        逻辑卷管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        可用的存储选项
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          网络管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          网络管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        1-6章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          7-12章
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        7-12章
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71pythonlibnmstate" class="md-nav__link">
+    7.1.在Python程序中使用libnmstate库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72nmstatectl" class="md-nav__link">
+    7.2.使用nmstatectl更新网络配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3.其他
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        13-18章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        19-24章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        25-30章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        31-36章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        37-42章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        43-48章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        49-54章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        55-57章
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          版本说明
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          版本说明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          参与贡献
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          参与贡献
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        如何贡献
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        文档库格式手册
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        内核开发指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          生态认证
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          生态认证
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        生态认证流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        硬件测试用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          认证兼容列表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          认证兼容列表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        硬件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        商业软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        开源软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        适配FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          CentOS停服专区
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          CentOS停服专区
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        CentOS迁移OpenCloudOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          下载
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          下载
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          测试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71pythonlibnmstate" class="md-nav__link">
+    7.1.在Python程序中使用libnmstate库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72nmstatectl" class="md-nav__link">
+    7.2.使用nmstatectl更新网络配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3.其他
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network7-12.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network7-12.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="7-nmstate">第7章 Nmstate简介</h1>
+<p>nmstate 是一个声明式的网络管理工具。 nmstate 软件提供 libnmstate Python库，以及用于管理NetworkManager的命令行工具 nmstatectl 。使用 Nmstate 时，您可以使用 YAML 或 JSON 格式的说明描述预期的网络状态。</p>
+<p>使用Nmstate的优点：
+- 提供稳定且可扩展的接口来管理 OpenCLoudOS 网络功能
+- 支持主机和集群级别的原子和事务操作
+- 支持对大多数属性进行部分编辑，并保留未在说明中指定的现有设置
+- 提供插件支持，使管理员能够使用自己的插件</p>
+<h2 id="71pythonlibnmstate">7.1.在Python程序中使用libnmstate库</h2>
+<p>libnmstate Python 库可让开发人员在他们自己的应用程序中使用 Nmstate</p>
+<p>要使用库，请在源代码中导入它：
+ ```python
+import libnmstate
+<div class="highlight"><pre><span></span><code>请注意，您必须先安装 nmstate 软件包才能使用这个库。
+
+案例：使用 libnmstate 库查询网络状态
+
+下面的代码导入了 libnmstate 库，并显示可用的网络接口及其状态：
+
+```python
+import json
+import libnmstate
+from libnmstate.schema import Interface
+
+net_state = libnmstate.show()
+for iface_state in net_state[Interface.KEY]:
+    print(iface_state[Interface.NAME] + &quot;: &quot;
+        + iface_state[Interface.STATE])
+</code></pre></div></p>
+<h2 id="72nmstatectl">7.2.使用nmstatectl更新网络配置</h2>
+<p>您可以使用 nmstatectl 工具将一个或多个接口的当前网络配置存储在一个文件中。然后您可以使用此文件：</p>
+<ul>
+<li>修改配置并将其应用到同一系统。</li>
+<li>将文件复制到其他主机上，并使用相同的或经过修改的设置配置主机。</li>
+</ul>
+<p>下面介绍了如何将 ens3 接口的设置导出到文件中，修改配置，并在主机上应用设置。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>nmstate 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将 ens3 接口的设置导出到 ~/network-config.yml 文件：
+    <div class="highlight"><pre><span></span><code># nmstatectl show ens3 &gt; ~/network-config.yml
+</code></pre></div>
+    此命令会以 YAML 格式存储 ens3 的配置。要以 JSON 格式存储输出，请将 --json 选项传给命令。</p>
+<p>如果没有指定接口名称，nmstatectl 将导出所有接口的配置。
+2. 使用文本编辑器修改 ~/network-config.yml 文件，以更新配置。
+3. 应用 ~/network-config.yml 文件中的设置：
+<div class="highlight"><pre><span></span><code># nmstatectl apply ~/network-config.yml
+</code></pre></div>
+如果您以 JSON 格式导出设置，请将 --json 选项传给命令。</p>
+</li>
+</ol>
+<h2 id="73">7.3.其他</h2>
+<pre><code>/usr/share/doc/nmstate/README.md
+/usr/share/doc/nmstate/examples/
+</code></pre>
+<h1 id="8">第8章 配置以太网连接</h1>
+<h2 id="81nmcli">8.1.使用nmcli配置静态以太网连接</h2>
+<p><strong>流程</strong></p>
+<ol>
+<li>添加新的NetworkManager网络连接配置集：
+    <div class="highlight"><pre><span></span><code># nmcli connection add con-name test-con ifname ens4 type ethernet
+</code></pre></div>
+    修改 test-con 为您需要的网络连接配置集。</li>
+<li>设置IPv4地址：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify test-con ipv4.addresses 192.128.1.1/24
+</code></pre></div></li>
+<li>设置IPv6地址：
+    <div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv6.addresses AD80::ABAA:0000:00C2:0002/64
+</code></pre></div></li>
+<li>将 IPv4 和 IPv6 连接方法设置为 manual：
+    <div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv6.method manual
+#  nmcli connection modify test-con ipv4.method manual
+</code></pre></div></li>
+<li>设置 IPv4 和 IPv6 默认网关：
+    <div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv4.gateway 192.128.1.254
+#  nmcli connection modify test-con ipv6.gateway AD80::ABAA:0000:00C2:FFFE
+</code></pre></div></li>
+<li>设置 IPv4 和 IPv6 DNS 服务器地址：
+    <div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv6.dns &quot;AD80::ABAA:0000:00C2:0001&quot;
+#  nmcli connection modify test-con ipv4.dns &quot;114.114.114.114&quot;
+</code></pre></div></li>
+<li>为 IPv4 和 IPv6 连接设置 DNS 搜索域：
+    <div class="highlight"><pre><span></span><code>#  nmcli connection modify test-con ipv4.dns-search test.com
+#  nmcli connection modify test-con ipv6.dns-search test.com
+</code></pre></div></li>
+<li>激活连接配置集：
+    <div class="highlight"><pre><span></span><code># nmcli connection up test-con
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+ens4      ethernet  connected  test-con
+</code></pre></div></li>
+<li>显示网络连接配置集所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show test-con
+connection.id:              test-con
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  ens4
+...
+</code></pre></div></li>
+<li>使用 ping 命令验证网络连通性：</li>
+<li>
+<p>同一子网：
+        IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.128.1.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:0005
+</code></pre></div>
+        如果命令失败，请检查IP和子网设置。</p>
+</li>
+<li>
+<p>远程子网：
+        IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.168.1.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C3:0005
+</code></pre></div>
+        - 如果命令失败，先 ping 默认网关验证设置。
+            IPv4:
+            <div class="highlight"><pre><span></span><code># ping 192.128.1.254
+</code></pre></div>
+            IPv6:
+            <div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:FFFE
+</code></pre></div></p>
+</li>
+<li>使用 host 命令验证域名解析是否正常：
+    <div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+    如果命令返回任何错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。</li>
+</ol>
+<p><strong>故障排除步骤</strong>
+如果连接失败，或者网络接口在上线和关闭状态间切换：</p>
+<ul>
+<li>确保网络电缆插入到主机和交换机。</li>
+<li>检查连接失败是否只存在于这个主机上，或者其他连接到该服务器连接的同一交换机的主机中。</li>
+<li>验证网络电缆和网络接口是否如预期工作。执行硬件诊断步骤并替换有缺陷的电缆和网络接口卡。</li>
+<li>如果磁盘中的配置与设备中的配置不匹配，则启动或重启 NetworkManager 会创建一个代表该设备的配置的内存连接。</li>
+</ul>
+<h2 id="82nmcli">8.2.使用nmcli互动编辑器配置静态以太网连接</h2>
+<p><strong>流程</strong></p>
+<ol>
+<li>以互动模式添加 NetworkManager 网络连接配置集：
+    <div class="highlight"><pre><span></span><code># nmcli connection edit type ethernet con-name test-con
+</code></pre></div></li>
+<li>设置网络接口：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set connection.interface-name ens4
+</code></pre></div></li>
+<li>设置IPv4地址：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.addresses 192.128.1.1/24
+</code></pre></div></li>
+<li>设置IPv6地址：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv6.addresses AD80::ABAA:0000:00C2:0002/64
+</code></pre></div></li>
+<li>将 IPv4 和 IPv6 连接方法设置为 manual：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.method manual
+nmcli&gt; set ipv6.method manual
+</code></pre></div></li>
+<li>设置 IPv4 和 IPv6 默认网关：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.gateway 192.128.1.254
+nmcli&gt; set ipv6.gateway AD80::ABAA:0000:00C2:FFFE
+</code></pre></div></li>
+<li>设置 IPv4 和 IPv6 DNS 服务器地址：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dns 114.114.114.114
+nmcli&gt; set ipv6.dns AD80::ABAA:0000:00C2:0001
+</code></pre></div>
+    要设置多个 DNS 服务器，以空格分隔并用引号括起来。</li>
+<li>为 IPv4 和 IPv6 连接设置 DNS 搜索域：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dns-search example.com
+nmcli&gt; set ipv6.dns-search example.com
+</code></pre></div></li>
+<li>
+<p>保存并激活连接：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+Saving the connection with &#39;autoconnect=yes&#39;. That might result in an immediate activation of the connection.
+Do you still want to save? (yes/no) [yes] yes
+</code></pre></div></p>
+</li>
+<li>
+<p>退出互动模式：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; quit
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+ens4      ethernet  connected  test-con
+</code></pre></div></li>
+<li>显示网络连接配置集所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show test-con
+connection.id:              test-con
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  ens4
+...
+</code></pre></div></li>
+<li>使用 ping 命令验证网络连通性：</li>
+<li>
+<p>同一子网：
+        IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.128.1.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:0005
+</code></pre></div>
+        如果命令失败，请检查IP和子网设置。</p>
+</li>
+<li>
+<p>远程子网：
+        IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.168.1.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C3:0005
+</code></pre></div>
+        - 如果命令失败，先 ping 默认网关验证设置。
+            IPv4:
+            <div class="highlight"><pre><span></span><code># ping 192.128.1.254
+</code></pre></div>
+            IPv6:
+            <div class="highlight"><pre><span></span><code># ping AD80::ABAA:0000:00C2:FFFE
+</code></pre></div></p>
+</li>
+<li>使用 host 命令验证域名解析是否正常：
+    <div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+    如果命令返回任何错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。</li>
+</ol>
+<p><strong>故障排除步骤</strong>
+如果连接失败，或者网络接口在上线和关闭状态间切换：</p>
+<ul>
+<li>确保网络电缆插入到主机和交换机。</li>
+<li>检查连接失败是否只存在于这个主机上，或者其他连接到该服务器连接的同一交换机的主机中。</li>
+<li>验证网络电缆和网络接口是否如预期工作。执行硬件诊断步骤并替换有缺陷的电缆和网络接口卡。</li>
+<li>如果磁盘中的配置与设备中的配置不匹配，则启动或重启 NetworkManager 会创建一个代表该设备的配置的内存连接。</li>
+</ul>
+<h2 id="83nmstatectl">8.3.使用nmstatectl配置静态以太网连接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 nmstate 。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建一个 YAML 文件 ~/create-ethernet-profile.yml 包含以下内容：
+    <div class="highlight"><pre><span></span><code>---
+dns-resolver:
+config:
+    search: []
+    server:
+    - 114.114.114.114
+route-rules:
+config: []
+routes:
+config:
+- destination: 0.0.0.0/0
+    metric: 100
+    next-hop-address: 192.168.128.1
+    next-hop-interface: ens3
+    table-id: 254
+interfaces:
+- name: ens3
+type: ethernet
+state: up
+accept-all-mac-addresses: false
+ipv4:
+    enabled: true
+    address:
+  - ip: 192.168.133.95
+    prefix-length: 20
+  dhcp: false
+ipv6:
+  enabled: true
+  address:
+  - ip: fe80::f816:3eff:fec6:ce86
+    prefix-length: 64
+  auto-dns: true
+  auto-gateway: true
+  auto-route-table-id: 0
+  auto-routes: true
+  autoconf: true
+  dhcp: true
+</code></pre></div></li>
+<li>将配置应用到系统：
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-ethernet-profile.yml
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+ens3      ethernet  connected  ens3
+</code></pre></div></li>
+<li>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show ens3
+connection.id:              ens3
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  ens3
+...
+</code></pre></div></li>
+<li>以 YAML 格式显示连接设置：
+    <div class="highlight"><pre><span></span><code># nmstatectl show ens3
+</code></pre></div></li>
+</ol>
+<h2 id="84rhel-ssystem-roles">8.4.使用rhel-ssystem-roles配置带有接口名称的静态以太网连接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 rhel-system-roles 和 ansible 。</li>
+<li>如果您在运行 playbook 时使用了非 root 用户，则要求该用户拥有 sudo 权限。</li>
+<li>主机使用 NetworkManager 配置网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将主机IP或名称添加到/etc/ansible/hosts Ansible 清单文件中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>创建playbook ~/ethernet-static-IP.yml：
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with static IP
+  hosts: node.example.com
+  become: true
+  tasks:
+ - include_role:
+     name: rhel-system-roles.network
+
+   vars:
+     network_connections:
+       - name: enp7s0
+         interface_name: enp7s0
+         type: ethernet
+         autoconnect: yes
+         ip:
+           address:
+             - 192.0.2.1/24
+             - 2001:db8:1::1/64
+           gateway4: 192.0.2.254
+           gateway6: 2001:db8:1::fffe
+           dns:
+             - 192.0.2.200
+             - 2001:db8:1::ffbb
+           dns_search:
+             - example.com
+         state: up
+</code></pre></div></p>
+</li>
+<li>
+<p>运行playbook：</p>
+<ul>
+<li>通过 root 用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-static-IP.yml
+</code></pre></div></li>
+<li>通过用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-static-IP.yml
+</code></pre></div>
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</li>
+</ul>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<h2 id="85rhel-ssystem-roles">8.5.使用rhel-ssystem-roles配置带有设备路径的静态以太网连接</h2>
+<p>您可以使用以下命令识别设备路径：
+<div class="highlight"><pre><span></span><code># udevadm info /sys/class/net/&lt;device_name&gt; | grep ID_PATH=
+</code></pre></div></p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 rhel-system-roles 和 ansible 。</li>
+<li>如果您在运行 playbook 时使用了非 root 用户，则要求该用户拥有 sudo 权限。</li>
+<li>主机使用 NetworkManager 配置网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将主机IP或名称添加到/etc/ansible/hosts Ansible 清单文件中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>创建playbook ~/ethernet-dynamic-IP.yml 包含以下内容：
+    <div class="highlight"><pre><span></span><code>---
+  - name: Configure an Ethernet connection with dynamic IP
+  hosts: node.example.com
+  become: true
+  tasks:
+  - include_role:
+     name: rhel-system-roles.network
+
+   vars:
+     network_connections:
+       - name: example
+         match:
+           path:
+             - pci-0000:00:0[1-3].0
+             - &amp;!pci-0000:00:02.0
+         type: ethernet
+         autoconnect: yes
+         ip:
+           address:
+             - 192.0.2.1/24
+             - 2001:db8:1::1/64
+           gateway4: 192.0.2.254
+           gateway6: 2001:db8:1::fffe
+           dns:
+             - 192.0.2.200
+             - 2001:db8:1::ffbb
+           dns_search:
+             - example.com
+         state: up
+</code></pre></div>
+    本例中的 match 参数定义了 Ansible 将脚本应用到与 PCI ID 0000:00:0[1-3].0 匹配的设备，但没有 0000:00:02.0 设备。有关可以使用的特殊修饰符和通配符的详情，请查看 /usr/share/ansible/roles/rhel-system-roles.network/README.md 文件中的 match 参数描述。</p>
+</li>
+<li>
+<p>运行playbook：</p>
+<ul>
+<li>通过 root 用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-dynamic-IP.yml
+</code></pre></div></li>
+<li>通过用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</li>
+</ul>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<h2 id="86nmcli">8.6.使用nmcli配置动态以太网连接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络中有DHCP服务器</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>为以太网连接添加新的 NetworkManager 连接配置集：
+    <div class="highlight"><pre><span></span><code># nmcli connection add con-name Example-Connection ifname enp7s0 type ethernet
+</code></pre></div></p>
+</li>
+<li>
+<p>(可选)在使用 Example-Connection 配置文件时，更改 NetworkManager 发送给 DHCP 服务器的主机名：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify Example-Connection ipv4.dhcp-hostname Example ipv6.dhcp-hostname Example
+</code></pre></div></p>
+</li>
+<li>
+<p>(可选)在使用 Example-Connection 配置文件时，更改 NetworkManager 发送给 IPv4 DHCP 服务器的客户端 ID：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify Example-Connection ipv4.dhcp-client-id client-ID
+</code></pre></div>
+    请注意，对于 IPv6 ，没有 dhcp-client-id 参数。要为 IPv6 创建一个标识符，请配置 dhclient 服务。</p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  Example-Connection
+</code></pre></div></p>
+</li>
+<li>
+<p>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show Example-Connection
+connection.id:              Example-Connection
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div></p>
+</li>
+<li>
+<p>使用 ping 程序来验证网络连通性。</p>
+<ul>
+<li>查找同一子网中的 IP 地址。
+    IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping 2001:db8:1::2
+</code></pre></div></li>
+<li>在远程子网中查找 IP 地址。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:2::1
+</code></pre></div><ul>
+<li>如果命令失败，则使用 ping 默认网关来验证设置。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.254
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:1::fff3
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>使用 host 命令验证域名解析是否正常：
+    <div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+    如果命令错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。</p>
+</li>
+</ol>
+<h2 id="87-nmcli">8.7.使用 nmcli 互动编辑器配置动态以太网连接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络中有 DHCP 服务器。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>为以太网连接添加新的 NetworkManager 连接配置集并启动互动模式：
+    <div class="highlight"><pre><span></span><code># nmcli connection edit type ethernet con-name Example-Connection
+</code></pre></div></p>
+</li>
+<li>
+<p>设置网络接口：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set connection.interface-name enp7s0
+</code></pre></div></p>
+</li>
+<li>
+<p>（可选）在使用 Example-Connection 配置文件时，更改 NetworkManager 发送给 DHCP 服务器的主机名：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dhcp-hostname Example
+nmcli&gt; set ipv6.dhcp-hostname Example
+</code></pre></div></p>
+</li>
+<li>
+<p>（可选）在使用 Example-Connection 配置文件时，更改 NetworkManager 发送给 IPv4 DHCP 服务器的客户端 ID：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.dhcp-client-id client-ID
+</code></pre></div>
+    请注意，对于 IPv6 ，没有 dhcp-client-id 参数。要为 IPv6 创建一个标识符，请配置 dhclient 服务。</p>
+</li>
+<li>
+<p>保存并激活连接：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+Saving the connection with &#39;autoconnect=yes&#39;. That might result in an immediate activation of the connection.
+Do you still want to save? (yes/no) [yes] yes
+</code></pre></div></p>
+</li>
+<li>
+<p>保存并退出互动模式：
+    <div class="highlight"><pre><span></span><code>nmcli&gt; quit
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  Example-Connection
+</code></pre></div></p>
+</li>
+<li>
+<p>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show Example-Connection
+connection.id:              Example-Connection
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div></p>
+</li>
+<li>
+<p>使用 ping 程序来验证网络连通性。</p>
+<ul>
+<li>查找同一子网中的 IP 地址。
+    IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping 2001:db8:1::2
+</code></pre></div></li>
+<li>在远程子网中查找 IP 地址。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:2::1
+</code></pre></div><ul>
+<li>如果命令失败，则使用 ping 默认网关来验证设置。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.254
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:1::fff3
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>使用 host 命令验证域名解析是否正常：
+    <div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+    如果命令错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。</p>
+</li>
+</ol>
+<h2 id="88-nmstatectl">8.8使用 nmstatectl 配置动态以太网连接</h2>
+<p>本节介绍了如何使用 nmstatectl 工具为 enp7s0 设备添加动态以太网连接。在这个过程中的设置中，NetworkManager 从 DHCP 服务器请求此连接的 IP 设置。</p>
+<p>nmstatectl 工具确保设置配置后，结果与配置文件匹配。如果有任何失败，nmstatectl 会自动回滚更改以避免系统处于不正确的状态。</p>
+<p>该流程以 YAML 格式定义接口配置。或者，您也可以以 JSON 格式指定配置：</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>已安装 nmstate 软件。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建一个 YAML 文件 ~/create-ethernet-profile.yml ，包含以下内容：
+    <div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: enp7s0
+type: ethernet
+state: up
+ipv4:
+    enabled: true
+    auto-dns: true
+    auto-gateway: true
+    auto-routes: true
+    dhcp: true
+ipv6:
+    enabled: true
+    auto-dns: true
+    auto-gateway: true
+    auto-routes: true
+    autoconf: true
+    dhcp: true
+</code></pre></div></p>
+</li>
+<li>
+<p>将配置应用到系统：
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-ethernet-profile.yml
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  enp7s0
+</code></pre></div></p>
+</li>
+<li>
+<p>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show enp7s0
+connection.id:              enp7s0
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div></p>
+</li>
+<li>
+<p>以 YAML 格式显示连接设置：
+    <div class="highlight"><pre><span></span><code># nmstatectl show enp7s0
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="89-rhel-system-roles">8.9.使用带有接口名称的 rhel-system-roles 配置动态以太网连接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络中有 DHCP 服务器。</li>
+<li>ansible 和 rhel-system-roles 软件包已安装在控制节点上。</li>
+<li>如果您在运行 playbook 时使用了非 root 用户，则要求该用户拥有 sudo 权限。</li>
+<li>主机使用 NetworkManager 配置网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>如果您要在其上执行 playbook 中指令的主机还没有被列入清单，请将此主机的 IP 或名称添加到 /etc/ansible/hosts Ansible 清单文件中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>使用以下内容创建playbook ~/ethernet-dynamic-IP.yml：
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with dynamic IP
+    hosts: node.example.com
+    become: true
+    tasks:
+    - include_role:
+        name: rhel-system-roles.network
+
+    vars:
+        network_connections:
+        - name: enp7s0
+            interface_name: enp7s0
+            type: ethernet
+            autoconnect: yes
+            ip:
+            dhcp4: yes
+            auto6: yes
+            state: up
+</code></pre></div></p>
+</li>
+<li>
+<p>运行playbook：</p>
+<ul>
+<li>通过 root 用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-dynamic-IP.yml
+</code></pre></div></li>
+<li>通过用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</li>
+</ul>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<h2 id="810-rhel-system-roles">8.10.使用 rhel-system-roles 配置带有设备路径的动态以太网连接</h2>
+<p>您可以使用以下命令识别设备路径：
+<div class="highlight"><pre><span></span><code># udevadm info /sys/class/net/&lt;device_name&gt; | grep ID_PATH=
+</code></pre></div></p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>网络中有 DHCP 服务器。</li>
+<li>ansible 和 rhel-system-roles 软件包已安装在控制节点上。</li>
+<li>如果您在运行 playbook 时使用了非 root 用户，则要求该用户拥有 sudo 权限。</li>
+<li>主机使用 NetworkManager 配置网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>如果您要在其上执行 playbook 中指令的主机还没有被列入清单，请将此主机的 IP 或名称添加到 /etc/ansible/hosts Ansible 清单文件中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>使用以下内容创建playbook ~/ethernet-dynamic-IP.yml：
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with dynamic IP
+hosts: node.example.com
+become: true
+tasks:
+- include_role:
+    name: rhel-system-roles.network
+
+    vars:
+    network_connections:
+        - name: example
+        match:
+            path:
+            - pci-0000:00:0[1-3].0
+            - &amp;!pci-0000:00:02.0
+        type: ethernet
+        autoconnect: yes
+        ip:
+            dhcp4: yes
+            auto6: yes
+        state: up
+</code></pre></div></p>
+<p>本例中的 match 参数定义了 Ansible 将剧本应用到与 PCI ID 0000:00:0[1-3].0 匹配的设备，但没有 0000:00:02.0 设备。有关可以使用的特殊修饰符和通配符的详情，请查看 /usr/share/ansible/roles/rhel-system-roles.network/README.md 文件中的 match 参数描述。</p>
+</li>
+<li>
+<p>运行playbook：</p>
+<ul>
+<li>通过 root 用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-dynamic-IP.yml
+</code></pre></div></li>
+<li>通过用户身份连接到受管主机，请输入：
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-dynamic-IP.yml
+</code></pre></div>
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。</li>
+</ul>
+<p>如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<h2 id="811-control-center">8.11.使用 control-center 配置以太网连接</h2>
+<p>本节介绍了如何在 GNOME control-center 中配置以太网连接。
+请注意，control-center 不支持与 nm-connection-editor 应用程序或 nmcli 命令一样多的配置选项。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>服务器配置中有一个物理或者虚拟以太网设备。</li>
+<li>已安装了 GNOME。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>进入 Settings 。</li>
+<li>在左侧导航中选择 Network。</li>
+<li>点击 Wired 条目旁边的 + 按钮来创建新配置文件。</li>
+<li>可选：在 Identity 选项卡中为连接设置名称。</li>
+<li>在 IPv4 选项卡中，配置 IPv4 设置。例如，选择配置方式 Manual，设置静态 IPv4 地址、网络掩码、默认网关和 DNS 服务器：
+<img alt="control-center配置网络_1" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C_1.png" /></li>
+<li>在 IPv6 选项卡中，配置 IPv6 设置。例如，选择方法 Manual，设置静态 IPv6 地址、网络掩码、默认网关和 DNS 服务器：
+<img alt="control-center配置网络_2" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C_2.png" /></li>
+<li>点 Add 按钮保存连接。GNOME control-center 会自动激活连接。</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp7s0      ethernet  connected  Example-Connection
+</code></pre></div></p>
+</li>
+<li>
+<p>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show Example-Connection
+connection.id:              Example-Connection
+connection.uuid:            b6cdfa1c-e4ad-46e5-af8b-a75f06b79f76
+connection.stable-id:       --
+connection.type:            802-3-ethernet
+connection.interface-name:  enp7s0
+...
+</code></pre></div></p>
+</li>
+<li>
+<p>使用 ping 程序来验证网络连通性。</p>
+<ul>
+<li>查找同一子网中的 IP 地址。
+    IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping 2001:db8:1::2
+</code></pre></div></li>
+<li>在远程子网中查找 IP 地址。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:2::1
+</code></pre></div><ul>
+<li>如果命令失败，则使用 ping 默认网关来验证设置。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.254
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:1::fff3
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>使用 host 命令验证域名解析是否正常：
+    <div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+    如果命令错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。</p>
+</li>
+</ol>
+<p><strong>故障排除步骤</strong>
+如果连接失败，或者网络接口在上线和关闭状态间切换：</p>
+<ul>
+<li>确保网络电缆插入到主机和交换机。</li>
+<li>检查连接失败是否只存在于这个主机上，或者其他连接到该服务器连接的同一交换机的主机中。</li>
+<li>验证网络电缆和网络接口是否如预期工作。执行硬件诊断步骤并替换有缺陷的电缆和网络接口卡。</li>
+<li>如果磁盘中的配置与设备中的配置不匹配，则启动或重启 NetworkManager 会创建一个代表该设备的配置的内存连接。</li>
+</ul>
+<h2 id="812-nm-connection-editor">8.12.使用 nm-connection-editor 配置以太网连接</h2>
+<p><strong>前提条件</strong>
+- 服务器配置中有一个物理或者虚拟以太网设备。
+- 已安装了 GNOME。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>在终端输入：
+    <div class="highlight"><pre><span></span><code>$ nm-connection-editor
+</code></pre></div></li>
+<li>点 [+] 按钮添加新连接。</li>
+<li>选择 Ethernet 类型，然后单击 [Create]。</li>
+<li>在 General 选项卡中：</li>
+<li>要在系统启动时或者重启 NetworkManager 服务时自动启用此连接：<ol>
+<li>选择 Connect automatically with priority 。</li>
+<li>
+<p>可选：更改 Connect automatically with priority 旁边的优先级值。</p>
+<p>如果同一设备有多个连接配置集，NetworkManager 只启用一个配置集。默认情况下，NetworkManager 激活启用了自动连接的最后使用的配置集。但是，如果您在配置集中设置了优先级值，NetworkManager 会以最高优先级激活配置集。
+    2. 如果配置文件应该只对创建连接配置文件的用户可用，请清除 All users may connect to this network 复选框。
+    <img alt="nm-connection-editor配置连接_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_1.png" />
+5. 在 Ethernet 选项卡中，选择一个设备，还可以选择与以太网相关的其他设置。
+<img alt="nm-connection-editor配置连接_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_2.png" />
+6. 在 IPv4 Settings 选项卡中，配置 IPv4 设置。例如，设置静态 IPv4 地址、网络掩码、默认网关和 DNS 服务器：
+<img alt="nm-connection-editor配置连接_3" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_3.png" />
+7. 在 IPv6 设置 选项卡上，配置 IPv6 设置。例如，设置静态 IPv6 地址、网络掩码、默认网关和 DNS 服务器：
+<img alt="nm-connection-editor配置连接_4" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5_4.png" />
+8. 保存连接。
+9. 关闭 nm-connection-editor。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>使用 ping 程序来验证网络连通性。</p>
+<ul>
+<li>查找同一子网中的 IP 地址。
+    IPv4:
+        <div class="highlight"><pre><span></span><code># ping 192.0.2.3
+</code></pre></div>
+        IPv6:
+        <div class="highlight"><pre><span></span><code># ping 2001:db8:1::2
+</code></pre></div></li>
+<li>
+<p>在远程子网中查找 IP 地址。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 198.162.3.1
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:2::1
+</code></pre></div></p>
+<ul>
+<li>如果命令失败，则使用 ping 默认网关来验证设置。
+    IPv4:
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.254
+</code></pre></div>
+    IPv6:
+    <div class="highlight"><pre><span></span><code># ping 2001:db8:1::fff3
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>使用 host 命令验证域名解析是否正常：
+<div class="highlight"><pre><span></span><code># host client.test.com
+</code></pre></div>
+如果命令错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="813-networkmanager-dhcp">8.13.更改 NetworkManager 的 DHCP 客户端</h2>
+<p>默认情况下，NetworkManager 使用其内部的 DHCP 客户端。但是，如果您需要不提供内置客户端的 DHCP 客户端，您也可以将 NetworkManager 配置为使用 dhclient。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建 /etc/NetworkManager/conf.d/dhcp-client.conf 文件：
+    <div class="highlight"><pre><span></span><code>[main]
+dhcp=dhclient
+</code></pre></div>
+    您可以对 internal （默认）或 dhclient 设置 dhcp 参数。</p>
+</li>
+<li>
+<p>如果对 dhclient 设置 dhcp 参数，请安装 dhcp-client 软件包：
+    <div class="highlight"><pre><span></span><code># yum install dhcp-client
+</code></pre></div></p>
+</li>
+<li>
+<p>重启 NetworkManager：
+    <div class="highlight"><pre><span></span><code># systemctl restart NetworkManager
+</code></pre></div>
+    请注意，重启会临时中断所有网络连接。</p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>在 /var/log/messages 日志文件中搜索类似于如下的条目：
+    <div class="highlight"><pre><span></span><code>Sep  5 06:41:52 server NetworkManager[27748]: &lt;info&gt;  [1650959659.8483] dhcp-init: Using DHCP client &#39;dhclient&#39;
+</code></pre></div>
+    此日志条目确认 NetworkManager 使用 dhclient 作为 DHCP 客户端。</li>
+</ul>
+<h2 id="814-networkmanager-dhcp">8.14.配置 NetworkManager 连接的 DHCP 行为</h2>
+<p>DHCP 客户端在每次连接到网络时都从 DHCP 服务器请求动态 IP 地址和对应配置信息。</p>
+<p>当您将连接配置为从 DHCP 服务器检索 IP 地址时，网络管理器（NetworkManager）从 DHCP 服务器请求 IP 地址。默认情况下，客户端会等待 45 秒时间完成此请求。当 DHCP 连接启动时，dhcp 客户端会从 DHCP 服务器请求 IP 地址。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>在主机上配置了使用 DHCP 的连接。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>设置 ipv4.dhcp-timeout 和 ipv6.dhcp-timeout 属性。例如，要将这两个选项都设为 30 秒，请输入：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv4.dhcp-timeout 30 ipv6.dhcp-timeout 30
+</code></pre></div>
+    另外，将参数设置为 infinity 以配置网络管理器(NetworkManager)不会停止尝试请求和续订 IP 地址，直到成功为止。</p>
+</li>
+<li>
+<p>可选：配置如果网络管理器（NetworkManager）在超时前没有接收 IPv4 地址时的行为：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv4.may-fail value
+</code></pre></div>
+    如果将 ipv4.may-fail 选项设为：</p>
+<ul>
+<li>yes ,连接的状态取决于 IPv6 配置：</li>
+<li>如果启用了 IPv6 配置并成功，NetworkManager 会激活 IPv6 连接，不再尝试激活 IPv4 连接。</li>
+<li>如果禁用或未配置 IPv6 配置，连接会失败。</li>
+<li>no ,连接会被停止。在这种情况下：</li>
+<li>如果启用了连接的 autoconnect 属性，NetworkManager 会根据 autoconnect-retries 属性中设置的值尝试多次激活连接。默认值为 4。</li>
+<li>如果连接仍然无法获得 DHCP 地址，则自动激活会失败。请注意，5 分钟后，自动连接过程会再次启动，从 DHCP 服务器获取 IP 地址。</li>
+</ul>
+</li>
+<li>
+<p>可选：配置如果网络管理器（NetworkManager）在超时前没有接收 IPv6 地址时的行为：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv6.may-fail value
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="815">8.15.按接口名称使用单个连接配置文件配置多个以太网接口</h2>
+<p>在大多数情况下，一个连接配置文件包含一个网络设备的设置。但是，当您在连接配置文件中设置接口名称时，NetworkManager 也支持通配符。如果主机在具有动态 IP 地址分配的以太网之间漫游，则您可以使用此功能创建可用于多个以太网接口的单个连接配置文件。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>DHCP 在网络中可用</li>
+<li>主机有多个以太网适配器</li>
+<li>主机上不存在连接配置文件</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>添加可应用于以 enp 开头的所有接口名称的连接配置文件：
+    <div class="highlight"><pre><span></span><code>#nmcli connection add con-name Example connection.multi-connect multiple match.interface-name enp* type ethernet
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>显示单个连接配置文件的所有设置：
+    <div class="highlight"><pre><span></span><code>#nmcli connection show Example
+connection.id:                      Example
+...
+connection.multi-connect:           3 (multiple)
+match.interface-name:               `enp*`
+...
+</code></pre></div>
+    3 表示<strong>同时在连接配置文件上处于活动状态的接口数量</strong>，而不是连接配置文件中的网络接口数量。连接配置文件使用与 match.interface-name 参数中的模式匹配的所有设备，因此连接配置文件具有相同的通用唯一识别符(UUID)。</p>
+</li>
+<li>
+<p>显示连接的状态：
+    <div class="highlight"><pre><span></span><code>#nmcli connection show
+NAME                    UUID                    TYPE     DEVICE
+...
+Example  6f22402e-c0cc-49cf-b702-eaf0cd5ea7d1  ethernet  enp7s0
+Example  6f22402e-c0cc-49cf-b702-eaf0cd5ea7d1  ethernet  enp8s0
+Example  6f22402e-c0cc-49cf-b702-eaf0cd5ea7d1  ethernet  enp9s0
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="816-pci-id">8.16.使用 PCI ID 为多个以太网接口配置一个连接配置文件</h2>
+<p>PCI ID 是连接到系统的设备的唯一标识符。连接配置文件根据 PCI ID 列表按匹配的接口来添加多个设备。您可以使用这个流程将多个设备 PCI ID 连接到一个连接配置文件。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>DHCP 服务器在网络中可用</li>
+<li>主机有多个以太网适配器</li>
+<li>系统上不存在连接配置文件</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>识别设备路径。例如，要显示以 enp 开头的所有接口的设备路径，请输入：
+    <div class="highlight"><pre><span></span><code>#udevadm info /sys/class/net/enp* | grep ID_PATH=
+...
+E: ID_PATH=pci-0000:07:00.0
+E: ID_PATH=pci-0000:08:00.0
+</code></pre></div></p>
+</li>
+<li>
+<p>添加可应用于匹配 0000:00:0[7-8].0 表达式的所有 PCI ID 的连接配置文件：
+    <div class="highlight"><pre><span></span><code>#nmcli connection add type ethernet connection.multi-connect multiple match.path &quot;pci-0000:07:00.0 pci-0000:08:00.0&quot; con-name Example
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>显示连接的状态：
+    <div class="highlight"><pre><span></span><code>#nmcli connection show
+
+NAME   UUID     TYPE        DEVICE
+...
+Example      9cee0958-512f-4203-9d3d-b57af1d88466  ethernet  enp7s0
+Example      9cee0958-512f-4203-9d3d-b57af1d88466  ethernet  enp8s0
+...
+</code></pre></div></p>
+</li>
+<li>
+<p>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code>#nmcli connection show Example
+
+connection.id:               Example
+...
+connection.multi-connect:    3 (multiple)
+match.path:                  pci-0000:07:00.0,pci-0000:08:00.0
+...
+</code></pre></div></p>
+</li>
+</ol>
+<p>此连接配置文件使用 PCI ID 与 match.path 参数中的模式匹配的所有设备，因此连接配置文件具有相同的全局唯一标识符(UUID)。</p>
+<h1 id="9-wi-fi">第9章 管理 Wi-Fi 连接</h1>
+<h2 id="91-nmcli-wi-fi">9.1.使用 nmcli 配置 Wi-Fi 连接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>安装了 nmcli 工具。</li>
+<li>确保 WiFi 被启用:
+    <div class="highlight"><pre><span></span><code>$ nmcli radio wifi on
+</code></pre></div></li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>使用静态 IP 配置创建 Wi-Fi 连接配置集：
+    <div class="highlight"><pre><span></span><code>$ nmcli con add con-name MyCafe ifname wlan0 type wifi ssid MyCafe ip4 192.0.2.101/24 gw4 192.0.2.1
+</code></pre></div></p>
+</li>
+<li>
+<p>设置一个 DNS 服务器。例如，将 192.0.2.1 设为 DNS 服务器：
+    <div class="highlight"><pre><span></span><code>$ nmcli con modify con-name MyCafe ipv4.dns &quot;192.0.2.1&quot;
+</code></pre></div></p>
+</li>
+<li>
+<p>另外，还可设置 DNS 搜索域。例如，要将搜索域设为 example.com ：
+    <div class="highlight"><pre><span></span><code>$ nmcli con modify con-name MyCafe ipv4.dns-search &quot;example.com&quot;
+</code></pre></div></p>
+</li>
+<li>
+<p>检查特定属性，如 mtu ：
+    <div class="highlight"><pre><span></span><code>$ nmcli connection show id MyCafe | grep mtu
+802-11-wireless.mtu:                     auto
+</code></pre></div></p>
+</li>
+<li>
+<p>更改设置的属性：
+    <div class="highlight"><pre><span></span><code>$ nmcli connection modify id MyCafe wireless.mtu 1350
+</code></pre></div></p>
+</li>
+<li>
+<p>验证更改：
+    <div class="highlight"><pre><span></span><code>$ nmcli connection show id MyCafe | grep mtu
+802-11-wireless.mtu:                     1350
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>
+<p>使用 ping 命令验证 wifi 网络是否连通：</p>
+<ul>
+<li>同一子网：
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.103
+</code></pre></div>
+    如果命令失败，请验证 IP 和子网的设置。</li>
+<li>外网：
+    <div class="highlight"><pre><span></span><code># ping 198.51.16.3
+</code></pre></div><ul>
+<li>如果命令失败，则使用 ping 默认网关来验证设置。
+    <div class="highlight"><pre><span></span><code># ping 192.0.2.1
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>使用 host 命令验证域名解析是否正常。
+    <div class="highlight"><pre><span></span><code># host client.example.com
+</code></pre></div>
+    如果命令返回任何错误，如 connection timed out 或 no servers could be reached，请验证您的 DNS 设置。</p>
+</li>
+</ol>
+<h2 id="92-control-center-wi-fi">9.2.使用 control-center 配置 Wi-Fi 连接</h2>
+<p><strong>流程</strong></p>
+<ol>
+<li>进入设置 Settings 并在左侧菜单栏中选择 WI-FI 选项即可看到可用的 Wi-Fi 网络。</li>
+<li>
+<p>选择您要编辑的 Wi-Fi 连接名称右侧的 gear wheel 图标，并会出现编辑连接对话框。Details 菜单窗口显示您可以进行进一步配置的连接详情。</p>
+<p><strong>选项</strong></p>
+<ol>
+<li>如果您选择" 自动连接 "，当NetworkManager 检测到可用时，NetworkManager 会自动连接到这个连接。如果您不希望 NetworkManager 自动连接，请清除复选框。请注意，当复选框清除时，您必须在网络连接图标的菜单中选择该连接使其连接。</li>
+<li>要使连接可供其他用户使用，请选中 Make available to other users 复选框。</li>
+<li>您还可以通过更改 Restrict background data usage 来控制后台数据的使用。</li>
+<li>选择 Identity 菜单项来查看基本配置选项。
+   SSID - 接入点(AP) 的服务集合标识符 (SSID)。</li>
+</ol>
+</li>
+</ol>
+<p>BSSID - 基本服务集合标识符 (BSSID)是您在 基础架构 模式中连接的特定无线访问点的 MAC 地址（也称为 硬件地址 ）。默认情况下，此字段为空白，您可以通过 SSID 连接到无线访问点，而无需指定 BSSID。如果指定了 BSSID，它将强制系统只关联到特定的接入点。对于临时网络，在创建 ad-hoc 网络时，BSSID 由 mac80211 子系统随机生成。网络管理器（NetworkManager）不显示它。</p>
+<p>MAC 地址 - MAC 地址 允许您将特定的无线适配器与特定连接（或连接）关联。</p>
+<p>克隆地址 - 使用克隆的 MAC 地址代替实际硬件地址。保留空白，除非需要。
+4. 要进行进一步的 IP 地址配置，请选择 IPv4 和 IPv6 菜单项。</p>
+<p>默认情况下，根据当前的网络设置，IPv 4 和 IPv6 都被设置为自动配置。这意味着，当接口连接到网络时，会自动检测到本地 IP 地址、DNS 地址和其他设置。如果 DHCP 服务器在此网络中分配 IP 配置，但您也可以在 IPv4 和 IPv 6 设置中提供静态配置。在 IPv4 和 IPv6 菜单条目中，您可以看到以下设置：</p>
+<ul>
+<li>IPv4<ul>
+<li>自动(DHCP) - 如果您要连接的网络使用路由器公告(RA)或 DHCP 服务器来分配动态 IP 地址，请选择此选项。您可以在 Details 菜单条目中看到分配的 IP 地址。</li>
+<li>仅链接 - 如果您要连接的网络没有 DHCP 服务器且您不想手动分配 IP 地址，请选择这个选项。随机地址将根据 RFC 3927 分配前缀 169.254/16。</li>
+<li>Manual - 如果要手动分配 IP 地址，请选择这个选项。</li>
+<li>disable - 此连接禁用 IPv4。</li>
+</ul>
+</li>
+<li>DNS<ul>
+<li>如果 Automatic 为 ON，并且没有可用的 DHCP 服务器为此连接分配 DNS 服务器，请将其切换到 OFF，以输入用逗号分隔 IP 的 DNS 服务器的 IP 地址。</li>
+</ul>
+</li>
+<li>Routes<pre><code>请注意，在 Routes 部分，当 Automatic 为 ON 时，会使用来自路由器公告(RA)或 DHCP 的路由，但您也可以添加额外的静态路由。OFF 时，仅使用静态路由。
+</code></pre>
+<ul>
+<li>地址 - 输入远程网络、子网络或主机的 IP 地址。</li>
+<li>子网掩码 - 上面输入的 IP 地址的子网掩码或前缀长度。</li>
+<li>网关 - 上面输入的远程网络、子网络或主机的网关的 IP 地址。</li>
+<li>指标 - 网络成本，赋予此路由的首选值。数值越低，优先级越高。</li>
+<li>仅将此连接用于其网络上的资源</li>
+<li>选择这个复选框以防止连接成为默认路由。</li>
+<li>IPv6</li>
+<li>自动 - 选择此选项以使用 IPv6 无状态地址自动配置(SLAAC)，基于硬件地址和路由器公告(RA)创建自动无状态配置。</li>
+<li>自动，仅 DHCP - 选择此选项以不使用 RA，而是直接从 DHCPv6 请求信息以创建有状态配置。</li>
+<li>仅链接 - 如果您要连接的网络没有 DHCP 服务器且您不想手动分配 IP 地址，请选择这个选项。随机地址将根据 RFC 4862 进行分配，前缀为 FE80::0。</li>
+<li>Manual - 如果要手动分配 IP 地址，请选择这个选项。</li>
+<li>disable - 此连接禁用 IPv6。</li>
+<li>选择 Security 菜单条目配置安全设置。</li>
+<li>安全性</li>
+<li>None - 禁用加密，数据在网络中以纯文本形式传输。</li>
+<li>WEP 40/128 位密钥 - Wired Equivalent Privacy(WEP)，来自于 IEEE 802.11 标准。使用单一预共享密钥（PSK）。</li>
+<li>WEP 128 位密码 - 用于 生成 WEP 密钥的密码短语的 MD5 哈希。</li>
+<li>动态 WEP(802.1X) - WEP 密钥动态更改.</li>
+<li>LEAP - Cisco 系统的轻量级可扩展身份验证协议.</li>
+<li>WPA 和 WPA2 个人 - Wi-Fi Protected Access(WPA)，来自 IEEE 802.11i 标准草案.来自 802.11i-2004 标准的 Wi-Fi Protected Access 2(WPA2)。个人模式，使用预共享密钥（WPA-PSK）。</li>
+<li>WPA &amp; WPA2 Enterprise — WPA 和 WPA 2 用于与 RADIUS 身份验证服务器一起使用，以提供 IEEE 802.1X 网络访问控制。</li>
+<li>WPA3 Personal - Wi-Fi Protected Access 3(WPA3) Personal 使用 Simultaneous Authentication of Equals(SAE)而不是预共享密钥(PSK)来防止字典攻击。WPA3 使用完美转发保密。</li>
+<li>密码</li>
+<li>输入要在验证过程中使用的密码。</li>
+<li>完成配置后，点 应用 按钮保存配置。</li>
+</ul>
+</li>
+</ul>
+<h2 id="93-nmcli-wi-fi">9.3.使用 nmcli 连接到 Wi-Fi 网络</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>安装了 nmcli 工具。</li>
+<li>确保 WiFi 被启用（默认）:
+    <div class="highlight"><pre><span></span><code>$ nmcli radio wifi on
+</code></pre></div></li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>刷新可用的 Wi-Fi 连接列表：
+    <div class="highlight"><pre><span></span><code>$ nmcli device wifi rescan
+</code></pre></div></p>
+</li>
+<li>
+<p>查看可用的 Wi-Fi 接入点：
+    <div class="highlight"><pre><span></span><code>$ nmcli dev wifi list
+
+IN-USE  SSID      MODE   CHAN  RATE        SIGNAL  BARS  SECURITY
+...
+        MyCafe    Infra  3     405 Mbit/s  85      ▂▄▆█  WPA1 WPA2
+</code></pre></div></p>
+</li>
+<li>
+<p>使用 nmcli 连接到 Wi-Fi 连接：
+    <div class="highlight"><pre><span></span><code>$ nmcli dev wifi connect SSID-Name password wireless-password
+</code></pre></div>
+    例如：
+    <div class="highlight"><pre><span></span><code>$ nmcli dev wifi connect MyCafe password wireless-password
+</code></pre></div>
+    禁用 Wi-Fi ：
+    <div class="highlight"><pre><span></span><code>$ nmcli radio wifi off
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="94-nmcli-wi-fi">9.4.使用 nmcli 连接到隐藏的 Wi-Fi 网络</h2>
+<p>所有 Wi-Fi 接入点都有一个 Service Set Identifier（SSID）来识别它们。然而，接入点可以被配置为不广播其 SSID，在这种情况下，它会被隐藏，且不会出现在网络管理器（NetworkManager）的可用网络列表中。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>安装了 nmcli 工具。</li>
+<li>了解 SSID，以及 Wi-Fi 连接的密码。</li>
+<li>确保 WiFi 被启用（默认）:
+    <div class="highlight"><pre><span></span><code>$ nmcli radio wifi on
+</code></pre></div></li>
+</ul>
+<p><strong>流程</strong></p>
+<ul>
+<li>连接到隐藏的 SSID：
+    <div class="highlight"><pre><span></span><code>$ nmcli dev wifi connect SSID_Name password wireless_password hidden yes
+</code></pre></div></li>
+</ul>
+<h2 id="95-gnome-gui-wi-fi">9.5.使用 GNOME GUI 连接至 Wi-Fi 网络</h2>
+<p><strong>流程</strong></p>
+<ol>
+<li>在屏幕右上角打开 GNOME Shell 网络连接图标菜单。</li>
+<li>选择 Wi-Fi Not Connected。</li>
+<li>单击 Select Network 选项。</li>
+<li>单击您要连接的网络名称，然后单击 Connect。
+   请注意，如果没有看到网络，则网络可能是隐藏的。</li>
+<li>如果需要密码或加密密钥保护网络，请输入密码并单击" 连接 "。
+   请注意：如果您不知道密码，请联络 Wi-Fi 网络的管理员。</li>
+<li>如果连接成功，则会在连接图标菜单中看到网络连接，WiFi图标位于屏幕右上角。</li>
+</ol>
+<h2 id="96-nmcli-wi-fi-8021x">9.6.使用 nmcli 在现有 Wi-Fi 连接中配置 802.1X 网络身份验证</h2>
+<p>使用 nmcli 工具，您可以配置网络身份验证。此流程描述了如何在现有名为 wlp1s0 的 NetworkManager Wi-Fi 连接配置文件中使用 Microsoft Challenge-Handshake Authentication Protocol 版本 2(MSCHAPv2)配置受保护的扩展验证协议(PEAP)身份验证。</p>
+<p><strong>前提条件</strong></p>
+<ol>
+<li>网络必须具有 802.1X 网络身份验证。</li>
+<li>Wi-Fi 连接配置集存在于 NetworkManager 中，且具有有效的 IP 配置。</li>
+<li>如果需要客户端验证验证方的证书，则证书颁发机构(CA)证书必须存储在 /etc/pki/ca-trust/source/anchors/ 目录中。</li>
+<li>wpa_supplicant 软件包已安装。</li>
+</ol>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>将 Wi-Fi 安全模式设为 wpa-eap、将可扩展验证协议(EAP)设为 peap，将内部验证协议设为 mschapv2，设置用户名：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify wlp1s0 wireless-security.key-mgmt wpa-eap 802-1x.eap peap 802-1x.phase2-auth mschapv2 802-1x.identity user_name
+</code></pre></div>
+    请注意，您必须在单个命令中设置 wireless-security.key-mgmt、802-1x.eap、802-1x.phase2-auth 和 802-1x.identity 参数。</p>
+</li>
+<li>
+<p>另外，还可将该密码存储在配置中：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify wlp1s0 802-1x.password password
+</code></pre></div></p>
+<p>默认情况下，NetworkManager 在 /etc/sysconfig/network-scripts/keys-connection_name 文件中以明文形式保存密码，该文件只对 root 用户可读。但是，在配置文件中清除文本密码会有安全隐患。</p>
+<p>要提高安全性，请将 802-1x.password-flags 参数设为 0x1。有了这个设置，在具有 GNOME 桌面环境或运行 nm-applet 的服务器上，NetworkManager 从这些服务中检索密码。在其他情况下，NetworkManager 会提示输入密码。</p>
+</li>
+<li>
+<p>如果需要客户端验证验证方的证书，请将连接配置文件中的 802-1x.ca-cert 参数设为 CA 证书的路径：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify wlp1s0 802-1x.ca-cert /etc/pki/ca-trust/source/anchors/ca.crt
+</code></pre></div></p>
+</li>
+<li>
+<p>激活连接配置集：
+    <div class="highlight"><pre><span></span><code># nmcli connection up wlp1s0
+</code></pre></div></p>
+</li>
+</ol>
+<h1 id="10-vlan">第 10 章 配置 VLAN 标记</h1>
+<p>本章论述了如何配置虚拟本地区域网络（VLAN）。VLAN 是物理网络中的一个逻辑网络。当数据包通过 VLAN 接口时会带上接口标记和 VLAN ID ，数据包返回时则会删除标记。</p>
+<p>您可以在另一个接口（如以太网、绑定、team 或桥接设备）上创建 VLAN 接口。此接口称为父接口。</p>
+<h2 id="101-nmcli-vlan">10.1.使用 nmcli 命令配置 VLAN 标记</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您计划用作虚拟 VLAN 接口的父接口支持 VLAN 标记。</li>
+<li>如果您在绑定接口之上配置 VLAN：</li>
+<li>绑定的端口是在线的。</li>
+<li>这个绑定没有使用 fail_over_mac=follow 选项进行配置。VLAN 虚拟设备无法更改其 MAC 地址以匹配父设备的新 MAC 地址。在这种情况下，流量仍会使用不正确的源 MAC 地址发送。</li>
+<li>这个绑定通常不会预期从 DHCP 服务器或 IPv6 自动配置获取 IP 地址。在创建绑定时设置 ipv4.method=disable 和 ipv6.method=ignore 选项。否则，如果 DHCP 或 IPv6 自动配置在一段时间后失败，接口可能会关闭。</li>
+<li>主机连接到的交换机被配置为支持 VLAN 标记。详情请查看您的交换机说明。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>显示网络接口：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE   TYPE      STATE         CONNECTION
+enp1s0   ethernet  disconnected  enp1s0
+bridge0  bridge    connected     bridge0
+bond0    bond      connected     bond0
+...
+</code></pre></div></p>
+</li>
+<li>
+<p>创建 VLAN 接口。例如，要创建一个使用 enp1s0 作为其父接口，使用 VLAN ID 10 标记数据包，名为 vlan10 的 VLAN 接口，请输入：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type vlan con-name vlan10 ifname vlan10 vlan.parent enp1s0 vlan.id 10
+</code></pre></div>
+    请注意，VLAN 必须在范围 0 到 4094 之间。</p>
+</li>
+<li>
+<p>默认情况下，VLAN 连接会继承上级接口的最大传输单元（MTU）。另外，还可设置不同的 MTU 值：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify vlan10 ethernet.mtu 2000
+</code></pre></div></p>
+</li>
+<li>
+<p>配置 VLAN 设备的 IP 设置。如果要使用这个 VLAN 设备作为其它设备的端口，请跳过这一步。</p>
+</li>
+<li>
+<p>配置 IPv4 设置。例如，要对 vlan10 连接设置静态 IPv4 地址、网络掩码、默认网关和 DNS 服务器设置，请输入：
+        <div class="highlight"><pre><span></span><code># nmcli connection modify vlan10 ipv4.addresses &#39;192.0.2.1/24&#39;
+# nmcli connection modify vlan10 ipv4.gateway &#39;192.0.2.254&#39;
+# nmcli connection modify vlan10 ipv4.dns &#39;192.0.2.253&#39;
+# nmcli connection modify vlan10 ipv4.method manual
+</code></pre></div></p>
+<ol>
+<li>配置 IPv6 设置。例如，要对 vlan10 连接设置静态 IPv6 地址、网络掩码、默认网关和 DNS 服务器设置，请输入：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify vlan10 ipv6.addresses &#39;2001:db8:1::1/32&#39;
+# nmcli connection modify vlan10 ipv6.gateway &#39;2001:db8:1::fffe&#39;
+# nmcli connection modify vlan10 ipv6.dns &#39;2001:db8:1::fffd&#39;
+# nmcli connection modify vlan10 ipv6.method manual
+</code></pre></div></li>
+</ol>
+</li>
+<li>
+<p>激活连接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up vlan10
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>验证配置：
+    <div class="highlight"><pre><span></span><code># ip -d addr show vlan10
+4: vlan10@enp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:72:2f:6e brd ff:ff:ff:ff:ff:ff promiscuity 0
+    vlan protocol 802.1Q id 10 &lt;REORDER_HDR&gt; numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
+    inet 192.0.2.1/24 brd 192.0.2.255 scope global noprefixroute vlan10
+    valid_lft forever preferred_lft forever
+    inet6 2001:db8:1::1/32 scope global noprefixroute
+    valid_lft forever preferred_lft forever
+    inet6 fe80::8dd7:9030:6f8e:89e6/64 scope link noprefixroute
+    valid_lft forever preferred_lft forever
+</code></pre></div></li>
+</ul>
+<h2 id="102-nm-connection-editor-vlan">10.2.使用 nm-connection-editor 配置 VLAN 标记</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您计划用作虚拟 VLAN 接口的父接口支持 VLAN 标记。</li>
+<li>如果您在绑定接口之上配置 VLAN：</li>
+<li>绑定的端口是在线的。</li>
+<li>这个绑定没有使用 fail_over_mac=follow 选项进行配置。VLAN 虚拟设备无法更改其 MAC 地址以匹配父设备的新 MAC 地址。在这种情况下，流量仍会使用不正确的源 MAC 地址发送。</li>
+<li>主机连接到的交换机被配置为支持 VLAN 标记。详情请查看您的交换机说明。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>打开终端，输入 nm-connection-editor ：
+    <div class="highlight"><pre><span></span><code>$ nm-connection-editor
+</code></pre></div></p>
+</li>
+<li>
+<p>点击 + 按钮来添加一个新的连接。</p>
+</li>
+<li>选择 VLAN 连接类型，然后单击 Create。</li>
+<li>在 VLAN 选项卡中：</li>
+<li>选择上级接口。</li>
+<li>选择 VLAN ID。请注意，VLAN 必须在范围 0 到 4094 之间。</li>
+<li>默认情况下，VLAN 连接会继承上级接口的最大传输单元（MTU）。另外，还可设置不同的 MTU 值。</li>
+<li>另外，还可设置 VLAN 接口的名称以及其它特定 VLAN 选项。
+   <img alt="nm-connection-editor配置vlan_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AEvlan_1.png" /></li>
+<li>配置 VLAN 设备的 IP 设置。如果要使用这个 VLAN 设备作为其它设备的端口，请跳过这一步。</li>
+<li>在 IPv4 Settings 选项卡中，配置 IPv4 设置。例如，设置静态 IPv4 地址、网络掩码、默认网关和 DNS 服务器：
+   <img alt="nm-connection-editor配置vlan_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AEvlan_2.png" /></li>
+<li>在 IPv6 设置 选项卡上，配置 IPv6 设置。例如，设置静态 IPv6 地址、网络掩码、默认网关和 DNS 服务器：
+   <img alt="nm-connection-editor配置vlan_3" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AEvlan_3.png" /></li>
+<li>点击 Save 保存 VLAN 连接。</li>
+<li>关闭 nm-connection-editor。</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>验证配置：
+    <div class="highlight"><pre><span></span><code># ip -d addr show vlan3
+4: vlan3@ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:d5:e0:fb brd ff:ff:ff:ff:ff:ff promiscuity 0
+    vlan protocol 802.1Q id 10 &lt;REORDER_HDR&gt; numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
+    inet 192.0.2.1/24 brd 192.0.2.255 scope global noprefixroute vlan10
+    valid_lft forever preferred_lft forever
+    inet6 2001:db8:1::1/32 scope global noprefixroute
+    valid_lft forever preferred_lft forever
+    inet6 fe80::8dd7:9030:6f8e:89e6/64 scope link noprefixroute
+    valid_lft forever preferred_lft forever
+</code></pre></div></li>
+</ol>
+<h2 id="103-nmstatectl-vlan">10.3. 使用 nmstatectl 配置 VLAN 标记</h2>
+<p>本节描述了如何使用 nmstatectl 工具配置使用以太网连接、 ID 为 10 的 VLAN。作为子设备，VLAN 连接包含 IP、默认网关和 DNS 配置。</p>
+<p>根据您的环境，相应地调整 YAML 文件。例如，要在 VLAN 中使用网桥或绑定设备，请调整您在 VLAN 中使用的端口的 base-iface 属性和 type 属性。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>要将以太网设备用作 VLAN 中的端口，必须在服务器中安装物理或者虚拟以太网设备。</li>
+<li>nmstate 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>
+<p>创建YAML文件包含以下内容，~/create-vlan.yml ：
+    <div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: vlan10
+type: vlan
+state: up
+ipv4:
+    enabled: true
+    address:
+    - ip: 192.0.2.1
+    prefix-length: 24
+    dhcp: false
+ipv6:
+    enabled: true
+    address:
+    - ip: 2001:db8:1::1
+    prefix-length: 64
+    autoconf: false
+    dhcp: false
+vlan:
+    base-iface: enp1s0
+    id: 10
+- name: enp1s0
+type: ethernet
+state: up
+
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.254
+    next-hop-interface: vlan10
+- destination: ::/0
+    next-hop-address: 2001:db8:1::fffe
+    next-hop-interface: vlan10
+
+dns-resolver:
+config:
+    search:
+    - example.com
+    server:
+    - 192.0.2.200
+    - 2001:db8:1::ffbb
+</code></pre></div></p>
+</li>
+<li>
+<p>将设置应用到系统：
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-vlan.yml
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+vlan10      vlan      connected  vlan10
+</code></pre></div></li>
+<li>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show vlan10
+connection.id:              vlan10
+connection.uuid:            1722970f-788e-4f81-bd7d-a86bf21c9df5
+connection.stable-id:       --
+connection.type:            vlan
+connection.interface-name:  vlan10
+...
+</code></pre></div></li>
+<li>以 YAML 格式显示连接设置：
+    <div class="highlight"><pre><span></span><code># nmstatectl show vlan0
+</code></pre></div></li>
+</ol>
+<h2 id="104-rhel-system-roles-vlan">10.4.使用 rhel-system-roles 配置 VLAN 标记</h2>
+<p>本节描述了如何在这个以太网连接之上添加以太网连接 ID 为 10 的 VLAN 。作为子设备，VLAN 连接包含 IP、默认网关和 DNS 配置。</p>
+<p>根据您的环境，相应地调整。例如：</p>
+<p>若要将 VLAN 用作其他连接中的端口（如绑定），请省略 ip 属性，并在子配置中设置 IP 配置。
+若要在 VLAN 中使用 team、bridge 或 bond 设备，请调整您在 VLAN 中使用的端口的 interface_name 和 类型 属性。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>ansible 和 rhel-system-roles 软件包已安装在控制节点上。</li>
+<li>如果您在运行 playbook 时使用了非 root 用户，则确保此用户在节点上具有 sudo 权限。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>如果您要在其上执行 playbook 中指令的主机还没有被列入清单，请将此主机的 IP 或名称添加到 /etc/ansible/hosts Ansible 清单文件中：
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></li>
+<li>使用以下内容创建 ~/vlan-ethernet.yml playbook：
+    ```
+    ---</li>
+<li>
+<p>name: Configure a VLAN that uses an Ethernet connection
+     hosts: node.example.com
+     become: true
+     tasks:</p>
+<ul>
+<li>include_role:
+     name: rhel-system-roles.network</li>
+</ul>
+<p>vars:
+     network_connections:
+       # Add an Ethernet profile for the underlying device of the VLAN
+       - name: enp1s0
+         type: ethernet
+         interface_name: enp1s0
+         autoconnect: yes
+         state: up
+         ip:
+           dhcp4: no
+           auto6: no</p>
+<pre><code>   # Define the VLAN profile
+   - name: enp1s0.10
+     type: vlan
+     ip:
+       address:
+         - "192.0.2.1/24"
+         - "2001:db8:1::1/64"
+       gateway4: 192.0.2.254
+       gateway6: 2001:db8:1::fffe
+       dns:
+         - 192.0.2.200
+         - 2001:db8:1::ffbb
+       dns_search:
+         - example.com
+     vlan_id: 10
+     parent: enp1s0
+     state: up
+</code></pre>
+<p><code>VLAN 配置文件中的 parent 属性将 VLAN 配置为在 enp1s0 设备之上运行。
+3. 运行 playbook：
+- 要以 root 用户身份连接到受管主机，请输入：</code>
+    # ansible-playbook -u root ~/vlan-ethernet.yml
+    <code>- 以用户身份连接到受管主机，请输入：</code>
+    # ansible-playbook -u user_name --ask-become-pass ~/vlan-ethernet.yml
+    ```
+    --ask-become-pass 选项确保 ansible-playbook 命令提示输入 -u user_name 选项中定义的用户的 sudo 密码。
+如果没有指定 -u user_name 选项，ansible-playbook 以当前登录到控制节点的用户身份连接到受管主机。</p>
+</li>
+</ol>
+<h1 id="11-vxlan-2">第 11 章 使用 VXLAN 为虚拟机创建虚拟第 2 层域</h1>
+<p>虚拟可扩展局域网(VXLAN)是一种网络协议，它使用 UDP 协议在 IP 网络上对第 2 层流量进行隧道化。例如，在不同主机上运行的某些虚拟机(VM)可以通过 VXLAN 隧道进行通信。主机可以位于不同的子网中，甚至位于世界各地的不同数据中心。从虚拟机的角度来看，同一 VXLAN 中的其他虚拟机都在同一个第 2 层域中。</p>
+<p>本文档描述了如何在 OpenCLoudOS 主机上配置虚拟机不可见的 VXLAN ：
+<img alt="vxlan-tunnel" src="../assets/vxlan-tunnel.jpg" /></p>
+<p>在本例中，OpenCloudOS-host-A 和 OpenCloudOS-host-B 使用网桥 br0 来在每台具有 VXLAN 为 vxlan10 的主机上连接虚拟机的虚拟网络。由于此配置，VXLAN 对虚拟机不可见，虚拟机不需要任何特殊的配置。如果您稍后将更多的虚拟机连接到同一虚拟网络，则虚拟机将自动成为同一虚拟第 2 层域的成员。</p>
+<p>就像正常的第 2 层流量一样，VXLAN 中的数据是不加密的。出于安全考虑，在 VPN 或其他类型的加密连接上使用 VXLAN 。</p>
+<h2 id="111vxlan">11.1.VXLAN 的优点</h2>
+<p>虚拟可扩展局域网(VXLAN)提供了以下主要优点：</p>
+<ul>
+<li>VXLAN 使用 24 位 ID。因此，您可以创建高达 16,777,216 个隔离网络。例如，虚拟 LAN(VLAN)只支持 4,096 个隔离网络。</li>
+<li>VXLAN 使用 IP 协议。这可让您通过路由控制流量，并在同一第 2 层域中的不同网络和位置虚拟运行系统。</li>
+<li>与大多数隧道协议不同，VXLAN 不仅仅是一个点对点的网络。VXLAN 可以动态了解其他端点的 IP 地址，也可以使用静态配置的转发条目。</li>
+<li>某些网卡支持 UDP 隧道相关的卸载功能。</li>
+</ul>
+<h2 id="112">11.2.在主机上配置以太网接口</h2>
+<p>要将 OpenCloudOS 虚拟机主机连接到以太网，请创建一个网络连接配置文件，配置 IP 设置，并激活配置文件。</p>
+<p>在 OpenCloudOS 主机上运行此过程，并相应地调整 IP 地址配置。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>主机连接到以太网主机。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>在 NetworkManager 中添加新的以太网连接配置文件：
+    <div class="highlight"><pre><span></span><code># nmcli connection add con-name Example ifname enp1s0 type ethernet
+</code></pre></div></li>
+<li>配置 IPv4 设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify Example ipv4.addresses 198.51.100.2/24 ipv4.method manual ipv4.gateway 198.51.100.254 ipv4.dns 198.51.100.200 ipv4.dns-search example.com
+</code></pre></div>
+    如果网络使用 DHCP，请跳过这一步。</li>
+<li>激活 Example 连接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up Example
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+enp1s0      ethernet  connected  Example
+</code></pre></div></li>
+<li>在远程网络中 ping 主机以验证 IP 设置：
+    <div class="highlight"><pre><span></span><code># ping OpenCloudOS-host-B.example.com
+</code></pre></div>
+    请注意，在该主机上配置网络前，您无法 ping 其他虚拟机主机。</li>
+</ol>
+<h2 id="113-vxlan">11.3.创建附加了 VXLAN 的网桥</h2>
+<p>要使虚拟可扩展局域网(VXLAN)对虚拟机(VM)不可见，请在主机上创建一个网桥，并将 VXLAN 附加给网桥。使用 NetworkManager 创建网桥和 VXLAN。您不能将虚拟机的任何流量访问点(TAP)设备（通常在主机上称为 vnet *）添加到网桥。在虚拟机启动时，libvirtd 服务会动态添加它们。</p>
+<p>在 OpenCloudOS 主机上运行此过程，并相应地调整 IP 地址。</p>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建网桥 br0 ：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type bridge con-name br0 ifname br0 ipv4.method disabled ipv6.method disabled
+</code></pre></div>
+    此命令在网桥设备上设置没有 IPv4 和 IPv6 地址，因为此网桥在第 2 层工作。</li>
+<li>创建 VXLAN 接口，并将其附加到 br0 ：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type vxlan slave-type bridge con-name br0-vxlan10 ifname vxlan10 id 10 local 198.51.100.2 remote 203.0.113.1 master br0
+</code></pre></div>
+    这个命令使用以下设置：
+        - ID 10 ：设置 VXLAN 标识符。
+        - local 198.51.100.2 ：设置传出数据包的源 IP 地址。
+        - remote 203.0.113.1 ：当目的地链路层地址在 VXLAN 设备转发数据库中未知时，设置要在传出数据包中使用的单播或多播IP地址。
+        - remote 203.0.113.1 ：当目的地链路层地址在 VXLAN 设备转发数据库中未知时，设置要在传出数据包中使用的单播或多播IP地址。
+        - ipv4.method disabled 和 ipv6.method disabled: 在网桥上禁用 IPv4 和 IPv6。</li>
+<li>激活 br0 连接配置文件：
+    <div class="highlight"><pre><span></span><code># nmcli connection up br0
+</code></pre></div></li>
+<li>在本地防火墙中为进入 UDP 连接打开端口 8472 ：
+    <div class="highlight"><pre><span></span><code># nmcli connection up br0
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>显示转发表：
+    <div class="highlight"><pre><span></span><code># bridge fdb show dev vxlan10
+2a:53:bd:d5:b3:0a master br0 permanent
+00:00:00:00:00:00 dst 203.0.113.1 self permanent
+...
+</code></pre></div></li>
+</ul>
+<h2 id="114-libvirt">11.4.在带有现有网桥的 libvirt 中创建一个虚拟网络</h2>
+<p>要使虚拟机(VM)使用带有附加虚拟可扩展局域网(VXLAN) 的 br0 网桥，首先将虚拟网络添加到使用此网桥的 libvirtd 服务中。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您已安装了 libvirt 软件包。</li>
+<li>您已安装了 libvirt 软件包。</li>
+<li>您已在 OpenCloudOS 上配置了带有 VXLAN 的 br0 设备。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>使用以下内容创建 ~/vxlan10-bridge.xml 文件：
+    <div class="highlight"><pre><span></span><code>&lt;network&gt;
+&lt;name&gt;vxlan10-bridge&lt;/name&gt;
+&lt;forward mode=&quot;bridge&quot; /&gt;
+&lt;bridge name=&quot;br0&quot; /&gt;
+&lt;/network&gt;
+</code></pre></div></li>
+<li>使用 ~/vxlan10-bridge.xml 文件来在 libvirt 中创建一个新的虚拟网络：
+    <div class="highlight"><pre><span></span><code># virsh net-define ~/vxlan10-bridge.xml
+</code></pre></div></li>
+<li>删除 ~/vxlan10-bridge.xml 文件：
+    <div class="highlight"><pre><span></span><code># rm ~/vxlan10-bridge.xml
+</code></pre></div></li>
+<li>启动 vxlan10-bridge 虚拟网络：
+    <div class="highlight"><pre><span></span><code># virsh net-start vxlan10-bridge
+</code></pre></div></li>
+<li>将 vxlan10-bridge 虚拟网络配置为在 libvirtd 服务启动时自动启动：
+    <div class="highlight"><pre><span></span><code># virsh net-autostart vxlan10-bridge
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>显示虚拟网络列表：
+    <div class="highlight"><pre><span></span><code># virsh net-list
+Name              State    Autostart   Persistent
+----------------------------------------------------
+vxlan10-bridge    active   yes         yes
+...
+</code></pre></div></li>
+</ul>
+<h2 id="115-vxlan">11.5. 配置虚拟机以使用 VXLAN</h2>
+<p>要在主机上将虚拟机配置为使用带有附加虚拟可扩展 LAN(VXLAN)的网桥设备，请创建一个使用 vxlan10-bridge 虚拟网络的新虚拟机或更新现有虚拟机的设置以使用这个网络。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>您在 libvirtd 中配置了 vxlan10-bridge 虚拟网络。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ul>
+<li>要创建新的虚拟机，并将其配置为使用 vxlan10-bridge 网络，请在创建虚拟机时将 --network network:vxlan10-bridge 选项传给 virt-install 命令：
+    <div class="highlight"><pre><span></span><code># virt-install ... --network network:vxlan10-bridge
+</code></pre></div></li>
+<li>要更改现有虚拟机的网络设置：<ol>
+<li>将虚拟机的网络接口连接到 vxlan10-bridge 虚拟网络：
+<div class="highlight"><pre><span></span><code># virt-xml VM_name --edit --network network=vxlan10-bridge
+</code></pre></div></li>
+<li>关闭虚拟机，并重新启动它：
+<div class="highlight"><pre><span></span><code># virsh shutdown VM_name
+# virsh start VM_name
+</code></pre></div></li>
+</ol>
+</li>
+</ul>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示主机上虚拟机的虚拟网络接口：
+    <div class="highlight"><pre><span></span><code># virsh domiflist VM_name
+Interface   Type     Source           Model    MAC
+-------------------------------------------------------------------
+vnet1       bridge   vxlan10-bridge   virtio   52:54:00:c5:98:1c
+</code></pre></div></li>
+<li>显示连接到 vxlan10-bridge 网桥的接口：
+    <div class="highlight"><pre><span></span><code># ip link show master vxlan10-bridge
+18: vxlan10: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br0 state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether 2a:53:bd:d5:b3:0a brd ff:ff:ff:ff:ff:ff
+19: vnet1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br0 state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:c5:98:1c brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+    请注意，libvirtd 服务会动态更新网桥的配置。当您启动使用了 vxlan10-bridge 网络的虚拟机时，主机上对应的 vnet* 设备会显示为网桥的端口。</li>
+<li>使用地址解析协议(ARP)请求来验证虚拟机是否在同一 VXLAN 中：</li>
+<li>启动同一 VXLAN 中的两个或多个虚拟机。</li>
+<li>
+<p>将 ARP 请求从一个虚拟机发送到另一个虚拟机：
+    <div class="highlight"><pre><span></span><code># arping -c 1 192.0.2.2
+ARPING 192.0.2.2 from 192.0.2.1 enp1s0
+Unicast reply from 192.0.2.2 [52:54:00:c5:98:1c] 1.450ms
+Sent 1 probe(s) (0 broadcast(s))
+Received 1 response(s) (0 request(s), 0 broadcast(s))
+</code></pre></div>
+    如果命令显示回复，则虚拟机位于同一第 2 层域中，在这种情况下，是在同一 VXLAN 中。</p>
+<p>安装 iputils 软件包以使用 arping 工具。</p>
+</li>
+</ol>
+<h1 id="12">第 12 章 配置网络桥接</h1>
+<p>网络桥接是一个链路层设备，它可根据 MAC 地址列表转发网络间的流量。网桥通过侦听网络流量并了解连接到每个网络的主机来构建 MAC 地址表。例如，您可以使用 OpenCLoudOS 主机上的软件桥接模拟硬件桥接或虚拟化环境中，将虚拟机(VM)集成到与主机相同的网络中。</p>
+<p>桥接需要在桥接应该连接的每个网络中有一个网络设备。当您配置网桥时，网桥称为 controller，其使用 端口 的设备。</p>
+<p>您可以在不同类型的设备中创建桥接，例如：</p>
+<ul>
+<li>物理和虚拟以太网设备</li>
+<li>网络绑定</li>
+<li>网络团队（team）</li>
+<li>VLAN 设备</li>
+</ul>
+<p>由于 IEEE 802.11 标准指定在 Wi-Fi 中使用 3 个地址帧以便有效地使用随机时间，您无法通过 Ad-Hoc 或者 Infrastructure 模式中的 Wi-Fi 网络配置网桥。</p>
+<h2 id="121-nmcli">12.1. 使用 nmcli 命令配置网络桥接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>在服务器中安装两个或者两个以上物理或者虚拟网络设备。</li>
+<li>要将以太网设备用作网桥的端口，必须在服务器中安装物理或者虚拟以太网设备。</li>
+<li>要使用 team、bond 或 VLAN 设备作为网桥的端口，您可以在创建桥接时创建这些设备，或者预先创建它们。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建网桥接口：
+    <div class="highlight"><pre><span></span><code># nmcli connection add type bridge con-name bridge0 ifname bridge0
+</code></pre></div>
+    这个命令会创建一个名为 bridge0 的网桥。</li>
+<li>显示网络接口，并记录您要添加到网桥中的接口名称：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE  TYPE      STATE         CONNECTION
+enp7s0  ethernet  disconnected  --
+enp8s0  ethernet  disconnected  --
+bond0   bond      connected     bond0
+bond1   bond      connected     bond1
+...
+</code></pre></div>
+    在本例中：
+        - 没有配置 enp7s0 和 enp8s0 。要将这些设备用作端口，请在下一步中添加连接配置集。
+        - bond0 和 bond1 已有连接配置文件。要将这些设备用作端口，请在下一步中修改其配置集。</li>
+<li>将接口分配给网桥。</li>
+<li>如果没有配置您要分配给网桥的接口，为其创建新的连接配置集：
+        <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet slave-type bridge con-name bridge0-port1 ifname enp7s0 master bridge0
+# nmcli connection add type ethernet slave-type bridge con-name bridge0-port2 ifname enp8s0 master bridge0
+</code></pre></div></li>
+<li>如果要为网桥分配现有的连接配置文件，请将这些连接的 master 参数设为 bridge0 ：
+        <div class="highlight"><pre><span></span><code># nmcli connection modify bond0 master bridge0
+# nmcli connection modify bond1 master bridge0
+</code></pre></div>
+   这些命令将名为 bond0 和 bond1 的现有连接配置文件分配给 bridge0 连接。</li>
+<li>配置网桥的 IP 设置。如果要使用这个网桥作为其它设备的端口，请跳过这一步。</li>
+<li>配置 IPv4 设置。例如：要设置 bridge0 连接的静态 IPv4 地址、网络掩码、默认网关、DNS 服务器和 DNS 搜索域，请输入：
+        <div class="highlight"><pre><span></span><code># nmcli connection modify bridge0 ipv4.addresses &#39;192.0.2.1/24&#39;
+# nmcli connection modify bridge0 ipv4.gateway &#39;192.0.2.254&#39;
+# nmcli connection modify bridge0 ipv4.dns &#39;192.0.2.253&#39;
+# nmcli connection modify bridge0 ipv4.dns-search &#39;example.com&#39;
+# nmcli connection modify bridge0 ipv4.method manual
+</code></pre></div></li>
+<li>配置 IPv6 设置。例如：要设置 bridge0 连接的静态 IPv6 地址、网络掩码、默认网关、DNS 服务器和 DNS 搜索域，请输入：
+        <div class="highlight"><pre><span></span><code># nmcli connection modify bridge0 ipv6.addresses &#39;2001:db8:1::1/64&#39;
+# nmcli connection modify bridge0 ipv6.gateway &#39;2001:db8:1::fffe&#39;
+# nmcli connection modify bridge0 ipv6.dns &#39;2001:db8:1::fffd&#39;
+# nmcli connection modify bridge0 ipv6.dns-search &#39;example.com&#39;
+# nmcli connection modify bridge0 ipv6.method manual
+</code></pre></div></li>
+<li>可选：配置网桥的其他属性。例如，要将 bridge0 的生成树协议(STP)优先级设为 16384，请输入：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify bridge0 bridge.priority &#39;16384&#39;
+</code></pre></div>
+    默认情况下启用 STP。</li>
+<li>激活连接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up bridge0
+</code></pre></div></li>
+<li>验证端口是否已连接，并且 CONNECTION 列是否显示端口的连接名称：
+    <div class="highlight"><pre><span></span><code># nmcli device
+DEVICE   TYPE      STATE      CONNECTION
+...
+enp7s0   ethernet  connected  bridge0-port1
+enp8s0   ethernet  connected  bridge0-port2
+</code></pre></div>
+    当您激活连接的任何端口时，NetworkManager 也会激活网桥，但不会激活它的其它端口。您可以在启用桥接时配置 Red Hat Enterprise Linux 自动启用所有端口：<ol>
+<li>启用网桥连接的 connection.autoconnect-slaves 参数：
+    <div class="highlight"><pre><span></span><code># nmcli connection modify bridge0 connection.autoconnect-slaves 1
+</code></pre></div></li>
+<li>重新激活桥接：
+    <div class="highlight"><pre><span></span><code># nmcli connection up bridge0
+</code></pre></div></li>
+</ol>
+</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>使用 ip 工具来显示作为特定网桥端口的以太网设备的链接状态：
+    <div class="highlight"><pre><span></span><code># ip link show master bridge0
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:62:61:0e brd ff:ff:ff:ff:ff:ff
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:9e:f1:ce brd ff:ff:ff:ff:ff:ff
+</code></pre></div></li>
+<li>使用 bridge 工具来显示作为任意网桥设备端口的以太网设备状态：
+    <div class="highlight"><pre><span></span><code># bridge link show
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state forwarding priority 32 cost 100
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state listening priority 32 cost 100
+5: enp9s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state forwarding priority 32 cost 100
+6: enp11s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state blocking priority 32 cost 100
+...
+</code></pre></div>
+    要显示特定以太网设备的状态，请使用 bridge link show dev ethernet_device_name 命令。</li>
+</ul>
+<h2 id="122-nm-connection-editor">12.2.使用 nm-connection-editor 配置网络桥接</h2>
+<p>本节介绍了如何使用 nm-connection-editor 应用程序配置网桥。请注意，nm-connection-editor 只能向网桥添加新端口。要将现有的连接配置文件用作端口，请使用 nmcli 工具创建网桥。</p>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>在服务器中安装两个或者两个以上物理或者虚拟网络设备。</li>
+<li>要将以太网设备用作网桥的端口，必须在服务器中安装物理或者虚拟以太网设备。</li>
+<li>要使用 team、bond 或 VLAN 设备作为网桥的端口，请确保这些设备还没有配置。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>打开终端，输入 nm-connection-editor </li>
+<li>点击 + 按钮来添加一个新的连接。</li>
+<li>选择 Bridge 连接类型，然后点击 Create。</li>
+<li>在 Bridge 选项卡中：</li>
+<li>可选：在 Interface name 字段中设置网桥接口的名称。</li>
+<li>点击 Add 按钮为网络接口创建新的连接配置集，并将配置集作为端口添加到网桥。<ol>
+<li>选择接口的连接类型。例如，为有线连接选择 Ethernet。</li>
+<li>另外，还可为端口设备设置连接名称。</li>
+<li>如果您为以太网设备创建连接配置文件，请打开 Ethernet 选项卡，在 Device 字段中选择您要作为端口添加给网桥的网络接口。如果您选择了不同的设备类型，请相应地进行配置。
+  <img alt="nm-connection-editor配置网桥_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E6%A1%A5_1.png" /></li>
+<li>点 Save。</li>
+</ol>
+</li>
+<li>对您要添加到桥接的每个接口重复前面的步骤。</li>
+<li>可选：配置其他网桥设置，如生成树协议（STP）选项。</li>
+<li>配置网桥的 IP 设置。如果要将此网桥用作其他设备的端口，请跳过这一步。</li>
+<li>在 IPv4 Settings 选项卡中，配置 IPv4 设置。例如，设置静态 IPv4 地址、网络掩码、默认网关、DNS 服务器和 DNS 搜索域：
+   <img alt="nm-connection-editor配置网桥_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E6%A1%A5_2.png" /></li>
+<li>在 IPv6 Settings 选项卡中，配置 IPv6 设置。例如，设置静态 IPv6 地址、网络掩码、默认网关、DNS 服务器和 DNS 搜索域：
+   <img alt="nm-connection-editor配置网桥_3" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E6%A1%A5_3.png" /></li>
+<li>保存网桥连接。</li>
+<li>关闭 nm-connection-editor。</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>使用 ip 命令来显示作为特定网桥端口的以太网设备的链接状态。
+    <div class="highlight"><pre><span></span><code># ip link show master bridge0
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:62:61:0e brd ff:ff:ff:ff:ff:ff
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master bridge0 state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:9e:f1:ce brd ff:ff:ff:ff:ff:ff
+</code></pre></div></li>
+<li>使用 bridge 命令来显示作为任意网桥设备中端口的以太网设备状态：
+    <div class="highlight"><pre><span></span><code># bridge link show
+3: enp7s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state forwarding priority 32 cost 100
+4: enp8s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge0 state listening priority 32 cost 100
+5: enp9s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state forwarding priority 32 cost 100
+6: enp11s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 master bridge1 state blocking priority 32 cost 100
+...
+</code></pre></div>
+    要显示特定以太网设备的状态，请使用 bridge link show dev ethernet_device_name 命令。</li>
+</ul>
+<h2 id="123-nmstatectl">12.3.使用 nmstatectl 配置网络桥接</h2>
+<p><strong>前提条件</strong></p>
+<ul>
+<li>在服务器中安装两个或者两个以上物理或者虚拟网络设备。</li>
+<li>要将以太网设备用作网桥的端口，必须在服务器中安装物理或者虚拟以太网设备。</li>
+<li>要使用 team 、bond 或 VLAN 设备作为网桥中的端口，请在 port 列表中设置接口名称，并定义对应的接口。</li>
+<li>nmstate 软件包已安装。</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>创建包含以下内容的 YAML 文件， ~/create-bridge.yml ：
+    <div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: bridge0
+type: linux-bridge
+state: up
+ipv4:
+    enabled: true
+    address:
+    - ip: 192.0.2.1
+    prefix-length: 24
+    dhcp: false
+ipv6:
+    enabled: true
+    address:
+    - ip: 2001:db8:1::1
+    prefix-length: 64
+    autoconf: false
+    dhcp: false
+bridge:
+    options:
+    stp:
+        enabled: true
+    port:
+    - name: enp1s0
+    - name: enp7s0
+- name: enp1s0
+type: ethernet
+state: up
+- name: enp7s0
+type: ethernet
+state: up
+
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.254
+    next-hop-interface: bridge0
+- destination: ::/0
+    next-hop-address: 2001:db8:1::fffe
+    next-hop-interface: bridge0
+dns-resolver:
+config:
+    search:
+    - example.com
+    server:
+    - 192.0.2.200
+    - 2001:db8:1::ffbb
+</code></pre></div></li>
+<li>将设置应用到系统：
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-bridge.yml
+</code></pre></div></li>
+</ol>
+<p><strong>验证</strong></p>
+<ol>
+<li>显示设备和连接的状态：
+    <div class="highlight"><pre><span></span><code># nmcli device status
+DEVICE      TYPE      STATE      CONNECTION
+bridge0     bridge    connected  bridge0
+</code></pre></div></li>
+<li>显示连接配置集的所有设置：
+    <div class="highlight"><pre><span></span><code># nmcli connection show bridge0
+connection.id:              bridge0
+connection.uuid:            e2cc9206-75a2-4622-89cf-1252926060a9
+connection.stable-id:       --
+connection.type:            bridge
+connection.interface-name:  bridge0
+...
+</code></pre></div></li>
+<li>以 YAML 格式显示连接设置：
+    <div class="highlight"><pre><span></span><code># nmstatectl show bridge0
+</code></pre></div></li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

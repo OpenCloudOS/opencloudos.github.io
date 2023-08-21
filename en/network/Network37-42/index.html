@@ -1,0 +1,2639 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network31-36/">
+      
+      
+        <link rel="next" href="../Network43-48/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Chapter 37-42 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-37-configuring-8023-link-settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 37-42
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../network/Network37-42/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 37-42
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 37-42
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#371-understanding-auto-negotiation" class="md-nav__link">
+    37.1. Understanding Auto-Negotiation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#372-configuring-8023-link-settings-using-the-nmcli-tool" class="md-nav__link">
+    37.2. Configuring 802.3 Link Settings using the nmcli Tool
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#371-understanding-auto-negotiation" class="md-nav__link">
+    37.1. Understanding Auto-Negotiation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#372-configuring-8023-link-settings-using-the-nmcli-tool" class="md-nav__link">
+    37.2. Configuring 802.3 Link Settings using the nmcli Tool
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network37-42.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network37-42.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-37-configuring-8023-link-settings">Chapter 37: Configuring 802.3 Link Settings</h1>
+<h2 id="371-understanding-auto-negotiation">37.1. Understanding Auto-Negotiation</h2>
+<p>Auto-Negotiation is a feature of the IEEE 802.3u Fast Ethernet protocol that targets device ports to provide optimal performance for speed, duplex mode, and flow control in information exchange on the link. By using the Auto-Negotiation protocol, you can achieve the best performance for data transmission on Ethernet.</p>
+<p>Note that to maximize the performance of Auto-Negotiation, it is important to use the same configuration at both ends of the link.</p>
+<h2 id="372-configuring-8023-link-settings-using-the-nmcli-tool">37.2. Configuring 802.3 Link Settings using the nmcli Tool</h2>
+<p>To configure 802.3 link settings for an Ethernet connection, modify the following configuration parameters:</p>
+<ul>
+<li>802-3-ethernet.auto-negotiate</li>
+<li>802-3-ethernet.speed</li>
+<li>802-3-ethernet.duplex</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>Display the current settings of the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection show Example-connection
+...
+802-3-ethernet.speed:  0
+802-3-ethernet.duplex: --
+802-3-ethernet.auto-negotiate: no
+...
+</code></pre></div>
+<p>If you need to reset the parameters in case of issues, you can use these values.</p>
+<ol>
+<li>Configure the speed and duplex settings of the link:</li>
+</ol>
+<p>```</p>
+<h1 id="nmcli-connection-modify-example-connection-802-3-ethernetauto-negotiate-no-802-3-ethernetspeed-10000-802-3-ethernetduplex-full">nmcli connection modify Example-connection 802-3-ethernet.auto-negotiate no 802-3-ethernet.speed 10000 802-3-ethernet.duplex full</h1>
+<p>```</p>
+<p>This command will disable auto-negotiation and set the speed of the connection to 10000 Mbit full duplex.</p>
+<ol>
+<li>Reactivate the connection:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up Example-connection
+</code></pre></div>
+<p><strong>verification</strong></p>
+<ol>
+<li>Use the ethtool tool to verify the values of Ethernet interface enp1s0:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ethtool enp1s0
+
+Settings for enp1s0:
+    ...
+    Advertised auto-negotiation: No
+    ...
+    Speed: 10000Mb/s
+    Duplex: Full
+    Auto-negotiation: off
+    ...
+    Link detected: yes
+</code></pre></div>
+<h1 id="chapter-38-configure-ethtool-offload-features">Chapter 38: Configure Ethtool Offload Features</h1>
+<p>Network interface cards can use TCP Offload Engine (TOE) to offload certain operations to the network controller in order to improve network throughput.</p>
+<h2 id="381-offload-features-supported-by-networkmanager">38.1. Offload features supported by NetworkManager</h2>
+<ul>
+<li>ethtool.feature-esp-hw-offload</li>
+<li>ethtool.feature-esp-tx-csum-hw-offload</li>
+<li>ethtool.feature-fcoe-mtu</li>
+<li>ethtool.feature-gro</li>
+<li>ethtool.feature-gso</li>
+<li>ethtool.feature-highdma</li>
+<li>ethtool.feature-hw-tc-offload</li>
+<li>ethtool.feature-l2-fwd-offload</li>
+<li>ethtool.feature-loopback</li>
+<li>ethtool.feature-lro</li>
+<li>ethtool.feature-macsec-hw-offload</li>
+<li>ethtool.feature-ntuple</li>
+<li>ethtool.feature-rx</li>
+<li>ethtool.feature-rx-all</li>
+<li>ethtool.feature-rx-fcs</li>
+<li>ethtool.feature-rx-gro-hw</li>
+<li>ethtool.feature-rx-gro-list</li>
+<li>ethtool.feature-rx-udp_tunnel-port-offload</li>
+<li>ethtool.feature-rx-udp-gro-forwarding</li>
+<li>ethtool.feature-rx-vlan-filter</li>
+<li>ethtool.feature-rx-vlan-stag-filter</li>
+<li>ethtool.feature-rx-vlan-stag-hw-parse</li>
+<li>ethtool.feature-rxhash</li>
+<li>ethtool.feature-rxvlan</li>
+<li>ethtool.feature-sg</li>
+<li>ethtool.feature-tls-hw-record</li>
+<li>ethtool.feature-tls-hw-rx-offload</li>
+<li>ethtool.feature-tls-hw-tx-offload</li>
+<li>ethtool.feature-tso</li>
+<li>ethtool.feature-tx</li>
+<li>ethtool.feature-tx-checksum-fcoe-crc</li>
+<li>ethtool.feature-tx-checksum-ip-generic</li>
+<li>ethtool.feature-tx-checksum-ipv4</li>
+<li>ethtool.feature-tx-checksum-ipv6</li>
+<li>ethtool.feature-tx-checksum-sctp</li>
+<li>ethtool.feature-tx-esp-segmentation</li>
+<li>ethtool.feature-tx-fcoe-segmentation</li>
+<li>ethtool.feature-tx-gre-csum-segmentation</li>
+<li>ethtool.feature-tx-gre-segmentation</li>
+<li>ethtool.feature-tx-gso-list</li>
+<li>ethtool.feature-tx-gso-partial</li>
+<li>ethtool.feature-tx-gso-robust</li>
+<li>ethtool.feature-tx-ipxip4-segmentation</li>
+<li>ethtool.feature-tx-ipxip6-segmentation</li>
+<li>ethtool.feature-tx-nocache-copy</li>
+<li>ethtool.feature-tx-scatter-gather</li>
+<li>ethtool.feature-tx-scatter-gather-fraglist</li>
+<li>ethtool.feature-tx-sctp-segmentation</li>
+<li>ethtool.feature-tx-tcp-ecn-segmentation</li>
+<li>ethtool.feature-tx-tcp-mangleid-segmentation</li>
+<li>ethtool.feature-tx-tcp-segmentation</li>
+<li>ethtool.feature-tx-tcp6-segmentation</li>
+<li>ethtool.feature-tx-tunnel-remcsum-segmentation</li>
+<li>ethtool.feature-tx-udp-segmentation</li>
+<li>ethtool.feature-tx-udp_tnl-csum-segmentation</li>
+<li>ethtool.feature-tx-udp_tnl-segmentation</li>
+<li>ethtool.feature-tx-vlan-stag-hw-insert</li>
+<li>ethtool.feature-txvlan</li>
+</ul>
+<p>For details on each offload feature, please refer to the ethtool tool documentation and the kernel documentation.</p>
+<h2 id="382-configure-ethtool-offload-features-with-networkmanager">38.2. Configure Ethtool Offload Features with NetworkManager</h2>
+<p>This section describes how to enable and disable Ethtool offload features with NetworkManager, as well as how to remove a setting for a particular feature from NetworkManager connection configuration files.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>For example, to enable the RX offload feature and disable the TX offload in the enp1s0 connection configuration file, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli con modify enp1s0 ethtool.feature-rx on ethtool.feature-tx off
+</code></pre></div>
+<p>This command explicitly enables the RX offload and disables the TX offload feature.</p>
+<ol>
+<li>To remove the setting for an offload feature previously enabled or disabled, set the parameter for the feature to "ignore". For example, to remove the configuration for TX offload, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli con modify enp1s0 ethtool.feature-tx ignore
+</code></pre></div>
+<ol>
+<li>Reactivate the network configuration set:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up enp1s0
+</code></pre></div>
+<p><strong>Validation Steps</strong></p>
+<ul>
+<li>Use the command "ethtool -k" to display the current offload features of a network device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ethtool -k network_device
+</code></pre></div>
+<h2 id="383-set-ethtool-features-with-rhel-system-roles">38.3. Set Ethtool Features with rhel-system-roles</h2>
+<p>You can use the network role in rhel-system-roles to configure Ethtool features for NetworkManager connections.</p>
+<p>When you run a script using Networking RHEL system roles, if the value you set does not match the name specified in the script, the system role will overwrite existing connection configuration files with the same name. Therefore, always specify the entire configuration of the network connection configuration file in the script, even if the IP configuration already exists. Otherwise, the role will reset these values to the default.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Ansible and rhel-system-roles software packages are installed on the control node.</li>
+<li>If you are running the playbook using a non-root user, ensure that the user has sudo privileges on the managed nodes.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>If the host on which you want to execute the instructions in the playbook is not yet listed in the inventory, add the IP or name of this host to the Ansible inventory file, /etc/ansible/hosts:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+<ol>
+<li>Create the ~/configure-ethernet-device-with-ethtool-features.yml playbook with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with ethtool features
+hosts: node.example.com
+become: true
+tasks:
+- include_role:
+    name: rhel-system-roles.network
+
+    vars:
+    network_connections:
+        - name: enp1s0
+        type: ethernet
+        autoconnect: yes
+        ip:
+            address:
+            - 198.51.100.20/24
+            - 2001:db8:1::1/64
+            gateway4: 198.51.100.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+            - 198.51.100.200
+            - 2001:db8:1::ffbb
+            dns_search:
+            - example.com
+        ethtool:
+            features:
+            gro: &quot;no&quot;
+            gso: &quot;yes&quot;
+            tx_sctp_segmentation: &quot;no&quot;
+        state: up
+</code></pre></div>
+<ol>
+<li>
+<p>Run the playbook:</p>
+</li>
+<li>
+<p>To connect to a managed host as the root user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/configure-ethernet-device-with-ethtool-features.yml
+</code></pre></div>
+</li>
+<li>
+<p>To connect to a managed host as a user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/configure-ethernet-device-with-ethtool-features.yml
+</code></pre></div>
+<p>The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password of the user defined in the -u user_name option.</p>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged in to the control node.</p>
+</li>
+</ol>
+<h1 id="chapter-39-configure-ethtool-coalesce-settings">Chapter 39: Configure Ethtool Coalesce Settings</h1>
+<p>With interrupt coalescing, the system collects network packets and generates a single interrupt for multiple packets. This increases the amount of data that a hardware interrupt can send to the kernel, reducing interrupt overhead and maximizing throughput.</p>
+<p>This section provides different options for setting Ethtool coalesce settings.</p>
+<h2 id="391-coalesce-settings-supported-by-networkmanager">39.1. Coalesce settings supported by NetworkManager</h2>
+<p>You can use NetworkManager to set the following Ethtool coalesce settings: - coalesce-adaptive-rx - coalesce-adaptive-tx - coalesce-pkt-rate-high - coalesce-pkt-rate-low - coalesce-rx-frames - coalesce-rx-frames-high - coalesce-rx-frames-irq - coalesce-rx-frames-low - coalesce-rx-usecs - coalesce-rx-usecs-high - coalesce-rx-usecs-irq - coalesce-rx-usecs-low - coalesce-sample-interval - coalesce-stats-block-usecs - coalesce-tx-frames - coalesce-tx-frames-high - coalesce-tx-frames-irq - coalesce-tx-frames-low - coalesce-tx-usecs - coalesce-tx-usecs-high - coalesce-tx-usecs-irq - coalesce-tx-usecs-low</p>
+<h2 id="392configure-ethtool-coalesce-settings-with-networkmanager">39.2.Configure Ethtool coalesce settings with NetworkManager</h2>
+<p>This section describes how to configure Ethtool coalesce settings with NetworkManager, and how to remove the settings from NetworkManager connection configuration files.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>For example, to set the maximum number of received packets to delay to 128 in the enp1s0 connection configuration file, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 ethtool.coalesce-rx-frames 128
+</code></pre></div>
+<ol>
+<li>To remove a coalesce setting, you can set the setting to "ignore". For example, to remove the ethtool.coalesce-rx-frames setting, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 ethtool.coalesce-rx-frames ignore
+</code></pre></div>
+<ol>
+<li>Reactivate the network configuration set:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up enp1s0
+</code></pre></div>
+<p><strong>Validation Steps</strong></p>
+<ul>
+<li>Use the command "ethtool -c" to display the current coalesce settings of a network device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ethtool -c network_device
+</code></pre></div>
+<h2 id="393-set-ethtool-coalesce-settings-with-rhel-system-roles">39.3. Set Ethtool Coalesce Settings with rhel-system-roles</h2>
+<p>You can use the network role in rhel-system-roles to configure Ethtool coalesce settings for NetworkManager connections.</p>
+<p>When you run a script using Networking RHEL system roles, if the value you set does not match the name specified in the script, the system role will overwrite existing connection configuration files with the same name. Therefore, always specify the entire configuration of the network connection configuration file in the script, even if the IP configuration already exists. Otherwise, the role will reset these values to the default.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Ansible and rhel-system-roles software packages are installed on the control node.</li>
+<li>If you are running the playbook using a non-root user, ensure that the user has sudo privileges on the managed nodes.</li>
+</ul>
+<p><strong>process</strong></p>
+<ol>
+<li>If the host on which you want to execute the instructions in the playbook is not yet listed in the inventory, add the IP or name of this host to the Ansible inventory file, /etc/ansible/hosts:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div>
+<ol>
+<li>Create the ~/configure-ethernet-device-with-ethtool-features.yml playbook with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with ethtool coalesce settings
+ hosts: node.example.com
+ become: true
+ tasks:
+ - include_role:
+     name: rhel-system-roles.network
+
+   vars:
+     network_connections:
+       - name: enp1s0
+         type: ethernet
+         autoconnect: yes
+         ip:
+           address:
+             - 198.51.100.20/24
+             - 2001:db8:1::1/64
+           gateway4: 198.51.100.254
+           gateway6: 2001:db8:1::fffe
+           dns:
+             - 198.51.100.200
+             - 2001:db8:1::ffbb
+           dns_search:
+             - example.com
+         ethtool:
+           coalesce:
+             rx_frames: 128
+             tx_frames: 128
+         state: up
+</code></pre></div>
+<ol>
+<li>
+<p>Run the playbook:</p>
+</li>
+<li>
+<p>To connect to a managed host as the root user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/configure-ethernet-device-with-ethtoolcoalesce-settings.yml
+</code></pre></div>
+</li>
+<li>
+<p>To connect to a managed host as a user, enter:</p>
+<div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/configure-ethernet-device-with-ethtoolcoalesce-settings.yml
+</code></pre></div>
+<p>The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password of the user defined in the -u user_name option.</p>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged in to the control node.</p>
+</li>
+</ol>
+<h1 id="chapter-40-encrypting-layer-2-traffic-with-macsec-on-the-same-physical-network">Chapter 40: Encrypting Layer 2 Traffic with MACsec on the Same Physical Network</h1>
+<p>Media Access Control Security (MACsec) is a Layer 2 protocol used to protect different types of traffic on Ethernet links. MACsec can be used to secure communication between two devices (point-to-point). MACsec includes:</p>
+<ul>
+<li>Dynamic Host Configuration Protocol (DHCP)</li>
+<li>Address Resolution Protocol (ARP)</li>
+<li>Internet Protocol version 4/6 (IPv4/IPv6)</li>
+<li>Any traffic that uses IP (such as TCP or UDP).</li>
+</ul>
+<p>MACsec uses the GCM-AES-128 algorithm by default to encrypt and authenticate all traffic in the LAN, using a pre-shared key to establish a connection between the participating hosts. If you want to change the pre-shared key, you need to update the NM configuration on all hosts using MACsec in the network.</p>
+<p>MACsec connections use Ethernet devices (such as Ethernet NICs, VLANs, or tunnel devices) as parent devices. You can set IP configurations only on the MACsec device to communicate with other hosts using encrypted connections, or you can set IP configurations on the parent device. In the latter case, you can use the parent device to communicate with other hosts using unencrypted connections and the MACsec device to communicate using encrypted connections.</p>
+<p>MACsec does not require any special hardware. For example, you can use any switch if you only want to encrypt traffic between hosts and the switch. In this case, the switch must also support MACsec.</p>
+<p>There are two common use cases for configuring MACsec:</p>
+<ul>
+<li>Host-to-Host</li>
+<li>Host-to-Switch and then switch-to-other hosts</li>
+</ul>
+<p>Note that MACsec can only be used between hosts in the same (physical or virtual) LAN.</p>
+<h2 id="401-configure-macsec-connection-with-nmcli">40.1. Configure MACsec Connection with nmcli</h2>
+<p>You can use the nmcli tool to configure an Ethernet interface to use MACsec. The following procedure describes how to create a MACsec connection between two hosts connected via Ethernet.</p>
+<p><strong>process</strong></p>
+<ol>
+<li>
+<p>On the first host where you want to configure MACsec:</p>
+</li>
+<li>
+<p>Create a Connection Association Key (CAK) and Connection Association Key Name (CKN) for the pre-shared key:</p>
+<ul>
+<li>
+<p>Create a 16-byte hexadecimal CAK:</p>
+<div class="highlight"><pre><span></span><code># dd if=/dev/urandom count=16 bs=1 2&gt; /dev/null | hexdump -e &#39;1/2 &quot;%04x&quot;&#39;
+50b71a8ef0bd5751ea76de6d6c98c03a
+</code></pre></div>
+</li>
+<li>
+<p>Create a 32-byte hexadecimal CKN:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code># dd if=/dev/urandom count=32 bs=1 2&gt; /dev/null | hexdump -e &#39;1/2 &quot;%04x&quot;&#39;
+f2b4297d39da7330910a74abc0449feb45b5c0b9fc23df1430e1898fcf1c4550
+</code></pre></div>
+</li>
+<li>
+<p>On both hosts that you want to connect via MACsec, create the MACsec connection:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type macsec con-name macsec0 ifname macsec0 connection.autoconnect yes macsec.parent enp1s0 macsec.mode psk macsec.mka-cak 50b71a8ef0bd5751ea76de6d6c98c03a macsec.mka-ckn f2b4297d39da7330910a7abc0449feb45b5c0b9fc23df1430e1898fcf1c4550
+</code></pre></div>
+<p>Use the CAK and CKN generated in the previous step in the macsec.mka-cak and macsec.mka-ckn parameters. These values must be the same on each host in the MACsec-protected network.</p>
+<ol>
+<li>
+<p>Configure IP settings in the MACsec connection.</p>
+</li>
+<li>
+<p>To configure IPv4 settings, for example, to set a static IPv4 address, netmask, default gateway, and DNS server for the macsec0 connection, enter:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify macsec0 ipv4.method manual ipv4.addresses &#39;192.0.2.1/24&#39; ipv4.gateway &#39;192.0.2.254&#39; ipv4.dns &#39;192.0.2.253&#39;
+</code></pre></div>
+</li>
+<li>
+<p>To configure IPv6 settings, for example, to set a static IPv6 address, netmask, default gateway, and DNS server for the macsec0 connection, enter:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify macsec0 ipv6.method manual ipv6.addresses &#39;2001:db8:1::1/32&#39; ipv6.gateway &#39;2001:db8:1::fffe&#39; ipv6.dns &#39;2001:db8:1::fffd&#39;
+</code></pre></div>
+</li>
+<li>
+<p>Activate the connection:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection up macsec0
+</code></pre></div>
+<p><strong>Validation Steps</strong></p>
+<ol>
+<li>Verify that the traffic is encrypted:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># tcpdump -nn -i enp1s0
+</code></pre></div>
+<ol>
+<li>Optional: Display unencrypted traffic:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># tcpdump -nn -i macsec0
+</code></pre></div>
+<ol>
+<li>Display MACsec statistics:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip macsec show
+</code></pre></div>
+<ol>
+<li>Display separate counters for each type of protection: integrity only (encryption off) and encryption (encryption on)</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip -s macsec show
+</code></pre></div>
+<h1 id="chapter-41-using-different-dns-servers-in-different-domains">Chapter 41: Using Different DNS Servers in Different Domains</h1>
+<p>By default, OpenCloudOS sends all DNS requests to the first DNS server specified in the /etc/resolv.conf file. If this server does not respond, OpenCloudOS will use the next server specified in the file.</p>
+<p>In an environment where a DNS server fails to resolve all domains, administrators can configure OpenCloudOS to direct DNS requests for specific domains to a chosen DNS server.For instance, you can configure one DNS server to resolve queries for example.com while setting up another DNS server to handle queries for example.net. For all other DNS requests, OpenCloudOS will utilize the DNS server configured in the connection with the default gateway.</p>
+<h2 id="411-directing-dns-requests-for-specific-domains-to-a-selected-dns-server">41.1. Directing DNS requests for specific domains to a selected DNS server.</h2>
+<p>This section configures the systemd-resolved service and NetworkManager to route DNS queries for specific domains to the selected DNS server.</p>
+<p>If you have completed the steps in this section, OpenCloudOS will utilize the DNS service provided by systemd-resolved in the /etc/resolv.conf file. systemd-resolved starts a DNS service that listens on port 53 with the IP address 127.0.0.53. This service dynamically routes DNS requests to the corresponding DNS server specified in NetworkManager. Please replace the IP address with the actual one required in your production environment.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The system is configured with multiple NetworkManager connections.</li>
+<li>Configure the DNS servers and search domains in the NetworkManager connection responsible for resolving the specific domain.</li>
+</ul>
+<p>For example, if the DNS server specified in the VPN connection should be able to resolve queries for the example.com domain, the VPN connection configuration file must include the following:</p>
+<ol>
+<li>Configure a DNS server that can resolve example.com:</li>
+<li>Configure the search domain as example.com in the ipv4.dns-search and ipv6.dns-search parameters:</li>
+</ol>
+<p><strong>process</strong></p>
+<ol>
+<li>Start and enable the systemd-resolved service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl --now enable systemd-resolved
+</code></pre></div>
+<ol>
+<li>Edit the /etc/NetworkManager/NetworkManager.conf file and set the following entries in the [main] section:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>dns=systemd-resolved
+</code></pre></div>
+<ol>
+<li>Reload the NetworkManager service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl reload NetworkManager
+</code></pre></div>
+<p><strong>Validation</strong></p>
+<ol>
+<li>To verify if the nameserver entry in the  /etc/resolv.conf  file points to 127.0.0.53, you can use the following command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># cat /etc/resolv.conf
+nameserver 127.0.0.53
+</code></pre></div>
+<ol>
+<li>To check if the systemd-resolved service is listening on port 53 of the local IP address 127.0.0.53, you can use the following command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ss -tulpn | grep &quot;127.0.0.53&quot;
+udp  UNCONN 0  0      127.0.0.53%lo:53   0.0.0.0:*    users:((&quot;systemd-resolve&quot;,pid=1050,fd=12))
+tcp  LISTEN 0  4096   127.0.0.53%lo:53   0.0.0.0:*    users:((&quot;systemd-resolve&quot;,pid=1050,fd=13))
+</code></pre></div>
+<h1 id="chapter-42-using-ipvlan">Chapter 42: Using IPVLAN</h1>
+<p>This chapter introduces the IPVLAN driver.</p>
+<h2 id="421-ipvlan-overview">42.1. IPVLAN Overview</h2>
+<p>IPVLAN is a driver for virtual network devices that can be used in container environments to access the host network. IPVLAN exposes a single MAC address to the external network, regardless of the number of IPVLAN devices created in the host network. This means that users can have multiple IPVLAN devices in different containers, while the corresponding switches read only a single MAC address. The IPVLAN driver is useful when there are constraints on the total number of MAC addresses that the local switch can manage.</p>
+<h2 id="422-ipvlan-modes">42.2. IPVLAN Modes</h2>
+<p>IPVLAN has the following available modes:</p>
+<ul>
+<li><strong>L2 mode (Layer 2 mode)</strong></li>
+</ul>
+<p>In IPVLAN L2 mode, the virtual device receives and responds to Address Resolution Protocol (ARP) requests. The netfilter framework operates only within the container that owns the virtual device. Netfilter chains are not executed in the default namespace of containerized traffic. Using L2 mode provides good performance but offers limited control over network traffic.</p>
+<ul>
+<li><strong>L3 mode (Layer 3 mode)</strong></li>
+</ul>
+<p>In L3 mode, the virtual device only handles traffic at the L3 and higher layers. The virtual device does not respond to ARP requests, and users need to manually configure neighbor entries for the IPVLAN IP addresses on the relevant points. The egress traffic from the associated containers goes through the netfilter POSTROUTING and OUTPUT chains in the default namespace, while the ingress traffic is handled in a threaded manner similar to L2 mode. Using L3 mode provides good control but may potentially impact network traffic performance.</p>
+<ul>
+<li><strong>L3S mode (Layer 3 mode with MAC Source Check)</strong></li>
+</ul>
+<p>In L3S mode, the virtual device operates similarly to L3 mode in terms of traffic handling. However, the egress and ingress traffic of associated containers are both processed through netfilter chains in the default namespace. The behavior of L3S mode is similar to L3 mode but provides greater control over the network.</p>
+<p>For L3 and L3S modes, IPVLAN virtual devices do not receive broadcast and multicast traffic.</p>
+<h2 id="423-macvlan-overview">42.3. MACVLAN Overview</h2>
+<p>The MACVLAN driver allows the creation of multiple virtual network devices on a single NIC, with each having its own unique MAC address. Packets on the physical NIC are multiplexed to the corresponding MACVLAN devices based on the destination MAC address. MACVLAN devices do not add any level of encapsulation.</p>
+<h2 id="424-comparison-between-ipvlan-and-macvlan">42.4. Comparison between IPVLAN and MACVLAN</h2>
+<p>The following table presents the key distinctions between MACVLAN and IPVLAN:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">MACVLAN</th>
+<th style="text-align: left;">IPVLAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Use a MAC address for each MACVLAN device. MAC address restrictions in the MAC table in the exchange may cause connection loss.</td>
+<td style="text-align: left;">Use a single MAC address with unlimited IPVLAN devices.</td>
+</tr>
+<tr>
+<td style="text-align: left;">The netfilter rules for the global namespace do not affect network traffic to or from MACVLAN devices in sub-namespaces.</td>
+<td style="text-align: left;">It is possible to control network traffic to and from IPVLAN devices in L3 mode and L3S mode.</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that both IPVLAN and MACVLAN do not require any level of encapsulation.</p>
+<h2 id="425-creating-and-configuring-ipvlan-devices-with-iproute2">42.5. Creating and Configuring IPVLAN Devices with iproute2</h2>
+<p>本节介绍了如何使用 iproute2 设置 IPVLAN 设备。</p>
+<p><strong>process</strong></p>
+<ol>
+<li>To create an IPVLAN device, please enter the following command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip link add link real_NIC_device name IPVLAN_device type ipvlan mode l2
+</code></pre></div>
+<p>Please note that a Network Interface Controller (NIC) is a hardware component that connects a computer to a network.</p>
+<p>Example 43.1. Creating an IPVLAN Device</p>
+<div class="highlight"><pre><span></span><code># ip link add link enp0s31f6 name my_ipvlan type ipvlan mode l2
+# ip link
+47: my_ipvlan@enp0s31f6: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000 link/ether e8:6a:6e:8a:a2:44 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+<ol>
+<li>To assign an IPv4 or IPv6 address to an interface, please enter the following command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip addr add dev IPVLAN_device IP_address/subnet_mask_prefix
+</code></pre></div>
+<ol>
+<li>
+<p>If configuring an IPVLAN device in L3 mode or L3S mode, please perform the following settings:</p>
+</li>
+<li>
+<p>Configure neighbor settings for the remote peer on the remote host.</p>
+<p><code># ip neigh add dev peer_device IPVLAN_device_IP_address lladdr MAC_address</code></p>
+<p>Where MAC_address is the MAC address of the underlying physical network card on which the IPVLAN device is based.</p>
+</li>
+<li>
+<p>Use the following command to configure an IPVLAN device in L3 mode:</p>
+<p><code># ip route add dev &lt;real_NIC_device&gt; &lt;peer_IP_address/32&gt;
+  <div class="highlight"><pre><span></span><code>For L3S mode:
+</code></pre></div>
+  # ip route add dev real_NIC_device peer_IP_address/32</code></p>
+<p>Where IP-address represents the address of the remote peer.</p>
+</li>
+<li>
+<p>To set an active IPVLAN device, please enter the following command:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip link set dev IPVLAN_device up
+</code></pre></div>
+<ol>
+<li>To check if the IPVLAN device is active, please execute the following command on the remote host:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ping IP_address
+</code></pre></div>
+<p>Where IP_address is the IP address of the IPVLAN device being used.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

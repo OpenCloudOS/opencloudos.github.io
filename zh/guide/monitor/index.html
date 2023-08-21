@@ -1,0 +1,3132 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../update/">
+      
+      
+        <link rel="next" href="../security/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>系统状态监控 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opencloudosos-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              系统状态监控
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../guide/monitor/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../../en/guide/monitor/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        用户指南
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        版本说明
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      常见问题
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        参与贡献
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        生态认证
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../migrate_relative/" class="md-tabs__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        下载
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        测试
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          快速入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 下载及安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        使用说明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          用户指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          用户指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        基础配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/" class="md-nav__link">
+        系统管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update/" class="md-nav__link">
+        内核更新
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          系统状态监控
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        系统状态监控
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuned" class="md-nav__link">
+    第一章 TUNED入门
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章 TUNED入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1合并优化配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2优化策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cpu" class="md-nav__link">
+    1.3优化的 CPU 分区配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-cpu" class="md-nav__link">
+    1.4使用调整后的 CPU 分区配置文件以实现低延迟调整
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15tuned" class="md-nav__link">
+    1.5安装和启动Tuned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    1.6列出可用的调整配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    1.7设置一个经过调整的配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18tuned" class="md-nav__link">
+    1.8禁用TUNED
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    第二章 磁盘管理
+  </a>
+  
+    <nav class="md-nav" aria-label="第二章 磁盘管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1查看磁盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2添加新磁盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3删除磁盘分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4可用的磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5确定活跃磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26tuned" class="md-nav__link">
+    2.6使用TuneD设置磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-udev" class="md-nav__link">
+    2.7使用 udev 规则设置磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    2.8为特定磁盘临时设置调度程序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    第三章 CPU使用率以及调优
+  </a>
+  
+    <nav class="md-nav" aria-label="第三章 CPU使用率以及调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31cpu" class="md-nav__link">
+    3.1显示CPU的架构信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32cpu" class="md-nav__link">
+    3.2查看CPU的使用率：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33perf" class="md-nav__link">
+    3.3perf工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34perfcpu" class="md-nav__link">
+    3.4perf调查忙碌CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-perf-top-cpu" class="md-nav__link">
+    3.5使用 perf top 分析时显示特定的 CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36cpu" class="md-nav__link">
+    3.6记录报告和监控特定CPU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    第四章 内存使用率
+  </a>
+  
+    <nav class="md-nav" aria-label="第四章 内存使用率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1查看内存使用情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2查看物理内存信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3虚拟内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    4.4段页机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    4.5内存回收
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        安全加固
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          存储管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          存储管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        逻辑卷管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        可用的存储选项
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          网络管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          网络管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network1-6/" class="md-nav__link">
+        1-6章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network7-12/" class="md-nav__link">
+        7-12章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network13-18/" class="md-nav__link">
+        13-18章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network19-24/" class="md-nav__link">
+        19-24章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network25-30/" class="md-nav__link">
+        25-30章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network31-36/" class="md-nav__link">
+        31-36章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network37-42/" class="md-nav__link">
+        37-42章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network43-48/" class="md-nav__link">
+        43-48章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network49-54/" class="md-nav__link">
+        49-54章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network55-57/" class="md-nav__link">
+        55-57章
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          版本说明
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          版本说明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          参与贡献
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          参与贡献
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        如何贡献
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        文档库格式手册
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        内核开发指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          生态认证
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          生态认证
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        生态认证流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        硬件测试用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          认证兼容列表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          认证兼容列表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        硬件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        商业软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        开源软件兼容列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        适配FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          CentOS停服专区
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          CentOS停服专区
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate_relative/" class="md-nav__link">
+        CentOS停服专区
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/" class="md-nav__link">
+        CentOS迁移OpenCloudOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          下载
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          下载
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          测试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuned" class="md-nav__link">
+    第一章 TUNED入门
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章 TUNED入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1合并优化配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2优化策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cpu" class="md-nav__link">
+    1.3优化的 CPU 分区配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-cpu" class="md-nav__link">
+    1.4使用调整后的 CPU 分区配置文件以实现低延迟调整
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15tuned" class="md-nav__link">
+    1.5安装和启动Tuned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    1.6列出可用的调整配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    1.7设置一个经过调整的配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18tuned" class="md-nav__link">
+    1.8禁用TUNED
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    第二章 磁盘管理
+  </a>
+  
+    <nav class="md-nav" aria-label="第二章 磁盘管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1查看磁盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2添加新磁盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3删除磁盘分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4可用的磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5确定活跃磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26tuned" class="md-nav__link">
+    2.6使用TuneD设置磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-udev" class="md-nav__link">
+    2.7使用 udev 规则设置磁盘调度程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    2.8为特定磁盘临时设置调度程序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    第三章 CPU使用率以及调优
+  </a>
+  
+    <nav class="md-nav" aria-label="第三章 CPU使用率以及调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31cpu" class="md-nav__link">
+    3.1显示CPU的架构信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32cpu" class="md-nav__link">
+    3.2查看CPU的使用率：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33perf" class="md-nav__link">
+    3.3perf工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34perfcpu" class="md-nav__link">
+    3.4perf调查忙碌CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-perf-top-cpu" class="md-nav__link">
+    3.5使用 perf top 分析时显示特定的 CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36cpu" class="md-nav__link">
+    3.6记录报告和监控特定CPU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    第四章 内存使用率
+  </a>
+  
+    <nav class="md-nav" aria-label="第四章 内存使用率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1查看内存使用情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2查看物理内存信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3虚拟内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    4.4段页机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    4.5内存回收
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/guide/monitor.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/guide/monitor.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="opencloudosos-"><center />OpenCloudosOS-监控和管理系统状态和性能</h1>
+<h2 id="tuned">第一章 TUNED入门</h2>
+<p>TuneD 是一项服务，可监控您的系统并优化特定工作负载下的性能。</p>
+<p>TuneD 的核心是配置文件，可针对不同的用例调整您的系统。TuneD提供的配置文件分为以下几类:</p>
+<ul>
+<li>节能配置文件</li>
+<li>性能提升配置文件</li>
+</ul>
+<h3 id="11">1.1合并优化配置文件</h3>
+<p>TuneD可以一次选择更多配置文件,TuneD 将在加载期间尝试合并它们。如果存在冲突，则最后指定配置文件中的设置优先。</p>
+<p>前提：安装tuned</p>
+<p>例：虚拟访客中的低功耗：</p>
+<p>1.启动tuned
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# service tuned start
+Redirecting to /bin/systemctl start tuned.service
+</code></pre></div></p>
+<p>2.优化系统以在虚拟机中运行以获得最佳性能，并调优以实现低功耗
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile virtual-guest powersave
+</code></pre></div></p>
+<h3 id="12">1.2优化策略</h3>
+<ul>
+<li>balanced：默认的省电配置文件。它旨在成为性能和功耗之间的折衷方案。它尽可能使用自动缩放和自动调整。唯一的缺点是延迟增加。</li>
+<li>powersave：最大节能性能的配置文件。它可以限制性能以最小化实际功耗运行。</li>
+<li>throughput-performance：针对高吞吐量优化的服务器配置文件。它禁用节能机制并启用sysctl设置，以提高磁盘和网络 IO 的吞吐量性能。</li>
+<li>accelerator-performance：加速器性能配置文件包含与吞吐量性能配置文件相同的调整。可以将CPU锁定到低 C 状态，因此延迟小于 100us。提高了某些加速器的性能，例如 GPU。</li>
+<li>virtual-guest：基于吞吐量性能配置文件，除其他任务外，该配置文件可减少虚拟内存交换并增加磁盘预读值。</li>
+<li>virtual-host：该配置文件可减少虚拟内存交换，增加磁盘预读值，并启用更积极的脏页写回值。</li>
+<li>optimize-serial-console：通过减少 printk 值来调整串行控制台的 I/O 活动的配置文件。</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile throughput-performance optimize-serial-console
+</code></pre></div>
+<ul>
+<li>intel-sst：针对具有用户定义的 Intel Speed Select Technology 配置的系统优化的配置文件。</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile cpu-partitioning intel-sst
+</code></pre></div>
+<h3 id="13-cpu">1.3优化的 CPU 分区配置文件</h3>
+<p>在/etc/tuned/cpu-partitioning-variables.conf文件中配置 cpu‑partitioning 配置文件：具有负载平衡的隔离 CPU、没有负载平衡的隔离 CPU、内务处理 CPU。</p>
+<h3 id="14-cpu">1.4使用调整后的 CPU 分区配置文件以实现低延迟调整</h3>
+<p>前提：用root身份使用 yum install tuned-profiles-cpu-partitioning 命令安装cpu-partitioning TuneD配置文件。</p>
+<p>1.编辑/etc/tuned/cpu-partitioning-variables.conf 文件并添加以下信息</p>
+<div class="highlight"><pre><span></span><code>Isolated CPUs with the kernel’s scheduler load balancing:
+isolated_cores=2-23
+Isolated CPUs without the kernel’s scheduler load balancing:
+no_balance_cores=2,3
+</code></pre></div>
+<p>2.设置cpu-partitioning TuneD 配置文件</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile cpu-partitioning
+</code></pre></div>
+<p>3.重启
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# reboot
+</code></pre></div></p>
+<h3 id="15tuned">1.5安装和启动Tuned</h3>
+<p>1.安装tuned包</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# yum install tuned
+</code></pre></div>
+<p>2.启动并启用tuned服务</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl enable --now tuned
+</code></pre></div>
+<p>3.（可选）为实时系统安装 TuneD 配置文件：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# yum install tuned-profiles-realtime tuned-profiles-nfv
+</code></pre></div>
+<p>4.验证 TuneD 配置文件是否处于活动状态并已应用：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+Current active profile: virtual-guest
+</code></pre></div>
+<p>查看当前系统设置与预设配置文件匹配
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm verify
+
+Verfication succeeded, current system settings match the preset profile.
+
+See TuneD log file (&#39;/var/log/tuned/tuned.log&#39;) for details.
+</code></pre></div></p>
+<h3 id="16">1.6列出可用的调整配置文件</h3>
+<p>1.列出系统上所有可用的 TuneD 配置文件</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm list
+
+Available profiles:
+
+\- accelerator-performance - Throughput performance based tuning with disabled higher latency STOP states
+
+\- balanced - General non-specialized tuned profile
+
+\- cpu-partitioning - Optimize for CPU partitioning
+
+\- desktop - Optimize for the desktop use-case
+
+\- hpc-compute - Optimize for HPC compute workloads
+
+\- intel-sst - Configure for Intel Speed Select Base Frequency
+
+\- latency-performance - Optimize for deterministic performance at the cost of increased power consumption
+
+\- my-profile
+
+...
+
+Current active profile: virtual-guest
+</code></pre></div>
+<p>2.仅显示当前活动的配置文件</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+
+Current active profile: virtual-guest
+</code></pre></div>
+<h3 id="17">1.7设置一个经过调整的配置文件</h3>
+<p>此过程会在你的系统上激活选定的 TuneD 配置文件</p>
+<p>1.你可以让TuneD为你的系统推荐最合适的配置文件：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm recommend
+
+virtual-guest
+</code></pre></div>
+<p>2.激活配置文件：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile selected-profile
+</code></pre></div>
+<p>激活多个配置文件</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile profile1 profile2
+</code></pre></div>
+3.重启系统：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# reboot
+</code></pre></div>
+<p>4.验证TuneD 配置文件是否处于活动状态并已应用：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm verify
+Verfication succeeded, current system settings match the preset profile.
+
+See TuneD log file (&#39;/var/log/tuned/tuned.log&#39;) for details.
+</code></pre></div></p>
+<h3 id="18tuned">1.8禁用TUNED</h3>
+<p>1.暂时禁用所有tuned：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm off
+</code></pre></div>
+<p>2.永久停止和禁用tuned服务：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl disable --now tuned
+</code></pre></div></p>
+<h2 id="_1">第二章 磁盘管理</h2>
+<h3 id="21">2.1查看磁盘</h3>
+<p>1.查看磁盘信息，但不会显示未挂载的磁盘
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# df -h
+
+Filesystem Size Used Avail Use% Mounted on
+
+devtmpfs 830M 0 830M 0% /dev
+
+tmpfs 845M 24K 845M 1% /dev/shm
+
+tmpfs 845M 250M 596M 30% /run
+
+tmpfs 845M 0 845M 0% /sys/fs/cgroup
+
+/dev/vda1 50G 4.5G 43G 10% /
+
+tmpfs 169M 0 169M 0% /run/user/0
+...
+</code></pre></div></p>
+<p>2.查看主机所有的磁盘列表
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# fdisk -lu
+
+Disk /dev/vda: 50 GiB, 53687091200 bytes, 104857600 sectors
+
+Units: sectors of 1 \* 512 = 512 bytes
+
+Sector size (logical/physical): 512 bytes / 512 bytes
+
+I/O size (minimum/optimal): 262144 bytes / 262144 bytes
+
+Disklabel type: dos
+
+Disk identifier: 0xe609e297
+
+Device Boot Start End Sectors Size Id Type
+
+/dev/vda1 2048 104857566 104855519 50G 83 Linux
+...
+</code></pre></div></p>
+<p>3.查看指定目录磁盘使用情况</p>
+<pre><code>在命令后直接放目录名：
+</code></pre>
+<p><code>[root@opencloudos ~]# df -h /dev
+
+Filesystem Size Used Avail Use% Mounted on
+
+devtmpfs 830M 0 830M 0% /dev</code>
+4.df命令介绍</p>
+<ul>
+<li>-a：列出所有的文件系统，包括系统特有的/proc等文件系统</li>
+<li>-k：以KB的容量显示各文件系统</li>
+<li>-m：以MB的容量显示各文件系统</li>
+<li>-h：以人们较易阅读的GB,MB,KB等格式自行显示</li>
+<li>-H：以M=1000K替代M=1024K的进位方式</li>
+<li>-T：显示文件系统类型</li>
+<li>-i：不用硬盘容量，而以inode的数量来显示</li>
+<li>-l：只显示本机的文件系统</li>
+</ul>
+<p>5.du命令介绍</p>
+<pre><code>作用：使用du命令查看指定目录的使用情况。
+
+选项：-h:输出文件系统分区使用的情况
+
+\-s:显示文件或整个目录的大小
+</code></pre>
+<h3 id="22">2.2添加新磁盘</h3>
+<p>新添加硬盘后，我们如果想使用这块硬盘，必须通过分区-&gt;格式化-&gt;挂载后才可以使用。</p>
+<p>分区：一共有两种分区方式
+- 采用MBR的方式进行分区，即fdisk命令
+- 采用GPT的方式进行分区，即gdisk命令</p>
+<p>1.格式化磁盘：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkfs
+</code></pre></div>
+<p>将指定分区格式化为ext4格式：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkfs -t ext4 /dev/sdb1
+</code></pre></div>
+<p>格式化指定磁盘2G空间：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkfs /dev/sdb2 2G
+</code></pre></div>
+<p>2.挂载：
+    建立设备分区和系统目录的映射关系。</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mount 设备名称 挂载目录
+</code></pre></div>
+<h3 id="23">2.3删除磁盘分区</h3>
+<p>1.查看硬盘信息，找到自己想要删除哪块硬盘上的分区。
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# fdisk -l
+</code></pre></div></p>
+<p>2.进入该磁盘分区
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# fdisk 设备名称
+</code></pre></div></p>
+<p>3.输入d表示删除分区，若有多个分区，则会需要选择分区号
+<div class="highlight"><pre><span></span><code>    command(m for help): d
+</code></pre></div></p>
+<p>4.输入w保存退出</p>
+<h3 id="24">2.4可用的磁盘调度程序</h3>
+<ul>
+<li>
+<p>none
+  先入先出(FIFO)调度算法。它通过简单的最后一个缓存合并通用块层的请求。</p>
+</li>
+<li>
+<p>mq-deadline
+尝试从请求到达调度程序时起为请求提供保证的延迟。此调度程序适用于大多数用例，特别是写操作大部分异步的情况。</p>
+</li>
+<li>
+<p>bfq
+以桌面系统和互动任务为目标。此调度程序适合用于复制大型文件，在这种情况下，系统也不会变得无响应。</p>
+</li>
+<li>
+<p>kyber
+调度程序通过计算提交至块 I/O 层的每个 I/O 请求的延迟来调整自身以达到延迟目标。这个调度程序适合快速设备，如 NVMe、SSD 或其他低延迟设备。</p>
+</li>
+</ul>
+<p>默认磁盘调度程序：</p>
+<p>对于非易失性 Memory Express(NVMe)块设备，默认调度程序是 none</p>
+<h3 id="25">2.5确定活跃磁盘调度程序</h3>
+<p>查看哪个磁盘调度程序目前在给定块设备中活跃。</p>
+<div class="highlight"><pre><span></span><code> [root@opencloudos ~]# cat /sys/block/设备/queue/scheduler** 将设备替换为块设备名称
+
+[none] mq-deadline kyber bfq
+</code></pre></div>
+<h3 id="26tuned">2.6使用TuneD设置磁盘调度程序</h3>
+<p>1.查看哪个配置集当前处于活跃状态
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+</code></pre></div></p>
+<p>2.创建保存 TuneD 配置集的新目录
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkdir /etc/tuned/my-profile
+</code></pre></div>
+3.查找所选块设备系统唯一标识符：</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm info --query=property --name=/dev/device \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+[root@opencloudos ~]# udevadm info --query=property --name=/dev/sr0 \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+ID_SERIAL=QEMU_DVD-ROM_QM00002
+
+ID_SERIAL_SHORT=QM00002
+</code></pre></div>
+<p>4.创建 /etc/tuned/my-profile/tuned.conf 配置文件。在该文件中设置：</p>
+<pre><code>为与 WWN 标识符匹配的设备设置所选磁盘调度程序：
+</code></pre>
+<p><code>[disk]
+
+devices_udev_regex=IDNAME=device system unique id
+
+elevator=selected-scheduler</code></p>
+<p>5.启用您的配置集：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile my-profile
+</code></pre></div></p>
+<p>6.验证 TuneD 配置集是否活跃并应用：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+
+Current active profile: my-profile
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm verify
+
+Verfication succeeded, current system settings match the preset profile.
+
+See TuneD log file (&#39;/var/log/tuned/tuned.log&#39;) for details.
+</code></pre></div></p>
+<p>7.读取 /sys/block/设备/queue/scheduler文件的内容：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /sys/block/device/queue/scheduler
+mq-deadline kyber [bfq] none
+</code></pre></div></p>
+<h3 id="27-udev">2.7使用 udev 规则设置磁盘调度程序</h3>
+<p>1.查找块设备系统唯一标识符
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm info --name=/dev/sr0 \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+[root@opencloudos ~]# udevadm info --name=/dev/sr0 \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+E: ID_SERIAL=QEMU_DVD-ROM_QM00002
+
+E: ID_SERIAL_SHORT=QM00002
+</code></pre></div></p>
+<p>2.配置udev 规则。使用以下内容创建 /etc/udev/rules.d/99-scheduler.rules文件：</p>
+<pre><code>注意：将 IDNAME 替换为要使用的标识符的名称（如 ID_WWN）
+
+将 设备系统唯一 id 替换为所选标识符值（例0x5002538d00000000）
+</code></pre>
+<p><code>ACTION=="add\|change", SUBSYSTEM=="block", ENV{ID_SERIAL_SHORT}=="QM00002", ATTR{queue/scheduler}="bfq"</code></p>
+<p>3.重新载入udev规则：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm control --reload-rules
+</code></pre></div>
+4.应用调度程序配置：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm trigger --type=devices --action=change
+</code></pre></div></p>
+<p>5.验证活跃的调度程序：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /sys/block/device/queue/scheduler
+
+[root@opencloudos ~]# cat /sys/block/sr0/queue/scheduler
+
+mq-deadline kyber [bfq] none
+</code></pre></div></p>
+<h3 id="28">2.8为特定磁盘临时设置调度程序</h3>
+<p>此流程为特定块设备设置给定磁盘调度程序。系统重启后该设置不会保留。</p>
+<p>1.将所选调度程序的名称写入 /sys/block/设备/queue/scheduler文件：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# echo selected-scheduler \&gt; /sys/block/device/queue/scheduler
+</code></pre></div>
+在文件名中，将 device 替换为块设备名称，如vda</p>
+<p>2.验证调度程序是否在该设备中活跃：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /sys/block/device/queue/scheduler
+
+[root@opencloudos ~]# cat /sys/block/vda/queue/scheduler
+
+[none] mq-deadline kyber bfq
+</code></pre></div></p>
+<h2 id="cpu">第三章 CPU使用率以及调优</h2>
+<h3 id="31cpu">3.1显示CPU的架构信息</h3>
+<p>1.收集CPU的架构信息，如 CPU、线程、内核、插槽和 NUMA 节点的数量：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# lscpu
+
+Architecture: x86_64
+
+CPU op-mode(s): 32-bit, 64-bit
+
+Byte Order: Little Endian
+
+CPU(s): 2
+
+On-line CPU(s) list: 0,1
+
+Thread(s) per core: 2
+
+Core(s) per socket: 1
+
+Socket(s): 1
+
+NUMA node(s): 1
+
+Vendor ID: GenuineIntel
+
+BIOS Vendor ID: Smdbmds
+
+CPU family: 6
+
+Model: 106
+...
+</code></pre></div></p>
+<h3 id="32cpu">3.2查看CPU的使用率：</h3>
+<p>1.展示CPU的性能：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# top
+
+%Cpu(s): 0.2 us, 0.2 sy, 0.0 ni, 99.7 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st
+</code></pre></div></p>
+<ul>
+<li>user（通常缩写为 us），代表用户态 CPU 时间。注意，它不包括下面的 nice 时间，但包括了 guest 时间。</li>
+<li>nice（通常缩写为 ni），代表低优先级用户态 CPU 时间，也就是进程的 nice 值被调整为 1-19 之间时的 CPU 时间。这里注意，nice 可取值范围是 -20 到 19，数值越大，优先级反而越低。</li>
+<li>system（通常缩写为 sy），代表内核态 CPU 时间。</li>
+<li>idle（通常缩写为 id），代表空闲时间。注意，它不包括等待 I/O 的时间（iowait）。</li>
+<li>iowait（通常缩写为 wa），代表等待 I/O 的 CPU 时间。</li>
+<li>irq（通常缩写为 hi），代表处理硬中断的 CPU 时间。</li>
+<li>softirq（通常缩写为 si），代表处理软中断的 CPU 时间。</li>
+<li>steal（通常缩写为 st），代表当系统运行在虚拟机中的时候，被其他虚拟机占用的 CPU 时间。</li>
+<li>guest（通常缩写为 guest），代表通过虚拟化运行其他操作系统的时间，也就是运行虚拟机的 CPU 时间。</li>
+<li>guest_nice（通常缩写为 gnice），代表以低优先级运行虚拟机的时间。</li>
+</ul>
+<p>CPU 使用率，就是除了空闲时间外的其他时间占总 CPU 时间的百分比</p>
+<p>公式：CPU 使用率 = 1 - 空闲时间 / 总 CPU 时间</p>
+<p>2.查看CPU使用率：</p>
+<pre><code>安装sysstat工具：
+</code></pre>
+<p><code>[root@opencloudos ~]# yum install sysstat</code></p>
+<p>查看CPU占用
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# pidstat 1
+
+Linux 5.4.119-19-0009.1 (VM-6-117-centos) 08/19/2022 \_x86_64\_ (2 CPU)
+
+03:11:04 PM UID PID %usr %system %guest %wait %CPU CPU Command
+
+03:11:05 PM 0 561098 1.00 0.00 0.00 0.00 1.00 0 barad_agent
+
+03:11:05 PM UID PID %usr %system %guest %wait %CPU CPU Command
+
+03:11:06 PM 0 561098 0.00 1.00 0.00 0.00 1.00 0 barad_agent
+...
+</code></pre></div></p>
+<h3 id="33perf">3.3perf工具</h3>
+<p>1.安装perf工具。perf用户空间工具是基于内核的 Linux 子系统性能计数器 (PCL)接口。Perf是一个强大的工具，它使用性能监控单元(PMU)来测量、记录和监控各种硬件和软件事件。
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# yum install perf
+</code></pre></div></p>
+<p>2.使用 perf top 分析 CPU 使用率</p>
+<p>perf top命令用于实时系统分析，其功能与 top 实用程序类似。但是，top实用程序通常显示给定进程或线程使用的 CPU 时间，perf top会显示每个特定功能使用的 CPU 时间。
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf top
+
+6.48% perf [.] \__symbols__insert
+
+5.21% [kernel] [k] kallsyms_expand_symbol.constprop.1
+
+4.80% perf [.] rb_next
+
+2.48% perf [.] rust_demangle_callback
+
+2.42% libc-2.28.so [.] \__GI_____strtoull_l_internal
+
+2.32% [kernel] [k] vsnprintf
+
+2.10% [kernel] [k] number
+...
+</code></pre></div></p>
+<h3 id="34perfcpu">3.4perf调查忙碌CPU</h3>
+<p>1.计数禁用 CPU 数量聚合的事件：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf stat -a -A sleep seconds
+</code></pre></div></p>
+<p>指定周期等事件：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf stat -a -A -e cycles sleep seconds
+</code></pre></div></p>
+<p>2.显示使用 perf 报告进行的 CPU 样本</p>
+<pre><code>前提：当前目录中创建了 perf.data文件，该文件含有perf 记录。
+</code></pre>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf report --sort cpu
+按 CPU 和命令排序：
+[root@opencloudos ~]# perf report --sort cpu,comm
+</code></pre></div>
+<h3 id="35-perf-top-cpu">3.5使用 perf top 分析时显示特定的 CPU</h3>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf top --sort cpu
+按 CPU 和命令排序：
+[root@opencloudos ~]# perf top --sort cpu,comm
+</code></pre></div>
+<h3 id="36cpu">3.6记录报告和监控特定CPU</h3>
+<p>1.在特定 CPU 中记录性能数据，生成 perf.data文件：</p>
+<pre><code>使用以逗号分隔的 CPU 列表
+</code></pre>
+<p><code>[root@opencloudos ~]# perf record -C 0,1 sleep seconds
+
+使用一组 CPU:
+
+[root@opencloudos ~]# perf record -C 0-2 sleep seconds</code></p>
+<p>2.显示 perf.data文件的内容，以进一步分析：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf report
+</code></pre></div></p>
+<h2 id="_2">第四章 内存使用率</h2>
+<h3 id="41">4.1查看内存使用情况</h3>
+<p>1.使用free命令：
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# free
+total used free shared buff/cache available
+
+Mem: 1730432 375364 130400 255480 1224668 932144
+
+Swap: 0 0 0
+</code></pre></div></p>
+<ul>
+<li>total表示总共有1.6G的内存</li>
+<li>used表示物理内存的使用量，大概215M</li>
+<li>free表示空闲内存</li>
+<li>shared表示共享内存</li>
+<li>buff/cache表示缓存和缓冲内存量; Linux 系统会将很多东西缓存起来以提高性能，这部分内存可以在必要时进行释放，给其他程序使用。</li>
+<li>available表示可用内存</li>
+</ul>
+<p>Swap表示交换内存</p>
+<p>2.使用vmstat
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# vmstat -m
+
+Cache Num Total Size Pages
+
+rpc_inode_cache 46 46 704 23
+
+rpc_buffers 16 16 2048 16
+
+rpc_tasks 16 16 256 16
+
+ext4_groupinfo_4k 420 420 144 28
+
+fscrypt_info 0 0 104 39
+
+fscrypt_ctx 0 0 64 64
+
+bridge_fdb_cache 0 0 128 32
+
+ip6-frags 0 0 208 19
+
+fib6_nodes 128 128 64 64
+
+ip6_dst_cache 32 32 256 16
+...
+</code></pre></div></p>
+<p>对内存使用情况进行统计</p>
+<p>3.查看/proc/meminfo</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /proc/meminfo
+
+MemTotal: 1730432 kB
+
+MemFree: 131156 kB
+
+MemAvailable: 933048 kB
+
+Buffers: 80508 kB
+
+Cached: 1070344 kB
+
+SwapCached: 0 kB
+...
+</code></pre></div>
+<p>/proc目录下都是虚拟文件，包含内核以及操作系统相关的动态信息,/proc/meminfo是了解Linux系统内存使用状况的主要接口，我们最常用的”free”、”vmstat”等命令就是通过它获取数据的 ，/proc/meminfo所包含的信息比”free”等命令要丰富得多。</p>
+<h3 id="42">4.2查看物理内存信息</h3>
+<p>1.dmidecode命令
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# dmidecode -t 17
+</code></pre></div>
+展示的信息包括 内存大小, 类型，带宽等信息。</p>
+<h3 id="43">4.3虚拟内存</h3>
+<p>2.介绍：物理内存是有限的（即使支持了热插拔）、非连续的，不同的CPU架构对物理内存的组织都不同。这使得直接使用物理内存非常复杂，为了降低使用内存的复杂度，引入了虚拟内存机制。
+3.使用方法：通过虚拟内存机制，每个进程都以为自己占用了全部内存，进程访问内存时，操作系统都会把进程提供的虚拟内存地址转换为物理地址，再去对应的物理地址上获取数据。
+4.虚拟内存不仅通过内存地址转换解决了多个进程访问内存冲突的问题，还带来更多的益处：
+- 进程内存管理：内存完整性：由于虚拟内存对进程的”欺骗”，每个进程都认为自己获取的内存是一块连续的地址。我们在编写应用程序时，就不用考虑大块地址的分配，总是认为系统有足够的大块内存即可。
+- 数据共享：通过虚拟内存更容易实现内存和数据的共享。</p>
+<h3 id="44">4.4段页机制</h3>
+<p>现代操作系统的内存管理机制有两种：段式管理和页式管理。</p>
+<ul>
+<li>段式内存管理，就是将内存分成段，每个段的起始地址就是段基地址。地址映射的时候，由逻辑地址加上段基地址而得到物理地址。</li>
+<li>页式内存管理，内存分成固定长度的一个个页片。地址映射的时候，需要先建立页表，页表中的每一项都记录了这个页的基地址。通过页表，由逻辑地址的高位部分先找到逻辑地址对应的页基地址，再由页基地址偏移一定长度就得到最后的物理地址，偏移的长度由逻辑地址的低位部分决定。</li>
+<li>段页式内存管理需要通过段表和页表的一同使用，段表中包含：段号、段内页表的起始地址，页表包含：页号、页内偏移量。通过虚拟地址中的段号在段表中找到对应的段号项，通过段表中的段号项可以得到段内页表的起始地址（也就是这个分段对应的页表），在得到该段内存对应的页表后可以通过虚拟地址中的段内页号找到对应的页表项得到物理起始地址，加上虚拟地址中的页内偏移量就对应的物理地址。</li>
+</ul>
+<h3 id="45">4.5内存回收</h3>
+<p>1.内存回收的目标：对于内核并不是所有的物理内存都可以参与回收，比如内核的代码段，如果被内核回收了，系统就无法正常运行了，所以一般内核代码段、数据段、内核申请的内存、内核线程占用的内存等都是不可以回收的，除此之外的内存都可以是我们要回收的目标。</p>
+<ol>
+<li>
+<p>内存回收时机：</p>
+</li>
+<li>
+<p>内核需要为任何时刻突发到来的内存申请提供足够的内存，以便cache的使用和其他相关内存的使用不至于让系统的剩余内存长期处于很少的状态。</p>
+</li>
+<li>
+<p>当真的有大于空闲内存的申请到来的时候，会触发强制内存回收。
+3.回收机制：</p>
+</li>
+<li>
+<p>针对第1种，Linux系统设计了kswapd后台程序，当内核分配物理页面时，由于系统内存短缺，没法在低水位情况下分配内存，因此会唤醒kswapd内核线程来异步回收内存。也就是周期性内存回收机制。</p>
+</li>
+<li>
+<p>针对第2种，Linux系统会触发直接内存回收(direct reclaim)，在内核调用页分配函数分配物理页面时，由于系统内存短缺，不能满足分配请求，内核就会直接触发页面回收机制，尝试回收内存来解决问题。也就是直接内存回收。</p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

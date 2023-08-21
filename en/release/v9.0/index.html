@@ -1,0 +1,2912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../v8.6/">
+      
+      
+        <link rel="next" href="../ocs/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>v9.0 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              v9.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../release/v9.0/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../v8.5/" class="md-tabs__link md-tabs__link--active">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        v9.0
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/release/v9.0.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/release/v9.0.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="introduction">Introduction</h1>
+<p>OpenCloudOS, an open source operating system community jointly initiated by Tencent and its partners, is a completely neutral, open, secure, stable and high-performance operating system and ecosystem. OpenCloudOS has accumulated the advantages of many vendors in the software and open source ecosystem, inherited Tencent's more than 10 years of technology accumulation in the operating system and kernel, and has solid support in cloud native, stability, performance, hardware support and other aspects, which can support all hardware platforms equally and comprehensively.</p>
+<p>OpenCloudOS 9 is a full-link server operating system community version jointly developed by OpenCloudOS community partners. The kernel and user mode software of the upstream OpenCloudOS Stream version are based on the independent selection, evolution and maintenance of Upstream community. No longer dependent on other distributions. OpenCloudOS 9 provides users and services with a more advanced and higher-performance basic environment and service capabilities by comprehensively optimizing and polishing the kernel and user-mode software, and solves the problem of interrupted CentOS supply.</p>
+<h1 id="download">Download</h1>
+<p>To download OpenCloudOS 9.0, please visit the following link:</p>
+<ul>
+<li>ISO Installation Mirror： https://mirrors.opencloudos.tech/opencloudos/9.0/isos/</li>
+<li>Docker Container &amp; Virtual Machine Image：https://mirrors.opencloudos.tech/opencloudos/9.0/images/</li>
+</ul>
+<h1 id="opencloudos-90-new-features-summary">OpenCloudOS 9.0 New features summary</h1>
+<h2 id="safe-boot-and-boot">Safe boot and boot</h2>
+<h3 id="dracut-057">dracut 057</h3>
+<ul>
+<li>Resolve erratic behavior due to parallel device probing of the kernel</li>
+<li>Added aarch64 uefi support and introduced the connman support module</li>
+<li>Supports the ZSTD compression firmware with the.zst suffix</li>
+</ul>
+<h3 id="grub2-206">grub2 2.06</h3>
+<ul>
+<li>Supports Virtual LAN</li>
+<li>ARM supports EHCI, DMA, and DTB drivers</li>
+<li>Supports UUID and PARTUUID</li>
+<li>Support NVMe devices that contain Open Firmware text representation</li>
+<li>Added support for flash friendly file system (F2FS)</li>
+<li>File systems that support sparse nodes</li>
+<li>Supports RAID-5 or RAID-6, RAID1C34 file systems, read/start/recover</li>
+<li>Complete architecture supports TPM (trusted platform module)</li>
+<li>Supports the RISC-V architecture</li>
+</ul>
+<h3 id="systemd-251">systemd 251</h3>
+<ul>
+<li>sd-boot has been upgraded from PCR 8 to TPM PCR 12</li>
+<li>Supports more features of cgroup v2</li>
+<li>Supports cgroup v2 BPF logic</li>
+<li>Supports GPT Discoverable Partitions Specification</li>
+<li>Added the udev rule for all devices triggered during each upgrade</li>
+<li>CPUAffinity= numa is supported</li>
+<li>The udev rule supports auto-suspend for PCI and USB devices</li>
+<li>Added UserDB-related features</li>
+<li>Added tools such as systemd-network-generator, systemd-sysext, systemd-repart to control system hierarchy expansion and better support for GPT</li>
+<li>New network device naming rule "keep"</li>
+<li>System Resource Limit RLIMIT_NOFILE Set to 1024 (soft) and 4096 (hard)</li>
+<li>Increase the maximum default inodes of /dev from 64K to 1M, and the maximum default inodes of /tmp from 400K to 1M</li>
+<li>Now prefers the RDRAND instruction set on x86_64</li>
+</ul>
+<h2 id="kernel">kernel</h2>
+<h3 id="kernel-61-bring-the-latest-achievements-to-the-community-experience">Kernel 6.1, bring the latest achievements to the community experience:</h3>
+<ul>
+<li>MGLRU reduces the CPU time occupied by memory scanning and reclamation, improves the accuracy of memory hot and cold judgment, and significantly improves system performance in scenarios with high memory pressure.</li>
+<li>Maple Tree support, Cacheline aligned Btree implementation, ease the memory management of the key data structure competition in the multi-process concurrent scenario, improve system performance.</li>
+<li>Initial support for the Rust programming language, providing basic functionality implementation.</li>
+<li>Folios, a simple and efficient large-page memory management solution, provides complete support for multi-page Folios and improves performance by 10% in real load scenarios. Added shmem Filio support.</li>
+<li>io_uring: fully functional support for the new generation asynchronous I/O framework. Added zerocopy sendmsg, non-zerocopy sendto, async work schedule, and iopoll io_uring/nvme passthrough functions.</li>
+<li>Tiered memory - Tiered memory system support, including multiple tiers with different performance characteristics. New hot and cold page recognition and hierarchical migration algorithm, hierarchical information user mode display scheme.</li>
+</ul>
+<h3 id="provides-solid-cloud-native-base-support">Provides solid cloud native base support:</h3>
+<ul>
+<li>CGroupFS, a simple and easy-to-use view isolation solution for system-level container resources, improves container isolation.</li>
+<li>Cgroup performance optimization, increased the reliable PSI V1 support, a large number of V2 exclusive interface to V1, providing BufferIO control and other functions.</li>
+<li>Container-level memory fine-grained classification limits reclamation and enhances container availability.</li>
+</ul>
+<h3 id="other-functions-support">Other functions support:</h3>
+<ul>
+<li>Support for hot patches on x86_64 and ARM64 platforms based on Livepatch reduces downtime and improves success rate.</li>
+<li>Kdump Enhances kernel dump adaptation and capability.</li>
+<li>Supports the RISC-V 64 architecture.</li>
+</ul>
+<h3 id="architecture-support">Architecture support</h3>
+<h4 id="arm">ARM</h4>
+<ul>
+<li>Support for new SoCs: MTK and Qcom</li>
+<li>Mediatek Helio X10 MT6795-M4U /IOMMU Support</li>
+<li>perf: The kernel supports dwarf unwinding through the SVE function</li>
+<li>Yitian710: Adds a DDR subsystem driver and a PMU driver</li>
+<li>sysreg: adds the hwcap to SVE EBF16</li>
+<li>iommu: supports M1 Pro/Max DART</li>
+</ul>
+<h4 id="x86">x86</h4>
+<ul>
+<li>bpf: x86: registers internal structure parameters in the trampoline program</li>
+<li>crypto: x86/sha512 - Loads based on CPU features</li>
+<li>intel_idle: Adds AlderLake platform support</li>
+<li>iommu/amd: Adds support for v2 page tables in the common IO page table framework</li>
+<li>mm: x86: CONFIG_ARCH_HAS_NONLEAF_PMD_YOUNG is added</li>
+<li>KVM: VMX: supports the newer eVMCSv1 version</li>
+</ul>
+<h4 id="loongarch">LOONGARCH</h4>
+<ul>
+<li>Added BPF JIT support</li>
+<li>Added kdump support</li>
+<li>Add kexec support</li>
+<li>Add perf event support</li>
+</ul>
+<h2 id="compiler-and-development-environment">Compiler and development environment</h2>
+<h3 id="gcc-1220">GCC 12.2.0</h3>
+<ul>
+<li>Switch to TGCC(1. Feedback compilation and optimization, fit with business characteristics to improve the effect; 2. LTO link optimization; 3. Function rearrangement/basic block rearrangement based on service operation characteristics)</li>
+<li>ShadowCallStack sanitizer Support (aarch64 only)</li>
+<li>The default compiled c++ version option is 17, which implements some C++23 features</li>
+<li>Support armv9 and loongarch</li>
+</ul>
+<h3 id="clang-1405">Clang 14.0.5</h3>
+<ul>
+<li>OpenCL 2021 is supported.</li>
+<li>Support for more RISCV and ARM processor models, support for ARM V9 instruction set.</li>
+<li>Supports the X86 AVX512-FP16 instruction</li>
+</ul>
+<h3 id="llvm-1405">LLVM 14.0.5</h3>
+<ul>
+<li>Added support for Armv9-A, Armv9.1-A, and Armv9.2-A architectures.</li>
+<li>Multiple RISCV instructions changed from experimental to formal.</li>
+<li>Added support for x86 AVX512-FP16 instruction</li>
+<li>automake 1.16.5</li>
+<li>Added support for zstd</li>
+<li>python3 is supported</li>
+</ul>
+<h3 id="vim-90">vim 9.0</h3>
+<ul>
+<li>A new scripting language Vim9script</li>
+</ul>
+<h3 id="shell">shell</h3>
+<ul>
+<li>bash 5.1.16<ul>
+<li>Added loadable built-in commands: asort, mktemp, accept, mkfifo, csv, cut/lcut, seq, etc.</li>
+<li>shell now attempts to unlink all FIFOs at exit, whether the consumption process is complete or not.</li>
+<li>'bind-x' now supports different bindings and keyboard mappings for different editing modes.</li>
+<li>Writing history to syslog It is now possible to process messages longer than syslog max by writing multiple messages using serial numbers to determine the length.</li>
+</ul>
+</li>
+<li>bash-completion<ul>
+<li>Supports more commands such as nmap, openssl, ssh-keygen, and gcc</li>
+<li>influx, dmypy, carton, scrub, ecryptfs-migrate-home, chmod, and json_xs are newly supported</li>
+<li>Optimizations enrich test modules</li>
+</ul>
+</li>
+</ul>
+<h3 id="emacs-272">emacs 27.2</h3>
+<ul>
+<li>GUI cropped, now only terminal edit mode</li>
+<li>Built-in support for integers of any size</li>
+<li>Native support for JSON parsing</li>
+</ul>
+<h3 id="ed-118">ed 1.18</h3>
+<ul>
+<li>ed --help is displayed when incorrect command options are entered.</li>
+<li>The configuration option "--datadir" has been renamed to "--datarootdir" to comply with the GNU standard.</li>
+<li>Indicates that the length limit of the string has been removed.</li>
+<li>shell escape command (!) Now refresh the stdout so that the modified command always prints the buffer (for example, the file) before execution, even if the stdout is fully printed.</li>
+<li>In interactive mode, ed now sets the final exit status to 1 if a fatal error occurs.</li>
+</ul>
+<h2 id="programming-languages">Programming languages.</h2>
+<h3 id="programming-languages-cc-boost-1790">Programming languages.-C/C++-boost 1.79.0</h3>
+<ul>
+<li>Added support for C++20</li>
+<li>Improved support for RISC-V LP64D</li>
+</ul>
+<h3 id="programming-languages-java-81117">Programming languages-JAVA 8/11/17</h3>
+<ul>
+<li>Switch the default JDK release to KonaJDK(for big data and cloud computing scenarios, add features such as heap GC optimization, memory resource cost optimization, startup acceleration, and performance diagnostic tools)</li>
+<li>Default version upgraded to KonaJDK11</li>
+</ul>
+<h3 id="programming-languages-lua-544">Programming languages-LUA 5.4.4</h3>
+<ul>
+<li>New garbage collection mode</li>
+<li>Constant support</li>
+<li>Added the to-be-closed variable</li>
+</ul>
+<h3 id="programming-languages-rust-1640">Programming languages-RUST 1.64.0</h3>
+<ul>
+<li>Upgraded to version 1.64.0</li>
+</ul>
+<h3 id="programming-languages-perl-5360">Programming languages-perl 5.36.0</h3>
+<ul>
+<li>perl upgrade to 5.36.0:</li>
+<li>Added Unicode 14.0 support</li>
+<li>Added support for floating point exception signals</li>
+<li>Added variable length lookbehind support</li>
+<li>Added builtin core module</li>
+<li>Added a try/catch/finally exception handling mechanism</li>
+<li>C11 TLS feature support, improve the performance of threaded perl construction scenarios</li>
+<li>Scalars are created 30% faster in certain scenarios</li>
+<li>Thread safety support for locale operations</li>
+<li>Hash key allocation performance improved</li>
+</ul>
+<h3 id="programming-languages-python-310">Programming languages-python 3.10</h3>
+<ul>
+<li>
+<p>python was upgraded to 3.10</p>
+<ul>
+<li>python-pyparsing supports the left recursive interpreter, with added support for python '-W'</li>
+<li>python-asn1crypto adds sMIME implementations</li>
+<li>python-decorator restore support for Sphinx</li>
+<li>python-pexpect supports custom ssh commands</li>
+<li>python-pip implements new dependency parser, supports PEP600, supports other python versions when installing packages, supports PEP 517 (pyproject.toml builds the system, and is the default)</li>
+<li>python-setuptools supports pyproject.toml and has a higher priority than setup.py (according to PEP 621)</li>
+</ul>
+</li>
+<li>
+<p>Performance Improvement</p>
+<ul>
+<li>python-pexpect significantly improves performance when handling large amounts of data</li>
+<li>python-pip improves parsing performance</li>
+</ul>
+</li>
+<li>
+<p>Improved key functions</p>
+<ul>
+<li>python-pycparser improves C11 support</li>
+<li>python-setuptools enhances offline testing</li>
+<li>python3.10 Enhanced riscv support</li>
+</ul>
+</li>
+<li>
+<p>Security Hardening</p>
+<ul>
+<li>Fixed CVE-2013-0340, CVE-2021-3426, and CVE-2020-14343</li>
+</ul>
+</li>
+</ul>
+<h3 id="programming-languages-nodejs-18121">Programming languages-nodejs 18.12.1</h3>
+<ul>
+<li>Node.js 18 LTS version with upstream maintenance until 2025</li>
+<li>Performance improvements<ul>
+<li>Build-time user-land snapshot for faster startup time</li>
+</ul>
+</li>
+<li>Important features<ul>
+<li>Support for OpenSSL 3.0</li>
+<li>Added watch mode</li>
+<li>Upgraded V8 JavaScript engine to version 10.1</li>
+<li>Added experimental ESM Loader Hooks API</li>
+<li>Added experimental fetch API</li>
+<li>Added node:test module</li>
+<li>Added node:test module</li>
+<li>Added experimental Web Streams API</li>
+<li>Added Readline Promise API</li>
+</ul>
+</li>
+<li>Security hardening<ul>
+<li>Fixed CVE-2022-32212、CVE-2022-32222、CVE-2022-32213、CVE-2022-32215、CVE-2022-35256、CVE-2022-35255、CVE-2022-2097、CVE-2022-32212、CVE-2022-32213、CVE-2022-32214、CVE-2022-32215、CVE-2022-32222、CVE-2022-32223、CVE-2021-44531、CVE-2021-44532、CVE-2021-44533、CVE-2022-21824、CVE-2021-4044</li>
+</ul>
+</li>
+</ul>
+<h3 id="programming-languages-php-8112">Programming languages-php 8.1.12</h3>
+<ul>
+<li>Performance improvement<ul>
+<li>Added PHP JIT</li>
+</ul>
+</li>
+<li>Important functions<ul>
+<li>Union type, which means that a collection of data types can be defined and variables can use any of these types</li>
+<li>Added static return type</li>
+<li>Added the mixed type</li>
+<li>Changes throw from a statement to an expression</li>
+<li>Allows the use of ::class for objects</li>
+<li>Allows commas at the end of the argument list</li>
+</ul>
+</li>
+<li>Security Hardening<ul>
+<li>Repair CVE-2022-31630, CVE-2022-37454, CVE-2022-31628, CVE-2022-31629, CVE-2022-31627, CVE-2022-31626, CVE-2022-31625, and CVE-2021-2170 8, CVE-2021-21703, CVE-2023-0662, CVE-2022-31631, CVE-2022-31630, CVE-2022-37454, CVE-2022-31629, CVE-2022-31628, CVE-2022-31626 , CVE-2022-31625, CVE-2021-21707, CVE-2021-21703, CVE-2021-21705, CVE-2021-21704, CVE-2021-21702, CVE-2020-7071,</li>
+</ul>
+</li>
+</ul>
+<h3 id="programming-language-ruby-320">Programming language -ruby 3.2.0</h3>
+<ul>
+<li>Performance improvement<ul>
+<li>YJIT is officially used in the production environment</li>
+<li>Re-implement MJIT to improve performance</li>
+</ul>
+</li>
+<li>New features<ul>
+<li>Wasi-based WebAssembly support</li>
+<li>Improved Regexp matching algorithm</li>
+<li>More friendly error and syntax hints</li>
+</ul>
+</li>
+</ul>
+<h2 id="system-toolchain-components">System Toolchain Components:</h2>
+<h3 id="binutils-238">binutils 2.38</h3>
+<ul>
+<li>elfedit:<ul>
+<li>Added --output-abiversion option</li>
+</ul>
+</li>
+<li>ar:<ul>
+<li>Added --thin option</li>
+</ul>
+</li>
+<li>objdump:<ul>
+<li>Added support for efi-app-aarch64, efi-rtdrv-aarch64, and efi-bsdrv-aarch64</li>
+<li>Added --keep-section-symbols option</li>
+</ul>
+</li>
+<li>readelf:<ul>
+<li>Added --sym-base option</li>
+<li>Supports displaying LTO  symbol content</li>
+<li>Supports symbol name demangling with -C option</li>
+</ul>
+</li>
+<li>
+<p>nm:</p>
+<ul>
+<li>Added --quiet option</li>
+<li>Added --ifunc-chars=CHARS option</li>
+</ul>
+</li>
+<li>
+<p>Supports the SHF_GNU_RETAIN ELF segment</p>
+</li>
+<li>readelf/objdump is now enabled by default --enable-follow-debug-links</li>
+<li>elfedit/readelf supports LAM_U48 and LAM_U57</li>
+<li>Requires C99 compiler and library support</li>
+<li>Added support for LoogArch instruction set</li>
+</ul>
+<h2 id="performance-tools-and-debuggers">Performance Tools and Debuggers:</h2>
+<h3 id="gdb-121">GDB 12.1</h3>
+<ul>
+<li>Supports multiple architectures, including loongarch, openrisc</li>
+<li>Supports S+core</li>
+<li>Multithreaded symbol table loading is supported by default</li>
+<li>python2 is no longer supported, and the python api is enhanced</li>
+</ul>
+<h3 id="systemtap-47">SystemTap  4.7</h3>
+<ul>
+<li>Added support for 64-bit RISC-V architecture</li>
+<li>memfd_secret and faccessat2 system calls are supported and updated</li>
+<li>Added stap-profile-annotate tool</li>
+<li>Adds the --sign-module option to enable users to sign their modules</li>
+</ul>
+<h3 id="valgrind-3200">Valgrind 3.20.0</h3>
+<ul>
+<li>Supports the --enable-debuginfod option</li>
+<li>Better support for DWARF5</li>
+<li>Fixed Rust v0 garbled characters</li>
+</ul>
+<h3 id="dyninst-1220">Dyninst 12.2.0</h3>
+<ul>
+<li>Always use execution entry points for parsing hints in stripped binaries</li>
+<li>Resolves the name of the inline function in DWARF</li>
+</ul>
+<h3 id="elfutils-0187">elfutils 0.187</h3>
+<ul>
+<li>Recognises SHF_GNU_RETAIN, adds support for relocation SHT_X86_64_UNWIND</li>
+<li>Supports handling of the DW_FORM_indirect attribute</li>
+<li>Supports NVIDIA Cuda line mapping extension</li>
+<li>Identify FDO packaging ELF metadata</li>
+</ul>
+<h2 id="version-control-systems">Version Control Systems:</h2>
+<h3 id="git-2373">git 2.37.3</h3>
+<ul>
+<li>Added some documentation about command usage</li>
+<li>Modified some command logic to make it more user-friendly</li>
+<li>Optimized some command display logic</li>
+</ul>
+<h2 id="storage-file-and-device-management">Storage, file and device management</h2>
+<h3 id="logical-volume-managementlvm2-20316">Logical Volume Managementlvm2 2.03.16</h3>
+<ul>
+<li>Enhanced support for large capacity devices</li>
+<li>Enhanced path recovery capability when cache creation fails</li>
+<li>Some commands have performance optimization and function enhancement</li>
+</ul>
+<h3 id="file-system-tool-e2fsprogs-1465">File system tool e2fsprogs 1.46.5</h3>
+<ul>
+<li>The resize2fs command increases the maximum number of inodes supported to 2^32</li>
+<li>Added support for the fast_commit (COMPAT_FAST_COMMIT) feature</li>
+<li>Added support for the stabe_inodes (COMPAT_STABLE_INODES) feature</li>
+<li>chattr and lsattr added support for the 'x' attribute</li>
+<li>Some commands are optimized to improve the execution speed</li>
+</ul>
+<h3 id="partitioning-tool-parted-35">Partitioning tool parted 3.5</h3>
+<ul>
+<li>parted software package uses a newer 3.5 stable version:</li>
+<li>Added -fix in -script mode to automatically fix issues such as backup GPT headers not being at the end of the disk</li>
+<li>Added the use of swap partition flag on disks labeled MSDOS</li>
+<li>Allows partition names to be empty strings when set in script mode</li>
+<li>Added the -json command line switch to output the disk details as JSON</li>
+<li>Added support for Linux home Guids that use the Linux-home flag</li>
+</ul>
+<h2 id="safety-capability">Safety capability</h2>
+<h3 id="selinux">SELinux</h3>
+<ul>
+<li>The semanage port command supports the dccp and sctp protocols</li>
+<li>Supports IPv4/IPv6 address embedding</li>
+<li>Added support for Component Transport Protocol (MCTP) defined in DMTF standard DSP0236</li>
+<li>Lists are allowed in constraint expressions</li>
+<li>Optimize the storage file name conversion in the binary policy to save more space</li>
+<li>Provides optional support for kernel policy optimization, which can save policy compilation time for some policies, such as Android</li>
+<li>getconlist: sets multiple parameters to release memory</li>
+<li>Prevents empty files from being stored in the SELinux module by synchronizing data</li>
+<li>Alerts false IP addresses or network masks in nodecon statements</li>
+</ul>
+<h3 id="audit-service">audit service</h3>
+<ul>
+<li>kernel syscall supports: Upgrade to v6.1</li>
+<li>libev upgrade: Increased from 4.25 to 4.33</li>
+<li>Added support: ausyscall supports 32/64-bit, added support for armv8l architecture</li>
+<li>auparse update: optimizes lib library efficiency and adds syscall and event types to the kernel</li>
+</ul>
+<h3 id="sssd-service">sssd service</h3>
+<ul>
+<li>Added PAM module pam_sss_gss, which uses GSSAPI for identity authentication</li>
+<li>Added infopipe method FindByValidCertificate(), which accepts the certificate as input, validates it against the configured CA, and outputs the user path on success</li>
+<li>Added support for user subuid and subgid ranges for IPA providers and the corresponding shadow-utils plug-in</li>
+</ul>
+<h3 id="security-encryption">Security encryption</h3>
+<ul>
+<li>
+<p>cryptsetup</p>
+<ul>
+<li>Support for external LUKS token plug-ins</li>
+<li>Added SSH remote token support</li>
+<li>Use Argon2id as the default LUKS2 PBKDF algorithm implementation</li>
+<li>Added support for Blake2b and Black2s hashing algorithms.</li>
+</ul>
+</li>
+<li>
+<p>gnupg2</p>
+<ul>
+<li>Supports the AEAD encryption mode of OCB or EAX.</li>
+<li>DFN issued keys are supported</li>
+<li>Telesec ESIGN applications are supported</li>
+<li>Secure private keys using TPM 2.0</li>
+<li>Improve the speed of gpg encryption and decryption</li>
+<li>Use pipes for decryption to avoid memory exhaustion</li>
+<li>Supports ssh-agent authentication using openpgp</li>
+<li>Force version 5 keys to be created for ed448 and cv448 algorithms</li>
+<li>Supports multiple types of smart cards</li>
+</ul>
+</li>
+<li>
+<p>gpgme</p>
+<ul>
+<li>Supports exporting keys and subkeys</li>
+<li>Supports WKD search without implicit import</li>
+<li>Added the function of revoking the key signature and deprecating the trust list function</li>
+<li>New keylist mode to ensure that the engine returns keygrip</li>
+<li>Support for Native messaging and new Javascript code</li>
+</ul>
+</li>
+<li>
+<p>libkcapi</p>
+<ul>
+<li>Added support for state secret SM3 and SM4 algorithms</li>
+</ul>
+</li>
+<li>
+<p>pinentry</p>
+<ul>
+<li>Improved QT to support multiple operations on passwords</li>
+<li>Improves QT pinetry ease of use, supports Caps Lock prompts, and supports password formatting</li>
+<li>Add Qt 5 to the list of available variants for pinentry.</li>
+<li>Added genpin support</li>
+<li>Supports system line editing</li>
+<li>Add information about tty mode, etc to getinfo ttyinfo</li>
+</ul>
+</li>
+<li>
+<p>nettle</p>
+<ul>
+<li>Added support for state secret SM3 algorithm</li>
+<li>Added the AES symmetric encryption algorithm</li>
+<li>Added bcrypt password hashing algorithm</li>
+<li>Added pbkdf2_sha384 and pbkdf2_hmac_sha512</li>
+<li>Significant performance optimization for symmetric encryption and conical encryption algorithms on PowerPC architecture</li>
+<li>Supports the Curve448 and ED448 signature algorithms, CFB8 symmetric encryption mode, and CMAC symmetric block encryption algorithm</li>
+<li>Supports big-endian ARM architecture.</li>
+</ul>
+</li>
+<li>
+<p>libgcrypt</p>
+<ul>
+<li>Added SM3 ARM/AArch64 assembly implementation</li>
+<li>Improved FIPS features</li>
+<li>Added straight-line speculation hardening to aarch64, amd64, and i386</li>
+<li>Optimized AES aarch64-ce assembly implementation</li>
+<li>Added armv8/pmull accelerated POLYVAL to GMM-SiV</li>
+<li>Added automatic extension secmem functionality</li>
+<li>Added mitigation measures against timed attacks.</li>
+<li>Added support for key wrapping (KWP) with padding.</li>
+<li>Added x86_64 VAES/AVX2 acceleration implementation</li>
+</ul>
+</li>
+<li>
+<p>libgpg-error</p>
+<ul>
+<li>Updated and upgraded the translation function</li>
+<li>Support GNU C library 2.34 or later.</li>
+<li>Lock test when adding a single thread.</li>
+<li>Upgrade and improve the arg parser</li>
+</ul>
+</li>
+<li>
+<p>libxcrypt</p>
+<ul>
+<li>Added support for SM3, yescrypt, scrypt, and gost-yescrypt hashing algorithms</li>
+<li>Support for Elbrus-2000(ek2) architecture (Russian developed CPU)</li>
+<li>Python 3.11 is supported in configuration scripts</li>
+<li>Add a collection of Fedora and Debian hashing algorithms to the configuration file.</li>
+</ul>
+</li>
+</ul>
+<h3 id="safe-and-trusted">Safe and trusted</h3>
+<ul>
+<li>
+<p>ima-evm-utils</p>
+<ul>
+<li>Added support for elliptic curve encryption algorithms</li>
+<li>Added support for PKCS#11 standard</li>
+<li>Support IMA measurement results validation for multiple TPM banks</li>
+</ul>
+</li>
+<li>
+<p>tpm2-tss</p>
+<ul>
+<li>Added support for state secret SM2, SM3, and SM4 algorithms</li>
+<li>Compatible with OpenSSL 3.0.0</li>
+<li>Supports new TPM command invocations</li>
+<li>Added support for SWTPM-TCTI (TPM Command Transfer interface).</li>
+<li>Security base</li>
+</ul>
+</li>
+<li>
+<p>pam 1.5.2</p>
+<ul>
+<li>Added support for state secret SM3 algorithm</li>
+<li>Change the HMAC algorithm to call openssl instead of tying sha1.</li>
+<li>New module pam_faillock: Used to lock after multiple authentication failures.</li>
+<li>New module pam_setquota: Sets or modifies disk quota when session starts.</li>
+<li>New module pam_usertype: Used to determine whether the uid is in login state.</li>
+<li>Supports the (gost-)yescrypt hash method.</li>
+</ul>
+</li>
+<li>
+<p>gnutls 3.7.6</p>
+<ul>
+<li>Added API to implement QUIC transport protocol</li>
+<li>Provides acceleration of a range of encryption operations</li>
+<li>Supports the certificate compression standard defined in RFC8879.</li>
+</ul>
+</li>
+<li>
+<p>openssl 3.0.5</p>
+<ul>
+<li>Support for kernel TLS protocol (KTLS)</li>
+<li>Introduction of the concept of "Provider", which enables the algorithm implementation for a given application to be specified programmatically or in a configuration file</li>
+<li>The SHA1-based signature certificate is not trusted by the client and server</li>
+<li>Repair CVE-2022-3786 and CVE-2022-3602</li>
+</ul>
+</li>
+</ul>
+<h2 id="web-server">web server</h2>
+<h3 id="httpd-2454">httpd 2.4.54</h3>
+<ul>
+<li>New modules: mod_socache_redis, mod_systemd</li>
+<li>Added tools: fcgistarter, htcacheclean, rotatelogs, htpasswd, htdbm to improve convenience</li>
+<li>Enhanced function: The value of KeepAliveTimeout milliseconds is set. Enhanced MPM asynchronous function is supported</li>
+</ul>
+<h3 id="nginx-1221">nginx 1.22.1</h3>
+<ul>
+<li>Added support for Openssl 3.0</li>
+<li>Improves http/2 performance</li>
+<li>Security hardening: Repair CVE-2022-41741, CVE-2022-41742, and CVE-2021-23017</li>
+</ul>
+<h2 id="network-service">Network service</h2>
+<h3 id="nftables-104">nftables 1.0.4</h3>
+<ul>
+<li>Supports runtime automatic merging of collection elements</li>
+<li>Rule set optimization -o/--optimize enhancements to the option allow multiple NAT rules to be merged into a map</li>
+<li>Support for ip and tcp options and sctp blocks in collections</li>
+<li>802.1ad (QinQ) support</li>
+<li>cgroupsv2 Supported</li>
+</ul>
+<h3 id="iptables-188">iptables 1.8.8</h3>
+<ul>
+<li>Improved performance when matching IP/MAC, mask is not recognized by old iptables</li>
+<li>Full matching support, including hybrid MAC and MAC+IP collection entries</li>
+</ul>
+<h3 id="postfix-372">postfix 3.7.2</h3>
+<ul>
+<li>Support lmdb, tls and pcre2 libraries</li>
+<li>Randomizes the hash table in the initial memory to prevent hash collisions</li>
+<li>Upgrade the defense function to prevent remote clients or servers from controlling SMTP and LMTP traffic</li>
+<li>Support for thread bounce, which allows mail readers to display notifications of non-delivery, delayed delivery, or successful delivery in the same email thread as the original message.</li>
+</ul>
+<h3 id="network-tools">Network tools</h3>
+<ul>
+<li>arpwatch<ul>
+<li>Speed up arp.dat resolution by increasing the hash table size</li>
+</ul>
+</li>
+<li>curl<ul>
+<li>Use msh3 to add support for QUIC and HTTP/3</li>
+<li>Enable multiplexing by default</li>
+<li>Supports parallel transmission</li>
+<li>Supports wildcard hosts</li>
+<li>Added zstd decoding support</li>
+<li>Added fingerprint support for SHA256, CURLINFO_CERTINFO for secure transmission</li>
+</ul>
+</li>
+<li>ethtool<ul>
+<li>Added support for OSFP transceiver module</li>
+<li>Added QSFP-DD support</li>
+<li>Add support for statistics in subcommands</li>
+<li>Added support for dumping statistics</li>
+</ul>
+</li>
+<li>ipcalc<ul>
+<li>Improved json output by adding -j/--json output mode to print information in JSON format.</li>
+<li>Set the broadcast address based on RFC3021</li>
+<li>IANA IPv6 private address registration support updated to 2019-09-13</li>
+<li>Update the IANA IPv4 Private Address Registry to 2020-04-06</li>
+</ul>
+</li>
+<li>iputils<ul>
+<li>Disable setcap and setuid to prevent ARP poisoning</li>
+<li>When using SOCK_RAW sockets, use random values for identifier fields instead of PID.</li>
+</ul>
+</li>
+<li>tcpdump<ul>
+<li>Added support for new network protocols such as Arista, Autosar SOME/IP, IEEE 802.15.9, IPoIB, SLL2, vsockmon, MACsec, OpenFlow 1.3, PTP, ZEP, etc</li>
+<li>Add remote capture</li>
+</ul>
+</li>
+</ul>
+<h2 id="database-support">Database support</h2>
+<h3 id="gdbm-123">gdbm 1.23</h3>
+<ul>
+<li>Bucket cache switches from balanced tree to hash table to speed up flushing of changed buckets on disk</li>
+<li>gdbm_setopt Provides new options such as automatic caching, obtaining directory depth, and maximum number of keys</li>
+<li>Prereads memory mapped regions on systems that support it</li>
+<li>Lock types are retained during database reorganization.</li>
+</ul>
+<h3 id="libtdb-147">libtdb 1.4.7</h3>
+<ul>
+<li>Improved performance for parallel queries, highly concurrent workloads, partitioned tables, logical replication, and cleanup</li>
+<li>Using B-tree index updates is more efficient and reduces index bloat</li>
+<li>Implements the ability to pipe multiple queries, improving throughput for high-latency connections</li>
+</ul>
+<h3 id="sqlite-3390">sqlite 3.39.0</h3>
+<ul>
+<li>Built-in JSON support</li>
+<li>The database file capacity increased to 281 TB</li>
+<li>Reduced CPU usage by 2.3%</li>
+<li>Consumes less memory when manipulating schemas</li>
+<li>SQL commands run against malicious database corruption enhance robustness.</li>
+</ul>
+<h3 id="mariadb-10516">mariadb 10.5.16</h3>
+<ul>
+<li>InnoDB performance improvements, gap lock fix</li>
+<li>Speed up Docker time zone library initialization</li>
+<li>Supports health check in containers</li>
+<li>Skip InnoDB buffer pool load/dump and speed up Docker startup/initialization</li>
+</ul>
+<h3 id="mariadb-connector-c-331">mariadb-connector-c 3.3.1</h3>
+<ul>
+<li>Supports Zstd format</li>
+<li>Semi-synchronous replication is supported</li>
+<li>The password length is longer than 255 characters</li>
+<li>Supports openssl 3.0</li>
+</ul>
+<h3 id="postgresql-143">PostgreSQL 14.3</h3>
+<ul>
+<li>Implements SQL-standard SEARCH and CYCLE options</li>
+<li>subscripting is available for any data type</li>
+<li>Implement multiranges to allow discontinuous data ranges</li>
+<li>Improves performance of parallel queries, split tables, and logical overwrites</li>
+<li>B-tree index updates more efficiently</li>
+</ul>
+<h3 id="redis-705">Redis 7.0.5</h3>
+<ul>
+<li>Security reinforcement and repair of several Cves (CVE-2022-35951, CVE-2022-31144, CVE-2022-24736, etc.)</li>
+<li>Performance optimization: Optimize the performance of scenarios such as zset, PING, and list packet encoding sorting. The cluster restart mode is faster</li>
+<li>Added features such as Keyspace event, consumer group progress monitoring, and cluster bus disconnection</li>
+</ul>
+<h2 id="proxy-cache-database-server">Proxy cache database server</h2>
+<h3 id="squid-57">squid 5.7</h3>
+<ul>
+<li>Support ICAP Trailers</li>
+<li>Added the Kerberos Group Helper for querying the AD group SID</li>
+<li>Supports CDN loopback detection</li>
+<li>Supports forwarding bumped and re-encrypted HTTPS requests</li>
+<li>Supports openssl 3.0</li>
+</ul>
+<h2 id="container-and-virtualization-support">Container and virtualization support</h2>
+<h3 id="qemu-620">qemu 6.2.0</h3>
+<ul>
+<li>macOS hosts on the aarch64 architecture supports hvf acceleration</li>
+<li>RISC-V architecture Added support for Zb[abcs] directives</li>
+<li>Full support for memory dumps, pre-replication migration, post-replication migration, and background snapshot through virtio-mem</li>
+</ul>
+<h3 id="libvirt-8100">libvirt 8.10.0</h3>
+<ul>
+<li>for new virDomainDirtyRateCalcFlags dirty pages rate calculation parameters, accordingly, with virsh domdirtyrate - calc - new mode command options, used for dirty pages rate calculation</li>
+<li>Introduces manual disk snapshot mode, which allows users to synchronize libvirt snapshots with snapshots that need to be taken outside libvirt, such as when vhost-user-blk is used to back up disks.</li>
+<li>Introduce memory allocation threads. When a qemu guest is pulled up, memory can be allocated in parallel for scenarios where the guest has large memory requirements.</li>
+<li>Add attributes such as thread_pool_min, thread_pool_max, rss, and rss_hash_report</li>
+<li>Supports virtio-iommu, SGX EPC, NVRAM, etc</li>
+<li>Added qemu-vdagent channel, allowing copy and paste between guest and VNC clients</li>
+</ul>
+<h3 id="moby-201021">moby 20.10.21</h3>
+<ul>
+<li>Name updated by docker to moby, still compatible with old version name docker</li>
+<li>Allows the configuration of allow-nondistributable-artifacts for Docker Hub moby</li>
+<li>Optimize the experience on windows</li>
+</ul>
+<h3 id="kubernetes-1244">kubernetes 1.24.4</h3>
+<ul>
+<li>Support for kubernetes, which has several bug fixes from older versions</li>
+</ul>
+<h3 id="runc-114">runc 1.1.4</h3>
+<ul>
+<li>Security hardening, several bigfixes, and fixing CVE-2022-29162</li>
+<li>Supports RDMA cgroups</li>
+<li>Added support for seccomp, such as SCMP_ACT_KILL_PROCESS, SCMP_ACT_KILL_THREAD, and SCMP_ACT_NOTIFY</li>
+<li>Added the features subcommand, --keep, --lsm-mount-context, --cgroup, and other options, adding more features</li>
+</ul>
+<h2 id="base-library">Base library</h2>
+<h3 id="glibc-235">glibc 2.35</h3>
+<ul>
+<li>Reliability characteristics<ul>
+<li>The aarch64 architecture provides security hardening for branch protection including branch target identification (BTI) and pointer authentication for return addresses (PAC-RET)</li>
+<li>The memory allocation interface sets the upper limit through PTRDIFF_MAX to prevent potential overflow from mistakenly applying for too much memory. Improved reliability</li>
+<li>Added asynchronous signal security function fork family function _Fork to meet users' asynchronous signal security requirements</li>
+</ul>
+</li>
+<li>New function extension<ul>
+<li>
+<ol>
+<li>Unicode encodings are supported up to 14.0.0, with a wider range of encodings supported</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Provide new tunable environment variables for flexible use of functions and performance, specifically:</li>
+<li>glibc.pthread.stack_cache_size Sets the size of thread stack cache</li>
+<li>glibc.rtld.dynamic_sort Specifies the DSO sorting algorithm</li>
+<li>glibc.malloc.hugetlb works with large page configurations of the kernel to improve system performance</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="glib2-272">glib2 2.72</h3>
+<ul>
+<li>Added new apis: cross-platform API for aligning memory allocation, asynchronous file movement API, notification of memory pressure API</li>
+<li>Upgrade to Unicode character database v12.1</li>
+</ul>
+<h3 id="libcap-264">libcap 2.64</h3>
+<ul>
+<li>Import libpsx library to simulate POSIX system calls for all PThreads</li>
+<li>New kernel features: extended Berkeley Packet Filters (CAP_BPF)</li>
+<li>Support for Go module abstraction and support for specifying build go binaries</li>
+<li>Thread safety improvements to libcap and cap packages</li>
+</ul>
+<h3 id="openldap-262">openldap 2.6.2</h3>
+<ul>
+<li>Added slapo-autoca, slapo-otp, libldap, and slapd support for OpenSSL 3.0</li>
+</ul>
+<h3 id="decompress-the-base-library">Decompress the base library</h3>
+<ul>
+<li>lz4 1.9.3<ul>
+<li>The ARM64 upper decompression speed is increased by up to 20%</li>
+<li>BD4 Increases the decompression speed of compressed data by up to 70%</li>
+<li>lz4frame increases the decompression speed of compressed data by up to 40%</li>
+</ul>
+</li>
+<li>zstd 1.5.2<ul>
+<li>Faster compression and decompression speed, rebalancing the intermediate compression level</li>
+<li>Improved high-level compression</li>
+<li>More than twice the speed of long distance mode, small block decompression speed, faster directory compression</li>
+</ul>
+</li>
+<li>zlib 1.2.12<ul>
+<li>Speed up CRC-32 calculations using hardware CRC-32 instructions on ARMv8</li>
+</ul>
+</li>
+</ul>
+<h2 id="package-management">Package management</h2>
+<h3 id="software-package-management-and-update">Software package management and update</h3>
+<ul>
+<li>Added incremental update capability for rpm</li>
+<li>Added support for loongarch</li>
+<li>Richer control commands and parameters, and more detailed control</li>
+<li>Warehouse metadata reading is more efficient and stable</li>
+<li>Better support for Python3.10</li>
+</ul>
+<h2 id="graphics-library-and-language-font-support">Graphics library and language font support</h2>
+<h3 id="gtk3-32434">gtk3 3.24.34</h3>
+<ul>
+<li>Fonts provide more flexible Settings, such as setting OpenType fonts and allowing you to select OpenType font variants</li>
+<li>More emoji features, such as support for Emoji completion pop-up window, support for deleting shortcut keys, etc</li>
+<li>Allows color selection from the screen</li>
+<li>gtk-text-input and text-input-unstable-v3 are supported as input protocols</li>
+</ul>
+<h3 id="libjpeg-turbo-213">libjpeg-turbo 2.1.3</h3>
+<ul>
+<li>Optimize performance on cpus that support AVX2 instructions</li>
+<li>MIPS platform performance optimization</li>
+<li>Optimized ARM64 performance</li>
+<li>java binding supports only x64</li>
+</ul>
+<h3 id="libpng-1637">libpng 1.6.37</h3>
+<ul>
+<li>Optimized performance on ARM</li>
+</ul>
+<h3 id="freetype-2121">freetype 2.12.1</h3>
+<ul>
+<li>Contour glyphs that support color layering (e.g., extensible emoji glyphs)</li>
+<li>Supports the WOFF 2 font</li>
+</ul>
+<h3 id="harfbuzz-421">harfbuzz 4.2.1</h3>
+<ul>
+<li>Unicode 15 support</li>
+<li>Color fonts are supported</li>
+<li>Supports fonts with more than 65535 glyphs in the "GDEF", "GSUB", and "GPOS" tables, and fully supports more than 65535 glyfs in the "glyf" table starting from version 4.0.0</li>
+<li>Loads and subsets fonts faster, especially when working with CFF tables, subsets some fonts up to 3 times faster</li>
+</ul>
+<h2 id="documentation-support">Documentation support</h2>
+<h3 id="ctags-59">ctags 5.9</h3>
+<ul>
+<li>Brand new version of Universal Ctags, incompatible with Exuberant Ctags</li>
+<li>A series of extensions and upgrades on the parser</li>
+<li>Character parsing is stricter</li>
+</ul>
+<h3 id="expat-248">expat 2.4.8</h3>
+<ul>
+<li>Upgrade: Support more commands and software platforms</li>
+<li>Security: Upgrades the defense against network attacks to improve software security</li>
+</ul>
+<h3 id="hunspell-171">hunspell 1.7.1</h3>
+<ul>
+<li>Improves the suggestion performance</li>
+<li>Improved the Hunspell command line</li>
+<li>More support to incorporate Weblate translation functionality</li>
+</ul>
+<h3 id="man-db-2102">man-db 2.10.2</h3>
+<ul>
+<li>Significantly improve performance</li>
+<li>New man-recode program designed for fast batch conversion</li>
+<li>Support for more national languages</li>
+</ul>
+<h3 id="libcomps-0118">libcomps 0.1.18</h3>
+<ul>
+<li>Build with the new cmake macro</li>
+<li>Resolve memory leaks and resource leaks</li>
+</ul>
+<h3 id="texinfo-68">texinfo 6.8</h3>
+<ul>
+<li>Improved internal modules to improve parsing speed</li>
+<li>Supports directory compression</li>
+<li>New language features</li>
+</ul>
+<h3 id="json-c-016">json-c 0.16</h3>
+<ul>
+<li>Improve parsing speed</li>
+<li>Reduce memory usage</li>
+<li>Added several new functions adding support for unsigned 64-bit integer uint64_t</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

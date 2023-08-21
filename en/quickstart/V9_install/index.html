@@ -1,0 +1,2794 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../V8_install/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>OC V9 Download and Install - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OC V9 Download and Install
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../quickstart/V9_install/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OC V9 Download and Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        OC V9 Download and Install
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-methods" class="md-nav__link">
+    1 Install methods
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Install methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-gui-based-installation" class="md-nav__link">
+    1.1 GUI-based installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-installation-based-on-text-interface" class="md-nav__link">
+    2.2 Installation based on text interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-installation-preparation" class="md-nav__link">
+    3. Installation preparation
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Installation preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-supported-architectures" class="md-nav__link">
+    3.1 Supported Architectures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-system-requirements" class="md-nav__link">
+    3.2 System Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-verified-platforms" class="md-nav__link">
+    3.3 Verified Platforms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-get-the-installation-image" class="md-nav__link">
+    3.4 Get the installation image
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Get the installation image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-everything-iso" class="md-nav__link">
+    3.4.1 everything ISO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-netinst-iso" class="md-nav__link">
+    3.4.2 netinst ISO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-installation-guide" class="md-nav__link">
+    4. Installation guide
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Installation guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-boot-menu" class="md-nav__link">
+    4.1 Boot Menu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-installation-language-setting-interface" class="md-nav__link">
+    4.2 Installation language setting interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-graphical-mode-installation-main-interface" class="md-nav__link">
+    4.3 Graphical mode installation main interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-keyboard" class="md-nav__link">
+    4.4 Keyboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-language-support" class="md-nav__link">
+    4.5 Language support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-time-and-date" class="md-nav__link">
+    4.6 Time and date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-installation-sources" class="md-nav__link">
+    4.7 Installation sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-software-selection" class="md-nav__link">
+    4.8 Software Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-installation-destination" class="md-nav__link">
+    4.9 Installation Destination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#410-kdump" class="md-nav__link">
+    4.10 KDUMP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#411-network-and-hostname" class="md-nav__link">
+    4.11 Network and hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-root-account" class="md-nav__link">
+    4.12 Root account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-create-user" class="md-nav__link">
+    4.13 Create user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#414-installation-complete" class="md-nav__link">
+    4.14 Installation complete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#415-log-in" class="md-nav__link">
+    4.15 Log in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-related-information" class="md-nav__link">
+    5. Related Information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-methods" class="md-nav__link">
+    1 Install methods
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Install methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-gui-based-installation" class="md-nav__link">
+    1.1 GUI-based installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-installation-based-on-text-interface" class="md-nav__link">
+    2.2 Installation based on text interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-installation-preparation" class="md-nav__link">
+    3. Installation preparation
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Installation preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-supported-architectures" class="md-nav__link">
+    3.1 Supported Architectures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-system-requirements" class="md-nav__link">
+    3.2 System Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-verified-platforms" class="md-nav__link">
+    3.3 Verified Platforms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-get-the-installation-image" class="md-nav__link">
+    3.4 Get the installation image
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Get the installation image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-everything-iso" class="md-nav__link">
+    3.4.1 everything ISO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-netinst-iso" class="md-nav__link">
+    3.4.2 netinst ISO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-installation-guide" class="md-nav__link">
+    4. Installation guide
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Installation guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-boot-menu" class="md-nav__link">
+    4.1 Boot Menu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-installation-language-setting-interface" class="md-nav__link">
+    4.2 Installation language setting interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-graphical-mode-installation-main-interface" class="md-nav__link">
+    4.3 Graphical mode installation main interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-keyboard" class="md-nav__link">
+    4.4 Keyboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-language-support" class="md-nav__link">
+    4.5 Language support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-time-and-date" class="md-nav__link">
+    4.6 Time and date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-installation-sources" class="md-nav__link">
+    4.7 Installation sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-software-selection" class="md-nav__link">
+    4.8 Software Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-installation-destination" class="md-nav__link">
+    4.9 Installation Destination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#410-kdump" class="md-nav__link">
+    4.10 KDUMP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#411-network-and-hostname" class="md-nav__link">
+    4.11 Network and hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-root-account" class="md-nav__link">
+    4.12 Root account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-create-user" class="md-nav__link">
+    4.13 Create user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#414-installation-complete" class="md-nav__link">
+    4.14 Installation complete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#415-log-in" class="md-nav__link">
+    4.15 Log in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-related-information" class="md-nav__link">
+    5. Related Information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/quickstart/V9_install.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/quickstart/V9_install.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="overview">Overview</h1>
+<p>OpenCloudOS 9 is a next-generation server operating system distribution developed based on the upstream OpenCloudOS Stream community. Its kernel and user mode software are independently evolved, self-compiled, independently selected and maintained, and no longer depend on other distributions. Through the comprehensive optimization and polishing of the kernel and user-mode software, a more advanced and higher-performance basic environment and service capabilities are provided for users and businesses.</p>
+<h2 id="1-install-methods">1 Install methods</h2>
+<h3 id="11-gui-based-installation">1.1 GUI-based installation</h3>
+<p>The GUI-based installation has the following installation methods:</p>
+<ul>
+<li>Use the ISO image to perform local installation. This article mainly introduces the GUI-based ISO image installation.</li>
+<li>Perform remote installation using VNC</li>
+<li>Perform a network installation using PXE</li>
+</ul>
+<h3 id="22-installation-based-on-text-interface">2.2 Installation based on text interface</h3>
+<p>The GUI-based installation has the following installation methods:</p>
+<ul>
+<li>Perform a local installation using an ISO image</li>
+<li>Perform a network installation using PXE</li>
+</ul>
+<h2 id="3-installation-preparation">3. Installation preparation</h2>
+<h3 id="31-supported-architectures">3.1 Supported Architectures</h3>
+<p>OpenClousOS 9 supports the following architectures:</p>
+<ul>
+<li>AMD, Intel, and ARM 64-bit architectures</li>
+</ul>
+<h3 id="32-system-requirements">3.2 System Requirements</h3>
+<p>Before installing the OpenCloudOS 9 server operating system, your server needs to meet the following requirements:</p>
+<ul>
+<li>The server is connected to a stable power supply</li>
+<li>Make sure the server has at least <strong>50GB of hard disk space and 4GB of memory space</strong></li>
+<li><strong>Please back up your hard disk data before installation to prevent data loss</strong></li>
+<li>Version compilation supports cpu v2 microarchitecture instructions, so it needs to be deployed on physical machines and virtual machines that support microarchitecture v2 and above</li>
+<li>When deploying with docker, the version needs to be &gt; 20.10.9. If it is less than or equal to the above version, there will be problems involving clone system calls such as dnf install cannot be resolved</li>
+</ul>
+<h3 id="33-verified-platforms">3.3 Verified Platforms</h3>
+<p>The verified physical machine platforms are as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Physical machine platform</td>
+<td style="text-align: left;">architecture</td>
+<td style="text-align: left;">Specification</td>
+</tr>
+<tr>
+<td style="text-align: left;">Intel server</td>
+<td style="text-align: left;">x86_64</td>
+<td style="text-align: left;">x86 96 cores Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz<br>memory 256G, HDD 500G, SSD 3.6T, dual network card</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hygon server</td>
+<td style="text-align: left;">x86_64</td>
+<td style="text-align: left;">x86 128 cores Hygon 7380CPU@ 2.20GHz<br>memory 512G, HDD 500G, SSD 3.6T, dual network card</td>
+</tr>
+<tr>
+<td style="text-align: left;">TaiShan server</td>
+<td style="text-align: left;">aarch64</td>
+<td style="text-align: left;">aarch64 Kunpeng-920 128cores 2.6GHz<br>memory512G, HDD 500G, SSD 3.6T, dual 25G network card</td>
+</tr>
+</tbody>
+</table>
+<p>Validated virtual machine platforms are as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">virtualization platform</td>
+<td style="text-align: left;">HostOS</td>
+<td style="text-align: left;">Host architecture</td>
+<td style="text-align: left;">Host chip</td>
+<td style="text-align: left;">firmware</td>
+</tr>
+<tr>
+<td style="text-align: left;">qemu</td>
+<td style="text-align: left;">MacOS</td>
+<td style="text-align: left;">aarch64</td>
+<td style="text-align: left;">Apple M1</td>
+<td style="text-align: left;">UEFI</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parallels</td>
+<td style="text-align: left;">MacOS</td>
+<td style="text-align: left;">aarch64</td>
+<td style="text-align: left;">Apple M1</td>
+<td style="text-align: left;">UEFI</td>
+</tr>
+<tr>
+<td style="text-align: left;">qemu</td>
+<td style="text-align: left;">TencentOS Server</td>
+<td style="text-align: left;">aarch64</td>
+<td style="text-align: left;">Kunpeng-920</td>
+<td style="text-align: left;">UEFI</td>
+</tr>
+<tr>
+<td style="text-align: left;">vmware</td>
+<td style="text-align: left;">Windows</td>
+<td style="text-align: left;">x86_64</td>
+<td style="text-align: left;">Intel</td>
+<td style="text-align: left;">UEFI/BIOS</td>
+</tr>
+<tr>
+<td style="text-align: left;">virtualbox</td>
+<td style="text-align: left;">Windows</td>
+<td style="text-align: left;">x86_64</td>
+<td style="text-align: left;">Intel</td>
+<td style="text-align: left;">UEFI/BIOS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hyper V</td>
+<td style="text-align: left;">Windows</td>
+<td style="text-align: left;">x86_64</td>
+<td style="text-align: left;">Intel</td>
+<td style="text-align: left;">UEFI/BIOS</td>
+</tr>
+<tr>
+<td style="text-align: left;">qemu</td>
+<td style="text-align: left;">TencentOS Server</td>
+<td style="text-align: left;">x86_64</td>
+<td style="text-align: left;">Intel</td>
+<td style="text-align: left;">UEFI/BIOS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-get-the-installation-image">3.4 Get the installation image</h3>
+<h4 id="341-everything-iso">3.4.1 everything ISO</h4>
+<p>The everything ISO image file contains all software packages, which are divided into two software warehouses, BaseOS and AppStream, and can be installed directly without configuring additional software sources.</p>
+<ul>
+<li><a href="https://mirrors.opencloudos.org/opencloudos/9.0/isos/x86_64/OpenCloudOS-9.0-x86_64-everything.iso">OpenCloudOS-9.0-x86_64-everything.iso </a></li>
+<li><a href="https://mirrors.opencloudos.org/opencloudos/9.0/isos/aarch64/OpenCloudOS-9.0-aarch64-everything.iso">OpenCloudOS-9.0-aarch64-everything.iso</a></li>
+</ul>
+<h4 id="342-netinst-iso">3.4.2 netinst ISO</h4>
+<p>The netinst ISO image file does not contain any software packages. You need to configure the network installation source on the installation source setting interface, and then install it. For the configuration method, please refer to the installation guide &gt; software source section.</p>
+<ul>
+<li><a href="https://mirrors.opencloudos.org/opencloudos/9.0/isos/x86_64/OpenCloudOS-9.0-x86_64-netinst.iso">OpenCloudOS-9.0-x86_64-netinst.iso</a></li>
+<li><a href="https://mirrors.opencloudos.org/opencloudos/9.0/isos/aarch64/OpenCloudOS-9.0-aarch64-netinst.iso">OpenCloudOS-9.0-aarch64-netinst.iso</a></li>
+</ul>
+<h2 id="4-installation-guide">4. Installation guide</h2>
+<h3 id="41-boot-menu">4.1 Boot Menu</h3>
+<p>After the system has finished booting from the boot media, the OpenCloudOS 9 boot menu is displayed using GRUB2, as shown in the following figure:
+<img alt="OC_V9-install-guide" src="../../assets/OC_V9-install-guide.png" /></p>
+<p>Use the up and down arrow keys on the keyboard to select different boot items, and press the "Enter" key to enter the corresponding boot item after selection. If there is no operation within 60s, it will enter the highlighted boot item by default. Press the "e" key to modify the selected boot item. After the modification is completed, press Ctrl+X to make the modification effective and continue to start. Press the "c" key to enter the grub command line. The boot menu options are described below:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Boot Menu Options</td>
+<td style="text-align: left;">description</td>
+</tr>
+<tr>
+<td style="text-align: left;">Install OpenCloudOS 9</td>
+<td style="text-align: left;">Start GUI installation OpenCloudOS 9.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Test this media &amp; install OpenCloudOS 9</td>
+<td style="text-align: left;">The default option, checks the integrity of the installation media and starts the GUI to install OpenCloudOS 9.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Troubleshooting</td>
+<td style="text-align: left;">Problem location options.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Troubleshooting --&gt; Rescue a OpenCloudOS 9</td>
+<td style="text-align: left;">Rescue mode, in which problem location and repair can be performed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-installation-language-setting-interface">4.2 Installation language setting interface</h3>
+<p>Keep the default boot option in the boot menu to enter Install OpenCloudOS 9 or Test this media &amp; install OpenCloudOS 9. After a while, the system will enter the graphical installation interface. The first display is the installation language setting interface, which sets the language used during the installation process, and the default is Simplified Chinese.
+<img alt="OC_V9-language-setting" src="../../assets/OC_V9-language-setting.png" /></p>
+<p>After the setting is complete, click the "Continue" button to enter the main interface of the installation. If you want to exit the installation, click the "Exit" button, the system will reboot and reboot into the boot menu.</p>
+<h3 id="43-graphical-mode-installation-main-interface">4.3 Graphical mode installation main interface</h3>
+<p>The main interface of the installation is shown in the figure below:
+<img alt="OC_V9-main-interface" src="../../assets/OC_V9-main-interface.png" /></p>
+<p>In the main installation interface, users can set keyboard, language, time and date, installation source, software selection, installation disk, KDUMP, network and user settings. There is a warning symbol in the lower right corner of the icon, indicating that the option has not been set or is set incorrectly. After all the warning symbols on the installation main interface are eliminated, the start installation button in the lower right corner can be clicked. If you want to exit the installation, click the "Exit" button, the system will reboot and reboot into the boot menu. </p>
+<p>Next, each installation setting item will be described.</p>
+<h3 id="44-keyboard">4.4 Keyboard</h3>
+<p>Click "Keyboard" on the main installation interface to enter the keyboard layout interface, as shown in the figure below: 
+<img alt="OC_V9-keyboard" src="../../assets/OC_V9-keyboard.png" />
+- View keyboard layout: Click the keyboard icon below the left box to view the current keyboard layout.
+- Add a keyboard layout: Click the plus icon below the box on the left. 
+- Delete keyboard layout: Select the keyboard layout to be deleted, click the minus icon below the left selection box, if there is only one keyboard layout, you need to re-select a keyboard layout to replace the current keyboard layout. 
+- Test keyboard layout: If there are multiple keyboard layouts, click the keyboard icon in the upper right corner to switch, and enter the input test in the text library on the right.</p>
+<p>After the setting is complete, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="45-language-support">4.5 Language support</h3>
+<p>Click "Language Support" on the main installation interface to enter the language support interface, as shown in the figure below: 
+<img alt="OC_V9-language-support" src="../../assets/OC_V9-language-support.png" />
+Select the language to be supported in the check box on the right. After the setting is complete, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="46-time-and-date">4.6 Time and date</h3>
+<p>Click "Time and Date" on the main installation interface to enter the time and date setting interface, as shown in the figure below:
+<img alt="OC_V9-timezone.png" src="../../assets/OC_V9-timezone.png" /></p>
+<p>Set time zone: You can set it through the drop-down box of region and city in the upper left corner, or click the map setting. Note: If you need to manually set the date and time, you need to turn off the network time in the upper right corner. After the setting is complete, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="47-installation-sources">4.7 Installation sources</h3>
+<p>Click "Installation Source" on the main installation interface to enter the installation source setting interface, as shown in the following figure:
+<img alt="OC_V9-install-repo" src="../../assets/OC_V9-install-repo.png" /></p>
+<ul>
+<li>Automatically detected installation media: When everything.iso is used for installation, the installation program will automatically detect the installation media, just keep the default.</li>
+<li>ISO file: You can click the "Select ISO button" on the right to select the ISO file where the installation source exists.</li>
+<li>On the Internet: <ul>
+<li>http/https method: enter the URL of the network installation source in the text box on the right</li>
+<li>ftp method: enter the ftp address of the network installation source in the text box on the right</li>
+<li>nfs mode: enter the nfs address of the network installation source in the text box on the right</li>
+</ul>
+</li>
+<li>Additional software warehouse: There are three ways to set up an additional software warehouse: http/https, ftp, and nfs, and the setting method is the same as above. 
+After the setting is complete, click the "Finish" button to return to the main interface of the installation.</li>
+</ul>
+<h3 id="48-software-selection">4.8 Software Selection</h3>
+<p>If the software source is set correctly, click "Software Selection" on the main installation interface to enter the software selection setting interface. The following figure shows the default configuration of everything.iso:
+<img alt="OC_V9-software-select" src="../../assets/OC_V9-software-select.png" /></p>
+<p>Currently, OC9 has two basic installation environments of server and minimal installation by default, and different numbers of software packages are installed by default in each installation environment. After the basic environment is selected, the optional software groups in the current software environment are displayed on the right. Users can choose to install according to their needs. After the setting is complete, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="49-installation-destination">4.9 Installation Destination</h3>
+<p>Click "Installation Destination" on the main installation interface to enter the installation destination setting interface, as shown in the figure below: 
+<img alt="OC_V9-destination" src="../../assets/OC_V9-destination.png" />
+- Local standard disk: select the disk to be installed with the operating system
+- Edicated disk &amp; network disk: add a dedicated disk and network disk 
+- Storage Configuration: 
+The default is automatic, the installer automatically partitions. If you do not check Free up space by deleting or compressing existing partitions, it will be installed to the remaining space of the selected disk by default. When there is insufficient space, a dialog box will prompt the user to reclaim space. You can also free up space by checking the box to delete or compress existing partitions, and actively reclaim space. If you select Custom, click the Finish button to enter the manual partition interface, as shown in the figure below:
+<img alt="OC_V9-manual-partition" src="../../assets/OC_V9-manual-partition.png" />
+Automatic creation: If there is enough space, the system will automatically create partitions according to the available storage space. 
+Manual creation: Click the "+" button to create a new mount point, and set it according to the prompts. After the creation is complete, select the partition, and on the right side you can set the mount point, expected capacity, device type, file system, etc. of the partition, as shown in the figure below: 
+<img alt="OC_V9-partition-setting" src="../../assets/OC_V9-partition-setting.png" />
+After the settings are complete, click the "Finish" button and accept the changes to return to the main installation interface.</p>
+<h3 id="410-kdump">4.10 KDUMP</h3>
+<p>Click "KDUMP" on the main installation interface to enter the KDUMP setting interface, as shown in the following figure: 
+<img alt="OC_V9-kdump-setting" src="../../assets/OC_V9-kdump-setting.png" />
+- Enable kdump: checked by default, enable kdump after checking, disable kdump if unchecked
+- Memory reserved for Kdump: required to enable kdump Reserve memory. If Auto is selected, it is configured according to the memory size; If Manual is selected, the reserved memory value needs to be manually set.</p>
+<p>After the setting is complete, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="411-network-and-hostname">4.11 Network and hostname</h3>
+<p>Click "Network and Host Name" on the main installation interface to enter the network and host name setting interface, as shown in the figure below: 
+<img alt="OC_V9-network-and-host" src="../../assets/OC_V9-network-and-host.png" />
+Set host name: Enter the host name to be set in the host name text box, and click the "Apply" button to take effect. </p>
+<p>Configure the network: Select the network port in the box on the left, click the "Configure" button to configure the network, the configuration interface is as follows: 
+<img alt="OC_V9-network-setting" src="../../assets/OC_V9-network-setting.png" />
+After the settings are completed, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="412-root-account">4.12 Root account</h3>
+<p>Click "Root Account" on the main installation interface to enter the Root account setting interface, as shown in the figure below, the installation program disables the root account by default:
+<img alt="OC_V9-root-setting" src="../../assets/OC_V9-root-setting.png" /></p>
+<p>After choosing to enable the root account, you need to set the root account password. At the same time, you can set whether to allow the root user to use the password for SSH login.
+<img alt="OC_V9-root-setting2" src="../../assets/OC_V9-root-setting2.png" /></p>
+<p>After the setting is complete, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="413-create-user">4.13 Create user</h3>
+<p>Click "Create User" on the main interface of the installation to enter the interface for creating a user, as shown in the following figure:
+<img alt="OC_V9-create-new-user" src="../../assets/OC_V9-create-new-user.png" /></p>
+<p>Users can set user name and user password. If the root account is disabled, a regular user must be created. </p>
+<p>After the setting is complete, click the "Finish" button to return to the main interface of the installation.</p>
+<h3 id="414-installation-complete">4.14 Installation complete</h3>
+<p>After all the necessary project settings are completed, you can click the "Start Installation" button in the lower right corner, click to start the installation, enter the installation progress interface, and wait for the installation to complete.
+<img alt="OC_V9-complete-install" src="../../assets/OC_V9-complete-install.png" /></p>
+<p>After the installation is complete, the "Restart System" button in the lower right corner can be clicked. After clicking, the system will restart and enter the installed system.
+<img alt="OC_V9-complete-install2" src="../../assets/OC_V9-complete-install2.png" /></p>
+<h3 id="415-log-in">4.15 Log in</h3>
+<p>After restarting, start normally, and you can see the OpenCloudOS boot interface appearing in the system directory.
+<img alt="OC_V9-login" src="../../assets/OC_V9-login.png" /></p>
+<p>After completing the system installation, enter the login interface.
+<img alt="OC_V9-login2" src="../../assets/OC_V9-login2.png" /></p>
+<h2 id="5-related-information">5. Related Information</h2>
+<ul>
+<li>
+<p>The qcow2 mirror creates a root user and an ordinary user by default, and its username/password is as follows:</p>
+<ul>
+<li>root/Dis@init3</li>
+<li>opencloudos/opencloudos</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4528 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../monitor/">
+      
+      
+        <link rel="next" href="../../storage/file_system/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Security - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opencloudos-system-security-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../guide/security/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Security
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview-of-system-security-reinforcement" class="md-nav__link">
+    1 Overview of System Security Reinforcement
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Overview of System Security Reinforcement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-what-is-computer-system-security" class="md-nav__link">
+    1.1 What is Computer System Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-security-control" class="md-nav__link">
+    1.2 Security Control
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Security Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-physical-security" class="md-nav__link">
+    1.2.1 Physical Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-logical-security" class="md-nav__link">
+    1.2.2 Logical Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-operational-system-security" class="md-nav__link">
+    1.2.3 Operational System Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-safety-assessment" class="md-nav__link">
+    1.3 Safety Assessment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-encryption-policy" class="md-nav__link">
+    2 System Encryption Policy
+  </a>
+  
+    <nav class="md-nav" aria-label="2 System Encryption Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-system-wide-encryption-policy" class="md-nav__link">
+    2.1 System-Wide Encryption Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-exclude-some-applications-in-the-system-encryption-policy" class="md-nav__link">
+    2.2 Exclude some applications in the system encryption policy
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Exclude some applications in the system encryption policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-example-of-opting-out-of-a-system-wide-encryption-policy" class="md-nav__link">
+    2.2.1 Example of opting out of a system-wide encryption policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-custom-sub-encryption-strategy" class="md-nav__link">
+    2.3 Custom sub-encryption strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-customize-system-encryption-policy" class="md-nav__link">
+    2.4 Customize system encryption policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-shared-system-authentication" class="md-nav__link">
+    3 Shared System Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Shared System Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-certificate-storage" class="md-nav__link">
+    3.1 Certificate storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-add-a-new-certificate" class="md-nav__link">
+    3.2 Add a new certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-manage-trusted-certificates" class="md-nav__link">
+    3.3 Manage Trusted Certificates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vulnerability-and-configuration-compliance-scanning" class="md-nav__link">
+    4 Vulnerability and Configuration Compliance Scanning
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Vulnerability and Configuration Compliance Scanning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-configuration-compliance-tool" class="md-nav__link">
+    4.1 Configuration Compliance Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-vulnerability-scanning" class="md-nav__link">
+    4.2 Vulnerability scanning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integrity-check" class="md-nav__link">
+    5 Integrity Check
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Integrity Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-install-aide" class="md-nav__link">
+    5.1 Install AIDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-integrity-check-using-aide" class="md-nav__link">
+    5.2 Integrity check using AIDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-update-the-aide-database" class="md-nav__link">
+    5.3 Update the AIDE database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-block-device-encryption" class="md-nav__link">
+    6 Block Device Encryption
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Block Device Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-luks" class="md-nav__link">
+    6.1 LUKS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-encrypt-existing-data-on-block-devices-using-luks" class="md-nav__link">
+    6.2 Encrypt existing data on block devices using LUKS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-encrypt-existing-data-using-luks2-with-detached-headers" class="md-nav__link">
+    6.3 Encrypt existing data using LUKS2 with detached headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-luks2-encrypted-blank-block-devices" class="md-nav__link">
+    6.4 LUKS2 Encrypted Blank Block Devices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-audit-system" class="md-nav__link">
+    7 Audit System
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Audit System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-audit-system-architecture" class="md-nav__link">
+    7.1 Audit system architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-description-of-auditd-configuration-parameters" class="md-nav__link">
+    7.2 Description of auditd configuration parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-starting-and-configuring-auditd" class="md-nav__link">
+    7.3 Starting and configuring auditd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-view-audit-log-files" class="md-nav__link">
+    7.4 View audit log files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-define-and-enforce-audit-rules" class="md-nav__link">
+    7.5 Define and enforce audit rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-define-and-enforce-audit-rules" class="md-nav__link">
+    7.6 Define and enforce audit rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-using-preconfigured-rules-files" class="md-nav__link">
+    7.7 Using preconfigured rules files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78-using-augenrules-to-define-persistence-rules" class="md-nav__link">
+    7.8 Using augenrules to define persistence rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79-disable-augenrules" class="md-nav__link">
+    7.9 Disable augenrules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#710-set-audit-policies-to-monitor-software-updates" class="md-nav__link">
+    7.10 Set audit policies to monitor software updates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#711-use-the-audit-system-to-monitor-user-login-time" class="md-nav__link">
+    7.11 Use the audit system to monitor user login time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-usbguard-defends-against-attacks-from-usb-devices" class="md-nav__link">
+    8 USBGuard defends against attacks from USB devices
+  </a>
+  
+    <nav class="md-nav" aria-label="8 USBGuard defends against attacks from USB devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-what-is-usbguard" class="md-nav__link">
+    8.1 What is USBGuard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-install-usbguard" class="md-nav__link">
+    8.2 Install USBGuard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-block-and-authorize-usb-devices" class="md-nav__link">
+    8.3  Block and authorize USB devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-create-custom-policies" class="md-nav__link">
+    8.4 Create custom policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-authorize-users-and-groups-to-use-the-usbguard-ipc-interface" class="md-nav__link">
+    8.5 Authorize users and groups to use the USBGuard IPC interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-log-usbguard-authorization-events-to-the-linux-audit-log" class="md-nav__link">
+    8.6 Log USBguard Authorization Events to the Linux Audit Log
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-selinux-configuration" class="md-nav__link">
+    9 SELINUX Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="9 SELINUX Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-what-is-selinux" class="md-nav__link">
+    9.1 What is SELINUX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-selinux-state-and-mode-changes" class="md-nav__link">
+    9.2 SELINUX state and mode changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-manage-restricted-and-unrestricted-users" class="md-nav__link">
+    9.3 Manage restricted and unrestricted users
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 Manage restricted and unrestricted users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-manage-restricted-and-unrestricted-users" class="md-nav__link">
+    9.3.1 Manage restricted and unrestricted users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-adding-a-new-user-is-automatically-mapped-to-the-selinux-unconfined_u-user" class="md-nav__link">
+    9.3.2 Adding a new user is automatically mapped to the SELinux unconfined_u user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-add-a-new-user-as-a-selinux-restricted-user" class="md-nav__link">
+    9.3.3 Add a new user as a SELinux-restricted user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#934-restrict-regular-users" class="md-nav__link">
+    9.3.4 Restrict regular users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#935-restrict-administrators-by-mapping-to-sysadm_u" class="md-nav__link">
+    9.3.5 Restrict administrators by mapping to sysadm_u
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-troubleshooting-selinux-related-issues" class="md-nav__link">
+    9.4 Troubleshooting SELinux related issues
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 Troubleshooting SELinux related issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#941-recognizing-selinux-denials" class="md-nav__link">
+    9.4.1 Recognizing SELinux denials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#942-analyzing-selinux-denial-messages" class="md-nav__link">
+    9.4.2 Analyzing SELinux Denial Messages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-writing-custom-selinux-policies" class="md-nav__link">
+    9.5 Writing Custom SELinux Policies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview-of-system-security-reinforcement" class="md-nav__link">
+    1 Overview of System Security Reinforcement
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Overview of System Security Reinforcement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-what-is-computer-system-security" class="md-nav__link">
+    1.1 What is Computer System Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-security-control" class="md-nav__link">
+    1.2 Security Control
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Security Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-physical-security" class="md-nav__link">
+    1.2.1 Physical Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-logical-security" class="md-nav__link">
+    1.2.2 Logical Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-operational-system-security" class="md-nav__link">
+    1.2.3 Operational System Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-safety-assessment" class="md-nav__link">
+    1.3 Safety Assessment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-encryption-policy" class="md-nav__link">
+    2 System Encryption Policy
+  </a>
+  
+    <nav class="md-nav" aria-label="2 System Encryption Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-system-wide-encryption-policy" class="md-nav__link">
+    2.1 System-Wide Encryption Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-exclude-some-applications-in-the-system-encryption-policy" class="md-nav__link">
+    2.2 Exclude some applications in the system encryption policy
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Exclude some applications in the system encryption policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-example-of-opting-out-of-a-system-wide-encryption-policy" class="md-nav__link">
+    2.2.1 Example of opting out of a system-wide encryption policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-custom-sub-encryption-strategy" class="md-nav__link">
+    2.3 Custom sub-encryption strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-customize-system-encryption-policy" class="md-nav__link">
+    2.4 Customize system encryption policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-shared-system-authentication" class="md-nav__link">
+    3 Shared System Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Shared System Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-certificate-storage" class="md-nav__link">
+    3.1 Certificate storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-add-a-new-certificate" class="md-nav__link">
+    3.2 Add a new certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-manage-trusted-certificates" class="md-nav__link">
+    3.3 Manage Trusted Certificates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vulnerability-and-configuration-compliance-scanning" class="md-nav__link">
+    4 Vulnerability and Configuration Compliance Scanning
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Vulnerability and Configuration Compliance Scanning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-configuration-compliance-tool" class="md-nav__link">
+    4.1 Configuration Compliance Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-vulnerability-scanning" class="md-nav__link">
+    4.2 Vulnerability scanning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integrity-check" class="md-nav__link">
+    5 Integrity Check
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Integrity Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-install-aide" class="md-nav__link">
+    5.1 Install AIDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-integrity-check-using-aide" class="md-nav__link">
+    5.2 Integrity check using AIDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-update-the-aide-database" class="md-nav__link">
+    5.3 Update the AIDE database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-block-device-encryption" class="md-nav__link">
+    6 Block Device Encryption
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Block Device Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-luks" class="md-nav__link">
+    6.1 LUKS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-encrypt-existing-data-on-block-devices-using-luks" class="md-nav__link">
+    6.2 Encrypt existing data on block devices using LUKS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-encrypt-existing-data-using-luks2-with-detached-headers" class="md-nav__link">
+    6.3 Encrypt existing data using LUKS2 with detached headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-luks2-encrypted-blank-block-devices" class="md-nav__link">
+    6.4 LUKS2 Encrypted Blank Block Devices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-audit-system" class="md-nav__link">
+    7 Audit System
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Audit System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-audit-system-architecture" class="md-nav__link">
+    7.1 Audit system architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-description-of-auditd-configuration-parameters" class="md-nav__link">
+    7.2 Description of auditd configuration parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-starting-and-configuring-auditd" class="md-nav__link">
+    7.3 Starting and configuring auditd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-view-audit-log-files" class="md-nav__link">
+    7.4 View audit log files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-define-and-enforce-audit-rules" class="md-nav__link">
+    7.5 Define and enforce audit rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-define-and-enforce-audit-rules" class="md-nav__link">
+    7.6 Define and enforce audit rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-using-preconfigured-rules-files" class="md-nav__link">
+    7.7 Using preconfigured rules files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78-using-augenrules-to-define-persistence-rules" class="md-nav__link">
+    7.8 Using augenrules to define persistence rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79-disable-augenrules" class="md-nav__link">
+    7.9 Disable augenrules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#710-set-audit-policies-to-monitor-software-updates" class="md-nav__link">
+    7.10 Set audit policies to monitor software updates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#711-use-the-audit-system-to-monitor-user-login-time" class="md-nav__link">
+    7.11 Use the audit system to monitor user login time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-usbguard-defends-against-attacks-from-usb-devices" class="md-nav__link">
+    8 USBGuard defends against attacks from USB devices
+  </a>
+  
+    <nav class="md-nav" aria-label="8 USBGuard defends against attacks from USB devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-what-is-usbguard" class="md-nav__link">
+    8.1 What is USBGuard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-install-usbguard" class="md-nav__link">
+    8.2 Install USBGuard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-block-and-authorize-usb-devices" class="md-nav__link">
+    8.3  Block and authorize USB devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-create-custom-policies" class="md-nav__link">
+    8.4 Create custom policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-authorize-users-and-groups-to-use-the-usbguard-ipc-interface" class="md-nav__link">
+    8.5 Authorize users and groups to use the USBGuard IPC interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-log-usbguard-authorization-events-to-the-linux-audit-log" class="md-nav__link">
+    8.6 Log USBguard Authorization Events to the Linux Audit Log
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-selinux-configuration" class="md-nav__link">
+    9 SELINUX Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="9 SELINUX Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-what-is-selinux" class="md-nav__link">
+    9.1 What is SELINUX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-selinux-state-and-mode-changes" class="md-nav__link">
+    9.2 SELINUX state and mode changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-manage-restricted-and-unrestricted-users" class="md-nav__link">
+    9.3 Manage restricted and unrestricted users
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 Manage restricted and unrestricted users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-manage-restricted-and-unrestricted-users" class="md-nav__link">
+    9.3.1 Manage restricted and unrestricted users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-adding-a-new-user-is-automatically-mapped-to-the-selinux-unconfined_u-user" class="md-nav__link">
+    9.3.2 Adding a new user is automatically mapped to the SELinux unconfined_u user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-add-a-new-user-as-a-selinux-restricted-user" class="md-nav__link">
+    9.3.3 Add a new user as a SELinux-restricted user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#934-restrict-regular-users" class="md-nav__link">
+    9.3.4 Restrict regular users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#935-restrict-administrators-by-mapping-to-sysadm_u" class="md-nav__link">
+    9.3.5 Restrict administrators by mapping to sysadm_u
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-troubleshooting-selinux-related-issues" class="md-nav__link">
+    9.4 Troubleshooting SELinux related issues
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 Troubleshooting SELinux related issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#941-recognizing-selinux-denials" class="md-nav__link">
+    9.4.1 Recognizing SELinux denials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#942-analyzing-selinux-denial-messages" class="md-nav__link">
+    9.4.2 Analyzing SELinux Denial Messages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-writing-custom-selinux-policies" class="md-nav__link">
+    9.5 Writing Custom SELinux Policies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/guide/security.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/guide/security.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="opencloudos-system-security-configuration"><center> OpenCloudOS-System security configuration</h1>
+<h2 id="1-overview-of-system-security-reinforcement">1 Overview of System Security Reinforcement</h2>
+<h3 id="11-what-is-computer-system-security">1.1 What is Computer System Security</h3>
+<p>Computer security is a general term covering a broad field of computing and information processing. Industries that rely on computer systems and networks to conduct day-to-day business transactions and access critical information view their data as an essential part of their overall assets. Some terms and metrics have entered our everyday business vocabulary, such as total cost of ownership (TCO), return on investment (ROI) and quality of service (QoS). Using these metrics, industries can calculate aspects such as data integrity and high availability (HA) as part of their planning and process management costs. In some industries, such as e-commerce, the availability and trustworthiness of data can mean the difference between success and failure.</p>
+<h3 id="12-security-control">1.2 Security Control</h3>
+<p>Computer security is generally divided into three distinct main categories:
+- Physical Security</p>
+<ul>
+<li>
+<p>Logical Security</p>
+</li>
+<li>
+<p>Operational System Security</p>
+</li>
+</ul>
+<h4 id="121-physical-security">1.2.1 Physical Security</h4>
+<p>Physical security is the implementation of security measures within a defined structure to prevent or prevent unauthorized access to sensitive material. There are some examples of physical security:
+- CCTV camera</p>
+<ul>
+<li>
+<p>Biometrics (including fingerprint, voice, face, iris, handwriting and other automated methods used to identify individuals)</p>
+</li>
+<li>
+<p>alarm system</p>
+</li>
+</ul>
+<h4 id="122-logical-security">1.2.2 Logical Security</h4>
+<p>Technical security uses technology as a foundation to control access to and use of sensitive data across physical structures and networks. The technical controls are far-reaching and include the following technologies:</p>
+<ul>
+<li>
+<p>Encryption</p>
+</li>
+<li>
+<p>Key Authentication</p>
+</li>
+<li>
+<p>Access Control List</p>
+</li>
+<li>
+<p>File Integrity Audit</p>
+</li>
+</ul>
+<h4 id="123-operational-system-security">1.2.3 Operational System Security</h4>
+<p>Operational safety defines the human safety factor. They involve people at all levels of the organization and determine which users can access which resources and information by:</p>
+<ul>
+<li>
+<p>Safety Training</p>
+</li>
+<li>
+<p>Disaster Preparedness and Recovery</p>
+</li>
+</ul>
+<h3 id="13-safety-assessment">1.3 Safety Assessment</h3>
+<p>Given enough time, resources, and motivation, hackers can break into almost any system. All security programs and technologies currently available cannot guarantee that any system will be completely invulnerable. Routers help secure the gateway to the Internet. Firewalls help protect the edge of your network. Virtual private networks deliver data securely in encrypted streams. Intrusion detection systems warn of malicious activity. However, the success of each technique depends on a number of variables, including:</p>
+<ul>
+<li>
+<p>Expertise of the staff responsible for configuring, monitoring and maintaining the technology</p>
+</li>
+<li>
+<p>Ability to patch and update services and kernel quickly and efficiently</p>
+</li>
+<li>
+<p>Administrators' ability to maintain constant vigilance on the network</p>
+</li>
+</ul>
+<h2 id="2-system-encryption-policy">2 System Encryption Policy</h2>
+<p>System-wide encryption policies are system components that configure the encryption subsystem, covering TLS, IPSec, SSH, DNSec, and Kerberos protocols. This component provides a part of integrated encryption policies, which administrators can choose.</p>
+<h3 id="21-system-wide-encryption-policy">2.1 System-Wide Encryption Policy</h3>
+<p>When a system-wide policy is set, applications in opencloudos follow the security policy and refuse to use algorithms and protocols that do not comply with the policy, this policy applies to the default behavior of the application when running with the configuration provided by the system, but if required, can be overwritten.</p>
+<p>To view or change the current system-wide encryption policy, use the encryption policy tool, for example: </p>
+<p>View Current System Encryption Policy
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# update-crypto-policies --show
+LEGACY
+</code></pre></div>
+Set system encryption policy to FUTURE</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# update-crypto-policies --set FUTURE
+Setting system policy to FUTURE
+Note: System-wide crypto policies are applied on application start-up.
+It is recommended to restart the system for the change of policies
+to fully take place.
+</code></pre></div>
+*To ensure that encryption policy changes are applied, please reboot the system. </p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#reboot
+</code></pre></div>
+<h3 id="22-exclude-some-applications-in-the-system-encryption-policy">2.2 Exclude some applications in the system encryption policy</h3>
+<p>Users can customize the encryption settings used by the application, preferably by configuring supported cipher suites and protocols directly in the application, in addition to removing application-related ones from the <code>/etc/crypto-policies/back-ends</code> directory symlink and replace it with custom encryption settings.</p>
+<h4 id="221-example-of-opting-out-of-a-system-wide-encryption-policy">2.2.1 Example of opting out of a system-wide encryption policy</h4>
+<ul>
+<li>wget</li>
+</ul>
+<p>To customize the encryption settings used by the wget web downloader, use the <code>--secure-protocol</code> and <code>--ciphers</code> options. For example:
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#wget --secure-protocol=TLSv1_1 --ciphers=&quot;SECURE128&quot; https://example.com
+</code></pre></div></p>
+<ul>
+<li>crul </li>
+</ul>
+<p>To specify the ciphers used by the curl tool, use the <code>--ciphers</code> option and provide a colon-separated list of ciphers as values. For example:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#curl https://example.com --ciphers &#39;@SECLEVEL=0:DES-CBC3-SHA:RSA-DES-CBC3-SHA&#39;
+</code></pre></div>
+For more information, please refer to: </p>
+<ul>
+<li>update-crypto-policies(8) man page</li>
+</ul>
+<h3 id="23-custom-sub-encryption-strategy">2.3 Custom sub-encryption strategy</h3>
+<p>Users can apply custom sub-policies on top of existing system-wide encryption policies, or define such policies from scratch. The /etc/crypto-policies/state/CURRENT.pol file lists all the settings in the currently applied system-wide encryption policy. To make the encryption policy stricter, consider using the values ​​listed in the <code>/usr/share/crypto-policies/policies/FUTURE.pol</code> file. The configuration process is as follows</p>
+<p>1.Check <code>/etc/crypto-policies/policies/modules/</code> directory</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#cd /etc/crypto-policies/policies/modules/
+</code></pre></div>
+<p>2.Create a sub-policy file</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# touch MYCRYPTO-1.pmod
+[root@opencloudos ~]# touch SCOPES-AND-WILDCARDS.pmod
+</code></pre></div>
+<strong>Filenames should be in capital letters</strong></p>
+<p>3.Add the following content to the above file</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#vim MYCRYPTO-1.pmod
+
+min_rsa_size = 3072
+hash = SHA2-384 SHA2-512 SHA3-384 SHA3-512
+
+[root@opencloudos ~]#vim SCOPES-AND-WILDCARDS.pmod
+
+# Disable the AES-128 cipher, all modes 
+cipher = -AES-128-*
+# Disable CHACHA20-POLY1305 for the TLS protocol (OpenSSL, GnuTLS, NSS, and OpenJDK)
+cipher@TLS = -CHACHA20-POLY1305
+# Allow using the FFDHE-1024 group with the SSH protocol (libssh and OpenSSH) 
+group@SSH = FFDHE-1024+
+# Disable all CBC mode ciphers for the SSH protocol (libssh and OpenSSH) 
+cipher@SSH = -*-CBC
+# Allow the AES-256-CBC cipher in applications using libssh 
+cipher@libssh = AES-256-CBC+
+</code></pre></div>
+<p>4.Enable the configured encryption policy to DEFAULT level</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#update-crypto-policies --set DEFAULT:MYCRYPTO-1:SCOPES-AND-WILDCARDS
+</code></pre></div>
+<p>5.Restart to make the configuration take effect</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]##reboot 
+</code></pre></div>
+<p>6.Verify that it is in effect</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /etc/crypto-policies/state/CURRENT.pol | grep rsa_size
+min_rsa_size = 3072
+</code></pre></div>
+<p>For more information, please refer to
+- Custom Policies  in  the update-crypto-policies(8) man page</p>
+<ul>
+<li>Crypto Policy Definition Format  in  the crypto-policies(7) man page</li>
+</ul>
+<h3 id="24-customize-system-encryption-policy">2.4 Customize system encryption policy</h3>
+<p>In addition to customizing the sub-encryption policy, users can also customize the encryption policy of the entire system according to the following steps. The operation steps are as follows:</p>
+<p>1.Create a policy file in the corresponding directory</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]##cd /etc/crypto-policies/policies/
+[root@opencloudos ~]##touch MYPOLICY.pol
+</code></pre></div>
+<p>2.Add the following parameters in the policy file, or copy a copy of the parameters predefined by the system as an example</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]##cp /usr/share/crypto-policies/policies/DEFAULT.pol /etc/crypto-policies/policies/MYPOLICY.pol
+</code></pre></div>
+<p>3.Switch to custom system encryption policy</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]## update-crypto-policies --set MYPOLICY
+</code></pre></div>
+<p>4.Restart to take effect</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]##reboot
+</code></pre></div>
+<p>5.Verify whether the switch is successful</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# update-crypto-policies --show
+MYPOLICY
+</code></pre></div>
+<p>For more information, please refer to
+- Custom Policies  in  update-crypto-policies(8) man page</p>
+<ul>
+<li>Crypto Policy Definition Format in the crypto-policies(7) man page</li>
+</ul>
+<h2 id="3-shared-system-authentication">3 Shared System Authentication</h2>
+<p>Shared system certificates enable NSS, GNUTLS, OpenSSL, and Java to share default sources for retrieving system certificate anchor and block list information. By default, the trust store contains a list of Mozilla CAs, including positive and negative trusts. This system allows updating the core Mozilla CA list or selecting a different certificate list.</p>
+<h3 id="31-certificate-storage">3.1 Certificate storage</h3>
+<p>In opencloudos, the combined system certification is located in <code>/etc/pki/ca-trust/</code> and <code>/usr/share/pki/ca-trust-source/</code> directories, <code>/usr/share/pki/ca-trust-source/</code> in Trust settings have lower priority than those in <code>/etc/pki/ca-trust/</code>. The certificate files are installed into subdirectories of the following directory:</p>
+<ul>
+<li>Trusted Anchor</li>
+</ul>
+<p>/usr/share/pki/ca-trust-source/anchors/ or /etc/pki/ca-trust/source/anchors/</p>
+<ul>
+<li>Untrusted the certificate</li>
+</ul>
+<p>/usr/share/pki/ca-trust-source/blacklist/ or /etc/pki/ca-trust/source/blacklist/</p>
+<ul>
+<li>For certificates in the extended BEGIN TRUSTED file format</li>
+</ul>
+<p>/usr/share/pki/ca-trust-source/ or /etc/pki/ca-trust/source/</p>
+<h3 id="32-add-a-new-certificate">3.2 Add a new certificate</h3>
+<p>To use a new source of trust to validate applications on the system, add the corresponding certificate to the system certificate store location and update it with the update-ca-trust command. The process is as follows:</p>
+<ol>
+<li>Install ca-certificates </li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]##yum install ca-certificates
+</code></pre></div>
+<ol>
+<li>Copy the certificate file to the <code>/usr/share/pki/ca-trust-source/anchors/</code> or <code>/etc/pki/ca-trust/source/anchors/</code> directory</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]##cp ~/certificate-trust-examples/Cert-trust-test-ca.pem /usr/share/pki/ca-trust- source/anchors/
+</code></pre></div>
+<p>3.Update system authentication information</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]## update-ca-trust
+</code></pre></div>
+<h3 id="33-manage-trusted-certificates">3.3 Manage Trusted Certificates</h3>
+<p>The trust command provides a convenient way to manage system certificates. trust is used to list, extract, add, delete, or change trust anchors. To view the built-in help for this command, use the <code>--help</code> directive without any arguments</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# trust
+usage: trust command &lt;args&gt;...
+
+Common trust commands are:
+  list             List trust or certificates
+  extract          Extract certificates and trust
+  extract-compat   Extract trust compatibility bundles
+  anchor           Add, remove, change trust anchors
+  dump             Dump trust objects in internal format
+
+See &#39;trust &lt;command&gt; --help&#39; for more information
+</code></pre></div>
+<ul>
+<li>List all system trust anchors and certificates</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# trust list
+pkcs11:id=%12%C8%6D%75%89%62%89%3C%3E%A2%92%F7%8C%79%A1%42%F7%8D%A4%AE;type=cert
+    type: certificate
+    label: Tencent tlinux Root
+    trust: anchor
+    category: authority
+
+pkcs11:id=%D2%87%B4%E3%DF%37%27%93%55%F6%56%EA%81%E5%36%CC%8C%1E%3F%BD;type=cert
+    type: certificate
+    label: ACCVRAIZ1
+    trust: anchor
+    category: authority
+
+pkcs11:id=%F7%7D%C5%FD%C4%E8%9A%1B%77%64%A7%F5%1D%A0%CC%BF%87%60%9A%6D;type=cert
+    type: certificate
+    label: AC RAIZ FNMT-RCM
+    trust: anchor
+    category: authority
+......
+</code></pre></div>
+<ul>
+<li>To save a trust anchor to the system trust list, use the trust anchor command and specify the path to the certificate. Replace path.to/certificate.crt with the path to the certificate and its filename:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]##trust anchor path.to/certificate.crt
+</code></pre></div>
+<ul>
+<li>Delete certificate based on certificate ID or path</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]## trust anchor --remove path.to/certificate.crt
+[root@opencloudos ~]## trust anchor --remove &quot;pkcs11:id=%AA%BB%CC%DD%EE;type=cert&quot;
+</code></pre></div>
+<ul>
+<li>All subcommands of trust provide detailed built-in help, such as</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# trust list --help
+usage: trust list --filter=&lt;what&gt;
+
+  --filter=&lt;what&gt;     filter of what to export
+                        ca-anchors        certificate anchors
+                        blacklist         blacklisted certificates
+                        trust-policy      anchors and blacklist (default)
+                        certificates      all certificates
+                        pkcs11:object=xx  a PKCS#11 URI
+  --purpose=&lt;usage&gt;   limit to certificates usable for the purpose
+                        server-auth       for authenticating servers
+                         client-auth       for authenticating clients
+                        email             for email protection
+                        code-signing      for authenticating signed code
+                        1.2.3.4.5...      an arbitrary object id
+  -v, --verbose       show verbose debug output
+  -q, --quiet         suppress command output
+</code></pre></div>
+<p>For more information, please refer to:
+- update-ca-trust(8) , trust(1) man pages</p>
+<h2 id="4-vulnerability-and-configuration-compliance-scanning">4 Vulnerability and Configuration Compliance Scanning</h2>
+<p>Compliance auditing is the process of determining whether a given object complies with all the rules stated in a compliance policy. Compliance policies are defined by security professionals, who specify, usually in the form of a checklist, the necessary settings that a computing environment should use. Compliance policies can vary from organization to organization, and even across different systems within the same organization. The differences between these policies are based on the purpose of each system and its importance to the organization. Custom software setup and deployment features also increase the need for custom policy checklists.</p>
+<h3 id="41-configuration-compliance-tool">4.1 Configuration Compliance Tool</h3>
+<p>OpencloudOS provides tools that enable users to perform fully automated compliance audits. These tools are based on the Automation Protocol (SCAP) standard and are designed to automate custom compliance policies. 
+- SCAP Workbench - The Scap-workbench program is designed to perform configuration and vulnerability scans of individual local or remote systems. It can also be used to generate security reports based on these scans and assessments.</p>
+<ul>
+<li>
+<p>OpenSCAP - The OpenSCAP library, and accompanying oscap command-line utility, is designed to perform configuration and vulnerability scans of local systems, verify configuration compliance content, and generate reports and guidelines based on these scans and assessments.</p>
+</li>
+<li>
+<p>SCAP Security Guide (SSG) - The scap-security-guide package provides an up-to-date collection of security policies for Linux systems. The guide includes a practical catalog of reinforcement recommendations. The project bridges the gap between general policy requirements and specific implementation guidance.</p>
+</li>
+<li>
+<p>Script Check Engine (SCE) - SCE is an extension to the SCAP protocol that enables administrators to write security content using scripting languages ​​such as Bash, Python, and Ruby. The SCE extension is provided in the openscap-engine-sce package. SCE itself is not part of the SCAP standard.</p>
+</li>
+</ul>
+<p>For more information, please refer to: 
+- oscap(8), scap-workbench(8), scap-security-guide(8) man pages</p>
+<h3 id="42-vulnerability-scanning">4.2 Vulnerability scanning</h3>
+<p>It is recommended to use tenable for system vulnerability scanning.
+- Install Nessus, download the Nessus installation package from the link below</p>
+<div class="highlight"><pre><span></span><code>https://www.tenable.com/downloads/nessus?loginAttempted=true
+
+[root@opencloudos ~]#yum install Nessus-10.3.0-es8.x86_64.rpm
+Last metadata expiration check: 15:28:22 ago on Wed 10 Aug 2022 07:47:14 PM CST.
+Package Nessus-10.3.0-es8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+</code></pre></div>
+<ul>
+<li>Start Service</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#systemctl start nessusd.service
+</code></pre></div>
+- View service status</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl status nessusd.service
+● nessusd.service - The Nessus Vulnerability Scanner
+   Loaded: loaded (/usr/lib/systemd/system/nessusd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2022-08-11 12:17:33 CST; 3min 23s ago
+ Main PID: 1196 (nessus-service)
+</code></pre></div>
+<ul>
+<li>
+<p>Login tenable nessus
+<img alt="avatar" src="../images/login.png" /></p>
+</li>
+<li>
+<p>Create a scan policy
+<img alt="avatar" src="../images/create_scan_strategy.png" /></p>
+</li>
+<li>
+<p>Start a vulnerability scan
+<img alt="avatar" src="../images/start_scan.png" /></p>
+</li>
+<li>
+<p>View Results
+<img alt="avatar" src="../images/show_result.png" /></p>
+</li>
+</ul>
+<h2 id="5-integrity-check">5 Integrity Check</h2>
+<p>Advanced Intrusion Detection Environment (AIDE) is a utility that creates a database of files on a system, which is then used to ensure file integrity and detect system intrusions.</p>
+<h3 id="51-install-aide">5.1 Install AIDE</h3>
+<p>1.Install aide</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#yum install aide
+</code></pre></div>
+2.Initialize aide 
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# aide --init
+Start timestamp: 2022-08-15 15:57:08 +0800 (AIDE 0.16)
+AIDE initialized database at /var/lib/aide/aide.db.new.gz
+Number of entries:      273651
+---------------------------------------------------
+The attributes of the (uncompressed) database(s):
+---------------------------------------------------
+/var/lib/aide/aide.db.new.gz
+  MD5      : gbDTEpIcp2U9/d0Lr+IyhA==
+  SHA1     : cbzG7XCK7LKFgQrYTg9BGjLhOZo=
+  RMD160   : qfOqQ/acSRhD7ezUQNYZixCG/DI=
+  TIGER    : hTR0EWinckydttRnf47yWa2DDEzjKmra
+  SHA256   : U9mcgPLyS4i82uC9RG3+6Qq05OLSkWra
+             M/rXzo5UEoQ=
+  SHA512   : bZ9rZKj2FfUd4UH5afgt2TOtdGc6vZIF
+             4nXgwrwZrmd4HtE93W1kmwxClF99ueBm
+             EhNQQRG5yb07vL/IEkl1Ig==
+End timestamp: 2022-08-15 16:32:44 +0800 (run time: 35m 36s)
+</code></pre></div></p>
+<p><strong>In the default configuration, the aide <code>--init</code> command checks only a set of directories and files defined in the <code>/etc/aide.conf</code> file. To include other directories or files in the AIDE database, and change their viewing parameters, edit <code>/etc/aide.conf</code> accordingly</strong></p>
+<p>3.To start using the database, remove the <code>.new</code> package from the initial database file</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
+</code></pre></div>
+<p>To modify the location of the AIDE database, edit the /etc/aide.conf file and modify the DBDIR value. For extra security, store the database, configuration, and /usr/sbin/aide binaries in a safe location, such as read-only media.</p>
+<h3 id="52-integrity-check-using-aide">5.2 Integrity check using AIDE</h3>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# aide --check
+Start timestamp: 2022-08-22 01:15:48 +0000 (AIDE 0.16)
+AIDE found differences between database and filesystem!!
+
+Summary:
+  Total number of entries:      74891
+  Added entries:                0
+  Removed entries:              0
+  Changed entries:              5
+---------------------------------------------------
+Changed entries:
+---------------------------------------------------
+f   ...    .C..  : /usr/local/qcloud/YunJing/log/hids.log
+f   ...    .C..  : /usr/local/qcloud/YunJing/log/ydservice.20220822.log
+f   ...    .C..  : /usr/local/qcloud/monitor/barad/log/dispatcher.log
+f   ...    .C..  : /usr/local/qcloud/monitor/barad/log/executor.log
+f   ...    .C..  : /usr/local/qcloud/stargate/logs/stargate.log
+...
+</code></pre></div>
+<h3 id="53-update-the-aide-database">5.3 Update the AIDE database</h3>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#aide --update
+</code></pre></div>
+The aide --update command creates the /var/lib/aide/aide.db.new.gz database file. To start using the updated database for integrity checking, remove the .new substring from the filename. 。</p>
+<p>For more information, please refer to:
+- aide(1)manual page</p>
+<h2 id="6-block-device-encryption">6 Block Device Encryption</h2>
+<p>Disk encryption protects data on block devices through encryption. To access the decrypted content of the device, the user must provide a password or key as authentication. This is especially important when it comes to mobile computers and removable media: it helps protect the contents of the device even after it has been physically removed from the system. The LUKS format is the default implementation of block device encryption in opencloudos.</p>
+<h3 id="61-luks">6.1 LUKS</h3>
+<p>Linux Unified Key Setup-disk-format(LUKS) (LUKS) is capable of encrypting block devices and provides a set of tools to simplify the management of encrypted devices. LUKS allows multiple user keys to decrypt a master key, which is used for bulk encryption of partitions. opencloudos performs block device encryption using LUKS. By default, the option to encrypt block devices is unchecked during installation. If the user chooses to encrypt the disk, the system will be prompted for the password every time the computer is started. This passphrase "unlocks" the bulk encryption key that decrypts the partition. If the user chooses to modify the default partition table, they can choose which partitions to encrypt.</p>
+<p>Brief introduction of LUKS function: 
+- LUKS encrypts the entire block device, so it is very suitable for protecting the content of mobile devices, such as removable storage media or laptop disk drives.</p>
+<ul>
+<li>
+<p>LUKS provides cryptographic strengthening against dictionary attacks.</p>
+</li>
+<li>
+<p>LUKS devices contain multiple key slots that allow users to add backup keys or passphrases.</p>
+</li>
+<li>
+<p>Disk encryption solutions like LUKS only protect data when the system is shut down. Once the system is turned on and LUKS has decrypted the disk, the files on that disk are available to anyone who has access to those files.</p>
+</li>
+<li>
+<p>LUKS is not suitable for applications that require file-level encryption.</p>
+</li>
+</ul>
+<p>The default encryption algorithm used by LUKS is aes-xts-plain64, and the default key size of LUKS is 512 bits. The default key size for LUKS with Anaconda (XTS mode) is 512 bits. For more information, please refer to: 
+- LUKS homepage: https://gitlab.com/cryptsetup/cryptsetup/blob/master/README.md</p>
+<ul>
+<li>LUKS On-Disk Format specification: https://gitlab.com/cryptsetup/LUKS2-docs/blob/master/luks2_doc_wip.pdf</li>
+</ul>
+<h3 id="62-encrypt-existing-data-on-block-devices-using-luks">6.2 Encrypt existing data on block devices using LUKS</h3>
+<p>This section uses LUKS2 to encrypt data on the device that has not yet been encrypted. LUKS headers are stored in the device header. Before performing the encryption step, please make sure that the data is backed up and a file system exists on the disk.</p>
+<p>1.Take the vdb1 partition as an example, unmount the partition</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#umount /dev/vdb1
+</code></pre></div>
+2.Install the <code>cryptsetup</code> tool</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#yum install cryptsetup
+</code></pre></div>
+3.Enter the password and start the encryption process
+<div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#cryptsetup reencrypt --encrypt --init-only --reduce-device-size 32M /dev/vdb1              vdb1_encrypted
+</code></pre></div>
+In the above command, <code>vdb1_encrypted</code> is the name of the mapping file, which can be customized by the user. After the partition is encrypted using cryptsetup, the partition is no longer allowed to be mounted directly. LUKS is also an encryption scheme based on the device mapper mechanism. If you want to use this partition, you must make a mapping for this partition and map it to the <code>/dev/mapper</code> directory. You can only use this mapping by mounting it. However, when doing mapping, you need to enter the decryption password.</p>
+<div class="highlight"><pre><span></span><code>Last metadata expiration check: 15:28:22 ago on Wed 10 Aug 2022 07:47:14 PM CST.
+Package Nessus-10.3.0-es8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+</code></pre></div>
+<h3 id="63-encrypt-existing-data-using-luks2-with-detached-headers">6.3 Encrypt existing data using LUKS2 with detached headers</h3>
+<p>This section uses LUKS2 to encrypt data on the device that has not yet been encrypted. The LUKS header is stored at the specified location. Before performing the encryption step, please make sure that the data is backed up and a file system exists on the disk. </p>
+<ol>
+<li>Take the vdb1 partition as an example, unmount the partition</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#umount /dev/vdb1
+</code></pre></div>
+2. Install the <code>cryptsetup</code> tool</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#yum install cryptsetup
+</code></pre></div>
+3. Enter the password and start the encryption process</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos mapper] #cryptsetup reencrypt --encrypt --init-only --header /path/to/header /dev/vdb1             vdb1_encrypted
+</code></pre></div>
+<p>In the above command, vdb1_encrypted is the name of the mapping file, which can be customized by the user. After the partition is encrypted using cryptsetup, the partition is no longer allowed to be mounted directly. LUKS is also an encryption scheme based on the device mapper mechanism. If you want to use this partition, you must make a mapping for this partition and map it to the /dev/mapper directory. You can only use this mapping by mounting it. However, when doing mapping, you need to enter the decryption password.</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos mapper]# cryptsetup reencrypt --encrypt --init-only --header /data/header /dev/vdb1  vdb1_encrypted
+WARNING!
+========
+Detected LUKS device on /dev/vdb1. Do you want to encrypt that LUKS device again?
+Are you sure? (Type &#39;yes&#39; in capital letters): YES
+WARNING!
+========
+Header file does not exist, do you want to create it?
+
+Are you sure? (Type &#39;yes&#39; in capital letters): YES
+Enter passphrase for /data/header: 
+Verify passphrase: 
+/dev/mapper/vdb1_encrypted is now active and ready for online encryption.
+</code></pre></div>
+<p>For more information, please refer to:
+- cryptsetup（8）</p>
+<h3 id="64-luks2-encrypted-blank-block-devices">6.4 LUKS2 Encrypted Blank Block Devices</h3>
+<ol>
+<li>Set the partition as an encrypted LUKS partition:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#cryptsetup luksFormat /dev/vdb1
+</code></pre></div>
+2. Open the encrypted LUKS partition:
+<div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#cryptsetup open /dev/vdb1 vdb1_encrypted
+</code></pre></div>
+3. To write encrypted data to a partition, the partition must be accessed through the device mapping name. For this, a file system must be created. For example:
+<div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#mkfs -t ext4 /dev/mapper/vdb1_encrypted
+</code></pre></div>
+4. Format the mapping file</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#mkfs.ext4 /dev/mapper/vdb1_encrypted
+</code></pre></div>
+5. Mount the device:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos mapper]#mount /dev/mapper/vdb1_encrypted mount-point
+</code></pre></div>
+<h2 id="7-audit-system">7 Audit System</h2>
+<p>The Linux audit system is used to count security policy violation records in the system, and then further process these violations through SELINUX. Auditing systems are critical in production environments to identify violators of security policies and what actions they took. </p>
+<p>The audit system can count the following information: 
+- Time, type and result of the violation incident</p>
+<ul>
+<li>
+<p>Object sensitivity</p>
+</li>
+<li>
+<p>Correlation of a breach event with the identity of the user who triggered the time</p>
+</li>
+<li>
+<p>Include or exclude events based on user identity, subject and object tags, and other attributes</p>
+</li>
+<li>
+<p>Modifications to trusted databases such as <code>/etc/passwd</code></p>
+</li>
+<li>
+<p>Use of authentication mechanisms such as SSH</p>
+</li>
+</ul>
+<p>Among other things, the audit system can</p>
+<ul>
+<li>monitor file access</li>
+</ul>
+<p>Auditing can track whether a file or directory has been accessed, modified, executed, or whether file attributes have been changed. For example detecting access to important files and providing an audit trail if one of the files is corrupted.</p>
+<ul>
+<li>Monitor system calls</li>
+</ul>
+<p>Auditing can be configured to generate a log entry each time a particular system call is used. Can be used, for example, to track modifications to the system time by monitoring settimeofday, clock_adjtime, and other time-related system calls.</p>
+<ul>
+<li>Record user actions</li>
+</ul>
+<p>An auditing system can track whether a file has been executed, so a rule can be defined to log every execution of a specific command. For example, one rule could be defined for each executable in the /bin directory. The resulting log entries can then be searched by user ID to generate an audit trail of the commands executed by each user.</p>
+<ul>
+<li>Log Security Events</li>
+</ul>
+<p>The <code>pam_faillock</code> authentication module can log failed login attempts. Auditing can also be set to log failed login attempts and provide additional information about the user attempting to log in.</p>
+<ul>
+<li>Search event</li>
+</ul>
+<p>The <code>ausearch</code> tool can filter log entries and provide a complete audit trail based on several criteria.</p>
+<ul>
+<li>Run summary report</li>
+</ul>
+<p>The <code>aureport</code> program can be used to generate daily reports recording events, etc. Administrators can further investigate suspicious activity based on reports.</p>
+<ul>
+<li>Monitor network access</li>
+</ul>
+<p>The <code>iptables</code> and <code>ebtables</code> tools can be configured to trigger audit events, enabling system administrators to monitor network access</p>
+<p><strong>According to the amount of information collected, the audit system will have a certain impact on system performance</strong></p>
+<h3 id="71-audit-system-architecture">7.1 Audit system architecture</h3>
+<p>The audit system includes two parts: user mode programs and kernel space system calls. The kernel component accepts system calls from user space applications and filters them by user, task, fstype or exit. The userspace audit daemon collects information from the kernel and creates entries in log files. Other userspace tools interact with the audit daemon, kernel audit components or audit log files:</p>
+<ul>
+<li>
+<p>auditctl - audit control tool, manages rules and controls many settings and parameters for event processing.</p>
+</li>
+<li>
+<p>Other related tools take audit log files as input and generate output as requested by the user. For example aureport generates a report of all events.</p>
+</li>
+</ul>
+<h3 id="72-description-of-auditd-configuration-parameters">7.2 Description of auditd configuration parameters</h3>
+<p>The default audit configuration is sufficient for most environments, but audit can be further configured according to security needs, and the relevant configuration is in the /etc/audit/audit.conf file. Some commonly used parameters are described as follows:</p>
+<ul>
+<li>
+<p><code>log_file</code> This parameter specifies the directory where the audit log is stored, usually in the <code>/var/log/audit/</code> directory.</p>
+</li>
+<li>
+<p><code>max_log_file</code> Specifies the size of the largest log file.</p>
+</li>
+<li>
+<p><code>max_log_file_action</code> Specifies the action to be taken when the log size reaches max_log_file. To prevent the audit log from being overwritten, this value is usually set to keep_logs.</p>
+</li>
+<li>
+<p><code>space_left</code> Specifies the amount of free space remaining on the disk, which is the action to take when triggered by the setting in the space_left_action parameter. A number must be set to allow enough time for the administrator to respond and free up disk space. The value of space_left depends on the rate at which audit log files are generated. </p>
+</li>
+<li>
+<p><code>space_left_action</code> It is recommended to set the space_left_action parameter to email or exec using the appropriate notification method. </p>
+</li>
+<li>
+<p><code>admin_space_left</code> Specifies the absolute minimum amount of free space, which is the action taken when triggered by the setting in the admin_space_left_action parameter, must be set to a value that leaves enough space for logging actions taken by the admin.</p>
+</li>
+<li>
+<p><code>admin_space_left_action</code> Should be set to single to put the system in single-user mode and allow administrators to free up some disk space.</p>
+</li>
+<li>
+<p><code>disk_full_action</code> Specifies the action triggered when there is no free space on the partition that holds the audit log file. It must be set to halt or single. This ensures that the system is shut down or run in single-user mode when auditing fails to log events.</p>
+</li>
+<li>
+<p><code>disk_error_action</code> Specifies the action to trigger when an error is detected on the partition containing the audit log file, must be set to syslog, single, or halt, depending on your local security policy for handling hardware failures.</p>
+</li>
+<li>
+<p><code>flush</code> Should be set to incremental_async. This is combined with the freq parameter, which determines how many records can be sent to disk before forcing a hardsync with the disk. The freq parameter should be set to 100. These parameters ensure that audit event data is synchronized with the log files on disk while maintaining good activity performance. The rest of the configuration options should be set according to the local security policy.</p>
+</li>
+</ul>
+<h3 id="73-starting-and-configuring-auditd">7.3 Starting and configuring auditd</h3>
+<p>Auditd related operations are shown in the table:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Instruction operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Start autid as root</td>
+<td style="text-align: left;">#service auditd start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Configure auditd to start automatically at boot</td>
+<td style="text-align: left;">#systemctl start auditd</td>
+</tr>
+<tr>
+<td style="text-align: left;">Temporarily disable auditd</td>
+<td style="text-align: left;">#auditctl -e 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Re-enable auditd</td>
+<td style="text-align: left;">#auditctl -e 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Restart auditd</td>
+<td style="text-align: left;">#service audited restart</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stop auditd</td>
+<td style="text-align: left;">#service auditd stop</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reload the auditd configuration in the /etc/audit/auditd.conf file</td>
+<td style="text-align: left;">#service auditd reload</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rotate the log files in the /var/log/audit/ directory</td>
+<td style="text-align: left;">#service auditd rotate</td>
+</tr>
+<tr>
+<td style="text-align: left;">Display the running status of auditd</td>
+<td style="text-align: left;">#service auditd status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="74-view-audit-log-files">7.4 View audit log files</h3>
+<p>Audit systems typically store log entries in the /var/log/audit/audit.log file, and if log rotation is enabled, the rotated audit.log file is also stored in the same directory. Add the following audit rule to log every attempt to read or modify the /etc/ssh/sshd_config file</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#auditctl -w /etc/ssh/sshd_config -p warx -k sshd_config
+</code></pre></div>
+If the auditd daemon is running, create a new event in the audit log file with the following command, for example
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /etc/ssh/sshd_config
+# $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
+...
+#Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+...
+</code></pre></div></p>
+<h3 id="75-define-and-enforce-audit-rules">7.5 Define and enforce audit rules</h3>
+<p>Auditing systems operate according to a set of rules that define what is captured in log files. Audit rules can be set on the command line or in the /etc/audit/rules.d/ directory using the auditctl tool.</p>
+<p>1.To define a rule that logs all write access to the /etc/passwd file and each attribute modification:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#auditctl -w /etc/passwd -p wa -k passwd_changes
+</code></pre></div>
+2.To define a rule that records write access to all files in the /etc/selinux/ directory and the modification of each attribute:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#auditctl -w /etc/selinux/ -p wa -k selinux_changes
+</code></pre></div>
+<p><strong>Example of a system call rule</strong></p>
+<p>1.To define a rule, a log is created every time the program uses the adjtimex or settimeofday system call, and the system uses a 64-bit architecture</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# auditctl -a always,exit -F arch=b64 -S adjtimex -S settimeofday -k time_change
+</code></pre></div>
+<p>2.Define a rule to create a log every time a system user with an ID of 1000 or above deletes or renames a file</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# auditctl -a always,exit -S unlink -S unlinkat -S rename -S renameat -F auid&gt;=1000 -F auid!=4294967295 -k delete
+</code></pre></div>
+<p><strong>Executable Rules</strong>
+<br />To define a rule that logs all executions of /bin/id programs, execute the following command</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# auditctl -a always,exit -F exe=/bin/id -F arch=b64 -S execve -k execution_bin_id
+</code></pre></div>
+<p>For more information see:</p>
+<ul>
+<li>auditctl(8) manual page</li>
+</ul>
+<h3 id="76-define-and-enforce-audit-rules">7.6 Define and enforce audit rules</h3>
+<p>To define audit rules that persist across reboots, they must be included directly in the /etc/audit/rules.d/audit.rules file, or read with the augenrules program located in /etc/audit/rules.d/ rules in the directory. Note that the /etc/audit/audit.rules file is generated each time the auditd service starts. Files in /etc/audit/rules.d/ use the same auditctl command-line syntax to specify rules. Empty lines and text following the hash sign (#) are ignored. Alternatively, administrators can use the auditctl command to read rules from a file specified with the -R option, for example:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#auditctl -R /usr/share/audit/sample-rules/30-stig.rules
+</code></pre></div>
+<h3 id="77-using-preconfigured-rules-files">7.7 Using preconfigured rules files</h3>
+<p>In the /usr/share/audit/sample-rules directory, the audit package provides a set of preconfigured rule files based on various certification standards:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#cat /usr/share/audit/sample-rules
+</code></pre></div>
+To use these configuration files, copy them into the /etc/audit/rules.d/ directory and use the augenrules --load command, for example:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cd /usr/share/audit/sample-rules/
+[root@opencloudos ~]# cp 10-base-config.rules 30-stig.rules 31-privileged.rules 99-finalize.rules /etc/audit/rules.d/
+[root@opencloudos ~]# augenrules --load
+</code></pre></div>
+Users can sort audit rules using a numbering scheme. For more information see </p>
+<ul>
+<li>audit.rules(7) manual page</li>
+</ul>
+<h3 id="78-using-augenrules-to-define-persistence-rules">7.8 Using augenrules to define persistence rules</h3>
+<p>The augenrules script reads the rules located in the /etc/audit/rules.d/ directory and compiles them into the audit.rures file. This script processes all files ending in .rules in a specific order, according to their natural ordering. The files in this directory are organized into groups with the following meanings: </p>
+<ul>
+<li>
+<p>10 - Kernel and auditctl configuration</p>
+</li>
+<li>
+<p>20 - A rule that can match a regular rule but you want to match differently</p>
+</li>
+<li>
+<p>30 - Master Rule</p>
+</li>
+<li>
+<p>40 - optional rules</p>
+</li>
+<li>
+<p>50 - server-specific rules</p>
+</li>
+<li>
+<p>70 - System local rules</p>
+</li>
+<li>
+<p>90 - Finalize (immutable)</p>
+</li>
+</ul>
+<p>Rules are not meant to be used all at once. They are part of the policy and should be considered carefully, and the individual files are copied to /etc/audit/rules.d/. For example, to set up the system in a STIG configuration, copy the rules 10-base-config, 30-stig, 31-privileged, and 99-finalize. Once you have rules in the /etc/audit/rules.d/ directory, run the augenrules script with the --load parameter to load them:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#  augenrules --load
+/usr/sbin/augenrules: No change
+No rules
+enabled 0
+failure 1
+pid 0
+rate_limit 0
+...
+</code></pre></div>
+<h3 id="79-disable-augenrules">7.9 Disable augenrules</h3>
+<p>Use the following steps to disable the augenrules tool. This switches auditing to use the rules defined in the /etc/audit/audit.rules file. The operation steps are as follows:</p>
+<p>1.Copy the /usr/lib/systemd/system/auditd.service file to the /etc/systemd/system/ directory
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cp -f /usr/lib/systemd/system/auditd.service /etc/systemd/system/
+</code></pre></div>
+2.Edit the /etc/systemd/system/auditd.service file in a text editor of your choice, eg</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# vi /etc/systemd/system/auditd.service
+</code></pre></div>
+<p>3.Comment out the line containing augenrules and uncomment the line containing the auditctl <code>-R</code> command</p>
+<p><div class="highlight"><pre><span></span><code>#ExecStartPost=-/sbin/augenrules --load ExecStartPost=-/sbin/auditctl -R /etc/audit/audit.rules
+</code></pre></div>
+4.Reload the systemd daemon to pick up the changes in the auditd.service file:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl daemon-reload
+</code></pre></div>
+5.Restart the auditd service</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#service auditd restart
+</code></pre></div>
+<h3 id="710-set-audit-policies-to-monitor-software-updates">7.10 Set audit policies to monitor software updates</h3>
+<p>In opencloudos 3, users can use pre-configured rule configurations to monitor the following package managers:
+<div class="highlight"><pre><span></span><code>dnf,yum,pip,npm,cpan,gem,luarocks
+</code></pre></div>
+By default, rpm provides auditing of SOFTWARE_UPDATE events when packages are installed or updated. Users can list them by typing ausearch -m SOFTWARE_UPDATE on the command line. The monitoring configuration steps are as follows: </p>
+<p>1.Copy the preconfigured rule file 44-installers.rules in the /usr/share/audit/sample-rules/ directory to the /etc/audit/rules.d/ directory:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#cp /usr/share/audit/sample-rules/44-installers.rules /etc/audit/rules.d/
+</code></pre></div>
+2.Create a new file called 44-installers.rules in the /etc/audit/rules.d/ directory and insert the following rules:</p>
+<p><div class="highlight"><pre><span></span><code>-a always,exit -F perm=x -F path=/usr/bin/dnf-3 -F key=software-installer
+-a always,exit -F perm=x -F path=/usr/bin/yum -F
+</code></pre></div>
+3.Load audit rules</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#augenrules --load
+</code></pre></div>
+4.List the loading rules</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# auditctl -l
+</code></pre></div>
+<p>5.Search the audit log for recent installation events such as:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# ausearch -ts recent -k software-installer
+</code></pre></div>
+<h3 id="711-use-the-audit-system-to-monitor-user-login-time">7.11 Use the audit system to monitor user login time</h3>
+<p>To monitor which user is logged in at a particular time, administrators do not need to configure auditing in any special way. You can use the ausearch or aureport tools, which provide different ways to display the same information. The configuration steps are as follows</p>
+<p>1.Search the audit log for the USER_LOGIN message type</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#ausearch -m USER_LOGIN -ts &#39;7/02/2022&#39; &#39;18:00:00&#39; -sv no
+time-&gt;Sat Jul 30 01:31:50 2022
+type=USER_LOGIN msg=audit(1659115910.191:272434): pid=1416645 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=&quot;root&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=1.235.57.39 terminal=ssh res=failed&#39;
+</code></pre></div>
+<p>Parameter description: </p>
+<ul>
+<li><code>ts</code>: The option specifies the date and time. If this option is not used, ausearch will provide results from the current day. The </li>
+<li><code>sv yes</code> Option is used to filter successful login records. </li>
+<li><code>sv no</code> Option is used to filter records of failed logins.</li>
+</ul>
+<p>2.Pass the raw output of the ausearch command to the aulast tool, which displays the output in a format similar to the output of the last command. For example:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos audit]# ausearch --raw | aulast --stdin
+root     pts/0        118.112.73.86    Sat Jul 30 18:00 - 20:30  (02:29)
+root     pts/0        118.112.75.157   Sun Jul 31 16:21 - 16:21  (00:00)
+root     pts/0        118.112.75.157   Sun Jul 31 16:23 - 17:08  (00:45)
+root     pts/0        118.112.73.104   Mon Aug  1 10:55 - 10:55  (00:00)
+root     ssh          114.132.79.10    Mon Aug  1 14:19 - 14:22  (00:02)
+root     pts/0        118.112.73.104   Mon Aug  1 11:56 - 14:22  (02:26)
+root     ssh          114.132.79.10    Mon Aug  1 14:22 - 16:41  (02:19)
+root     ssh          114.132.79.10    Mon Aug  1 18:34 - 18:48  (00:14)
+root     pts/0        118.112.73.104   Mon Aug  1 20:06 - 23:19  (03:12)
+root     pts/0        118.112.72.152   Tue Aug  2 10:15   still logged in
+</code></pre></div>
+<p>3.Use the <code>aureport</code> command with the <code>--login</code> <code>-i</code> option to display a list of login events.</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos audit]# aureport --login -i 
+...
+1.    07/31/2022 23:30:39 root 183.131.3.30 ssh /usr/sbin/sshd no 294225
+2.    07/31/2022 23:30:41 root 183.131.3.30 ssh /usr/sbin/sshd no 294237
+3.    07/31/2022 23:30:45 root 183.131.3.30 ssh /usr/sbin/sshd no 294249
+4.    07/31/2022 23:30:49 root 183.131.3.30 ssh /usr/sbin/sshd no 294261
+5.    07/31/2022 23:30:53 root 183.131.3.30 ssh /usr/sbin/sshd no 294273
+6.    07/31/2022 23:30:56 root 183.131.3.30 ssh /usr/sbin/sshd no 294285
+7.    07/31/2022 23:30:58 root 183.131.3.30 ssh /usr/sbin/sshd no 294297
+8.    07/31/2022 23:31:02 root 183.131.3.30 ssh /usr/sbin/sshd no 294309
+9.    07/31/2022 23:31:04 root 183.131.3.30 ssh /usr/sbin/sshd no 294321
+10.   07/31/2022 23:31:06 root 183.131.3.30 ssh /usr/sbin/sshd no 294333
+11.   07/31/2022 23:31:08 root 183.131.3.30 ssh /usr/sbin/sshd no 294345
+12.   07/31/2022 23:31:12 root 183.131.3.30 ssh /usr/sbin/sshd no 294357
+...
+</code></pre></div>
+<p>For more information, please refer to:</p>
+<ul>
+<li>
+<p>ausearch(8) manual pages.</p>
+</li>
+<li>
+<p>aulast(8) manual pages.</p>
+</li>
+<li>
+<p>aureport(8) manual pages.</p>
+</li>
+</ul>
+<h2 id="8-usbguard-defends-against-attacks-from-usb-devices">8 USBGuard defends against attacks from USB devices</h2>
+<p>The system may be attacked by mounting USB devices, and system administrators can use USBGuard to defend against such attacks.</p>
+<h3 id="81-what-is-usbguard">8.1 What is USBGuard</h3>
+<p>With the USBGuard software framework, you can use a basic list of allowed and forbidden devices to protect your system from hacking USB devices, based on the USB device authorization functions in the kernel. </p>
+<p>The USB Guard framework provides the following components: </p>
+<ul>
+<li>
+<p>System service components with inter-process communication (IPC) interfaces for dynamic interaction and policy enforcement</p>
+</li>
+<li>
+<p>A command-line interface for interacting with the running usbguard system service</p>
+</li>
+<li>
+<p>A rule language for writing authorization policies for USB devices</p>
+</li>
+<li>
+<p>C++ API for interacting with system service components implemented in shared libraries The usbguard system service configuration file (/etc/usbguard/usbguard-daemon.conf) includes options to authorize users and groups to use the IPC interface.</p>
+</li>
+</ul>
+<h3 id="82-install-usbguard">8.2 Install USBGuard</h3>
+<p>Install and start the USBGuard framework through the following procedure. </p>
+<p>1.Install usbgurd</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#yum install usbguard
+</code></pre></div>
+2.Create the initial ruleset</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#usbguard generate-policy &gt; /etc/usbguard/rules.conf
+</code></pre></div>
+3.Start the usbguard daemon and make sure it starts automatically on boot</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl enable --now usbguard
+</code></pre></div>
+4.Check whether the service is normal</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl status usbguard
+● usbguard.service - USBGuard daemon
+   Loaded: loaded (/usr/lib/systemd/system/usbguard.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sun 2022-08-21 15:41:35 UTC; 3min 11s ago
+     Docs: man:usbguard-daemon(8)
+  Process: 540366 ExecStart=/usr/sbin/usbguard-daemon -f -s -c /etc/usbguard/usbguard-daemon.co&gt;
+ Main PID: 540389 (usbguard-daemon)
+    Tasks: 3 (limit: 22674)
+   Memory: 1.4M
+   CGroup: /system.slice/usbguard.service
+           └─540389 /usr/sbin/usbguard-daemon -f -s -c /etc/usbguard/usbguard-daemon.conf
+</code></pre></div>
+5.List USB devices recognized by USBGuard </p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard list-devices
+2: allow id 1d6b:0001 serial &quot;0000:00:01.2&quot; name &quot;UHCI Host Controller&quot; hash &quot;FRDEjz7OhdJbNjmJ8zityiNX/LuO+ovKC07I0bOFjao=&quot; parent-hash &quot;9+Zsfvo9IR/AEQ/Fn4mzdoPGk0rqpjku6uErfS09K4c=&quot; via-port &quot;usb1&quot; with-interface 09:00:00 with-connect-type &quot;&quot;
+</code></pre></div>
+<p>For more information, please refer to: </p>
+<ul>
+<li>usbguard(1) 和usbguadr-daemod.conf(5)</li>
+</ul>
+<h3 id="83-block-and-authorize-usb-devices">8.3  Block and authorize USB devices</h3>
+<ul>
+<li>Temporarily Blocking and Authorizing USB Devices </li>
+</ul>
+<p>This procedure outlines how to authorize and block USB devices using the usbguard command. 
+1.List recognized USB devices
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard list-devices
+</code></pre></div>
+2.Authorize device 6 to interact with the system</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard allow-device 6
+</code></pre></div>
+<p>3.Deauthorize and delete the device 6</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard reject-device 6
+</code></pre></div>
+<ul>
+<li>Permanently block and authorize USB devices 
+1.Configure SELINUX to allow the usbguard daemon to write rules</li>
+</ul>
+<p>Show semanage booleans related to usbguard</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# semanage boolean -l | grep usbguard
+usbguard_daemon_write_conf     (off  ,  off)  Allow usbguard to daemon write conf
+usbguard_daemon_write_rules    (on   ,   on)  Allow usbguard to daemon write rules
+</code></pre></div>
+<p>1.If the usbguard_daemon_write_rules boolean is off, turn it on:
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#semanage boolean -m --on usbguard_daemon_write_rules
+</code></pre></div>
+2.List recognized USB devices</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard list-devices
+</code></pre></div>
+3.Authorize device 6 to interact with the system</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard allow-device 6 -p
+</code></pre></div>
+<p>4.Deauthorize and delete device 6</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard reject-device 6 -p
+</code></pre></div>
+<p>5.Permanently deauthorize and keep the device 6</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard block-device 6 -p
+</code></pre></div>
+<p>6.Verify that the rules are modified</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard list-rules
+</code></pre></div>
+For more information, please refer to:</p>
+<ul>
+<li>usbguard(1) manual page</li>
+</ul>
+<h3 id="84-create-custom-policies">8.4 Create custom policies</h3>
+<p>1.Create a policy that authorizes the currently connected USB device and save the generated rules to the rules.conf file:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard generate-policy --no-hashes &gt; ./rules.conf
+</code></pre></div>
+2.Edit the rules.conf file with a text editor of your choice, for example:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# vim ./rules.conf
+</code></pre></div>
+<p>3.Add, delete or edit rules as needed. For example, the following rule allows only devices with one mass storage interface to interact with the system:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# allow with-interface equals { 08:*:* }
+</code></pre></div>
+4.Install the updated strategy:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# install -m 0600 -o root -g root rules.conf /etc/usbguard/rules.conf
+</code></pre></div>
+5.Restart the usbguard daemon to apply the changes:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl restart usbguard
+</code></pre></div>
+6.Verify that the rules are in effect</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# usbguard list-rules
+</code></pre></div>
+<h3 id="85-authorize-users-and-groups-to-use-the-usbguard-ipc-interface">8.5 Authorize users and groups to use the USBGuard IPC interface</h3>
+<p>Use this process to authorize specific users or groups to use the USBGuard public IPC interface. By default, only the root user can use this interface. The process is as follows:</p>
+<ol>
+<li>
+<p>Make sure the /etc/usbguard/rules.conf file contains the initial set of rules generated by the usbguard generate-policy command.</p>
+</li>
+<li>
+<p>Edit the /etc/usbguard/usbguard-daemon.conf file to add a line of rules to allow all users in the xxx group to use the IPC interface, and save the file</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# vim /etc/usbguard/usbguard-daemon.conf
+...
+# Hides personally identifiable information such as device serial numbers and
+# hashes of descriptors (which include the serial number) from audit entries.
+#
+#HidePII=false
+IPCAllowGroups=xxx
+</code></pre></div>
+<ol>
+<li>Restart the usbguard daemon to make the configuration take effect</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl restart usbguard
+</code></pre></div>
+<h3 id="86-log-usbguard-authorization-events-to-the-linux-audit-log">8.6 Log USBguard Authorization Events to the Linux Audit Log</h3>
+<p>Use the following steps to integrate USBguard authorization event logging into the standard Linux audit log. By default, the usbguard daemon logs events to the /var/log/usbguard/usbguard-audit.log file. </p>
+<ol>
+<li>Edit /etc/usbguard/usbguard-daemon.conf, change the AuditBackend option from FileAudit to LinuxAudit</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#vim /etc/usbguard/usbguard-daemon.conf
+
+# USBGuard Audit events log backend
+#
+# One of:
+#
+# * FileAudit - Log audit events into a file specified by
+#               AuditFilePath setting (see below)
+# * LinuxAudit - Log audit events using the Linux Audit
+#                subsystem (using audit_log_user_message)
+#
+AuditBackend=LinuxAudit
+</code></pre></div>
+<ol>
+<li>Restart the usbguard daemon process</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl restart usbguard
+</code></pre></div>
+<ol>
+<li>Verification</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# ausearch -ts recent -m USER_DEVICE
+</code></pre></div>
+For more information, please refer to: </p>
+<ul>
+<li>usbguard-daemon.conf(5) manual page.</li>
+</ul>
+<h2 id="9-selinux-configuration">9 SELINUX Configuration</h2>
+<p>SELinux (Security Enhanced Linux) provides an additional layer of system security. SELinux fundamentally answers questions: eg: Can a web server access files in a user's home directory?</p>
+<h3 id="91-what-is-selinux">9.1 What is SELINUX</h3>
+<p>SELinux is a Linux Security Module (LSM) built into the Linux kernel. The SELinux subsystem in the kernel is driven by a security policy that is controlled by the administrator and loaded at boot time. All security-related, kernel-level access operations in the system are intercepted by SELinux and checked in the context of the loaded security policy. If the loaded policy allows the operation, it will proceed. Otherwise, the operation is blocked and the process receives an error.</p>
+<p>SELinux implements Mandatory Access Control (MAC). Every process and system resource has a special security label called a SELinux label, which is an identifier that abstracts system-level details and focuses on the entity's security attributes. This not only provides a consistent method of referencing objects in SELinux policy, but also removes ambiguities that may exist in other identity systems. For example, a file can have multiple valid pathnames on a system using bind mounts. SELinux labels define how processes interact with each other and with various system resources. By default no interaction is allowed unless the corresponding permission is explicitly granted by a rule. <br /></p>
+<p>SELinux labels include the following fields:user、role、type and security level. <br /></p>
+<p>SELinux decisions, such as allowing or denying access, are cached. This cache is called Access Vector Cache (AVC). By using these cached decisions, fewer checks are made to SELinux policy rules, which improves performance. SELinux policy rules have no effect if the DAC rules have already denied access in the first place. Raw audit messages are logged to /var/log/audit/audit.log, starting with the string type=AVC. <br />
+In opencloudos, system services are controlled by the systemd daemon; systemd starts and stops all services, and users and processes communicate with systemd using the systemctl utility. The systemd daemon can refer to SELinux policy, check the label of the calling process and the label of the unit file that the caller is trying to manage, and then ask SELinux whether to allow the caller access. This method controls access control to critical system functions, including starting and stopping system services. <br />
+The systemd daemon also acts as a SELinux access manager. It retrieves the label of the process running systemctl, or sending D-Bus messages to systemd. The daemon then looks for a unit file tag for the process to configure. Finally, systemd can retrieve information from the kernel if SELinux policy allows specific access between process labels and unit file labels. This means that SELinux can now restrict broken applications that need to interact with systemd for certain services. Policy authors can also use these fine-grained controls to restrict administrators.
+If a process is sending a D-Bus message to another process, and SELinux policy does not allow D-Bus communication between the two processes, a USER_AVC deny message is printed and the D-Bus communication times out. Note that D-Bus communication between two processes works bidirectionally.</p>
+<p>System administrators generally cannot generate comprehensive, granular security policies through access criteria based on users, groups, and other permissions (known as Discretionary Access Control, DAC). For example, restricting certain applications to only view log files while allowing other applications to add new data to log files.</p>
+<p>SELinux has the following advantages:
+- All processes and files are marked. SELinux policy rules define how processes interact with files, and how processes interact with each other. Access is only allowed if there is an explicitly allowing SELinux policy rule.</p>
+<ul>
+<li>
+<p>Granular access control. Traditional UNIX controls through user authorization, Linux-based users and groups. Whereas SELinux's access control is based on all available information such as SELinux users, roles, types, and optionally security levels.</p>
+</li>
+<li>
+<p>SELinux policies are defined by system administrators and enforced system-wide.</p>
+</li>
+<li>
+<p>Improved mitigations for privilege escalation attacks. Processes run in domains and are therefore isolated from each other. SELinux policy rules define how access to files and other processes is handled. If a process is compromised, the attacker can only access the normal functions of the process and only access files that have been configured to be accessible by the process. For example: If the Apache HTTP server is compromised, an attacker cannot use that process to read files in the user's home directory unless specific SELinux policy rules are added or configured to allow such access.</p>
+</li>
+<li>
+<p>SELinux can be used to enforce data confidentiality and integrity while protecting processes from untrusted input.</p>
+</li>
+</ul>
+<p>However, SELinux itself is not:
+- anti-virus software,</p>
+<ul>
+<li>
+<p>to replace passwords, firewalls and other security systems,</p>
+</li>
+<li>
+<p>All-in-one security solution.</p>
+</li>
+</ul>
+<p>SELinux is designed to enhance existing security solutions, not replace them. Even when running SELinux, you still need to follow good security practices, such as keeping software updated, using secure passwords, and using a firewall.
+How SELinux Improves Security:
+- The default action is deny. If no SELinux policy rule exists to allow access (such as allowing a process to open a file), then deny access.</p>
+<ul>
+<li>
+<p>SELinux can restrict Linux users. SELinux policies include many restricted SELinux users. Linux users can be mapped to restricted SELinux users to take advantage of the security rules and mechanisms they use. For example, mapping the Linux user to the SELinux user_u user makes it impossible for the Linux user to run unless there are other configured user ID (setuid) applications such as sudo and su.</p>
+</li>
+<li>
+<p>Increased separation of process and data. The SELinux domain concept allows defining which processes can access certain files and directories. For example: When running SELinux, unless otherwise configured, an attacker will not be able to break into a Samba server and then use the Samba server as an attack vector to read and write files used by other processes (such as a MariaDB database).</p>
+</li>
+<li>
+<p>SELinux helps mitigate damage from misconfigurations. Different DNS servers often copy information between each other, which is called a zone transfer. An attacker can use a zone transfer to update a DNS server to include incorrect information. When running with BIND (Berkeley Internet Name Domain) as the DNS server in Red Hat Enterprise Linux, the default SELinux policy blocks zone files[1] through the BIND naming daemon even if the administrator does not restrict which servers can execute zone transfers itself and other processes, using zone transfers for updates.</p>
+</li>
+</ul>
+<h3 id="92-selinux-state-and-mode-changes">9.2 SELINUX state and mode changes</h3>
+<p>SELinux can run in one of three modes: enforcing, permissive, or disabled.
+- Enforcing mode is the default mode of operation in which SELinux operates normally and enforces the loaded security policy throughout the system.</p>
+<ul>
+<li>
+<p>In permissive mode, the system loads security policies like enforcing mode, including marking objects and logging access-denied entries, but it does not deny any operations. It is not recommended to use permissive mode in production environment system, but permissive mode is very helpful for SELinux policy development and debugging.</p>
+</li>
+<li>
+<p>It is strongly recommended not to use disabled mode. Not only does it keep the system from enforcing SELinux policies, it also avoids labeling any persistent objects such as files, making it very difficult to enable SELinux in the future.</p>
+</li>
+</ul>
+<p>Use the setenforce program to change between enforcing and permissive modes. Changes made with setenforce are not persisted across reboots. To change to enforce mode, enter the setenforce 1 command as the Linux root user. To change to permissive mode, enter the setenforce 0 command. Use the getenforce or sestatus command to check in which mode SELinux is running. The getenforce command returns Enforcing, Pmissive, or Disabled. The sestatus command returns SELinux status and the SELinux policy in use, such as:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# sestatus
+SELinux status:                 disabled
+</code></pre></div>
+<ul>
+<li>switch to permissive state</li>
+</ul>
+<p>Use the following steps to permanently change the SELinux mode to permissive. SELinux policies are not enforced when SELinux is running in permissive mode. The system remains operational and SELinux does not deny any operations, but simply logs AVC messages, which can be used for troubleshooting, debugging, and SELinux policy improvement. Each AVC is recorded only once in this example.</p>
+<ol>
+<li>Open the configuration file and modify the parameters</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#vim /etc/selinux/config
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=permissive
+# SELINUXTYPE= can take one of these three values:
+#     targeted - Targeted processes are protected,
+#     minimum - Modification of targeted policy. Only selected processes are protected.
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+</code></pre></div>
+2. Restart to make the configuration take effect</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#reboot
+</code></pre></div>
+<ol>
+<li>Verify that it is in effect</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#getenforce
+</code></pre></div>
+- Switch to enforcing mode</p>
+<p>Use the following steps to switch SELinux into enforcing mode. When SELinux is in enforcing mode, it enforces SELinux policy and denies access based on SELinux policy rules.</p>
+<ol>
+<li>Open the configuration file and modify the parameters</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#vim /etc/selinux/config
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=enforcing
+# SELINUXTYPE= can take one of these three values:
+#     targeted - Targeted processes are protected,
+#     minimum - Modification of targeted policy. Only selected processes are protected.
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+</code></pre></div>
+2. Restart to make the configuration take effect</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#reboot
+</code></pre></div>
+3. Verify that it is in effect</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#getenforce
+</code></pre></div>
+<ul>
+<li>Disable SELINUX</li>
+</ul>
+<p>Use the following steps to disable SELinux from SElinux.</p>
+<ol>
+<li>Open the configuration file and modify the parameters</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#vim /etc/selinux/config
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=enforcing
+...
+SELINUXTYPE=targeted
+...
+</code></pre></div>
+<ol>
+<li>Restart to make the configuration take effect</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#reboot
+</code></pre></div>
+<ol>
+<li>Verify that it is in effect</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#getenforce
+</code></pre></div>
+<h3 id="93-manage-restricted-and-unrestricted-users">9.3 Manage restricted and unrestricted users</h3>
+<p>SELinux policies map every Linux user to an SELinux user. This allows Linux users to inherit the restrictions of SELinux users. Administrators can customize the privileges of restricted users in SELinux policies to specific needs by adjusting Boolean values in the policies. Administrators can use the semanage boolean -l command to determine the current state of these boolean values.</p>
+<p>Install the necessary tools:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#yum install setools-console
+</code></pre></div>
+To view the SELinux user mapping on the system, use the semanage login -l command as root:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# semanage login -l
+Login Name           SELinux User         MLS/MCS Range        Service
+__default__          unconfined_u         s0-s0:c0.c923       *
+root                 unconfined_u         s0-s0:c0.c1023       *
+</code></pre></div>
+To list available SELinux users, enter the following command:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# seinfo -u
+Users: 8
+   guest_u
+   root
+   staff_u
+   sysadm_u
+   system_u
+   unconfined_u
+   user_u
+   xguest_u
+</code></pre></div>
+<h4 id="931-manage-restricted-and-unrestricted-users">9.3.1 Manage restricted and unrestricted users</h4>
+<p>SELinux policies map every Linux user to an SELinux user. This allows Linux users to inherit the restrictions of SELinux users. Administrators can customize the privileges of restricted users in SELinux policies to specific needs by adjusting Boolean values in the policies. Also use the semanage boolean -l command to determine the current state of these boolean values. system_u is a special user identity for system processes and objects, and system _r is an associated role. Administrators must not associate this system_u user and system_r role to a Linux user. Also, unconfined_u and root are unconfined users. Therefore, the roles associated with these SELinux users are not included in the access permissions for types and SELinux roles in the table below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">User</th>
+<th style="text-align: left;">Default role</th>
+<th style="text-align: left;">Other role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">unconfined_u</td>
+<td style="text-align: left;">unconfined_r</td>
+<td style="text-align: left;">system_r</td>
+</tr>
+<tr>
+<td style="text-align: left;">guest_u</td>
+<td style="text-align: left;">guest_r</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">xguest_u</td>
+<td style="text-align: left;">xguest_r</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">staff_u</td>
+<td style="text-align: left;">staff_r</td>
+<td style="text-align: left;">sysadm_r</td>
+</tr>
+<tr>
+<td style="text-align: left;">staff_u</td>
+<td style="text-align: left;">staff_r</td>
+<td style="text-align: left;">unconfined_r</td>
+</tr>
+<tr>
+<td style="text-align: left;">staff_u</td>
+<td style="text-align: left;">staff_r</td>
+<td style="text-align: left;">system_r</td>
+</tr>
+<tr>
+<td style="text-align: left;">sysadm_u</td>
+<td style="text-align: left;">sysadm_r</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">root</td>
+<td style="text-align: left;">staff_r</td>
+<td style="text-align: left;">sysadm_r</td>
+</tr>
+<tr>
+<td style="text-align: left;">root</td>
+<td style="text-align: left;">staff_r</td>
+<td style="text-align: left;">unconfined_r</td>
+</tr>
+<tr>
+<td style="text-align: left;">root</td>
+<td style="text-align: left;">staff_r</td>
+<td style="text-align: left;">system_r</td>
+</tr>
+<tr>
+<td style="text-align: left;">system_u</td>
+<td style="text-align: left;">system_r</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# setsebool -P ssh_sysadm_login on
+</code></pre></div></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the SELinux users already mentioned, there are special roles that can be mapped to these users with the semanage user command. These roles determine what SELinux allows these users to do:</p>
+<ul>
+<li>
+<p>webadm_r can only manage SELinux types related to the Apache HTTP server.</p>
+</li>
+<li>
+<p>dbadm_r can only manage SELinux types related to MariaDB database and PostgreSQL database management system.</p>
+</li>
+<li>
+<p>logadm_r can only manage SELinux types related to syslog and auditlog processes.</p>
+</li>
+<li>
+<p>secadm_r can only manage SELinux.</p>
+</li>
+<li>
+<p>auditadm_r can only manage processes related to the Audit subsystem.</p>
+</li>
+</ul>
+<p>To list all available roles, enter the <code>seinfo -r</code> command:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# seinfo -r 
+Roles: 14
+   auditadm_r
+   dbadm_r
+   guest_r
+   logadm_r
+  ...
+   user_r
+   webadm_r
+   xguest_r
+</code></pre></div>
+<h4 id="932-adding-a-new-user-is-automatically-mapped-to-the-selinux-unconfined_u-user">9.3.2 Adding a new user is automatically mapped to the SELinux unconfined_u user</h4>
+<p>1.Enter the following command to create a new Linux user named example.user:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#useradd example.user
+</code></pre></div>
+2.Assign a password to the Linux example.user user:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#passwd example.user
+</code></pre></div>
+<p>Log in as the Linux example.user user. At login, the pam_selinux PAM module automatically maps the Linux user to the SELinux user (unconfined_u in this case) and sets the resulting SELinux context. This context is then used to start the Linux user's shell.</p>
+<p>3.Check the context of the Linux user when logged in as the example.user user</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#id -Z
+</code></pre></div>
+<h4 id="933-add-a-new-user-as-a-selinux-restricted-user">9.3.3 Add a new user as a SELinux-restricted user</h4>
+<p>1.Enter the following command to create a new Linux user named example.user and map it to the SELinux staff_u user:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# useradd -Z staff_u example.user
+</code></pre></div>
+2.Assign a password to the Linux example.user user:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#passwd example.user
+</code></pre></div>
+Log in as the Linux example.user user. The user's shell is started with the staff_u context.</p>
+<p>3.Check the context of the Linux user when logged in as the example.user user</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#id -Z
+</code></pre></div>
+For more resources, please refer to:
+- pam_selinux(8) manual page</p>
+<h4 id="934-restrict-regular-users">9.3.4 Restrict regular users</h4>
+<p>The administrator can map all regular users in the system to the user_u SELinux user, the process is as follows:</p>
+<ol>
+<li>Display the list of SELinux login records. This list shows the mapping of Linux users to SELinux users</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# semanage login -l
+</code></pre></div>
+2. Map the <strong>default</strong> user (which stands for all users not explicitly mapped) to the user_u SELinux user:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# semanage login -m -s user_u -r s0 __default__
+</code></pre></div>
+<h4 id="935-restrict-administrators-by-mapping-to-sysadm_u">9.3.5 Restrict administrators by mapping to sysadm_u</h4>
+<p>Users with administrative privileges can be restricted by mapping the user directly to the sysadm_u SELinux user. When a user logs in, the session will run in the sysadm_u:sysadm_r:sysadm_t SELinux context. By default, all Linux users in opencloudos (including those with administrative privileges) are mapped to the unconfined SELinux user unconfined_u. System administrators can improve system security by assigning users to SELinux-restricted users. The flow is as follows:</p>
+<ol>
+<li>Allow the sysadm_u user to connect to the system using SSH:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# setsebool -P ssh_sysadm_login on
+</code></pre></div>
+2. Create a new user, add the user to the xxx user group, and map the user to the sysadm_u SELinux user:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# adduser -G wheel -Z sysadm_u example.user
+</code></pre></div>
+<h3 id="94-troubleshooting-selinux-related-issues">9.4 Troubleshooting SELinux related issues</h3>
+<p>If planning to enable SELinux on a system where SELinux was previously disabled, or to run services in a non-standard configuration, administrators may need to troubleshoot possible SELinux blocking issues.</p>
+<h4 id="941-recognizing-selinux-denials">9.4.1 Recognizing SELinux denials</h4>
+<ol>
+<li>When the usage scenario is blocked by SELinux, the /var/log/audit/audit.log file is the first to check for rejection. More Information To query the Audit log, use the ausearch tool. Because SELinux decisions, such as allowing or denying access, are cached and this cache is called Access Vector Cache (AVC), use the AVC and USER_AVC values in the message type parameter, for example:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# ausearch -m AVC,USER_AVC,SELINUX_ERR,USER_SELINUX_ERR -ts recent
+</code></pre></div>
+If there is no match, check to see if the audit daemon is running. If not, repeat the denial scenario after starting auditd, and check the audit log again.
+2. If auditd is running but there are no matches in the ausearch output, check the systemd Journal for information:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# journalctl -t setroubleshoot
+</code></pre></div>
+3. If SELinux is enabled and the Audit daemon is not running on the system, search for some SELinux information in the dmesg command output:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# dmesg | grep -i -e type=1300 -e type=1400
+</code></pre></div>
+4. Even after doing the previous three checks, you may still not find any results. In this case, AVC denials can be silenced because of the dontaudit rule. Temporarily disable the dontaudit rule, allowing all denials to be logged:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# semodule -DB
+</code></pre></div>
+5. If all four previous steps have been applied and the issue is still not recognized, consider whether SELinux is actually blocking the current scenario:</p>
+<ul>
+<li>Switch to permissive mode:
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# setenforce 0
+</code></pre></div></li>
+</ul>
+<h4 id="942-analyzing-selinux-denial-messages">9.4.2 Analyzing SELinux Denial Messages</h4>
+<p>After confirming that SELinux is blocking the current scenario, it may be necessary to analyze the root cause before making a fix.
+1. Install related tools</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#yum install policycoreutils-python-utils
+[root@opencloudos ~]#yum install setroubleshoot-server
+</code></pre></div>
+2. Use the sealert command to list details about log denials</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#sealert -l &quot;*&quot;
+</code></pre></div>
+3. If the output from the previous step does not contain clear suggestions</p>
+<p>Enable full path auditing to see the full path of accessed objects and make other Linux Audit event fields visible
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# auditctl -w /etc/shadow -p w -k shadow-write
+</code></pre></div>
+Clear the setroubleshoot cache and repeat step 1
+<div class="highlight"><pre><span></span><code># rm -f /var/lib/setroubleshoot/setroubleshoot.xml
+</code></pre></div>
+4. Disable full path auditing</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# auditctl -W /etc/shadow -p w -k shadow-write
+</code></pre></div>
+<h3 id="95-writing-custom-selinux-policies">9.5 Writing Custom SELinux Policies</h3>
+<p>This section describes how to write and use custom policies that allow SELinux-restricted applications.</p>
+<p>A SELinux security policy is a collection of SELinux rules. Policies are a core component of SELinux and are loaded into the kernel by SELinux userspace tools. The kernel enforces SELinux policies to evaluate access requests in the system. By default, SELinux denies all requests except those corresponding to rules specified in loaded policies. Each SELinux policy rule describes the interaction between processes and system resources:
+<div class="highlight"><pre><span></span><code>ALLOW apache_process apache_log:FILE READ;
+</code></pre></div>
+This example rule can be read as: Apache processes can read their log files. In this rule, apache_process and apache_log are tags. SELinux security policies assign labels to processes and define relationships to system resources. In this way, policies map operating system entities to the SELinux layer.
+SELinux labels are stored as extended attributes on filesystems, such as ext2. They can be listed using the getfattr utility or the ls -Z command, for example:
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#ls -Z /etc/passwd
+</code></pre></div></p>
+<p>The following example steps provide steps to secure a simple daemon process with SELinux. Replace the daemon with a custom application and modify the rules in the example as required by the application and security policy. Proceed as follows:
+1. Install the toolkit</p>
+<div class="highlight"><pre><span></span><code>#[root@opencloudos ~]yum install policycoreutils-devel
+</code></pre></div>
+<ol>
+<li>In this example, prepare a simple daemon that opens the /var/log/messages file for writing:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#vim mydaemon.c
+
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+FILE *f;
+int main(void)
+{
+while(1) {
+f = fopen(&quot;/var/log/messages&quot;,&quot;w&quot;);
+        sleep(5);
+        fclose(f);
+    }
+}
+</code></pre></div>
+<ol>
+<li>Compile the file</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#gcc -o mydaemon mydaemon.c
+</code></pre></div>
+<ol>
+<li>Create a systemd unit file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#vim mydaemon.service
+
+[Unit]
+Description=Simple testing daemon
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mydaemon
+[Install]
+WantedBy=multi-user.target
+</code></pre></div>
+<ol>
+<li>Install and start the daemon
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cp mydaemon /usr/local/bin/
+[root@opencloudos ~]# cp mydaemon.service /usr/lib/systemd/system
+[root@opencloudos ~]# systemctl start mydaemon
+[root@opencloudos ~]# systemctl status mydaemon
+
+● mydaemon.service - Simple testing daemon
+   Loaded: loaded (/usr/lib/systemd/system/mydaemon.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sat 2020-05-23 16:56:01 CEST; 19s ago
+ Main PID: 4117 (mydaemon)
+    Tasks: 1
+   Memory: 148.0K
+   CGroup: /system.slice/mydaemon.service
+           └─4117 /usr/local/bin/mydaemon
+
+May 23 16:56:01 localhost.localdomain systemd[1]: Started Simple testing daemon.
+</code></pre></div></li>
+</ol>
+<p>Check that the new daemon is not restricted by SELinux:
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#ps -efZ | grep mydaemon
+</code></pre></div>
+6. Generate a custom policy for the daemon:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]#sepolicy generate --init /usr/local/bin/mydaemon
+</code></pre></div>
+<ol>
+<li>Rebuild the system policy with the new policy module using the setup script created by the previous command:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# ./mydaemon.sh
+</code></pre></div>
+8. Restart the daemon and check that it is now restricted by SELinux</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl restart mydaemon
+</code></pre></div>
+9. Since the daemon is now restricted by SELinux, SELinux will also prevent it from accessing /var/log/messages. Display the corresponding rejection message:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# ausearch -m AVC -ts recent
+</code></pre></div>
+10. Reinstall Policy</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]#./mydaemon.sh
+</code></pre></div>
+For more information, please refer to:</p>
+<ul>
+<li>sepolicy(8) and getfattr(1) manual page</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

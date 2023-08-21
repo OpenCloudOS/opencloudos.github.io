@@ -1,0 +1,4035 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network13-18/">
+      
+      
+        <link rel="next" href="../Network25-30/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Chapter 19-24 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-19-configuring-network-devices-to-receive-traffic-from-all-mac-addresses-promiscuous-mode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 19-24
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../network/Network19-24/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 19-24
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 19-24
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#191-use-iproute2-to-temporarily-configure-nic-promiscuous-mode" class="md-nav__link">
+    19.1. Use iproute2 to temporarily configure NIC promiscuous mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-use-nmcli-to-configure-nic-promiscuous-mode" class="md-nav__link">
+    19.2. Use nmcli to configure NIC promiscuous mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-use-nmstatectl-to-configure-nic-promiscuous-mode" class="md-nav__link">
+    19.3. Use nmstatectl to configure NIC promiscuous mode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#191-use-iproute2-to-temporarily-configure-nic-promiscuous-mode" class="md-nav__link">
+    19.1. Use iproute2 to temporarily configure NIC promiscuous mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-use-nmcli-to-configure-nic-promiscuous-mode" class="md-nav__link">
+    19.2. Use nmcli to configure NIC promiscuous mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-use-nmstatectl-to-configure-nic-promiscuous-mode" class="md-nav__link">
+    19.3. Use nmstatectl to configure NIC promiscuous mode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network19-24.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network19-24.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-19-configuring-network-devices-to-receive-traffic-from-all-mac-addresses-promiscuous-mode">Chapter 19 Configuring Network Devices to Receive Traffic from All MAC Addresses (Promiscuous Mode)</h1>
+<p>Network devices typically intercept and read the packets that programs need to receive. You can configure network devices to accept traffic from all MAC addresses at the virtual switch or port group level.   </p>
+<p>Use this setting to:</p>
+<ul>
+<li>Diagnose network connection problems,</li>
+<li>Monitor network activity for increased security,</li>
+<li>Intercept private data in transit or intrusions in the network.</li>
+</ul>
+<p>This chapter describes how to use the iproute2, nmcli, or nmstatectl tools to configure a network device to accept traffic from all MAC addresses. You can enable this mode for any type of network device except InfiniBand.</p>
+<h2 id="191-use-iproute2-to-temporarily-configure-nic-promiscuous-mode">19.1. Use iproute2 to temporarily configure NIC promiscuous mode</h2>
+<p>This section describes configuring network devices to accept all traffic regardless of MAC address. Any changes made using the iproute2 tool are temporary and lost after a machine reboot.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Optional: Display the network interfaces to determine which interface you want to receive all traffic on:
+    <div class="highlight"><pre><span></span><code># ip a
+1: enp1s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 98:fa:9b:a4:34:09 brd ff:ff:ff:ff:ff:ff
+2: bond0: &lt;NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 6a:fd:16:b0:83:5c brd ff:ff:ff:ff:ff:ff
+3: wlp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+...
+</code></pre></div></li>
+<li>Modify the device to enable or disable the accept-all-mac-addresses attribute.<ul>
+<li>Enable accept-all-mac-addresses mode for enp1s0:
+    <div class="highlight"><pre><span></span><code># ip link set enp1s0 promisc on
+</code></pre></div></li>
+<li>Disable accept-all-mac-addresses mode for enp1s0:
+    <div class="highlight"><pre><span></span><code># ip link set enp1s0 promisc off
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p><strong>Verification</strong></p>
+<ul>
+<li>Verify that the accept-all-mac-addresses mode is enabled:
+    <div class="highlight"><pre><span></span><code># ip link show enp1s0
+1: enp1s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,PROMISC,UP&gt; mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether 98:fa:9b:a4:34:09 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+    The PROMISC flag in the device description indicates that the mode is enabled.</li>
+</ul>
+<h2 id="192-use-nmcli-to-configure-nic-promiscuous-mode">19.2. Use nmcli to configure NIC promiscuous mode</h2>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Optional: Display the network interfaces to determine which interface you want to receive all traffic on:
+    <div class="highlight"><pre><span></span><code># ip a
+1: enp1s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 98:fa:9b:a4:34:09 brd ff:ff:ff:ff:ff:ff
+2: bond0: &lt;NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 6a:fd:16:b0:83:5c brd ff:ff:ff:ff:ff:ff
+3: wlp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+...
+</code></pre></div></li>
+<li>Modify the device to enable or disable the accept-all-mac-addresses attribute.<ul>
+<li>Enable accept-all-mac-addresses mode for enp1s0:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 ethernet.accept-all-mac-addresses yes
+</code></pre></div></li>
+<li>Disable accept-all-mac-addresses mode for enp1s0:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 ethernet.accept-all-mac-addresses no
+</code></pre></div></li>
+</ul>
+</li>
+<li>Reboot the NIC to apply the changes:
+    <div class="highlight"><pre><span></span><code># nmcli connection up enp1s0
+</code></pre></div></li>
+</ol>
+<p><strong>Verification</strong></p>
+<ul>
+<li>Verify that the ethernet.accept-all-mac-addresses mode is enabled:
+    <div class="highlight"><pre><span></span><code># nmcli connection show enp1s0
+...
+802-3-ethernet.accept-all-mac-addresses:1     (true)
+</code></pre></div>
+    802-3-ethernet.accept-all-mac-addresses: true means the mode is enabled.</li>
+</ul>
+<h2 id="193-use-nmstatectl-to-configure-nic-promiscuous-mode">19.3. Use nmstatectl to configure NIC promiscuous mode</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>nmstate package installed</li>
+<li>A .yml file for configuring the device is available</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Edit or create a new enp1s0.yml file and modify accept -all-mac-address: true :
+    <div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: enp1s0
+    type: ethernet
+    state: up
+    accept -all-mac-address: true
+</code></pre></div></li>
+<li>App settings:
+    <div class="highlight"><pre><span></span><code># nmstatectl apply /enp1s0.yml
+</code></pre></div></li>
+</ol>
+<p><strong>Verification</strong></p>
+<ul>
+<li>Verify that the ethernet.accept-all-mac-addresses mode is enabled:
+    <div class="highlight"><pre><span></span><code># nmcli connection show enp1s0
+...
+802-3-ethernet.accept-all-mac-addresses:1     (true)
+</code></pre></div>
+    802-3-ethernet.accept-all-mac-addresses: true means the mode is enabled.</li>
+</ul>
+<h1 id="chapter-20-setting-up-8021x-network-authentication-service">Chapter 20 Setting Up 802.1x Network Authentication Service</h1>
+<p>The IEEE 802.1X standard defines secure authentication and authorization methods to protect the network from unauthorized clients. Using the hostapd service and FreeRADIUS, you can provide Network Access Control (NAC) in your network.</p>
+<p>In this document, the host acts as a bridge to connect different clients using the existing network. However, the host only authorizes authenticated clients to access the network.</p>
+<p><img alt="authenticator-802-1x" src="../assets/authenticator-802-1x.png" /></p>
+<h2 id="201-install-freeradius">20.1. Install freeradius</h2>
+<div class="highlight"><pre><span></span><code># yum install freeradius
+</code></pre></div>
+<p>If the freeradius package is already installed, delete the /etc/raddb/ directory, uninstall, and then install the package again. Do not use the yum reinstall command to reinstall packages as the permissions and symlinks in the /etc/raddb/ directory will be different.</p>
+<h2 id="202-setting-up-the-bridge-on-the-authentication-host">20.2. Setting up the bridge on the authentication host</h2>
+<p>A bridge is a link-layer device that forwards traffic between a host and a network based on a table of MAC addresses. If the host is set up as an 802.1X authenticator, add the interface on which to authenticate and the LAN interface to the bridge.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The host has multiple NIC interfaces</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create a bridge:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type bridge con-name br0 ifname br0
+</code></pre></div></li>
+<li>Assign the Ethernet interface to the bridge:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet slave-type bridge con-name br0-port1 ifname enp1s0 master br0
+# nmcli connection add type ethernet slave-type bridge con-name br0-port2 ifname enp7s0 master br0
+# nmcli connection add type ethernet slave-type bridge con-name br0-port3 ifname enp8s0 master br0
+# nmcli connection add type ethernet slave-type bridge con-name br0-port4 ifname enp9s0 master br0
+</code></pre></div></li>
+<li>Enable the bridge to forward Extensible Authentication Protocol over LAN (EAPOL) packets:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify br0 group-forward-mask 8
+</code></pre></div></li>
+<li>Configure the connection to automatically activate the port:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify br0 connection.autoconnect-slaves 1
+</code></pre></div></li>
+<li>Activate network card connection:
+    <div class="highlight"><pre><span></span><code># nmcli connection up br0
+</code></pre></div></li>
+</ol>
+<p><strong>Verification</strong></p>
+<ol>
+<li>Display the status of devices acting as bridge ports:
+    <div class="highlight"><pre><span></span><code># ip link show master br0
+3: enp1s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master br0 state UP mode DEFAULT group default qlen 1000
+link/ether 52:54:00:62:61:0e brd ff:ff:ff:ff:ff:ff
+...
+</code></pre></div></li>
+<li>Check to see if forwarding of EAPOL packets is enabled on br0:
+    <div class="highlight"><pre><span></span><code># cat /sys/class/net/br0/bridge/group_fwd_mask
+0x8
+</code></pre></div>
+    If the return value is 0x8 , forwarding is enabled.</li>
+</ol>
+<h2 id="203-certificate-requirements-for-freeradius">20.3. Certificate Requirements for FreeRADIUS</h2>
+<p>When using the FreeRADIUS security service, you need different TLS certificates for different purposes:</p>
+<ul>
+<li>
+<p>A TLS server certificate for encrypted connections to the server. Use a trusted certificate authority (CA) to issue certificates.
+   The server certificate requires the Extended Key Usage (EKU) field to be set to TLS Web Server Authentication.</p>
+</li>
+<li>
+<p>A client certificate issued by the same CA for Extensible Authentication Protocol-Transport Layer Security (EAP-TLS). EAP-TLS provides certificate-based authentication and is enabled by default.
+   Client certificates need to have their EKU field set to TLS Web Client Authentication.</p>
+</li>
+</ul>
+<p>If you want to keep your connection private, use your company's CA or create your own to issue certificates for FreeRADIUS. If you use a public CA, you will allow it to authenticate users and issue client certificates for EAP-TLS.</p>
+<h2 id="204-on-the-freeradius-server-create-a-set-of-test-certificates">20.4. On the FreeRADIUS server, create a set of test certificates</h2>
+<p>For testing purposes, the freeradius package installs scripts and configuration files in the /etc/raddb/certs/ directory to create its own Certificate Authority (CA) and issue certificates.</p>
+<p>If you use the default configuration, these scripts generate certificates that expire after 60 days and keys that use insecure passwords ("whatever"). You can also customize CA, server, and client configurations.</p>
+<p>Follow the process to create the following required files:</p>
+<ul>
+<li>/etc/raddb/certs/ca.pem: CA certificate</li>
+<li>/etc/raddb/certs/server.key: the private key of the server certificate</li>
+<li>/etc/raddb/certs/server.pem: server certificate</li>
+<li>/etc/raddb/certs/client.key: the private key of the client certificate</li>
+<li>/etc/raddb/certs/client.pem: client certificate</li>
+</ul>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>freeradius is installed.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Enter the /etc/raddb/certs/ directory:
+    <div class="highlight"><pre><span></span><code># cd /etc/raddb/certs/
+</code></pre></div></li>
+<li>Optional: Custom CA configuration ca.conf:
+    <div class="highlight"><pre><span></span><code>...
+[ req ]
+default_bits            = 2048
+input_password          = ca_password
+output_password         = ca_password
+...
+[certificate_authority]
+countryName             = US
+stateOrProvinceName     = North Carolina
+localityName            = Raleigh
+organizationName        = Example Inc.
+emailAddress            = admin@example.org
+commonName              = &quot;Example Certificate Authority&quot;
+...
+</code></pre></div></li>
+<li>Optional: Customize the server configuration server.cnf:
+    <div class="highlight"><pre><span></span><code>...
+[ CA_default ]
+default_days            = 730
+...
+[ req ]
+distinguished_name      = server
+default_bits            = 2048
+input_password          = key_password
+output_password         = key_password
+...
+[server]
+countryName             = US
+stateOrProvinceName     = North Carolina
+localityName            = Raleigh
+organizationName        = Example Inc.
+emailAddress            = admin@example.org
+commonName              = &quot;Example Server Certificate&quot;
+...
+</code></pre></div></li>
+<li>Optional: Customize client configuration client.cnf:
+    <div class="highlight"><pre><span></span><code>...
+[ CA_default ]
+default_days            = 365
+...
+[ req ]
+distinguished_name      = client
+default_bits            = 2048
+input_password          = password_on_private_key
+output_password         = password_on_private_key
+...
+[client]
+countryName             = US
+stateOrProvinceName     = North Carolina
+localityName            = Raleigh
+organizationName        = Example Inc.
+emailAddress            = user@example.org
+commonName              = user@example.org
+...
+</code></pre></div></li>
+<li>Create a certificate:
+    <div class="highlight"><pre><span></span><code># make all
+</code></pre></div></li>
+<li>Change the group in the /etc/raddb/certs/server.pem file to radiusd :
+    <div class="highlight"><pre><span></span><code># chgrp radiusd /etc/raddb/certs/server.pem*
+</code></pre></div></li>
+</ol>
+<h2 id="205-configuring-freeradius-to-securely-authenticate-network-clients-using-eap">20.5. Configuring FreeRADIUS to securely authenticate network clients using EAP</h2>
+<p>FreeRADIUS supports different Extensible Authentication Protocols (EAP). However, for network security purposes, this document describes how to configure FreeRADIUS to support the following secure EAP authentication methods:</p>
+<ul>
+<li>EAP-TLS (Transport Layer Security Protocol) uses a secure TLS connection to authenticate clients using certificates. To use EAP-TLS, you need a TLS client certificate for each network client, and a server certificate for the server. Note that the same Certificate Authority (CA) must have issued the certificate. Always use your own CA to create certificates, as all client certificates issued by the CA you use can authenticate to the FreeRADIUS server.</li>
+<li>EAP-TTLS (Tunneled Transport Layer Security Protocol) uses a secure TLS connection and uses mechanisms such as Password Authentication Protocol (PAP) or Challenge-Handshake Authentication Protocol (CHAP) to authenticate clients. To use EAP-TTLS, you need a TLS server certificate.</li>
+<li>EAP-PEAP (Protected Authentication Protocol) sets up a tunnel using a secure TLS connection as the external authentication protocol. The authenticator verifies the certificate of the RADIUS server. The supplicant then authenticates through a tunnel encrypted using Microsoft Challenge Handshake Authentication Protocol version 2 (MS-CHAPv2) or other methods.
+   The default FreeRADIUS configuration file acts as a document describing all parameters and directives. If you want to disable certain features, please comment them out instead of deleting the corresponding section in the configuration file. This lets you preserve the structure of your configuration files and included documentation.</li>
+</ul>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Freeradius is installed.</li>
+<li>The configuration files in the /etc/raddb/ directory remain unchanged, as provided by the freeradius software.</li>
+<li>The following files exist on the server:</li>
+<li>TLS private key of the FreeRADIUS host: /etc/raddb/certs/server.key</li>
+<li>TLS server certificate for FreeRADIUS host: /etc/raddb/certs/server.pem</li>
+<li>TLS CA certificate: /etc/raddb/certs/ca.pem
+     If you store the files in a different location or they have different names, set the private_key_file, certificate_file and ca_file parameters accordingly in the /etc/raddb/mods-available/eap file.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create /etc/raddb/certs/dh with Diffie-Hellman (DH) parameters if it does not exist. For example, to create a DH file with 2048-bit primes, enter:
+<div class="highlight"><pre><span></span><code>#openssl dhparam -out /etc/raddb/certs/dh 2048
+</code></pre></div>
+To be on the safe side, do not use DH files with primes smaller than 2048 bits. Depending on the number of bits, file creation may take several minutes.</li>
+<li>Set security permissions on TLS private keys, server certificates, CA certificates, and files using DH parameters:
+<div class="highlight"><pre><span></span><code># chmod 640 /etc/raddb/certs/server.key /etc/raddb/certs/server.pem /etc/raddb/certs/ca.pem /etc/raddb/certs/dh
+# chown root:radiusd /etc/raddb/certs/server.key /etc/raddb/certs/server.pem /etc/raddb/certs/ca.pem /etc/raddb/certs/dh
+</code></pre></div></li>
+<li>Edit the /etc/raddb/mods-available/eap file:<ol>
+<li>Set the password for the private key in the private_key_password parameter:
+<div class="highlight"><pre><span></span><code>eap {
+    ...
+    tls-config tls-common {
+        ...
+        private_key_password = key_password
+        ...
+    }
+}
+</code></pre></div></li>
+<li>Depending on your environment, set the default_eap_type parameter in the eap directive to the primary EAP type you are using:
+<div class="highlight"><pre><span></span><code>eap {
+    ...
+    default_eap_type = ttls
+    ...
+}
+</code></pre></div>
+For security, use only ttls, tls or peap.</li>
+<li>Comment out the md5 directive to disable the insecure EAP-MD5 authentication method:
+<div class="highlight"><pre><span></span><code>eap {
+    ...
+    # md5 {
+    # }
+    ...
+}
+</code></pre></div></li>
+</ol>
+</li>
+<li>Edit the /etc/raddb/sites-available/default file and comment out all authentication methods except eap:
+<div class="highlight"><pre><span></span><code>authenticate {
+    ...
+    # Auth-Type PAP {
+    #     pap
+    # }
+
+    # Auth-Type CHAP {
+    #     chap
+    # }
+
+    # Auth-Type MS-CHAP {
+    #     mschap
+    # }
+
+    # mschap
+
+    # digest
+    ...
+}
+</code></pre></div>
+This only enables EAP and disables the plain text authentication method.</li>
+<li>Edit the /etc/raddb/clients.conf file:<ol>
+<li>Set secure passwords in localhost and localhost_ipv6 client directives:
+<div class="highlight"><pre><span></span><code>client localhost {
+    ipaddr = 127.0.0.1
+    ...
+    secret = client_password
+    ...
+}
+
+client localhost_ipv6 {
+    ipv6addr = ::1
+    secret = client_password
+}
+</code></pre></div></li>
+<li>If RADIUS clients on remote hosts (such as network authenticators) should be able to access the FreeRADIUS service, add the corresponding client directives for them:
+<div class="highlight"><pre><span></span><code>client hostapd.example.org {
+    ipaddr = 192.0.2.2/32
+    secret = client_password
+}
+</code></pre></div>
+The ipaddr parameter accepts IPv4 and IPv6 addresses, and you can specify ranges using optional Classless Inter-Domain Routing (CIDR) notation. However, you can only set one value in this parameter. For example, to grant access to IPv4 and IPv6 addresses, add two client directives.
+Use a descriptive name for the client directive, such as hostname or a word that describes where the IP range is used.</li>
+</ol>
+</li>
+<li>If you want to use EAP-TTLS or EAP-PEAP, add the user to the /etc/raddb/users file:
+<div class="highlight"><pre><span></span><code>example_user        Cleartext-Password := &quot;user_password&quot;
+</code></pre></div></li>
+<li>Verify configuration file:
+<div class="highlight"><pre><span></span><code># radiusd -XC
+...
+Configuration appears to be OK
+</code></pre></div></li>
+<li>Enable and start the radiusd service:
+<div class="highlight"><pre><span></span><code># systemctl enable --now radiusd
+</code></pre></div></li>
+</ol>
+<p><strong>Troubleshooting</strong></p>
+<ol>
+<li>Stop the radiusd service:
+<div class="highlight"><pre><span></span><code># systemctl stop radiusd
+</code></pre></div></li>
+<li>Start the service in debug mode:
+<div class="highlight"><pre><span></span><code># radiusd -X
+...
+Ready to process requests
+</code></pre></div></li>
+<li>Perform verification tests on the FreeRADIUS host, as described in sections 20.7, 20.8.</li>
+</ol>
+<h2 id="206-configuring-hostapd-as-an-authenticator-on-a-wired-network">20.6. Configuring hostapd as an authenticator on a wired network</h2>
+<p>The Host Access Point Daemon (hostapd) service acts as an authenticator on a wired network to provide 802.1X authentication. For this, the hostapd service requires a RADIUS server to authenticate clients.</p>
+<p>The hostapd service provides an integrated RADIUS server. However, use the integrated RADIUS server for testing purposes only. For a production environment, use the FreeRADIUS server, which supports additional features such as different authentication methods and access control.</p>
+<p>The hostapd service does not interact with the traffic plane. The service only acts as an authenticator. For example, use a script or service that uses the hostapd control interface to allow or deny traffic based on the results of authentication events.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The hostapd package is installed</li>
+<li>The FreeRADIUS server is configured to authenticate clients.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the /etc/hostapd/hostapd.conf file with the following content:
+<div class="highlight"><pre><span></span><code># General settings of hostapd
+# ===========================
+
+# Control interface settings
+ctrl_interface=/var/run/hostapd
+ctrl_interface_group=wheel
+
+# Enable logging for all modules
+logger_syslog=-1
+logger_stdout=-1
+
+# Log level
+logger_syslog_level=2
+logger_stdout_level=2
+
+
+# Wired 802.1X authentication
+# ===========================
+
+# Driver interface type
+driver=wired
+
+# Enable IEEE 802.1X authorization
+ieee8021x=1
+
+# Use port access entry (PAE) group address
+# (01:80:c2:00:00:03) when sending EAPOL frames
+use_pae_group_addr=1
+
+
+# Network interface for authentication requests
+interface=br0
+
+
+# RADIUS client configuration
+# ===========================
+
+# Local IP address used as NAS-IP-Address
+own_ip_addr=192.0.2.2
+
+# Unique NAS-Identifier within scope of RADIUS server
+nas_identifier=hostapd.example.org
+
+# RADIUS authentication server
+auth_server_addr=192.0.2.1
+auth_server_port=1812
+auth_server_shared_secret=client_password
+
+# RADIUS accounting server
+acct_server_addr=192.0.2.1
+acct_server_port=1813
+acct_server_shared_secret=client_password
+</code></pre></div>
+For details on the parameters used in this configuration, see the description in the /usr/share/doc/hostapd/hostapd/hostapd.conf sample configuration file.</li>
+<li>Enable the hostapd service:
+<div class="highlight"><pre><span></span><code># systemctl enable --now hostapd
+</code></pre></div></li>
+</ol>
+<p><strong>Troubleshooting</strong></p>
+<ol>
+<li>Stop the radiusd service:
+<div class="highlight"><pre><span></span><code># systemctl stop radiusd
+</code></pre></div></li>
+<li>Start the service in debug mode:
+<div class="highlight"><pre><span></span><code># radiusd -X
+...
+Ready to process requests
+</code></pre></div></li>
+<li>Perform verification tests on the FreeRADIUS host, as described in sections 20.7, 20.8.</li>
+</ol>
+<h2 id="207-testing-eap-ttls-authentication-against-a-freeradius-server-or-authenticator">20.7. Testing EAP-TTLS Authentication Against a FreeRADIUS Server or Authenticator</h2>
+<p>To test that authentication using Extensible Authentication Protocol (EAP-TTLS) over Tunneled Transport Layer Security (EAP-TTLS) works as expected, run this flow:</p>
+<ul>
+<li>Set up a FreeRADIUS server.</li>
+<li>Set hostapd service as 802.1X network authentication authenticator.</li>
+</ul>
+<p>The output from the testing tools used in this process provides additional information about EAP communication that can help you debug issues.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>When you want to verify:</li>
+<li>FreeRADIUS server:<ul>
+<li>The eapol_test tool provided by the hostapd package is installed.</li>
+<li>The client you are running this process on is already authorized in the FreeRADIUS server's client database.</li>
+</ul>
+</li>
+<li>The validator wpa_supplicant tool provided by the package of the same name is installed.</li>
+<li>You stored your Certificate Authority (CA) certificate in the /etc/pki/tls/certs/ca.pem file.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the /etc/wpa_supplicant/wpa_supplicant-TTLS.conf file with the following content:
+    <div class="highlight"><pre><span></span><code>    ap_scan=0
+
+network={
+    eap=TTLS
+    eapol_flags=0
+    key_mgmt=IEEE8021X
+
+    # Anonymous identity (sent in unencrypted phase 1)
+    # Can be any string
+    anonymous_identity=&quot;anonymous&quot;
+
+    # Inner authentication (sent in TLS-encrypted phase 2)
+    phase2=&quot;auth=PAP&quot;
+    identity=&quot;example_user&quot;
+    password=&quot;user_password&quot;
+
+    # CA certificate to validate the RADIUS server&#39;s identity
+    ca_cert=&quot;/etc/pki/tls/certs/ca.pem&quot;
+}
+</code></pre></div></li>
+<li>To authenticate to:<ul>
+<li>FreeRADIUS server, enter:
+    <div class="highlight"><pre><span></span><code># eapol_test -c /etc/wpa_supplicant/wpa_supplicant-TTLS.conf -a 192.0.2.1 -s client_password
+...
+EAP: Status notification: remote certificate verification (param=success)
+...
+CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+SUCCESS
+</code></pre></div>
+    The -a option defines the IP address of the FreeRADIUS server, while the -s option specifies the password of the host on which you want to run the commands in the FreeRADIUS server's client configuration.</li>
+<li>Authenticator, please enter:
+    <div class="highlight"><pre><span></span><code># wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant-TTLS.conf -D wired -i enp0s31f6
+...
+enp0s31f6: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+</code></pre></div>
+    The -i option specifies the name of the network interface on which wpa_supplicant sends Extensible Authentication Protocol over LAN (EAPOL) packets.
+    For more debugging information, pass the -d option to the command.</li>
+</ul>
+</li>
+</ol>
+<h2 id="208-testing-eap-tls-authentication-against-a-freeradius-server-or-authenticator">20.8. Testing EAP-TLS Authentication Against a FreeRADIUS Server or Authenticator</h2>
+<p>To test that authentication using Extensible Authentication Protocol (EAP) Transport Layer Security (EAP-TLS) works as expected, follow this process:</p>
+<ul>
+<li>Set up a FreeRADIUS server.</li>
+<li>Set hostapd service as 802.1X network authentication authenticator.</li>
+</ul>
+<p>The output from the testing tools used in this process provides additional information about EAP communication that can help you debug issues.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>When you want to verify:</li>
+<li>FreeRADIUS server:<ul>
+<li>The eapol_test tool provided by the hostapd package is installed.</li>
+<li>The client on which you are running this Procedure is authorized in the FreeRADIUS server's client database.</li>
+</ul>
+</li>
+<li>The validator wpa_supplicant tool provided by the package of the same name is installed.</li>
+<li>You stored the Certificate Authority (CA) certificate in the /etc/pki/tls/certs/ca.pem file.</li>
+<li>The CA that issued the client certificate is the same CA that issued the FreeRADIUS server's server certificate.</li>
+<li>You store client certificates in the /etc/pki/tls/certs/client.pem file.</li>
+<li>Store the client's private key in /etc/pki/tls/private/client.key</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the /etc/wpa_supplicant/wpa_supplicant-TTLS.conf file with the following content:
+    <div class="highlight"><pre><span></span><code>ap_scan=0
+
+network={
+    eap=TLS
+    eapol_flags=0
+    key_mgmt=IEEE8021X
+
+    identity=&quot;user@example.org&quot;
+    client_cert=&quot;/etc/pki/tls/certs/client.pem&quot;
+    private_key=&quot;/etc/pki/tls/private/client.key&quot;
+    private_key_passwd=&quot;password_on_private_key&quot;
+
+    # CA certificate to validate the RADIUS server&#39;s identity
+    ca_cert=&quot;/etc/pki/tls/certs/ca.pem&quot;
+}
+</code></pre></div></li>
+<li>To authenticate to:<ul>
+<li>FreeRADIUS server, enter:
+    <div class="highlight"><pre><span></span><code># eapol_test -c /etc/wpa_supplicant/wpa_supplicant-TLS.conf -a 192.0.2.1 -s client_password
+...
+EAP: Status notification: remote certificate verification (param=success)
+...
+CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+SUCCESS
+</code></pre></div>
+    The -a option defines the IP address of the FreeRADIUS server, while the -s option specifies the password of the host on which you want to run the commands in the FreeRADIUS server's client configuration.</li>
+<li>Authenticator, please enter:
+    <div class="highlight"><pre><span></span><code># wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant-TLS.conf -D wired -i enp0s31f6
+...
+enp0s31f6: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+...
+</code></pre></div>
+    The -i option specifies the name of the network interface on which wpa_supplicant sends Extensible Authentication Protocol over LAN (EAPOL) packets.
+    For more debugging information, pass the -d option to the command.</li>
+</ul>
+</li>
+</ol>
+<h2 id="209-block-and-allow-traffic-based-on-hostapd-authentication-events">20.9. Block and allow traffic based on hostapd authentication events</h2>
+<p>The hostapd service does not interact with the traffic plane. The service only acts as an authenticator. However, you can write a script to allow or deny traffic based on the outcome of the authentication event.</p>
+<p>This Procedure is not supported and there is no enterprise-level solution. It only demonstrates how to block or allow traffic by evaluating the events retrieved by hostapd_cli.</p>
+<p>When the 802-1x-tr-mgmt systemd service is started, OpenCloudOS prevents hostapd from listening to all traffic on the port except Extensible Authentication Protocol over LAN (EAPOL) packets, and uses the hostapd_cli tool to connect to the hostapd control interface. The /usr/local/bin/802-1x-tr-mgmt script then evaluates the events. Depending on the different events received by hostapd_cli, the script allows or blocks traffic for a MAC address. Note that when the 802-1x-tr-mgmt service is stopped, all traffic is automatically allowed.</p>
+<p>Execute this Procedure on the hostapd server.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The hostapd service is configured and the service is ready to authenticate clients.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Create the /usr/local/bin/802-1x-tr-mgmt file with the following content:
+<div class="highlight"><pre><span></span><code>#!/bin/sh
+
+if [ &quot;x$1&quot; == &quot;xblock_all&quot; ]
+then
+
+    nft delete table bridge tr-mgmt-br0 2&gt;/dev/null || true
+    nft -f - &lt;&lt; EOF
+table bridge tr-mgmt-br0 {
+        set allowed_macs {
+                type ether_addr
+        }
+
+        chain accesscontrol {
+                ether saddr @allowed_macs accept
+                ether daddr @allowed_macs accept
+                drop
+        }
+
+        chain forward {
+                type filter hook forward priority 0; policy accept;
+                meta ibrname &quot;br0&quot; jump accesscontrol
+        }
+}
+EOF
+    echo &quot;802-1x-tr-mgmt Blocking all traffic through br0. Traffic for given host will be allowed after 802.1x authentication&quot;
+
+elif [ &quot;x$1&quot; == &quot;xallow_all&quot; ]
+then
+
+    nft delete table bridge tr-mgmt-br0
+    echo &quot;802-1x-tr-mgmt Allowed all forwarding again&quot;
+
+fi
+
+case ${2:-NOTANEVENT} in
+
+    AP-STA-CONNECTED | CTRL-EVENT-EAP-SUCCESS | CTRL-EVENT-EAP-SUCCESS2)
+        nft add element bridge tr-mgmt-br0 allowed_macs { $3 }
+        echo &quot;$1: Allowed traffic from $3&quot;
+        ;;
+
+    AP-STA-DISCONNECTED | CTRL-EVENT-EAP-FAILURE)
+        nft delete element bridge tr-mgmt-br0 allowed_macs { $3 }
+        echo &quot;802-1x-tr-mgmt $1: Denied traffic from $3&quot;
+        ;;
+
+esac
+</code></pre></div></p>
+</li>
+<li>
+<p>Create the /etc/systemd/system/802-1x-tr-mgmt@.service systemd service file with the following content:
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=Example 802.1x traffic management for hostapd
+After=hostapd.service
+After=sys-devices-virtual-net-%i.device
+
+[Service]
+Type=simple
+ExecStartPre=-/bin/sh -c &#39;/usr/sbin/tc qdisc del dev %i ingress &gt; /dev/null 2&gt;&amp;1&#39;
+ExecStartPre=-/bin/sh -c &#39;/usr/sbin/tc qdisc del dev %i clsact &gt; /dev/null 2&gt;&amp;1&#39;
+ExecStartPre=/usr/sbin/tc qdisc add dev %i clsact
+ExecStartPre=/usr/sbin/tc filter add dev %i ingress pref 10000 protocol 0x888e matchall action ok index 100
+ExecStartPre=/usr/sbin/tc filter add dev %i ingress pref 10001 protocol all matchall action drop index 101
+ExecStart=/usr/sbin/hostapd_cli -i %i -a /usr/local/bin/802-1x-tr-mgmt
+ExecStopPost=-/usr/sbin/tc qdisc del dev %i clsact
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></p>
+</li>
+<li>
+<p>Reload systemd:
+<div class="highlight"><pre><span></span><code># systemctl daemon-reload
+</code></pre></div></p>
+</li>
+<li>
+<p>Start the 802-1x-tr-mgmt service that the interface hostapd is listening on:
+<div class="highlight"><pre><span></span><code># systemctl enable --now 802-1x-tr-mgmt@br0.service
+</code></pre></div></p>
+</li>
+</ol>
+<h1 id="chapter-21-authenticating-clients-to-the-network-using-the-8021x-standard-with-certificates-stored-on-the-file-system">Chapter 21 Authenticating clients to the network using the 802.1X standard with certificates stored on the file system</h1>
+<p>Administrators typically use port-based Network Access Control (NAC) based on the IEEE 802.1X standard to protect the network from unauthorized LAN and Wi-Fi clients. The steps in this chapter describe the different options for configuring network authentication.</p>
+<h2 id="211-configuring-8021x-network-authentication-on-an-existing-ethernet-connection-using-nmcli">21.1. Configuring 802.1X Network Authentication on an Existing Ethernet Connection Using nmcli</h2>
+<p>Using the nmcli tool, you can configure clients to authenticate to the network. This section describes how to configure TLS authentication in an existing Ethernet connection profile named enp1s0 to authenticate to the network.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The network supports 802.1X network authentication.</li>
+<li>The Ethernet connection profile exists in NetworkManager and has a valid IP configuration.</li>
+<li>
+<p>The following files required for TLS authentication are present on the client:</p>
+</li>
+<li>
+<p>The client key is stored in the /etc/pki/tls/private/client.key file, which is owned by and readable only by root.</p>
+</li>
+<li>Client certificates are stored in the /etc/pki/tls/certs/client.crt file.</li>
+<li>Certificate Authority (CA) certificates are stored in the /etc/pki/tls/certs/ca.crt file.</li>
+<li>The wpa_supplicant package is installed.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set Extensible Authentication Protocol (EAP) to tls and path to client certificate and key files:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.eap tls 802-1x.client-cert /etc/pki/tls/certs/client.crt 802-1x.private-key /etc/pki/tls/certs/certs/client.key
+</code></pre></div>
+    Note that you must set the 802-1x.eap, 802-1x.client-cert, and 802-1x.private-key parameters in the same command.</li>
+<li>Set the path to the CA certificate:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.ca-cert /etc/pki/tls/certs/ca.crt
+</code></pre></div></li>
+<li>Set the identity of the user used in the certificate:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.identity user@example.com
+</code></pre></div></li>
+<li>
+<p>Alternatively, the password can be stored in the configuration:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 802-1x.private-key-password password
+</code></pre></div></p>
+<p>By default, NetworkManager saves passwords in clear text in the /etc/sysconfig/network-scripts/keys-connection_name file, which is only readable by the root user. However, clearing text passwords in configuration files has security implications.</p>
+<p>For increased security, set the 802-1x.password-flags parameter to 0x1. With this setup, on servers with the GNOME desktop environment or running nm-applet, NetworkManager can retrieve passwords from these services. In other cases, NetworkManager will prompt for a password.
+5. Activate the connection profile:
+<div class="highlight"><pre><span></span><code># nmcli connection up enp1s0
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="212-configuring-static-ethernet-connections-with-8021x-network-authentication-using-nmstatectl">21.2. Configuring Static Ethernet Connections with 802.1X Network Authentication Using nmstatectl</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The network supports 802.1X network authentication.</li>
+<li>The Ethernet connection profile exists in NetworkManager and has a valid IP configuration.</li>
+<li>The following files required for TLS authentication are present on the client:</li>
+<li>The client key is stored in the /etc/pki/tls/private/client.key file, which is owned by and readable only by root.</li>
+<li>Client certificates are stored in the /etc/pki/tls/certs/client.crt file.</li>
+<li>Certificate Authority (CA) certificates are stored in the /etc/pki/tls/certs/ca.crt file.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the YAML file ~/create-ethernet-profile.yml :
+    <div class="highlight"><pre><span></span><code>---
+interfaces:
+- name: enp1s0
+type: ethernet
+state: up
+ipv4:
+    enabled: true
+    address:
+    - ip: 192.0.2.1
+    prefix-length: 24
+    dhcp: false
+ipv6:
+    enabled: true
+    address:
+    - ip: 2001:db8:1::1
+    prefix-length: 64
+    autoconf: false
+    dhcp: false
+802.1x:
+    ca-cert: /etc/pki/tls/certs/ca.crt
+    client-cert: /etc/pki/tls/certs/client.crt
+    eap-methods:
+    - tls
+    identity: client.example.org
+    private-key: /etc/pki/tls/private/client.key
+    private-key-password: password
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.254
+    next-hop-interface: enp1s0
+- destination: ::/0
+    next-hop-address: 2001:db8:1::fffe
+    next-hop-interface: enp1s0
+dns-resolver:
+config:
+    search:
+    - example.com
+    server:
+    - 192.0.2.200
+    - 2001:db8:1::ffbb
+</code></pre></div></li>
+<li>Application configuration:
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/create-ethernet-profile.yml
+</code></pre></div></li>
+</ol>
+<h2 id="configuring-static-ethernet-connections-with-8021x-network-authentication-using-rhel-system-roles">Configuring Static Ethernet Connections with 802.1X Network Authentication Using rhel-system-roles</h2>
+<p>Run this step on the Ansible control node.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Ansible and rhel-system-roles packages are installed on the control node.</li>
+<li>If you are running the playbook with a non-root user, make sure that user has appropriate sudo privileges on the managed nodes.</li>
+<li>The network supports 802.1X network authentication.</li>
+<li>The Ethernet connection profile exists in NetworkManager and has a valid IP configuration.</li>
+<li>The following files required for TLS authentication are present on the client:</li>
+<li>The client key is stored in the /etc/pki/tls/private/client.key file, which is owned by and readable only by root.</li>
+<li>Client certificates are stored in the /etc/pki/tls/certs/client.crt file.</li>
+<li>Certificate Authority (CA) certificates are stored in the /etc/pki/tls/certs/ca.crt file.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Add the IP of the host executing the playbook to the /etc/ansible/hosts Ansible inventory:
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></li>
+<li>Create playbook ~/enable-802.1x.yml :
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with 802.1X authentication
+hosts: node.example.com
+become: true
+tasks:
+    - name: Copy client key for 802.1X authentication
+    copy:
+        src: &quot;/srv/data/client.key&quot;
+        dest: &quot;/etc/pki/tls/private/client.key&quot;
+        mode: 0600
+
+    - name: Copy client certificate for 802.1X authentication
+    copy:
+        src: &quot;/srv/data/client.crt&quot;
+        dest: &quot;/etc/pki/tls/certs/client.crt&quot;
+
+    - name: Copy CA certificate for 802.1X authentication
+    copy:
+        src: &quot;/srv/data/ca.crt&quot;
+        dest: &quot;/etc/pki/ca-trust/source/anchors/ca.crt&quot;
+
+    - include_role:
+        name: rhel-system-roles.network
+    vars:
+        network_connections:
+        - name: enp1s0
+            type: ethernet
+            autoconnect: yes
+            ip:
+            address:
+                - 192.0.2.1/24
+                - 2001:db8:1::1/64
+            gateway4: 192.0.2.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+                - 192.0.2.200
+                - 2001:db8:1::ffbb
+            dns_search:
+                - example.com
+            ieee802_1x:
+            identity: user_name
+            eap: tls
+            private_key: &quot;/etc/pki/tls/private/client.key&quot;
+            private_key_password: &quot;password&quot;
+            client_cert: &quot;/etc/pki/tls/certs/client.crt&quot;
+            ca_cert: &quot;/etc/pki/ca-trust/source/anchors/ca.crt&quot;
+            domain_suffix_match: example.com
+            state: up
+</code></pre></div></li>
+<li>
+<p>Run the playbook:</p>
+<ul>
+<li>To connect to a managed host as root, enter:
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/enable-802.1x.yml
+</code></pre></div></li>
+<li>To connect to a managed host as a user, enter:
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-static-IP.yml
+</code></pre></div>
+    The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.</li>
+</ul>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.</p>
+</li>
+</ol>
+<h1 id="chapter-22-managing-default-gateway-settings">Chapter 22 Managing Default Gateway Settings</h1>
+<p>A default gateway is a router that forwards network packets when no other route matches the packet's destination. On a local network, the default gateway is usually a host one hop away from the Internet.</p>
+<h2 id="221-setting-a-default-gateway-on-an-existing-network-connection-using-nmcli">22.1. Setting a Default Gateway on an Existing Network Connection Using nmcli</h2>
+<p>In most cases, administrators will set the default gateway when creating a connection, this section describes how to use the nmcli tool to set or update the default gateway on a previously created connection.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>At least one static IP address needs to be configured on the connection where the default gateway is set.</li>
+<li>If the user is able to log in at the physical console, the user rights are sufficient. Otherwise, the user must have root privileges.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Set the default gateway IP address.
+    For example, to set the IPv4 address of example's default gateway to 192.0.2.1 :</p>
+<p><div class="highlight"><pre><span></span><code># nmcli connection modify example ipv4.gateway &quot;192.0.2.1&quot;
+</code></pre></div>
+Set the IPv6 address of the example's default gateway to 2001:db8:1::1 :
+<div class="highlight"><pre><span></span><code># nmcli connection modify example ipv6.gateway &quot;2001:db8:1::1&quot;
+</code></pre></div>
+2. Restart your network connection for the changes to take effect. For example, to restart the example connection using the command line:
+<div class="highlight"><pre><span></span><code># nmcli connection up example
+</code></pre></div>
+3. (Optional) Verify that the route is active.
+IPv4:</p>
+<p><div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.0.2.1 dev example proto static metric 100
+</code></pre></div>
+IPv6:
+<div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="222-setting-a-default-gateway-on-an-existing-network-connection-using-nmcli-interactive-mode">22.2. Setting a Default Gateway on an Existing Network Connection Using nmcli Interactive Mode</h2>
+<p>In most cases, administrators set the default gateway when creating a connection, as described in Configuring Dynamic Ethernet Connections Using the nmcli Interactive Editor .</p>
+<p>This section describes how to set or update the default gateway on a previously created connection using the interactive mode of the nmcli tool.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Network connections that require a default gateway to have at least one static IP address</li>
+<li>The working user needs to be able to log in at the physical console, otherwise the user must have root privileges</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Turn on nmcli interactive mode to configure network connections, for example to connect nmcli interactive mode:
+    <div class="highlight"><pre><span></span><code># sudo nmcli connection edit example
+</code></pre></div></li>
+<li>
+<p>Set the default gateway.
+    For example, to set the IPv4 address of the default gateway on the example connection to 192.0.2.1 :</p>
+<p><div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.gateway 192.0.2.1
+</code></pre></div>
+For example, to set the IPv6 address of the default gateway on the example connection to 2001:db8:1::1 :
+<div class="highlight"><pre><span></span><code>nmcli&gt; set ipv6.gateway 2001:db8:1::1
+</code></pre></div>
+3. Optionally, verify that the default gateway is set correctly:
+<div class="highlight"><pre><span></span><code>nmcli&gt; print
+...
+ipv4.gateway:                           192.0.2.1
+...
+ipv6.gateway:                           2001:db8:1::1
+...
+</code></pre></div>
+4. Save configuration:
+<div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+</code></pre></div>
+5. Restart the network connection to apply the changes:
+<div class="highlight"><pre><span></span><code>nmcli&gt; activate example
+</code></pre></div>
+The network connection is temporarily lost during the reboot.
+6. Exit nmcli interactive mode:
+```
+nmcli&gt; quit
+7. (Optional) Verify that the route is active.
+IPv4:</p>
+<p><div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.0.2.1 dev example proto static metric 100
+</code></pre></div>
+IPv6:
+<div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="223-use-nm-connection-editor-to-set-the-default-gateway-for-existing-network-connections">22.3. Use nm-connection-editor to set the default gateway for existing network connections</h2>
+<p>In most cases, administrators set the default gateway when creating a connection. This section describes how to use the nm-connection-editor application to set or update the default gateway on a previously created connection.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Network connections that require a default gateway to have at least one static IP address</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Enter nm-connection-editor in the terminal:</li>
+<li>Select the connection to modify and click the gear icon to edit an existing connection.</li>
+<li>
+<p>Set the IPv4 default gateway.<img alt="nm-connection-editor配置网关_1" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_1.png" /></p>
+</li>
+<li>
+<p>Set the IPv6 default gateway.
+  <img alt="nm-connection-editor配置网关_2" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_2.png" /></p>
+</li>
+<li>Click Save.</li>
+<li>Restart the network connection for the changes to take effect. For example, to restart the example connection using the command line:
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection up example
+</code></pre></div></li>
+<li>
+<p>(Optional) Verify that the route is active.
+    IPv4:</p>
+<p><div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.168.138.1 dev example proto static metric 100
+</code></pre></div>
+IPv6:
+<div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="224-using-control-center-to-set-a-default-gateway-for-an-existing-network-connection">22.4. Using control-center to set a default gateway for an existing network connection</h2>
+<p>In most cases, administrators set the default gateway when creating a connection. This section describes how to set or update the default gateway on a previously created connection using the control-center application.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Network connections that require a default gateway to have at least one static IP address</li>
+<li>The network connection configuration can be opened in the control-center application.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Enter Settings, select Network, and click the gear on the right side of the network connection to be configured to edit.</li>
+<li>
+<p>Set the IPv4 default gateway.<img alt="control-center配置网关_1" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_1.png" /></p>
+</li>
+<li>
+<p>Set the IPv6 default gateway.
+  <img alt="control-center配置网关_2" src="../assets/control-center%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3_2.png" /></p>
+</li>
+<li>Click Apply.</li>
+<li>Toggle the configured network connection state to Off and then to On to restart the network connection to apply the changes.</li>
+<li>
+<p>(Optional) Verify that the route is active.
+    IPv4:</p>
+<p><div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.168.138.1 dev example proto static metric 100
+</code></pre></div>
+IPv6:
+<div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev example proto static metric 100 pref medium
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="225-using-nmstatectl-to-set-the-default-gateway-for-existing-network-connections">22.5. Using nmstatectl to Set the Default Gateway for Existing Network Connections</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Network connections that require a default gateway to have at least one static IP address</li>
+<li>nmstate installed.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the ~/set-default-gateway.yml YAML file:
+    <div class="highlight"><pre><span></span><code>---
+routes:
+config:
+- destination: 0.0.0.0/0
+    next-hop-address: 192.0.2.1
+    next-hop-interface: enp1s0
+</code></pre></div></li>
+<li>App settings:
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/set-default-gateway.yml
+</code></pre></div></li>
+</ol>
+<h2 id="226-using-rhel-system-roles-to-set-a-default-gateway-for-an-existing-network-connection">22.6. Using rhel-system-roles to set a default gateway for an existing network connection</h2>
+<p>When you run a script that uses Networking RHEL system roles, if the value set does not match the name specified in the script, the system role overwrites an existing connection profile with the same name. Therefore, always specify the entire configuration of the network connection profile in the script, even if the IP configuration already exists. Otherwise, role will reset these values to default.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The ansible and rhel-system-roles packages are installed on the control node.</li>
+<li>If you are running the playbook as a non-root user, make sure the user you are using has sudo privileges.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Add the host IP or name to the /etc/ansible/hosts Ansible inventory file if the host you are using to execute the instructions in the playbook is not already listed:
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a ~/ethernet-connection.yml playbook with the following content:
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with static IP and default gateway
+hosts: node.example.com
+become: true
+tasks:
+- include_role:
+    name: rhel-system-roles.network
+
+    vars:
+    network_connections:
+        - name: enp1s0
+        type: ethernet
+        autoconnect: yes
+        ip:
+            address:
+            - 198.51.100.20/24
+            - 2001:db8:1::1/64
+            gateway4: 198.51.100.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+            - 198.51.100.200
+            - 2001:db8:1::ffbb
+            dns_search:
+            - example.com
+        state: up
+</code></pre></div></p>
+</li>
+<li>
+<p>Run the playbook:</p>
+<ul>
+<li>To connect to a managed host as root, enter:
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/ethernet-connection.yml
+</code></pre></div></li>
+<li>To connect to a managed host as a user, enter:
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/ethernet-connection.yml
+</code></pre></div>
+    The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.</li>
+</ul>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.</p>
+</li>
+</ol>
+<h2 id="227-using-network-scripts-to-set-a-default-gateway-for-an-existing-network-connection">22.7. Using network scripts to set a default gateway for an existing network connection</h2>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The NetworkManager package is not installed, or the NetworkManager service is disabled.</li>
+<li>The network-scripts package is installed.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set the GATEWAY parameter in the /etc/sysconfig/network-scripts/ifcfg-enp1s0 file to 192.0.2.1 :
+    <div class="highlight"><pre><span></span><code>GATEWAY=192.0.2.1
+</code></pre></div></li>
+<li>Add a default entry to the /etc/sysconfig/network-scripts/route-enp0s1 file:
+    <div class="highlight"><pre><span></span><code>default via 192.0.2.1
+</code></pre></div></li>
+<li>Restart the network:
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></li>
+</ol>
+<h2 id="228-using-networkmanager-to-manage-multiple-default-gateways">22.8. Using NetworkManager to manage multiple default gateways</h2>
+<p>In some cases, you may need to set more than one default gateway on the host. However, to avoid asynchronous routing issues, each default gateway for the same protocol requires a separate metric value. Note that OpenCloudOS only uses connections to the default gateway set to the lowest routing authority.</p>
+<p>You can set metrics for connected IPv4 and IPv6 gateways with the following commands:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify connection-name ipv4.route-metric value ipv6.route-metric value
+</code></pre></div>
+<p>Do not set the same routing metric for the same protocol in multiple connection configuration sets to avoid routing problems.</p>
+<p>If you set a default gateway with no routing authority, NetworkManager automatically sets the routing authority based on the interface type. NetworkManager will assign a default value for this network type to the first connection activated, and set an incremental value for each other connection of the same type in the order of activation. For example, if two Ethernet connections with default gateways exist, NetworkManager will set the routing weight to 100 on the default gateway route of the connection you activate first. For the second connection, NetworkManager will be set to 101.</p>
+<p>The following is the correspondence between frequently used network types and their default routing rights:</p>
+<table>
+<thead>
+<tr>
+<th>Connection Type</th>
+<th>Default Routing Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPN</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Ethernet</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MACsec</td>
+<td>125</td>
+</tr>
+<tr>
+<td>InfiniBand</td>
+<td>150</td>
+</tr>
+<tr>
+<td>Bond</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>350</td>
+</tr>
+<tr>
+<td>VLAN</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Bridge</td>
+<td>425</td>
+</tr>
+<tr>
+<td>TUN</td>
+<td>450</td>
+</tr>
+<tr>
+<td>Wi-Fi</td>
+<td>600</td>
+</tr>
+<tr>
+<td>IP tunnel</td>
+<td>675</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="229-configuring-networkmanager-to-prevent-specific-configuration-files-from-providing-a-default-gateway">22.9. Configuring NetworkManager to prevent specific configuration files from providing a default gateway</h2>
+<p>You can configure NetworkManager to provide a default gateway without using a specific configuration file. For connection profiles that are not connected to a default gateway, follow the steps below.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>A NetworkManager connection profile exists for network connections that do not have a default gateway configured.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>If the network connection uses a dynamic IP configuration, configure NetworkManager not to use IPv4 and IPv6 default routes:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify connection_name ipv4.never-default yes ipv6.never-default yes
+</code></pre></div>
+    Note that setting ipv4.never-default and ipv6.never-default to yes automatically removes the IP address of the default gateway for the corresponding protocol from the connection profile.</li>
+<li>Activation link:
+    <div class="highlight"><pre><span></span><code># nmcli connection up connection_name
+</code></pre></div></li>
+</ol>
+<p><strong>Verification</strong></p>
+<ul>
+<li>Use ip -4 route or ip -6 route to verify that the default gateway is enabled.</li>
+</ul>
+<h2 id="2210-fix-unexpected-routing-behavior-due-to-multiple-default-gateways">22.10. Fix unexpected routing behavior due to multiple default gateways</h2>
+<p>Only in rare cases (such as when using multipath TCP) are multiple default gateways required on a host. In most cases, you only configure a default gateway to avoid unexpected routing behavior or asynchronous routing problems.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The host uses NetworkManager to manage network connections.</li>
+<li>The host has multiple network interfaces.</li>
+<li>The host has multiple default gateways configured.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Show routing table:<ul>
+<li>IPv4:
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 192.0.2.1 dev enp1s0 proto static metric 101
+default via 198.51.100.1 dev enp7s0 proto static metric 102
+...
+</code></pre></div></li>
+<li>IPv6:
+    <div class="highlight"><pre><span></span><code># ip -6 route
+default via 2001:db8:1::1 dev enp1s0 proto static metric 101 pref medium
+default via 2001:db8:2::1 dev enp7s0 proto static metric 102 pref medium
+...
+</code></pre></div>
+    Entries starting with default indicate the default route. Note the interface names for these entries displayed next to dev.</li>
+</ul>
+</li>
+<li>Use the following command to display the NetworkManager connections you identified in the previous step:
+    <div class="highlight"><pre><span></span><code># nmcli -f GENERAL.CONNECTION,IP4.GATEWAY,IP6.GATEWAY device show enp1s0
+GENERAL.CONNECTION:      Corporate-LAN
+IP4.GATEWAY:             192.168.122.1
+IP6.GATEWAY:             2001:db8:1::1
+
+# nmcli -f GENERAL.CONNECTION,IP4.GATEWAY,IP6.GATEWAY device show enp7s0
+GENERAL.CONNECTION:      Internet-Provider
+IP4.GATEWAY:             198.51.100.1
+IP6.GATEWAY:             2001:db8:2::1
+</code></pre></div>
+    In these examples, profiles named Corporate-LAN and Internet-Provider set default gateways. Because on a local network, the default gateway is usually a host one hop from the Internet, it is incorrect for the remainder of this procedure to assume a default gateway on the Corporate-LAN.</li>
+<li>To configure NetworkManager not to use the Corporate-LAN connection as the default route for IPv4 and IPv6 connections:
+    <div class="highlight"><pre><span></span><code># nmcli connection modify Corporate-LAN ipv4.never-default yes ipv6.never-default yes
+</code></pre></div></li>
+<li>Activate the Corporate-LAN connection:
+    <div class="highlight"><pre><span></span><code># nmcli connection up Corporate-LAN
+</code></pre></div></li>
+</ol>
+<p><strong>Verification</strong></p>
+<ul>
+<li>Use ip -4 route or ip -6 route to verify that there is only one gateway.</li>
+</ul>
+<h1 id="chapter-23-configuring-static-routing">Chapter 23 Configuring Static Routing</h1>
+<p>Routing ensures that you can send and receive traffic between interconnected networks. In larger environments, administrators typically configure services so that routers can dynamically learn about other routers. In smaller environments, administrators often configure static routes to ensure that traffic is accessible from one network to the next.</p>
+<p>You may need static routing for functional communication between multiple networks if these conditions apply:</p>
+<ul>
+<li>Traffic must pass through multiple networks.</li>
+<li>Insufficient exclusive traffic flow through the default gateway.</li>
+</ul>
+<h2 id="231-example-of-a-network-that-requires-static-routing">23.1. Example of a network that requires static routing</h2>
+<p>Because not all IP networks are directly connected through a router, some networks will not be able to communicate with each other without static routing. Static routes can also be configured for certain network flows with only one direction.</p>
+<p>You can configure static routes as follows:</p>
+<ul>
+<li>Simple Configuration: Set this static route only on Router 1. However, this increases traffic on Router 1, because traffic sent from the data center (host on 203.0.113.0/24) to Network B (198.51.100.0/24) always goes through Router 1 to Router 2.</li>
+<li>Complex configuration: Please configure this static route (203.0.113.0/24) on all hosts in the data center. All hosts on this subnet then send hosts closer to Network B (198.51.100.0/24) directly to Router 2 (203.0.113.10).
+   For more details, see the description in the diagram below.<img alt="routing-example" src="../assets/routing-example.png" /></li>
+</ul>
+<p>If the required static routes are not configured, the following describes how each network communication works:</p>
+<ul>
+<li>Hosts in Network A (192.0.2.0/24):</li>
+<li>Can communicate with other hosts on the same subnet because they are directly connected.</li>
+<li>Can communicate with the Internet because Router 1 is in the Network A network (192.0.2.0/24) and has a default gateway to the Internet.</li>
+<li>Can communicate with Data Center network (203.0.113.0/24) because Router 1 has interfaces in Network A (192.0.2.0/24) and Data Center (203.0.113.0/24) network.</li>
+<li>
+<p>Unable to communicate with Network B (198.51.100.0/24) because Router 1 has no interface in this network. Therefore, Router 1 sends traffic to its own default gateway (Internet).</p>
+</li>
+<li>
+<p>Hosts in the data center network (203.0.113.0/24):</p>
+</li>
+<li>Can communicate with other hosts on the same subnet because they are directly connected.</li>
+<li>Can communicate with the Internet because their default gateway is set to Router 1, which has interfaces on the network, data center (203.0.113.0/24) and the Internet.</li>
+<li>Can communicate with Network A (192.0.2.0/24) because their default gateway is set to Router 1, and Router 1 is in both Data Center (203.0.113.0/24) and Network A (192.0.2.0/24) networks Interface exists.</li>
+<li>
+<p>Unable to communicate with the Network B network (198.51.100.0/24) because there are no interfaces in this network. So, a host in the datacenter (203.0.113.0/24) sends traffic to its default gateway (Router 1). Router 1 has no interface on Network B (in 198.51.100.0/24), so Router 1 will send this traffic to its own default gateway (Internet).</p>
+</li>
+<li>
+<p>Hosts in the Network B network (198.51.100.0/24):</p>
+</li>
+<li>Can communicate with other hosts on the same subnet because they are directly connected.</li>
+<li>Unable to communicate with hosts on the Internet. Router 2 sends traffic to Router 1 because of the default gateway setting. The actual behavior of Router 1 depends on the reverse path filter (rp_filter) system control (sysctl) setting. By default, in OpenCloudOS, Router 1 drops outgoing traffic instead of routing it to the internet. However, regardless of the configured behavior, it is not possible to communicate without a static route.</li>
+<li>Unable to communicate with datacenter network (203.0.113.0/24). Outgoing traffic goes through Router 2 to its destination due to the default gateway setting. However, the reply to the packet does not reach the sender, because the host (203.0.113.0/24) in the data center network sends the reply to its default gateway (Router 1). Router 1 then sends the traffic to the Internet.</li>
+<li>Unable to communicate with Network A (192.0.2.0/24). Router 2 sends traffic to Router 1 because of the default gateway setting. The actual behavior of Router 1 depends on the rp_filter sysctl setting. By default, in OpenCloudOS, Router 1 drops outgoing traffic instead of sending it to Network A (192.0.2.0/24). However, regardless of the configured behavior, it is not possible to communicate without a static route.</li>
+</ul>
+<p>Note that in addition to configuring static routing, IP forwarding must be enabled on both routers.</p>
+<h2 id="232-introduction-to-configure-static-routing-with-nmcli-command">23.2. Introduction to configure static routing with nmcli command</h2>
+<p>Static routing can be configured with the following command:
+<div class="highlight"><pre><span></span><code>$ nmcli connection modify connection_name ipv4.routes &quot;ip[/prefix] [next_hop] [metric] [attribute=value] [attribute=value] ...&quot;
+</code></pre></div></p>
+<p>This command supports configuration of the following properties:</p>
+<ul>
+<li>cwnd=n : Set the congestion window (CWND) size, defined by the number of packets.</li>
+<li>lock-cwnd=true|false : Defines whether the kernel can update the CWND value.</li>
+<li>lock-mtu=true|false : Defines whether the kernel can update the MTU to the path MTU (PMTU).</li>
+<li>lock-window=true|false : Defines whether the kernel can update the maximum window size of TCP packets.</li>
+<li>mtu=n : Set the maximum transmission unit (MTU) of the path to the destination address.</li>
+<li>onlink=true|false : Defines whether the next hop is directly attached to this link, even if it does not match any interface prefix.</li>
+<li>scope=n: For IPv4 routing, this property sets the scope of destinations covered by the routing prefix. Set the value to an integer (0-255).</li>
+<li>src=address : Make the source address preferred when sending traffic to destinations covered by the route prefix.</li>
+<li>table=table_id : Set the ID of the table the route should be added to. If this parameter is omitted, NetworkManager will use the main table.</li>
+<li>tos=n : Set the Type of Service (TOS) key. Set the value to an integer (0-255).</li>
+<li>type=value : Set the route type. NetworkManager supports unicast, local, blackhole, unreachable, prohibit, and throw route types. The default is unicast.</li>
+<li>window=n : Set the maximum window size in bytes for TCP advertisements to these destinations.</li>
+</ul>
+<p>If the ipv4.routes subcommand is used, nmcli will override any current settings for this parameter.</p>
+<p>Add a route:</p>
+<p><div class="highlight"><pre><span></span><code>$ nmcli connection modify connection_name +ipv4.routes &quot;...&quot;
+</code></pre></div>
+Delete a route:
+<div class="highlight"><pre><span></span><code>$ nmcli connection modify connection_name -ipv4.routes &quot;...&quot;
+</code></pre></div></p>
+<h2 id="233-configuring-static-routing-using-the-nmcli-command">23.3. Configuring Static Routing Using the nmcli Command</h2>
+<p>You can add a static route to the network connection configuration using the nmcli connection modify command.</p>
+<p>The Procedure in this section describes how to add a route to the 192.0.2.0/24 network using a gateway running on 198.51.100.1 that is reachable via the example connection.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>network configured</li>
+<li>The gateway of the static route must be directly reachable on the interface.</li>
+<li>The user needs to be able to log in at the physical console. Otherwise, the command requires root privileges.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Add a static route to the example connection:
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection modify example +ipv4.routes &quot;192.0.2.0/24 198.51.100.1&quot;
+</code></pre></div>
+    To set multiple routes in one step, separate each static route passed to the command with a comma. For example, to add routes to the 192.0.2.0/24 and 203.0.113.0/24 networks, both routed through the 198.51.100.1 gateway, enter:
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection modify example +ipv4.routes &quot;192.0.2.0/24 198.51.100.1, 203.0.113.0/24 198.51.100.1&quot;
+</code></pre></div></li>
+<li>(Optional) Verify that the route was correctly added to the configuration:
+    <div class="highlight"><pre><span></span><code>$ nmcli connection show example
+...
+ipv4.routes:        { ip = 192.0.2.1/24, nh = 198.51.100.1 }
+...
+</code></pre></div></li>
+<li>Restart the network connection:
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection up example
+</code></pre></div></li>
+<li>
+<p>(Optional) Verify that the route is active:</p>
+<div class="highlight"><pre><span></span><code>$ ip route
+...
+192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+</code></pre></div>
+</li>
+</ol>
+<h2 id="234-using-control-center-to-configure-static-routing">23.4. Using control-center to configure static routing</h2>
+<p>You can use control-center in GNOME to add static routes to your networking configuration.</p>
+<p>The Procedure in this section describes how to add a route to the 192.0.2.0/24 network, which uses a gateway running on 198.51.100.1.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The network is configured.</li>
+<li>The gateway of the static route must be directly reachable on the interface.</li>
+<li>The connected network configuration can be opened in the control-center application.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Enter the settings, select Network, and click the gear in the network entry that needs to add a static route to edit.</li>
+<li>(Optional) Disable automatic routing so that only static routes are used by clicking the On button in the Routes section of the IPv4 tab. If autorouting is enabled, OpenCloudOS will use static routes and routes received from a DHCP server.</li>
+<li>
+<p>Enter the address, subnet mask, gateway and routing rights (optional):<img alt="control-center配置静态路由" src="../assets/control-center%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1.png" /></p>
+</li>
+<li>
+<p>Click Apply.</p>
+</li>
+<li>
+<p>Back in the Network window, re-enable the connection to apply the changes by toggling the connection's button to Off and then back to On.</p>
+</li>
+<li>
+<p>(Optional) Verify that the route is active:</p>
+<div class="highlight"><pre><span></span><code>$ ip route
+...
+192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+</code></pre></div>
+</li>
+</ol>
+<h2 id="235-configuring-static-routing-using-nm-connection-editor">23.5. Configuring Static Routing Using nm-connection-editor</h2>
+<p>You can add static routes to your network connection configuration using the nm-connection-editor application.</p>
+<p>The Procedure in this section describes how to add a route to the 192.0.2.0/24 network using a gateway running on 198.51.100.1 which is reachable via the example connection.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The network is configured.</li>
+<li>The gateway of the static route must be directly reachable on the interface.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Enter in the terminal:</li>
+<li>Select the example connection and click the gear icon to edit the connection.</li>
+<li>Open the IPv4 tab.</li>
+<li>Click the Route button.</li>
+<li>
+<p>Click the Add button and enter the address, subnet mask, gateway, and routing rights (optional).<img alt="nm-connection-editor配置静态路由" src="../assets/nm-connection-editor%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1.png" /></p>
+</li>
+<li>
+<p>Click OK.</p>
+</li>
+<li>Click Save.</li>
+<li>
+<p>Restart the network to apply the changes.</p>
+<div class="highlight"><pre><span></span><code>$ sudo nmcli connection up example
+</code></pre></div>
+</li>
+<li>
+<p>(Optional) Verify that the route is active:
+    ```
+    $ ip route
+    ...
+    192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+    ````</p>
+</li>
+</ol>
+<h2 id="236-configuring-static-routing-using-nmcli-interactive-mode">23.6. Configuring Static Routing Using nmcli Interactive Mode</h2>
+<p>You can add static routes to your networking configuration using the interactive mode of the nmcli tool.</p>
+<p>The Procedure in this section describes how to add a route to the 192.0.2.0/24 network using a gateway running on 198.51.100.1 which is reachable via the example connection.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>network configured</li>
+<li>Gateways for static routes must be directly accessible on the interface.</li>
+<li>The user needs to be able to log in at the physical console. Otherwise, the command requires root privileges.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Edit example using nmcli interactive mode:
+    <div class="highlight"><pre><span></span><code>$ sudo nmcli connection edit example
+</code></pre></div></li>
+<li>Add a static route:
+    <div class="highlight"><pre><span></span><code>nmcli&gt; set ipv4.routes 192.0.2.0/24 198.51.100.1
+</code></pre></div></li>
+<li>(Optional) Verify that the route was correctly added to the configuration:
+    <div class="highlight"><pre><span></span><code>nmcli&gt; print
+...
+ipv4.routes:        { ip = 192.0.2.1/24, nh = 198.51.100.1 }
+...
+</code></pre></div>
+    The ip attribute corresponds to the network to be routed, and the nh attribute corresponds to the gateway (next hop).</li>
+<li>Save configuration:
+    <div class="highlight"><pre><span></span><code>nmcli&gt; save persistent
+</code></pre></div></li>
+<li>Restart the network connection:
+    <div class="highlight"><pre><span></span><code>nmcli&gt; activate example
+</code></pre></div></li>
+<li>Exit nmcli interactive mode:
+    <div class="highlight"><pre><span></span><code>nmcli&gt; quit
+</code></pre></div></li>
+<li>(Optional) Verify that the route is active:
+    <div class="highlight"><pre><span></span><code>$ ip route
+...
+192.0.2.0/24 via 198.51.100.1 dev example proto static metric 100
+</code></pre></div></li>
+</ol>
+<h2 id="237-configuring-static-routing-using-nmstatectl">23.7. Configuring Static Routing Using nmstatectl</h2>
+<p>You can add static routes to your networking configuration using the nmstatectl tool.</p>
+<p>The Procedure in this section describes how to add a route to the 192.0.2.0/24 network, which uses a gateway running on 198.51.100.1, which is reachable through the example network interface.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The example network interface is configured.</li>
+<li>Gateways for static routes must be directly reachable on the network interface.</li>
+<li>The nmstate package is installed.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create a YAML file ~/add-static-route-to-enp1s0.yml with the following content:
+    <div class="highlight"><pre><span></span><code>---
+routes:
+config:
+- destination: 192.0.2.0/24
+    next-hop-address: 198.51.100.1
+    next-hop-interface: enp1s0
+</code></pre></div></li>
+<li>App settings:
+    <div class="highlight"><pre><span></span><code># nmstatectl apply ~/add-static-route-to-enp1s0.yml
+</code></pre></div></li>
+</ol>
+<h2 id="238-configuring-static-routing-using-rhel-system-roles">23.8. Configuring Static Routing Using rhel-system-roles</h2>
+<p>When you run a script that uses Networking RHEL system roles, if the value set does not match the name specified in the script, the system role overwrites an existing connection profile with the same name. Therefore, always specify the entire configuration of the network connection profile in the script, even if the IP configuration already exists. Otherwise, role will reset these values to default.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The ansible and rhel-system-roles packages are installed on the control node.</li>
+<li>If you are running the playbook as a non-root user, make sure the user you are using has sudo privileges.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Add the host IP or name to the /etc/ansible/hosts Ansible inventory file if the host you are using to execute the instructions in the playbook is not already listed:
+    <div class="highlight"><pre><span></span><code>node.example.com
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a ~/ethernet-connection.yml playbook with the following content:
+    <div class="highlight"><pre><span></span><code>---
+- name: Configure an Ethernet connection with static IP and additional routes
+hosts: node.example.com
+become: true
+tasks:
+- include_role:
+    name: rhel-system-roles.network
+
+    vars:
+    network_connections:
+        - name: enp7s0
+        type: ethernet
+        autoconnect: yes
+        ip:
+            address:
+            - 198.51.100.20/24
+            - 2001:db8:1::1/64
+            gateway4: 198.51.100.254
+            gateway6: 2001:db8:1::fffe
+            dns:
+            - 198.51.100.200
+            - 2001:db8:1::ffbb
+            dns_search:
+            - example.com
+            route:
+            - network: 192.0.2.0
+                prefix: 24
+                gateway: 198.51.100.1
+            - network: 203.0.113.0
+                prefix: 24
+                gateway: 198.51.100.2
+        state: up
+</code></pre></div></p>
+</li>
+<li>
+<p>Run the playbook:</p>
+<ul>
+<li>To connect to a managed host as root, enter:
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u root ~/add-static-routes.yml
+</code></pre></div></li>
+<li>To connect to a managed host as a user, enter:
+    <div class="highlight"><pre><span></span><code># ansible-playbook -u user_name --ask-become-pass ~/add-static-routes.yml
+</code></pre></div>
+    The --ask-become-pass option ensures that the ansible-playbook command prompts for the sudo password for the user defined in the -u user_name option.</li>
+</ul>
+<p>If the -u user_name option is not specified, ansible-playbook connects to the managed host as the user currently logged into the control node.</p>
+</li>
+</ol>
+<p><strong>Verification</strong></p>
+<ul>
+<li>Show routing table:
+    <div class="highlight"><pre><span></span><code># ip -4 route
+default via 198.51.100.254 dev enp7s0 proto static metric 100
+192.0.2.0/24 via 198.51.100.1 dev enp7s0 proto static metric 100
+203.0.113.0/24 via 198.51.100.2 dev enp7s0 proto static metric 100
+...
+</code></pre></div></li>
+</ul>
+<h2 id="239-use-network-scripts-to-create-static-routing-configuration-files-in-key-value-pair-format">23.9. Use network scripts to create static routing configuration files in key-value pair format</h2>
+<p>This section Procedure describes how to manually create a routing configuration file for IPv4 routing to the 192.0.2.0/24 network when using network scripts instead of NetworkManager. In this example, the corresponding gateway with IP address 198.51.100.1 is reachable through the enp1s0 interface.</p>
+<p>The examples in this Procedure use configuration entries in key-value-format.</p>
+<p>Note that network scripts only support the key-value format for static IPv4 routes. For IPv6 routing, use ip-command-format.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The gateway of the static route must be directly reachable on the interface.</li>
+<li>The NetworkManager package is not installed, or the NetworkManager service is disabled.</li>
+<li>The network-scripts package is installed.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Add a static IPv4 route to the /etc/sysconfig/network-scripts/route-enp0s1 file:
+    <div class="highlight"><pre><span></span><code>ADDRESS0=192.0.2.0
+NETMASK0=255.255.255.0
+GATEWAY0=198.51.100.1
+</code></pre></div></p>
+<ul>
+<li>The ADDRESS0 variable defines the network of the first routing entry.</li>
+<li>The NETMASK0 variable defines the subnet mask of the first route entry.</li>
+<li>The GATEWAY0 variable defines the IP address of the gateway to the remote network or the host of the first routing entry.</li>
+</ul>
+<p>If you add multiple static routes, increase the number of variable names. Note that variables for each route must be numbered sequentially. For example, ADDRESS0, ADDRESS1, ADDRESS3, and so on.</p>
+</li>
+<li>
+<p>Restart the network:
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="2310-use-network-scripts-to-create-static-routing-configuration-files-in-ip-command-format-format">23.10. Use network scripts to create static routing configuration files in ip-command-format format</h2>
+<p>This section Procedure describes how to use network scripts to manually create routing configuration files for the following static routes:</p>
+<ul>
+<li>IPv4 routing to the 192.0.2.0/24 network. The corresponding gateway with IP address 198.51.100.1 can be accessed through the enp1s0 interface.</li>
+<li>IPv6 routing to the 2001:db8:1::/64 network. The corresponding gateway with IP address 2001:db8:2::1 can be accessed through the enp1s0 interface.</li>
+</ul>
+<p>The examples in this Procedure use configuration entries in ip-command-format.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Gateways for static routes must be directly reachable on the network interface.</li>
+<li>The NetworkManager package is not installed, or the NetworkManager service is disabled.</li>
+<li>The network-scripts package is installed.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Add a static IPv4 route to the /etc/sysconfig/network-scripts/route-enp0s1 file:
+    <div class="highlight"><pre><span></span><code>192.0.2.0/24 via 198.51.100.1 dev enp0s1
+</code></pre></div></li>
+<li>Add a static IPv6 route to the /etc/sysconfig/network-scripts/route6-enp0s1 file:
+    <div class="highlight"><pre><span></span><code>2001:db8:1::/64 via 2001:db8:2::1 dev enp0s1
+</code></pre></div></li>
+<li>Restart the network:
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></li>
+</ol>
+<h1 id="chapter-24-configuring-policy-routing-to-define-additional-routes">Chapter 24 Configuring Policy Routing to Define Additional Routes</h1>
+<p>By default, the kernel in OpenCloudOS decides to use routing tables to forward network packets based on their destination addresses. Policy routing allows you to configure complex routing scenarios. For example, you can route packets based on various criteria, such as source address, packet metadata, or protocol.</p>
+<p>This section discusses how to configure policy routing with NetworkManager.</p>
+<p>Note that on systems using NetworkManager, only the nmcli tool supports setting routing rules and assigning routes to specific tables.</p>
+<h2 id="241-using-networkmanager-to-route-traffic-for-a-specific-subnet-to-a-different-default-gateway">24.1. Using NetworkManager to route traffic for a specific subnet to a different default gateway</h2>
+<p>This section describes how to configure OpenCloudOS with a default route to route all traffic to Internet Provider A's router. Using policy routing, OpenCloudOS will route traffic received from the internal workstation subnet to provider B.</p>
+<p>The Procedure network topology is as follows:
+<img alt="policy-based-routing" src="../assets/policy-based-routing.png" /></p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The system uses NetworkManager to configure the network.</li>
+<li>The router to be configured in Procedure has four network interfaces:</li>
+<li>The enp7s0 interface is connected to Provider A's network. The gateway IP in the provider network is 198.51.100.2 and the network uses a /30 netmask.</li>
+<li>The enp1s0 interface is connected to Provider B's network. The gateway IP in the provider network is 192.0.2.2 and the network uses a /30 netmask.</li>
+<li>The enp8s0 interface is connected to the 10.0.0.0/24 subnet with internal workstations attached.</li>
+<li>The enp9s0 interface is connected to the 203.0.113.0/24 subnet to which the company server is attached.</li>
+<li>Hosts in the internal workstation subnet use 10.0.0.1 as the default gateway. In this Procedure, you assign this IP address to the router's enp8s0 network interface.</li>
+<li>Hosts in the server subnet use 203.0.113.1 as the default gateway. In this Procedure, you assign this IP address to the router's enp9s0 network interface.</li>
+<li>The firewalld service is enabled and active.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Configure the network interface as Provider A:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Provider-A ifname enp7s0 ipv4.method manual ipv4.addresses 198.51.100.1/30 ipv4.gateway 198.51.100.2 ipv4.dns 198.51.100.200 connection.zone external
+</code></pre></div>
+    The nmcli connection add command creates a NetworkManager connection profile. The option parameters for this command are described below:</p>
+<ul>
+<li>type ethernet : Define the connection type as Ethernet.</li>
+<li>con-name connection_name : Set the name of the configuration file. Use meaningful names to avoid confusion.</li>
+<li>ifname network_device : The configured network interface.</li>
+<li>ipv4.method manual: Allows configuration of static IP addresses.</li>
+<li>ipv4.addresses IP_address/subnet_mask : Set IPv4 address and subnet mask.</li>
+<li>ipv4.gateway IP_address : Set the default gateway address.</li>
+<li>ipv4.dns IP_of_DNS_server : Set the IPv4 address of the DNS server.</li>
+<li>connection.zone firewalld_zone : Assign a network interface to the defined firewalld zone. Note that firewalld automatically enables masquerading for interfaces assigned to the external zone.</li>
+</ul>
+</li>
+<li>
+<p>Configure the network interface as Provider B:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Internal-Workstations ifname enp8s0 ipv4.method manual ipv4.addresses 10.0.0.1/24 ipv4.routes &quot;10.0.0.0/24 table=5000&quot; ipv4.routing-rules &quot;priority 5 from 10.0.0.0/24 table 5000&quot; connection.zone trusted
+</code></pre></div>
+    This command uses the ipv4.routes parameter instead of ipv4.gateway to set the default gateway. This requires assigning the default gateway for this connection to a different routing table than the default (5000). NetworkManager automatically creates this new routing table when the connection is activated.</p>
+</li>
+<li>
+<p>Configure the network interface as an internal workstation subnet:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Internal-Workstations ifname enp8s0 ipv4.method manual ipv4.addresses 10.0.0.1/24 ipv4.routes &quot;10.0.0.0/24 table=5000&quot; ipv4.routing-rules &quot;priority 5 from 10.0.0.0/24 table 5000&quot; connection.zone trusted
+</code></pre></div>
+    This command adds a static route to the routing table with ID 5000 using the ipv4.routes parameter. This static route for the 10.0.0.0/24 subnet uses the IP address (192.0.2.1) of the local network interface to Provider B as the next hop.</p>
+<p>Additionally, the command uses the ipv4.routing-rules parameter to add a routing rule with priority 5 that routes traffic from the 10.0.0.0/24 subnet to table 5000. Lower values have higher priority.</p>
+<p>Note that the syntax for the ipv4.routing-rules parameter is the same as in the ip rule add command, but ipv4.routing-rules always requires a priority to be specified.</p>
+</li>
+<li>
+<p>Configure the network interface as a server subnet:
+    <div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name Servers ifname enp9s0 ipv4.method manual ipv4.addresses 203.0.113.1/24 connection.zone trusted
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Verification</strong></p>
+<ol>
+<li>On a host on the internal workstation subnet:</li>
+<li>Install the traceroute package:
+        <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+<li>Use the traceroute tool to display routes to hosts on the Internet:
+        <div class="highlight"><pre><span></span><code># traceroute host.com
+traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+1  10.0.0.1 (10.0.0.1)     0.337 ms  0.260 ms  0.223 ms
+2  192.0.2.1 (192.0.2.1)   0.884 ms  1.066 ms  1.248 ms
+...
+</code></pre></div>
+        The output of the command shows that the router sends packets through 192.0.2.1 , which is Provider B's network.</li>
+<li>On a host on the server subnet:<ol>
+<li>Install the traceroute package:
+    <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+</ol>
+</li>
+<li>Use the traceroute tool to display routes to hosts on the Internet:
+        <code># traceroute host.com
+        traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+        1  203.0.113.1 (203.0.113.1)    2.179 ms  2.073 ms  1.944 ms
+        2  198.51.100.2 (198.51.100.2)  1.868 ms  1.798 ms  1.549 ms
+        ...</code>
+       The output of the command shows that the router sends packets through 198.51.100.2 , which is Provider A's network.</li>
+</ol>
+<p><strong>Troubleshooting</strong></p>
+<p>On hosts using the OpenCloudOS route:
+1. Display a list of ip rules:
+    <div class="highlight"><pre><span></span><code># ip rule list
+0:  from all lookup local
+5:  from 10.0.0.0/24 lookup 5000
+32766:  from all lookup main
+32767:  from all lookup default
+</code></pre></div>
+    Contains local , main , default rules by default.
+2. Show the routes in the table with id 5000:
+    <div class="highlight"><pre><span></span><code># ip route list table 5000
+0.0.0.0/0 via 192.0.2.2 dev enp1s0 proto static metric 100
+10.0.0.0/24 dev enp8s0 proto static scope link src 192.0.2.1 metric 102 
+</code></pre></div>
+3. Show interfaces and firewall domains:
+    <div class="highlight"><pre><span></span><code># firewall-cmd --get-active-zones
+external
+interfaces: enp1s0 enp7s0
+trusted
+interfaces: enp8s0 enp9s0
+</code></pre></div>
+4. Verify that masquerading is enabled for the external domain:
+    <div class="highlight"><pre><span></span><code># firewall-cmd --info-zone=external
+external (active)
+target: default
+icmp-block-inversion: no
+interfaces: enp1s0 enp7s0
+sources:
+services: ssh
+ports:
+protocols:
+masquerade: yes
+...
+</code></pre></div></p>
+<h2 id="242-overview-of-configuring-policy-routing-using-network-scripts">24.2. Overview of configuring policy routing using network scripts</h2>
+<p>The following configuration files are involved when configuring policy routing using network scripts:</p>
+<ul>
+<li>/etc/sysconfig/network-scripts/route-interface : This file defines IPv4 routes. Use the table option to specify the routing table. For example：
+    <div class="highlight"><pre><span></span><code>192.0.2.0/24 via 198.51.100.1 table 1
+203.0.113.0/24 via 198.51.100.2 table 2
+</code></pre></div></li>
+<li>/etc/sysconfig/network-scripts/route6-interface ：This file defines IPv6 routes.</li>
+<li>/etc/sysconfig/network-scripts/rule-interface ：This file defines the rules for the kernel to route traffic to the IPv4 source network of a specific routing table. For example:
+    <div class="highlight"><pre><span></span><code>from 192.0.2.0/24 lookup 1
+from 203.0.113.0/24 lookup 2
+</code></pre></div></li>
+<li>/etc/sysconfig/network-scripts/rule6-interface ：This file defines the rules for the kernel to route traffic to the IPv6 source network of a specific routing table.</li>
+<li>/etc/iproute2/rt_tables ：This file defines the mapping if you want to refer to a specific routing table by name instead of a number. For example:
+    <div class="highlight"><pre><span></span><code>1     Provider_A
+2     Provider_B
+</code></pre></div></li>
+</ul>
+<h2 id="243-using-network-scripts-to-route-traffic-for-a-specified-subnet-to-a-different-default-gateway">24.3. Using network scripts to route traffic for a specified subnet to a different default gateway</h2>
+<p>You can configure policy routing to route the traffic of a specified subnet to a non-default gateway. For example, route internal workstation subnet traffic that is routed to Provider A by default to Provider B .</p>
+<p>The Procedure network topology is as follows:
+<img alt="" src="../assets/policy-based-routing.png" /></p>
+<p>Note that network scripts process configuration files in alphabetical order. Therefore, you must name the configuration file to ensure that the interfaces used for rules and routes of other interfaces are brought up when required by the dependent interface. To achieve the correct order, the Procedure uses the numbers in the ifcfg-<em>, route-</em> and rules-* files.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The NetworkManager package is not installed, or the NetworkManager service is disabled.</li>
+<li>The network-scripts package is installed.</li>
+<li>The OpenCloudOS router to be set up in Procedure has four network interfaces:</li>
+<li>The enp7s0 interface is connected to Provider A's network. The gateway IP in the provider network is 198.51.100.2 and the network uses a /30 netmask.</li>
+<li>The enp1s0 interface is connected to Provider B's network. The gateway IP in the provider network is 192.0.2.2 and the network uses a /30 netmask.</li>
+<li>The enp8s0 interface is connected to the 10.0.0.0/24 subnet with internal workstations attached.</li>
+<li>The enp9s0 interface is connected to the 203.0.113.0/24 subnet to which the company server is attached.</li>
+<li>Hosts in the internal workstation subnet use 10.0.0.1 as the default gateway. In this Procedure, you assign this IP address to the router's enp8s0 network interface.</li>
+<li>Hosts in the server subnet use 203.0.113.1 as the default gateway. In this Procedure, you assign this IP address to the router's enp9s0 network interface.</li>
+<li>The firewalld service is enabled and active.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Create the /etc/sysconfig/network-scripts/ifcfg-1_Provider-A file to add the configuration of the network interface to provider A:
+    <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=198.51.100.1
+PREFIX=30
+GATEWAY=198.51.100.2
+DNS1=198.51.100.200
+DEFROUTE=yes
+NAME=1_Provider-A
+DEVICE=enp7s0
+ONBOOT=yes
+ZONE=external
+</code></pre></div>
+    The file parameters are described as follows:</p>
+<ul>
+<li>TYPE=Ethernet : Define the connection type as Ethernet.</li>
+<li>IPADDR=IP_address : Set IPv4 address.</li>
+<li>PREFIX=subnet_mask : Set the subnet mask.</li>
+<li>GATEWAY=IP_address : Set the default gateway address.</li>
+<li>DNS1=IP_of_DNS_server : Set the IPv4 address of the DNS server.</li>
+<li>DEFROUTE=yes|no : defines whether the connection is a default route or not.</li>
+<li>NAME=connection_name : Set the name of the connection profile. Use meaningful names to avoid confusion.</li>
+<li>DEVICE=network_device : Sets the network interface.</li>
+<li>ONBOOT=yes : Defines that RHEL starts this connection on system boot.</li>
+<li>ZONE=firewalld_zone : Assign the network interface to the defined firewalld zone. Note that firewalld automatically enables masquerading for interfaces assigned to the external zone.</li>
+</ul>
+</li>
+<li>
+<p>Add the network interface configuration for provider B:</p>
+</li>
+<li>Create the /etc/sysconfig/network-scripts/ifcfg-2_Provider-B file with the following content:
+        <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=192.0.2.1
+PREFIX=30
+DEFROUTE=no
+NAME=2_Provider-B
+DEVICE=enp1s0
+ONBOOT=yes
+ZONE=external
+</code></pre></div>
+         Note that the configuration file for this interface does not contain a default gateway setting.</li>
+<li>
+<p>Assign the gateways connected by 2_Provider-B to a separate routing table. Therefore, create a /etc/sysconfig/network-scripts/route-2_Provider-B file with the following content:
+        <div class="highlight"><pre><span></span><code>0.0.0.0/0 via 192.0.2.2 table 5000
+</code></pre></div>
+        This entry assigns the gateway and traffic for all subnets routed through this gateway to table 5000 .</p>
+</li>
+<li>
+<p>Create a network interface configuration for the internal workstation subnet:</p>
+</li>
+<li>Create the /etc/sysconfig/network-scripts/ifcfg-3_Internal-Workstations file with the following content:
+        <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=10.0.0.1
+PREFIX=24
+DEFROUTE=no
+NAME=3_Internal-Workstations
+DEVICE=enp8s0
+ONBOOT=yes
+ZONE=internal
+</code></pre></div></li>
+<li>Add a routing rule configuration for the internal workstation subnet. Therefore, create the /etc/sysconfig/network-scripts/rule-3_Internal-Workstations file with the following content:
+        <div class="highlight"><pre><span></span><code>pri 5 from 10.0.0.0/24 table 5000
+</code></pre></div>
+        This configuration defines a routing rule with priority 5 that routes all traffic from the 10.0.0.0/24 subnet to table 5000. Lower values have higher priority.</li>
+<li>
+<p>Create the /etc/sysconfig/network-scripts/route-3_Internal-Workstations file with the following content to add the static route to the routing table with ID 5000:
+        <div class="highlight"><pre><span></span><code>10.0.0.0/24 via 192.0.2.1 table 5000
+</code></pre></div>
+        This static route defines that RHEL sends traffic from the 10.0.0.0/24 subnet to the IP of the local network interface to Provider B (192.0.2.1). This interface is to routing table 5000 and is used as the next hop.</p>
+</li>
+<li>
+<p>Add the configuration of the network interface to the server subnet by creating the /etc/sysconfig/network-scripts/ifcfg-4_Servers file with the following content:
+    <div class="highlight"><pre><span></span><code>TYPE=Ethernet
+IPADDR=203.0.113.1
+PREFIX=24
+DEFROUTE=no
+NAME=4_Servers
+DEVICE=enp9s0
+ONBOOT=yes
+ZONE=internal
+</code></pre></div></p>
+</li>
+<li>
+<p>Restart the network:
+    <div class="highlight"><pre><span></span><code># systemctl restart network
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Verification</strong></p>
+<ol>
+<li>On a host on the internal workstation subnet:</li>
+<li>Install the traceroute package:
+        <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+<li>Use the traceroute tool to display routes to hosts on the Internet:
+        <div class="highlight"><pre><span></span><code># traceroute host.com
+traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+1  10.0.0.1 (10.0.0.1)     0.337 ms  0.260 ms  0.223 ms
+2  192.0.2.1 (192.0.2.1)   0.884 ms  1.066 ms  1.248 ms
+...
+</code></pre></div>
+        The output of the command shows that the router sends packets through 192.0.2.1 , which is Provider B's network.</li>
+<li>On a host on the server subnet:<ol>
+<li>Install the traceroute package:
+    <div class="highlight"><pre><span></span><code># yum insall traceroute
+</code></pre></div></li>
+</ol>
+</li>
+<li>Use the traceroute tool to display routes to hosts on the Internet:
+        <code># traceroute host.com
+        traceroute to host.com (209.132.183.105), 30 hops max, 60 byte packets
+        1  203.0.113.1 (203.0.113.1)    2.179 ms  2.073 ms  1.944 ms
+        2  198.51.100.2 (198.51.100.2)  1.868 ms  1.798 ms  1.549 ms
+        ...</code>
+        The output of the command shows that the router sends packets through 198.51.100.2 , which is Provider A's network.</li>
+</ol>
+<p><strong>Troubleshooting</strong></p>
+<p>On hosts using the OpenCloudOS route:
+1. Display a list of ip rules:
+    <div class="highlight"><pre><span></span><code># ip rule list
+0:  from all lookup local
+5:  from 10.0.0.0/24 lookup 5000
+32766:  from all lookup main
+32767:  from all lookup default
+</code></pre></div>
+    Contains local , main , default rules by default.
+2. Show the routes in the table with id 5000:
+    <div class="highlight"><pre><span></span><code># ip route list table 5000
+0.0.0.0/0 via 192.0.2.2 dev enp1s0 proto static metric 100
+10.0.0.0/24 dev enp8s0 proto static scope link src 192.0.2.1 metric 102 
+</code></pre></div>
+3. Show interfaces and firewall domains:
+    <div class="highlight"><pre><span></span><code># firewall-cmd --get-active-zones
+external
+interfaces: enp1s0 enp7s0
+trusted
+interfaces: enp8s0 enp9s0
+</code></pre></div>
+4. Verify that masquerading is enabled for the external domain:
+    <div class="highlight"><pre><span></span><code># firewall-cmd --info-zone=external
+external (active)
+target: default
+icmp-block-inversion: no
+interfaces: enp1s0 enp7s0
+sources:
+services: ssh
+ports:
+protocols:
+masquerade: yes
+...
+</code></pre></div></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

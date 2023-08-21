@@ -1,0 +1,2705 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Network37-42/">
+      
+      
+        <link rel="next" href="../Network49-54/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Chapter 43-48 - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-43-reusing-the-same-ip-address-on-different-interfaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 43-48
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../network/Network43-48/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guide/migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/monitor/" class="md-nav__link">
+        System Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 43-48
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 43-48
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#431-reusing-the-same-ip-address-permanently-on-different-interfaces" class="md-nav__link">
+    43.1. Reusing the Same IP Address Permanently on Different Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#432-reusing-the-same-ip-address-temporarily-across-different-interfaces" class="md-nav__link">
+    43.2. Reusing the same IP address temporarily across different interfaces
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#431-reusing-the-same-ip-address-permanently-on-different-interfaces" class="md-nav__link">
+    43.1. Reusing the Same IP Address Permanently on Different Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#432-reusing-the-same-ip-address-temporarily-across-different-interfaces" class="md-nav__link">
+    43.2. Reusing the same IP address temporarily across different interfaces
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/network/Network43-48.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/network/Network43-48.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-43-reusing-the-same-ip-address-on-different-interfaces">Chapter 43: Reusing the Same IP Address on Different Interfaces</h1>
+<p>By using Virtual Routing and Forwarding (VRF), administrators can utilize multiple routing tables simultaneously on the same host. VRF partitions the network at layer 3, enabling administrators to isolate traffic using independent routing tables for each VRF domain. This technique is similar to Virtual LANs (VLANs), which partition the network at layer 2, where different VLAN tags are used by the operating system to isolate traffic sharing the same physical media.</p>
+<p>Compared to partitioning at layer 2, one advantage of VRF is that routing can scale better, taking into account the number of peer routes involved.</p>
+<p>OpenCloudOS utilizes virtual vrt devices for each VRF domain and adds routes to the VRF domain by adding existing network devices to the VRF device. The addresses and routes previously attached to the original device will be moved to the VRF domain.</p>
+<p>Note that each VRF domain is isolated from each other</p>
+<h2 id="431-reusing-the-same-ip-address-permanently-on-different-interfaces">43.1. Reusing the Same IP Address Permanently on Different Interfaces</h2>
+<p>This section describes how to use VRF functionality to permanently reuse the same IP address on different interfaces of the same server.</p>
+<p>In order to allow remote peers to communicate with both VRF interfaces using the same IP address, the network interfaces must belong to different broadcast domains. A broadcast domain in a network is a group of nodes that receive any broadcast traffic sent by any node within the group. In most configurations, all nodes connected to the same switch belong to the same domain.</p>
+<p><strong>Prerequisites.</strong></p>
+<ul>
+<li>Log in as the root user.</li>
+<li>No network interfaces are configured.</li>
+</ul>
+<p><strong>The process is as follows:</strong></p>
+<ol>
+<li>
+<p>Create and configure the first VRF device:</p>
+</li>
+<li>
+<p>Create a connection for the VRF device and assign it to a routing table. For example, to create a VRF device named "vrf0" and assign it to routing table 1001:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type vrf ifname vrf0 con-name vrf0 table 1001 ipv4.method disabled ipv6.method disabled
+</code></pre></div>
+<ul>
+<li>Activate the vrf0 device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection up vrf0
+</code></pre></div>
+<ul>
+<li>Assign network devices to the newly created VRF. For example, to add the Ethernet device enp1s0 to the vrf0 VRF device and assign an IP address and subnet mask to enp1s0, enter:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name vrf.enp1s0 ifname enp1s0 master vrf0 ipv4.method manual ipv4.address 192.0.2.1/24
+</code></pre></div>
+<ul>
+<li>Activate the vrf.enp1s0 connection:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection up vrf.enp1s0
+</code></pre></div>
+<ol>
+<li>
+<p>Create and configure the next VRF device:</p>
+</li>
+<li>
+<p>Create a VRF device and assign it to a routing table. For example, to create a VRF device named "vrf1" and assign it to routing table 1002:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type vrf ifname vrf1 con-name vrf1 table 1002 ipv4.method disabled ipv6.method disabled
+</code></pre></div>
+<ul>
+<li>Activate the vrf1 device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection up vrf1
+</code></pre></div>
+<ul>
+<li>Assign network devices to the newly created VRF. For example, to add the Ethernet device enp7s0 to the vrf1 VRF device and assign an IP address and subnet mask to enp7s0, enter:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name vrf.enp7s0 ifname enp7s0 master vrf1 ipv4.method manual ipv4.address 192.0.2.1/24
+</code></pre></div>
+<ul>
+<li>Activate the vrf.enp7s0 device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># nmcli connection up vrf.enp7s0
+</code></pre></div>
+<h2 id="432-reusing-the-same-ip-address-temporarily-across-different-interfaces">43.2. Reusing the same IP address temporarily across different interfaces</h2>
+<p>This section describes how to use Virtual Routing and Forwarding (VRF) to temporarily reuse the same IP address across different interfaces of a server. This process is intended for testing purposes only, as the configuration is temporary and will be lost upon system reboot.</p>
+<p>To enable remote peers to reach both VRF interfaces when reusing the same IP address, the network interfaces must belong to different broadcast domains. A broadcast domain is a group of nodes that receive broadcast traffic sent by any member of the group. In most configurations, all nodes connected to the same switch belong to the same domain.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>Log in as the root user.</li>
+<li>No network interfaces are configured.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>
+<p>Create and configure the first VRF device:</p>
+</li>
+<li>
+<p>Create a VRF device and assign it to a routing table. For example, to create a VRF device named "blue" and assign it to routing table 1001:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip link add dev blue type vrf table 1001
+</code></pre></div>
+<ul>
+<li>Activate the "blue" device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link set dev blue up
+</code></pre></div>
+<ul>
+<li>Assign network devices to the VRF device. For example, to add the Ethernet device "enp1s0" to the "blue" VRF device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link set dev enp1s0 master blue
+</code></pre></div>
+<ul>
+<li>Activate the "enp1s0" device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link set dev enp1s0 up
+</code></pre></div>
+<ul>
+<li>Assign an IP address and subnet mask to the "enp1s0" device. For example, set it to 192.0.2.1/24:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip addr add dev enp1s0 192.0.2.1/24
+</code></pre></div>
+<ol>
+<li>
+<p>Create and configure the next VRF device:</p>
+</li>
+<li>
+<p>Create a VRF device and assign it to a routing table. For example, to create a VRF device named "red" and assign it to routing table 1002:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip link add dev red type vrf table 1002
+</code></pre></div>
+<ul>
+<li>Activate the "red" device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link set dev red up
+</code></pre></div>
+<ul>
+<li>Assign network devices to the VRF device. For example, to add the Ethernet device "enp7s0" to the "red" VRF device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link set dev enp7s0 master red
+</code></pre></div>
+<ul>
+<li>Activate the "enp7s0" device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip link set dev enp7s0 up
+</code></pre></div>
+<ul>
+<li>Assign the same IP address and subnet mask used by the "enp1s0" device in the "blue" VRF domain to the "enp7s0" device:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># ip addr add dev enp7s0 192.0.2.1/24
+</code></pre></div>
+<ol>
+<li>Optionally, you can create more VRF devices by following the above steps.</li>
+</ol>
+<h1 id="chapter-44-starting-services-in-an-isolated-vrf-network">Chapter 44: Starting Services in an Isolated VRF Network</h1>
+<p>Using Virtual Routing and Forwarding (VRF), you can create an isolated network with a routing table that is different from the operating system's main routing table. Then, you can start services and applications so that they can only access the network defined in that routing table.</p>
+<h2 id="441-configuring-vrf-devices">44.1. Configuring VRF Devices</h2>
+<p>To use Virtual Routing and Forwarding (VRF), you can create a VRF device and attach physical or virtual network interfaces and routing information to it.</p>
+<p>To prevent yourself from being remotely locked out, execute this process on the local console or through a network interface that you do not want to assign to the VRF device.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>You have logged in locally or are using a network interface different from the one you want to assign to the VRF device.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create a VRF device named "vrf0" using the same-named virtual device and attach it to routing table 1000:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type vrf ifname vrf0 con-name vrf0 table 1000 ipv4.method disabled ipv6.method disabled
+</code></pre></div>
+<ol>
+<li>Add the "enp1s0" device to the "vrf0" connection and configure IP settings:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli connection add type ethernet con-name enp1s0 ifname enp1s0 master vrf0 ipv4.method manual ipv4.address 192.0.2.1/24 ipv4.gateway 192.0.2.254
+</code></pre></div>
+<p>This command creates an "enp1s0" connection as the port for the "vrf0" connection. With this configuration, routing information is automatically assigned to routing table 1000 associated with the "vrf0" device.</p>
+<ol>
+<li>
+<p>If you need static routes in the isolated network:</p>
+</li>
+<li>
+<p>Add static routes:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection modify enp1s0 +ipv4.routes &quot;198.51.100.0/24 192.0.2.2&quot;
+</code></pre></div>
+<p>This adds a route to the network 198.51.100.0/24 using 192.0.2.2 as the router.</p>
+</li>
+<li>
+<p>Activate the connection:</p>
+<div class="highlight"><pre><span></span><code># nmcli connection up enp1s0
+</code></pre></div>
+</li>
+</ol>
+<p><strong>Verification</strong></p>
+<ol>
+<li>Display the IP settings of the devices associated with "vrf0":</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip -br addr show vrf vrf0
+enp1s0    UP    192.0.2.15/24
+</code></pre></div>
+<ol>
+<li>Display the VRF device and its associated routing table:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip vrf show
+Name              Table
+-----------------------
+vrf0              1000
+</code></pre></div>
+<ol>
+<li>Display the main routing table:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip route show
+default via 192.168.0.1 dev enp1s0 proto static metric 100
+</code></pre></div>
+<ol>
+<li>Display routing table 1000:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip route show table 1000
+default via 192.0.2.254 dev enp1s0 proto static metric 101
+broadcast 192.0.2.0 dev enp1s0 proto kernel scope link src 192.0.2.1
+192.0.2.0/24 dev enp1s0 proto kernel scope link src 192.0.2.1 metric 101
+local 192.0.2.1 dev enp1s0 proto kernel scope host src 192.0.2.1
+broadcast 192.0.2.255 dev enp1s0 proto kernel scope link src 192.0.2.1
+198.51.100.0/24 via 192.0.2.2 dev enp1s0 proto static metric 101
+</code></pre></div>
+<p>The "default" entry indicates that services using this routing table will use 192.0.2.254 as their default gateway instead of the default gateway in the main routing table.</p>
+<ol>
+<li>Execute the traceroute tool in the network associated with "vrf0" to verify that the tool is using the routing of table 1000:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip vrf exec vrf0 traceroute 203.0.113.1
+traceroute to 203.0.113.1 (203.0.113.1), 30 hops max, 60 byte packets
+1  192.0.2.254 (192.0.2.254)  0.516 ms  0.459 ms  0.430 ms
+...
+</code></pre></div>
+<p>The first hop is the default gateway assigned to routing table 1000 instead of the default gateway in the system's main routing table.</p>
+<h2 id="442-starting-services-in-an-isolated-vrf-network">44.2. Starting Services in an Isolated VRF Network</h2>
+<p>You can configure services, such as the Apache HTTP server, to start within an isolated Virtual Routing and Forwarding (VRF) network.</p>
+<p>Note that services can only bind to local IP addresses within the same VRF network.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>You have configured the "vrf0" device.</li>
+<li>You have configured the Apache HTTP server to only listen on the IP address assigned to the interface associated with the "vrf0" device.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Display the contents of the httpd systemd service:</li>
+</ol>
+<p>```</p>
+<h1 id="systemctl-cat-httpd">systemctl cat httpd</h1>
+<p>...
+   [Service]
+   ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+   ...
+   ```</p>
+<p>The contents of the ExecStart parameter will be required in the subsequent steps to run the same command within the isolated VRF network.</p>
+<ol>
+<li>Create the /etc/systemd/system/httpd.service.d/ directory:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># mkdir /etc/systemd/system/httpd.service.d/
+</code></pre></div>
+<ol>
+<li>Create the /etc/systemd/system/httpd.service.d/override.conf file with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[Service]
+ExecStart=
+ExecStart=/usr/sbin/ip vrf exec vrf0 /usr/sbin/httpd $OPTIONS -DFOREGROUND
+</code></pre></div>
+<p>To override the ExecStart parameter, you need to unset it first and then set it to the new value shown.</p>
+<ol>
+<li>Reload systemd:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl daemon-reload
+</code></pre></div>
+<ol>
+<li>Restart the httpd service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl restart httpd
+</code></pre></div>
+<p><strong>Verification</strong></p>
+<ol>
+<li>Display the process ID (PID) of the httpd process:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># pidof -c httpd
+1904 ...
+</code></pre></div>
+<ol>
+<li>Display the VRF association of the PID, for example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip vrf identify 1904
+vrf0
+</code></pre></div>
+<ol>
+<li>Display all PIDs associated with the "vrf0" device:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># ip vrf pids vrf0
+1904  httpd
+...
+</code></pre></div>
+<h1 id="chapter-45-setting-up-routing-protocols-for-your-system">Chapter 45: Setting up Routing Protocols for Your System</h1>
+<p>This section describes how to use the Free Range Routing (FRRouting or FRR) feature to enable and configure the desired routing protocols for your system.</p>
+<h2 id="451-introduction-to-frrouting">45.1. Introduction to FRRouting</h2>
+<p>Free Range Routing (FRRouting or FRR) is a routing protocol stack provided by the "frr" package in the AppStream repository.</p>
+<p>FRR provides TCP/IP-based routing services and supports multiple IPv4 and IPv6 routing protocols.</p>
+<p>Supported protocols include:</p>
+<ul>
+<li>Border Gateway Protocol (BGP)</li>
+<li>Intermediate System to Intermediate System (IS-IS)</li>
+<li>Open Shortest Path First (OSPF)</li>
+<li>Protocol Independent Multicast (PIM)</li>
+<li>Routing Information Protocol (RIP)</li>
+<li>Routing Information Protocol next generation (RIPng)</li>
+<li>Enhanced Interior Gateway Routing Protocol (EIGRP)</li>
+<li>Next Hop Resolution Protocol (NHRP)</li>
+<li>Bidirectional Forwarding Detection (BFD)</li>
+<li>Policy Based Routing (PBR)</li>
+</ul>
+<p>FRR is a collection of the following services:</p>
+<ul>
+<li>zebra</li>
+<li>bgpd</li>
+<li>isisd</li>
+<li>ospfd</li>
+<li>ospf6d</li>
+<li>pimd</li>
+<li>ripd</li>
+<li>ripngd</li>
+<li>eigrpd</li>
+<li>nhrpd</li>
+<li>bfdd</li>
+<li>pbrd</li>
+<li>staticd</li>
+<li>fabricd</li>
+</ul>
+<p>If FRR is installed, the system can act as a dedicated router that exchanges routing information with other routers in internal or external networks using routing protocols.</p>
+<h2 id="452-setting-up-frrouting">45.2. Setting up FRRouting</h2>
+<p>This section explains how to set up Free Range Routing (FRRouting or FRR).</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Make sure that the "frr" package is installed on your system:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># yum install frr
+</code></pre></div>
+<p><strong>Process</strong></p>
+<ol>
+<li>Edit the /etc/frr/daemons configuration file and enable the required daemons for your system.</li>
+</ol>
+<p>For example, to enable the "ripd" daemon, include the following line:</p>
+<div class="highlight"><pre><span></span><code>ripd=yes
+</code></pre></div>
+<p>The "zebra" daemon must always be enabled, so you must set "zebra=yes" to use FRR. By default, the /etc/frr/daemons file contains [daemon_name]=no entries for all daemons, which disables all daemons. Therefore, starting FRR is ineffective after a fresh installation of the system.</p>
+<ol>
+<li>Start the FRR service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl start frr
+</code></pre></div>
+<ol>
+<li>Alternatively, you can set FRR to start automatically at boot:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl enable frr
+</code></pre></div>
+<h2 id="453-modifying-the-configuration-of-frr">45.3. Modifying the Configuration of FRR</h2>
+<p>This section covers:</p>
+<ul>
+<li>How to enable additional daemons after setting up FRR</li>
+<li>How to disable daemons after setting up FRR</li>
+</ul>
+<p>Prerequisites</p>
+<ul>
+<li>FRR has been set up as described in "Setting up FRRouting".</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Edit the /etc/frr/daemons configuration file and change the lines for the desired daemons from "no" to "yes".</li>
+</ol>
+<p>For example, enable the "ripd" daemon:</p>
+<div class="highlight"><pre><span></span><code>ripd=yes
+</code></pre></div>
+<ol>
+<li>Reload the FRR service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl reload frr
+</code></pre></div>
+<h2 id="454-modifying-the-configuration-of-specific-daemons">45.4. Modifying the Configuration of Specific Daemons</h2>
+<p>With the default configuration, each routing daemon in FRR can only act as a regular router.</p>
+<p>To perform additional configuration for a daemon, use the following steps.</p>
+<p><strong>Process</strong></p>
+<ol>
+<li>In the /etc/frr/ directory, create a configuration file for the desired daemon and name the file:</li>
+</ol>
+<p><code>[daemon_name].conf</code></p>
+<p>For example, to further configure the "eigrpd" daemon, create an "eigrpd.conf" file in the directory mentioned above.</p>
+<ol>
+<li>Populate the new file with the desired content.</li>
+</ol>
+<p>For examples of configuration for specific FRR daemons, see the /usr/share/doc/frr/ directory.</p>
+<ol>
+<li>Reload the FRR service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl reload frr
+</code></pre></div>
+<h1 id="chapter-46-testing-basic-network-settings">Chapter 46: Testing Basic Network Settings</h1>
+<h2 id="461-verifying-connectivity-to-other-hosts-with-the-ping-program">46.1. Verifying Connectivity to Other Hosts with the Ping Program</h2>
+<p>The ping tool sends ICMP packets to a remote host, which can be used to test if the IP connectivity to different hosts is working correctly.</p>
+<p><strong>Process</strong></p>
+<ul>
+<li>Put the IP address of the host in the same subnet as your default gateway:</li>
+</ul>
+<p>```</p>
+<h1 id="ping-192023">ping 192.0.2.3</h1>
+<p>```</p>
+<p>If the command fails, verify the default gateway settings.</p>
+<ul>
+<li>Specify the IP address of the host in a remote subnet:</li>
+</ul>
+<p>```</p>
+<h1 id="ping-19816231">ping 198.162.3.1</h1>
+<p>```</p>
+<p>If the command fails, verify the default gateway settings and ensure that the gateway is forwarding packets between connected networks.</p>
+<h2 id="462-verifying-domain-name-resolution-with-the-host-program">46.2. Verifying Domain Name Resolution with the Host Program</h2>
+<p><strong>Process</strong></p>
+<ul>
+<li>Use the host utility to verify that name resolution is working correctly. For example, to resolve the hostname "client.example.com" to an IP address, enter:</li>
+</ul>
+<p>```</p>
+<h1 id="host-clientexamplecom">host client.example.com</h1>
+<p>```</p>
+<p>If the command returns an error, such as "connection timed out" or "no servers could be reached," verify your DNS settings.</p>
+<h1 id="chapter-47-using-the-networkmanager-program-to-schedule-dhclient-exit-hooks-scripts">Chapter 47: Using the NetworkManager Program to Schedule dhclient Exit Hooks Scripts</h1>
+<h2 id="471-concept-of-scheduling-scripts-with-the-networkmanager-program">47.1. Concept of Scheduling Scripts with the NetworkManager Program</h2>
+<p>When a network event occurs, the NetworkManager-dispatcher service executes user-provided scripts in alphabetical order. These scripts are usually shell scripts, but can also be any executable script or application. For example, you can use scheduled scripts to adjust network-related settings that you cannot manage with NetworkManager.</p>
+<p>You can store scheduled scripts in the following directories:</p>
+<ul>
+<li>/etc/NetworkManager/dispatcher.d/: A common location for scheduled scripts that root users can edit.</li>
+<li>/usr/lib/NetworkManager/dispatcher.d/: For pre-deployed immutable scheduled scripts.</li>
+</ul>
+<p>For security reasons, the NetworkManager-dispatcher service only executes scripts if the following conditions are met:</p>
+<ul>
+<li>The script is owned by root user.</li>
+<li>The script is only readable and writable by root.</li>
+<li>The setuid bit is not set on the script.</li>
+</ul>
+<p>The NetworkManager-dispatcher service runs each script with two arguments:</p>
+<ol>
+<li>The interface name of the device where the action occurred.</li>
+<li>The interface action, such as "up" when the interface is activated.</li>
+</ol>
+<p>The NetworkManager-dispatcher service runs one script at a time, but asynchronously with respect to the main NetworkManager process. Note that if a script is queued, the service will run it, even if subsequent events make it obsolete. However, when the NetworkManager-dispatcher service runs scripts that are symbolic links to files in /etc/NetworkManager/dispatcher.d/no-wait.d/, it does so without waiting for the termination of previous scripts and runs them in parallel.</p>
+<h2 id="472creating-a-networkmanager-scheduled-script-to-run-dhclient-exit-hooks">47.2.Creating a NetworkManager Scheduled Script to Run dhclient Exit Hooks</h2>
+<p>This section explains how to write a NetworkManager scheduled script that runs the dhclient exit hooks saved in the /etc/dhcp/dhclient-exit-hooks.d/ directory when an IPv4 address is assigned or updated from the DHCP server.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>The dhclient exit hooks are stored in the /etc/dhcp/dhclient-exit-hooks.d/ directory.</li>
+</ul>
+<p><strong>Process</strong></p>
+<ol>
+<li>Create the /etc/NetworkManager/dispatcher.d/12-dhclient-down file with the following content:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+# Run dhclient.exit-hooks.d scripts
+
+if [ -n &quot;$DHCP4_DHCP_LEASE_TIME&quot; ] ; then
+if [ &quot;$2&quot; = &quot;dhcp4-change&quot; ] || [ &quot;$2&quot; = &quot;up&quot; ] ; then
+    if [ -d /etc/dhcp/dhclient-exit-hooks.d ] ; then
+    for f in /etc/dhcp/dhclient-exit-hooks.d/*.sh ; do
+        if [ -x &quot;${f}&quot; ]; then
+        . &quot;${f}&quot;
+        fi
+    done
+    fi
+fi
+fi
+</code></pre></div>
+<ol>
+<li>Set root as the owner of the file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># chown root:root /etc/NetworkManager/dispatcher.d/12-dhclient-down
+</code></pre></div>
+<ol>
+<li>Set the permissions so that only the root user can execute it:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># chmod 0700 /etc/NetworkManager/dispatcher.d/12-dhclient-down
+</code></pre></div>
+<ol>
+<li>Restore the SELinux context:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># restorecon /etc/NetworkManager/dispatcher.d/12-dhclient-down
+</code></pre></div>
+<h1 id="chapter-48-introduction-to-networkmanager-debugging">Chapter 48: Introduction to NetworkManager Debugging</h1>
+<p>Raising the log level for all or certain domains can help to capture more details about the operations performed by NetworkManager. Administrators can use this information to troubleshoot issues. NetworkManager provides different levels and domains to generate log information. The /etc/NetworkManager/NetworkManager.conf file is the main configuration file for NetworkManager. Logs are stored in the journal.</p>
+<p>This chapter covers information on enabling debug logging for NetworkManager and configuring the amount of logging using different log levels and domains.</p>
+<h2 id="481-debug-levels-and-domains">48.1. Debug Levels and Domains</h2>
+<p>You can use the "levels" and "domains" parameters to manage the debugging of NetworkManager. "Levels" define the level of detail, while "domains" define the category of messages to be logged at a given severity level ("level").</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Log levels.</th>
+<th style="text-align: left;">Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">OFF</td>
+<td style="text-align: left;">Not logging any information related to NetworkManager.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ERR</td>
+<td style="text-align: left;">Only logging critical errors.</td>
+</tr>
+<tr>
+<td style="text-align: left;">WARN</td>
+<td style="text-align: left;">Logging warning messages that can reflect actions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">INFO</td>
+<td style="text-align: left;">Logging various information that can help trace the status and operations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DEBUG</td>
+<td style="text-align: left;">Enabling verbose logging for debugging.</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRACE</td>
+<td style="text-align: left;">Enabling logging that is more detailed than the DEBUG level.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Please note that subsequent levels of logging include all the information from the previous levels. For example, setting the log level to INFO will also log messages that are included in the ERR and WARN log levels.</p>
+<h2 id="482-setting-the-networkmanager-log-level">48.2. Setting the NetworkManager log level.</h2>
+<p>By default, all logging domains are set to record logs at the INFO level. Disable rate limiting before collecting debug logs. With rate limiting, if there is too much information within a short period of time, systemd-journald may discard it. This can happen when the log level is set to TRACE.</p>
+<p>The following procedure disables rate limiting and enables logging debug messages for all domains:</p>
+<p><strong>Process</strong></p>
+<ol>
+<li>To disable rate limiting, edit the /etc/systemd/journald.conf file, uncomment the <strong>RateLimitBurst</strong> parameter in the [Journal] section, and set its value to 0:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>RateLimitBurst=0
+</code></pre></div>
+<ol>
+<li>Restart the systemd-journald service.</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl restart systemd-journald
+</code></pre></div>
+<ol>
+<li>Create the /etc/NetworkManager/conf.d/95-nm-debug.conf file with the following content:</li>
+</ol>
+<p><code>[logging]
+   domains=ALL:TRACE</code></p>
+<p>The "domains" parameter can contain multiple domain:level pairs separated by commas.</p>
+<ol>
+<li>Restart the NetworkManager service.</li>
+</ol>
+<div class="highlight"><pre><span></span><code># systemctl restart NetworkManager
+</code></pre></div>
+<p><strong>Verification</strong></p>
+<ul>
+<li>Query the systemd journal to display the log entries for the NetworkManager unit:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># journalctl -u NetworkManager
+...
+Jun 30 15:24:32 server NetworkManager[164187]: &lt;debug&gt; [1656595472.4939] active-connection[0x5565143c80a0]: update activation type from assume to managed
+Jun 30 15:24:32 server NetworkManager[164187]: &lt;trace&gt; [1656595472.4939] device[55b33c3bdb72840c] (enp1s0): sys-iface-state: assume -&gt; managed
+Jun 30 15:24:32 server NetworkManager[164187]: &lt;trace&gt; [1656595472.4939] l3cfg[4281fdf43e356454,ifindex=3]: commit type register (type &quot;update&quot;, source &quot;device&quot;, existing a369f23014b9ede3) -&gt; a369f23014b9ede3
+Jun 30 15:24:32 server NetworkManager[164187]: &lt;info&gt;  [1656595472.4940] manager: NetworkManager state is now CONNECTED_SITE
+...
+</code></pre></div>
+<h2 id="483-using-nmcli-to-temporarily-set-log-level-during-runtime">48.3. Using nmcli to temporarily set log level during runtime.</h2>
+<p>You can use nmcli to change the log level during runtime. However, OpenCloudOS recommends enabling debugging and restarting NetworkManager using a configuration file. Updating the "levels" and "domains" in a .conf file helps with debugging startup issues and captures all logs from the initial state.</p>
+<p><strong>Process</strong></p>
+<ol>
+<li>Optional: To display the current logging settings:</li>
+</ol>
+<div class="highlight"><pre><span></span><code># nmcli general logging
+LEVEL  DOMAINS
+INFO   PLATFORM,RFKILL,ETHER,WIFI,BT,MB,DHCP4,DHCP6,PPP,WIFI_SCAN,IP4,IP6,A
+UTOIP4,DNS,VPN,SHARING,SUPPLICANT,AGENTS,SETTINGS,SUSPEND,CORE,DEVICE,OLPC,
+WIMAX,INFINIBAND,FIREWALL,ADSL,BOND,VLAN,BRIDGE,DBUS_PROPS,TEAM,CONCHECK,DC
+B,DISPATCH
+</code></pre></div>
+<ol>
+<li>
+<p>To modify the log level and domains, use the following options:</p>
+</li>
+<li>
+<p>To set the log level to the same level for all domains, use the following command:</p>
+<div class="highlight"><pre><span></span><code># nmcli general logging level LEVEL domains ALL
+</code></pre></div>
+</li>
+<li>
+<p>To change the level for a specific domain, use the following command:</p>
+<div class="highlight"><pre><span></span><code># nmcli general logging level LEVEL domains DOMAINS
+</code></pre></div>
+<p>Please note that using this command to update the log level will disable logging for all other domains.</p>
+</li>
+<li>
+<p>To change the level for specific domains while keeping the level for other domains unchanged, use the following command:</p>
+<div class="highlight"><pre><span></span><code># nmcli general logging level KEEP domains DOMAIN:LEVEL,DOMAIN:LEVEL
+</code></pre></div>
+</li>
+</ol>
+<h2 id="484-viewing-networkmanager-logs">48.4. Viewing NetworkManager logs.</h2>
+<p><strong>Process</strong></p>
+<ul>
+<li>To view logs, use the following command:</li>
+</ul>
+<div class="highlight"><pre><span></span><code># journalctl -u NetworkManager -b
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

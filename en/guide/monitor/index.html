@@ -1,0 +1,3254 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../update/">
+      
+      
+        <link rel="next" href="../security/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>System Monitor - OpenCloudOS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opencloudosos-monitor-and-manage-system-status-and-performance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-header__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenCloudOS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Monitor
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../guide/monitor/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/V9_install/" class="md-tabs__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../grub2_boot/" class="md-tabs__link md-tabs__link--active">
+        Guide
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release/v8.5/" class="md-tabs__link">
+        Releases
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/how-to/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adaptation/adaptation_process/" class="md-tabs__link">
+        Adaptation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../migrate_relative/" class="md-tabs__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/iso/" class="md-tabs__link">
+        Download
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tcase/proj/" class="md-tabs__link">
+        Test
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="OpenCloudOS Documentation" class="md-nav__button md-logo" aria-label="OpenCloudOS Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenCloudOS Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/OpenCloudOS/opencloudos.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OpenCloudOS/opencloudos.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V9_install/" class="md-nav__link">
+        OC V9 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/V8_install/" class="md-nav__link">
+        OC V8 Download and Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/use/" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          安装启动指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          安装启动指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          系统启动管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统启动管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grub2_boot/" class="md-nav__link">
+        系统引导管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uefi_boot/" class="md-nav__link">
+        UEFI引导启动项管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          系统管理指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          系统管理指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syslog_config/" class="md-nav__link">
+        日志管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        Configuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/" class="md-nav__link">
+        System Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update/" class="md-nav__link">
+        Update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          System Monitor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        System Monitor
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-getting-started-with-tuned" class="md-nav__link">
+    Chapter 1 Getting Started with TUNED
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1 Getting Started with TUNED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-merge-optimization-profiles" class="md-nav__link">
+    1.1 Merge Optimization Profiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-optimization-strategy" class="md-nav__link">
+    1.2 Optimization Strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-optimized-cpu-partition-profile" class="md-nav__link">
+    1.3 Optimized CPU partition profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-use-tuned-cpu-partition-profile-for-low-latency-tuning" class="md-nav__link">
+    1.4 Use tuned CPU partition profile for low latency tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-install-and-start-tuned" class="md-nav__link">
+    1.5 Install and start Tuned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-list-available-tuned-profiles" class="md-nav__link">
+    1.6 List available TuneD profiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-set-up-an-adjusted-profile" class="md-nav__link">
+    1.7. Set up an adjusted profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-disable-tuned" class="md-nav__link">
+    1.8 Disable TUNED
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-disk-management" class="md-nav__link">
+    Chapter 2 Disk Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2 Disk Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-view-disk" class="md-nav__link">
+    2.1 View disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-add-a-new-disk" class="md-nav__link">
+    2.2 Add a new disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-delete-disk-partition" class="md-nav__link">
+    2.3 Delete disk partition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-available-disk-schedulers" class="md-nav__link">
+    2.4 Available disk schedulers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-determine-active-disk-scheduler" class="md-nav__link">
+    2.5 Determine Active Disk Scheduler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-setting-up-the-disk-scheduler-with-tuned" class="md-nav__link">
+    2.6 Setting up the disk scheduler with TuneD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-setting-up-the-disk-scheduler-with-udev-rules" class="md-nav__link">
+    2.7 Setting up the disk scheduler with udev rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-temporarily-set-the-scheduler-for-a-specific-disk" class="md-nav__link">
+    2.8 Temporarily set the scheduler for a specific disk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-cpu-usage-and-tuning" class="md-nav__link">
+    Chapter 3 CPU usage and tuning
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3 CPU usage and tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-display-cpu-architecture-information" class="md-nav__link">
+    3.1 Display CPU architecture information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-view-cpu-usage" class="md-nav__link">
+    3.2 View CPU usage:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-perf-tool" class="md-nav__link">
+    3.3 perf tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-perf-investigates-busy-cpu" class="md-nav__link">
+    3.4 perf investigates busy CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-display-specific-cpu-when-profiling-with-perf-top" class="md-nav__link">
+    3.5 Display specific CPU when profiling with perf top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-log-reports-and-monitor-specific-cpus" class="md-nav__link">
+    3.6 Log reports and monitor specific CPUs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-memory-usage" class="md-nav__link">
+    Chapter 4 Memory Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4 Memory Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-view-memory-usage" class="md-nav__link">
+    4.1 View memory usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-view-physical-memory-information" class="md-nav__link">
+    4.2 View physical memory information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-virtual-memory" class="md-nav__link">
+    4.3 Virtual memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-segment-page-mechanism" class="md-nav__link">
+    4.4 Segment page mechanism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-memory-recovery" class="md-nav__link">
+    4.5 Memory recovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/file_system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/configuring_and_managing_logical_volumes/" class="md-nav__link">
+        Logical Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/managing_storage_devices/" class="md-nav__link">
+        Storage Devices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network1-6/" class="md-nav__link">
+        Chapter 1-6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network7-12/" class="md-nav__link">
+        Chapter 7-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network13-18/" class="md-nav__link">
+        Chapter 13-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network19-24/" class="md-nav__link">
+        Chapter 19-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network25-30/" class="md-nav__link">
+        Chapter 25-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network31-36/" class="md-nav__link">
+        Chapter 31-36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network37-42/" class="md-nav__link">
+        Chapter 37-42
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network43-48/" class="md-nav__link">
+        Chapter 43-48
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network49-54/" class="md-nav__link">
+        Chapter 49-54
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/Network55-57/" class="md-nav__link">
+        Chapter 55-57
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.5/" class="md-nav__link">
+        v8.5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v8.6/" class="md-nav__link">
+        v8.6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/v9.0/" class="md-nav__link">
+        v9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocs/" class="md-nav__link">
+        OpenCloudOS Stream
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release/ocsk/" class="md-nav__link">
+        OpenCloudOS Stream Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/how-to/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/docs-format-guide/" class="md-nav__link">
+        Documentation format guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/kernel-develop-guide/" class="md-nav__link">
+        Kernel Development Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Adaptation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_process/" class="md-nav__link">
+        Adaptation Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/testcase/" class="md-nav__link">
+        Test Case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          Adaptation Lists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adaptation Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_hw/" class="md-nav__link">
+        Hardware Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_sw/" class="md-nav__link">
+        Commercial Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_oss/" class="md-nav__link">
+        OpenSouce Software Adaptation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adaptation/adaptation_FAQ/" class="md-nav__link">
+        Adaptation FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          About CentOS End-of-Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About CentOS End-of-Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate_relative/" class="md-nav__link">
+        About CentOS End-of-Life
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/" class="md-nav__link">
+        Migrate from CentOS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/mirrors/" class="md-nav__link">
+        镜像源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Test
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Test
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/proj/" class="md-nav__link">
+        一、项目管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          二、用例管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、用例管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_create/" class="md-nav__link">
+        编写用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_extract/" class="md-nav__link">
+        提取用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_import/" class="md-nav__link">
+        导入用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/case_set/" class="md-nav__link">
+        用例集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          三、执行环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、执行环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/node/" class="md-nav__link">
+        新增节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/cluster/" class="md-nav__link">
+        新增集群
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+          四、任务管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、任务管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_create/" class="md-nav__link">
+        创建任务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcase/task_execute/" class="md-nav__link">
+        执行任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-getting-started-with-tuned" class="md-nav__link">
+    Chapter 1 Getting Started with TUNED
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1 Getting Started with TUNED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-merge-optimization-profiles" class="md-nav__link">
+    1.1 Merge Optimization Profiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-optimization-strategy" class="md-nav__link">
+    1.2 Optimization Strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-optimized-cpu-partition-profile" class="md-nav__link">
+    1.3 Optimized CPU partition profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-use-tuned-cpu-partition-profile-for-low-latency-tuning" class="md-nav__link">
+    1.4 Use tuned CPU partition profile for low latency tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-install-and-start-tuned" class="md-nav__link">
+    1.5 Install and start Tuned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-list-available-tuned-profiles" class="md-nav__link">
+    1.6 List available TuneD profiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-set-up-an-adjusted-profile" class="md-nav__link">
+    1.7. Set up an adjusted profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-disable-tuned" class="md-nav__link">
+    1.8 Disable TUNED
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-disk-management" class="md-nav__link">
+    Chapter 2 Disk Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2 Disk Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-view-disk" class="md-nav__link">
+    2.1 View disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-add-a-new-disk" class="md-nav__link">
+    2.2 Add a new disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-delete-disk-partition" class="md-nav__link">
+    2.3 Delete disk partition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-available-disk-schedulers" class="md-nav__link">
+    2.4 Available disk schedulers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-determine-active-disk-scheduler" class="md-nav__link">
+    2.5 Determine Active Disk Scheduler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-setting-up-the-disk-scheduler-with-tuned" class="md-nav__link">
+    2.6 Setting up the disk scheduler with TuneD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-setting-up-the-disk-scheduler-with-udev-rules" class="md-nav__link">
+    2.7 Setting up the disk scheduler with udev rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-temporarily-set-the-scheduler-for-a-specific-disk" class="md-nav__link">
+    2.8 Temporarily set the scheduler for a specific disk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-cpu-usage-and-tuning" class="md-nav__link">
+    Chapter 3 CPU usage and tuning
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3 CPU usage and tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-display-cpu-architecture-information" class="md-nav__link">
+    3.1 Display CPU architecture information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-view-cpu-usage" class="md-nav__link">
+    3.2 View CPU usage:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-perf-tool" class="md-nav__link">
+    3.3 perf tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-perf-investigates-busy-cpu" class="md-nav__link">
+    3.4 perf investigates busy CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-display-specific-cpu-when-profiling-with-perf-top" class="md-nav__link">
+    3.5 Display specific CPU when profiling with perf top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-log-reports-and-monitor-specific-cpus" class="md-nav__link">
+    3.6 Log reports and monitor specific CPUs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-memory-usage" class="md-nav__link">
+    Chapter 4 Memory Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4 Memory Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-view-memory-usage" class="md-nav__link">
+    4.1 View memory usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-view-physical-memory-information" class="md-nav__link">
+    4.2 View physical memory information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-virtual-memory" class="md-nav__link">
+    4.3 Virtual memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-segment-page-mechanism" class="md-nav__link">
+    4.4 Segment page mechanism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-memory-recovery" class="md-nav__link">
+    4.5 Memory recovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/edit/main/docs/guide/monitor.en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/OpenCloudOS/opencloudos.github.io/raw/main/docs/guide/monitor.en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="opencloudosos-monitor-and-manage-system-status-and-performance"><center />OpenCloudosOS-Monitor and manage system status and performance</h1>
+<h2 id="chapter-1-getting-started-with-tuned">Chapter 1 Getting Started with TUNED</h2>
+<p>TuneD is a service that monitors your system and optimizes performance under specific workloads.</p>
+<p>At the heart of TuneD are configuration files that tune your system for different use cases. The configuration files provided by TuneD are divided into the following categories:</p>
+<ul>
+<li>Energy Saving Profiles</li>
+<li>Performance boost profile</li>
+</ul>
+<h3 id="11-merge-optimization-profiles">1.1 Merge Optimization Profiles</h3>
+<p>TuneD can select more profiles at once, TuneD will try to merge them during loading. If there is a conflict, the setting in the last specified configuration file takes precedence.</p>
+<p><strong>Prerequisite</strong>: tuned installed</p>
+<p>Example: Low Power Consumption in Virtual Guest:</p>
+<ol>
+<li>start tuned</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# service tuned start
+Redirecting to /bin/systemctl start tuned.service
+</code></pre></div>
+<ol>
+<li>Optimize the system to run in a virtual machine for maximum performance and tune for low power consumption</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile virtual-guest powersave
+</code></pre></div>
+<h3 id="12-optimization-strategy">1.2 Optimization Strategy</h3>
+<ul>
+<li>balanced: The default power saving profile. It is intended to be a compromise between performance and power consumption. It uses autoscaling and autoresizing where possible. The only downside is increased latency.</li>
+<li>powersave: Profile for maximum energy saving performance. It can limit performance to run with minimum actual power consumption.</li>
+<li>throughput-performance: A server profile optimized for high throughput. It disables power saving mechanisms and enables sysctl settings to improve throughput performance of disk and network IO.</li>
+<li>accelerator-performance: The Accelerator performance profile contains the same tuning as the Throughput performance profile. The CPU can be locked into a low C state, so the latency is less than 100 us. Improved performance of some accelerators, such as GPUs.</li>
+<li>virtual-guest: Throughput-based performance profile that, among other tasks, reduces virtual memory swapping and increases disk read-ahead values.</li>
+<li>virtual-host: This profile reduces virtual memory swapping, increases disk read-ahead values, and enables more aggressive dirty page writeback values.</li>
+<li>optimize-serial-console: Tweak the profile of the serial console's I/O activity by reducing the printk value.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile throughput-performance optimize-serial-console
+</code></pre></div>
+<ul>
+<li>intel-sst: Profile optimized for systems with user-defined Intel Speed Select Technology configurations.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile cpu-partitioning intel-sst
+</code></pre></div>
+<h3 id="13-optimized-cpu-partition-profile">1.3 Optimized CPU partition profile</h3>
+<p>Configure the cpu‑partitioning profile in the /etc/tuned/cpu-partitioning-variables.conf file: isolated CPU with load balancing, isolated CPU without load balancing, housekeeping CPU.</p>
+<h3 id="14-use-tuned-cpu-partition-profile-for-low-latency-tuning">1.4 Use tuned CPU partition profile for low latency tuning</h3>
+<p>Prerequisite: Use the yum install tuned-profiles-cpu-partitioning command as root to install the cpu-partitioning TuneD configuration file.</p>
+<ol>
+<li>Edit the /etc/tuned/cpu-partitioning-variables.conf file and add the following information</li>
+</ol>
+<div class="highlight"><pre><span></span><code>Isolated CPUs with the kernel’s scheduler load balancing:
+isolated_cores=2-23
+Isolated CPUs without the kernel’s scheduler load balancing:
+no_balance_cores=2,3
+</code></pre></div>
+<ol>
+<li>Set the cpu-partitioning TuneD configuration file</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile cpu-partitioning
+</code></pre></div>
+<ol>
+<li>Restart</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# reboot
+</code></pre></div>
+<h3 id="15-install-and-start-tuned">1.5 Install and start Tuned</h3>
+<ol>
+<li>Install the tuned package</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# yum install tuned
+</code></pre></div>
+<ol>
+<li>Start and enable the tuned service</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl enable --now tuned
+</code></pre></div>
+<ol>
+<li>(Optional) Install the TuneD configuration file for the live system:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# yum install tuned-profiles-realtime tuned-profiles-nfv
+</code></pre></div>
+<ol>
+<li>Verify that the TuneD profile is active and applied:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+Current active profile: virtual-guest
+</code></pre></div>
+<ol>
+<li>Check that the current system settings match the preset configuration files</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm verify
+
+Verfication succeeded, current system settings match the preset profile.
+
+See TuneD log file (&#39;/var/log/tuned/tuned.log&#39;) for details.
+</code></pre></div>
+<h3 id="16-list-available-tuned-profiles">1.6 List available TuneD profiles</h3>
+<ol>
+<li>List all available TuneD profiles</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm list
+
+Available profiles:
+
+\- accelerator-performance - Throughput performance based tuning with disabled higher latency STOP states
+
+\- balanced - General non-specialized tuned profile
+
+\- cpu-partitioning - Optimize for CPU partitioning
+
+\- desktop - Optimize for the desktop use-case
+
+\- hpc-compute - Optimize for HPC compute workloads
+
+\- intel-sst - Configure for Intel Speed Select Base Frequency
+
+\- latency-performance - Optimize for deterministic performance at the cost of increased power consumption
+
+\- my-profile
+
+...
+
+Current active profile: virtual-guest
+</code></pre></div>
+<ol>
+<li>List current active profile</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+
+Current active profile: virtual-guest
+</code></pre></div>
+<h3 id="17-set-up-an-adjusted-profile">1.7. Set up an adjusted profile</h3>
+<p>This process activates the selected TuneD profile on your system</p>
+<ol>
+<li>You can let TuneD recommend the most suitable configuration file for your system:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm recommend
+
+virtual-guest
+</code></pre></div>
+<ol>
+<li>Activate the configuration file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile selected-profile
+</code></pre></div>
+<p>Activate multiple profiles</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile profile1 profile2
+</code></pre></div>
+3. Restart the system:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# reboot
+</code></pre></div>
+<ol>
+<li>Verify that the TuneD profile is active and applied:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm verify
+Verfication succeeded, current system settings match the preset profile.
+
+See TuneD log file (&#39;/var/log/tuned/tuned.log&#39;) for details.
+</code></pre></div>
+<h3 id="18-disable-tuned">1.8 Disable TUNED</h3>
+<ol>
+<li>Temporarily disable all tuned:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm off
+</code></pre></div>
+<ol>
+<li>Permanently stop and disable the tuned service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# systemctl disable --now tuned
+</code></pre></div>
+<h2 id="chapter-2-disk-management">Chapter 2 Disk Management</h2>
+<h3 id="21-view-disk">2.1 View disk</h3>
+<ol>
+<li>View disk information, but unmounted disks will not be displayed</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# df -h
+
+Filesystem Size Used Avail Use% Mounted on
+
+devtmpfs 830M 0 830M 0% /dev
+
+tmpfs 845M 24K 845M 1% /dev/shm
+
+tmpfs 845M 250M 596M 30% /run
+
+tmpfs 845M 0 845M 0% /sys/fs/cgroup
+
+/dev/vda1 50G 4.5G 43G 10% /
+
+tmpfs 169M 0 169M 0% /run/user/0
+...
+</code></pre></div>
+<ol>
+<li>View the list of disks owned by the host</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# fdisk -lu
+
+Disk /dev/vda: 50 GiB, 53687091200 bytes, 104857600 sectors
+
+Units: sectors of 1 \* 512 = 512 bytes
+
+Sector size (logical/physical): 512 bytes / 512 bytes
+
+I/O size (minimum/optimal): 262144 bytes / 262144 bytes
+
+Disklabel type: dos
+
+Disk identifier: 0xe609e297
+
+Device Boot Start End Sectors Size Id Type
+
+/dev/vda1 2048 104857566 104855519 50G 83 Linux
+...
+</code></pre></div>
+<ol>
+<li>View the disk usage of the specified directory</li>
+</ol>
+<p>Put the directory name directly after the command:</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# df -h /dev
+
+Filesystem Size Used Avail Use% Mounted on
+
+devtmpfs 830M 0 830M 0% /dev
+</code></pre></div>
+4. df command introduction</p>
+<ul>
+<li>-a: List all file systems, including system-specific /proc and other file systems</li>
+<li>-k: Display each file system in KB capacity</li>
+<li>-m: display each file system in MB capacity</li>
+<li>-h: Display in GB, MB, KB and other formats that are easier for people to read</li>
+<li>-H: Replace the carry method of M=1024K with M=1000K</li>
+<li>-T: display file system type</li>
+<li>-i: Use the number of inodes instead of the hard disk capacity to display</li>
+<li>
+<p>-l: only display the file system of the local machine</p>
+</li>
+<li>
+<p>du command introduction</p>
+<p>Function: Use the du command to view the usage of the specified directory.</p>
+<p>Options: -h: output file system partition usage</p>
+<p>-s: display the size of the file or the entire directory</p>
+</li>
+</ul>
+<h3 id="22-add-a-new-disk">2.2 Add a new disk</h3>
+<p>After adding a new hard disk, if we want to use this hard disk, we must go through partition-&gt;format-&gt;mount before we can use it.</p>
+<p>Partition: There are two partition methods</p>
+<ul>
+<li>Use the MBR method to partition, that is, the fdisk command</li>
+<li>
+<p>Use GPT to partition, that is, the gdisk command</p>
+</li>
+<li>
+<p>Format the disk:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkfs
+</code></pre></div>
+<p>Format the specified partition as ext4:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkfs -t ext4 /dev/sdb1
+</code></pre></div>
+<p>Format the specified disk with 2G space:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkfs /dev/sdb2 2G
+</code></pre></div>
+<ol>
+<li>Mount:
+    Establish a mapping relationship between device partitions and system directories.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mount [Device name] [Mount directory]
+</code></pre></div>
+<h3 id="23-delete-disk-partition">2.3 Delete disk partition</h3>
+<ol>
+<li>Check the hard disk information and find the partition on which hard disk you want to delete.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# fdisk -l
+</code></pre></div>
+<ol>
+<li>Enter the disk partition</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# fdisk [Device name]
+</code></pre></div>
+<ol>
+<li>Enter d to delete the partition. If there are multiple partitions, you need to select the partition number</li>
+</ol>
+<div class="highlight"><pre><span></span><code>    command(m for help): d
+</code></pre></div>
+<ol>
+<li>Enter w to save and exit</li>
+</ol>
+<h3 id="24-available-disk-schedulers">2.4 Available disk schedulers</h3>
+<ul>
+<li>
+<p>none
+  First-in-first-out (FIFO) scheduling algorithm. It coalesces requests for common block layers with a simple last cache.</p>
+</li>
+<li>
+<p>mq-deadline
+Attempts to provide a guaranteed latency for requests from the time the request reaches the scheduler. This scheduler is suitable for most use cases, especially where write operations are mostly asynchronous.</p>
+</li>
+<li>
+<p>bfq
+Target desktop systems and interactive tasks. This scheduler is suitable for copying large files without the system becoming unresponsive.</p>
+</li>
+<li>
+<p>kyber
+The scheduler tunes itself to meet latency goals by calculating the latency of each I/O request submitted to the block I/O layer. This scheduler is suitable for fast devices like NVMe, SSD or other low latency devices.</p>
+</li>
+</ul>
+<p>Default disk scheduler:</p>
+<p>For Non-Volatile Memory Express (NVMe) block devices, the default scheduler is none</p>
+<p>Default disk scheduler:</p>
+<p>For Non-Volatile Memory Express (NVMe) block devices, the default scheduler is none</p>
+<h3 id="25-determine-active-disk-scheduler">2.5 Determine Active Disk Scheduler</h3>
+<p>See which disk scheduler is currently active on a given block device.</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /sys/block/[device]/queue/scheduler** replace device with the block device name
+
+[none] mq-deadline kyber bfq
+</code></pre></div>
+<h3 id="26-setting-up-the-disk-scheduler-with-tuned">2.6 Setting up the disk scheduler with TuneD</h3>
+<ol>
+<li>See which configuration set is currently active</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+</code></pre></div>
+<ol>
+<li>Create a new directory to hold TuneD configuration sets</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# mkdir /etc/tuned/my-profile
+</code></pre></div>
+3. Find the selected block device system unique identifier:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm info --query=property --name=/dev/device \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+[root@opencloudos ~]# udevadm info --query=property --name=/dev/sr0 \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+ID_SERIAL=QEMU_DVD-ROM_QM00002
+
+ID_SERIAL_SHORT=QM00002
+</code></pre></div>
+<ol>
+<li>
+<p>Create the /etc/tuned/my-profile/tuned.conf configuration file. In this file set:</p>
+<p>Set the selected disk scheduler for devices matching WWN identifiers:
+<div class="highlight"><pre><span></span><code>[disk]
+
+devices_udev_regex=IDNAME=device system unique id
+
+elevator=selected-scheduler
+</code></pre></div></p>
+</li>
+<li>
+<p>Enable your configuration set:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm profile my-profile
+</code></pre></div>
+<ol>
+<li>Verify that the TuneD configuration set is active and apply:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm active
+
+Current active profile: my-profile
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# tuned-adm verify
+
+Verfication succeeded, current system settings match the preset profile.
+
+See TuneD log file (&#39;/var/log/tuned/tuned.log&#39;) for details.
+</code></pre></div></p>
+<ol>
+<li>Read the contents of the /sys/block/device/queue/scheduler file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /sys/block/device/queue/scheduler
+mq-deadline kyber [bfq] none
+</code></pre></div>
+<h3 id="27-setting-up-the-disk-scheduler-with-udev-rules">2.7 Setting up the disk scheduler with udev rules</h3>
+<ol>
+<li>Find the block device system unique identifier</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm info --name=/dev/sr0 \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+[root@opencloudos ~]# udevadm info --name=/dev/sr0 \| grep -E &#39;(WWN\|SERIAL)&#39;
+
+E: ID_SERIAL=QEMU_DVD-ROM_QM00002
+
+E: ID_SERIAL_SHORT=QM00002
+</code></pre></div>
+<ol>
+<li>
+<p>Configure udev rules. Create the /etc/udev/rules.d/99-scheduler.rules file with the following content:</p>
+<p>NOTE: Replace IDNAME with the name of the identifier you want to use (such as ID_WWN)</p>
+<p>Replace device system unique id with the selected identifier value (eg 0x5002538d00000000)
+<div class="highlight"><pre><span></span><code>ACTION==&quot;add\|change&quot;, SUBSYSTEM==&quot;block&quot;, ENV{ID_SERIAL_SHORT}==&quot;QM00002&quot;, ATTR{queue/scheduler}=&quot;bfq&quot;
+</code></pre></div></p>
+</li>
+<li>
+<p>Reload the udev rules:</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm control --reload-rules
+</code></pre></div>
+4. Apply scheduler configuration:</p>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# udevadm trigger --type=devices --action=change
+</code></pre></div>
+<ol>
+<li>Verify the active scheduler:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /sys/block/device/queue/scheduler
+
+[root@opencloudos ~]# cat /sys/block/sr0/queue/scheduler
+
+mq-deadline kyber [bfq] none
+</code></pre></div>
+<h3 id="28-temporarily-set-the-scheduler-for-a-specific-disk">2.8 Temporarily set the scheduler for a specific disk</h3>
+<p>This process sets a given disk scheduler for a specific block device. This setting will not be retained after system restart.</p>
+<ol>
+<li>Write the name of the selected scheduler to the /sys/block/devices/queue/scheduler file:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# echo selected-scheduler \&gt; /sys/block/device/queue/scheduler
+</code></pre></div>
+In the filename, replace device with the block device name, such as vda</p>
+<ol>
+<li>Verify that the scheduler is active on the device:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /sys/block/device/queue/scheduler
+
+[root@opencloudos ~]# cat /sys/block/vda/queue/scheduler
+
+[none] mq-deadline kyber bfq
+</code></pre></div>
+<h2 id="chapter-3-cpu-usage-and-tuning">Chapter 3 CPU usage and tuning</h2>
+<h3 id="31-display-cpu-architecture-information">3.1 Display CPU architecture information</h3>
+<ol>
+<li>Collect CPU architectural information, such as the number of CPUs, threads, cores, sockets, and NUMA nodes:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# lscpu
+
+Architecture: x86_64
+
+CPU op-mode(s): 32-bit, 64-bit
+
+Byte Order: Little Endian
+
+CPU(s): 2
+
+On-line CPU(s) list: 0,1
+
+Thread(s) per core: 2
+
+Core(s) per socket: 1
+
+Socket(s): 1
+
+NUMA node(s): 1
+
+Vendor ID: GenuineIntel
+
+BIOS Vendor ID: Smdbmds
+
+CPU family: 6
+
+Model: 106
+...
+</code></pre></div>
+<h3 id="32-view-cpu-usage">3.2 View CPU usage:</h3>
+<ol>
+<li>Show the performance of the CPU:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# top
+
+%Cpu(s): 0.2 us, 0.2 sy, 0.0 ni, 99.7 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st
+</code></pre></div>
+<ul>
+<li>user (usually abbreviated as us), stands for user mode CPU time. Note that it does not include nice time below, but includes guest time.
+  -nice (usually abbreviated as ni), stands for low-priority user mode CPU time, that is, the CPU time when the nice value of the process is adjusted to be between 1-19. Note here that the value range of nice is -20 to 19, the larger the value, the lower the priority.</li>
+<li>system (often abbreviated as sy), stands for kernel-mode CPU time.</li>
+<li>idle (often abbreviated to id), which stands for idle time. Note that it does not include time waiting for I/O (iowait).</li>
+<li>iowait (often abbreviated to wa), stands for CPU time waiting for I/O.</li>
+<li>irq (often abbreviated to hi), stands for CPU time handling hard interrupts.</li>
+<li>softirq (often abbreviated to si), stands for CPU time handling softirqs.</li>
+<li>steal (usually abbreviated as st), which represents the CPU time occupied by other virtual machines when the system is running in a virtual machine.</li>
+<li>guest (usually abbreviated as guest), which represents the time to run other operating systems through virtualization, that is, the CPU time to run a virtual machine.</li>
+<li>guest_nice (often abbreviated as gnice), which represents when the virtual machine is running at low priority.</li>
+</ul>
+<p>CPU usage, which is the percentage of total CPU time other than idle time</p>
+<p>Formula: CPU Usage = 1 - Idle Time / Total CPU Time</p>
+<ol>
+<li>
+<p>View CPU usage:</p>
+<p>Install the sysstat tool:
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# yum install sysstat
+</code></pre></div></p>
+</li>
+</ol>
+<p>View CPU usage
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# pidstat 1
+
+Linux 5.4.119-19-0009.1 (VM-6-117-centos) 08/19/2022 \_x86_64\_ (2 CPU)
+
+03:11:04 PM UID PID %usr %system %guest %wait %CPU CPU Command
+
+03:11:05 PM 0 561098 1.00 0.00 0.00 0.00 1.00 0 barad_agent
+
+03:11:05 PM UID PID %usr %system %guest %wait %CPU CPU Command
+
+03:11:06 PM 0 561098 0.00 1.00 0.00 0.00 1.00 0 barad_agent
+...
+</code></pre></div></p>
+<h3 id="33-perf-tool">3.3 perf tool</h3>
+<ol>
+<li>Install the perf tool.  The perf userspace tool is a kernel-based interface to the Performance Counters (PCL) of the Linux subsystem. Perf is a powerful tool that uses a Performance Monitoring Unit (PMU) to measure, record, and monitor various hardware and software events.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# yum install perf
+</code></pre></div>
+<ol>
+<li>Use perf top to analyze CPU usage. The perf top command is used for real-time system analysis, and its functionality is similar to the top utility. However, the top utility usually shows the CPU time used by a given process or thread, and perf top will show the CPU time used by each specific function.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf top
+
+6.48% perf [.] \__symbols__insert
+
+5.21% [kernel] [k] kallsyms_expand_symbol.constprop.1
+
+4.80% perf [.] rb_next
+
+2.48% perf [.] rust_demangle_callback
+
+2.42% libc-2.28.so [.] \__GI_____strtoull_l_internal
+
+2.32% [kernel] [k] vsnprintf
+
+2.10% [kernel] [k] number
+...
+</code></pre></div>
+<h3 id="34-perf-investigates-busy-cpu">3.4 perf investigates busy CPU</h3>
+<ol>
+<li>Count events that disable CPU count aggregation:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf stat -a -A sleep seconds
+</code></pre></div>
+<p>Events such as the specified period:
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf stat -a -A -e cycles sleep seconds
+</code></pre></div></p>
+<ol>
+<li>
+<p>Show CPU samples taken with perf report</p>
+<p>Prerequisite: A perf.data file is created in the current directory, which contains perf records.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf report --sort cpu
+Sort by CPU and command:
+[root@opencloudos ~]# perf report --sort cpu,comm
+</code></pre></div>
+<h3 id="35-display-specific-cpu-when-profiling-with-perf-top">3.5 Display specific CPU when profiling with perf top</h3>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf top --sort cpu
+Sort by CPU and command:
+[root@opencloudos ~]# perf top --sort cpu,comm
+</code></pre></div>
+<h3 id="36-log-reports-and-monitor-specific-cpus">3.6 Log reports and monitor specific CPUs</h3>
+<ol>
+<li>
+<p>Record performance data in a specific CPU and generate a perf.data file</p>
+<p>Use a comma-separated list of CPUs
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf record -C 0,1 sleep seconds
+Use a set of CPUs:
+[root@opencloudos ~]# perf record -C 0-2 sleep seconds
+</code></pre></div></p>
+</li>
+<li>
+<p>Display the contents of the perf.data file for further analysis:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# perf report
+</code></pre></div>
+<h2 id="chapter-4-memory-usage">Chapter 4 Memory Usage</h2>
+<h3 id="41-view-memory-usage">4.1 View memory usage</h3>
+<ol>
+<li>Use the free command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# free
+total used free shared buff/cache available
+
+Mem: 1730432 375364 130400 255480 1224668 932144
+
+Swap: 0 0 0
+</code></pre></div>
+<ul>
+<li>total indicates a total of 1.6G of memory</li>
+<li>used indicates the usage of physical memory, about 215M</li>
+<li>free means free memory</li>
+<li>shared means shared memory</li>
+<li>buff/cache indicates the amount of cache and buffer memory; the Linux system will cache many things to improve performance, and this part of memory can be released when necessary for other programs to use.</li>
+<li>available means available memory</li>
+</ul>
+<p>Swap means swap memory</p>
+<ol>
+<li>Use vmstat</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# vmstat -m
+
+Cache Num Total Size Pages
+
+rpc_inode_cache 46 46 704 23
+
+rpc_buffers 16 16 2048 16
+
+rpc_tasks 16 16 256 16
+
+ext4_groupinfo_4k 420 420 144 28
+
+fscrypt_info 0 0 104 39
+
+fscrypt_ctx 0 0 64 64
+
+bridge_fdb_cache 0 0 128 32
+
+ip6-frags 0 0 208 19
+
+fib6_nodes 128 128 64 64
+
+ip6_dst_cache 32 32 256 16
+...
+</code></pre></div>
+<p>Statistics on memory usage</p>
+<ol>
+<li>View /proc/meminfo</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[root@opencloudos ~]# cat /proc/meminfo
+
+MemTotal: 1730432 kB
+
+MemFree: 131156 kB
+
+MemAvailable: 933048 kB
+
+Buffers: 80508 kB
+
+Cached: 1070344 kB
+
+SwapCached: 0 kB
+...
+</code></pre></div>
+<p>The /proc directory is full of virtual files, including dynamic information related to the kernel and operating system. /proc/meminfo is the main interface to understand the memory usage of the Linux system. Our most commonly used commands such as "free" and "vmstat" are through it For data acquisition, /proc/meminfo contains much richer information than commands such as "free".</p>
+<h3 id="42-view-physical-memory-information">4.2 View physical memory information</h3>
+<p>1.dmidecode command</p>
+<p><div class="highlight"><pre><span></span><code>[root@opencloudos ~]# dmidecode -t 17
+</code></pre></div>
+The displayed information includes memory size, type, bandwidth and other information.</p>
+<h3 id="43-virtual-memory">4.3 Virtual memory</h3>
+<ol>
+<li>Introduction: Physical memory is limited (even if it supports hot swapping), non-sequential, and different CPU architectures have different organizations for physical memory. This makes it very complicated to use physical memory directly. In order to reduce the complexity of using memory, a virtual memory mechanism is introduced.</li>
+<li>How to use: Through the virtual memory mechanism, each process thinks that it occupies all the memory. When the process accesses the memory, the operating system will convert the virtual memory address provided by the process into a physical address, and then go to the corresponding physical address to obtain data. .</li>
+<li>
+<p>Virtual memory not only solves the problem of multiple processes accessing memory conflicts through memory address translation, but also brings more benefits:</p>
+</li>
+<li>
+<p>Process memory management: memory integrity: Due to the "deception" of the process by virtual memory, each process thinks that the memory it acquires is a continuous address. When we write an application program, we don't need to consider the allocation of large blocks of addresses. We always think that the system has enough large blocks of memory.</p>
+</li>
+<li>Data sharing: It is easier to share memory and data through virtual memory.</li>
+</ol>
+<h3 id="44-segment-page-mechanism">4.4 Segment page mechanism</h3>
+<p>There are two types of memory management mechanisms in modern operating systems: segment management and page management.</p>
+<ul>
+<li>Segmented memory management is to divide the memory into segments, and the starting address of each segment is the segment base address. During address mapping, the physical address is obtained by adding the segment base address to the logical address.</li>
+<li>Paging memory management, the memory is divided into pages of fixed length. When address mapping, a page table needs to be established first, and each item in the page table records the base address of this page. Through the page table, the page base address corresponding to the logical address is first found from the high-order part of the logical address, and then the final physical address is obtained by offsetting the page base address by a certain length. The length of the offset is determined by the low-order part of the logical address.</li>
+<li>Segment page memory management needs to be used together with the segment table and the page table. The segment table includes: the segment number, the starting address of the page table in the segment, and the page table includes: the page number and the offset in the page. Find the corresponding segment number item in the segment table through the segment number in the virtual address, and get the start address of the page table in the segment (that is, the page table corresponding to this segment) through the segment number item in the segment table. After getting After the page table corresponding to this segment of memory, the corresponding page table entry can be found through the page number in the segment in the virtual address to obtain the physical start address, and the corresponding physical address is obtained by adding the offset in the page in the virtual address.</li>
+</ul>
+<h3 id="45-memory-recovery">4.5 Memory recovery</h3>
+<ol>
+<li>
+<p>The goal of memory recycling: For the kernel, not all physical memory can participate in recycling. For example, if the code segment of the kernel is recycled by the kernel, the system will not be able to run normally. Therefore, the general kernel code segment, data segment, and kernel application The memory occupied by the kernel thread and the memory occupied by the kernel thread cannot be reclaimed, and the other memory can be the target we want to recycle.</p>
+</li>
+<li>
+<p>Memory recovery timing:</p>
+</li>
+<li>
+<p>The kernel needs to provide enough memory for any sudden memory request at any time, so that the use of cache and other related memory will not make the remaining memory of the system stay in a low state for a long time.</p>
+</li>
+<li>
+<p>When there is an application larger than free memory, it will trigger forced memory recovery.</p>
+</li>
+<li>
+<p>Recycling mechanism:</p>
+</li>
+<li>
+<p>For the first type, the Linux system has designed the kswapd background program. When the kernel allocates physical pages, due to the shortage of system memory, memory cannot be allocated under low water level conditions, so the kswapd kernel thread will be awakened to reclaim memory asynchronously. That is, the periodic memory recovery mechanism.</p>
+</li>
+<li>
+<p>For the second type, the Linux system will trigger direct reclaim (direct reclaim). When the kernel calls the page allocation function to allocate physical pages, due to the shortage of system memory, the allocation request cannot be satisfied, and the kernel will directly trigger the page reclaim mechanism to try to reclaim memory to solve the problem. That is, direct memory reclamation.</p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
