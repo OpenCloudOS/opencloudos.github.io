@@ -2,6 +2,13 @@ OpenCloudOS 商业软件兼容列表如下：
 
 | 产品名                      | 版本 | 软件类型 | 厂家名称                           | 操作系统    |
 | :-------------------------- | :----- | :------- | :--------------------------------- | :---------- |
+| 开源 PolarDB 分布式版            | V2.2| 数据库管理系统| 阿里云计算有限公司 | OpenCloudOS |
+| 开源 PolarDB PostgreSQL 版     | V11 | 数据库管理系统 | 阿里云计算有限公司 | OpenCloudOS |
+| Coremail XT安全增强电子邮件系统  | V6.0  | 行业应用   | 广东盈世计算机科技有限公司 | OpenCloudOS |
+| GoldenDB                       | V6     | 数据库管理系统  | 金篆信科有限责任公司 | OpenCloudOS |
+| 新支点桌面                       | -        | 桌面           | 广东中兴新支点技术有限公司 | OpenCloudOS |
+| 灵雀云企业级全栈云原生开放平台   | V3       | 虚拟化云平台   | 北京凌云雀科技有限公司     | OpenCloudOS |
+| TDengine                         | V3.0.4.1 | 数据库管理系统 | 北京涛思数据科技有限公司   | OpenCloudOS |
 | APISIX                                  | V3.2.0 | 中间件         | Apache APISIX 开源社区           | OpenCloudOS |
 | Apusic应用服务器软件                    | V10    | 虚拟化云平台   | 深圳市金蝶天燕云计算股份有限公司 | OpenCloudOS |
 | 云树集群管理平台软件（CTREE DMP）       | V7     | 数据库管理系统 | 上海爱可生信急技术股份有限公司   | OpenCloudOS |
