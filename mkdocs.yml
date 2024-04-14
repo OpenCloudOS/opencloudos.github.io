@@ -104,6 +104,7 @@ nav:
     - 如何贡献: contribution/how-to.md
     - 文档库格式手册: contribution/docs-format-guide.md
     - 内核开发指南: contribution/kernel-develop-guide.md
+    - 贡献许可协议: contribution/contribution-agreement.md
   - 生态认证:
     - 生态认证流程: adaptation/adaptation_process.md
     - 硬件测试用例: adaptation/testcase.md
