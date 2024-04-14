@@ -152,6 +152,8 @@ plugins:
         - zh:
           name: 中文
           locale: zh_CN
+          default: true
+          build: true
         - en:
           name: English
           locale: en_US
