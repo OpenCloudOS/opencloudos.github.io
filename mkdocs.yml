@@ -151,8 +151,10 @@ plugins:
       languages:
         - zh:
           name: 中文
+          locale: zh_CN
         - en:
           name: English
+          locale: en_US
       nav_translations:
         en:
           首页: Home
