@@ -149,9 +149,9 @@ plugins:
       default_language: zh
       material_alternate: true
       languages:
-        zh:
+        - zh:
           name: 中文
-        en:
+        - en:
           name: English
       nav_translations:
         en:
