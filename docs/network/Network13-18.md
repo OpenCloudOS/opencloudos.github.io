@@ -1145,7 +1145,7 @@ Generic Routing Encapsulation（GRE）隧道封装 IPv4 数据包中的第 3 层
         ```
         # ping 172.16.0.1
         ```
-  - 在路由器 A 上，ping 172.16.0.1 ：
+  - 在路由器 B 上，ping 192.0.2.1 ：
         ```
         # ping 192.0.2.1
         ```
